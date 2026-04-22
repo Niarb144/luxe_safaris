@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="bg-orange-600 text-white mt-20">
+    <footer className="bg-[#b77e24] text-white mt-20">
       {/* Newsletter Section */}
       <div className="relative bg-[url('/hero.jpg')] bg-cover bg-center">
         <div className="bg-black/50">
