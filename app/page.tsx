@@ -5,6 +5,8 @@ import { AnimatePresence } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import Image from "next/image";
 import Map from "@/components/Map";
+import CountryCards from "@/components/CountriesCard";
+import { countries } from "@/data/countries";
 
 export default function Home() {
 
@@ -23,6 +25,7 @@ export default function Home() {
           or an unforgettable adventure, we have the perfect safari experience
           waiting for you.
         </p>
+        <CountryCards data={countries} />
         <div className="mt-10 w-full max-w-4xl">
           <Image
             src="/images/img2.webp"
