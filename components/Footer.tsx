@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#b77e24] text-white mt-20">
       {/* Newsletter Section */}
-      <div className="relative bg-[url('/hero.jpg')] bg-cover bg-center">
+      <div className="relative bg-[url('/images/img3.webp')] bg-cover bg-center">
         <div className="bg-black/50">
           <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
