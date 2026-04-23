@@ -74,7 +74,7 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:block bg-[#b77e24] text-white px-4 py-2 rounded">
-            Call Us
+            Call Us: +25498765432
         </div>
 
         {/* Mobile Toggle */}
