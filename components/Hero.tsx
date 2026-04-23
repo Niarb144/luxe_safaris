@@ -12,7 +12,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
+    <section className="relative h-[80vh] w-full flex items-center justify-center text-center overflow-hidden">
       {/* Optimized Background Image */}
       <div className="absolute inset-0">
         <Image

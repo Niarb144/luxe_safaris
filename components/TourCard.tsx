@@ -41,9 +41,9 @@ export function TourCard({ tour }: any) {
             {tour.duration}
           </span>
 
-          <span className="bg-orange-500 px-3 py-1 text-sm rounded-full">
+          {/* <span className="bg-orange-500 px-3 py-1 text-sm rounded-full">
             {tour.price}
-          </span>
+          </span> */}
         </div>
       </div>
     </motion.div>
