@@ -1,24 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsAppButton() {
+  const [show, setShow] = useState(false);
   const phoneNumber = "25498765432"; // replace with your number
   const message = encodeURIComponent(
     "Hello! I'm interested in your safari tours. Can you assist me?"
   );
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+  useEffect(() => {
+    const handleScroll = () => setShow(window.scrollY > 300);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
   return (
-    <motion.a
+    <>
+        {show && (
+            <motion.a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 1, type: "spring", stiffness: 120 }}
+      transition={{ delay: .6, type: "spring", stiffness: 120 }}
       className="fixed bottom-18 right-6 z-50 group"
     >
       {/* Tooltip */}
@@ -31,5 +40,8 @@ export default function WhatsAppButton() {
         <FaWhatsapp size={24} />
       </div>
     </motion.a>
+        )}
+    </>
+    
   );
 }
