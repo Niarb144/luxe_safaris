@@ -53,7 +53,7 @@ export default function CountryCards({ data }: Props) {
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 overflow-hidden"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {data.map((country) => (
             <motion.div
