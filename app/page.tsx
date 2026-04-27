@@ -19,16 +19,6 @@ export default function Home() {
         <CountryCards data={countries} />
         <Numbers />
         <ToursSection />
-        <div className="mt-10 w-full max-w-4xl">
-          <Image
-            src="/images/img2.webp"
-            alt="Luxe Plains Africa Safaris"
-            width={1200}
-            height={800}
-            className="rounded-lg shadow-lg"
-          />
-        </div>
-        <Map />
       </div>
     </>
   );
