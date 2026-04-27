@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ClientLoaderWrapper from "@/components/ClientLoaderWrapper";
+import WhatsAppButton from "@/components/WhatsappFloatingButton";
 import { ScrollToTop } from "@/components/ScrollToTopButton";
 
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         </ClientLoaderWrapper>
         <Footer />
         <ScrollToTop />
+        <WhatsAppButton />
       </body>
     </html>
   );
