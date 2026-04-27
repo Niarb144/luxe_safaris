@@ -14,16 +14,16 @@ export function Hero() {
   return (
     <section className="relative h-[90vh] w-full flex items-center justify-center text-center overflow-hidden">
       {/* Optimized Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 border rounded-lg overflow-hidden">
         <Image
           src="/images/img3.webp"
           alt="Safari landscape"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover border rounded-lg"
           placeholder="blur"
-          blurDataURL="/images/img1.webp"
+          blurDataURL="/images/img3.webp"
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
@@ -54,7 +54,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-8"
         >
-          <button className="bg-[#b77e24] hover:bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-medium transition-transform hover:scale-105">
+          <button className="bg-[#b77e24] hover:bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-medium transition-transform hover:scale-105 cursor-pointer">
             Find a Safari
           </button>
         </motion.div>

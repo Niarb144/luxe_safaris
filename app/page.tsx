@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import { Hero } from "@/components/Hero";
 import Image from "next/image";
 import Map from "@/components/Map";
+import Numbers from "@/components/Numbers";
 import CountryCards from "@/components/CountriesCard";
 import { countries } from "@/data/countries";
 import { ToursSection } from "@/components/ToursSection";
@@ -15,15 +16,8 @@ export default function Home() {
     <>
       <div className="flex flex-col flex-1 items-center justify-center font-sans bg-white min-h-screen p-4">
         <Hero />
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl text-center">
-          Experience the ultimate in luxury and adventure with Luxe Plains Africa
-          Safaris. Explore the breathtaking landscapes of Africa, encounter 
-          majestic wildlife, and immerse yourself in the rich culture of the
-          continent. Whether you're seeking a romantic getaway, a family vacation,
-          or an unforgettable adventure, we have the perfect safari experience
-          waiting for you.
-        </p>
         <CountryCards data={countries} />
+        <Numbers />
         <ToursSection />
         <div className="mt-10 w-full max-w-4xl">
           <Image
