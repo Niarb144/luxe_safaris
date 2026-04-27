@@ -72,8 +72,8 @@ export function ToursSection() {
           <p className="text-sm tracking-widest text-gray-500 uppercase">
             Popular Tours
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold mt-2">
-            Others travel here
+          <h2 className="text-3xl md:text-4xl text-[#b77e24] font-semibold mt-2">
+            Most travel here
           </h2>
         </div>
 
@@ -83,10 +83,10 @@ export function ToursSection() {
             <button
               key={cat}
               onClick={() => setActive(cat)}
-              className={`px-6 py-2 rounded-full border transition ${
+              className={`px-6 py-2 rounded-full border transition cursor-pointer tour-section-link ${
                 active === cat
-                  ? "bg-orange-500 text-white border-orange-500"
-                  : "border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                  ? "bg-[#b77e24] text-white border-[#b77e24]"
+                  : "border-[#b77e24] text-[#b77e24] hover:bg-[#b77e24] hover:text-white"
               }`}
             >
               {cat}

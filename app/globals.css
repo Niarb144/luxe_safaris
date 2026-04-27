@@ -29,3 +29,9 @@ body {
   color: #b77e24;
   transition: all ease .4s;
 }
+
+.tour-section-link:hover{
+  background: #b77e24;
+  color: #ededed;
+  transition: all ease .4s;
+}
