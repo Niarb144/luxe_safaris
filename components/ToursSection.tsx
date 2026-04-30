@@ -65,7 +65,7 @@ export function ToursSection() {
     active === "All" ? tours : tours.filter((t) => t.tag === active);
 
   return (
-    <section className="py-20 bg-[#f5f1ea]">
+    <section className="py-20 bg-[#f5f1ea] w-full">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center">

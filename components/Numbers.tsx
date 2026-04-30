@@ -51,7 +51,7 @@ function StatCard({ label, value }: { label: string; value: number }) {
 
 export default function Numbers() {
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-white to-yellow-50">
+    <section className="py-20 px-6 bg-gradient-to-b from-white to-yellow-50 w-full">
       <div className="max-w-6xl mx-auto text-center">
         
         {/* Heading */}
