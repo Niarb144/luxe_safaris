@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import SafariCTA from "./QuizButton";
 
 export function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -54,9 +55,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-8"
         >
-          <button className="bg-[#b77e24] hover:bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-medium transition-transform hover:scale-105 cursor-pointer">
-            Find a Safari
-          </button>
+          <SafariCTA />
         </motion.div>
       </div>
     </section>
