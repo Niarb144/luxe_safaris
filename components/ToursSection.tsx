@@ -56,6 +56,17 @@ const tours = [
     price: "From £2109",
     tag: "Kenya",
   },
+  {
+    id: "5",
+    title: "Safari in Kenya Nairobi National Park",
+    description:
+      "Explore Kenya's nature and wildlife on your safari tour then relax in sandy beaches of Mombasa.",
+    image: "/images/img5.jpg",
+    location: "Kenya",
+    duration: "15 Days",
+    price: "From £3969",
+    tag: "Kenya",
+  },
 ];
 
 export function ToursSection() {
@@ -67,15 +78,6 @@ export function ToursSection() {
   return (
     <section className="py-20 bg-[#f5f1ea] w-full">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center">
-          <p className="text-sm tracking-widest text-gray-500 uppercase">
-            Popular Tours
-          </p>
-          <h2 className="text-3xl md:text-4xl text-[#b77e24] font-semibold mt-2">
-            Most travel here
-          </h2>
-        </div>
 
         {/* Filters */}
         <div className="flex flex-wrap justify-center gap-4 mt-8">
