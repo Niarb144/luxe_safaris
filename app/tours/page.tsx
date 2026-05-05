@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import SafariCTA from "../../components/QuizButton";
 import { ToursSection } from "../../components/ToursSection";
+import ToursList from "@/components/Tours"; 
 
 export default function ToursPage() {
   const [loaded, setLoaded] = useState(false);
@@ -53,6 +54,7 @@ export default function ToursPage() {
           </div>
         </section>
         <ToursSection />
+        <ToursList />
     
     </>
     
