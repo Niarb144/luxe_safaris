@@ -43,16 +43,8 @@ export default function TourLayout({ tour }: any) {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="text-4xl md:text-6xl font-bold text-white leading-tight"
             >
-              Have a question?
+              {tour.title}
             </motion.h1>
-            <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={loaded ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-4 text-lg md:text-xl text-white/90"
-            >
-              We're here to help!
-            </motion.p>
           </div>
         </section>
         <div className="bg-neutral-950 text-white min-h-screen">
