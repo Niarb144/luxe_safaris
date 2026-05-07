@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function TourLayout({ tour }: any) {
+export default function TourLayout({ tour, mainImage }: any) {
   const [loaded, setLoaded] = useState(false);
   
     useEffect(() => {
@@ -20,36 +20,42 @@ export default function TourLayout({ tour }: any) {
   return (
     <>
     <section className="relative h-[60vh] w-full flex items-center justify-center text-center overflow-hidden">
-          {/* Optimized Background Image */}
-          <div className="absolute inset-0 border rounded-lg overflow-hidden">
-            <Image
-              src="/images/img6.jpg"
-              alt="Safari landscape"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover border rounded-lg"
-              placeholder="blur"
-              blurDataURL="/images/img6.jpg"
-            />
-            <div className="absolute inset-0 bg-black/50" />
-          </div>
-    
-          {/* Content */}
-          <div className="relative z-10 px-6 max-w-3xl">
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={loaded ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="text-4xl md:text-6xl font-bold text-white leading-tight"
-            >
-              {tour.title}
-            </motion.h1>
-          </div>
-        </section>
+  
+  {/* Background Image */}
+  <div className="absolute inset-0 rounded-lg overflow-hidden">
+    <Image
+      src={mainImage}
+      alt={tour.title}
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover scale-105"
+    />
+
+    {/* Dark Overlay */}
+    <div className="absolute inset-0 bg-black/50" />
+
+    {/* Optional Gradient */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30" />
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 px-6 max-w-4xl">
+    <motion.h1
+      initial={{ opacity: 0, y: 40 }}
+      animate={loaded ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="text-4xl md:text-6xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg"
+    >
+      {tour.title}
+    </motion.h1>
+
+    {/* Optional subtitle */}
+  </div>
+</section>
         <div className="bg-neutral-950 text-white min-h-screen">
 
-      <TourGallery images={tour.tour_images} />
+      
 
       <div className="max-w-6xl mx-auto grid grid-cols-3 gap-10 px-6 py-10">
         
@@ -59,9 +65,12 @@ export default function TourLayout({ tour }: any) {
           <TourItinerary items={tour.tour_itinerary} />
           <TourRoute routes={tour.tour_routes} />
         </div>
+        
 
         <BookingCard tour={tour} />
       </div>
+
+      <TourGallery images={tour.tour_images} />
     </div>
     </>
     

@@ -25,10 +25,14 @@ export default async function TourPage({
     .eq("id", id)
     .single();
 
+    const mainImage =
+  data?.tour_images?.find((img: any) => img.is_main === true)
+    ?.image_url || "/images/placeholder.jpg";
+
   if (error || !data) {
     console.error(error);
     return <div>Tour not found</div>;
   }
 
-  return <TourLayout tour={data} />;
+  return <TourLayout tour={data} mainImage={mainImage} />;
 }
