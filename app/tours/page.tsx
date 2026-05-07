@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import SafariCTA from "../../components/QuizButton";
-import { ToursSection } from "../../components/ToursSection";
 import ToursList from "@/components/Tours"; 
 
 export default function ToursPage() {
@@ -53,7 +52,6 @@ export default function ToursPage() {
             </motion.div>
           </div>
         </section>
-        <ToursSection />
         <ToursList />
     
     </>

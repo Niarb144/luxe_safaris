@@ -8,7 +8,7 @@ import Map from "@/components/Map";
 import Numbers from "@/components/Numbers";
 import CountryCards from "@/components/CountriesCard";
 import { countries } from "@/data/countries";
-import { ToursSection } from "@/components/ToursSection";
+import ToursList from "@/components/Tours"; 
 
 export default function Home() {
 
@@ -27,7 +27,7 @@ export default function Home() {
             Most travel here
           </h2>
         </div>
-        <ToursSection />
+        <ToursList />
       </div>
     </>
   );
