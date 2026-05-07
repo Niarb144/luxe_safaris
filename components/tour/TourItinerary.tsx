@@ -13,9 +13,15 @@ export default function TourItinerary({ items }: any) {
             <div className="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center font-bold">
               {item.day}
             </div>
+            
             <div>
-              <p className="font-semibold">Day {item.day}</p>
-              <p className="text-gray-400">{item.description}</p>
+              <p className="font-semibold">Day {item.day_number}</p>
+              <div className="mt-2">
+                <span className="text-sm text-gray-500">{item.start_time} - {item.end_time}</span>
+              </div>
+              <p className="text-gray-800 font-medium">{item.title}</p>
+              <p className="text-gray-800">{item.description}</p>
+              
             </div>
           </div>
         ))}

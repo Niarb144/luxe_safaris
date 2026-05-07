@@ -9,6 +9,7 @@ import BookingCard from "./BookingCard";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import TourExclusions from "./TourExclusions";
 
 export default function TourLayout({ tour, mainImage }: any) {
   const [loaded, setLoaded] = useState(false);
@@ -53,7 +54,7 @@ export default function TourLayout({ tour, mainImage }: any) {
     {/* Optional subtitle */}
   </div>
 </section>
-        <div className="bg-neutral-950 text-white min-h-screen">
+    <div className="bg-white text-gray-800 min-h-screen">
 
       
 
@@ -62,6 +63,7 @@ export default function TourLayout({ tour, mainImage }: any) {
         <div className="col-span-2 space-y-10">
           <TourHeader tour={tour} />
           <TourInclusions items={tour.tour_inclusions} />
+          <TourExclusions items={tour.tour_exclusions} />
           <TourItinerary items={tour.tour_itinerary} />
           <TourRoute routes={tour.tour_routes} />
         </div>

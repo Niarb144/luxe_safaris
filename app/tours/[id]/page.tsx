@@ -20,6 +20,7 @@ export default async function TourPage({
       tour_images (*),
       tour_itinerary (*),
       tour_inclusions (*),
+      tour_exclusions (*),
       tour_route_maps (*)
     `)
     .eq("id", id)
