@@ -28,7 +28,7 @@ export default async function TourPage({
 
     const mainImage =
   data?.tour_images?.find((img: any) => img.is_main === true)
-    ?.image_url || "/images/placeholder.jpg";
+    ?.image_url || "/images/img4.jpg";
 
   if (error || !data) {
     console.error(error);

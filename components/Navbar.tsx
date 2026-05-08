@@ -72,7 +72,7 @@ export default function Navbar() {
               {/* Hover underline */}
               <motion.span
                 layoutId="underline"
-                className="absolute left-0 -bottom-1 h-[2px] w-full bg-orange-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#041f0e] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
               />
 
               {/* Active underline */}

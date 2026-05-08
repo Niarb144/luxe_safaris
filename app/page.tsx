@@ -9,6 +9,9 @@ import Numbers from "@/components/Numbers";
 import CountryCards from "@/components/CountriesCard";
 import { countries } from "@/data/countries";
 import ToursList from "@/components/Tours"; 
+import ReviewsSection from "@/components/ReviewSection";
+import AccreditationSection from "@/components/Acrreditation";
+import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
 
 export default function Home() {
 
@@ -19,15 +22,18 @@ export default function Home() {
         <CountryCards data={countries} />
         <Numbers />
         {/* Header */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <p className="text-sm tracking-widest text-gray-500 uppercase">
             Popular Tours
           </p>
           <h2 className="text-3xl md:text-4xl text-[#b77e24] font-semibold mt-2">
             Most travel here
           </h2>
-        </div>
+        </div> */}
         <ToursList />
+        <ReviewsSection />
+        <AccreditationSection />
+        <WhyChooseLuxeSafaris />
       </div>
     </>
   );
