@@ -7,14 +7,14 @@ export default function TourRoute({ routes }: any) {
 
       {routes.map((route: any) => (
         <div key={route.id}>
-          {route.route_url.includes("google.com") ? (
+          {route.map_url.includes("google.com") ? (
             <iframe
-              src={route.route_url}
+              src={route.map_url}
               className="w-full h-80 rounded-xl"
             />
           ) : (
             <img
-              src={route.route_url}
+              src={route.map_url}
               className="w-full h-80 object-cover rounded-xl"
             />
           )}

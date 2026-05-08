@@ -2,7 +2,7 @@ export default function BookingCard({ tour }: any) {
   return (
     <div className="sticky top-20 h-fit">
       <div className="bg-neutral-900 p-6 rounded-2xl shadow-lg space-y-4">
-        <h2 className="text-2xl font-bold">
+        <h2 className="text-2xl font-bold text-[#b77e24]">
           ${tour.price}
           <span className="text-sm text-gray-400"> / person</span>
         </h2>
