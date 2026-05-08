@@ -26,6 +26,19 @@ export default async function TourPage({
     .eq("id", id)
     .single();
 
+     // RELATED TOURS
+  const { data: relatedTours } = await supabase
+    .from("tours")
+    .select(`
+      id,
+      title,
+      location,
+      tour_images(image_url)
+    `)
+    .eq("location", data.location)
+    .neq("id", data.id)
+    .limit(3);
+
     const mainImage =
   data?.tour_images?.find((img: any) => img.is_main === true)
     ?.image_url || "/images/img4.jpg";
@@ -35,5 +48,10 @@ export default async function TourPage({
     return <div>Tour not found</div>;
   }
 
-  return <TourLayout tour={data} mainImage={mainImage} />;
+  return (
+    <TourLayout 
+      tour={data} 
+      mainImage={mainImage}
+      relatedTours={relatedTours} 
+    />);
 }

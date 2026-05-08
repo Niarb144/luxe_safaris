@@ -7,12 +7,13 @@ import TourItinerary from "./TourItinerary";
 import TourRoute from "./TourRoute";
 import BookingCard from "./BookingCard";
 import TourExclusions from "./TourExclusions";
+import RelatedTours from "./RelatedTours";
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function TourLayout({ tour, mainImage }: any) {
+export default function TourLayout({ tour, mainImage, relatedTours }: any) {
   const [loaded, setLoaded] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
 
@@ -175,6 +176,7 @@ export default function TourLayout({ tour, mainImage }: any) {
           <TourGallery images={tour.tour_images} />
         </section>
       </div>
+      <RelatedTours tours={relatedTours} />
     </>
   );
 }
