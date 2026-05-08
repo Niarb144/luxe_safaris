@@ -14,7 +14,7 @@ export default function BookingCard({ tour }: any) {
         <a
           href={`https://wa.me/254XXXXXXXXX?text=I want to book ${tour.title}`}
           target="_blank"
-          className="block text-center border border-gray-600 py-3 rounded-xl"
+          className="block text-center border border-[#b77e24] text-[#b77e24] py-3 rounded-xl"
         >
           WhatsApp
         </a>
