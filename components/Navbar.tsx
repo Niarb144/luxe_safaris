@@ -53,7 +53,9 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Image src="/images/logo.jpeg" alt="Logo" width={100} height={50} />
+        <Link href="/">
+          <Image src="/images/logo.jpeg" alt="Logo" width={100} height={50} />
+        </Link>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-8 items-center">
