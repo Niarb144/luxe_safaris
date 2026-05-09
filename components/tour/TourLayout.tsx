@@ -116,7 +116,7 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative whitespace-nowrap font-medium transition duration-300 pb-2
+                className={`relative whitespace-nowrap font-medium transition duration-300 pb-2 cursor-pointer 
                   ${
                     activeSection === item.id
                       ? "text-[#b77e24]"
