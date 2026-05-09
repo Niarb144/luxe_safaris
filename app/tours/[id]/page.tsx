@@ -19,9 +19,11 @@ export default async function TourPage({
       *,
       tour_images (*),
       tour_itinerary (*),
+      tour_highlights (*),
       tour_inclusions (*),
       tour_exclusions (*),
-      tour_route_maps (*)
+      tour_route_maps (*),
+      tour_faqs (*)
     `)
     .eq("id", id)
     .single();
@@ -40,13 +42,13 @@ export default async function TourPage({
     .limit(3);
 
     const mainImage =
-  data?.tour_images?.find((img: any) => img.is_main === true)
-    ?.image_url || "/images/img4.jpg";
+    data?.tour_images?.find((img: any) => img.is_main === true)
+      ?.image_url || "/images/img4.jpg";
 
-  if (error || !data) {
-    console.error(error);
-    return <div>Tour not found</div>;
-  }
+    if (error || !data) {
+      console.error(error);
+      return <div>Tour not found</div>;
+    }
 
   return (
     <TourLayout 

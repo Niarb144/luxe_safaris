@@ -8,6 +8,8 @@ import TourRoute from "./TourRoute";
 import BookingCard from "./BookingCard";
 import TourExclusions from "./TourExclusions";
 import RelatedTours from "./RelatedTours";
+import TourFAQS from "./TourFAQS";
+import TourHighlights from "./TourHighlights";
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -56,11 +58,13 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
 
   const menuItems = [
     { id: "overview", label: "Overview" },
+    { id: "highlights", label: "Highlights" },
     { id: "inclusions", label: "Inclusions" },
     { id: "exclusions", label: "Exclusions" },
     { id: "itinerary", label: "Itinerary" },
     { id: "route", label: "Route" },
     { id: "gallery", label: "Gallery" },
+    { id: "faq", label: "FAQs" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -143,6 +147,10 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
               <TourHeader tour={tour} />
             </section>
 
+            <section id="highlights" data-section="highlights">
+              <TourHighlights items={tour.tour_highlights} />
+            </section>
+
             <section id="inclusions" data-section="inclusions">
               <TourInclusions items={tour.tour_inclusions} />
             </section>
@@ -158,6 +166,7 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
             <section id="route" data-section="route">
               <TourRoute routes={tour.tour_route_maps} />
             </section>
+
           </div>
 
           {/* RIGHT SIDEBAR */}
@@ -176,7 +185,13 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
         >
           <TourGallery images={tour.tour_images} />
         </section>
+        
+         {/* FAQs */}
+        <section id="faq" data-section="faqs" className="scroll-mt-32">
+          <TourFAQS items={tour.tour_faqs} />
+        </section>
       </div>
+      
       <RelatedTours tours={relatedTours} />
 
       <section className="py-24 bg-[#041f0e] text-white">

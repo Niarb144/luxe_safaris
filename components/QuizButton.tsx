@@ -10,7 +10,7 @@ export default function SafariCTA() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="bg-[#b77e24] text-white px-6 py-3 rounded-full cursor-pointer"
+        className="bg-[#b77e24] hover:bg-[#a06d1f] transition text-white px-6 py-3 rounded-full cursor-pointer"
       >
         Find Your Safari
       </button>
