@@ -81,7 +81,7 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[60vh] w-full flex items-center justify-center text-center overflow-hidden">
+      <section className="relative h-[70vh] w-full flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 rounded-lg overflow-hidden">
           <Image
             src={mainImage}
@@ -97,11 +97,26 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
         </div>
 
         <div className="relative z-10 px-6 max-w-4xl">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={loaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            className="text-sm uppercase tracking-[0.3em] text-[#d4a54b] font-medium mb-4"
+          >
+            <Link href="/" className="hover:text-[#d4a54b] transition cursor-pointer">
+              Home
+            </Link>
+             &nbsp;/&nbsp;
+            <Link href="/tours" className="hover:text-[#d4a54b] transition cursor-pointer">
+              All Tours
+            </Link>
+             &nbsp;/&nbsp; {tour.title}
+          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-4xl md:text-6xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-lg"
           >
             {tour.title}
           </motion.h1>
