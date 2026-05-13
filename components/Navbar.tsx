@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 const links = [
   { name: "Home", href: "/" },
   { name: "Our Tours", href: "/tours" },
+  { name: "Destination", href: "/destinations" },
   { name: "Holiday Types", href: "/holidays" },
   { name: "Accommodation", href: "/accommodation" },
   { name: "Practical Info", href: "/info" },

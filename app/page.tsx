@@ -9,6 +9,7 @@ import Numbers from "@/components/Numbers";
 import CountryCards from "@/components/CountriesCard";
 import { countries } from "@/data/countries";
 import ToursList from "@/components/Tours"; 
+import Destinations from "@/components/Destinations";
 import ReviewsSection from "@/components/ReviewSection";
 import AccreditationSection from "@/components/Acrreditation";
 import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
@@ -31,6 +32,7 @@ export default function Home() {
           </h2>
         </div> */}
         <ToursList />
+        <Destinations />
         <ReviewsSection />
         <AccreditationSection />
         <WhyChooseLuxeSafaris />
