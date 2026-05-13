@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 type Destination = {
   id: string;
@@ -17,8 +19,9 @@ type Destination = {
 };
 
 export default function Destinations() {
-  const [destinations, setDestinations] = useState<Destination[]>([]);
+  const [destinations, setDestinations] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [active, setActive] = useState("All");
 
   useEffect(() => {
     fetchDestinations();
@@ -48,13 +51,44 @@ export default function Destinations() {
     setLoading(false);
   }
 
+  // Generate categories dynamically
+    const categories = useMemo(() => {
+      const unique = Array.from(
+        new Set(destinations.map((destination) => destination.country || "Other"))
+      );
+  
+      return ["All", ...unique];
+    }, [destinations]);
+
+     // Filter tours
+  const filtered =
+    active === "All"
+      ? destinations
+      : destinations.filter((destination) => destination.country === active);
+
   if (loading) {
     return <p>Loading destinations...</p>;
   }
 
   return (
     <>
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {/* Filters */}
+        <div className="flex flex-wrap justify-center gap-4 mt-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActive(cat)}
+              className={`px-6 py-2 rounded-full border transition cursor-pointer ${
+                active === cat
+                  ? "bg-[#b77e24] text-white border-[#b77e24]"
+                  : "border-[#b77e24] text-[#b77e24] hover:bg-[#b77e24] hover:text-white"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+    <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6 py-12">
       {destinations.map((destination) => (
         <Link
           key={destination.id}
@@ -62,12 +96,13 @@ export default function Destinations() {
           className="relative group rounded-[32px] overflow-hidden h-[400px] shadow-xl"
         >
           {/* Image */}
-          <img
+          <Image
             src={
               destination.destination_images?.[0]?.image_url ||
-              "/placeholder.jpg"
+              "/images/logo.svg"
             }
             alt={destination.name}
+            fill
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
 

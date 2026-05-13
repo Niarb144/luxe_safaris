@@ -24,6 +24,7 @@ export default function ToursPage() {
               alt="Safari landscape"
               fill
               priority
+              loading="eager"
               sizes="100vw"
               className="object-cover border rounded-lg"
               placeholder="blur"
