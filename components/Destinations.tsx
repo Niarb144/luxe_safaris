@@ -72,23 +72,35 @@ export default function Destinations() {
 
   return (
     <>
+    {/* Heading */}
+    <div className="text-center mt-20">
+      <h2 className="text-4xl font-bold text-[#3b2a1d]">
+        Destinations Across East Africa
+      </h2>
+
+      <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+        From the iconic Serengeti to the hidden gems of Rwanda, explore our curated selection of unforgettable safari destinations.
+      </p>
+    </div>
     {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mt-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className={`px-6 py-2 rounded-full border transition cursor-pointer ${
-                active === cat
-                  ? "bg-[#b77e24] text-white border-[#b77e24]"
-                  : "border-[#b77e24] text-[#b77e24] hover:bg-[#b77e24] hover:text-white"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-    <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6 py-12">
+    <div className="flex flex-wrap justify-center gap-4 mt-10">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          onClick={() => setActive(cat)}
+          className={`px-6 py-2 rounded-full border transition cursor-pointer ${
+            active === cat
+              ? "bg-[#b77e24] text-white border-[#b77e24]"
+              : "border-[#b77e24] text-[#b77e24] hover:bg-[#b77e24] hover:text-white"
+          }`}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+    <motion.div 
+      layout
+      className="grid grid-cols md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 py-12">
       {filtered.map((destination) => (
         <Link
           key={destination.id}
@@ -126,7 +138,7 @@ export default function Destinations() {
           </div>
         </Link>
       ))}
-    </section>
+    </motion.div>
     </>
   );
 }
