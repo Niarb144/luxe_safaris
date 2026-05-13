@@ -89,7 +89,7 @@ export default function Destinations() {
           ))}
         </div>
     <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6 py-12">
-      {destinations.map((destination) => (
+      {filtered.map((destination) => (
         <Link
           key={destination.id}
           href={`/destinations/${destination.slug}`}
