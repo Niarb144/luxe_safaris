@@ -4,13 +4,13 @@ import TourLayout from "@/components/tour/TourLayout";
 export default async function TourPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }) {
-  const { id } = await params;
+  const { slug } = await params;
 
-  if (!id || id === "undefined") {
-    console.error("Invalid ID:", id);
-    return <div>Invalid tour ID</div>;
+  if (!slug || slug === "undefined") {
+    console.error("Invalid slug:", slug);
+    return <div>Invalid tour slug</div>;
   }
 
   const { data, error } = await supabase
@@ -25,17 +25,19 @@ export default async function TourPage({
       tour_route_maps (*),
       tour_faqs (*)
     `)
-    .eq("id", id)
+    .eq("slug", slug)
     .single();
 
      // RELATED TOURS
   const { data: relatedTours } = await supabase
     .from("tours")
     .select(`
+      *,
       id,
       title,
       location,
-      tour_images(image_url)
+      tour_images(image_url),
+      slug
     `)
     .eq("location", data.location)
     .neq("id", data.id)

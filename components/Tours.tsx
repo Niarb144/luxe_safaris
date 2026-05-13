@@ -100,7 +100,7 @@ export default function ToursList() {
           {filtered.map((tour) => (
             <Link
               key={tour.id}
-              href={`/tours/${tour.id}`}
+              href={`/tours/${tour.slug}`}
               className="group relative overflow-hidden rounded-[32px] h-[400px] shadow-xl"
             >
               {/* Background Image */}
