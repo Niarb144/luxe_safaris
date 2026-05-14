@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 // Counter hook
 function useCountUp(end: number, duration: number = 2) {

@@ -71,10 +71,10 @@ export default function Destinations() {
   }
 
   return (
-    <>
+    <div className="bg-white mt-0 p-0 text-gray-800">
     {/* Heading */}
-    <div className="text-center mt-20">
-      <h2 className="text-4xl font-bold text-[#3b2a1d]">
+    <div className="text-center">
+      <h2 className="text-4xl font-bold text-[#3b2a1d] mt-10">
         Destinations Across East Africa
       </h2>
 
@@ -139,6 +139,6 @@ export default function Destinations() {
         </Link>
       ))}
     </motion.div>
-    </>
+    </div>
   );
 }

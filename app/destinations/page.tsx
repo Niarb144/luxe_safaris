@@ -15,7 +15,7 @@ export default function ToursPage() {
   }, []);
 
   return (
-    <>
+    <div className="bg-white">
     <section className="relative h-[90vh] w-full flex items-center justify-center text-center overflow-hidden">
           {/* Optimized Background Image */}
           <div className="absolute inset-0 border rounded-lg overflow-hidden">
@@ -56,7 +56,7 @@ export default function ToursPage() {
         </section>
         <Destinations />
         <WhyChooseLuxeSafaris />
-    </>
+    </div>
     
   );
 }
