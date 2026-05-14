@@ -15,6 +15,19 @@ export default async function DestinationPage({
 
   if (!destination) return null;
 
+  const { data: relatedTours } = await supabase
+  .from("tour_destinations")
+  .select(`
+    tours (
+      id,
+      title,
+      slug,
+      price,
+      location
+    )
+  `)
+  .eq("destination_id", destination.id);
+
   const destinationId = destination.id;
 
   const { data: facts } = await supabase
@@ -22,7 +35,7 @@ export default async function DestinationPage({
     .select("*")
     .eq("destination_id", destinationId);
 
-  const { data: highlight } = await supabase
+  const { data: highlights } = await supabase
     .from("destination_highlights")
     .select("*")
     .eq("destination_id", destinationId);
@@ -33,95 +46,194 @@ export default async function DestinationPage({
     .eq("destination_id", destinationId);
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-
+    <div className="min-h-screen bg-[#faf8f5] text-gray-900">
       {/* HERO */}
-      <div className="relative h-[520px] overflow-hidden">
+      <section className="relative h-[85vh] min-h-[620px] overflow-hidden">
         <img
-          src={images?.[0]?.image_url}
+          src={
+            images?.[0]?.image_url ||
+            "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+          }
+          alt={destination.name}
           className="w-full h-full object-cover"
         />
 
-        {/* soft gradient instead of dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+        {/* overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
 
-        <div className="absolute bottom-0 p-10">
-          <h1 className="text-5xl md:text-6xl font-bold text-white">
-            {destination.name}
-          </h1>
-          <p className="text-white/90 text-xl mt-2">
-            {destination.country}
-          </p>
+        {/* content */}
+        <div className="absolute bottom-0 left-0 w-full">
+          <div className="max-w-7xl mx-auto px-6 pb-16">
+            <div className="max-w-3xl">
+              {destination.country && (
+                <p className="uppercase tracking-[0.3em] text-white/70 text-sm mb-4">
+                  {destination.country}
+                </p>
+              )}
+
+              {destination.name && (
+                <h1 className="text-5xl md:text-7xl font-semibold text-white leading-tight">
+                  {destination.name}
+                </h1>
+              )}
+
+              {destination.description && (
+                <p className="mt-6 text-lg text-white/85 leading-relaxed max-w-2xl">
+                  {destination.description}
+                </p>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* CONTENT WRAPPER */}
-      <div className="max-w-6xl mx-auto px-6 py-12 space-y-16">
-
-        {/* DESCRIPTION */}
-        <section className="bg-white rounded-3xl shadow-sm border p-8">
-          <h2 className="text-2xl font-semibold mb-4">
-            About this destination
-          </h2>
-          <p className="text-gray-600 leading-relaxed text-lg">
-            {destination.description}
-          </p>
-        </section>
+      {/* CONTENT */}
+      <div className="max-w-7xl mx-auto px-6 py-20 space-y-24">
+        {/* GALLERY */}
+        {images && images.length > 1 && (
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {images.slice(1).map((image: any) => (
+              <div
+                key={image.id}
+                className="relative overflow-hidden rounded-[28px] h-[320px] group"
+              >
+                <img
+                  src={image.image_url}
+                  alt={destination.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                />
+              </div>
+            ))}
+          </section>
+        )}
 
         {/* HIGHLIGHTS */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6">
-            Highlights
-          </h2>
+        {highlights && highlights.length > 0 && (
+          <section className="grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-4">
+              <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
+                Experience
+              </p>
 
-          <div className="grid md:grid-cols-2 gap-5">
-            {highlight?.map((item: any) => (
-              <div
-                key={item.id}
-                className="bg-white border rounded-2xl p-6 shadow-sm hover:shadow-md transition"
-              >
-                <p className="text-gray-700 font-medium">
-                  {item.highlight}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+              <h2 className="text-4xl font-semibold leading-tight">
+                Destination Highlights
+              </h2>
+            </div>
+
+            <div className="lg:col-span-8 grid sm:grid-cols-2 gap-8">
+              {highlights.map((item: any, index: number) => (
+                <div key={item.id} className="space-y-4">
+                  <span className="text-4xl text-gray-300 font-light">
+                    0{index + 1}
+                  </span>
+
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    {item.highlight}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* FACTS */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6">
-            Quick Facts
-          </h2>
+        {facts && facts.length > 0 && (
+          <section className="grid lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4">
+              <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
+                Information
+              </p>
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            {facts?.map((fact: any) => (
-              <div
-                key={fact.id}
-                className="bg-white border rounded-2xl p-5 flex items-start gap-3 shadow-sm"
-              >
-                <span className="text-green-600 font-bold">•</span>
-                <p className="text-gray-700">{fact.fact}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+              <h2 className="text-4xl font-semibold">
+                Quick Facts
+              </h2>
+            </div>
+
+            <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+              {facts.map((fact: any) => (
+                <div
+                  key={fact.id}
+                  className="flex items-start gap-4"
+                >
+                  <div className="w-2 h-2 rounded-full bg-black mt-3" />
+
+                  <p className="text-gray-700 leading-relaxed text-lg">
+                    {fact.fact}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* MAP */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6">
-            Location
-          </h2>
+        {destination.map_url && (
+          <section className="space-y-8">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
+                Explore
+              </p>
 
-          <div className="rounded-3xl overflow-hidden border shadow-sm">
-            <iframe
-              src={destination.map_url}
-              className="w-full h-[450px]"
-              loading="lazy"
-            />
-          </div>
-        </section>
+              <h2 className="text-4xl font-semibold">
+                Location
+              </h2>
+            </div>
 
+            <div className="overflow-hidden rounded-[32px] shadow-xl">
+              <iframe
+                src={destination.map_url}
+                className="w-full h-[500px]"
+                loading="lazy"
+              />
+            </div>
+          </section>
+        )}
+
+        {relatedTours && relatedTours.length > 0 && (
+          <section className="space-y-8">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
+                Safaris
+              </p>
+
+              <h2 className="text-4xl font-semibold">
+                Tours in {destination.name}
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {relatedTours.map((item: any) => {
+                const tour = item.tours;
+
+                return (
+                  <a
+                    key={tour.id}
+                    href={`/tours/${tour.slug}`}
+                    className="group bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
+                  >
+                    <div className="p-6 space-y-4">
+                      <h3 className="text-2xl font-semibold group-hover:opacity-70 transition">
+                        {tour.title}
+                      </h3>
+
+                      {tour.location && (
+                        <p className="text-gray-500">
+                          {tour.location}
+                        </p>
+                      )}
+
+                      {tour.price && (
+                        <p className="text-lg font-medium">
+                          From ${tour.price}
+                        </p>
+                      )}
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );
