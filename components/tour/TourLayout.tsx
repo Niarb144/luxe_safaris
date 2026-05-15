@@ -116,10 +116,34 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
             initial={{ opacity: 0, y: 40 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight drop-shadow-lg"
+            className="text-3xl md:text-4xl lg:text-4xl font-bold text-white leading-tight drop-shadow-lg"
           >
             {tour.title}
           </motion.h1>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={loaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+            className="flex gap-2 flex-wrap text-lg text-white mt-4"
+          >
+            {tour.tour_holiday_types?.map(
+            (type: any) => (
+
+            <span
+            key={type.holiday_types.id}
+            className="
+            px-3 py-1
+            bg-[#041f0e]/20
+            text-[#b77e24]
+            rounded-full
+            text-sm
+            "
+            >
+            {type.holiday_types.name}
+            </span>
+
+            ))}
+          </motion.div>
         </div>
       </section>
 

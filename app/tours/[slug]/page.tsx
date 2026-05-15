@@ -16,14 +16,21 @@ export default async function TourPage({
   const { data, error } = await supabase
     .from("tours")
     .select(`
-      *,
-      tour_images (*),
-      tour_itinerary (*),
-      tour_highlights (*),
-      tour_inclusions (*),
-      tour_exclusions (*),
-      tour_route_maps (*),
-      tour_faqs (*)
+        *,
+        tour_images(*),
+        tour_itinerary(*),
+        tour_highlights(*),
+        tour_inclusions(*),
+        tour_exclusions(*),
+        tour_route_maps(*),
+        tour_faqs(*),
+
+        tour_holiday_types(
+            holiday_types(
+                id,
+                name
+            )
+        )
     `)
     .eq("slug", slug)
     .single();
@@ -43,7 +50,7 @@ export default async function TourPage({
     .neq("id", data.id)
     .limit(3);
 
-    const mainImage =
+  const mainImage =
     data?.tour_images?.find((img: any) => img.is_main === true)
       ?.image_url || "/images/img4.jpg";
 
