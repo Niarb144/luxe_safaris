@@ -133,7 +133,7 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
             key={type.holiday_types.id}
             className="
             px-3 py-1
-            bg-[#041f0e]/20
+            bg-[#041f0e]/70
             text-[#b77e24]
             rounded-full
             text-sm
