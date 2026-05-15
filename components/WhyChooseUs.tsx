@@ -51,7 +51,7 @@ const features = [
 
 export default function WhyChooseLuxeSafaris() {
   return (
-    <section className="relative py-28 bg-[#0d1510] overflow-hidden">
+    <section className="relative w-full py-28 bg-[#0d1510] overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.15),transparent_35%)]" />
 

@@ -32,7 +32,7 @@ const partners = [
 
 export default function AccreditationSection() {
   return (
-    <section className="bg-[#f5f3ee] py-24">
+    <section className="bg-[#f5f3ee] py-24 w-full">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <motion.div

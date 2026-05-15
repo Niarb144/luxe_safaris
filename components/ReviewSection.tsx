@@ -38,7 +38,7 @@ const reviews = [
 
 export default function ReviewsSection() {
   return (
-    <section className="relative py-24 px-6 bg-[#041f0e] overflow-hidden">
+    <section className="relative w-full py-24 px-6 bg-[#041f0e] overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.4),transparent_40%)]" />
 
