@@ -15,7 +15,7 @@ export default function ToursList() {
 
   const search = searchParams.get("search") || "";
   const destination = searchParams.get("destination") || "";
-  const days = searchParams.get("days") || "";
+  const duration = searchParams.get("duration") || "";
   const holidayType = searchParams.get("type") || "";
 
   useEffect(() => {
@@ -121,13 +121,12 @@ export default function ToursList() {
         destination
       );
 
-    // Days filter
-    const daysMatch =
-      !days ||
+    // Duration filter
+    const durationMatch =
+      !duration ||
       String(
-        tour.days ||
         tour.duration
-      ) === days;
+      ) === duration;
 
     // Holiday type filter
     const holidayMatch =
@@ -140,7 +139,7 @@ export default function ToursList() {
       locationMatch &&
       searchMatch &&
       destinationMatch &&
-      daysMatch &&
+      durationMatch &&
       holidayMatch
     );
   });

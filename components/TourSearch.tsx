@@ -13,13 +13,13 @@ export default function TourSearch() {
 
   const [search, setSearch] = useState("");
   const [destination, setDestination] = useState("");
-  const [days, setDays] = useState("");
+  const [duration, setDuration] = useState("");
   const [holidayType, setHolidayType] = useState("");
 
   // dropdown data
   const [destinations, setDestinations] = useState<any[]>([]);
   const [holidayTypes, setHolidayTypes] = useState<any[]>([]);
-  const [daysOptions, setDaysOptions] = useState<number[]>([]);
+  const [durationOptions, setDurationOptions] = useState<string[]>([]);
 
   useEffect(() => {
     fetchFilters();
@@ -39,21 +39,22 @@ export default function TourSearch() {
       .order("name");
 
     // days from tours
-    const { data: toursData } = await supabase
+    const { data: toursData } =
+    await supabase
       .from("tours")
-      .select("days");
+      .select("duration");
 
-    const uniqueDays = [
-      ...new Set(
-        toursData
-          ?.map((t) => t.days)
-          .filter(Boolean)
-      ),
-    ].sort((a, b) => a - b);
+    const uniqueDurations = [
+    ...new Set(
+      toursData
+      ?.map(t => t.duration)
+      .filter(Boolean)
+    )
+    ];
 
     setDestinations(destinationData || []);
     setHolidayTypes(typeData || []);
-    setDaysOptions(uniqueDays);
+    setDurationOptions(uniqueDurations);
   }
 
   const handleSearch = () => {
@@ -61,7 +62,7 @@ export default function TourSearch() {
 
     if (search) params.set("search", search);
     if (destination) params.set("destination", destination);
-    if (days) params.set("days", days);
+    if (duration) params.set("duration", duration);
     if (holidayType) params.set("type", holidayType);
 
     router.push(`/tours?${params.toString()}`);
@@ -129,7 +130,7 @@ export default function TourSearch() {
                 <select
                   value={destination}
                   onChange={(e)=>setDestination(e.target.value)}
-                  className="border p-3 rounded text-gray-700"
+                  className="border p-3 rounded text-gray-700 cursor-pointer"
                 >
                   <option value="">
                     Destination
@@ -146,19 +147,22 @@ export default function TourSearch() {
                 </select>
 
 
-                {/* Days */}
+                {/* Duration */}
                 <select
-                  value={days}
-                  onChange={(e)=>setDays(e.target.value)}
+                  value={duration}
+                  onChange={(e)=>setDuration(e.target.value)}
                   className="border p-3 rounded text-gray-700"
                 >
                   <option value="">
                     Days
                   </option>
 
-                  {daysOptions.map((d)=>(
-                    <option key={d} value={d}>
-                      {d} Days
+                  {durationOptions.map((duration)=>(
+                    <option
+                      key={duration}
+                      value={duration}
+                    >
+                      {duration}
                     </option>
                   ))}
                 </select>
@@ -168,7 +172,7 @@ export default function TourSearch() {
                 <select
                   value={holidayType}
                   onChange={(e)=>setHolidayType(e.target.value)}
-                  className="border p-3 rounded text-gray-700"
+                  className="border p-3 rounded text-gray-700 cursor-pointer"
                 >
                   <option value="">
                     Holiday Type
