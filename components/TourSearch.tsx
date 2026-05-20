@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Search, X } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabase";
 
 export default function TourSearch() {
   const router = useRouter();
@@ -14,6 +15,46 @@ export default function TourSearch() {
   const [destination, setDestination] = useState("");
   const [days, setDays] = useState("");
   const [holidayType, setHolidayType] = useState("");
+
+  // dropdown data
+  const [destinations, setDestinations] = useState<any[]>([]);
+  const [holidayTypes, setHolidayTypes] = useState<any[]>([]);
+  const [daysOptions, setDaysOptions] = useState<number[]>([]);
+
+  useEffect(() => {
+    fetchFilters();
+  }, []);
+
+  async function fetchFilters() {
+    // destinations
+    const { data: destinationData } = await supabase
+      .from("destinations")
+      .select("id,name")
+      .order("name");
+
+    // holiday types
+    const { data: typeData } = await supabase
+      .from("holiday_types")
+      .select("id,name")
+      .order("name");
+
+    // days from tours
+    const { data: toursData } = await supabase
+      .from("tours")
+      .select("days");
+
+    const uniqueDays = [
+      ...new Set(
+        toursData
+          ?.map((t) => t.days)
+          .filter(Boolean)
+      ),
+    ].sort((a, b) => a - b);
+
+    setDestinations(destinationData || []);
+    setHolidayTypes(typeData || []);
+    setDaysOptions(uniqueDays);
+  }
 
   const handleSearch = () => {
     const params = new URLSearchParams();
@@ -34,16 +75,15 @@ export default function TourSearch() {
         onClick={() => setOpen(true)}
         className="p-2 bg-[#b77e24] rounded-full cursor-pointer"
       >
-        <Search className="text-white"/>
+        <Search className="text-white" />
       </button>
 
       <AnimatePresence>
         {open && (
-
           <motion.div
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            exit={{opacity:0}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="
             fixed inset-0
             bg-black/50
@@ -51,11 +91,10 @@ export default function TourSearch() {
             flex items-center justify-center
             "
           >
-
             <motion.div
-              initial={{scale:0.8}}
-              animate={{scale:1}}
-              exit={{scale:0.8}}
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
               className="
               bg-white
               rounded-xl
@@ -65,12 +104,11 @@ export default function TourSearch() {
               relative
               "
             >
-
               <button
-              onClick={()=>setOpen(false)}
-              className="absolute top-4 right-4 cursor-pointer"
+                onClick={() => setOpen(false)}
+                className="absolute top-4 right-4 cursor-pointer"
               >
-                  <X/>
+                <X />
               </button>
 
               <h2 className="text-2xl mb-6 text-gray-800 font-bold">
@@ -79,69 +117,90 @@ export default function TourSearch() {
 
               <div className="grid gap-4">
 
+                {/* Tour name */}
                 <input
-                placeholder="Search by tour name..."
-                value={search}
-                onChange={(e)=>setSearch(e.target.value)}
-                className="border p-3 rounded text-gray-700"
+                  placeholder="Search by tour name..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="border p-3 rounded text-gray-700"
                 />
 
-                <input
-                placeholder="Destination"
-                value={destination}
-                onChange={(e)=>setDestination(e.target.value)}
-                className="border p-3 rounded text-gray-700"
-                />
-
-                <input
-                placeholder="Days"
-                value={days}
-                onChange={(e)=>setDays(e.target.value)}
-                className="border p-3 rounded text-gray-700"
-                />
-
+                {/* Destination */}
                 <select
-                value={holidayType}
-                onChange={(e)=>setHolidayType(e.target.value)}
-                className="border p-3 rounded text-gray-700"
+                  value={destination}
+                  onChange={(e)=>setDestination(e.target.value)}
+                  className="border p-3 rounded text-gray-700"
                 >
-                    <option value="">
-                        Holiday Type
-                    </option>
+                  <option value="">
+                    Destination
+                  </option>
 
-                    <option value="Adventure">
-                        Adventure
+                  {destinations.map((item)=>(
+                    <option
+                      key={item.id}
+                      value={item.name}
+                    >
+                      {item.name}
                     </option>
-
-                    <option value="Luxury">
-                        Luxury
-                    </option>
-
-                    <option value="Family">
-                        Family
-                    </option>
-
+                  ))}
                 </select>
 
-                <button
-                onClick={handleSearch}
-                className="
-                bg-[#b77e24]
-                text-white
-                py-3
-                rounded
-                cursor-pointer
-                "
+
+                {/* Days */}
+                <select
+                  value={days}
+                  onChange={(e)=>setDays(e.target.value)}
+                  className="border p-3 rounded text-gray-700"
                 >
-                    Search Tours
+                  <option value="">
+                    Days
+                  </option>
+
+                  {daysOptions.map((d)=>(
+                    <option key={d} value={d}>
+                      {d} Days
+                    </option>
+                  ))}
+                </select>
+
+
+                {/* Holiday types */}
+                <select
+                  value={holidayType}
+                  onChange={(e)=>setHolidayType(e.target.value)}
+                  className="border p-3 rounded text-gray-700"
+                >
+                  <option value="">
+                    Holiday Type
+                  </option>
+
+                  {holidayTypes.map((type)=>(
+                    <option
+                      key={type.id}
+                      value={type.name}
+                    >
+                      {type.name}
+                    </option>
+                  ))}
+                </select>
+
+
+                <button
+                  onClick={handleSearch}
+                  className="
+                  bg-[#b77e24]
+                  text-white
+                  py-3
+                  rounded
+                  cursor-pointer
+                  "
+                >
+                  Search Tours
                 </button>
 
               </div>
-
             </motion.div>
-
           </motion.div>
-
         )}
       </AnimatePresence>
     </>
