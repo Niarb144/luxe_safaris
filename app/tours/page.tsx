@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense} from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -52,7 +53,9 @@ export default function ToursPage() {
             </motion.div>
           </div>
         </section>
-        <ToursList />
+        <Suspense fallback={<div>Loading tours...</div>}>
+          <ToursList />
+        </Suspense>
     
     </>
     
