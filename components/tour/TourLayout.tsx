@@ -64,6 +64,7 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
     { id: "itinerary", label: "Itinerary" },
     { id: "route", label: "Route" },
     { id: "gallery", label: "Gallery" },
+    { id: "why-choose", label: "Why Choose" },
     { id: "faq", label: "FAQs" },
   ];
 
@@ -224,8 +225,16 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
         >
           <TourGallery images={tour.tour_images} />
         </section>
-        
-         {/* FAQs */}
+
+        {/* Why choose this safari */}
+        <section className="mb-10 mt-20 max-w-4xl mx-auto px-6" id="why-choose" data-section="why-choose">
+          <h2 className="text-2xl font-semibold mb-3">Why Choose This Safari</h2>
+          <p className="text-gray-400">
+            {tour.why_choose_safari || "No description provided."}
+          </p>
+        </section>
+
+        {/* FAQs */}
         <section id="faq" data-section="faqs" className="scroll-mt-32">
           <TourFAQS items={tour.tour_faqs} />
         </section>
