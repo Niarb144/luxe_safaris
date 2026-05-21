@@ -142,6 +142,10 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
+            <div className="px-6 py-4 flex items-center gap-4">
+              <p className="text-gray-600">Search</p>
+              <TourSearch />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
