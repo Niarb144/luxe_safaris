@@ -4,7 +4,7 @@ import { Suspense} from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import SafariCTA from "../../components/QuizButton";
+import SafariCTA from "@/components/QuizButton";
 import ToursList from "@/components/Tours"; 
 
 export default function ToursPage() {
