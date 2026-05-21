@@ -5,19 +5,40 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useSearchParams } from "next/navigation";
 
-export default function ToursList() {
+
+type ToursListProps = {
+  searchParams?: {
+    search?: string;
+    destination?: string;
+    duration?: string;
+    type?: string;
+  };
+};
+
+export default function ToursList({
+  searchParams,
+}: ToursListProps) {
+
   const [tours, setTours] = useState<any[]>([]);
   const [active, setActive] = useState("All");
 
-  const searchParams = useSearchParams();
 
-  const search = searchParams.get("search") || "";
-  const destination = searchParams.get("destination") || "";
-  const duration = searchParams.get("duration") || "";
-  const holidayType = searchParams.get("type") || "";
+  // read params passed from page.tsx
+  const search =
+    searchParams?.search || "";
 
+  const destination =
+    searchParams?.destination || "";
+
+  const duration =
+    searchParams?.duration || "";
+
+  const holidayType =
+    searchParams?.type || "";
+
+// export default function ToursList() {
+    
   useEffect(() => {
     async function fetchTours() {
       let query = supabase
