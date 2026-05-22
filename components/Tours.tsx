@@ -168,7 +168,7 @@ export default function ToursList({
 
 
   return (
-    <section className="py-20 bg-[#f5f1ea] w-full min-h-screen">
+    <section className="py-4 bg-[#f5f1ea] w-full min-h-screen">
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -186,7 +186,7 @@ export default function ToursList({
 
 
         {/* Existing category filters */}
-        <div className="flex flex-wrap justify-center gap-4 mt-10">
+        <div className="flex flex-wrap justify-center gap-4 mt-2">
 
           {categories.map((cat) => (
 
@@ -216,7 +216,7 @@ export default function ToursList({
           md:grid-cols-2
           lg:grid-cols-4
           gap-8
-          mt-14
+          mt-4
           "
         >
 

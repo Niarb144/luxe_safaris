@@ -14,7 +14,7 @@ export default function SafariHero() {
 
   return (
     <section className="
-    relative h-[90vh]
+    relative h-[60vh]
     w-full flex
     items-center
     justify-center
