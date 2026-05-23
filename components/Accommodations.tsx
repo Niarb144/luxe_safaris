@@ -108,7 +108,7 @@ export default function Accommodations() {
           {/* Image */}
           <Image
             src={
-              accommodation.destination_images?.[0]?.image_url ||
+              accommodation.images?.[0] ||
               "/images/logo.svg"
             }
             alt={accommodation.hotel_name}
