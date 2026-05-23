@@ -16,25 +16,36 @@ export default async function TourPage({
   const { data, error } = await supabase
     .from("tours")
     .select(`
-        *,
-        tour_images(*),
-        tour_itinerary(*),
-        tour_highlights(*),
-        tour_inclusions(*),
-        tour_exclusions(*),
-        tour_route_maps(*),
-        tour_faqs(*),
+    *,
+    tour_destinations(
+        destination_id,
 
-        tour_holiday_types(
-            holiday_types(
-                id,
-                name
-            )
+        destinations(
+            id,
+            name
         )
-    `)
-    .eq("slug", slug)
-    .single();
+    ),
 
+    tour_images(*),
+    tour_itinerary(*),
+    tour_highlights(*),
+    tour_inclusions(*),
+    tour_exclusions(*),
+    tour_route_maps(*),
+    tour_faqs(*),
+
+    tour_holiday_types(
+        holiday_types(
+            id,
+            name
+        )
+    )
+
+    `)
+
+    .eq("slug", slug)
+
+    .single();
      // RELATED TOURS
   const { data: relatedTours } = await supabase
     .from("tours")
@@ -50,6 +61,32 @@ export default async function TourPage({
     .neq("id", data.id)
     .limit(3);
 
+  // ACCOMMODATIONS
+  const destinationIds =
+    data.tour_destinations?.map(
+    (d:any)=>
+    d.destination_id
+    ) || [];
+
+
+    let accommodations = [];
+
+    if(destinationIds.length){
+
+    const { data: accommodationData } = await supabase
+      .from("accommodations")
+      .select("*")
+      .in(
+      "destination_id",
+
+      destinationIds
+      );
+
+      accommodations = accommodationData || [];
+
+    }
+
+
   const mainImage =
     data?.tour_images?.find((img: any) => img.is_main === true)
       ?.image_url || "/images/img4.jpg";
@@ -64,5 +101,6 @@ export default async function TourPage({
       tour={data} 
       mainImage={mainImage}
       relatedTours={relatedTours} 
+      accommodations={accommodations}
     />);
 }

@@ -10,13 +10,14 @@ import TourExclusions from "./TourExclusions";
 import RelatedTours from "./RelatedTours";
 import TourFAQS from "./TourFAQS";
 import TourHighlights from "./TourHighlights";
+import Accommodations from "./Accommodations";
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function TourLayout({ tour, mainImage, relatedTours }: any) {
+export default function TourLayout({ tour, mainImage, relatedTours, accommodations }: any) {
   const [loaded, setLoaded] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
 
@@ -64,6 +65,7 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
     { id: "itinerary", label: "Itinerary" },
     { id: "route", label: "Route" },
     { id: "gallery", label: "Gallery" },
+    { id: "accommodations", label: "Accommodations" },
     { id: "why-choose", label: "Why Choose" },
     { id: "faq", label: "FAQs" },
   ];
@@ -224,6 +226,12 @@ export default function TourLayout({ tour, mainImage, relatedTours }: any) {
           className="scroll-mt-32"
         >
           <TourGallery images={tour.tour_images} />
+        </section>
+
+        {/* ACCOMMODATIONS */}
+        <section className="mb-10 mt-20 max-w-4xl mx-auto px-6" id="accommodations" data-section="accommodations">
+          <h2 className="text-2xl font-semibold mb-3">Available Accommodations</h2>
+          <Accommodations accommodations={accommodations} />
         </section>
 
         {/* Why choose this safari */}
