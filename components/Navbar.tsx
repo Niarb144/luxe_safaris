@@ -14,7 +14,7 @@ const links = [
   { name: "Home", href: "/" },
   { name: "Our Tours", href: "/tours" },
   { name: "Destination", href: "/destinations" },
-  { name: "Accommodation", href: "/accommodation" },
+  { name: "Accommodation", href: "/accommodations" },
   { name: "Practical Info", href: "/info" },
   { name: "Contact", href: "/contact" },
   { name: "Blog", href: "/blog" },
