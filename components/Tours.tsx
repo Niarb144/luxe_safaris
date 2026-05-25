@@ -284,7 +284,7 @@ export default function ToursList({
 
                   <h3 className="
                   text-white
-                  text-2xl
+                  text-lg
                   font-extrabold
                   ">
                     {tour.title}
@@ -292,8 +292,8 @@ export default function ToursList({
 
                   <p className="
                   text-white/80
-                  mt-4
-                  line-clamp-2
+                  mt-2
+                  line-clamp-1
                   text-sm
                   ">
                     {tour.description}
@@ -302,12 +302,12 @@ export default function ToursList({
                   <div className="
                   flex
                   gap-4
-                  mt-8
+                  mt-6
                   flex-wrap
                   ">
 
                     <div className="
-                    rounded-2xl
+                    rounded-lg
                     px-5 py-2
                     backdrop-blur-md
                     bg-white/10
@@ -328,6 +328,7 @@ export default function ToursList({
                       <span className="
                       text-white
                       font-bold
+                      text-sm
                       ">
                         From ${tour.price}
                       </span>

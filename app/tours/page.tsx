@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import SafariHero from "@/components/SafariHero";
 import ToursList from "@/components/Tours";
+import AccreditationSection from "@/components/Acrreditation";
 
 export default async function ToursPage({
   searchParams,
@@ -22,6 +23,8 @@ export default async function ToursPage({
       <Suspense fallback={<div>Loading tours...</div>}>
         <ToursList searchParams={params} />
       </Suspense>
+
+      <AccreditationSection />
     </>
   );
 }
