@@ -142,7 +142,7 @@ export default function BookingModal({
 
               {/* Full Name */}
               <div className="space-y-1">
-                <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
                   Full Name
                 </label>
                 <input
@@ -155,7 +155,7 @@ export default function BookingModal({
 
               {/* Email */}
               <div className="space-y-1">
-                <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
                   Email Address
                 </label>
                 <input
@@ -169,7 +169,7 @@ export default function BookingModal({
 
               {/* Phone */}
               <div className="space-y-1">
-                <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
                   Phone Number
                 </label>
                 <input
@@ -182,7 +182,7 @@ export default function BookingModal({
               {/* Adults / Children */}
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                  <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
                     Adults
                   </label>
                   <input
@@ -194,7 +194,7 @@ export default function BookingModal({
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                  <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
                     Children
                   </label>
                   <input
@@ -209,7 +209,7 @@ export default function BookingModal({
 
               {/* Travel Date */}
               <div className="space-y-1">
-                <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
                   Travel Date
                 </label>
                 <input
@@ -222,7 +222,7 @@ export default function BookingModal({
 
               {/* Special Requests */}
               <div className="space-y-1">
-                <label className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
                   Special Requests
                 </label>
                 <textarea
