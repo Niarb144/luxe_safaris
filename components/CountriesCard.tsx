@@ -12,56 +12,28 @@ export default function CountryCards() {
 
   useEffect(() => {
     async function fetchCountries() {
+      setLoading(true);
+
       const { data, error } = await supabase
-        .from("tours")
-        .select(`
-          id,
-          location,
-          tour_images (
-            image_url,
-            is_main
-          )
-        `);
+        .from("country_cards")
+        .select("*")
+        .order("tours", { ascending: false });
 
       if (error) {
         console.error(error);
+        setLoading(false);
         return;
       }
 
-      const grouped = data.reduce((acc: any, tour: any) => {
-        const country = tour.location;
-
-        const mainImage =
-          tour.tour_images?.find((img: any) => img.is_main)?.image_url ||
-          tour.tour_images?.[0]?.image_url ||
-          null;
-
-        if (!acc[country]) {
-          acc[country] = {
-            id: country,
-            name: country,
-            image: mainImage,
-            tours: 0,
-          };
-        }
-
-        acc[country].tours += 1;
-
-        if (!acc[country].image && mainImage) {
-          acc[country].image = mainImage;
-        }
-
-        return acc;
-      }, {});
-
-      setCountries(Object.values(grouped));
+      setCountries(data || []);
       setLoading(false);
     }
 
     fetchCountries();
   }, []);
 
-  if (loading) return <div className="py-20 text-center">Loading...</div>;
+  if (loading)
+    return <div className="py-20 text-center">Loading...</div>;
 
   return (
     <section className="w-full py-16 bg-[#faf6f1]">
@@ -78,14 +50,14 @@ export default function CountryCards() {
           {countries.map((country) => (
             <Link
               key={country.id}
-              href={`/tours?location=${encodeURIComponent(country.name)}`}
+              href={`/tours?country=${country.slug}`}
             >
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 className="relative rounded-2xl overflow-hidden shadow-lg cursor-pointer"
               >
-                <div className="relative h-[300px] w-full">
 
+                <div className="relative h-[300px] w-full">
                   {country.image ? (
                     <Image
                       src={country.image}
@@ -96,7 +68,6 @@ export default function CountryCards() {
                   ) : (
                     <div className="w-full h-full bg-gray-300" />
                   )}
-
                 </div>
 
                 <div className="absolute inset-0 bg-black/40" />
@@ -112,6 +83,7 @@ export default function CountryCards() {
                   </div>
 
                 </div>
+
               </motion.div>
             </Link>
           ))}
