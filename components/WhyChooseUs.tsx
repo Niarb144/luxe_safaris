@@ -9,6 +9,7 @@ import {
   BadgeDollarSign,
   Users,
 } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
@@ -142,10 +143,7 @@ export default function WhyChooseLuxeSafaris() {
                 authenticity, and exceptional value.
               </p>
             </div>
-
-            <button className="bg-[#d4af37] hover:bg-[#c39f2e] text-black font-bold px-8 py-4 rounded-2xl transition duration-300 shadow-lg">
-              Explore Tours
-            </button>
+            <Link className="bg-[#d4af37] hover:bg-[#c39f2e] text-black font-bold px-8 py-4 rounded-2xl transition duration-300 shadow-lg" href="/tours">Explore Tours</Link>
           </div>
         </motion.div>
       </div>

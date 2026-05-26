@@ -78,35 +78,6 @@ export default function AccreditationSection() {
           ))}
         </div>
 
-        {/* Security Badges */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-8"
-        >
-          <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-200">
-            <div className="w-3 h-3 rounded-full bg-green-600" />
-            <span className="text-sm font-medium text-gray-700">
-              Secure Payments
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-200">
-            <div className="w-3 h-3 rounded-full bg-[#d4af37]" />
-            <span className="text-sm font-medium text-gray-700">
-              Verified Safari Operator
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-200">
-            <div className="w-3 h-3 rounded-full bg-[#1f5b43]" />
-            <span className="text-sm font-medium text-gray-700">
-              Trusted Worldwide
-            </span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
