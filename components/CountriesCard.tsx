@@ -2,94 +2,121 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
+import Link from "next/link";
 
-export type CountryTour = {
-  id: string;
-  name: string;
-  image: string;
-  tours: number;
-};
+export default function CountryCards() {
+  const [countries, setCountries] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-type Props = {
-  data: CountryTour[];
-};
+  useEffect(() => {
+    async function fetchCountries() {
+      const { data, error } = await supabase
+        .from("tours")
+        .select(`
+          id,
+          location,
+          tour_images (
+            image_url,
+            is_main
+          )
+        `);
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
+      if (error) {
+        console.error(error);
+        return;
+      }
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.6 },
-  },
-};
+      const grouped = data.reduce((acc: any, tour: any) => {
+        const country = tour.location;
 
-export default function CountryCards({ data }: Props) {
+        const mainImage =
+          tour.tour_images?.find((img: any) => img.is_main)?.image_url ||
+          tour.tour_images?.[0]?.image_url ||
+          null;
+
+        if (!acc[country]) {
+          acc[country] = {
+            id: country,
+            name: country,
+            image: mainImage,
+            tours: 0,
+          };
+        }
+
+        acc[country].tours += 1;
+
+        if (!acc[country].image && mainImage) {
+          acc[country].image = mainImage;
+        }
+
+        return acc;
+      }, {});
+
+      setCountries(Object.values(grouped));
+      setLoading(false);
+    }
+
+    fetchCountries();
+  }, []);
+
+  if (loading) return <div className="py-20 text-center">Loading...</div>;
+
   return (
     <section className="w-full py-16 bg-[#faf6f1]">
       <div className="max-w-6xl mx-auto px-4">
-        {/* Header */}
+
         <div className="text-center mb-10">
-          <p className="tracking-widest text-sm text-gray-500 uppercase">
-            Explore East Africa
-          </p>
-          <h2 className="text-3xl md:text-5xl font-semibold text-gray-800 mt-2">
-            Extraordinary tours across East Africa
+          <h2 className="text-2xl md:text-4xl font-semibold text-gray-900">
+            Explore Extraordinary Tours Across Africa
           </h2>
         </div>
 
-        {/* Cards */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
-          {data.map((country) => (
-            <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          {countries.map((country) => (
+            <Link
               key={country.id}
-              variants={cardVariants}
-              whileHover={{
-                scale: 1.03,
-                y: -6,
-                transition: { duration: 0.2 },
-              }}
-              className="relative rounded-2xl overflow-hidden shadow-lg cursor-pointer group"
+              href={`/tours?location=${encodeURIComponent(country.name)}`}
             >
-              {/* Image */}
-              <div className="relative h-[420px] w-full">
-                <Image
-                  src={country.image}
-                  alt={country.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                className="relative rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+              >
+                <div className="relative h-[300px] w-full">
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                  {country.image ? (
+                    <Image
+                      src={country.image}
+                      alt={country.name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gray-300" />
+                  )}
 
-              {/* Text */}
-              <div className="absolute bottom-0 w-full p-5 text-white">
-                <h3 className="text-2xl font-semibold">{country.name}</h3>
-
-                <div className="mt-3 inline-flex items-center px-4 py-1 rounded-full bg-orange-500 text-sm font-medium">
-                  {country.tours} TOURS
                 </div>
-              </div>
-            </motion.div>
+
+                <div className="absolute inset-0 bg-black/40" />
+
+                <div className="absolute bottom-6 left-6 text-white">
+
+                  <h3 className="text-2xl font-semibold">
+                    {country.name}
+                  </h3>
+
+                  <div className="mt-2 inline-block bg-[#b77e24] px-4 py-1 rounded-full text-sm">
+                    {country.tours} TOUR{country.tours !== 1 ? "S" : ""}
+                  </div>
+
+                </div>
+              </motion.div>
+            </Link>
           ))}
-        </motion.div>
+
+        </div>
       </div>
     </section>
   );
