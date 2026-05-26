@@ -27,7 +27,7 @@ export default function ToursList({ searchParams }: ToursListProps) {
 
   useEffect(() => {
     async function fetchTours() {
-      let query = supabase.from("tours").select(`
+      let query = supabase.from("tours_with_countries").select(`
         *,
         tour_images (
           image_url,
@@ -44,6 +44,13 @@ export default function ToursList({ searchParams }: ToursListProps) {
             id,
             name
           )
+        ),
+        tour_countries (
+          countries (
+            id,
+            name,
+            slug
+          )
         )
       `);
 
@@ -57,14 +64,24 @@ export default function ToursList({ searchParams }: ToursListProps) {
       const formatted = data.map((tour) => {
         const mainImage = tour.tour_images?.find((img: any) => img.is_main);
 
+        const countries =
+          tour.tour_countries?.map((tc: any) => tc.countries?.name) || [];
+
+        const countrySlugs =
+          tour.tour_countries?.map((tc: any) => tc.countries?.slug) || [];
+
+
         return {
           ...tour,
           coverImage: mainImage?.image_url || "/images/logo.svg",
           holidayTypes: tour.tour_holiday_types?.map((t: any) => t.holiday_types?.name) || [],
           destinations: tour.tour_destinations?.map((d: any) => d.destinations?.name) || [],
+          countries,
+          countrySlugs,
         };
+        
       });
-
+      console.log("Fetched tours:", formatted);
       setTours(formatted);
     }
 
@@ -74,14 +91,14 @@ export default function ToursList({ searchParams }: ToursListProps) {
   // Existing location categories
   const categories = useMemo(() => {
     const unique = Array.from(
-      new Set(tours.map((tour) => tour.location || "Other"))
+      new Set(tours.flatMap((tour) => tour.country_slugs || []))
     );
     return ["All", ...unique];
   }, [tours]);
 
   const filteredTours = tours.filter((tour) => {
     // Existing location filter buttons
-    const locationMatch = active === "All" ? true : tour.location === active;
+    const locationMatch = active === "All" ? true : tour.country_slugs?.includes(active);
 
     // Search by title
     const searchMatch = !search || tour.title?.toLowerCase().includes(search.toLowerCase());
@@ -149,7 +166,7 @@ export default function ToursList({ searchParams }: ToursListProps) {
               <div className="relative h-full flex flex-col justify-between p-7">
                 <div>
                   <span className="text-white uppercase font-bold text-sm">
-                    {tour.location || "Safari"}
+                    {tour.country_slugs?.[0] || "Safari"}
                   </span>
                 </div>
 
