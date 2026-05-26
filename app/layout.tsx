@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ClientLoaderWrapper from "@/components/ClientLoaderWrapper";
 import WhatsAppButton from "@/components/WhatsappFloatingButton";
 import { ScrollToTop } from "@/components/ScrollToTopButton";
+import { Suspense } from "react";
+import NavigationProgress from "@/components/NavigationProgress";
 
 
 export const metadata: Metadata = {
@@ -23,6 +24,9 @@ export default function RootLayout({
       <body>
         <Navbar />
         <ClientLoaderWrapper>
+          <Suspense fallback={null}>
+            <NavigationProgress />
+          </Suspense>
           {children}
         </ClientLoaderWrapper>
         <Footer />
