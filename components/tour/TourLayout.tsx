@@ -12,50 +12,62 @@ import TourFAQS from "./TourFAQS";
 import TourHighlights from "./TourHighlights";
 import Accommodations from "./Accommodations";
 
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function TourLayout({ tour, mainImage, relatedTours, accommodations }: any) {
   const [loaded, setLoaded] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
+  const [bookingCardVisible, setBookingCardVisible] = useState(true);
+  const [bookingModalOpen, setBookingModalOpen] = useState(false); // NEW
+  const bookingCardRef = useRef<HTMLDivElement>(null);
 
- useEffect(() => {
-  setLoaded(true);
+  useEffect(() => {
+    setLoaded(true);
 
-  const handleScroll = () => {
-    const sections = menuItems.map((item) => {
-      const element = document.getElementById(item.id);
+    const handleScroll = () => {
+      const sections = menuItems.map((item) => {
+        const element = document.getElementById(item.id);
+        if (!element) return null;
+        return { id: item.id, offsetTop: element.offsetTop };
+      });
 
-      if (!element) return null;
+      const scrollPosition = window.scrollY + 180;
 
-      return {
-        id: item.id,
-        offsetTop: element.offsetTop,
-      };
-    });
-
-    const scrollPosition = window.scrollY + 180;
-
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const section = sections[i];
-
-      if (section && scrollPosition >= section.offsetTop) {
-        setActiveSection(section.id);
-        break;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && scrollPosition >= section.offsetTop) {
+          setActiveSection(section.id);
+          break;
+        }
       }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setBookingCardVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (bookingCardRef.current) observer.observe(bookingCardRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (bookingModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
     }
-  };
-
-  window.addEventListener("scroll", handleScroll);
-
-  handleScroll();
-
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
-}, []);
+    return () => { document.body.style.overflow = ""; };
+  }, [bookingModalOpen]);
 
   const menuItems = [
     { id: "overview", label: "Overview" },
@@ -72,12 +84,8 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-
     if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 120,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: element.offsetTop - 120, behavior: "smooth" });
     }
   };
 
@@ -86,15 +94,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
       {/* HERO */}
       <section className="relative h-[70vh] w-full flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 rounded-lg overflow-hidden">
-          <Image
-            src={mainImage}
-            alt={tour.title}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover scale-105"
-          />
-
+          <Image src={mainImage} alt={tour.title} fill priority sizes="100vw" className="object-cover scale-105" />
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30" />
         </div>
@@ -106,14 +106,10 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
             className="text-sm uppercase tracking-[0.3em] text-[#d4a54b] font-medium mb-4"
           >
-            <Link href="/" className="hover:text-[#d4a54b] transition cursor-pointer">
-              Home
-            </Link>
-             &nbsp;/&nbsp;
-            <Link href="/tours" className="hover:text-[#d4a54b] transition cursor-pointer">
-              All Tours
-            </Link>
-             &nbsp;/&nbsp; {tour.title}
+            <Link href="/" className="hover:text-[#d4a54b] transition cursor-pointer">Home</Link>
+            &nbsp;/&nbsp;
+            <Link href="/tours" className="hover:text-[#d4a54b] transition cursor-pointer">All Tours</Link>
+            &nbsp;/&nbsp; {tour.title}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -129,22 +125,10 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
             className="flex gap-2 flex-wrap text-lg text-white mt-4"
           >
-            {tour.tour_holiday_types?.map(
-            (type: any) => (
-
-            <span
-            key={type.holiday_types.id}
-            className="
-            px-3 py-1
-            bg-[#041f0e]/70
-            text-[#b77e24]
-            rounded-full
-            text-sm
-            "
-            >
-            {type.holiday_types.name}
-            </span>
-
+            {tour.tour_holiday_types?.map((type: any) => (
+              <span key={type.holiday_types.id} className="px-3 py-1 bg-[#041f0e]/70 text-[#b77e24] rounded-full text-sm">
+                {type.holiday_types.name}
+              </span>
             ))}
           </motion.div>
         </div>
@@ -159,20 +143,11 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`relative whitespace-nowrap font-medium transition duration-300 pb-2 cursor-pointer 
-                  ${
-                    activeSection === item.id
-                      ? "text-[#b77e24]"
-                      : "text-gray-600 hover:text-[#b77e24]"
-                  }
-                `}
+                  ${activeSection === item.id ? "text-[#b77e24]" : "text-gray-600 hover:text-[#b77e24]"}`}
               >
                 {item.label}
-
                 {activeSection === item.id && (
-                  <motion.div
-                    layoutId="activeNav"
-                    className="absolute left-0 bottom-0 w-full h-[3px] bg-[#b77e24] rounded-full"
-                  />
+                  <motion.div layoutId="activeNav" className="absolute left-0 bottom-0 w-full h-[3px] bg-[#b77e24] rounded-full" />
                 )}
               </button>
             ))}
@@ -183,36 +158,19 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
       {/* CONTENT */}
       <div className="bg-white text-gray-800 min-h-screen">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 px-6 py-10">
+
           {/* LEFT CONTENT */}
           <div className="lg:col-span-2 space-y-20">
-            <section id="overview" data-section="overview">
-              <TourHeader tour={tour} />
-            </section>
-
-            <section id="highlights" data-section="highlights">
-              <TourHighlights items={tour.tour_highlights} />
-            </section>
-
-            <section id="inclusions" data-section="inclusions">
-              <TourInclusions items={tour.tour_inclusions} />
-            </section>
-
-            <section id="exclusions" data-section="exclusions">
-              <TourExclusions items={tour.tour_exclusions} />
-            </section>
-
-            <section id="itinerary" data-section="itinerary">
-              <TourItinerary items={tour.tour_itinerary} />
-            </section>
-
-            <section id="route" data-section="route">
-              <TourRoute routes={tour.tour_route_maps} />
-            </section>
-
+            <section id="overview" data-section="overview"><TourHeader tour={tour} /></section>
+            <section id="highlights" data-section="highlights"><TourHighlights items={tour.tour_highlights} /></section>
+            <section id="inclusions" data-section="inclusions"><TourInclusions items={tour.tour_inclusions} /></section>
+            <section id="exclusions" data-section="exclusions"><TourExclusions items={tour.tour_exclusions} /></section>
+            <section id="itinerary" data-section="itinerary"><TourItinerary items={tour.tour_itinerary} /></section>
+            <section id="route" data-section="route"><TourRoute routes={tour.tour_route_maps} /></section>
           </div>
 
           {/* RIGHT SIDEBAR */}
-          <div className="relative">
+          <div className="relative" ref={bookingCardRef}>
             <div className="sticky top-28">
               <BookingCard tour={tour} />
             </div>
@@ -220,11 +178,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
         </div>
 
         {/* GALLERY */}
-        <section
-          id="gallery"
-          data-section="gallery"
-          className="scroll-mt-32"
-        >
+        <section id="gallery" data-section="gallery" className="scroll-mt-32">
           <TourGallery images={tour.tour_images} />
         </section>
 
@@ -236,9 +190,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
         {/* Why choose this safari */}
         <section className="mb-10 mt-20 max-w-4xl mx-auto px-6" id="why-choose" data-section="why-choose">
           <h2 className="text-2xl font-semibold mb-3">Why Choose This Safari</h2>
-          <p className="text-gray-400">
-            {tour.why_choose_safari || "No description provided."}
-          </p>
+          <p className="text-gray-400">{tour.why_choose_safari || "No description provided."}</p>
         </section>
 
         {/* FAQs */}
@@ -246,81 +198,124 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
           <TourFAQS items={tour.tour_faqs} />
         </section>
       </div>
-      
+
       <RelatedTours tours={relatedTours} />
 
+      {/* FLOATING BOOKING CTA */}
+      <AnimatePresence>
+        {!bookingCardVisible && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+          >
+            <button
+              onClick={() => setBookingModalOpen(true)}
+              className="group flex items-center gap-3 bg-[#041f0e] hover:bg-[#062b12] text-white pl-5 pr-4 py-3.5 rounded-full shadow-2xl shadow-black/40 border border-[#b77e24]/30 transition-all duration-300 hover:border-[#b77e24]/60"
+            >
+              {tour.price && (
+                <>
+                  <span className="text-[#b77e24] font-bold text-base tracking-tight">
+                    From ${tour.price.toLocaleString()}
+                  </span>
+                  <span className="w-px h-4 bg-white/20 rounded-full" />
+                </>
+              )}
+              <span className="font-semibold text-sm uppercase tracking-wider">Book This Tour</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#b77e24] group-hover:bg-[#a06d1f] transition-colors duration-200 shrink-0">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 9v7.5" />
+                </svg>
+              </span>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* BOOKING MODAL */}
+      <AnimatePresence>
+        {bookingModalOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
+              onClick={() => setBookingModalOpen(false)}
+            />
+
+            {/* Modal panel — slides up from bottom on mobile, centers on desktop */}
+            <motion.div
+              initial={{ opacity: 0, y: 60, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 60, scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 320, damping: 32 }}
+              className="fixed z-[70] bottom-0 left-0 right-0 md:bottom-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-lg"
+            >
+              <div className="bg-white rounded-t-3xl md:rounded-3xl shadow-2xl overflow-hidden">
+                {/* Modal header */}
+                <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-[#041f0e]">
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-[#b77e24] font-semibold">Reserve Your Spot</p>
+                    <h3 className="text-white font-bold text-lg leading-tight mt-0.5 line-clamp-1">{tour.title}</h3>
+                  </div>
+                  <button
+                    onClick={() => setBookingModalOpen(false)}
+                    className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 shrink-0 ml-4"
+                    aria-label="Close booking modal"
+                  >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* BookingCard rendered inside — max height with scroll for small screens */}
+                <div className="overflow-y-auto max-h-[75vh] md:max-h-[70vh]">
+                  <BookingCard tour={tour} />
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* CONTACT SECTION */}
       <section className="py-24 bg-[#041f0e] text-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-br from-[#2d241a] to-[#15110c] p-10 md:p-16 shadow-2xl">
-            
-            {/* BACKGROUND GLOW */}
             <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#b77e24]/20 rounded-full blur-3xl" />
             <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#b77e24]/10 rounded-full blur-3xl" />
 
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              
-              {/* TEXT */}
               <div>
-                <p className="uppercase tracking-[0.3em] text-sm text-[#d4a54b] font-medium">
-                  Need Assistance?
-                </p>
-
+                <p className="uppercase tracking-[0.3em] text-sm text-[#d4a54b] font-medium">Need Assistance?</p>
                 <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight">
-                  Have Any Inquiries?
-                  <br />
-                  Feel Free To Reach Out
+                  Have Any Inquiries?<br />Feel Free To Reach Out
                 </h2>
-
                 <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-xl">
-                  Our safari specialists are ready to help you plan the perfect
-                  African adventure. Whether you need custom itineraries, pricing
-                  details, or travel guidance, we’re here to assist you every step
-                  of the way.
+                  Our safari specialists are ready to help you plan the perfect African adventure. Whether you need custom itineraries, pricing details, or travel guidance, we're here to assist you every step of the way.
                 </p>
               </div>
 
-              {/* CONTACT CARD */}
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[28px] p-8 space-y-6">
-                
                 <div>
-                  <p className="text-sm uppercase tracking-widest text-[#d4a54b]">
-                    Call Us
-                  </p>
-
-                  <a
-                    href="tel:+254700000000"
-                    className="mt-2 block text-3xl font-semibold hover:text-[#d4a54b] transition"
-                  >
-                    +254 700 000 000
-                  </a>
+                  <p className="text-sm uppercase tracking-widest text-[#d4a54b]">Call Us</p>
+                  <a href="tel:+254700000000" className="mt-2 block text-3xl font-semibold hover:text-[#d4a54b] transition">+254 700 000 000</a>
                 </div>
-
                 <div className="border-t border-white/10 pt-6">
-                  <p className="text-sm uppercase tracking-widest text-[#d4a54b]">
-                    Email
-                  </p>
-
-                  <a
-                    href="mailto:info@luxesafaris.com"
-                    className="mt-2 block text-lg text-gray-200 hover:text-[#d4a54b] transition"
-                  >
-                    info@luxeplainsafricasafaris.com
-                  </a>
+                  <p className="text-sm uppercase tracking-widest text-[#d4a54b]">Email</p>
+                  <a href="mailto:info@luxesafaris.com" className="mt-2 block text-lg text-gray-200 hover:text-[#d4a54b] transition">info@luxeplainsafricasafaris.com</a>
                 </div>
-
                 <div className="border-t border-white/10 pt-6">
-                  <p className="text-sm uppercase tracking-widest text-[#d4a54b]">
-                    Office Hours
-                  </p>
-
-                  <p className="mt-2 text-gray-300">
-                    Monday – Friday
-                    <br />
-                    8:00 AM – 6:00 PM
-                  </p>
+                  <p className="text-sm uppercase tracking-widest text-[#d4a54b]">Office Hours</p>
+                  <p className="mt-2 text-gray-300">Monday – Friday<br />8:00 AM – 6:00 PM</p>
                 </div>
-
-                <Link href="/contact" className="w-full mt-4 bg-[#b77e24] hover:bg-[#a06d1f] transition text-white py-4 px-6 rounded-xl font-semibold text-md shadow-lg">
+                <Link href="/contact" className="w-full mt-4 bg-[#b77e24] hover:bg-[#a06d1f] transition text-white py-4 px-6 rounded-xl font-semibold text-md shadow-lg block text-center">
                   Contact Our Team
                 </Link>
               </div>
