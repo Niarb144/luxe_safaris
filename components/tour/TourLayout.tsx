@@ -229,8 +229,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
         </section>
 
         {/* ACCOMMODATIONS */}
-        <section className="mb-10 mt-20 max-w-4xl mx-auto px-6" id="accommodations" data-section="accommodations">
-          <h2 className="text-2xl font-semibold mb-3">Available Accommodations</h2>
+        <section className="mb-10 mt-22 max-w-4xl mx-auto px-6" id="accommodations" data-section="accommodations">
           <Accommodations accommodations={accommodations} />
         </section>
 

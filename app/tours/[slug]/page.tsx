@@ -75,14 +75,19 @@ export default async function TourPage({
 
     const { data: accommodationData } = await supabase
       .from("accommodations")
-      .select("*")
+      .select(`
+          *,
+          destinations(
+            id,
+            name
+          )
+      `)
       .in(
-      "destination_id",
-
-      destinationIds
+          "destination_id",
+          destinationIds
       );
 
-      accommodations = accommodationData || [];
+    accommodations = accommodationData || [];
 
     }
 
