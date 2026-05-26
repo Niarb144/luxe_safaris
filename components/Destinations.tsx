@@ -74,16 +74,16 @@ export default function Destinations() {
     <div className="bg-white mt-0 p-0 text-gray-800">
     {/* Heading */}
     <div className="text-center">
-      <h2 className="text-4xl font-bold text-[#3b2a1d] mt-10">
+      <h2 className="text-4xl font-bold text-[#3b2a1d] mt-4">
         Destinations Across East Africa
       </h2>
 
-      <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+      <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
         From the iconic Serengeti to the hidden gems of Rwanda, explore our curated selection of unforgettable safari destinations.
       </p>
     </div>
     {/* Filters */}
-    <div className="flex flex-wrap justify-center gap-4 mt-10">
+    <div className="flex flex-wrap justify-center gap-4 mt-2">
       {categories.map((cat) => (
         <button
           key={cat}

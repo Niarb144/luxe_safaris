@@ -16,7 +16,7 @@ export default function ToursPage() {
 
   return (
     <div className="bg-white">
-    <section className="relative h-[90vh] w-full flex items-center justify-center text-center overflow-hidden">
+    <section className="relative h-[60vh] w-full flex items-center justify-center text-center overflow-hidden">
           {/* Optimized Background Image */}
           <div className="absolute inset-0 border rounded-lg overflow-hidden">
             <Image
