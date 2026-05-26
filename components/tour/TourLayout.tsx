@@ -256,7 +256,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
               transition={{ type: "spring", stiffness: 320, damping: 32 }}
               className="fixed z-[70] bottom-0 left-0 right-0 md:bottom-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-lg"
             >
-              <div className="bg-white rounded-t-3xl md:rounded-3xl shadow-2xl overflow-hidden">
+              <div className="bg-neutral-900 rounded-t-3xl md:rounded-3xl shadow-2xl overflow-hidden">
                 {/* Modal header */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-[#041f0e]">
                   <div>
