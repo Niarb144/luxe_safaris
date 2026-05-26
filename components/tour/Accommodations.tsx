@@ -30,19 +30,19 @@ export default function Accommodations({
 
   return (
     <div className="py-12">
-      <h2 className="text-4xl font-bold uppercase mb-2">Accommodation</h2>
-      <p className="text-gray-600 mb-8">Safari accommodation options</p>
+      <h2 className="text-4xl font-bold uppercase mb-2">Accommodations</h2>
+      <p className="text-gray-600 mb-8">You Safari accommodation options</p>
 
       {/* LEVEL TABS */}
-      <div className="flex overflow-x-auto mb-6">
+      <div className="flex overflow-x-auto mb-8 rounded-xl border border-[#b77e24]/20 bg-[#041f0e]/5 p-1 gap-1">
         {levels.map((level) => (
           <button
             key={level}
             onClick={() => setActiveLevel(level)}
-            className={`px-8 py-4 font-semibold uppercase border-r cursor-pointer ${
+            className={`flex-1 min-w-max px-5 py-2.5 text-sm font-semibold uppercase tracking-widest rounded-lg transition-all duration-200 cursor-pointer whitespace-nowrap ${
               activeLevel === level
-                ? "bg-[#b77e24] text-white hover:bg-[#b77e24]/70"
-                : "bg-[#041f0e] text-gray-200 hover:bg-[#041f0e]/90"
+                ? "bg-[#b77e24] text-white shadow-md shadow-[#b77e24]/30"
+                : "text-[#041f0e]/70 hover:text-[#b77e24] hover:bg-[#b77e24]/8"
             }`}
           >
             {level} Level
@@ -50,39 +50,94 @@ export default function Accommodations({
         ))}
       </div>
 
-      <div className="border border-gray-300">
-        {Object.entries(grouped).map(([destination, hotels]: any) => (
-          <div key={destination}>
+      <div className="rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+        {Object.entries(grouped).map(([destination, hotels]: any, groupIndex) => (
+          <div key={destination} className={groupIndex > 0 ? "border-t border-gray-200" : ""}>
+            
             {/* DESTINATION HEADER */}
-            <div className="bg-gray-100 font-bold uppercase px-6 py-4 border-b text-xl">
-              {destination}
+            <div className="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#041f0e] to-[#041f0e]/85">
+              <span className="w-1 h-5 rounded-full bg-[#b77e24] shrink-0" />
+              <h3 className="font-bold uppercase tracking-wider text-sm text-white/90">
+                {destination}
+              </h3>
             </div>
 
-            <table className="w-full">
+            {/* DESKTOP TABLE */}
+            <table className="w-full hidden sm:table">
               <thead>
-                <tr className="border-b text-left bg-white">
-                  <th className="p-4">Country</th>
-                  <th className="p-4">Destination</th>
-                  <th className="p-4">Accommodation</th>
+                <tr className="bg-gray-50 border-b border-gray-200 text-left">
+                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 w-1/4">
+                    Country
+                  </th>
+                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 w-1/4">
+                    Destination
+                  </th>
+                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    Accommodation
+                  </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-gray-100">
                 {hotels.map((hotel: any) => (
-                  <tr key={hotel.id} className="border-b hover:bg-gray-50">
-                    <td className="p-4">{hotel.country_location}</td>
-                    <td className="p-4">{hotel.destinations?.name}</td>
-                    <td className="p-4">
+                  <tr
+                    key={hotel.id}
+                    className="group hover:bg-amber-50/50 transition-colors duration-150"
+                  >
+                    <td className="px-6 py-4 text-sm text-gray-600">
+                      {hotel.country_location}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-600">
+                      {hotel.destinations?.name}
+                    </td>
+                    <td className="px-6 py-4">
                       <Link
                         href={`/accommodations/${hotel.slug}`}
-                        className="text-green-700 font-medium hover:underline"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#b77e24] hover:text-[#041f0e] transition-colors duration-150 group/link"
                       >
                         {hotel.hotel_name}
+                        <svg
+                          className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-150"
+                          fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
                       </Link>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+
+            {/* MOBILE CARDS */}
+            <div className="sm:hidden divide-y divide-gray-100">
+              {hotels.map((hotel: any) => (
+                <div key={hotel.id} className="px-4 py-4 space-y-2">
+                  <div className="flex items-start justify-between gap-2">
+                    <Link
+                      href={`/accommodations/${hotel.slug}`}
+                      className="text-sm font-semibold text-[#b77e24] hover:text-[#041f0e] transition-colors"
+                    >
+                      {hotel.hotel_name}
+                    </Link>
+                  </div>
+                  <div className="flex flex-wrap gap-x-4 gap-y-1">
+                    {hotel.country_location && (
+                      <span className="text-xs text-gray-500">
+                        <span className="font-medium text-gray-700">Country:</span>{" "}
+                        {hotel.country_location}
+                      </span>
+                    )}
+                    {hotel.destinations?.name && (
+                      <span className="text-xs text-gray-500">
+                        <span className="font-medium text-gray-700">Destination:</span>{" "}
+                        {hotel.destinations.name}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
         ))}
       </div>
