@@ -20,7 +20,7 @@ export default function Home() {
     <>
       <div className="flex flex-col flex-1 items-center justify-center font-sans bg-white min-h-screen">
         <Hero />
-        <CountryCards data={countries} />
+        <CountryCards />
         <Numbers />
         {/* Header */}
         {/* <div className="text-center">
@@ -31,8 +31,8 @@ export default function Home() {
             Most travel here
           </h2>
         </div> */}
-        <ToursList />
-        <Destinations />
+        <ToursList limit={4}/>
+        <Destinations limit={4} />
         <ReviewsSection />
         <AccreditationSection />
         <WhyChooseLuxeSafaris />
