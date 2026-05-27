@@ -1,4 +1,4 @@
-// ================= FOOTER COMPONENT =================
+import FooterBottomBar from "./FooterBottomBar";
 
 export default function Footer() {
   return (
@@ -57,8 +57,16 @@ export default function Footer() {
           <h3 className="font-semibold mb-4">Information</h3>
           <ul className="space-y-2 text-sm">
             <li className="hover:underline cursor-pointer">Book With Confidence</li>
-            <li className="hover:underline cursor-pointer">Sustainability</li>
-            <li className="hover:underline cursor-pointer">Terms & Conditions</li>
+            <li className="hover:underline cursor-pointer">
+              <a href="/privacy-policy" className="text-sm">
+                Privacy Policy
+              </a>
+            </li>
+            <li className="hover:underline cursor-pointer">
+              <a href="/termsandconditions" className="text-sm">
+                Terms & Conditions
+              </a>
+            </li>
             <li className="hover:underline cursor-pointer">Online Payment</li>
           </ul>
         </div>
@@ -81,13 +89,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/20 text-sm px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-3">
-        <p>© {new Date().getFullYear()} Luxe PLains Safaris.</p>
-        <div className="flex gap-4">
-          <span className="cursor-pointer hover:underline">Cookie settings</span>
-          <span className="cursor-pointer hover:underline">Privacy policy</span>
-        </div>
-      </div>
+      <FooterBottomBar />
     </footer>
   );
 }

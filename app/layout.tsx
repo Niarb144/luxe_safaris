@@ -7,6 +7,7 @@ import WhatsAppButton from "@/components/WhatsappFloatingButton";
 import { ScrollToTop } from "@/components/ScrollToTopButton";
 import { Suspense } from "react";
 import NavigationProgress from "@/components/NavigationProgress";
+import CookieBanner from "@/components/CookieBanner"; 
 
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Footer />
         <ScrollToTop />
         <WhatsAppButton />
+        <CookieBanner />
       </body>
     </html>
   );
