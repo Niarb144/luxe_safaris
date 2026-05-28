@@ -8,6 +8,8 @@ import { ScrollToTop } from "@/components/ScrollToTopButton";
 import { Suspense } from "react";
 import NavigationProgress from "@/components/NavigationProgress";
 import CookieBanner from "@/components/CookieBanner"; 
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { ConsentProvider } from "@/components/ConsentProvider";
 
 
 export const metadata: Metadata = {
@@ -23,17 +25,22 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <Navbar />
+        
         <ClientLoaderWrapper>
-          <Suspense fallback={null}>
-            <NavigationProgress />
-          </Suspense>
-          {children}
+          <ConsentProvider>
+          <Navbar />
+            <Suspense fallback={null}>
+              <NavigationProgress />
+            </Suspense>
+            {children}
+            <Footer />
+          <ScrollToTop />
+          <WhatsAppButton />
+          <CookieBanner />
+          <GoogleAnalytics />
+          </ConsentProvider>
         </ClientLoaderWrapper>
-        <Footer />
-        <ScrollToTop />
-        <WhatsAppButton />
-        <CookieBanner />
+        
       </body>
     </html>
   );

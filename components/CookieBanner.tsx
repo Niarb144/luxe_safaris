@@ -1,90 +1,151 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useConsent } from "./ConsentProvider";
 
 export default function CookieBanner() {
-  const [show,setShow]=useState(false);
+  const { consent, updateConsent } = useConsent();
 
-  useEffect(()=>{
+  const [customize, setCustomize] = useState(false);
 
-    const consent =
-      localStorage.getItem("cookieConsent");
+  const [analytics, setAnalytics] = useState(false);
 
-    if(!consent){
+  const [marketing, setMarketing] = useState(false);
 
-      setShow(true);
+  if (consent) return null;
 
-    }
+  return (
+    <div className="fixed bottom-5 left-5 right-5 bg-white border shadow-2xl rounded-2xl p-6 z-50 max-w-2xl mx-auto">
 
-  },[]);
+      <h2 className="text-2xl font-bold mb-3 text-[#1f2d1f]">
+        Cookie Preferences
+      </h2>
 
+      <p className="text-gray-600 mb-5">
+        We use cookies to improve your experience,
+        analyze traffic and personalize content.
+      </p>
 
-function saveConsent(type:string){
+      {customize && (
+        <div className="space-y-4 mb-6">
 
-localStorage.setItem(
-"cookieConsent",
-type
-);
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="font-semibold">
+                Essential Cookies
+              </h3>
 
-setShow(false);
+              <p className="text-sm text-gray-500">
+                Required for website functionality.
+              </p>
+            </div>
 
-}
-
-
-if(!show) return null;
-
-
-return (
-
-<div className="fixed bottom-6 left-6 right-6 bg-white shadow-xl p-6 rounded-xl z-50">
-
-<h3 className="font-bold text-xl mb-2">
-Cookie Preferences
-</h3>
-
-<p className="text-gray-600">
-
-We use cookies for functionality,
-analytics and marketing.
-
-</p>
+            <input
+              type="checkbox"
+              checked
+              disabled
+            />
+          </div>
 
 
-<div className="flex gap-3 mt-5">
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="font-semibold">
+                Analytics Cookies
+              </h3>
 
-<button
-onClick={()=>saveConsent("accepted")}
-className="bg-green-700 text-white px-4 py-2 rounded"
->
+              <p className="text-sm text-gray-500">
+                Help us understand website usage.
+              </p>
+            </div>
 
-Accept All
-
-</button>
-
-
-<button
-onClick={()=>saveConsent("denied")}
-className="border px-4 py-2 rounded"
->
-
-Reject
-
-</button>
+            <input
+              type="checkbox"
+              checked={analytics}
+              onChange={(e) =>
+                setAnalytics(e.target.checked)
+              }
+            />
+          </div>
 
 
-<button
-onClick={()=>saveConsent("custom")}
-className="border px-4 py-2 rounded"
->
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="font-semibold">
+                Marketing Cookies
+              </h3>
 
-Customise
+              <p className="text-sm text-gray-500">
+                Used for advertising and remarketing.
+              </p>
+            </div>
 
-</button>
+            <input
+              type="checkbox"
+              checked={marketing}
+              onChange={(e) =>
+                setMarketing(e.target.checked)
+              }
+            />
+          </div>
 
-</div>
+        </div>
+      )}
 
-</div>
+      <div className="flex flex-wrap gap-3">
 
-);
+        <button
+          onClick={() =>
+            updateConsent({
+              essential: true,
+              analytics: true,
+              marketing: true,
+            })
+          }
+          className="bg-black text-white hover:bg-gray-800 px-5 py-2 rounded-lg"
+        >
+          Accept All
+        </button>
 
+
+        <button
+          onClick={() =>
+            updateConsent({
+              essential: true,
+              analytics: false,
+              marketing: false,
+            })
+          }
+          className="border px-5 py-2 rounded-lg hover:bg-gray-100 text-gray-600"
+        >
+          Reject Non-Essential
+        </button>
+
+
+        {!customize ? (
+          <button
+            onClick={() => setCustomize(true)}
+            className="border px-5 py-2 rounded-lg hover:bg-gray-100 text-gray-600"
+          >
+            Customize
+          </button>
+        ) : (
+          <button
+            onClick={() =>
+              updateConsent({
+                essential: true,
+                analytics,
+                marketing,
+              })
+            }
+            className="border px-5 py-2 rounded-lg hover:bg-gray-100 text-gray-600"
+          >
+            Save Preferences
+          </button>
+        )}
+
+      </div>
+
+    </div>
+  );
 }
