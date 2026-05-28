@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabase";
+import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
 
 export default async function DestinationPage({
   params,
@@ -23,10 +24,10 @@ export default async function DestinationPage({
       title,
       slug,
       price,
-      location
     )
   `)
   .eq("destination_id", destination.id);
+  console.log("Related Tours:", relatedTours); 
 
   const destinationId = destination.id;
 
@@ -216,11 +217,11 @@ export default async function DestinationPage({
                         {tour.title}
                       </h3>
 
-                      {tour.location && (
+                      {/* {tour.location && (
                         <p className="text-gray-500">
                           {tour.location}
                         </p>
-                      )}
+                      )} */}
 
                       {tour.price && (
                         <p className="text-lg font-medium">
@@ -235,6 +236,7 @@ export default async function DestinationPage({
           </section>
         )}
       </div>
+      <WhyChooseLuxeSafaris />
     </div>
   );
 }

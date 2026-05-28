@@ -11,6 +11,7 @@ import {
   FaPhone,
   FaGlobeAfrica,
 } from "react-icons/fa";
+import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
 
 export default function PracticalInfoPage() {
   const sections = [
@@ -238,6 +239,8 @@ export default function PracticalInfoPage() {
 
         </div>
       </section>
+
+      <WhyChooseLuxeSafaris />
 
     </main>
   );

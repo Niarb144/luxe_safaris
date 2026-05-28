@@ -1,6 +1,7 @@
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import Link from "next/link";
+import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
 
 export default async function AccommodationPage({
     params,
@@ -250,6 +251,8 @@ return(
             )}
 
         </div>
+
+        <WhyChooseLuxeSafaris />
     </div>
 
 )
