@@ -16,18 +16,25 @@ export default async function DestinationPage({
 
   if (!destination) return null;
 
-  const { data: relatedTours } = await supabase
+  const { data, error } = await supabase
   .from("tour_destinations")
   .select(`
     tours (
       id,
       title,
       slug,
-      price,
+      price
     )
   `)
   .eq("destination_id", destination.id);
-  console.log("Related Tours:", relatedTours); 
+
+if (error) {
+  console.error(error);
+}
+
+const relatedTours = data?.map((item) => item.tours);
+
+console.log("Related Tours:", relatedTours); 
 
   const destinationId = destination.id;
 
@@ -203,35 +210,25 @@ export default async function DestinationPage({
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {relatedTours.map((item: any) => {
-                const tour = item.tours;
+             {relatedTours?.map((tour: any) => (
+              <a
+                key={tour.id}
+                href={`/tours/${tour.slug}`}
+                className="group bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
+              >
+                <div className="p-6 space-y-4">
+                  <h3 className="text-2xl font-semibold group-hover:opacity-70 transition">
+                    {tour.title}
+                  </h3>
 
-                return (
-                  <a
-                    key={tour.id}
-                    href={`/tours/${tour.slug}`}
-                    className="group bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
-                  >
-                    <div className="p-6 space-y-4">
-                      <h3 className="text-2xl font-semibold group-hover:opacity-70 transition">
-                        {tour.title}
-                      </h3>
-
-                      {/* {tour.location && (
-                        <p className="text-gray-500">
-                          {tour.location}
-                        </p>
-                      )} */}
-
-                      {tour.price && (
-                        <p className="text-lg font-medium">
-                          From ${tour.price}
-                        </p>
-                      )}
-                    </div>
-                  </a>
-                );
-              })}
+                  {tour.price && (
+                    <p className="text-lg font-medium">
+                      From ${tour.price}
+                    </p>
+                  )}
+                </div>
+              </a>
+            ))}
             </div>
           </section>
         )}
