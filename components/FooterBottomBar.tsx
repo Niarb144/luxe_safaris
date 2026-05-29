@@ -1,6 +1,4 @@
-// components/FooterBottomBar.tsx
 "use client";
-
 
 
 export default function FooterBottomBar() {

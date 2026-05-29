@@ -11,11 +11,13 @@ import RelatedTours from "./RelatedTours";
 import TourFAQS from "./TourFAQS";
 import TourHighlights from "./TourHighlights";
 import Accommodations from "./Accommodations";
+import TourPricingTable from "./TourPricingTable";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
 
 export default function TourLayout({ tour, mainImage, relatedTours, accommodations }: any) {
   const [loaded, setLoaded] = useState(false);
@@ -78,6 +80,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
     { id: "route", label: "Route" },
     { id: "gallery", label: "Gallery" },
     { id: "accommodations", label: "Accommodations" },
+    { id: "pricing", label: "Pricing" },
     { id: "why-choose", label: "Why Choose" },
     { id: "faq", label: "FAQs" },
   ];
@@ -185,6 +188,11 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
         {/* ACCOMMODATIONS */}
         <section className="mb-10 mt-22 max-w-4xl mx-auto px-6" id="accommodations" data-section="accommodations">
           <Accommodations accommodations={accommodations} />
+        </section>
+
+        {/* PRICING */}
+        <section className="mb-10 mt-22 max-w-4xl mx-auto px-6" id="pricing" data-section="pricing">
+          <TourPricingTable items={tour.tour_pricing} />
         </section>
 
         {/* Why choose this safari */}

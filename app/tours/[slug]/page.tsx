@@ -16,63 +16,46 @@ export default async function TourPage({
   const { data, error } = await supabase
     .from("tours")
     .select(`
-    *,
-    tour_destinations(
-        destination_id,
-
-        destinations(
-            id,
-            name
-        )
-    ),
-
-    tour_images(*),
-    tour_itinerary(*),
-    tour_highlights(*),
-    tour_inclusions(*),
-    tour_exclusions(*),
-    tour_route_maps(*),
-    tour_faqs(*),
-
-    tour_holiday_types(
-        holiday_types(
-            id,
-            name
-        )
-    )
-
-    `)
-
-    .eq("slug", slug)
-
-    .single();
-     // RELATED TOURS
-  const { data: relatedTours } = await supabase
-    .from("tours")
-    .select(`
       *,
-      id,
-      title,
-      location,
-      tour_images(image_url),
-      slug
+      tour_destinations(
+          destination_id,
+          destinations(
+              id,
+              name
+          )
+      ),
+      tour_images(*),
+      tour_itinerary(*),
+      tour_highlights(*),
+      tour_inclusions(*),
+      tour_exclusions(*),
+      tour_route_maps(*),
+      tour_faqs(*),
+      tour_holiday_types(
+          holiday_types(
+              id,
+              name
+          )
+      ),
+      tour_pricing(
+          id,
+          season,
+          persons,
+          price,
+          currency,
+          classification
+      )
     `)
-    .eq("location", data.location)
-    .neq("id", data.id)
-    .limit(3);
+    .eq("slug", slug)
+    .single();
 
   // ACCOMMODATIONS
   const destinationIds =
-    data.tour_destinations?.map(
-    (d:any)=>
-    d.destination_id
-    ) || [];
+    data.tour_destinations?.map((d: any) => d.destination_id) || [];
 
+  let accommodations = [];
 
-    let accommodations = [];
-
-    if(destinationIds.length){
-
+  if (destinationIds.length) {
     const { data: accommodationData } = await supabase
       .from("accommodations")
       .select(`
@@ -82,30 +65,47 @@ export default async function TourPage({
             name
           )
       `)
-      .in(
-          "destination_id",
-          destinationIds
-      );
+      .in("destination_id", destinationIds);
 
     accommodations = accommodationData || [];
+  }
 
-    }
+  // RELATED TOURS
+  const { data: relatedToursData } = await supabase
+    .from("tour_destinations")
+    .select(`
+      tours (
+        id,
+        title,
+        location,
+        slug,
+        tour_images(image_url)
+      )
+    `)
+    .in("destination_id", destinationIds)
+    .neq("tour_id", data.id)
+    .limit(3);
 
+  const relatedTours =
+    relatedToursData?.map((item) => item.tours).filter(Boolean) || [];
 
+  // Main Image
   const mainImage =
-    data?.tour_images?.find((img: any) => img.is_main === true)
-      ?.image_url || "/images/img4.jpg";
+    data?.tour_images?.find((img: any) => img.is_main === true)?.image_url ||
+    "/images/img4.jpg";
 
-    if (error || !data) {
-      console.error(error);
-      return <div>Tour not found</div>;
-    }
+  if (error || !data) {
+    console.error(error);
+    return <div>Tour not found</div>;
+  }
 
   return (
-    <TourLayout 
-      tour={data} 
+    <TourLayout
+      tour={data}
       mainImage={mainImage}
-      relatedTours={relatedTours} 
+      relatedTours={relatedTours}
       accommodations={accommodations}
-    />);
+      pricing={data.tour_pricing ?? []}
+    />
+  );
 }

@@ -28,13 +28,13 @@ export default async function DestinationPage({
   `)
   .eq("destination_id", destination.id);
 
-if (error) {
-  console.error(error);
-}
+  if (error) {
+    console.error(error);
+  }
 
-const relatedTours = data?.map((item) => item.tours);
+  const relatedTours = data?.map((item) => item.tours);
 
-console.log("Related Tours:", relatedTours); 
+  console.log("Related Tours:", relatedTours); 
 
   const destinationId = destination.id;
 
