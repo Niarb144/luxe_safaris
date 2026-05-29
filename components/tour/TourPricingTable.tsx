@@ -4,17 +4,17 @@ import { FaCrown } from "react-icons/fa";
 import { IoStarSharp, IoStarOutline } from "react-icons/io5";
 import { MdHotelClass } from "react-icons/md";
 
-type Season = "LOW" | "MID" | "HIGH";
+type Season = "LOW" | "HIGH" | "PEAK";
 type Classification = "economy" | "comfort" | "luxury" | "superior_luxury";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const SEASONS: { key: Season; label: string; subtitle: string; dotColor: string }[] = [
   { key: "LOW",  label: "Low Season",  subtitle: "Mar, Apr, May & Nov 1 – Dec 19", dotColor: "#7a4520" },
-  { key: "MID",  label: "Mid Season",  subtitle: "Rest of the year",               dotColor: "#b8830a" },
-  { key: "HIGH", label: "High Season", subtitle: "Jan, Jul, Aug, Sep & Dec 20–31", dotColor: "#1c0d00" },
+  { key: "HIGH", label: "High Season", subtitle: "Rest of the year",               dotColor: "#b8830a" },
+  { key: "PEAK", label: "Peak Season", subtitle: "Jan, Jul, Aug, Sep & Dec 20–31", dotColor: "#1c0d00" },
 ];
 
-const PERSONS = [2, 4, 6];
+const PERSONS = [1, 2, 4, 6];
 
 const CLASSIFICATIONS: {
   key: Classification; label: string; icon: any;
@@ -101,7 +101,7 @@ export default function TourPricing({ items }: any) {
               </div>
 
               {/* Column headers */}
-              <div className="grid grid-cols-4 bg-[#fffdf7] border-b border-[#e8d5b0]">
+              <div className="grid grid-cols-5 bg-[#fffdf7] border-b border-[#e8d5b0]">
                 <div className="px-5 py-3 text-xs font-bold uppercase tracking-widest text-[#7a5c2e]">Season</div>
                 {PERSONS.map((p) => (
                   <div key={p} className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-[#7a5c2e] text-right">
@@ -116,7 +116,7 @@ export default function TourPricing({ items }: any) {
                 return (
                   <div
                     key={s.key}
-                    className={`grid grid-cols-4 border-b border-[#f0e0c0] last:border-0 ${idx % 2 === 0 ? cls.rowEven : cls.rowOdd}`}
+                    className={`grid grid-cols-5 border-b border-[#f0e0c0] last:border-0 ${idx % 2 === 0 ? cls.rowEven : cls.rowOdd}`}
                   >
                     {/* Season label */}
                     <div className="px-5 py-4 flex flex-col justify-center gap-0.5">
