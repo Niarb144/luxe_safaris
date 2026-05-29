@@ -129,7 +129,7 @@ export default function ContactPage() {
           className="rounded-2xl overflow-hidden shadow-sm"
         >
           <iframe
-            src="https://www.google.com/maps?q=Nairobi%20Kenya&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7977.62949109927!2d36.819140673500705!3d-1.2851240356217832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d6f038e9e1%3A0x40f6ec8000897b19!2sStandard%20Building!5e0!3m2!1sen!2ske!4v1780062587048!5m2!1sen!2ske"
             className="w-full h-full min-h-[350px] border-0"
             loading="lazy"
           />

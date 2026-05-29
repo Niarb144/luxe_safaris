@@ -85,11 +85,6 @@ export default async function DestinationPage({
                 </h1>
               )}
 
-              {destination.description && (
-                <p className="mt-6 text-lg text-white/85 leading-relaxed max-w-2xl">
-                  {destination.description}
-                </p>
-              )}
             </div>
           </div>
         </div>
@@ -97,6 +92,18 @@ export default async function DestinationPage({
 
       {/* CONTENT */}
       <div className="max-w-7xl mx-auto px-6 py-20 space-y-24">
+        {/* Description */}
+        {destination.description && (
+          <section className="prose max-w-none">
+            <h2 className="text-4xl font-semibold leading-tight mb-6">
+                About <span className="text-[#b77e24]">{destination.name}</span>
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {destination.description}
+            </p>
+          </section>
+        )}
+
         {/* GALLERY */}
         {images && images.length > 1 && (
           <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
