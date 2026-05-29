@@ -76,11 +76,7 @@ export default function TourPricing({ items }: any) {
     <section className="py-10">
       {/* Heading */}
       <div className="mb-6">
-        <p className="text-xs uppercase tracking-[0.25em] text-[#b8830a] font-bold mb-1">
-          Safari Rates
-        </p>
-        <h2 className="font-display text-3xl text-[#1c0d00]">Pricing</h2>
-        <div className="w-12 h-px bg-[#b8830a] mt-3" />
+        <h2 className="text-3xl text-gray-800">Safari Pricing Rates</h2>
       </div>
 
       <div className="space-y-8">
@@ -90,62 +86,154 @@ export default function TourPricing({ items }: any) {
           if (!presentSeasons.length) return null;
 
           return (
-            <div key={cls.key} className="rounded-2xl overflow-hidden border border-[#e8d5b0] shadow-sm">
-              {/* Classification header */}
-              <div className={`${cls.headerBg} ${cls.headerText} px-5 py-4 flex items-center gap-3`}>
+            <div
+              key={cls.key}
+              className="rounded-2xl overflow-hidden border border-[#e8d5b0] shadow-sm"
+            >
+              {/* Header */}
+              <div
+                className={`${cls.headerBg} ${cls.headerText} px-5 py-4 flex items-center gap-3`}
+              >
                 <span className="text-xl">{cls.icon}</span>
-                <span className="font-display text-lg font-semibold">{cls.label}</span>
-                <span className={`ml-auto text-[10px] font-bold px-2.5 py-1 rounded-full ${cls.badgeBg} ${cls.badgeText}`}>
+                <span className="font-display text-lg font-semibold">
+                  {cls.label}
+                </span>
+                <span
+                  className={`ml-auto text-[10px] font-bold px-2.5 py-1 rounded-full ${cls.badgeBg} ${cls.badgeText}`}
+                >
                   {currency} / person
                 </span>
               </div>
 
-              {/* Column headers */}
-              <div className="grid grid-cols-5 bg-[#fffdf7] border-b border-[#e8d5b0]">
-                <div className="px-5 py-3 text-xs font-bold uppercase tracking-widest text-[#7a5c2e]">Season</div>
-                {PERSONS.map((p) => (
-                  <div key={p} className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-[#7a5c2e] text-right">
-                    {p} Persons
+              {/* DESKTOP TABLE */}
+              <div className="hidden md:block">
+                <div className="grid grid-cols-5 bg-[#fffdf7] border-b border-[#e8d5b0]">
+                  <div className="px-5 py-3 text-xs font-bold uppercase tracking-widest text-[#7a5c2e]">
+                    Season
                   </div>
-                ))}
+                  {PERSONS.map((p) => (
+                    <div
+                      key={p}
+                      className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-[#7a5c2e] text-right"
+                    >
+                      {p} Persons
+                    </div>
+                  ))}
+                </div>
+
+                {presentSeasons.map((s, idx) => {
+                  const seasonData = clsData[s.key]!;
+                  return (
+                    <div
+                      key={s.key}
+                      className={`grid grid-cols-5 border-b border-[#f0e0c0] last:border-0 ${
+                        idx % 2 === 0 ? cls.rowEven : cls.rowOdd
+                      }`}
+                    >
+                      <div className="px-5 py-4 flex flex-col justify-center gap-0.5">
+                        <div className="flex items-center gap-2">
+                          <span
+                            className="w-2 h-2 rounded-full"
+                            style={{ background: s.dotColor }}
+                          />
+                          <span className="text-sm font-bold text-[#1c0d00]">
+                            {s.label}
+                          </span>
+                        </div>
+                        <span className="text-[11px] text-[#a08050] pl-4">
+                          {s.subtitle}
+                        </span>
+                      </div>
+
+                      {PERSONS.map((p) => {
+                        const entry = seasonData[p];
+                        return (
+                          <div
+                            key={p}
+                            className="px-4 py-4 flex flex-col items-end justify-center"
+                          >
+                            {entry ? (
+                              <>
+                                <span className="text-base font-bold text-[#1c0d00]">
+                                  {fmt(entry.price)}
+                                </span>
+                                <span className="text-[10px] text-[#a08050] mt-0.5">
+                                  {currency}*
+                                </span>
+                              </>
+                            ) : (
+                              <span className="text-[#d0b890] text-sm">—</span>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
               </div>
 
-              {/* Season rows */}
-              {presentSeasons.map((s, idx) => {
-                const seasonData = clsData[s.key]!;
-                return (
-                  <div
-                    key={s.key}
-                    className={`grid grid-cols-5 border-b border-[#f0e0c0] last:border-0 ${idx % 2 === 0 ? cls.rowEven : cls.rowOdd}`}
-                  >
-                    {/* Season label */}
-                    <div className="px-5 py-4 flex flex-col justify-center gap-0.5">
-                      <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: s.dotColor }} />
-                        <span className="text-sm font-bold text-[#1c0d00]">{s.label}</span>
-                      </div>
-                      <span className="text-[11px] text-[#a08050] pl-4">{s.subtitle}</span>
-                    </div>
+              {/* MOBILE CARDS */}
+              <div className="md:hidden space-y-4 p-4 bg-[#fffdf7]">
+                {presentSeasons.map((s) => {
+                  const seasonData = clsData[s.key]!;
 
-                    {/* Price cells */}
-                    {PERSONS.map((p) => {
-                      const entry = seasonData[p];
-                      return (
-                        <div key={p} className="px-4 py-4 flex flex-col items-end justify-center">
-                          {entry ? (
-                            <>
-                              <span className="text-base font-bold text-[#1c0d00]">{fmt(entry.price)}</span>
-                              <span className="text-[10px] text-[#a08050] mt-0.5">{currency}*</span>
-                            </>
-                          ) : (
-                            <span className="text-[#d0b890] text-sm">—</span>
-                          )}
+                  return (
+                    <div
+                      key={s.key}
+                      className="rounded-xl border border-[#e8d5b0] bg-white p-4 shadow-sm"
+                    >
+                      {/* Season header */}
+                      <div className="flex items-center gap-2 mb-3">
+                        <span
+                          className="w-2 h-2 rounded-full"
+                          style={{ background: s.dotColor }}
+                        />
+                        <div>
+                          <p className="font-semibold text-[#1c0d00]">
+                            {s.label}
+                          </p>
+                          <p className="text-xs text-[#a08050]">
+                            {s.subtitle}
+                          </p>
                         </div>
-                      );
-                    })}
-                  </div>
-                );
-              })}
+                      </div>
+
+                      {/* Price grid */}
+                      <div className="grid grid-cols-2 gap-3">
+                        {PERSONS.map((p) => {
+                          const entry = seasonData[p];
+
+                          return (
+                            <div
+                              key={p}
+                              className="rounded-lg bg-[#fffdf7] border border-[#f0e0c0] p-3 flex flex-col items-start"
+                            >
+                              <span className="text-xs text-[#7a5c2e] font-medium">
+                                {p} pax
+                              </span>
+
+                              {entry ? (
+                                <>
+                                  <span className="text-sm font-bold text-[#1c0d00]">
+                                    {fmt(entry.price)}
+                                  </span>
+                                  <span className="text-[10px] text-[#a08050]">
+                                    {currency}
+                                  </span>
+                                </>
+                              ) : (
+                                <span className="text-[#d0b890] text-sm">
+                                  —
+                                </span>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           );
         })}
