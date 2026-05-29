@@ -84,8 +84,14 @@ export default function Navbar() {
           <TourSearch />
 
           {/* CALL US */}
-          <div className="bg-[#b77e24] text-white px-4 py-2 rounded">
-            Call Us: +25498765432
+          <div className="bg-[#b77e24] text-white px-4 py-2 rounded text-sm flex flex-col leading-tight">
+            <p className="font-medium">Call Us:</p>
+
+            <div className="flex flex-col sm:flex-row sm:gap-2">
+              <span>+254 719 136 129</span>
+              <span className="hidden sm:inline">/</span>
+              <span>+254 722 486 677</span>
+            </div>
           </div>
 
         </div>
