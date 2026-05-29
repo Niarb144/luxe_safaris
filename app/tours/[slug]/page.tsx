@@ -77,7 +77,6 @@ export default async function TourPage({
       tours (
         id,
         title,
-        location,
         slug,
         tour_images(image_url)
       )
@@ -88,6 +87,8 @@ export default async function TourPage({
 
   const relatedTours =
     relatedToursData?.map((item) => item.tours).filter(Boolean) || [];
+
+    console.log("Related Tours:", relatedTours);
 
   // Main Image
   const mainImage =
