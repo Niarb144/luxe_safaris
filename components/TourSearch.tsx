@@ -302,7 +302,7 @@ export default function TourSearch() {
                     }
                     className={inputStyle}
                   >
-                    <option value="">
+                    <option value="" className="bg-[#10261f] text-white">
                       Select Destination
                     </option>
 
@@ -338,7 +338,7 @@ export default function TourSearch() {
                     }
                     className={inputStyle}
                   >
-                    <option value="">
+                    <option value="" className="bg-[#10261f] text-white">
                       Duration
                     </option>
 
@@ -374,7 +374,7 @@ export default function TourSearch() {
                     }
                     className={inputStyle}
                   >
-                    <option value="">
+                    <option value="" className="bg-[#10261f] text-white">
                       Safari Type
                     </option>
 
@@ -416,6 +416,7 @@ export default function TourSearch() {
                     rounded-xl
                     hover:bg-white/5
                     transition
+                    cursor-pointer
                   "
                 >
                   Clear Filters
@@ -433,7 +434,8 @@ export default function TourSearch() {
                     font-medium
                     transition-all
                     shadow-lg
-                    shadow-[#b77e24]/30
+                    hover:shadow-[#b77e24]/30
+                    cursor-pointer
                   "
                 >
                   Search Safaris
