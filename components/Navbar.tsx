@@ -42,14 +42,15 @@ function ActiveBar() {
 
 interface ToursDropdownProps {
   holidayTypes: HolidayType[];
-  durationsByType: Map<string, string[]>; // key = holiday_type id
+  durationsByType: Map<string, string[]>;     // key = holiday_type id
+  destinationsByType: Map<string, { id: string; name: string }[]>; // key = holiday_type id
+  allTourDestinations: { id: string; name: string }[]; // flat list for "no type hovered" state
   scrolled: boolean;
 }
 
-function ToursDropdown({ holidayTypes, durationsByType, scrolled }: ToursDropdownProps) {
+function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allTourDestinations, scrolled }: ToursDropdownProps) {
   const router = useRouter();
   const pathname = usePathname();
-  // track both the display name (for navigate param) and the id (for duration lookup)
   const [hoveredType, setHoveredType] = useState<{ id: string; name: string } | null>(null);
   const [open, setOpen] = useState(false);
   const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -71,6 +72,11 @@ function ToursDropdown({ holidayTypes, durationsByType, scrolled }: ToursDropdow
     setOpen(false);
     setHoveredType(null);
   };
+
+  // Destinations to show: scoped to hovered type, or all tour destinations
+  const visibleDestinations = hoveredType
+    ? (destinationsByType.get(hoveredType.id) ?? [])
+    : allTourDestinations;
 
   return (
     <div
@@ -108,10 +114,10 @@ function ToursDropdown({ holidayTypes, durationsByType, scrolled }: ToursDropdow
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-0 top-full mt-3 z-[200] flex shadow-2xl rounded-2xl overflow-hidden border border-white/10"
-            style={{ minWidth: 520 }}
+            className="absolute left-0 bg-[#0a1a12] top-full mt-3 z-[200] flex shadow-2xl rounded-2xl overflow-hidden border border-white/10"
+            style={{ minWidth: 700 }}
           >
-            {/* LEFT – tour types */}
+            {/* COL 1 – Safari Types */}
             <div className="bg-[#10261f] w-52 flex-shrink-0 py-3">
               <p className="px-5 py-2 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold">
                 Safari Type
@@ -131,28 +137,26 @@ function ToursDropdown({ holidayTypes, durationsByType, scrolled }: ToursDropdow
                   <ChevronRight size={13} className="opacity-40" />
                 </button>
               ))}
-
-              {/* Divider + "View all" */}
               <div className="border-t border-white/10 mt-2 pt-2">
                 <button
                   onClick={() => navigate({})}
-                  className="w-full text-left px-5 py-2.5 text-xs text-[#b77e24] hover:text-white transition-colors"
+                  className="w-full text-left px-5 py-2.5 text-xs text-[#b77e24] hover:text-white transition-colors cursor-pointer"
                 >
                   View all tours →
                 </button>
               </div>
             </div>
 
-            {/* RIGHT – duration filter for hovered type */}
+            {/* COL 2 – Duration (scoped to hovered type) */}
             <AnimatePresence mode="wait">
               {hoveredType && (
                 <motion.div
-                  key={hoveredType.id}
+                  key={`dur-${hoveredType.id}`}
                   initial={{ opacity: 0, x: 8 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 6 }}
                   transition={{ duration: 0.15 }}
-                  className="bg-[#0d1f18] border-l border-white/10 w-52 flex-shrink-0 py-3"
+                  className="bg-[#0d1f18] border-l border-white/10 w-48 flex-shrink-0 py-3"
                 >
                   <p className="px-5 py-2 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold">
                     Duration
@@ -160,28 +164,58 @@ function ToursDropdown({ holidayTypes, durationsByType, scrolled }: ToursDropdow
                   {(durationsByType.get(hoveredType.id) ?? []).map((dur) => (
                     <button
                       key={dur}
-                      onClick={() =>
-                        navigate({ type: hoveredType.name, duration: dur })
-                      }
-                      className="w-full text-left px-5 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                      onClick={() => navigate({ type: hoveredType.name, duration: dur })}
+                      className="w-full text-left px-5 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
                     >
                       {dur}
                     </button>
                   ))}
                   {(durationsByType.get(hoveredType.id) ?? []).length === 0 && (
-                    <p className="px-5 py-2 text-sm text-white/40 italic">No tours available</p>
+                    <p className="px-5 py-2 text-sm text-white/40 italic">No durations</p>
                   )}
                   <div className="border-t border-white/10 mt-2 pt-2">
                     <button
                       onClick={() => navigate({ type: hoveredType.name })}
                       className="w-full text-left px-5 py-2.5 text-xs text-[#b77e24] hover:text-white transition-colors"
                     >
-                      All {hoveredType.name} tours →
+                      All {hoveredType.name} →
                     </button>
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
+
+            {/* COL 3 – By Destination */}
+            <motion.div
+              key={hoveredType?.id ?? "all"}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="bg-[#0a1a12] border-l border-white/10 w-[100%] flex-shrink-0 py-3 overflow-y-auto max-h-100"
+            >
+              <p className="px-5 py-2 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold sticky top-0 bg-[#0a1a12]">
+                {hoveredType ? `${hoveredType.name} Destinations` : "By Destination"}
+              </p>
+              {visibleDestinations.map((dest) => (
+                <button
+                  key={dest.id}
+                  onClick={() =>
+                    navigate(
+                      hoveredType
+                        ? { type: hoveredType.name, destination: dest.name }
+                        : { destination: dest.name }
+                    )
+                  }
+                  className="w-full text-left px-5 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 hover:translate-x-0.5 transition-all duration-150 cursor-pointer"
+                >
+                  {dest.name} Tours
+                </button>
+              ))}
+              {visibleDestinations.length === 0 && (
+                <p className="px-5 py-2 text-sm text-white/40 italic">No destinations</p>
+              )}
+            </motion.div>
+
           </motion.div>
         )}
       </AnimatePresence>
@@ -261,7 +295,7 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
                   {/* Country heading – also a link */}
                   <button
                     onClick={() => navigate({ country: group.country })}
-                    className="flex items-center gap-1 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold mb-2 hover:text-white transition-colors w-full text-left"
+                    className="flex items-center gap-1 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold mb-2 hover:text-white transition-colors w-full text-left cursor-pointer"
                   >
                     {group.country} destinations
                   </button>
@@ -270,7 +304,7 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
                     <button
                       key={dest.id}
                       onClick={() => navigate({ destination: dest.name })}
-                      className="block w-full text-left py-2 text-sm text-white/80 hover:text-white hover:translate-x-1 transition-all duration-150"
+                      className="block w-full text-left py-2 text-sm text-white/80 hover:text-white hover:translate-x-1 transition-all duration-150 cursor-pointer"
                     >
                       {dest.name}
                     </button>
@@ -279,7 +313,7 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
                   <div className="border-t border-white/10 mt-2 pt-2">
                     <button
                       onClick={() => navigate({ country: group.country })}
-                      className="text-xs text-[#b77e24] hover:text-white transition-colors"
+                      className="text-xs text-[#b77e24] hover:text-white transition-colors cursor-pointer"
                     >
                       All {group.country} →
                     </button>
@@ -337,7 +371,9 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen]         = useState(false);
   const [holidayTypes, setHolidayTypes] = useState<HolidayType[]>([]);
   const [destGroups, setDestGroups]     = useState<DestinationGroup[]>([]);
-  const [durationsByType, setDurationsByType] = useState<Map<string, string[]>>(new Map());
+  const [durationsByType, setDurationsByType]         = useState<Map<string, string[]>>(new Map());
+  const [destinationsByType, setDestinationsByType]   = useState<Map<string, { id: string; name: string }[]>>(new Map());
+  const [allTourDestinations, setAllTourDestinations] = useState<{ id: string; name: string }[]>([]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -360,7 +396,7 @@ export default function Navbar() {
     // Fetches tour_holiday_types joined with tours to get the duration for each type
     const { data: joinData } = await supabase
       .from("tour_holiday_types")
-      .select("holiday_type_id, tours(duration)");
+      .select("holiday_type_id, tours(id, duration)");
 
     // Build map: holiday_type_id → sorted unique durations
     const durMap = new Map<string, string[]>();
@@ -389,6 +425,56 @@ export default function Navbar() {
 
     setHolidayTypes(typeData || []);
     setDurationsByType(durMap);
+
+    // Destinations linked to tours via tour_destinations join table
+    // Pull tour_id + destination details, then cross-reference tour_holiday_types to scope by type
+    const { data: tourDestData } = await supabase
+      .from("tour_destinations")
+      .select("tour_id, destinations(id, name)");
+
+    // Build a map: tour_id → destinations[]
+    const tourToDestMap = new Map<string, { id: string; name: string }[]>();
+    (tourDestData || []).forEach((row: any) => {
+      const tourId = row.tour_id as string;
+      const dest   = row.destinations as { id: string; name: string } | null;
+      if (!tourId || !dest) return;
+      if (!tourToDestMap.has(tourId)) tourToDestMap.set(tourId, []);
+      const existing = tourToDestMap.get(tourId)!;
+      if (!existing.find((d) => d.id === dest.id)) existing.push(dest);
+    });
+
+    // Build tour_id → holiday_type_id[] map from earlier joinData
+    const tourToTypesMap = new Map<string, string[]>();
+    (joinData || []).forEach((row: any) => {
+      const tourId = row.tours?.id as string | undefined; // need tour id
+      const typeId = row.holiday_type_id as string;
+      if (!tourId || !typeId) return;
+      if (!tourToTypesMap.has(tourId)) tourToTypesMap.set(tourId, []);
+      if (!tourToTypesMap.get(tourId)!.includes(typeId)) tourToTypesMap.get(tourId)!.push(typeId);
+    });
+
+    // Build destinationsByType map: holiday_type_id → unique destinations[]
+    const destByTypeMap = new Map<string, { id: string; name: string }[]>();
+    tourToDestMap.forEach((dests, tourId) => {
+      const typeIds = tourToTypesMap.get(tourId) ?? [];
+      typeIds.forEach((typeId) => {
+        if (!destByTypeMap.has(typeId)) destByTypeMap.set(typeId, []);
+        const existing = destByTypeMap.get(typeId)!;
+        dests.forEach((d) => {
+          if (!existing.find((e) => e.id === d.id)) existing.push(d);
+        });
+      });
+    });
+    // Sort each destination list alphabetically
+    destByTypeMap.forEach((dests) => dests.sort((a, b) => a.name.localeCompare(b.name)));
+
+    // All unique tour destinations (flat, sorted) for the "no type selected" state
+    const allDestsMap = new Map<string, { id: string; name: string }>();
+    tourToDestMap.forEach((dests) => dests.forEach((d) => allDestsMap.set(d.id, d)));
+    const allDestsSorted = Array.from(allDestsMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+
+    setDestinationsByType(destByTypeMap);
+    setAllTourDestinations(allDestsSorted);
 
     if (destData) {
       // Group destinations by country, respecting COUNTRY_ORDER priority
@@ -439,7 +525,13 @@ export default function Navbar() {
         <nav className="hidden md:flex gap-8 items-center">
           <StaticLink name="Home" href="/" scrolled={scrolled} />
 
-          <ToursDropdown holidayTypes={holidayTypes} durationsByType={durationsByType} scrolled={scrolled} />
+          <ToursDropdown
+            holidayTypes={holidayTypes}
+            durationsByType={durationsByType}
+            destinationsByType={destinationsByType}
+            allTourDestinations={allTourDestinations}
+            scrolled={scrolled}
+          />
 
           <DestinationsDropdown groups={destGroups} scrolled={scrolled} />
 
@@ -541,6 +633,23 @@ export default function Navbar() {
                                       {dur}
                                     </button>
                                   ))}
+                                  {/* Destinations for this type */}
+                                  {(destinationsByType.get(ht.id) ?? []).length > 0 && (
+                                    <>
+                                      <p className="mt-2 text-[10px] uppercase tracking-widest text-[#b77e24] font-semibold">
+                                        Destinations
+                                      </p>
+                                      {(destinationsByType.get(ht.id) ?? []).map((dest) => (
+                                        <button
+                                          key={dest.id}
+                                          onClick={() => navigate("/tours", { type: ht.name, destination: dest.name })}
+                                          className="block py-1 text-xs text-gray-500 hover:text-[#b77e24] transition-colors"
+                                        >
+                                          {dest.name} Tours
+                                        </button>
+                                      ))}
+                                    </>
+                                  )}
                                   <button
                                     onClick={() => navigate("/tours", { type: ht.name })}
                                     className="block py-1 text-xs text-[#b77e24]"
