@@ -127,7 +127,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                   key={ht.id}
                   onMouseEnter={() => setHoveredType({ id: ht.id, name: ht.name })}
                   onClick={() => navigate({ type: ht.name })}
-                  className={`w-full text-left px-5 py-2.5 text-sm flex items-center justify-between transition-colors ${
+                  className={`w-full text-left px-5 py-2.5 text-sm flex items-center justify-between transition-colors cursor-pointer ${
                     hoveredType?.id === ht.id
                       ? "bg-white/10 text-[#b77e24]"
                       : "text-white/80 hover:text-white hover:bg-white/5"
@@ -165,7 +165,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                     <button
                       key={dur}
                       onClick={() => navigate({ type: hoveredType.name, duration: dur })}
-                      className="w-full text-left px-5 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
+                      className="w-full text-left px-5 py-2.5 text-sm text-white/80 hover:bg-white/10 hover:text-[#b77e24] transition-colors cursor-pointer"
                     >
                       {dur}
                     </button>
@@ -176,7 +176,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                   <div className="border-t border-white/10 mt-2 pt-2">
                     <button
                       onClick={() => navigate({ type: hoveredType.name })}
-                      className="w-full text-left px-5 py-2.5 text-xs text-[#b77e24] hover:text-white transition-colors"
+                      className="w-full text-left px-5 py-2.5 text-xs text-[#b77e24] hover:text-white transition-colors cursor-pointer"
                     >
                       All {hoveredType.name} →
                     </button>
@@ -206,7 +206,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                         : { destination: dest.name }
                     )
                   }
-                  className="w-full text-left px-5 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/5 hover:translate-x-0.5 transition-all duration-150 cursor-pointer"
+                  className="w-full text-left px-5 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/10 hover:translate-x-0.5 transition-all duration-150 cursor-pointer"
                 >
                   {dest.name} Tours
                 </button>
