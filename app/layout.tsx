@@ -28,16 +28,16 @@ export default function RootLayout({
         
         <ClientLoaderWrapper>
           <ConsentProvider>
-          <Navbar />
-            <Suspense fallback={null}>
-              <NavigationProgress />
-            </Suspense>
-            {children}
-            <Footer />
-          <ScrollToTop />
-          <WhatsAppButton />
-          <CookieBanner />
-          <GoogleAnalytics />
+            <Navbar />
+              <Suspense fallback={null}>
+                <NavigationProgress />
+              </Suspense>
+              {children}
+              <Footer />
+            <ScrollToTop />
+            <WhatsAppButton />
+            <CookieBanner />
+            <GoogleAnalytics />
           </ConsentProvider>
         </ClientLoaderWrapper>
         
