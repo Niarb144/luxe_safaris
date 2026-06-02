@@ -2,6 +2,9 @@
 
 import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
+import {
+  useGoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 
 export default function BookingModal({
   open,
@@ -18,6 +21,8 @@ export default function BookingModal({
   const [submitted, setSubmitted] = useState(false);
   const [mounted, setMounted] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
+  const { executeRecaptcha } =
+  useGoogleReCaptcha();
 
   useEffect(() => {
     setMounted(true);
@@ -55,15 +60,22 @@ export default function BookingModal({
   ) {
     e.preventDefault();
 
-    const formElement = e.currentTarget;
+    if (!executeRecaptcha) {
+      alert("Security check unavailable");
+      return;
+    }
 
     setLoading(true);
 
+    const formElement = e.currentTarget;
+
     const form = new FormData(formElement);
+
+    const recaptchaToken =
+      await executeRecaptcha("booking_submit");
 
     const booking = {
       tour_id: tourId,
-      tour_title: tourTitle,
       full_name: form.get("name"),
       email: form.get("email"),
       phone: form.get("phone"),
@@ -71,16 +83,21 @@ export default function BookingModal({
       children: Number(form.get("children")),
       travel_date: form.get("travel_date"),
       special_requests: form.get("requests"),
+      recaptchaToken,
     };
 
     try {
-      const response = await fetch("/api/booking", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(booking),
-      });
+      const response = await fetch(
+        "/api/booking",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type":
+              "application/json",
+          },
+          body: JSON.stringify(booking),
+        }
+      );
 
       const data = await response.json();
 
@@ -88,11 +105,9 @@ export default function BookingModal({
         throw new Error(data.error);
       }
 
-      formElement.reset();
-
       setSubmitted(true);
-    } catch (error: any) {
-      alert(error.message);
+    } catch (err: any) {
+      alert(err.message);
     } finally {
       setLoading(false);
     }

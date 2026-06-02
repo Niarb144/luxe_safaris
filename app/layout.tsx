@@ -10,6 +10,7 @@ import NavigationProgress from "@/components/NavigationProgress";
 import CookieBanner from "@/components/CookieBanner"; 
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { ConsentProvider } from "@/components/ConsentProvider";
+import Providers from "@/app/providers";
 
 
 export const metadata: Metadata = {
@@ -25,9 +26,10 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        
+
         <ClientLoaderWrapper>
           <ConsentProvider>
+            <Providers>
             <Navbar />
               <Suspense fallback={null}>
                 <NavigationProgress />
@@ -38,6 +40,7 @@ export default function RootLayout({
             <WhatsAppButton />
             <CookieBanner />
             <GoogleAnalytics />
+            </Providers>
           </ConsentProvider>
         </ClientLoaderWrapper>
         

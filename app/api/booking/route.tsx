@@ -4,11 +4,34 @@ import { supabase } from "@/lib/supabase";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+async function verifyRecaptcha(
+  token: string
+) {
+  const response = await fetch(
+    "https://www.google.com/recaptcha/api/siteverify",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type":
+          "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        secret:
+          process.env.RECAPTCHA_SECRET_KEY!,
+        response: token,
+      }),
+    }
+  );
+
+  return response.json();
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
 
     const {
+      recaptchaToken,
       tour_id,
       tour_title,
       full_name,
@@ -31,6 +54,59 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+
+    const captchaResult =
+    await verifyRecaptcha(
+        recaptchaToken
+    );
+
+    console.log(captchaResult);
+
+    if (
+    !captchaResult.success
+    ) {
+    return NextResponse.json(
+        {
+        error:
+            "Security verification failed",
+        },
+        {
+        status: 400,
+        }
+    );
+    }
+
+    // check score
+    if (
+    captchaResult.score < 0.5
+    ) {
+    return NextResponse.json(
+        {
+        error:
+            "Request flagged as suspicious",
+        },
+        {
+        status: 403,
+        }
+    );
+    }
+
+    // check action
+    if (
+    captchaResult.action !==
+    "booking_submit"
+    ) {
+    return NextResponse.json(
+        {
+        error:
+            "Invalid verification action",
+        },
+        {
+        status: 403,
+        }
+    );
+    }
+    
 
     // Save booking
 
