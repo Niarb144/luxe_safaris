@@ -35,8 +35,16 @@ export default function Destinations({ limit, searchParams }: DestinationsProps)
   const urlSearchParams = useSearchParams();
 
   // Read filters from props (SSR) or URL params (client navigation)
-  const search = searchParams?.search || urlSearchParams.get("search") || "";
-  const activeCountry = searchParams?.country || urlSearchParams.get("country") || "All";
+  const search =
+  searchParams?.search ||
+  urlSearchParams.get("search") ||
+  urlSearchParams.get("destination") || // ← catch incoming ?destination= links
+  "";
+
+const activeCountry =
+  searchParams?.country ||
+  urlSearchParams.get("country") ||
+  "All";
 
   useEffect(() => {
     fetchDestinations();
@@ -88,8 +96,10 @@ export default function Destinations({ limit, searchParams }: DestinationsProps)
   const filtered = destinations.filter((d) => {
     const countryMatch = activeCountry === "All" || d.country === activeCountry;
     const searchMatch =
-      !search || d.name?.toLowerCase().includes(search.toLowerCase());
-    return countryMatch && searchMatch;
+    !search ||
+    d.name?.toLowerCase().includes(search.toLowerCase()) ||
+    d.country?.toLowerCase().includes(search.toLowerCase()); // ← broader match
+  return countryMatch && searchMatch;
   });
 
   const displayed = limit ? filtered.slice(0, limit) : filtered;
