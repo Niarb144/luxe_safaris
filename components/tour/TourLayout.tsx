@@ -12,6 +12,7 @@ import TourFAQS from "./TourFAQS";
 import TourHighlights from "./TourHighlights";
 import Accommodations from "./Accommodations";
 import TourPricingTable from "./TourPricingTable";
+import ContactCard from "../ContactCard";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -231,8 +232,8 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
                   <span className="w-px h-4 bg-white/20 rounded-full" />
                 </>
               )}
-              <span className="font-semibold text-sm uppercase tracking-wider">Book This Tour</span>
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#b77e24] group-hover:bg-[#a06d1f] transition-colors duration-200 shrink-0">
+              <span className="font-semibold text-sm uppercase tracking-wider cursor-pointer">Book This Tour</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#b77e24] group-hover:bg-[#a06d1f] transition-colors duration-200 shrink-0 cursor-pointer">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 9v7.5" />
                 </svg>
@@ -273,7 +274,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
                   </div>
                   <button
                     onClick={() => setBookingModalOpen(false)}
-                    className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 shrink-0 ml-4"
+                    className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 shrink-0 ml-4 cursor-pointer"
                     aria-label="Close booking modal"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -291,46 +292,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
           </>
         )}
       </AnimatePresence>
-
-      {/* CONTACT SECTION */}
-      <section className="py-24 bg-[#041f0e] text-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="relative overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-br from-[#2d241a] to-[#15110c] p-10 md:p-16 shadow-2xl">
-            <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#b77e24]/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#b77e24]/10 rounded-full blur-3xl" />
-
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <p className="uppercase tracking-[0.3em] text-sm text-[#d4a54b] font-medium">Need Assistance?</p>
-                <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight">
-                  Have Any Inquiries?<br />Feel Free To Reach Out
-                </h2>
-                <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-xl">
-                  Our safari specialists are ready to help you plan the perfect African adventure. Whether you need custom itineraries, pricing details, or travel guidance, we're here to assist you every step of the way.
-                </p>
-              </div>
-
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[28px] p-8 space-y-6">
-                <div>
-                  <p className="text-sm uppercase tracking-widest text-[#d4a54b]">Call Us</p>
-                  <a href="tel:+254700000000" className="mt-2 block text-3xl font-semibold hover:text-[#d4a54b] transition">+254 700 000 000</a>
-                </div>
-                <div className="border-t border-white/10 pt-6">
-                  <p className="text-sm uppercase tracking-widest text-[#d4a54b]">Email</p>
-                  <a href="mailto:info@luxesafaris.com" className="mt-2 block text-lg text-gray-200 hover:text-[#d4a54b] transition">info@luxeplainsafricasafaris.com</a>
-                </div>
-                <div className="border-t border-white/10 pt-6">
-                  <p className="text-sm uppercase tracking-widest text-[#d4a54b]">Office Hours</p>
-                  <p className="mt-2 text-gray-300">Monday – Friday<br />8:00 AM – 6:00 PM</p>
-                </div>
-                <Link href="/contact" className="w-full mt-4 bg-[#b77e24] hover:bg-[#a06d1f] transition text-white py-4 px-6 rounded-xl font-semibold text-md shadow-lg block text-center">
-                  Contact Our Team
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactCard />
     </>
   );
 }

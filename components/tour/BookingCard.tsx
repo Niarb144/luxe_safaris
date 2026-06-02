@@ -41,6 +41,7 @@ export default function BookingCard({ tour }: any) {
           open={open}
           onClose={() => setOpen(false)}
           tourId={tour.id}
+          tourTitle={tour.title}
         />
 
         <a

@@ -10,6 +10,7 @@ export async function POST(req: Request) {
 
     const {
       tour_id,
+      tour_title,
       full_name,
       email,
       phone,
@@ -55,11 +56,11 @@ export async function POST(req: Request) {
     // Send company notification
 
     await resend.emails.send({
-      from: "Bookings <luxeplainsafricasafaris@gmail.com>",
+      from: "Bookings <info@luxeplainsafricasafaris.com>",
       to: process.env.BOOKING_EMAIL!,
       subject: `New Booking Request - ${full_name}`,
       html: `
-        <h2>New Safari Booking</h2>
+        <h2>New ${tour_title} Booking</h2>
 
         <p><strong>Name:</strong> ${full_name}</p>
         <p><strong>Email:</strong> ${email}</p>

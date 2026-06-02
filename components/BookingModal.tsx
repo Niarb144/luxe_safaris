@@ -7,10 +7,12 @@ export default function BookingModal({
   open,
   onClose,
   tourId,
+  tourTitle,
 }: {
   open: boolean;
   onClose: () => void;
   tourId: string;
+  tourTitle: string;
 }) {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -48,15 +50,20 @@ export default function BookingModal({
     }
   };
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(
+    e: React.FormEvent<HTMLFormElement>
+  ) {
     e.preventDefault();
+
+    const formElement = e.currentTarget;
 
     setLoading(true);
 
-    const form = new FormData(e.currentTarget);
+    const form = new FormData(formElement);
 
     const booking = {
       tour_id: tourId,
+      tour_title: tourTitle,
       full_name: form.get("name"),
       email: form.get("email"),
       phone: form.get("phone"),
@@ -81,12 +88,11 @@ export default function BookingModal({
         throw new Error(data.error);
       }
 
-      setSubmitted(true);
+      formElement.reset();
 
-      // reset form
-      e.currentTarget.reset();
+      setSubmitted(true);
     } catch (error: any) {
-      alert(error.message || "Failed to submit booking");
+      alert(error.message);
     } finally {
       setLoading(false);
     }
@@ -113,7 +119,7 @@ export default function BookingModal({
               Reserve Your Spot
             </p>
             <h2 className="text-white font-bold text-lg leading-tight mt-0.5">
-              Book This Tour
+              Book {tourTitle} safari
             </h2>
           </div>
 
