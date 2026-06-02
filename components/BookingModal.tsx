@@ -2,7 +2,6 @@
 
 import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
-import { supabase } from "@/lib/supabase";
 
 export default function BookingModal({
   open,
@@ -49,11 +48,12 @@ export default function BookingModal({
     }
   };
 
-  async function handleSubmit(e: any) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
     setLoading(true);
 
-    const form = new FormData(e.target);
+    const form = new FormData(e.currentTarget);
 
     const booking = {
       tour_id: tourId,
@@ -66,14 +66,29 @@ export default function BookingModal({
       special_requests: form.get("requests"),
     };
 
-    const { error } = await supabase.from("bookings").insert([booking]);
+    try {
+      const response = await fetch("/api/booking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(booking),
+      });
 
-    setLoading(false);
+      const data = await response.json();
 
-    if (error) {
-      alert(error.message);
-    } else {
+      if (!response.ok) {
+        throw new Error(data.error);
+      }
+
       setSubmitted(true);
+
+      // reset form
+      e.currentTarget.reset();
+    } catch (error: any) {
+      alert(error.message || "Failed to submit booking");
+    } finally {
+      setLoading(false);
     }
   }
 
