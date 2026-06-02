@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,10 +18,25 @@ type Destination = {
   }[];
 };
 
-export default function Destinations({ limit }: { limit?: number }) {
+type DestinationsProps = {
+  limit?: number;
+  searchParams?: {
+    search?: string;
+    country?: string;
+  };
+};
+
+export default function Destinations({ limit, searchParams }: DestinationsProps) {
   const [destinations, setDestinations] = useState<Destination[]>([]);
   const [loading, setLoading] = useState(true);
-  const [active, setActive] = useState("All");
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const urlSearchParams = useSearchParams();
+
+  // Read filters from props (SSR) or URL params (client navigation)
+  const search = searchParams?.search || urlSearchParams.get("search") || "";
+  const activeCountry = searchParams?.country || urlSearchParams.get("country") || "All";
 
   useEffect(() => {
     fetchDestinations();
@@ -49,6 +65,19 @@ export default function Destinations({ limit }: { limit?: number }) {
     setLoading(false);
   }
 
+  // Helper to update URL params without full navigation
+  function updateParams(updates: Record<string, string>) {
+    const params = new URLSearchParams(urlSearchParams.toString());
+    for (const [key, value] of Object.entries(updates)) {
+      if (value && value !== "All") {
+        params.set(key, value);
+      } else {
+        params.delete(key);
+      }
+    }
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  }
+
   const categories = useMemo(() => {
     const unique = Array.from(
       new Set(destinations.map((d) => d.country || "Other"))
@@ -56,12 +85,13 @@ export default function Destinations({ limit }: { limit?: number }) {
     return ["All", ...unique];
   }, [destinations]);
 
-  const filtered =
-    active === "All"
-      ? destinations
-      : destinations.filter((d) => d.country === active);
+  const filtered = destinations.filter((d) => {
+    const countryMatch = activeCountry === "All" || d.country === activeCountry;
+    const searchMatch =
+      !search || d.name?.toLowerCase().includes(search.toLowerCase());
+    return countryMatch && searchMatch;
+  });
 
-  // If a limit is set, slice the filtered results
   const displayed = limit ? filtered.slice(0, limit) : filtered;
   const hasMore = limit ? filtered.length > limit : false;
 
@@ -92,22 +122,36 @@ export default function Destinations({ limit }: { limit?: number }) {
         </p>
       </div>
 
-      {/* Filters — only show on full page (no limit) */}
+      {/* Search + Filters — only on full page (no limit) */}
       {!limit && (
-        <div className="flex flex-wrap justify-center gap-4 mt-6">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActive(cat)}
-              className={`px-6 py-2 rounded-full border transition cursor-pointer ${
-                active === cat
-                  ? "bg-[#b77e24] text-white border-[#b77e24]"
-                  : "border-[#b77e24] text-[#b77e24] hover:bg-[#b77e24] hover:text-white"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="flex flex-col items-center gap-4 mt-6 px-6">
+
+          {/* Search input */}
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => updateParams({ search: e.target.value })}
+            placeholder="Search destinations..."
+            className="w-full max-w-md px-5 py-2.5 rounded-full border border-[#b77e24]/50 bg-white text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#b77e24]/40 transition"
+          />
+
+          {/* Country filter pills */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => updateParams({ country: cat })}
+                className={`px-6 py-2 rounded-full border transition cursor-pointer ${
+                  activeCountry === cat
+                    ? "bg-[#b77e24] text-white border-[#b77e24]"
+                    : "border-[#b77e24] text-[#b77e24] hover:bg-[#b77e24] hover:text-white"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
         </div>
       )}
 
@@ -151,7 +195,14 @@ export default function Destinations({ limit }: { limit?: number }) {
         </AnimatePresence>
       </motion.div>
 
-      {/* See More button — only shown on homepage when results are truncated */}
+      {/* Empty state */}
+      {displayed.length === 0 && (
+        <p className="text-center mt-4 pb-12 text-gray-500">
+          No destinations found matching your filters.
+        </p>
+      )}
+
+      {/* See More button — homepage only */}
       {hasMore && (
         <div className="flex justify-center pb-12">
           <Link
