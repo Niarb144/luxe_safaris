@@ -709,6 +709,12 @@ export default function Navbar() {
                             ))}
                           </div>
                         ))}
+                        <button
+                          onClick={() => navigate("/destinations")}
+                          className="mt-1 text-xs text-[#b77e24]"
+                        >
+                          View all destinations →
+                        </button>
                       </div>
                     </motion.div>
                   )}
