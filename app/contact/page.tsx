@@ -4,22 +4,21 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import SafariCTA from "../../components/QuizButton";
 
 const contacts = [
   {
     name: "Customer Support",
-    phone: "+254 712 345678",
+    phone: "+254 719 136 129",
     role: "General inquiries & bookings",
   },
   {
     name: "Safari Specialist",
-    phone: "+254 798 765432",
+    phone: "+254 722 486 677",
     role: "Custom safari planning",
   },
   {
     name: "Emergency Line",
-    phone: "+254 700 111222",
+    phone: "+254 719 136 129",
     role: "24/7 urgent support",
   },
 ];
