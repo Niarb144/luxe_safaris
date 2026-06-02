@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, Suspense } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
@@ -26,7 +26,7 @@ type DestinationsProps = {
   };
 };
 
-export default function Destinations({ limit, searchParams }: DestinationsProps) {
+function DestinationsInner({ limit, searchParams }: DestinationsProps) {
   const [destinations, setDestinations] = useState<Destination[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -229,5 +229,20 @@ const activeCountry =
         </div>
       )}
     </div>
+  );
+}
+
+// Outer component wraps the inner in Suspense
+export default function Destinations(props: DestinationsProps) {
+  return (
+    <Suspense fallback={
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 py-12">
+        {Array.from({ length: props.limit ?? 8 }).map((_, i) => (
+          <div key={i} className="rounded-[32px] h-[400px] bg-gray-100 animate-pulse" />
+        ))}
+      </div>
+    }>
+      <DestinationsInner {...props} />
+    </Suspense>
   );
 }
