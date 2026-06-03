@@ -335,7 +335,7 @@ const STATIC_LINKS = [
   { name: "Accommodation", href: "/accommodations" },
   { name: "Practical Info",href: "/info" },
   { name: "Contact",       href: "/contact" },
-  { name: "Blog",          href: "/blog" },
+  // { name: "Blog",          href: "/blog" }, coming soon
 ];
 
 function StaticLink({

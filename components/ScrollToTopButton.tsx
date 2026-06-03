@@ -36,7 +36,7 @@ export function ScrollToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 50 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-6 right-6 z-50 bg-white text-[#b77e24] p-3 rounded-full shadow-lg hover:scale-110 transition cursor-pointer "
+          className="fixed bottom-20 right-6 z-50 bg-white text-[#b77e24] p-3 rounded-full shadow-lg hover:scale-110 transition cursor-pointer "
         >
           <ChevronUp size={20} />
         </motion.button>

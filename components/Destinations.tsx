@@ -127,23 +127,23 @@ const activeCountry =
           Destinations Across East Africa
         </h2>
         <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
-          From the iconic Serengeti to the hidden gems of Rwanda, explore our
+          Explore our
           curated selection of unforgettable safari destinations.
         </p>
       </div>
 
       {/* Search + Filters — only on full page (no limit) */}
       {!limit && (
-        <div className="flex flex-col items-center gap-4 mt-6 px-6">
+        <div className="flex flex-col items-center gap-4 mt-4 px-6">
 
           {/* Search input */}
-          <input
+          {/* <input
             type="text"
             value={search}
             onChange={(e) => updateParams({ search: e.target.value })}
             placeholder="Search destinations..."
             className="w-full max-w-md px-5 py-2.5 rounded-full border border-[#b77e24]/50 bg-white text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#b77e24]/40 transition"
-          />
+          /> */}
 
           {/* Country filter pills */}
           <div className="flex flex-wrap justify-center gap-3">
@@ -168,7 +168,7 @@ const activeCountry =
       {/* Grid */}
       <motion.div
         layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 py-12"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 py-8"
       >
         <AnimatePresence mode="popLayout">
           {displayed.map((destination) => (
