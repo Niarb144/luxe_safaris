@@ -95,6 +95,7 @@ export default function CountryCards() {
                       src={country.image}
                       alt={country.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover"
                     />
                   ) : (
