@@ -6,6 +6,13 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 
+const countryImages: Record<string, string> = {
+  Kenya: "/images/kenya.jpg",
+  Tanzania: "/images/tanzania.jpg",
+  Uganda: "/images/uganda.jpg",
+  Rwanda: "/images/rwanda.jpg",
+};
+
 export default function CountryCards() {
   const [countries, setCountries] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -15,9 +22,8 @@ export default function CountryCards() {
       setLoading(true);
 
       const { data, error } = await supabase
-        .from("country_cards")
-        .select("*")
-        .order("tours", { ascending: false });
+        .from("tours")
+        .select("country");
 
       if (error) {
         console.error(error);
@@ -25,7 +31,33 @@ export default function CountryCards() {
         return;
       }
 
-      setCountries(data || []);
+      const grouped = (data || []).reduce(
+        (acc: any, tour: any) => {
+          if (!tour.country) return acc;
+
+          const key = tour.country.trim();
+
+          if (!acc[key]) {
+            acc[key] = {
+              name: key,
+              slug: key.toLowerCase(),
+              tours: 0,
+              image: countryImages[key] || "/images/default.jpg",
+            };
+          }
+
+          acc[key].tours += 1;
+
+          return acc;
+        },
+        {}
+      );
+
+      const result = Object.values(grouped).sort(
+        (a: any, b: any) => b.tours - a.tours
+      );
+
+      setCountries(result);
       setLoading(false);
     }
 
@@ -49,7 +81,7 @@ export default function CountryCards() {
 
           {countries.map((country) => (
             <Link
-              key={country.id}
+              key={country.slug}
               href={`/tours?country=${country.slug}`}
             >
               <motion.div
