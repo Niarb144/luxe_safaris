@@ -7,7 +7,7 @@ export default function TourFAQS({ items }: any) {
       {items.map((faq: any) => (
         <div key={faq.id} className="mb-4">
           <h3 className="font-bold text-gray-800">{faq.question}</h3>
-          <p className="text-gray-400">{faq.answer}</p>
+          <p className="text-gray-600">{faq.answer}</p>
         </div>
       ))}
     </div>
