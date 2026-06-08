@@ -5,12 +5,18 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Search, X, MapPin, CalendarDays, Plane, Compass } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import SearchButton from "./SearchButton";
 
-export default function TourSearch() {
+type Props = {
+  open: boolean;
+  onClose: () => void;
+};
+
+export default function TourSearch({open, onClose}: Props) {
   const router = useRouter();
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [destination, setDestination] = useState("");
   const [duration, setDuration] = useState("");
@@ -51,7 +57,7 @@ export default function TourSearch() {
 
   const handleClose = () => {
     clearFilters();
-    setOpen(false);
+    onClose();
   };
 
   async function fetchFilters() {
@@ -82,12 +88,12 @@ export default function TourSearch() {
   return (
     <>
       {/* Search Trigger */}
-      <button
+      {/* <button
         onClick={() => setOpen(true)}
         className="p-3 rounded-full bg-[#b77e24] hover:bg-[#c99034] transition-all duration-300 shadow-lg shadow-[#b77e24]/30 cursor-pointer"
       >
         <Search className="text-white" />
-      </button>
+      </button> */}
 
       <AnimatePresence>
         {open && (

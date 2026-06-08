@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import SafariCTA from "./QuizButton";
+import QuizButton from "./QuizButton";
+import SearchButton from "./SearchButton";
 
 export function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -55,7 +56,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-8"
         >
-          <SafariCTA />
+          {/* <SafariCTA /> */}
+          <QuizButton />
         </motion.div>
       </div>
     </section>

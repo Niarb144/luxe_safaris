@@ -7,6 +7,7 @@ import { Menu, X, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import SearchButton from "./SearchButton";
 import TourSearch from "./TourSearch";
 import { supabase } from "@/lib/supabase";
 
@@ -542,7 +543,7 @@ export default function Navbar() {
 
         {/* Desktop right side */}
         <div className="hidden md:flex items-center gap-4">
-          <TourSearch />
+          <SearchButton />
           <div className="bg-[#b77e24] text-white px-4 py-2 rounded text-sm flex flex-col leading-tight">
             <p className="font-medium">Call Us:</p>
             <div className="flex flex-col sm:flex-row sm:gap-2">
@@ -736,7 +737,7 @@ export default function Navbar() {
 
             <div className="px-6 py-4 flex items-center gap-4">
               <p className="text-gray-600 text-sm">Search</p>
-              <TourSearch />
+              <SearchButton />
             </div>
           </motion.div>
         )}
