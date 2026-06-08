@@ -188,6 +188,7 @@ const activeCountry =
                   src={destination.destination_images?.[0]?.image_url || "/images/logo.svg"}
                   alt={destination.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />

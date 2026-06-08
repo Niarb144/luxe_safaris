@@ -113,6 +113,7 @@ export default function Accommodations() {
             }
             alt={accommodation.hotel_name}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
 
