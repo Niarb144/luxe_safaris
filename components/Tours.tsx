@@ -28,51 +28,78 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
 
   useEffect(() => {
     async function fetchTours() {
-      const { data, error } = await supabase.from("tours_with_countries").select(`
+      const { data, error } = await supabase
+      .from("tours")
+      .select(`
         *,
         tour_images (image_url, is_main),
         tour_holiday_types (holiday_types (id, name)),
-        tour_destinations (destinations (id, name)),
-        tour_countries (countries (id, name, slug))
+        tour_destinations (destinations (id, name))
       `);
 
       if (error) { console.error(error); return; }
 
       const formatted = data.map((tour) => {
         const mainImage = tour.tour_images?.find((img: any) => img.is_main);
-        const countries = tour.tour_countries?.map((tc: any) => tc.countries?.name) || [];
-        const countrySlugs = tour.tour_countries?.map((tc: any) => tc.countries?.slug) || [];
+        const countrySlug = tour.country
+        ? tour.country.toLowerCase().replace(/\s+/g, "-")
+        : "";
 
         return {
           ...tour,
-          coverImage: mainImage?.image_url || "/images/logo.svg",
-          holidayTypes: tour.tour_holiday_types?.map((t: any) => t.holiday_types?.name) || [],
-          destinations: tour.tour_destinations?.map((d: any) => d.destinations?.name) || [],
-          countries,
-          countrySlugs,
+          coverImage:
+            mainImage?.image_url || "/images/logo.svg",
+
+          holidayTypes:
+            tour.tour_holiday_types?.map(
+              (t: any) => t.holiday_types?.name
+            ) || [],
+
+          destinations:
+            tour.tour_destinations?.map(
+              (d: any) => d.destinations?.name
+            ) || [],
+
+          countrySlug,
         };
       });
 
       setTours(formatted);
       setLoading(false);
+      // console.log(formatted[0]);
     }
 
     fetchTours();
   }, []);
 
   const categories = useMemo(() => {
-    const unique = Array.from(new Set(tours.flatMap((tour) => tour.country_slugs || [])));
+    const unique = Array.from(
+      new Set(
+        tours
+          .map((tour) => tour.country)
+          .filter(Boolean)
+      )
+    );
+
     return ["All", ...unique];
   }, [tours]);
 
   const filteredTours = tours.filter((tour) => {
-    const locationMatch = active === "All" || tour.country_slugs?.includes(active);
+    const locationMatch = active === "All" || tour.country === active;
     const searchMatch = !search || tour.title?.toLowerCase().includes(search.toLowerCase());
     const destinationMatch = !destination || tour.destinations?.includes(destination);
     const durationMatch = !duration || String(tour.duration) === duration;
     const holidayMatch = !holidayType || tour.holidayTypes?.includes(holidayType);
     return locationMatch && searchMatch && destinationMatch && durationMatch && holidayMatch;
   });
+
+  // console.log("Active:", active);
+  // console.log(
+  //   tours.map((t) => ({
+  //     title: t.title,
+  //     country: t.country,
+  //   }))
+  // );
 
   const displayed = limit ? filteredTours.slice(0, limit) : filteredTours;
   const hasMore = limit ? filteredTours.length > limit : false;
@@ -115,7 +142,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`px-6 py-2 rounded-full border transition cursor-pointer uppercase ${
+                className={`px-6 py-2 rounded-full border transition cursor-pointer ${
                   active === cat
                     ? "bg-[#b77e24] text-white border-[#b77e24]"
                     : "border-[#b77e24] text-[#b77e24] hover:bg-[#b77e24] hover:text-white"
@@ -156,8 +183,8 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
 
                   <div className="relative h-full flex flex-col justify-between p-7">
                     <div>
-                      <span className="text-white uppercase font-bold text-sm">
-                        {tour.country_slugs?.[0] || "Safari"}
+                      <span className="text-white font-semibold text-sm tracking-wide">
+                        {tour.country || "Safari"}
                       </span>
                     </div>
                     <div>

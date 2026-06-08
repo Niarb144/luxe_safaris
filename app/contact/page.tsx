@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import {
+  useGoogleReCaptcha,
+} from "react-google-recaptcha-v3";
 
 const contacts = [
   {
@@ -24,7 +27,93 @@ const contacts = [
 ];
 
 export default function ContactPage() {
-    const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setStatus(null);
+
+    if (!executeRecaptcha) {
+      setStatus({
+        type: "error",
+        message:
+          "Security verification is not ready. Please try again.",
+      });
+      return;
+    }
+
+    try {
+      setSending(true);
+
+      const token =
+        await executeRecaptcha(
+          "contact_submit"
+        );
+
+      const response = await fetch(
+        "/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type":
+              "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+            recaptchaToken: token,
+          }),
+        }
+      );
+
+      const result =
+        await response.json();
+
+      if (!response.ok) {
+        setStatus({
+          type: "error",
+          message:
+            result.error ||
+            "Failed to send message.",
+        });
+
+        return;
+      }
+
+      setStatus({
+        type: "success",
+        message:
+          "Thank you for contacting us. We'll get back to you shortly.",
+      });
+
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      console.error(error);
+
+      setStatus({
+        type: "error",
+        message:
+          "Something went wrong. Please try again later.",
+      });
+    } finally {
+      setSending(false);
+    }
+  };
 
   useEffect(() => {
     setLoaded(true);
@@ -92,21 +181,39 @@ export default function ContactPage() {
           className="bg-white p-6 rounded-2xl shadow-sm"
         >
           <h2 className="text-xl font-semibold mb-4 text-gray-800">Send us a message</h2>
+          {status && (
+            <div
+              className={`mb-4 rounded-lg p-3 text-sm ${
+                status.type === "success"
+                  ? "bg-green-100 text-green-700 border border-green-200"
+                  : "bg-red-100 text-red-700 border border-red-200"
+              }`}
+            >
+              {status.message}
+            </div>
+          )}
 
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <input
               type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Your Name"
               className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-[#b77e24] outline-none text-gray-800"
             />
 
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Your Email"
               className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-[#b77e24] outline-none text-gray-800"
             />
 
             <textarea
+              name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder="Your Message"
               rows={4}
               className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-[#b77e24] outline-none text-gray-800"
@@ -114,9 +221,12 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="w-full bg-[#b77e24] hover:bg-[#a06b05] text-white py-3 rounded-lg transition cursor-pointer font-medium"
+              disabled={sending}
+              className="w-full bg-[#b77e24] hover:bg-[#a06b05] text-white py-3 rounded-lg transition cursor-pointer font-medium disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
+              {sending
+                ? "Sending..."
+                : "Send Message"}
             </button>
           </form>
         </motion.div>
