@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import BookingModal from "../BookingModal";
+import { T } from "../T";
 
 export default function BookingCard({ tour }: any) {
   const [open, setOpen] = useState(false);
@@ -13,11 +14,11 @@ export default function BookingCard({ tour }: any) {
 
         <h2 className="text-2xl font-bold text-[#b77e24]">
           <span className="text-lg font-normal text-gray-400">
-            From {" "}
+            <T text="From" /> {" "}
           </span>
            ${tour.price}
           <span className="text-sm text-gray-400">
-            {" "} / person
+            {" "} <T text="/ person" />
           </span>
         </h2>
 
@@ -34,7 +35,7 @@ export default function BookingCard({ tour }: any) {
             transition
           "
         >
-          Book Now
+          <T text="Book Now" />
         </button>
 
         <BookingModal
@@ -57,7 +58,7 @@ export default function BookingCard({ tour }: any) {
             rounded-xl
           "
         >
-          WhatsApp
+          <T text="WhatsApp" />
         </a>
 
       </div>

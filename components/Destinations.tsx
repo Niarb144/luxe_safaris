@@ -6,6 +6,7 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { T } from "./T";
 
 type Destination = {
   id: string;
@@ -124,11 +125,10 @@ const activeCountry =
       {/* Heading */}
       <div className="text-center">
         <h2 className="text-4xl font-bold text-[#3b2a1d] mt-4">
-          Destinations Across East Africa
+          <T text="Destinations Across East Africa" />
         </h2>
         <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
-          Explore our
-          curated selection of unforgettable safari destinations.
+          <T text="Explore our curated selection of unforgettable safari destinations." />
         </p>
       </div>
 
@@ -194,7 +194,7 @@ const activeCountry =
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 <div className="relative h-full p-6 flex flex-col justify-between text-white">
                   <div className="text-sm uppercase tracking-widest font-semibold opacity-90">
-                    {destination.country}
+                    <T text={destination.country} />
                   </div>
                   <h2 className="text-3xl font-bold leading-tight">
                     {destination.name}
@@ -209,7 +209,7 @@ const activeCountry =
       {/* Empty state */}
       {displayed.length === 0 && (
         <p className="text-center mt-4 pb-12 text-gray-500">
-          No destinations found matching your filters.
+          <T text="No destinations found matching your filters." />
         </p>
       )}
 
@@ -220,7 +220,7 @@ const activeCountry =
             href="/destinations"
             className="group inline-flex items-center gap-3 bg-[#041f0e] hover:bg-[#062b12] text-white pl-6 pr-5 py-3.5 rounded-full border border-[#b77e24]/30 hover:border-[#b77e24]/60 transition-all duration-300 font-semibold text-sm uppercase tracking-wider shadow-lg"
           >
-            Explore All Destinations
+            <T text="Explore All Destinations" />
             <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#b77e24] group-hover:bg-[#a06d1f] transition-colors duration-200 shrink-0">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

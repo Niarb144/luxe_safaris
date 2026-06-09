@@ -4,8 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Lightbox from "yet-another-react-lightbox";
-
 import "yet-another-react-lightbox/styles.css";
+import { T } from "../T";
 
 export default function TourGallery({ images }: any) {
   const [open, setOpen] = useState(false);
@@ -25,11 +25,11 @@ export default function TourGallery({ images }: any) {
         {/* Heading */}
         <div className="mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-[#2f241b]">
-            Tour Gallery
+            <T text="Tour Gallery" />
           </h2>
 
           <p className="text-gray-600 mt-3">
-            Explore moments from this unforgettable safari experience.
+            <T text="Explore moments from this unforgettable safari experience." />
           </p>
         </div>
 

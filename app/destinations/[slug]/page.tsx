@@ -1,5 +1,6 @@
 import { supabase } from "@/lib/supabase";
 import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
+import ContactCard from "@/components/ContactCard";
 
 export default async function DestinationPage({
   params,
@@ -241,6 +242,7 @@ export default async function DestinationPage({
         )}
       </div>
       <WhyChooseLuxeSafaris />
+      <ContactCard />
     </div>
   );
 }

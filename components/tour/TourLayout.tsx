@@ -18,6 +18,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { T } from "../T";
 
 
 export default function TourLayout({ tour, mainImage, relatedTours, accommodations }: any) {
@@ -110,9 +111,9 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
             className="text-sm uppercase tracking-[0.3em] text-[#d4a54b] font-medium mb-4"
           >
-            <Link href="/" className="hover:text-[#d4a54b] transition cursor-pointer">Home</Link>
+            <Link href="/" className="hover:text-[#d4a54b] transition cursor-pointer"><T text="Home" /></Link>
             &nbsp;/&nbsp;
-            <Link href="/tours" className="hover:text-[#d4a54b] transition cursor-pointer">All Tours</Link>
+            <Link href="/tours" className="hover:text-[#d4a54b] transition cursor-pointer"><T text="All Tours" /></Link>
             &nbsp;/&nbsp; {tour.title}
           </motion.p>
           <motion.h1
@@ -198,8 +199,8 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
 
         {/* Why choose this safari */}
         <section className="mb-10 mt-20 max-w-4xl mx-auto px-6" id="why-choose" data-section="why-choose">
-          <h2 className="text-2xl font-semibold mb-3">Why Choose This Safari</h2>
-          <p className="text-gray-600">{tour.why_choose_safari || "No description provided."}</p>
+          <h2 className="text-2xl font-semibold mb-3"><T text="Why Choose This Safari" /></h2>
+          <p className="text-gray-600"><T text={tour.why_choose_safari || "No description provided."} /></p>
         </section>
 
         {/* FAQs */}
@@ -227,12 +228,12 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
               {tour.price && (
                 <>
                   <span className="text-[#b77e24] font-bold text-base tracking-tight">
-                    From ${tour.price.toLocaleString()}
+                    <T text={`From ${tour.price.toLocaleString()}`} />
                   </span>
                   <span className="w-px h-4 bg-white/20 rounded-full" />
                 </>
               )}
-              <span className="font-semibold text-sm uppercase tracking-wider cursor-pointer">Book This Tour</span>
+              <span className="font-semibold text-sm uppercase tracking-wider cursor-pointer"><T text="Book This Tour" /></span>
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#b77e24] group-hover:bg-[#a06d1f] transition-colors duration-200 shrink-0 cursor-pointer">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 9v7.5" />
@@ -269,8 +270,8 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
                 {/* Modal header */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-[#041f0e]">
                   <div>
-                    <p className="text-xs uppercase tracking-widest text-[#b77e24] font-semibold">Reserve Your Spot</p>
-                    <h3 className="text-white font-bold text-lg leading-tight mt-0.5 line-clamp-1">{tour.title}</h3>
+                    <p className="text-xs uppercase tracking-widest text-[#b77e24] font-semibold"><T text="Reserve Your Spot" /></p>
+                    <h3 className="text-white font-bold text-lg leading-tight mt-0.5 line-clamp-1"><T text={tour.title} /></h3>
                   </div>
                   <button
                     onClick={() => setBookingModalOpen(false)}

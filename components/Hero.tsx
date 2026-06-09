@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import QuizButton from "./QuizButton";
 import SearchButton from "./SearchButton";
+import { T } from "./T";
 
 export function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -38,7 +39,7 @@ export function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-4xl md:text-6xl font-bold text-white leading-tight"
         >
-          Discover Your Dream Safari
+          <T text="Discover Your Dream Safari" />
         </motion.h1>
 
         <motion.p
@@ -47,7 +48,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="mt-4 text-lg md:text-xl text-white/90"
         >
-          Explore Africa’s most breathtaking destinations with curated safari experiences.
+          <T text="Explore Africa’s most breathtaking destinations with curated safari experiences." />
         </motion.p>
 
         <motion.div

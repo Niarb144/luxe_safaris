@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { T } from "./T";
 
 type Accommodation = {
   id: string;
@@ -65,7 +66,7 @@ export default function Accommodations() {
       : accommodations.filter((accommodation) => accommodation.country_location === active);
 
   if (loading) {
-    return <p>Loading accommodations...</p>;
+    return <p><T text="Loading accommodations..." /></p>;
   }
 
   return (
@@ -73,11 +74,11 @@ export default function Accommodations() {
     {/* Heading */}
     <div className="text-center">
       <h2 className="text-4xl font-bold text-[#3b2a1d] mt-10">
-        Accommodations Across East Africa
+        <T text="Accommodations Across East Africa" />
       </h2>
 
       <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-        Explore our curated selection of accommodations, from luxury lodges to boutique hotels, each offering a unique blend of comfort and local charm.
+        <T text="Explore our curated selection of accommodations, from luxury lodges to boutique hotels, each offering a unique blend of comfort and local charm." />
       </p>
     </div>
     {/* Filters */}
@@ -125,7 +126,7 @@ export default function Accommodations() {
             
             {/* Top label */}
             <div className="text-sm uppercase tracking-widest font-semibold opacity-90">
-              {accommodation.country_location}
+              <T text={accommodation.country_location} />
             </div>
 
             {/* Bottom title */}

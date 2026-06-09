@@ -3,6 +3,7 @@
 import { FaCrown } from "react-icons/fa";
 import { IoStarSharp, IoStarOutline } from "react-icons/io5";
 import { MdHotelClass } from "react-icons/md";
+import { T } from "../T";
 
 type Season = "LOW" | "HIGH" | "PEAK";
 type Classification = "economy" | "comfort" | "luxury" | "superior_luxury";
@@ -76,7 +77,7 @@ export default function TourPricing({ items }: any) {
     <section className="py-10">
       {/* Heading */}
       <div className="mb-6">
-        <h2 className="text-3xl text-gray-800">Safari Pricing Rates</h2>
+        <h2 className="text-3xl text-gray-800"><T text="Safari Pricing Rates" /></h2>
       </div>
 
       <div className="space-y-8">
@@ -96,12 +97,12 @@ export default function TourPricing({ items }: any) {
               >
                 <span className="text-xl">{cls.icon}</span>
                 <span className="font-display text-lg font-semibold">
-                  {cls.label}
+                  <T text={cls.label} />
                 </span>
                 <span
                   className={`ml-auto text-[10px] font-bold px-2.5 py-1 rounded-full ${cls.badgeBg} ${cls.badgeText}`}
                 >
-                  {currency} / person
+                  <T text={`${currency} / person`} />
                 </span>
               </div>
 
@@ -109,14 +110,14 @@ export default function TourPricing({ items }: any) {
               <div className="hidden md:block">
                 <div className="grid grid-cols-5 bg-[#fffdf7] border-b border-[#e8d5b0]">
                   <div className="px-5 py-3 text-xs font-bold uppercase tracking-widest text-[#7a5c2e]">
-                    Season
+                    <T text="Season" />
                   </div>
                   {PERSONS.map((p) => (
                     <div
                       key={p}
                       className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-[#7a5c2e] text-right"
                     >
-                      {p} Persons
+                      <T text={`${p} Persons`} />
                     </div>
                   ))}
                 </div>
@@ -137,11 +138,11 @@ export default function TourPricing({ items }: any) {
                             style={{ background: s.dotColor }}
                           />
                           <span className="text-sm font-bold text-[#1c0d00]">
-                            {s.label}
+                            <T text={s.label} />
                           </span>
                         </div>
                         <span className="text-[11px] text-[#a08050] pl-4">
-                          {s.subtitle}
+                          <T text={s.subtitle} />
                         </span>
                       </div>
 
@@ -158,7 +159,7 @@ export default function TourPricing({ items }: any) {
                                   {fmt(entry.price)}
                                 </span>
                                 <span className="text-[10px] text-[#a08050] mt-0.5">
-                                  {currency}*
+                                  <T text={`${currency}*`} />
                                 </span>
                               </>
                             ) : (
@@ -190,10 +191,10 @@ export default function TourPricing({ items }: any) {
                         />
                         <div>
                           <p className="font-semibold text-[#1c0d00]">
-                            {s.label}
+                            <T text={s.label} />
                           </p>
                           <p className="text-xs text-[#a08050]">
-                            {s.subtitle}
+                            <T text={s.subtitle} />
                           </p>
                         </div>
                       </div>
@@ -209,7 +210,7 @@ export default function TourPricing({ items }: any) {
                               className="rounded-lg bg-[#fffdf7] border border-[#f0e0c0] p-3 flex flex-col items-start"
                             >
                               <span className="text-xs text-[#7a5c2e] font-medium">
-                                {p} pax
+                                <T text={`${p} pax`} />
                               </span>
 
                               {entry ? (
@@ -218,7 +219,7 @@ export default function TourPricing({ items }: any) {
                                     {fmt(entry.price)}
                                   </span>
                                   <span className="text-[10px] text-[#a08050]">
-                                    {currency}
+                                    <T text={currency} />
                                   </span>
                                 </>
                               ) : (
@@ -240,7 +241,7 @@ export default function TourPricing({ items }: any) {
       </div>
 
       <p className="text-xs text-[#a08050] mt-5">
-        * Prices are per person per night and displayed in {currency}. Rates may vary — contact us for current availability and exact quotes.
+        <T text={`* Prices are per person per night and displayed in ${currency}. Rates may vary — contact us for current availability and exact quotes.`} />
       </p>
     </section>
   );

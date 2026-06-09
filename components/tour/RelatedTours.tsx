@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { T } from "../T";
 
 export default function RelatedTours({ tours }: any) {
   if (!tours?.length) return null;
@@ -12,11 +13,11 @@ export default function RelatedTours({ tours }: any) {
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-12">
           <p className="text-[#b77e24] uppercase tracking-[0.3em] text-sm font-medium">
-            Explore More
+            <T text="Explore More" />
           </p>
 
           <h2 className="text-4xl font-bold text-gray-900 mt-3">
-            Related Tours
+            <T text="Related Tours" />
           </h2>
         </div>
 
@@ -52,7 +53,7 @@ export default function RelatedTours({ tours }: any) {
                     </p>
 
                     <h3 className="text-2xl font-semibold mt-1">
-                      {tour.title}
+                      <T text={tour.title} />
                     </h3>
                   </div>
                 </div>

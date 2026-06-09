@@ -6,6 +6,7 @@ import { Search, X, MapPin, CalendarDays, Plane, Compass } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import SearchButton from "./SearchButton";
+import { T } from "./T";
 
 type Props = {
   open: boolean;
@@ -114,8 +115,8 @@ export default function TourSearch({open, onClose}: Props) {
               {/* Header */}
               <div className="px-8 py-6 border-b border-white/10 flex justify-between items-center">
                 <div>
-                  <p className="uppercase tracking-[4px] text-[#b77e24] text-sm">Luxury Safari Search</p>
-                  <h2 className="text-3xl text-white font-serif mt-1">Find Your Perfect Journey</h2>
+                  <p className="uppercase tracking-[4px] text-[#b77e24] text-sm"><T text="Luxury Safari Search" /></p>
+                  <h2 className="text-3xl text-white font-serif mt-1"><T text="Find Your Perfect Journey" /></h2>
                 </div>
                 <button onClick={handleClose} className="text-white hover:text-[#b77e24] transition cursor-pointer">
                   <X size={24} />
@@ -139,7 +140,7 @@ export default function TourSearch({open, onClose}: Props) {
                 <div className="relative">
                   <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-[#b77e24]" size={18} />
                   <select value={destination} onChange={(e) => setDestination(e.target.value)} className={inputStyle}>
-                    <option value="" className="bg-[#10261f] text-white">Select Destination</option>
+                    <option value="" className="bg-[#10261f] text-white"><T text="Select Destination" /></option>
                     {destinations.map((item) => (
                       <option key={item.id} value={item.name} className="bg-[#10261f] text-white">
                         {item.name}
@@ -152,7 +153,7 @@ export default function TourSearch({open, onClose}: Props) {
                 <div className="relative">
                   <CalendarDays className="absolute left-4 top-1/2 -translate-y-1/2 text-[#b77e24]" size={18} />
                   <select value={duration} onChange={(e) => setDuration(e.target.value)} className={inputStyle}>
-                    <option value="" className="bg-[#10261f] text-white">Duration</option>
+                    <option value="" className="bg-[#10261f] text-white"><T text="Duration" /></option>
                     {durationOptions.map((item) => (
                       <option key={item} value={item} className="bg-[#10261f] text-white">
                         {item}
@@ -165,7 +166,7 @@ export default function TourSearch({open, onClose}: Props) {
                 <div className="relative">
                   <Compass className="absolute left-4 top-1/2 -translate-y-1/2 text-[#b77e24]" size={18} />
                   <select value={holidayType} onChange={(e) => setHolidayType(e.target.value)} className={inputStyle}>
-                    <option value="" className="bg-[#10261f] text-white">Safari Type</option>
+                    <option value="" className="bg-[#10261f] text-white"><T text="Safari Type" /></option>
                     {holidayTypes.map((type) => (
                       <option key={type.id} value={type.name} className="bg-[#10261f] text-white">
                         {type.name}
@@ -181,13 +182,13 @@ export default function TourSearch({open, onClose}: Props) {
                   onClick={clearFilters}
                   className="px-6 py-3 border border-white/20 text-white rounded-xl hover:bg-white/5 transition cursor-pointer"
                 >
-                  Clear Filters
+                  <T text="Clear Filters" />
                 </button>
                 <button
                   onClick={handleSearch}
                   className="px-8 py-3 rounded-xl bg-[#b77e24] hover:bg-[#c99034] text-white font-medium transition-all shadow-lg hover:shadow-[#b77e24]/30 cursor-pointer"
                 >
-                  Search Safaris
+                  <T text="Search Safaris" />
                 </button>
               </div>
             </motion.div>

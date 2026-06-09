@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { T } from "../T";
 
 export default function Accommodations({
   accommodations,
@@ -30,8 +31,8 @@ export default function Accommodations({
 
   return (
     <div className="py-12">
-      <h2 className="text-4xl font-bold uppercase mb-2">Accommodations</h2>
-      <p className="text-gray-600 mb-8">You Safari accommodation options</p>
+      <h2 className="text-4xl font-bold uppercase mb-2"><T text="Accommodations" /></h2>
+      <p className="text-gray-600 mb-8"><T text="You Safari accommodation options" /></p>
 
       {/* LEVEL TABS */}
       <div className="flex overflow-x-auto mb-8 rounded-xl border border-[#b77e24]/20 bg-[#041f0e]/5 p-1 gap-1">
@@ -45,7 +46,7 @@ export default function Accommodations({
                 : "text-[#041f0e]/70 hover:text-[#b77e24] hover:bg-[#b77e24]/8"
             }`}
           >
-            {level} Level
+            {level} <T text="Level" />
           </button>
         ))}
       </div>
@@ -67,13 +68,13 @@ export default function Accommodations({
               <thead>
                 <tr className="bg-gray-50 border-b border-gray-200 text-left">
                   <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 w-1/4">
-                    Country
+                    <T text="Country" />
                   </th>
                   <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 w-1/4">
-                    Destination
+                    <T text="Destination" />
                   </th>
                   <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
-                    Accommodation
+                    <T text="Accommodation" />
                   </th>
                 </tr>
               </thead>
@@ -84,7 +85,7 @@ export default function Accommodations({
                     className="group hover:bg-amber-50/50 transition-colors duration-150"
                   >
                     <td className="px-6 py-4 text-sm text-gray-600">
-                      {hotel.country_location}
+                      <T text={hotel.country_location} />
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-600">
                       {hotel.destinations?.name}
@@ -124,7 +125,7 @@ export default function Accommodations({
                     {hotel.country_location && (
                       <span className="text-xs text-gray-500">
                         <span className="font-medium text-gray-700">Country:</span>{" "}
-                        {hotel.country_location}
+                        <T text={hotel.country_location} />
                       </span>
                     )}
                     {hotel.destinations?.name && (

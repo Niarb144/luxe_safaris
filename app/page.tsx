@@ -13,6 +13,7 @@ import Destinations from "@/components/Destinations";
 import ReviewsSection from "@/components/ReviewSection";
 import AccreditationSection from "@/components/Acrreditation";
 import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
+import ContactCard from "@/components/ContactCard";
 
 export default function Home() {
 
@@ -22,19 +23,11 @@ export default function Home() {
         <Hero />
         <CountryCards />
         <Numbers />
-        {/* Header */}
-        {/* <div className="text-center">
-          <p className="text-sm tracking-widest text-gray-500 uppercase">
-            Popular Tours
-          </p>
-          <h2 className="text-3xl md:text-4xl text-[#b77e24] font-semibold mt-2">
-            Most travel here
-          </h2>
-        </div> */}
         <ToursList limit={4}/>
         <Destinations limit={4} />
         <ReviewsSection />
         <AccreditationSection />
+        <ContactCard />
         <WhyChooseLuxeSafaris />
       </div>
     </>

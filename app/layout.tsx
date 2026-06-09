@@ -11,6 +11,7 @@ import CookieBanner from "@/components/CookieBanner";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { ConsentProvider } from "@/components/ConsentProvider";
 import Providers from "@/app/providers";
+import { TranslationProvider } from "@/components/TranslationProvider";
 
 
 export const metadata: Metadata = {
@@ -30,16 +31,18 @@ export default function RootLayout({
         <ClientLoaderWrapper>
           <ConsentProvider>
             <Providers>
-            <Navbar />
-              <Suspense fallback={null}>
-                <NavigationProgress />
-              </Suspense>
-              {children}
-              <Footer />
-            <ScrollToTop />
-            <WhatsAppButton />
-            <CookieBanner />
-            <GoogleAnalytics />
+              <TranslationProvider>
+                <Navbar />
+                  <Suspense fallback={null}>
+                    <NavigationProgress />
+                  </Suspense>
+                  {children}
+                  <Footer />
+                <ScrollToTop />
+                <WhatsAppButton />
+                <CookieBanner />
+                <GoogleAnalytics />
+              </TranslationProvider>
             </Providers>
           </ConsentProvider>
         </ClientLoaderWrapper>

@@ -1,19 +1,20 @@
 import FooterBottomBar from "./FooterBottomBar";
 import { FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
+import { T } from "./T";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#b77e24] text-white mt-20">
+    <footer className="bg-[#b77e24] text-white mt-0">
       {/* Newsletter Section */}
       <div className="relative bg-[url('/images/img3.webp')] bg-cover bg-center">
         <div className="bg-black/50">
           <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h2 className="text-xl font-semibold">
-                Want to receive travel news and inspiration?
+                <T text="Want to receive travel news and inspiration?" />
               </h2>
               <p className="text-sm opacity-90">
-                Sign up to our newsletter and enter our lucky draw.
+                <T text="Sign up to our newsletter and enter our lucky draw." />
               </p>
             </div>
 
@@ -24,7 +25,7 @@ export default function Footer() {
                 className="px-4 py-2 rounded-md text-black w-full md:w-64 bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#b77e24]"
               />
               <button className="bg-[#b77e24] px-5 py-2 rounded-md font-medium hover:bg-orange-700 transition">
-                Sign me up
+                <T text="Sign me up" />
               </button>
             </div>
           </div>
@@ -56,15 +57,19 @@ export default function Footer() {
         {/* Column 2 */}
         <div>
           <h3 className="font-semibold mb-4">
-            About Luxe Plains Africa Safaris
+            <T text="About Luxe Plains Africa Safaris" />
           </h3>
-          <p className="text-sm">Luxe Plains Africa Safaris Ltd.</p>
-          <p className="text-sm">Registered in Kenya</p>
+          <p className="text-sm">
+            <T text="Luxe Plains Africa Safaris Ltd." />
+          </p>
+          <p className="text-sm">
+            <T text="Registered in Kenya" />
+          </p>
 
           <p className="text-sm mt-3 leading-relaxed">
-            Registered Office: Standard Building,
+            <T text="Registered Office: Standard Building," />
             <br />
-            3rd Floor, Suite No.5
+            <T text="3rd Floor, Suite No.5" />
             <br />
             Nairobi
           </p>
@@ -72,21 +77,25 @@ export default function Footer() {
 
         {/* Column 3 */}
         <div>
-          <h3 className="font-semibold mb-4">Information</h3>
+          <h3 className="font-semibold mb-4">
+            <T text="Information" />
+          </h3>
           <ul className="space-y-2 text-sm">
             <li className="hover:underline cursor-pointer">
-              Book With Confidence
+              <T text="Book With Confidence" />
             </li>
             <li className="hover:underline cursor-pointer">
-              <a href="/privacy-policy">Privacy Policy</a>
-            </li>
-            <li className="hover:underline cursor-pointer">
-              <a href="/termsandconditions">
-                Terms & Conditions
+              <a href="/privacy-policy">
+                <T text="Privacy Policy" />
               </a>
             </li>
             <li className="hover:underline cursor-pointer">
-              Online Payment
+              <a href="/termsandconditions">
+                <T text="Terms & Conditions" />
+              </a>
+            </li>
+            <li className="hover:underline cursor-pointer">
+              <T text="Online Payment" />
             </li>
           </ul>
         </div>
@@ -94,7 +103,7 @@ export default function Footer() {
         {/* ACCREDITATIONS (replaces Service) */}
         <div>
           <h3 className="font-semibold mb-4">
-            Accreditations
+            <T text="Accreditations" />
           </h3>
 
           <div className="grid grid-cols-2 gap-3">
