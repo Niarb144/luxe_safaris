@@ -1,6 +1,7 @@
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
+import ContactCard from "@/components/ContactCard";
 import Link from "next/link";
 import {
   Wifi,
@@ -14,6 +15,9 @@ import {
   Wind,
   ShieldCheck,
   Sparkles,
+  CheckIcon,
+  MapIcon,
+  HotelIcon,
 } from "lucide-react";
 
 export default async function AccommodationPage({
@@ -120,6 +124,19 @@ export default async function AccommodationPage({
             </section>
           )}
 
+          {/* Accommodation Type */}
+          {accommodation.accommodation_type && (
+            <section>
+              <div className="flex items-center gap-3 mb-4">
+                <HotelIcon className="w-5 h-5 text-[#0f2e1d]" />
+                <h2 className="text-2xl font-semibold">Accommodation Type</h2>
+              </div>
+              <p className="text-gray-700 leading-relaxed text-lg">
+                {accommodation.accommodation_type}
+              </p>
+            </section>
+          )}
+
           {/* IMAGE GALLERY */}
           {accommodation.images?.length > 0 && (
             <section>
@@ -170,10 +187,44 @@ export default async function AccommodationPage({
             </section>
           )}
 
+          {/* Services */}
+          {accommodation.services?.length > 0 && (
+            <section>
+              <h2 className="text-2xl font-semibold mb-6">Services</h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {accommodation.services.map((service: string) => (
+                  <div
+                    key={service}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-gray-200 hover:shadow-sm transition"
+                  >
+                    <CheckIcon className="w-5 h-5 text-[#0f2e1d]" />
+
+                    <span className="text-sm text-gray-700 capitalize">
+                      {service}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Location */}
+          {accommodation.location && (
+            <section>
+              <div className="flex items-center gap-3 mb-4">
+                <MapIcon className="w-5 h-5 text-[#0f2e1d]" />
+                <h2 className="text-2xl font-semibold">Location</h2>
+              </div>
+              <p className="text-gray-700 leading-relaxed text-lg">
+                {accommodation.location}
+              </p>
+            </section>
+          )}
+
           {/* MAP */}
           {accommodation.map_url && (
             <section>
-              <h2 className="text-2xl font-semibold mb-4">Location</h2>
               <div className="rounded-xl overflow-hidden shadow-sm border">
                 <iframe
                   src={accommodation.map_url}
@@ -183,6 +234,7 @@ export default async function AccommodationPage({
               </div>
             </section>
           )}
+          
         </div>
 
         {/* SIDEBAR */}
@@ -231,6 +283,7 @@ export default async function AccommodationPage({
       </div>
 
       <WhyChooseLuxeSafaris />
+      <ContactCard />
     </div>
   );
 }

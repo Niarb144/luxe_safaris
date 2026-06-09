@@ -25,7 +25,7 @@ export default function ContactCard() {
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[28px] p-8 space-y-6">
                 <div>
                   <p className="text-sm uppercase tracking-widest text-[#d4a54b]">Call Us</p>
-                  <a href="tel:+254700000000" className="mt-2 block text-3xl font-semibold hover:text-[#d4a54b] transition">+254 700 000 000</a>
+                  <a href="tel:+254719136129" className="mt-2 block text-3xl font-semibold hover:text-[#d4a54b] transition">+254 719 136 129</a>
                 </div>
                 <div className="border-t border-white/10 pt-6">
                   <p className="text-sm uppercase tracking-widest text-[#d4a54b]">Email</p>
