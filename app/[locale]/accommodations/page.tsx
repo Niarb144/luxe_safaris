@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import SafariCTA from "../../components/QuizButton";
+import SafariCTA from "@/components/QuizButton";
 import Accommodations from "@/components/Accommodations";
 import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
 
