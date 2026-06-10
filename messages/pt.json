@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Descubra o Safari dos Seus Sonhos",
+    "subtitle": "Explore os destinos mais deslumbrantes da África com experiências de safári selecionadas."
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Quer receber novidades e inspirações sobre viagens?",
+      "subtitle": "Subscreva a nossa newsletter e participe no nosso sorteio.",
+      "placeholder": "E-mail",
+      "button": "Inscrever-me"
+    },
+    "company": {
+      "name": "SAFÁRIS EM LUXE PLAINS NA ÁFRICA",
+      "about": "Sobre a Luxe Plains Africa Safaris",
+      "registered": "Luxe Plains Africa Safaris Ltd.",
+      "country": "Registado no Quénia",
+      "address1": "Sede: Edifício Padrão,",
+      "address2": "3º Andar, Suite No.5"
+    },
+    "information": {
+      "title": "Informação",
+      "bookWithConfidence": "Reserve com confiança",
+      "privacyPolicy": "Política de privacidade",
+      "termsAndConditions": "Termos e Condições",
+      "onlinePayment": "Pagamento Online"
+    },
+    "accreditations": {
+      "title": "Acreditações"
+    }
+  },
+  "nav": {
+    "home": "Casa",
+    "tours": "Excursões",
+    "about": "Sobre",
+    "contact": "Contacto"
+  },
+  "common": {
+    "bookNow": "Agende Agora!",
+    "exploreTours": "Explorar excursões",
+    "learnMore": "Saber mais",
+    "readMore": "Ler Mais",
+    "loading": "A carregar ...",
+    "viewAll": "Ver tudo"
+  },
+  "whyUs": {
+    "tagline": "VIAJE CONOSCO",
+    "title": "Porquê escolher a Luxe Safaris",
+    "subtitle": "Combinamos luxo, acessibilidade e atendimento personalizado para criar experiências de safári inesquecíveis para todos os viajantes que exploram a África.",
+    "cta": {
+      "title": "Comece a sua aventura em África",
+      "subtitle": "Descubra experiências de safári de luxo criadas com cuidado, autenticidade e valor excepcional.",
+      "button": "Explorar excursões"
+    },
+    "features": {
+      "luxury": {
+        "title": "Experiências de luxo",
+        "description": "Desfrute de alojamentos escolhidos a dedo, acampamentos de safári premium e aventuras inesquecíveis projetadas para conforto e elegância."
+      },
+      "affordable": {
+        "title": "Excelência Acessível",
+        "description": "Oferecemos experiências de safári de classe mundial a preços competitivos, sem comprometer a qualidade ou o conforto."
+      },
+      "personalizedCare": {
+        "title": "Atendimento Personalizado",
+        "description": "Da chegada à partida, a nossa equipa apoia todos os viajantes com atenção dedicada e serviço contínuo."
+      },
+      "authentic": {
+        "title": "Aventuras africanas autênticas",
+        "description": "Experimente a vida selvagem de tirar o fôlego, culturas ricas e destinos icônicos com curadoria de especialistas locais em safári."
+      },
+      "trusted": {
+        "title": "Confiável e seguro",
+        "description": "Viaje com confiança com reservas seguras, parceiros de safári confiáveis e suporte ao cliente confiável."
+      },
+      "forEveryone": {
+        "title": "Para todos os viajantes",
+        "description": "Quer seja a solo, casais, famílias ou grupos, criamos viagens de safari adaptadas a cada estilo de viagem."
+      }
+    }
+  }
+}

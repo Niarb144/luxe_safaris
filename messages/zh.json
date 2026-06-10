@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "探索您的梦想野生动物园",
+    "subtitle": "通过精心策划的野生动物园体验，探索非洲最令人惊叹的目的地。"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "想接收旅游新闻和旅行灵感吗？",
+      "subtitle": "订阅我们的时事通讯，参加我们的抽奖活动。",
+      "placeholder": "电子邮箱",
+      "button": "注册我"
+    },
+    "company": {
+      "name": "豪华平原非洲之旅",
+      "about": "关于Luxe Plains Africa Safaris",
+      "registered": "Luxe Plains Africa Safaris Ltd.",
+      "country": "在肯尼亚注册",
+      "address1": "注册办事处：标准大厦，",
+      "address2": "5号套房3楼"
+    },
+    "information": {
+      "title": "信息",
+      "bookWithConfidence": "放心预订",
+      "privacyPolicy": "隐私条款",
+      "termsAndConditions": "条款和声明",
+      "onlinePayment": "网上快捷支付"
+    },
+    "accreditations": {
+      "title": "认证"
+    }
+  },
+  "nav": {
+    "home": "主页",
+    "tours": "旅游",
+    "about": "软件简介",
+    "contact": "联系方式"
+  },
+  "common": {
+    "bookNow": "立即订座",
+    "exploreTours": "探索之旅",
+    "learnMore": "了解详情",
+    "readMore": "了解更多",
+    "loading": "正在載入...",
+    "viewAll": "檢視全部"
+  },
+  "whyUs": {
+    "tagline": "一起旅行吧！",
+    "title": "为什么选择Luxe Safaris",
+    "subtitle": "我们将奢华、实惠和个性化护理相结合，为每一位探索非洲的旅行者创造难忘的野生动物园体验。",
+    "cta": {
+      "title": "开始您的非洲之旅",
+      "subtitle": "探索精心打造、真实可靠、物超所值的奢华野生动物园体验。",
+      "button": "探索之旅"
+    },
+    "features": {
+      "luxury": {
+        "title": "奢华体验",
+        "description": "享受精心挑选的小屋、顶级野生动物园营地，以及专为舒适和优雅而设计的难忘冒险。"
+      },
+      "affordable": {
+        "title": "经济实惠的卓越服务",
+        "description": "我们以具有竞争力的价格提供世界一流的野生动物园体验，而不会影响质量或舒适度。"
+      },
+      "personalizedCare": {
+        "title": "个性化护理",
+        "description": "从抵达到离开，我们的团队以专注的关注和无缝的服务为每位旅客提供支持。"
+      },
+      "authentic": {
+        "title": "正宗非洲多天探险体验",
+        "description": "体验由当地野生动物园专家精心挑选的令人惊叹的野生动物、丰富的文化和标志性目的地。"
+      },
+      "trusted": {
+        "title": "安全可靠，值得信赖",
+        "description": "安全预订、值得信赖的Safari合作伙伴和可靠的客户支持，让您安心出行。"
+      },
+      "forEveryone": {
+        "title": "适合每一位旅客",
+        "description": "无论是单人旅行、情侣旅行、家庭旅行还是团体旅行，我们都能为您量身定制适合各种旅行风格的野生动物园之旅。"
+      }
+    }
+  }
+}

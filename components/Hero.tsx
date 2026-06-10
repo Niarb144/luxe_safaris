@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import QuizButton from "./QuizButton";
-import SearchButton from "./SearchButton";
-import { T } from "./T";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
   const [loaded, setLoaded] = useState(false);
+  const t = useTranslations("hero");
 
   useEffect(() => {
     setLoaded(true);
@@ -39,7 +39,7 @@ export function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-4xl md:text-6xl font-bold text-white leading-tight"
         >
-          <T text="Discover Your Dream Safari" />
+          {t("title")}
         </motion.h1>
 
         <motion.p
@@ -48,7 +48,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="mt-4 text-lg md:text-xl text-white/90"
         >
-          <T text="Explore Africa’s most breathtaking destinations with curated safari experiences." />
+          {t("subtitle")}
         </motion.p>
 
         <motion.div
@@ -57,7 +57,6 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-8"
         >
-          {/* <SafariCTA /> */}
           <QuizButton />
         </motion.div>
       </div>

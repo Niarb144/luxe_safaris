@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Odkryj swoje wymarzone Safari",
+    "subtitle": "Odkryj najbardziej zapierające dech w piersiach miejsca w Afryce dzięki wyselekcjonowanym atrakcjom safari."
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Chcesz otrzymywać wiadomości i inspiracje z podróży?",
+      "subtitle": "Zapisz się do naszego newslettera i weź udział w naszym szczęśliwym losowaniu.",
+      "placeholder": "E-mail",
+      "button": "Zapisz mnie"
+    },
+    "company": {
+      "name": "LUKSUSOWE RÓWNINY AFRYKA SAFARI",
+      "about": "O Luxe Plains Africa Safari",
+      "registered": "Luxe Plains Africa Safaris Ltd.",
+      "country": "Zarejestrowana w Kenii",
+      "address1": "Siedziba: Standard Building,",
+      "address2": "3 piętro, pokój nr 5"
+    },
+    "information": {
+      "title": "Informacje",
+      "bookWithConfidence": "REZERWUJ BEZ OBAW",
+      "privacyPolicy": "Polityka Prywatności",
+      "termsAndConditions": "Warunki",
+      "onlinePayment": "Płatności online"
+    },
+    "accreditations": {
+      "title": "Akredytacje"
+    }
+  },
+  "nav": {
+    "home": "Dom",
+    "tours": "Wycieczki",
+    "about": "ok",
+    "contact": "Kontakt"
+  },
+  "common": {
+    "bookNow": "Umów teraz",
+    "exploreTours": "Odkrywaj wycieczki",
+    "learnMore": "Dowiedz się więcej",
+    "readMore": "Więcej informacji",
+    "loading": "Ładowanie...",
+    "viewAll": "Wyświetl wszystko"
+  },
+  "whyUs": {
+    "tagline": "Dlaczego warto podróżować z nami",
+    "title": "Dlaczego warto wybrać Luxe Safaris",
+    "subtitle": "Łączymy luksus, przystępną cenę i spersonalizowaną opiekę, aby stworzyć niezapomniane wrażenia z safari dla każdego podróżnika odkrywającego Afrykę.",
+    "cta": {
+      "title": "Rozpocznij swoją afrykańską przygodę",
+      "subtitle": "Odkryj luksusowe safari stworzone z dbałością, autentycznością i wyjątkową wartością.",
+      "button": "Odkrywaj wycieczki"
+    },
+    "features": {
+      "luxury": {
+        "title": "Luksusowe atrakcje",
+        "description": "Ciesz się starannie dobranymi domkami, luksusowymi obozami safari i niezapomnianymi przygodami zaprojektowanymi z myślą o komforcie i elegancji."
+      },
+      "affordable": {
+        "title": "Doskonałość w przystępnej cenie",
+        "description": "Zapewniamy światowej klasy doświadczenia safari w konkurencyjnych cenach bez uszczerbku dla jakości i komfortu."
+      },
+      "personalizedCare": {
+        "title": "Spersonalizowana opieka",
+        "description": "Od przyjazdu do wyjazdu nasz zespół wspiera każdego podróżnego, poświęcając mu szczególną uwagę i zapewniając bezproblemową obsługę."
+      },
+      "authentic": {
+        "title": "Autentyczne afrykańskie przygody",
+        "description": "Poznaj zapierające dech w piersiach dzikie zwierzęta, bogate kultury i kultowe miejsca wyselekcjonowane przez lokalnych ekspertów od safari."
+      },
+      "trusted": {
+        "title": "Zaufanie i bezpieczeństwo",
+        "description": "Podróżuj pewnie dzięki bezpiecznym rezerwacjom, zaufanym partnerom safari i niezawodnej obsłudze klienta."
+      },
+      "forEveryone": {
+        "title": "Dla każdego podróżnika",
+        "description": "Niezależnie od tego, czy prowadzimy podróże w pojedynkę, w parach, rodzinach czy w grupach, tworzymy podróże safari dostosowane do każdego stylu podróży."
+      }
+    }
+  }
+}

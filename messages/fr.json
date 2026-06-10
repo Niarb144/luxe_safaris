@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Découvrez le safari de vos rêves",
+    "subtitle": "Explorez les destinations les plus époustouflantes d'Afrique avec des expériences de safari organisées."
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Vous voulez recevoir des nouvelles et de l'inspiration sur les voyages ?",
+      "subtitle": "Inscrivez-vous à notre newsletter et participez à notre tirage au sort.",
+      "placeholder": "E-mail",
+      "button": "Inscrivez-moi"
+    },
+    "company": {
+      "name": "SAFARIS DE LUXE DANS LES PLAINES D'AFRIQUE",
+      "about": "À propos de Luxe Plains Africa Safaris",
+      "registered": "Luxe Plains Africa Safaris Ltd.",
+      "country": "Enregistré au Kenya",
+      "address1": "Siège social : Bâtiment Standard,",
+      "address2": "3e étage, bureau n ° 5"
+    },
+    "information": {
+      "title": "Informations",
+      "bookWithConfidence": "Réservez en toute confiance",
+      "privacyPolicy": "Politique de Confidentialité",
+      "termsAndConditions": "Conditions générales de vente",
+      "onlinePayment": "Paiement en ligne"
+    },
+    "accreditations": {
+      "title": "Accréditations"
+    }
+  },
+  "nav": {
+    "home": "Accueil",
+    "tours": "Visites",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "common": {
+    "bookNow": "Réserver dès maintenant",
+    "exploreTours": "Explorez les voyages",
+    "learnMore": "En savoir plus",
+    "readMore": "En savoir plus",
+    "loading": "Chargement en cours...",
+    "viewAll": "Tout afficher"
+  },
+  "whyUs": {
+    "tagline": "Pourquoi Partir avec Nous ?",
+    "title": "Pourquoi choisir Luxe Safaris",
+    "subtitle": "Nous combinons luxe, abordabilité et soins personnalisés pour créer des expériences de safari inoubliables pour chaque voyageur explorant l'Afrique.",
+    "cta": {
+      "title": "Commencez votre aventure africaine",
+      "subtitle": "Découvrez des expériences de safari de luxe conçues avec soin, authenticité et valeur exceptionnelle.",
+      "button": "Explorez les voyages"
+    },
+    "features": {
+      "luxury": {
+        "title": "Des expériences<x id=\"1\"/>haut de gamme",
+        "description": "Profitez de lodges triés sur le volet, de camps de safari haut de gamme et d'aventures inoubliables conçues pour le confort et l'élégance."
+      },
+      "affordable": {
+        "title": "Excellence abordable",
+        "description": "Nous offrons des expériences de safari de classe mondiale à des prix compétitifs sans compromettre la qualité ou le confort."
+      },
+      "personalizedCare": {
+        "title": "Soins personnalisés",
+        "description": "De l'arrivée au départ, notre équipe soutient chaque voyageur avec une attention dédiée et un service sans faille."
+      },
+      "authentic": {
+        "title": "Aventures africaines authentiques",
+        "description": "Découvrez une faune à couper le souffle, des cultures riches et des destinations emblématiques organisées par des experts en safari locaux."
+      },
+      "trusted": {
+        "title": "CONFIANCE ET SÉCURITÉ",
+        "description": "Voyagez en toute confiance avec des réservations sécurisées, des partenaires de safari de confiance et un support client fiable."
+      },
+      "forEveryone": {
+        "title": "Pour chaque voyageur",
+        "description": "Que ce soit en solo, en couple, en famille ou en groupe, nous créons des voyages de safari adaptés à chaque style de voyage."
+      }
+    }
+  }
+}

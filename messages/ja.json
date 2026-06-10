@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "夢のサファリを発見しよう",
+    "subtitle": "厳選されたサファリ体験で、アフリカで最も息をのむような目的地を探索しましょう。"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "旅行のニュースやインスピレーションを受け取りたいですか？",
+      "subtitle": "ニュースレターに登録して、抽選に参加しましょう。",
+      "placeholder": "メール",
+      "button": "新規登録して下さい"
+    },
+    "company": {
+      "name": "アフリカの平原で豪華なサファリ体験",
+      "about": "Luxe Plains Africa Safarisについて",
+      "registered": "Luxe Plains Africa Safaris Ltd.",
+      "country": "ケニアで登録済み",
+      "address1": "登録事務所：スタンダードビル、",
+      "address2": "3階、スイートNo.5"
+    },
+    "information": {
+      "title": "情報",
+      "bookWithConfidence": "安心して予約",
+      "privacyPolicy": "プライバシーポリシー",
+      "termsAndConditions": "利用規約",
+      "onlinePayment": "オンラインでの決済などで"
+    },
+    "accreditations": {
+      "title": "各種認定"
+    }
+  },
+  "nav": {
+    "home": "ホーム",
+    "tours": "ツアー",
+    "about": "情報",
+    "contact": "お問い合わせ"
+  },
+  "common": {
+    "bookNow": "今すぐ予約",
+    "exploreTours": "ツアーを探す",
+    "learnMore": "詳細はこちら",
+    "readMore": "詳細はこちら",
+    "loading": "読み込み中・・・",
+    "viewAll": "すべて表示"
+  },
+  "whyUs": {
+    "tagline": "私たちと一緒に旅行する理由",
+    "title": "Luxe Safarisを選ぶ理由",
+    "subtitle": "ラグジュアリー、手頃な価格、パーソナライズされたケアを組み合わせて、アフリカを探索するすべての旅行者に忘れられないサファリ体験を提供します。",
+    "cta": {
+      "title": "アフリカの冒険を始めよう",
+      "subtitle": "細心の注意を払って作られた贅沢なサファリ体験を発見しましょう。",
+      "button": "ツアーを探す"
+    },
+    "features": {
+      "luxury": {
+        "title": "ラグジュアリーな体験",
+        "description": "厳選されたロッジ、プレミアムサファリキャンプ、快適さとエレガントさを追求した忘れられない冒険をお楽しみください。"
+      },
+      "affordable": {
+        "title": "手頃な価格のエクセレンス",
+        "description": "品質や快適さを損なうことなく、競争力のある価格で世界クラスのサファリ体験を提供します。"
+      },
+      "personalizedCare": {
+        "title": "パーソナライズされたケア",
+        "description": "到着から出発まで、私たちのチームは専用の注意とシームレスなサービスですべての旅行者をサポートします。"
+      },
+      "authentic": {
+        "title": "本格的なアフリカンアドベンチャー",
+        "description": "息をのむような野生動物、豊かな文化、地元のサファリエキスパートが厳選した象徴的な目的地を体験してください。"
+      },
+      "trusted": {
+        "title": "信頼性と安全性",
+        "description": "安全な予約、信頼できるサファリパートナー、信頼できるカスタマーサポートで安心して旅行しましょう。"
+      },
+      "forEveryone": {
+        "title": "すべての旅行者のために",
+        "description": "一人でも、カップルでも、ファミリーでも、グループでも、あらゆる旅行スタイルに合わせたサファリ旅行をお届けします。"
+      }
+    }
+  }
+}

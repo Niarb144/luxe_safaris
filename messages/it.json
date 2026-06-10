@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Scopri il safari dei tuoi sogni",
+    "subtitle": "Esplora le destinazioni più mozzafiato dell'Africa con esperienze di safari curate."
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Vuoi ricevere notizie e ispirazioni di viaggio?",
+      "subtitle": "Iscriviti alla nostra newsletter e partecipa alla nostra estrazione fortunata.",
+      "placeholder": "E-mail",
+      "button": "Voglio iscrivermi"
+    },
+    "company": {
+      "name": "SAFARI NELLE LUXE PLAINS IN AFRICA",
+      "about": "A proposito di Luxe Plains Africa Safaris",
+      "registered": "Luxe Plains Africa Safaris Ltd.",
+      "country": "Registrato in Kenya",
+      "address1": "Sede Legale: Edificio Standard,",
+      "address2": "3° Piano, Suite n.5"
+    },
+    "information": {
+      "title": "Informazioni",
+      "bookWithConfidence": "Prenota in tutta tranquillità",
+      "privacyPolicy": "Informativa sulla privacy",
+      "termsAndConditions": "Termini e condizioni",
+      "onlinePayment": "Pagamento online"
+    },
+    "accreditations": {
+      "title": "Accreditamenti"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "tours": "Tours",
+    "about": "Informazioni",
+    "contact": "Contatti"
+  },
+  "common": {
+    "bookNow": "Prenota Ora",
+    "exploreTours": "Esplora i tour",
+    "learnMore": "Per saperne di più",
+    "readMore": "Leggi di più",
+    "loading": "Caricamento in corso...",
+    "viewAll": "Visualizza tutto"
+  },
+  "whyUs": {
+    "tagline": "Perché viaggiare con noi",
+    "title": "Perché scegliere Luxe Safaris",
+    "subtitle": "Combiniamo lusso, convenienza e assistenza personalizzata per creare esperienze di safari indimenticabili per ogni viaggiatore che esplora l'Africa.",
+    "cta": {
+      "title": "Inizia la tua avventura africana",
+      "subtitle": "Scopri esperienze di safari di lusso realizzate con cura, autenticità e valore eccezionale.",
+      "button": "Esplora i tour"
+    },
+    "features": {
+      "luxury": {
+        "title": "Luxury Experiences",
+        "description": "Goditi lodge selezionati con cura, campi safari premium e avventure indimenticabili progettate per il comfort e l'eleganza."
+      },
+      "affordable": {
+        "title": "Eccellenza a prezzi accessibili",
+        "description": "Offriamo esperienze di safari di livello mondiale a prezzi competitivi senza compromettere la qualità o il comfort."
+      },
+      "personalizedCare": {
+        "title": "Cura personalizzata:",
+        "description": "Dall'arrivo alla partenza, il nostro team supporta ogni viaggiatore con un'attenzione dedicata e un servizio impeccabile."
+      },
+      "authentic": {
+        "title": "Autentiche avventure africane",
+        "description": "Scopri la fauna selvatica mozzafiato, le ricche culture e le destinazioni iconiche curate da esperti di safari locali."
+      },
+      "trusted": {
+        "title": "Sicuro e affidabile",
+        "description": "Viaggia in sicurezza con prenotazioni sicure, partner fidati per i safari e un'assistenza clienti affidabile."
+      },
+      "forEveryone": {
+        "title": "Per ogni viaggiatore",
+        "description": "Che sia da soli, in coppia, in famiglia o in gruppo, creiamo viaggi safari su misura per ogni stile di viaggio."
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Discover Your Dream Safari",
+    "subtitle": "Explore Africa's most breathtaking destinations with curated safari experiences."
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Want to receive travel news and inspiration?",
+      "subtitle": "Sign up to our newsletter and enter our lucky draw.",
+      "placeholder": "Email",
+      "button": "Sign me up"
+    },
+    "company": {
+      "name": "LUXE PLAINS AFRICA SAFARIS",
+      "about": "About Luxe Plains Africa Safaris",
+      "registered": "Luxe Plains Africa Safaris Ltd.",
+      "country": "Registered in Kenya",
+      "address1": "Registered Office: Standard Building,",
+      "address2": "3rd Floor, Suite No.5"
+    },
+    "information": {
+      "title": "Information",
+      "bookWithConfidence": "Book With Confidence",
+      "privacyPolicy": "Privacy Policy",
+      "termsAndConditions": "Terms & Conditions",
+      "onlinePayment": "Online Payment"
+    },
+    "accreditations": {
+      "title": "Accreditations"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "tours": "Tours",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "common": {
+    "bookNow": "Book Now",
+    "exploreTours": "Explore Tours",
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "loading": "Loading...",
+    "viewAll": "View All"
+  },
+  "whyUs": {
+    "tagline": "Why Travel With Us",
+    "title": "Why Choose Luxe Safaris",
+    "subtitle": "We combine luxury, affordability, and personalized care to create unforgettable safari experiences for every traveler exploring Africa.",
+    "cta": {
+      "title": "Start Your African Adventure",
+      "subtitle": "Discover luxury safari experiences crafted with care, authenticity, and exceptional value.",
+      "button": "Explore Tours"
+    },
+    "features": {
+      "luxury": {
+        "title": "Luxury Experiences",
+        "description": "Enjoy handpicked lodges, premium safari camps, and unforgettable adventures designed for comfort and elegance."
+      },
+      "affordable": {
+        "title": "Affordable Excellence",
+        "description": "We deliver world-class safari experiences at competitive prices without compromising quality or comfort."
+      },
+      "personalizedCare": {
+        "title": "Personalized Care",
+        "description": "From arrival to departure, our team supports every traveler with dedicated attention and seamless service."
+      },
+      "authentic": {
+        "title": "Authentic African Adventures",
+        "description": "Experience breathtaking wildlife, rich cultures, and iconic destinations curated by local safari experts."
+      },
+      "trusted": {
+        "title": "Trusted & Secure",
+        "description": "Travel confidently with secure bookings, trusted safari partners, and reliable customer support."
+      },
+      "forEveryone": {
+        "title": "For Every Traveler",
+        "description": "Whether solo, couples, families, or groups, we create safari journeys tailored to every travel style."
+      }
+    }
+  }
+}

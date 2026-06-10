@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Ontdek je droomsafari",
+    "subtitle": "Verken de meest adembenemende bestemmingen van Afrika met samengestelde safari-ervaringen."
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Reisnieuws en inspiratie ontvangen?",
+      "subtitle": "Meld je aan voor onze nieuwsbrief en doe mee aan onze geluksloting.",
+      "placeholder": "E-mail",
+      "button": "Schrijf mij in"
+    },
+    "company": {
+      "name": "LUXE VLAKTES AFRIKA SAFARI'S",
+      "about": "Over Luxe Plains Africa Safaris",
+      "registered": "Luxe Plains Africa Safaris Ltd.",
+      "country": "Geregistreerd in Kenia",
+      "address1": "Statutaire zetel: Standaardgebouw,",
+      "address2": "3e verdieping, Suite nr. 5"
+    },
+    "information": {
+      "title": "Informatie",
+      "bookWithConfidence": "Boek met een gerust hart",
+      "privacyPolicy": "Privacybeleid",
+      "termsAndConditions": "Voorwaarden",
+      "onlinePayment": "Online betaling"
+    },
+    "accreditations": {
+      "title": "Accreditaties"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "tours": "Rondleidingen",
+    "about": "Over",
+    "contact": "Contact"
+  },
+  "common": {
+    "bookNow": "Boek nu",
+    "exploreTours": "Rondleidingen verkennen",
+    "learnMore": "Meer informatie ",
+    "readMore": "Meer informatie",
+    "loading": "Bezig met laden...",
+    "viewAll": "Alles weergeven"
+  },
+  "whyUs": {
+    "tagline": "REIS MET ONS",
+    "title": "Waarom kiezen voor luxe safari's",
+    "subtitle": "We combineren luxe, betaalbaarheid en persoonlijke zorg om onvergetelijke safari-ervaringen te creëren voor elke reiziger die Afrika verkent.",
+    "cta": {
+      "title": "Begin je Afrikaanse avontuur",
+      "subtitle": "Ontdek luxe safari-ervaringen die met zorg, authenticiteit en uitzonderlijke waarde zijn gemaakt.",
+      "button": "Rondleidingen verkennen"
+    },
+    "features": {
+      "luxury": {
+        "title": "Luxe ervaringen",
+        "description": "Geniet van zorgvuldig uitgekozen lodges, premium safarikampen en onvergetelijke avonturen die zijn ontworpen voor comfort en elegantie."
+      },
+      "affordable": {
+        "title": "Betaalbare uitmuntendheid",
+        "description": "Wij leveren safari-ervaringen van wereldklasse tegen concurrerende prijzen zonder afbreuk te doen aan kwaliteit of comfort."
+      },
+      "personalizedCare": {
+        "title": "Persoons-gerichte zorg",
+        "description": "Van aankomst tot vertrek ondersteunt ons team elke reiziger met toegewijde aandacht en naadloze service."
+      },
+      "authentic": {
+        "title": "Authentieke Afrikaanse avonturen",
+        "description": "Ervaar adembenemende dieren in het wild, rijke culturen en iconische bestemmingen samengesteld door lokale safari-experts."
+      },
+      "trusted": {
+        "title": "Vertrouwd en veilig",
+        "description": "Reis vol vertrouwen met veilige boekingen, vertrouwde safaripartners en betrouwbare klantenservice."
+      },
+      "forEveryone": {
+        "title": "Voor elke reiziger",
+        "description": "Of het nu gaat om solo, koppels, gezinnen of groepen, we creëren safarireizen die zijn afgestemd op elke reisstijl."
+      }
+    }
+  }
+}
