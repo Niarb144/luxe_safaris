@@ -567,7 +567,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <LanguageSwitcher currentLocale={locale} onLocaleChange={setLocale} />
+        <LanguageSwitcher />
 
         {/* Mobile Toggle */}
         <div className="md:hidden">
