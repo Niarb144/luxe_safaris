@@ -1,4 +1,4 @@
-import { T } from "../T";
+
 
 export default function TourItinerary({ items }: any) {
   if (!items?.length) return null;
@@ -8,7 +8,7 @@ export default function TourItinerary({ items }: any) {
   return (
     <div>
       <h2 className="text-xl font-semibold mb-4">
-        <T text="Itinerary" />
+        Itinerary
       </h2>
 
       <div className="space-y-10">
@@ -44,7 +44,7 @@ export default function TourItinerary({ items }: any) {
             <div className="flex-1">
               <div className="mb-5">
                 <h3 className="text-xl font-bold text-gray-900">
-                  <T text={`Day ${group.day_number}`} />
+                  Day {group.day_number}
                 </h3>
               </div>
 
@@ -63,12 +63,12 @@ export default function TourItinerary({ items }: any) {
 
                     {/* Title */}
                     <h4 className="text-lg font-semibold text-gray-900">
-                      <T text={activity.title} />
+                      {activity.title}
                     </h4>
 
                     {/* Description */}
                     <p className="text-gray-600 mt-2 leading-relaxed">
-                      <T text={activity.description} />
+                      {activity.description}
                     </p>
                   </div>
                 ))}

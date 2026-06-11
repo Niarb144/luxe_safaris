@@ -5,7 +5,6 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { T } from "./T";
 
 type ToursListProps = {
   limit?: number;
@@ -131,10 +130,10 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
         {/* Heading */}
         <div className="text-center">
           <h2 className="text-4xl font-bold text-[#3b2a1d]">
-            <T text="Explore Our Tours" />
+            Explore Our Tours
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            <T text="Discover unforgettable safari experiences across East Africa." />
+            Discover unforgettable safari experiences across East Africa.
           </p>
         </div>
 
@@ -188,25 +187,25 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
                   <div className="relative h-full flex flex-col justify-between p-7">
                     <div>
                       <span className="text-white font-semibold text-sm tracking-wide">
-                        <T text={tour.country || "Safari"} />
+                        {tour.country || "Safari"}
                       </span>
                     </div>
                     <div>
                       <h3 className="text-white text-lg font-extrabold">
-                        <T text={tour.title} />
+                        {tour.title}
                       </h3>
                       <p className="text-white/80 mt-2 line-clamp-1 text-sm">
-                        <T text={tour.description} />
+                        {tour.description}
                       </p>
                       <div className="flex gap-4 mt-6 flex-wrap">
                         <div className="rounded-lg px-5 py-2 backdrop-blur-md bg-white/10">
                           <span className="text-white font-bold">
-                            <T text={tour.duration} />
+                            {tour.duration}
                           </span>
                         </div>
                         <div className="bg-[#b77e24] rounded-2xl px-5 py-2">
                           <span className="text-white font-bold text-sm">
-                            <T text={`From $${tour.price}`} />
+                            From ${tour.price}
                           </span>
                         </div>
                       </div>
@@ -221,7 +220,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
         {/* Empty state */}
         {displayed.length === 0 && (
           <p className="text-center mt-10 text-gray-500">
-            <T text="No tours found matching your filters." />
+            No tours found matching your filters.
           </p>
         )}
 
@@ -232,7 +231,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
               href="/tours"
               className="group inline-flex items-center gap-3 bg-[#041f0e] hover:bg-[#062b12] text-white pl-6 pr-5 py-3.5 rounded-full border border-[#b77e24]/30 hover:border-[#b77e24]/60 transition-all duration-300 font-semibold text-sm uppercase tracking-wider shadow-lg"
             >
-              <T text="Explore All Tours" />
+              Explore All Tours
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#b77e24] group-hover:bg-[#a06d1f] transition-colors duration-200 shrink-0">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

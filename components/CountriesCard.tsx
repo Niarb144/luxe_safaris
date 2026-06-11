@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
-import { T } from "./T";
 
 const countryImages: Record<string, string> = {
   Kenya: "/images/kenya.jpg",
@@ -74,7 +73,7 @@ export default function CountryCards() {
 
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-4xl font-semibold text-gray-900">
-            <T text="Explore Extraordinary Tours Across Africa" />
+            Explore Extraordinary Tours Across Africa
           </h2>
         </div>
 
@@ -109,11 +108,11 @@ export default function CountryCards() {
                 <div className="absolute bottom-6 left-6 text-white">
 
                   <h3 className="text-2xl font-semibold">
-                    <T text={country.name} />
+                    {country.name}
                   </h3>
 
                   <div className="mt-2 inline-block bg-[#b77e24] px-4 py-1 rounded-full text-sm">
-                    <T text={`${country.tours} TOUR${country.tours !== 1 ? "S" : ""}`} />
+                    {`${country.tours} TOUR${country.tours !== 1 ? "S" : ""}`}
                   </div>
 
                 </div>

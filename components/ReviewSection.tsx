@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import { T } from "./T";
 
 const reviews = [
   {
@@ -53,15 +52,15 @@ export default function ReviewsSection() {
           className="text-center mb-16"
         >
           <p className="uppercase tracking-[0.3em] text-amber-400 text-sm mb-3">
-            <T text="Guest Experiences" />
+            Guest Experiences
           </p>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-5">
-            <T text="Stories From Our Travelers" />
+            Stories From Our Travelers
           </h2>
 
           <p className="max-w-2xl mx-auto text-gray-400 text-lg">
-            <T text="Discover why travelers from around the world trust Luxe Safaris for unforgettable African adventures." />
+            Discover why travelers from around the world trust Luxe Safaris for unforgettable African adventures.
           </p>
         </motion.div>
 
@@ -89,7 +88,7 @@ export default function ReviewsSection() {
 
               {/* Review */}
               <p className="text-gray-300 leading-relaxed mb-8">
-                <T text={`“${review.review}”`} />
+                {`“${review.review}”`}
               </p>
 
               {/* User */}
@@ -102,10 +101,10 @@ export default function ReviewsSection() {
 
                 <div>
                   <h4 className="text-white font-semibold text-lg">
-                    <T text={review.name} />
+                    {review.name}
                   </h4>
                   <p className="text-gray-400 text-sm">
-                    <T text={review.country} />
+                    {review.country}
                   </p>
                 </div>
               </div>

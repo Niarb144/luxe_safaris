@@ -1,4 +1,4 @@
-import { T } from "../T";
+
 
 export default function TourExclusions({ items }: any) {
   if (!items?.length) return null;
@@ -6,12 +6,12 @@ export default function TourExclusions({ items }: any) {
   return (
     <div>
       <h2 className="text-xl font-semibold mb-3">
-        <T text="What’s excluded" />
+        What’s excluded
       </h2>
       <ul className="grid grid-cols-2 gap-2">
         {items.map((item: any) => (
           <li key={item.id} className="bg-[#b77e24] p-3 rounded-lg text-white">
-            ✗ <T text={item.item} />
+            ✗ {item.item}
           </li>
         ))}
       </ul>

@@ -3,9 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useLocale } from '@/components/TranslationProvider';
 import { useTranslation } from "@/components/UseTranslation";
-import { T } from "./T";
 
 // Counter hook
 function useCountUp(end: number, duration: number = 2) {
@@ -58,18 +56,12 @@ function StatCard({
       </h3>
 
       <p className="mt-2 text-gray-600">
-        <T text={label} />
+        {label}
       </p>
     </motion.div>
   );
 }
 
-// Translate static links
-function TranslatedStatCard({ label, value }: { label: string; value: number }) {
-  const { locale } = useLocale()
-  const { translated } = useTranslation(label, locale)
-  return <StatCard label={translated} value={value} />
-}
 
 export default function Numbers() {
   const [stats, setStats] = useState({
@@ -128,7 +120,7 @@ export default function Numbers() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-5xl font-bold text-gray-900"
         >
-          <T text="Our Impact in Numbers" />
+          Our Impact in Numbers
         </motion.h2>
 
         <motion.p
@@ -137,7 +129,7 @@ export default function Numbers() {
           transition={{ delay: 0.2 }}
           className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto"
         >
-          <T text="Experience luxury safaris crafted with passion." />
+          Experience luxury safaris crafted with passion.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">

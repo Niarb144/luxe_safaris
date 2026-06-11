@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import {
   useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
-import { T } from "./T";
 
 export default function BookingModal({
   open,
@@ -132,10 +131,10 @@ export default function BookingModal({
         <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-[#041f0e] rounded-t-3xl sm:rounded-t-3xl shrink-0">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-[#b77e24] font-semibold">
-              <T text="Reserve Your Spot" />
+              Reserve Your Spot
             </p>
             <h2 className="text-white font-bold text-lg leading-tight mt-0.5">
-              <T text={`Book {tourTitle} safari`} />
+              Book {tourTitle} safari
             </h2>
           </div>
 
@@ -163,15 +162,15 @@ export default function BookingModal({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-800"><T text="Booking Submitted!" /></h3>
+              <h3 className="text-xl font-bold text-gray-800">Booking Submitted!</h3>
               <p className="text-gray-500 text-sm max-w-xs">
-                <T text="Thank you for your request. Our team will be in touch shortly to confirm your safari." />
+                Thank you for your request. Our team will be in touch shortly to confirm your safari.
               </p>
               <button
                 onClick={onClose}
                 className="mt-2 bg-[#b77e24] hover:bg-[#a06d1f] text-white px-8 py-3 rounded-xl font-semibold text-sm transition-colors duration-200 cursor-pointer"
               >
-                <T text="Done" />
+                Done
               </button>
             </div>
           ) : (
@@ -180,7 +179,7 @@ export default function BookingModal({
               {/* Full Name */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  <T text="Full Name" />
+                  Full Name
                 </label>
                 <input
                   name="name"
@@ -193,7 +192,7 @@ export default function BookingModal({
               {/* Email */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  <T text="Email Address" />
+                  Email Address
                 </label>
                 <input
                   name="email"
@@ -207,7 +206,7 @@ export default function BookingModal({
               {/* Phone */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  <T text="Phone Number" />
+                  Phone Number
                 </label>
                 <input
                   name="phone"
@@ -220,7 +219,7 @@ export default function BookingModal({
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                    <T text="Adults" />
+                    Adults
                   </label>
                   <input
                     type="number"
@@ -232,7 +231,7 @@ export default function BookingModal({
                 </div>
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                    <T text="Children" />
+                    Children
                   </label>
                   <input
                     type="number"
@@ -247,7 +246,7 @@ export default function BookingModal({
               {/* Travel Date */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  <T text="Travel Date" />
+                  Travel Date
                 </label>
                 <input
                   type="date"
@@ -260,7 +259,7 @@ export default function BookingModal({
               {/* Special Requests */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  <T text="Special Requests" />
+                  Special Requests
                 </label>
                 <textarea
                   name="requests"
@@ -283,10 +282,10 @@ export default function BookingModal({
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
                       </svg>
-                      <T text="Submitting..." />
+                      Submitting...
                     </>
                   ) : (
-                    <T text="Confirm Booking" />
+                    "Confirm Booking"
                   )}
                 </button>
 
@@ -295,7 +294,7 @@ export default function BookingModal({
                   onClick={onClose}
                   className="px-5 py-3 rounded-xl border border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50 font-semibold text-sm transition-colors duration-200 cursor-pointer"
                 >
-                  <T text="Cancel" />
+                  "Cancel"
                 </button>
               </div>
 

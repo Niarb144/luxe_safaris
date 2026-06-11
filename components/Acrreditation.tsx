@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { T } from "./T";
 
 const partners = [
   {
@@ -44,7 +43,7 @@ export default function AccreditationSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-light tracking-wide text-[#1f2d1f] uppercase">
-            <T text="Our Accreditations & Booking Security" />
+            Our Accreditations & Booking Security
           </h2>
 
           <div className="flex items-center justify-center mt-6">

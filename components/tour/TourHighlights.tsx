@@ -3,7 +3,7 @@
 import { useState } from "react";
 import * as Icons from "lucide-react";
 import { LucideIcon } from "lucide-react";
-import { T } from "../T";
+
 
 export default function TourHighlights({ items }: any) {
   const [expanded, setExpanded] = useState<number | null>(
@@ -16,7 +16,7 @@ export default function TourHighlights({ items }: any) {
     <div className="max-w-5xl mx-auto px-4 py-16">
 
       <h2 className="text-3xl font-semibold mb-8 text-gray-800">
-        <T text="Tour Highlights" />
+        Tour Highlights
       </h2>
 
       <div className="grid md:grid-cols-2 gap-6">
@@ -44,7 +44,7 @@ export default function TourHighlights({ items }: any) {
                 </div>
 
                 <h3 className="text-xl font-semibold text-[#b77e24]">
-                  <T text={highlight.title} />
+                  {highlight.title}
                 </h3>
 
               </div>
@@ -59,7 +59,7 @@ export default function TourHighlights({ items }: any) {
                       : "line-clamp-3"
                   }`}
                 >
-                  <T text={highlight.description} />
+                  {highlight.description}
                 </p>
 
                 {/* Read More */}
@@ -73,8 +73,8 @@ export default function TourHighlights({ items }: any) {
                     className="mt-3 text-[#b77e24] font-medium hover:underline"
                   >
                     {isExpanded
-                      ? <T text="Read Less" />
-                      : <T text="Read More" />}
+                      ? "Read Less"
+                      : "Read More"}
                   </button>
                 )}
 

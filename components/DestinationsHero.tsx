@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState, Suspense } from "react";
 import SafariCTA from "@/components/QuizButton";
-import { T } from "./T";
 
 
 export default function DestinationsHero() {
@@ -39,7 +38,7 @@ export default function DestinationsHero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-4xl md:text-6xl font-bold text-white leading-tight"
           >
-            <T text="Destinations" />
+            Destinations Across East Africa
           </motion.h1>
 
           <motion.div

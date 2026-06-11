@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useConsent } from "./ConsentProvider";
-import { T } from "./T";
 
 export default function CookieBanner() {
   const { consent, updateConsent } = useConsent();
@@ -19,12 +18,12 @@ export default function CookieBanner() {
     <div className="fixed bottom-5 left-5 right-5 bg-white border shadow-2xl rounded-2xl p-6 z-50 max-w-2xl mx-auto">
 
       <h2 className="text-2xl font-bold mb-3 text-[#1f2d1f]">
-        <T text="Cookie Preferences" />
+        Cookie Preferences
       </h2>
 
       <p className="text-gray-600 mb-5">
-        <T text="We use cookies to improve your experience,
-        analyze traffic and personalize content." />
+        We use cookies to improve your experience,
+        analyze traffic and personalize content.
       </p>
 
       {customize && (
@@ -33,11 +32,11 @@ export default function CookieBanner() {
           <div className="flex justify-between items-center">
             <div>
               <h3 className="font-semibold">
-                <T text="Essential Cookies" />
+                Essential Cookies
               </h3>
 
               <p className="text-sm text-gray-500">
-                <T text="Required for website functionality." />
+                Required for website functionality.
               </p>
             </div>
 
@@ -52,11 +51,11 @@ export default function CookieBanner() {
           <div className="flex justify-between items-center">
             <div>
               <h3 className="font-semibold">
-                <T text="Analytics Cookies" />
+                Analytics Cookies
               </h3>
 
               <p className="text-sm text-gray-500">
-                <T text="Help us understand website usage." />
+                Help us understand website usage.
               </p>
             </div>
 
@@ -73,11 +72,11 @@ export default function CookieBanner() {
           <div className="flex justify-between items-center">
             <div>
               <h3 className="font-semibold">
-                <T text="Marketing Cookies" />
+                Marketing Cookies
               </h3>
 
               <p className="text-sm text-gray-500">
-                <T text="Used for advertising and remarketing." />
+                Used for advertising and remarketing.
               </p>
             </div>
 
@@ -105,7 +104,7 @@ export default function CookieBanner() {
           }
           className="bg-black text-white hover:bg-gray-800 px-5 py-2 rounded-lg"
         >
-          <T text="Accept All" />
+          Accept All
         </button>
 
 
@@ -119,7 +118,7 @@ export default function CookieBanner() {
           }
           className="border px-5 py-2 rounded-lg hover:bg-gray-100 text-gray-600"
         >
-          <T text="Reject All" />
+          Reject All
         </button>
 
 
@@ -128,7 +127,7 @@ export default function CookieBanner() {
             onClick={() => setCustomize(true)}
             className="border px-5 py-2 rounded-lg hover:bg-gray-100 text-gray-600"
           >
-            <T text="Customize" />
+            Customize
           </button>
         ) : (
           <button
@@ -141,7 +140,7 @@ export default function CookieBanner() {
             }
             className="border px-5 py-2 rounded-lg hover:bg-gray-100 text-gray-600"
           >
-            <T text="Save Preferences" />
+            Save Preferences
           </button>
         )}
 

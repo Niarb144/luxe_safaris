@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import SafariCTA from "@/components/QuizButton";
-import { T } from "./T";
 
 export default function SafariHero() {
   const [loaded, setLoaded] = useState(false);
@@ -70,7 +69,7 @@ export default function SafariHero() {
           font-bold
           text-white">
 
-          <T text="Tours" />
+          Tours Tailored to Your Dreams
 
         </motion.h1>
 

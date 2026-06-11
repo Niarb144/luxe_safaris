@@ -10,7 +10,6 @@ import {
   Users,
 } from "lucide-react";
 import Link from "next/link";
-import { T } from "./T";
 
 const features = [
   {
@@ -67,16 +66,16 @@ export default function WhyChooseLuxeSafaris() {
           className="text-center max-w-3xl mx-auto"
         >
           <p className="uppercase tracking-[0.3em] text-[#d4af37] text-sm mb-4">
-            <T text="Why Travel With Us" />
+            Why Travel With Us
           </p>
 
           <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            <T text="Why Choose Luxe Safaris" />
+            Why Choose Luxe Safaris
           </h2>
 
           <p className="text-gray-400 text-lg mt-6 leading-relaxed">
-            <T text="We combine luxury, affordability, and personalized care to create
-            unforgettable safari experiences for every traveler exploring Africa." />
+            We combine luxury, affordability, and personalized care to create
+            unforgettable safari experiences for every traveler exploring Africa.
           </p>
         </motion.div>
 
@@ -108,11 +107,11 @@ export default function WhyChooseLuxeSafaris() {
                 {/* Content */}
                 <div className="relative">
                   <h3 className="text-2xl font-semibold text-white mb-4">
-                    <T text={feature.title} />
+                    {feature.title}
                   </h3>
 
                   <p className="text-gray-400 leading-relaxed">
-                    <T text={feature.description} />
+                    {feature.description}
                   </p>
                 </div>
 
@@ -136,16 +135,16 @@ export default function WhyChooseLuxeSafaris() {
           <div className="inline-flex flex-col md:flex-row items-center gap-6 bg-gradient-to-r from-[#1b2b20] to-[#111c15] border border-[#d4af37]/20 rounded-[32px] px-10 py-8 shadow-2xl">
             <div className="text-left">
               <h3 className="text-3xl font-bold text-white">
-                <T text="Start Your African Adventure" />
+                Start Your African Adventure
               </h3>
 
               <p className="text-gray-400 mt-2">
-                <T text="Discover luxury safari experiences crafted with care,
-                authenticity, and exceptional value." />
+                Discover luxury safari experiences crafted with care,
+                authenticity, and exceptional value.
               </p>
             </div>
             <Link className="bg-[#d4af37] hover:bg-[#c39f2e] text-black font-bold px-8 py-4 rounded-2xl transition duration-300 shadow-lg" href="/tours">
-              <T text="Explore Tours" />
+              Explore Tours
             </Link>
           </div>
         </motion.div>

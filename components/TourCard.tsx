@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { T } from "./T";
 
 export function TourCard({ tour }: any) {
   return (
@@ -33,13 +32,13 @@ export function TourCard({ tour }: any) {
         </h3>
 
         <p className="text-sm opacity-80 mt-2 line-clamp-3">
-          <T text={tour.description} />
+          {tour.description}
         </p>
 
         {/* Footer */}
         <div className="flex items-center justify-between mt-4">
           <span className="text-xs bg-white/20 px-3 py-1 rounded-full">
-            <T text={tour.duration} />
+            {tour.duration}
           </span>
 
           {/* <span className="bg-orange-500 px-3 py-1 text-sm rounded-full">

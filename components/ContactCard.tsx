@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { T } from "./T";
 
 export default function ContactCard() {
     return (
@@ -15,38 +14,38 @@ export default function ContactCard() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <div>
                 <p className="uppercase tracking-[0.3em] text-sm text-[#d4a54b] font-medium">
-                  <T text="Need Assistance?" />
+                  Need Assistance?
                 </p>
                 <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight">
-                  <T text="Have Any Inquiries?" /><br />
-                  <T text="Feel Free To Reach Out" />
+                  Have Any Inquiries?<br />
+                  Feel Free To Reach Out
                 </h2>
                 <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-xl">
-                  <T text="Our safari specialists are ready to help you plan the perfect African adventure. Whether you need custom itineraries, pricing details, or travel guidance, we're here to assist you every step of the way." />
+                  Our safari specialists are ready to help you plan the perfect African adventure. Whether you need custom itineraries, pricing details, or travel guidance, we're here to assist you every step of the way.
                 </p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[28px] p-8 space-y-6">
                 <div>
                   <p className="text-sm uppercase tracking-widest text-[#d4a54b]">
-                    <T text="Call Us" />
+                    Call Us
                   </p>
                   <a href="tel:+254719136129" className="mt-2 block text-3xl font-semibold hover:text-[#d4a54b] transition">+254 719 136 129</a>
                 </div>
                 <div className="border-t border-white/10 pt-6">
                   <p className="text-sm uppercase tracking-widest text-[#d4a54b]">
-                    <T text="Email" />
+                    Email
                   </p>
                   <a href="mailto:info@luxesafaris.com" className="mt-2 block text-lg text-gray-200 hover:text-[#d4a54b] transition">info@luxeplainsafricasafaris.com</a>
                 </div>
                 <div className="border-t border-white/10 pt-6">
                   <p className="text-sm uppercase tracking-widest text-[#d4a54b]">
-                    <T text="Office Hours" />
+                    Office Hours
                   </p>
                   <p className="mt-2 text-gray-300">Monday – Friday<br />8:00 AM – 6:00 PM</p>
                 </div>
                 <Link href="/contact" className="w-full mt-4 bg-[#b77e24] hover:bg-[#a06d1f] transition text-white py-4 px-6 rounded-xl font-semibold text-md shadow-lg block text-center">
-                  <T text="Contact Our Team" />
+                  Contact Our Team
                 </Link>
               </div>
             </div>

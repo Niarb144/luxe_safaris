@@ -11,9 +11,7 @@ import SearchButton from "./SearchButton";
 import TourSearch from "./TourSearch";
 import { supabase } from "@/lib/supabase";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { useLocale } from '@/components/TranslationProvider';
 import { useTranslation } from "@/components/UseTranslation"; 
-import { T } from "./T";
 
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -44,12 +42,6 @@ function ActiveBar() {
   );
 }
 
-// Translate static links
-function TranslatedStaticLink({ name, href, scrolled }: { name: string; href: string; scrolled: boolean }) {
-  const { locale } = useLocale()
-  const { translated } = useTranslation(name, locale)
-  return <StaticLink name={translated} href={href} scrolled={scrolled} />
-}
 
 // ─── Tours mega-dropdown ──────────────────────────────────────────────────────
 
@@ -104,7 +96,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
           scrolled ? "text-black" : "text-white"
         }`}
       >
-        <T text="Our Tours" />
+        Our Tours
         <motion.span
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.2 }}
@@ -133,7 +125,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
             {/* COL 1 – Safari Types */}
             <div className="bg-[#10261f] w-52 flex-shrink-0 py-3">
               <p className="px-5 py-2 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold">
-                <T text="Safari Type" />
+                Safari Type
               </p>
               {holidayTypes.map((ht) => (
                 <button
@@ -146,7 +138,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                       : "text-white/80 hover:text-white hover:bg-white/5"
                   }`}
                 >
-                  <T text={ht.name} />
+                  {ht.name}
                   <ChevronRight size={13} className="opacity-40" />
                 </button>
               ))}
@@ -155,7 +147,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                   onClick={() => navigate({})}
                   className="w-full text-left px-5 py-2.5 text-xs text-[#b77e24] hover:text-white transition-colors cursor-pointer"
                 >
-                  <T text="View all tours →" />
+                  View all tours →
                 </button>
               </div>
             </div>
@@ -172,7 +164,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                   className="bg-[#0d1f18] border-l border-white/10 w-48 flex-shrink-0 py-3"
                 >
                   <p className="px-5 py-2 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold">
-                    <T text="Duration" />
+                    Duration
                   </p>
                   {(durationsByType.get(hoveredType.id) ?? []).map((dur) => (
                     <button
@@ -184,14 +176,14 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                     </button>
                   ))}
                   {(durationsByType.get(hoveredType.id) ?? []).length === 0 && (
-                    <p className="px-5 py-2 text-sm text-white/40 italic"><T text="No durations" /></p>
+                    <p className="px-5 py-2 text-sm text-white/40 italic">No durations</p>
                   )}
                   <div className="border-t border-white/10 mt-2 pt-2">
                     <button
                       onClick={() => navigate({ type: hoveredType.name })}
                       className="w-full text-left px-5 py-2.5 text-xs text-[#b77e24] hover:text-white transition-colors cursor-pointer"
                     >
-                      <T text={`All ${hoveredType.name} →`} />
+                      All {hoveredType.name} →
                     </button>
                   </div>
                 </motion.div>
@@ -207,7 +199,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
               className="bg-[#0a1a12] border-l border-white/10 w-[100%] flex-shrink-0 py-3 overflow-y-auto max-h-100"
             >
               <p className="px-5 py-2 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold sticky top-0 bg-[#0a1a12]">
-                {hoveredType ? <T text={`${hoveredType.name} Destinations`} /> : <T text="By Destination" />}
+                {hoveredType ? `${hoveredType.name} Destinations` : "By Destination"}
               </p>
               {visibleDestinations.map((dest) => (
                 <button
@@ -221,11 +213,11 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                   }
                   className="w-full text-left px-5 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/10 hover:translate-x-0.5 transition-all duration-150 cursor-pointer"
                 >
-                  <T text={`${dest.name} Tours`} />
+                  {dest.name} Tours
                 </button>
               ))}
               {visibleDestinations.length === 0 && (
-                <p className="px-5 py-2 text-sm text-white/40 italic"><T text="No destinations" /></p>
+                <p className="px-5 py-2 text-sm text-white/40 italic">No destinations available</p>
               )}
             </motion.div>
 
@@ -275,7 +267,7 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
           scrolled ? "text-black" : "text-white"
         }`}
       >
-        <T text="Destination" />
+        Destination
         <motion.span
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.2 }}
@@ -310,7 +302,7 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
                     onClick={() => navigate({ country: group.country })}
                     className="flex items-center gap-1 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold mb-2 hover:text-white transition-colors w-full text-left cursor-pointer"
                   >
-                    <T text={`${group.country} destinations`} />
+                    {group.country} destinations
                   </button>
 
                   {group.destinations.map((dest) => (
@@ -328,7 +320,7 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
                       onClick={() => navigate({ country: group.country })}
                       className="text-xs text-[#b77e24] hover:text-white transition-colors cursor-pointer"
                     >
-                      <T text={`All ${group.country} →`} />
+                      All {group.country} →
                     </button>
                   </div>
                 </div>
@@ -369,7 +361,7 @@ function StaticLink({
           scrolled ? "text-black" : "text-white"
         }`}
       >
-        <T text={name} />
+        {name}
       </Link>
       <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#041f0e] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
       {pathname === href && <ActiveBar />}
@@ -387,7 +379,6 @@ export default function Navbar() {
   const [durationsByType, setDurationsByType]         = useState<Map<string, string[]>>(new Map());
   const [destinationsByType, setDestinationsByType]   = useState<Map<string, { id: string; name: string }[]>>(new Map());
   const [allTourDestinations, setAllTourDestinations] = useState<{ id: string; name: string }[]>([]);
-  const { locale, setLocale } = useLocale() 
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -550,7 +541,7 @@ export default function Navbar() {
           <DestinationsDropdown groups={destGroups} scrolled={scrolled} />
 
           {STATIC_LINKS.filter((l) => l.href !== "/").map((link) => (
-            <TranslatedStaticLink key={link.href} name={link.name} href={link.href} scrolled={scrolled} />
+           <StaticLink key={link.href} name={link.name} href={link.href} scrolled={scrolled} /> 
           ))}
         </nav>
 
@@ -558,7 +549,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <SearchButton />
           <div className="bg-[#b77e24] text-white px-4 py-2 rounded text-sm flex flex-col leading-tight">
-            <p className="font-medium"><T text="Call Us:" /></p>
+            <p className="font-medium">Call Us:</p>
             <div className="flex flex-col sm:flex-row sm:gap-2">
               <span>+254 719 136 129</span>
               <span className="hidden sm:inline">/</span>
@@ -600,7 +591,7 @@ export default function Navbar() {
 
               {/* Home */}
               <Link href="/" onClick={() => setMenuOpen(false)} className="text-black text-sm font-medium border-b pb-2 py-2">
-                <T text="Home" />
+                Home
               </Link>
 
               {/* Tours accordion */}
@@ -609,7 +600,7 @@ export default function Navbar() {
                   onClick={() => setMobileToursOpen(!mobileToursOpen)}
                   className="w-full flex items-center justify-between py-2 text-black text-sm font-medium"
                 >
-                  <T text="Our Tours" />
+                  Our Tours
                   <ChevronRight size={14} className={`transition-transform ${mobileToursOpen ? "rotate-90" : ""}`} />
                 </button>
 
@@ -628,7 +619,7 @@ export default function Navbar() {
                               onClick={() => setMobileHoveredType(mobileHoveredType === ht.name ? null : ht.name)}
                               className="w-full flex items-center justify-between py-1.5 text-sm text-gray-700"
                             >
-                              <T text={ht.name} />
+                              {ht.name}
                               <ChevronRight size={12} className={`transition-transform ${mobileHoveredType === ht.name ? "rotate-90" : ""}`} />
                             </button>
 
@@ -646,14 +637,14 @@ export default function Navbar() {
                                       onClick={() => navigate("/tours", { type: ht.name, duration: dur })}
                                       className="block py-1 text-xs text-gray-500 hover:text-[#b77e24] transition-colors"
                                     >
-                                      <T text={dur} />
+                                      {dur}
                                     </button>
                                   ))}
                                   {/* Destinations for this type */}
                                   {(destinationsByType.get(ht.id) ?? []).length > 0 && (
                                     <>
                                       <p className="mt-2 text-[10px] uppercase tracking-widest text-[#b77e24] font-semibold">
-                                        <T text="Destinations" />
+                                        Destinations
                                       </p>
                                       {(destinationsByType.get(ht.id) ?? []).map((dest) => (
                                         <button
@@ -661,7 +652,7 @@ export default function Navbar() {
                                           onClick={() => navigate("/tours", { type: ht.name, destination: dest.name })}
                                           className="block py-1 text-xs text-gray-500 hover:text-[#b77e24] transition-colors"
                                         >
-                                          <T text={`${dest.name} Tours`} />
+                                          {dest.name} Tours
                                         </button>
                                       ))}
                                     </>
@@ -670,7 +661,7 @@ export default function Navbar() {
                                     onClick={() => navigate("/tours", { type: ht.name })}
                                     className="block py-1 text-xs text-[#b77e24]"
                                   >
-                                    <T text={`All ${ht.name} tours →`} />
+                                    All {ht.name} tours →
                                   </button>
                                 </motion.div>
                               )}
@@ -682,7 +673,7 @@ export default function Navbar() {
                           onClick={() => navigate("/tours")}
                           className="mt-1 text-xs text-[#b77e24]"
                         >
-                          <T text="View all tours →" />
+                          View all tours →
                         </button>
                       </div>
                     </motion.div>
@@ -696,7 +687,7 @@ export default function Navbar() {
                   onClick={() => setMobileDestOpen(!mobileDestOpen)}
                   className="w-full flex items-center justify-between py-2 text-black text-sm font-medium"
                 >
-                  <T text="Destination" />
+                  Destination
                   <ChevronRight size={14} className={`transition-transform ${mobileDestOpen ? "rotate-90" : ""}`} />
                 </button>
 
@@ -712,7 +703,7 @@ export default function Navbar() {
                         {destGroups.map((group) => (
                           <div key={group.country} className="mb-2">
                             <p className="text-[10px] uppercase tracking-widest text-[#b77e24] font-semibold pt-1 pb-0.5">
-                              <T text={group.country} />
+                              {group.country}
                             </p>
                             {group.destinations.map((dest) => (
                               <button
@@ -720,7 +711,7 @@ export default function Navbar() {
                                 onClick={() => navigate("/destinations", { destination: dest.name })}
                                 className="block py-1 text-sm text-gray-700 hover:text-[#b77e24] transition-colors"
                               >
-                                <T text={dest.name} />
+                                {dest.name}
                               </button>
                             ))}
                           </div>
@@ -729,7 +720,7 @@ export default function Navbar() {
                           onClick={() => navigate("/destinations")}
                           className="mt-1 text-xs text-[#b77e24]"
                         >
-                          <T text="View all destinations →" />
+                          View all destinations →
                         </button>
                       </div>
                     </motion.div>
@@ -745,13 +736,13 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className="text-black text-sm font-medium border-b pb-2 py-2"
                 >
-                  <T text={link.name} />
+                  {link.name}
                 </Link>
               ))}
             </div>
 
             <div className="px-6 py-4 flex items-center gap-4">
-              <p className="text-gray-600 text-sm"><T text="Search" /></p>
+              <p className="text-gray-600 text-sm">Search</p>
               <SearchButton />
             </div>
           </motion.div>
