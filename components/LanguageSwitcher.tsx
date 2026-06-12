@@ -5,20 +5,21 @@ import { useState, useRef, useEffect } from 'react'
 import { useLocale } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
 import { routing } from '@/lib/i18n'
+import "flag-icons/css/flag-icons.min.css";
 
 const LANGUAGES = [
-  { code: 'en', label: 'English',    flag: '🇬🇧' },
-  { code: 'fr', label: 'Français',   flag: '🇫🇷' },
-  { code: 'de', label: 'Deutsch',    flag: '🇩🇪' },
-  { code: 'es', label: 'Español',    flag: '🇪🇸' },
-  { code: 'it', label: 'Italiano',   flag: '🇮🇹' },
-  { code: 'nl', label: 'Nederlands', flag: '🇳🇱' },
-  { code: 'pl', label: 'Polski',     flag: '🇵🇱' },
-  { code: 'zh', label: '中文',        flag: '🇨🇳' },
-  { code: 'ja', label: '日本語',      flag: '🇯🇵' },
-  { code: 'ru', label: 'Русский',    flag: '🇷🇺' },
-  { code: 'ar', label: 'العربية',    flag: '🇸🇦' },
-  { code: 'pt', label: 'Português',  flag: '🇵🇹' },
+  { code: 'en', label: 'English',    flag: 'fi fi-gb fis' },
+  { code: 'fr', label: 'Français',   flag: 'fi fi-fr fis' },
+  { code: 'de', label: 'Deutsch',    flag: 'fi fi-de fis' },
+  { code: 'es', label: 'Español',    flag: 'fi fi-es fis' },
+  { code: 'it', label: 'Italiano',   flag: 'fi fi-it fis' },
+  { code: 'nl', label: 'Nederlands', flag: 'fi fi-nl fis' },
+  { code: 'pl', label: 'Polski',     flag: 'fi fi-pl fis' },
+  { code: 'zh', label: '中文',        flag: 'fi fi-cn fis' },
+  { code: 'ja', label: '日本語',      flag: 'fi fi-jp fis' },
+  { code: 'ru', label: 'Русский',    flag: 'fi fi-ru fis' },
+  { code: 'ar', label: 'العربية',    flag: 'fi fi-sa fis' },
+  { code: 'pt', label: 'Português',  flag: 'fi fi-pt fis' },
 ]
 
 export function LanguageSwitcher() {
@@ -54,14 +55,16 @@ export function LanguageSwitcher() {
         aria-label="Select language"
         aria-expanded={open}
         style={{
+          fontFamily:'"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif',
           display: 'flex', alignItems: 'center', gap: '6px',
           padding: '6px 10px', background: 'transparent',
           border: '1px solid rgba(255,255,255,0.3)', borderRadius: '6px',
           cursor: 'pointer', fontSize: '14px', color: 'inherit',
         }}
+
       >
-        <span>{current.flag}</span>
-        <span>{current.label}</span>
+        <span className = {current.flag}></span>
+        
         <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"
           style={{ opacity: 0.6, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' }}>
           <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
@@ -87,7 +90,7 @@ export function LanguageSwitcher() {
                 color: '#111', textAlign: 'left',
               }}
             >
-              <span style={{ fontSize: '18px' }}>{lang.flag}</span>
+              <span className = {lang.flag}></span>
               <span>{lang.label}</span>
               {lang.code === locale && (
                 <svg style={{ marginLeft: 'auto' }} width="14" height="14" viewBox="0 0 14 14" fill="none">

@@ -36,3 +36,11 @@ body {
   color: #ffffff;
   transition: all ease .4s;
 }
+
+.flag-emoji {
+  font-family:
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Noto Color Emoji",
+    sans-serif;
+}
