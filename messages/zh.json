@@ -118,5 +118,53 @@
     "exploreAll": "查看所有行程",
     "from": "起价",
     "safari": "狩猎"
+  },
+  "destinations": {
+    "title": "东非目的地",
+    "subtitle": "探索我们精心挑选的难忘狩猎目的地。",
+    "noResults": "未找到符合条件的目的地。",
+    "exploreAll": "查看所有目的地"
+  },
+  "reviews": {
+    "tagline": "游客体验",
+    "title": "来自旅行者的故事",
+    "subtitle": "了解全球旅行者为何信任 Luxe Safaris。",
+    "items": {
+      "review1": {
+        "country": "英国",
+        "text": "Luxe Safaris 为我们带来了难忘的非洲之旅，一切安排都非常完美。"
+      },
+      "review2": {
+        "country": "肯尼亚",
+        "text": "服务非常出色，整个狩猎体验奢华、个性化且真实。"
+      },
+      "review3": {
+        "country": "西班牙",
+        "text": "在美丽营地中看到非洲五霸是梦想成真。"
+      }
+    }
+  },
+  "accreditation": {
+    "title": "我们的认证与预订安全保障"
+  },
+  "contactCard": {
+    "tagline": "需要帮助吗？",
+    "title": "有任何问题？欢迎联系我们",
+    "description": "我们的狩猎专家随时帮助您规划完美的非洲之旅。",
+    "callUs": "致电我们",
+    "email": "邮箱",
+    "officeHours": "办公时间",
+    "officeHoursValue": "周一 – 周五 8:00 – 18:00",
+    "contactTeam": "联系团队"
+  },
+  "search": {
+    "tagline": "奢华狩猎搜索",
+    "title": "找到你的完美旅程",
+    "tourName": "行程名称",
+    "selectDestination": "选择目的地",
+    "duration": "时长",
+    "safariType": "狩猎类型",
+    "clearFilters": "清除筛选",
+    "searchSafaris": "搜索狩猎行程"
   }
 }

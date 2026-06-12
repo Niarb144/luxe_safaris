@@ -118,6 +118,54 @@
     "exploreAll": "Esplora tutti i tour",
     "from": "Da",
     "safari": "Safari"
+  },
+  "destinations": {
+    "title": "Destinazioni in Africa Orientale",
+    "subtitle": "Esplora la nostra selezione di indimenticabili destinazioni safari.",
+    "noResults": "Nessuna destinazione trovata con i filtri selezionati.",
+    "exploreAll": "Esplora tutte le destinazioni"
+  },
+  "reviews": {
+    "tagline": "Esperienze degli ospiti",
+    "title": "Storie dei nostri viaggiatori",
+    "subtitle": "Scopri perché viaggiatori da tutto il mondo si affidano a Luxe Safaris per avventure africane indimenticabili.",
+    "items": {
+      "review1": {
+        "country": "Regno Unito",
+        "text": "Luxe Safaris ci ha regalato un'avventura africana indimenticabile. Tutto era perfettamente organizzato."
+      },
+      "review2": {
+        "country": "Kenya",
+        "text": "Il servizio clienti è stato eccezionale. L’esperienza safari era lussuosa, personale e autentica."
+      },
+      "review3": {
+        "country": "Spagna",
+        "text": "Vedere i Big Five soggiornando in campi straordinari è stato un sogno che si è avverato."
+      }
+    }
+  },
+  "accreditation": {
+    "title": "Le nostre certificazioni e sicurezza di prenotazione"
+  },
+  "contactCard": {
+    "tagline": "Hai bisogno di aiuto?",
+    "title": "Hai domande? Contattaci liberamente",
+    "description": "I nostri specialisti safari sono pronti ad aiutarti a pianificare la tua avventura africana perfetta.",
+    "callUs": "Chiamaci",
+    "email": "Email",
+    "officeHours": "Orari d’ufficio",
+    "officeHoursValue": "Lunedì – Venerdì 8:00 – 18:00",
+    "contactTeam": "Contatta il nostro team"
+  },
+  "search": {
+    "tagline": "Ricerca safari di lusso",
+    "title": "Trova il tuo viaggio perfetto",
+    "tourName": "Nome tour",
+    "selectDestination": "Seleziona destinazione",
+    "duration": "Durata",
+    "safariType": "Tipo di safari",
+    "clearFilters": "Cancella filtri",
+    "searchSafaris": "Cerca safari"
   }
 }
 

@@ -118,5 +118,53 @@
     "exploreAll": "Explore All Tours",
     "from": "From",
     "safari": "Safari"
+  },
+  "destinations": {
+    "title": "Destinations Across East Africa",
+    "subtitle": "Explore our curated selection of unforgettable safari destinations.",
+    "noResults": "No destinations found matching your filters.",
+    "exploreAll": "Explore All Destinations"
+  },
+  "reviews": {
+    "tagline": "Guest Experiences",
+    "title": "Stories From Our Travelers",
+    "subtitle": "Discover why travelers from around the world trust Luxe Safaris for unforgettable African adventures.",
+    "items": {
+      "review1": {
+        "country": "United Kingdom",
+        "text": "Luxe Safaris gave us the most unforgettable African adventure. Everything from the lodges to the game drives was perfectly organized."
+      },
+      "review2": {
+        "country": "Kenya",
+        "text": "The customer service was exceptional. The safari experience felt luxurious, personal, and authentic from start to finish."
+      },
+      "review3": {
+        "country": "Spain",
+        "text": "Seeing the Big Five while staying in stunning camps was a dream come true. Highly recommended for luxury travel lovers."
+      }
+    }
+  },
+  "accreditation": {
+    "title": "Our Accreditations & Booking Security"
+  },
+  "contactCard": {
+    "tagline": "Need Assistance?",
+    "title": "Have Any Inquiries?<br />Feel Free To Reach Out",
+    "description": "Our safari specialists are ready to help you plan the perfect African adventure. Whether you need custom itineraries, pricing details, or travel guidance, we're here to assist you every step of the way.",
+    "callUs": "Call Us",
+    "email": "Email",
+    "officeHours": "Office Hours",
+    "officeHoursValue": "Monday – Friday<br />8:00 AM – 6:00 PM",
+    "contactTeam": "Contact Our Team"
+  },
+  "search": {
+    "tagline": "Luxury Safari Search",
+    "title": "Find Your Perfect Journey",
+    "tourName": "Tour Name",
+    "selectDestination": "Select Destination",
+    "duration": "Duration",
+    "safariType": "Safari Type",
+    "clearFilters": "Clear Filters",
+    "searchSafaris": "Search Safaris"
   }
 }

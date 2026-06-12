@@ -118,6 +118,54 @@
     "exploreAll": "すべてのツアーを見る",
     "from": "最安",
     "safari": "サファリ"
+  },
+  "destinations": {
+    "title": "東アフリカの目的地",
+    "subtitle": "厳選された忘れられないサファリ目的地を探索しましょう。",
+    "noResults": "条件に一致する目的地が見つかりませんでした。",
+    "exploreAll": "すべての目的地を見る"
+  },
+  "reviews": {
+    "tagline": "ゲスト体験",
+    "title": "旅行者のストーリー",
+    "subtitle": "世界中の旅行者がLuxe Safarisを信頼する理由をご覧ください。",
+    "items": {
+      "review1": {
+        "country": "イギリス",
+        "text": "Luxe Safarisのおかげで忘れられないアフリカ体験ができました。すべてが完璧に手配されていました。"
+      },
+      "review2": {
+        "country": "ケニア",
+        "text": "サービスは非常に素晴らしく、ラグジュアリーで本格的なサファリ体験でした。"
+      },
+      "review3": {
+        "country": "スペイン",
+        "text": "美しいキャンプでビッグファイブを見るという夢が叶いました。"
+      }
+    }
+  },
+  "accreditation": {
+    "title": "認証と予約の安全性"
+  },
+  "contactCard": {
+    "tagline": "サポートが必要ですか？",
+    "title": "ご質問はありますか? お気軽にお問い合わせください",
+    "description": "サファリ専門チームがあなたの理想のアフリカ旅行をサポートします。",
+    "callUs": "電話",
+    "email": "メール",
+    "officeHours": "営業時間",
+    "officeHoursValue": "月曜 – 金曜 8:00 – 18:00",
+    "contactTeam": "チームに連絡"
+  },
+  "search": {
+    "tagline": "ラグジュアリーサファリ検索",
+    "title": "理想の旅を見つける",
+    "tourName": "ツアー名",
+    "selectDestination": "目的地を選択",
+    "duration": "期間",
+    "safariType": "サファリタイプ",
+    "clearFilters": "フィルターをクリア",
+    "searchSafaris": "サファリを検索"
   }
 }
 

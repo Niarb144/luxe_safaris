@@ -118,5 +118,53 @@
     "exploreAll": "Explorer tous les circuits",
     "from": "À partir de",
     "safari": "Safari"
+  },
+  "destinations": {
+    "title": "Destinations à travers l'Afrique de l'Est",
+    "subtitle": "Explorez notre sélection de destinations de safari inoubliables.",
+    "noResults": "Aucune destination ne correspond à vos filtres.",
+    "exploreAll": "Explorer toutes les destinations"
+  },
+  "reviews": {
+    "tagline": "Expériences des voyageurs",
+    "title": "Histoires de nos voyageurs",
+    "subtitle": "Découvrez pourquoi les voyageurs du monde entier font confiance à Luxe Safaris pour des aventures africaines inoubliables.",
+    "items": {
+      "review1": {
+        "country": "Royaume-Uni",
+        "text": "Luxe Safaris nous a offert l’aventure africaine la plus inoubliable. Tout, des lodges aux safaris, était parfaitement organisé."
+      },
+      "review2": {
+        "country": "Kenya",
+        "text": "Le service client était exceptionnel. L’expérience de safari était luxueuse, personnelle et authentique du début à la fin."
+      },
+      "review3": {
+        "country": "Espagne",
+        "text": "Voir les Big Five tout en séjournant dans des camps magnifiques était un rêve devenu réalité. Hautement recommandé pour les amateurs de voyage de luxe."
+      }
+    }
+  },
+  "accreditation": {
+    "title": "Nos accréditations et sécurité de réservation"
+  },
+  "contactCard": {
+    "tagline": "Besoin d’aide ?",
+    "title": "Vous avez des questions ? N'hésitez pas à nous contacter",
+    "description": "Nos spécialistes safari sont prêts à vous aider à planifier l’aventure africaine parfaite. Que ce soit pour des itinéraires personnalisés, des tarifs ou des conseils de voyage, nous sommes là pour vous accompagner.",
+    "callUs": "Appelez-nous",
+    "email": "Email",
+    "officeHours": "Horaires d’ouverture",
+    "officeHoursValue": "Lundi – Vendredi 8h00 – 18h00",
+    "contactTeam": "Contacter notre équipe"
+  },
+  "search": {
+    "tagline": "Recherche de safari de luxe",
+    "title": "Trouvez votre voyage parfait",
+    "tourName": "Nom du tour",
+    "selectDestination": "Sélectionner une destination",
+    "duration": "Durée",
+    "safariType": "Type de safari",
+    "clearFilters": "Effacer les filtres",
+    "searchSafaris": "Rechercher des safaris"
   }
 }

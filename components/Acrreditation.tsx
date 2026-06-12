@@ -1,36 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const partners = [
   {
     name: "Tripadvisor",
-    image:
-      "/images/tripadvisor.png",
+    image: "/images/tripadvisor.png",
   },
   {
     name: "East African Wildlife Society",
-    image:
-      "/images/eawls.png",
+    image: "/images/eawls.png",
   },
   {
     name: "Tourism Regualtory Authority of Kenya",
-    image:
-      "/images/Logo-TRA.png",
+    image: "/images/Logo-TRA.png",
   },
   {
     name: "Trust Pilot",
-    image:
-      "/images/trustpilot.png",
+    image: "/images/trustpilot.png",
   },
   {
     name: "Safari Bookings",
-    image:
-      "/images/safaribookings.png",
+    image: "/images/safaribookings.png",
   }
 ];
 
 export default function AccreditationSection() {
+  const t = useTranslations("accreditation");
+
   return (
     <section className="bg-[#f5f3ee] py-24 w-full">
       <div className="max-w-7xl mx-auto px-6">
@@ -43,7 +41,7 @@ export default function AccreditationSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-light tracking-wide text-[#1f2d1f] uppercase">
-            Our Accreditations & Booking Security
+            {t("title")}
           </h2>
 
           <div className="flex items-center justify-center mt-6">

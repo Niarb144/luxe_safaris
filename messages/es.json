@@ -118,6 +118,54 @@
     "exploreAll": "Explorar todos los tours",
     "from": "Desde",
     "safari": "Safari"
+  },
+  "destinations": {
+    "title": "Destinos en África Oriental",
+    "subtitle": "Explora nuestra selección de destinos de safari inolvidables.",
+    "noResults": "No se encontraron destinos que coincidan con tus filtros.",
+    "exploreAll": "Explorar todos los destinos"
+  },
+  "reviews": {
+    "tagline": "Experiencias de los viajeros",
+    "title": "Historias de nuestros viajeros",
+    "subtitle": "Descubre por qué viajeros de todo el mundo confían en Luxe Safaris para aventuras africanas inolvidables.",
+    "items": {
+      "review1": {
+        "country": "Reino Unido",
+        "text": "Luxe Safaris nos ofreció la aventura africana más inolvidable. Todo estuvo perfectamente organizado, desde los lodges hasta los safaris."
+      },
+      "review2": {
+        "country": "Kenia",
+        "text": "El servicio al cliente fue excepcional. La experiencia de safari fue lujosa, personal y auténtica de principio a fin."
+      },
+      "review3": {
+        "country": "España",
+        "text": "Ver los Big Five mientras nos alojábamos en campamentos increíbles fue un sueño hecho realidad. Muy recomendado para amantes del lujo."
+      }
+    }
+  },
+  "accreditation": {
+    "title": "Nuestras acreditaciones y seguridad de reserva"
+  },
+  "contactCard": {
+    "tagline": "¿Necesitas ayuda?",
+    "title": "¿Tienes alguna pregunta? Contáctanos",
+    "description": "Nuestros especialistas en safaris están listos para ayudarte a planificar la aventura africana perfecta. Itinerarios personalizados, precios o asesoramiento de viaje, estamos aquí para ayudarte.",
+    "callUs": "Llámanos",
+    "email": "Correo electrónico",
+    "officeHours": "Horario de oficina",
+    "officeHoursValue": "Lunes – Viernes 8:00 – 18:00",
+    "contactTeam": "Contactar al equipo"
+  },
+  "search": {
+    "tagline": "Búsqueda de safari de lujo",
+    "title": "Encuentra tu viaje perfecto",
+    "tourName": "Nombre del tour",
+    "selectDestination": "Seleccionar destino",
+    "duration": "Duración",
+    "safariType": "Tipo de safari",
+    "clearFilters": "Limpiar filtros",
+    "searchSafaris": "Buscar safaris"
   }
 }
 

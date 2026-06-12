@@ -109,29 +109,25 @@ const delay = (ms) => new Promise(r => setTimeout(r, ms))
 async function translateText(text, targetLang, retries = 3) {
   if (!text || text.trim() === '') return text
 
-  // Azure uses different language codes for Chinese and Portuguese
-  const langMap = { zh: 'zh-Hans', pt: 'pt-pt' }
-  const azureLang = langMap[targetLang] || targetLang
+  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLang}${MYMEMORY_EMAIL ? `&de=${MYMEMORY_EMAIL}` : ''}`
 
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
-      const res = await fetch(
-        `https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=${azureLang}`,
-        {
-          method: 'POST',
-          headers: {
-            'Ocp-Apim-Subscription-Key': process.env.AZURE_TRANSLATOR_KEY,
-            'Ocp-Apim-Subscription-Region': process.env.AZURE_TRANSLATOR_REGION,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify([{ Text: text }])
-        }
-      )
+      const res = await fetch(url)
       const data = await res.json()
-      return data[0]?.translations[0]?.text ?? text
+
+      if (data.responseData?.translatedText?.includes('MYMEMORY WARNING')) {
+        console.error(`\n⚠  Daily quota reached. Rerun tomorrow — already translated records will be skipped.\n`)
+        process.exit(1)
+      }
+
+      return data.responseData?.translatedText ?? text
     } catch {
-      if (attempt === retries) return text
-      await delay(1000 * attempt)
+      if (attempt === retries) {
+        console.warn(`  ⚠ Translation failed after ${retries} attempts — keeping original`)
+        return text
+      }
+      await delay(1000 * attempt) // backoff: 1s, 2s, 3s
     }
   }
   return text

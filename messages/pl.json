@@ -118,6 +118,54 @@
     "exploreAll": "Zobacz wszystkie wycieczki",
     "from": "Od",
     "safari": "Safari"
+  },
+  "destinations": {
+    "title": "Destynacje w Afryce Wschodniej",
+    "subtitle": "Odkryj naszą starannie wyselekcjonowaną ofertę niezapomnianych safari.",
+    "noResults": "Brak destynacji pasujących do filtrów.",
+    "exploreAll": "Odkryj wszystkie destynacje"
+  },
+  "reviews": {
+    "tagline": "Opinie gości",
+    "title": "Historie naszych podróżników",
+    "subtitle": "Dowiedz się, dlaczego podróżnicy z całego świata ufają Luxe Safaris.",
+    "items": {
+      "review1": {
+        "country": "Wielka Brytania",
+        "text": "Luxe Safaris zapewniło nam niezapomnianą afrykańską przygodę. Wszystko było perfekcyjnie zorganizowane."
+      },
+      "review2": {
+        "country": "Kenia",
+        "text": "Obsługa była wyjątkowa. Safari było luksusowe, osobiste i autentyczne."
+      },
+      "review3": {
+        "country": "Hiszpania",
+        "text": "Zobaczenie Wielkiej Piątki podczas pobytu w pięknych obozach było spełnieniem marzeń."
+      }
+    }
+  },
+  "accreditation": {
+    "title": "Nasze certyfikaty i bezpieczeństwo rezerwacji"
+  },
+  "contactCard": {
+    "tagline": "Potrzebujesz pomocy?",
+    "title": "Masz pytania? Skontaktuj się z nami",
+    "description": "Nasi specjaliści safari pomogą Ci zaplanować idealną podróż do Afryki.",
+    "callUs": "Zadzwoń do nas",
+    "email": "Email",
+    "officeHours": "Godziny pracy",
+    "officeHoursValue": "Poniedziałek – Piątek 8:00 – 18:00",
+    "contactTeam": "Skontaktuj się z zespołem"
+  },
+  "search": {
+    "tagline": "Wyszukiwanie luksusowego safari",
+    "title": "Znajdź swoją idealną podróż",
+    "tourName": "Nazwa wycieczki",
+    "selectDestination": "Wybierz destynację",
+    "duration": "Czas trwania",
+    "safariType": "Typ safari",
+    "clearFilters": "Wyczyść filtry",
+    "searchSafaris": "Szukaj safari"
   }
 }
 

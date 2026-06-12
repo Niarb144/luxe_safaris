@@ -118,6 +118,54 @@
     "exploreAll": "Alle Touren entdecken",
     "from": "Ab",
     "safari": "Safari"
+  },
+  "destinations": {
+    "title": "Reiseziele in Ostafrika",
+    "subtitle": "Entdecken Sie unsere sorgfältig ausgewählten unvergesslichen Safari-Reiseziele.",
+    "noResults": "Keine Reiseziele entsprechen Ihren Filtern.",
+    "exploreAll": "Alle Reiseziele entdecken"
+  },
+  "reviews": {
+    "tagline": "Gästebewertungen",
+    "title": "Erlebnisse unserer Reisenden",
+    "subtitle": "Erfahren Sie, warum Reisende weltweit Luxe Safaris für unvergessliche Afrika-Abenteuer vertrauen.",
+    "items": {
+      "review1": {
+        "country": "Vereinigtes Königreich",
+        "text": "Luxe Safaris hat uns das unvergesslichste Afrika-Abenteuer ermöglicht. Alles war perfekt organisiert – von den Lodges bis zu den Pirschfahrten."
+      },
+      "review2": {
+        "country": "Kenia",
+        "text": "Der Kundenservice war außergewöhnlich. Die Safari war luxuriös, persönlich und authentisch von Anfang bis Ende."
+      },
+      "review3": {
+        "country": "Spanien",
+        "text": "Die Big Five in wunderschönen Camps zu sehen war ein Traum. Sehr empfehlenswert für Luxusreisende."
+      }
+    }
+  },
+  "accreditation": {
+    "title": "Unsere Akkreditierungen & Buchungssicherheit"
+  },
+  "contactCard": {
+    "tagline": "Brauchen Sie Hilfe?",
+    "title": "Haben Sie Fragen? Kontaktieren Sie uns gerne",
+    "description": "Unsere Safari-Spezialisten helfen Ihnen gerne bei der Planung Ihrer perfekten Afrika-Reise. Ob individuelle Routen, Preise oder Reiseberatung – wir sind für Sie da.",
+    "callUs": "Rufen Sie uns an",
+    "email": "E-Mail",
+    "officeHours": "Öffnungszeiten",
+    "officeHoursValue": "Montag – Freitag 8:00 – 18:00 Uhr",
+    "contactTeam": "Kontaktieren Sie unser Team"
+  },
+  "search": {
+    "tagline": "Luxus-Safari-Suche",
+    "title": "Finden Sie Ihre perfekte Reise",
+    "tourName": "Tourname",
+    "selectDestination": "Ziel auswählen",
+    "duration": "Dauer",
+    "safariType": "Safari-Typ",
+    "clearFilters": "Filter zurücksetzen",
+    "searchSafaris": "Safaris suchen"
   }
 }
 

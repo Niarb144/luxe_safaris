@@ -10,47 +10,20 @@ import {
   Users,
 } from "lucide-react";
 import Link from "next/link";
-
-const features = [
-  {
-    icon: Gem,
-    title: "Luxury Experiences",
-    description:
-      "Enjoy handpicked lodges, premium safari camps, and unforgettable adventures designed for comfort and elegance.",
-  },
-  {
-    icon: BadgeDollarSign,
-    title: "Affordable Excellence",
-    description:
-      "We deliver world-class safari experiences at competitive prices without compromising quality or comfort.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Personalized Care",
-    description:
-      "From arrival to departure, our team supports every traveler with dedicated attention and seamless service.",
-  },
-  {
-    icon: Globe2,
-    title: "Authentic African Adventures",
-    description:
-      "Experience breathtaking wildlife, rich cultures, and iconic destinations curated by local safari experts.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Trusted & Secure",
-    description:
-      "Travel confidently with secure bookings, trusted safari partners, and reliable customer support.",
-  },
-  {
-    icon: Users,
-    title: "For Every Traveler",
-    description:
-      "Whether solo, couples, families, or groups, we create safari journeys tailored to every travel style.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function WhyChooseLuxeSafaris() {
+  const t = useTranslations("whyUs");
+
+  const features = [
+    { icon: Gem, key: "luxury" },
+    { icon: BadgeDollarSign, key: "affordable" },
+    { icon: HeartHandshake, key: "personalizedCare" },
+    { icon: Globe2, key: "authentic" },
+    { icon: ShieldCheck, key: "trusted" },
+    { icon: Users, key: "forEveryone" },
+  ];
+
   return (
     <section className="relative w-full py-28 bg-[#0d1510] overflow-hidden">
       {/* Background Glow */}
@@ -66,16 +39,15 @@ export default function WhyChooseLuxeSafaris() {
           className="text-center max-w-3xl mx-auto"
         >
           <p className="uppercase tracking-[0.3em] text-[#d4af37] text-sm mb-4">
-            Why Travel With Us
+            {t("tagline")}
           </p>
 
           <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            Why Choose Luxe Safaris
+            {t("title")}
           </h2>
 
           <p className="text-gray-400 text-lg mt-6 leading-relaxed">
-            We combine luxury, affordability, and personalized care to create
-            unforgettable safari experiences for every traveler exploring Africa.
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -86,13 +58,10 @@ export default function WhyChooseLuxeSafaris() {
 
             return (
               <motion.div
-                key={feature.title}
+                key={feature.key}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md hover:border-[#d4af37]/50 transition-all duration-500 overflow-hidden"
               >
@@ -107,11 +76,11 @@ export default function WhyChooseLuxeSafaris() {
                 {/* Content */}
                 <div className="relative">
                   <h3 className="text-2xl font-semibold text-white mb-4">
-                    {feature.title}
+                    {t(`features.${feature.key}.title`)}
                   </h3>
 
                   <p className="text-gray-400 leading-relaxed">
-                    {feature.description}
+                    {t(`features.${feature.key}.description`)}
                   </p>
                 </div>
 
@@ -135,16 +104,18 @@ export default function WhyChooseLuxeSafaris() {
           <div className="inline-flex flex-col md:flex-row items-center gap-6 bg-gradient-to-r from-[#1b2b20] to-[#111c15] border border-[#d4af37]/20 rounded-[32px] px-10 py-8 shadow-2xl">
             <div className="text-left">
               <h3 className="text-3xl font-bold text-white">
-                Start Your African Adventure
+                {t("cta.title")}
               </h3>
 
               <p className="text-gray-400 mt-2">
-                Discover luxury safari experiences crafted with care,
-                authenticity, and exceptional value.
+                {t("cta.subtitle")}
               </p>
             </div>
-            <Link className="bg-[#d4af37] hover:bg-[#c39f2e] text-black font-bold px-8 py-4 rounded-2xl transition duration-300 shadow-lg" href="/tours">
-              Explore Tours
+            <Link
+              className="bg-[#d4af37] hover:bg-[#c39f2e] text-black font-bold px-8 py-4 rounded-2xl transition duration-300 shadow-lg"
+              href="/tours"
+            >
+              {t("cta.button")}
             </Link>
           </div>
         </motion.div>

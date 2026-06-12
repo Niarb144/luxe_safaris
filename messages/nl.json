@@ -118,6 +118,54 @@
     "exploreAll": "Alle tours bekijken",
     "from": "Vanaf",
     "safari": "Safari"
+  },
+  "destinations": {
+    "title": "Bestemmingen in Oost-Afrika",
+    "subtitle": "Ontdek onze zorgvuldig samengestelde safari-bestemmingen.",
+    "noResults": "Geen bestemmingen gevonden die overeenkomen met je filters.",
+    "exploreAll": "Alle bestemmingen bekijken"
+  },
+  "reviews": {
+    "tagline": "Ervaringen van gasten",
+    "title": "Verhalen van onze reizigers",
+    "subtitle": "Ontdek waarom reizigers wereldwijd Luxe Safaris vertrouwen voor onvergetelijke Afrika-reizen.",
+    "items": {
+      "review1": {
+        "country": "Verenigd Koninkrijk",
+        "text": "Luxe Safaris bezorgde ons een onvergetelijk Afrika-avontuur. Alles was perfect georganiseerd."
+      },
+      "review2": {
+        "country": "Kenia",
+        "text": "De service was uitzonderlijk. De safari was luxe, persoonlijk en authentiek."
+      },
+      "review3": {
+        "country": "Spanje",
+        "text": "De Big Five zien terwijl we in prachtige kampen verbleven was een droom die uitkwam."
+      }
+    }
+  },
+  "accreditation": {
+    "title": "Onze accreditaties en boekingszekerheid"
+  },
+  "contactCard": {
+    "tagline": "Hulp nodig?",
+    "title": "Heb je vragen? Neem gerust contact op",
+    "description": "Onze safarispecialisten helpen je graag bij het plannen van jouw perfecte Afrikaanse reis.",
+    "callUs": "Bel ons",
+    "email": "E-mail",
+    "officeHours": "Openingstijden",
+    "officeHoursValue": "Maandag – Vrijdag 8:00 – 18:00",
+    "contactTeam": "Neem contact op"
+  },
+  "search": {
+    "tagline": "Luxe safari zoeken",
+    "title": "Vind jouw perfecte reis",
+    "tourName": "Tournaam",
+    "selectDestination": "Selecteer bestemming",
+    "duration": "Duur",
+    "safariType": "Safaritype",
+    "clearFilters": "Filters wissen",
+    "searchSafaris": "Zoek safari's"
   }
 }
 
