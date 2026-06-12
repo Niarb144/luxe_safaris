@@ -1,82 +1,123 @@
 {
   "hero": {
-    "title": "Odkryj swoje wymarzone Safari",
-    "subtitle": "Odkryj najbardziej zapierające dech w piersiach miejsca w Afryce dzięki wyselekcjonowanym atrakcjom safari."
+    "title": "Odkryj safari swoich marzeń",
+    "subtitle": "Odkrywaj najbardziej zapierające dech w piersiach miejsca w Afryce dzięki starannie wyselekcjonowanym doświadczeniom safari."
   },
   "footer": {
     "newsletter": {
-      "title": "Chcesz otrzymywać wiadomości i inspiracje z podróży?",
-      "subtitle": "Zapisz się do naszego newslettera i weź udział w naszym szczęśliwym losowaniu.",
+      "title": "Chcesz otrzymywać wiadomości i inspiracje podróżnicze?",
+      "subtitle": "Zapisz się do naszego newslettera i weź udział w losowaniu nagród.",
       "placeholder": "E-mail",
       "button": "Zapisz mnie"
     },
     "company": {
-      "name": "LUKSUSOWE RÓWNINY AFRYKA SAFARI",
-      "about": "O Luxe Plains Africa Safari",
+      "name": "LUXE PLAINS AFRICA SAFARIS",
+      "about": "O Luxe Plains Africa Safaris",
       "registered": "Luxe Plains Africa Safaris Ltd.",
       "country": "Zarejestrowana w Kenii",
-      "address1": "Siedziba: Standard Building,",
-      "address2": "3 piętro, pokój nr 5"
+      "address1": "Siedziba firmy: Standard Building,",
+      "address2": "3 piętro, biuro nr 5"
     },
     "information": {
       "title": "Informacje",
-      "bookWithConfidence": "REZERWUJ BEZ OBAW",
-      "privacyPolicy": "Polityka Prywatności",
-      "termsAndConditions": "Warunki",
-      "onlinePayment": "Płatności online"
+      "bookWithConfidence": "Rezerwuj z pewnością",
+      "privacyPolicy": "Polityka prywatności",
+      "termsAndConditions": "Regulamin",
+      "onlinePayment": "Płatność online"
     },
     "accreditations": {
       "title": "Akredytacje"
     }
   },
   "nav": {
-    "home": "Dom",
-    "tours": "Wycieczki",
-    "about": "ok",
-    "contact": "Kontakt"
+    "home": "Strona główna",
+    "ourTours": "Nasze wycieczki",
+    "destination": "Cel podróży",
+    "accommodation": "Zakwaterowanie",
+    "practicalInfo": "Informacje praktyczne",
+    "contact": "Kontakt",
+    "callUs": "Zadzwoń do nas:",
+    "search": "Szukaj",
+    "safariType": "Typ safari",
+    "viewAllTours": "Zobacz wszystkie wycieczki →",
+    "duration": "Czas trwania",
+    "noDurations": "Brak dostępnych czasów trwania",
+    "allType": "Wszystkie {type} →",
+    "destinations": "Kierunki",
+    "noDestinations": "Brak dostępnych kierunków",
+    "byDestination": "Według kierunku",
+    "typeDestinations": "Kierunki {type}",
+    "destTours": "Wycieczki do {name}",
+    "allTypeTours": "Wszystkie wycieczki {type} →",
+    "viewAllDestinations": "Zobacz wszystkie kierunki →"
   },
   "common": {
-    "bookNow": "Umów teraz",
+    "bookNow": "Zarezerwuj teraz",
     "exploreTours": "Odkrywaj wycieczki",
     "learnMore": "Dowiedz się więcej",
-    "readMore": "Więcej informacji",
+    "readMore": "Czytaj więcej",
     "loading": "Ładowanie...",
-    "viewAll": "Wyświetl wszystko"
+    "viewAll": "Zobacz wszystko"
   },
   "whyUs": {
-    "tagline": "Dlaczego warto podróżować z nami",
+    "tagline": "Dlaczego podróżować z nami",
     "title": "Dlaczego warto wybrać Luxe Safaris",
-    "subtitle": "Łączymy luksus, przystępną cenę i spersonalizowaną opiekę, aby stworzyć niezapomniane wrażenia z safari dla każdego podróżnika odkrywającego Afrykę.",
+    "subtitle": "Łączymy luksus, przystępność i spersonalizowaną obsługę, aby tworzyć niezapomniane safari dla każdego podróżnika w Afryce.",
     "cta": {
       "title": "Rozpocznij swoją afrykańską przygodę",
-      "subtitle": "Odkryj luksusowe safari stworzone z dbałością, autentycznością i wyjątkową wartością.",
-      "button": "Odkrywaj wycieczki"
+      "subtitle": "Odkryj luksusowe safari tworzone z troską, autentycznością i wyjątkową wartością.",
+      "button": "Odkryj wycieczki"
     },
     "features": {
       "luxury": {
-        "title": "Luksusowe atrakcje",
-        "description": "Ciesz się starannie dobranymi domkami, luksusowymi obozami safari i niezapomnianymi przygodami zaprojektowanymi z myślą o komforcie i elegancji."
+        "title": "Luksusowe doświadczenia",
+        "description": "Ciesz się starannie wybranymi lodge’ami, premium obozami safari i niezapomnianymi przygodami zaprojektowanymi z myślą o komforcie i elegancji."
       },
       "affordable": {
         "title": "Doskonałość w przystępnej cenie",
-        "description": "Zapewniamy światowej klasy doświadczenia safari w konkurencyjnych cenach bez uszczerbku dla jakości i komfortu."
+        "description": "Oferujemy światowej klasy safari w konkurencyjnych cenach bez kompromisów w jakości i komforcie."
       },
       "personalizedCare": {
         "title": "Spersonalizowana opieka",
-        "description": "Od przyjazdu do wyjazdu nasz zespół wspiera każdego podróżnego, poświęcając mu szczególną uwagę i zapewniając bezproblemową obsługę."
+        "description": "Od przyjazdu do wyjazdu nasz zespół wspiera każdego podróżnika z pełnym zaangażowaniem i profesjonalną obsługą."
       },
       "authentic": {
         "title": "Autentyczne afrykańskie przygody",
-        "description": "Poznaj zapierające dech w piersiach dzikie zwierzęta, bogate kultury i kultowe miejsca wyselekcjonowane przez lokalnych ekspertów od safari."
+        "description": "Doświadcz dzikiej przyrody, bogatych kultur i kultowych miejsc wybranych przez lokalnych ekspertów safari."
       },
       "trusted": {
-        "title": "Zaufanie i bezpieczeństwo",
-        "description": "Podróżuj pewnie dzięki bezpiecznym rezerwacjom, zaufanym partnerom safari i niezawodnej obsłudze klienta."
+        "title": "Zaufane i bezpieczne",
+        "description": "Podróżuj z pewnością dzięki bezpiecznym rezerwacjom, sprawdzonym partnerom safari i niezawodnej obsłudze klienta."
       },
       "forEveryone": {
         "title": "Dla każdego podróżnika",
-        "description": "Niezależnie od tego, czy prowadzimy podróże w pojedynkę, w parach, rodzinach czy w grupach, tworzymy podróże safari dostosowane do każdego stylu podróży."
+        "description": "Niezależnie od tego, czy podróżujesz solo, w parze, z rodziną czy grupą – tworzymy safari dopasowane do każdego stylu podróży."
       }
     }
+  },
+  "cta": {
+    "findYourSafari": "Znajdź swoje safari"
+  },
+  "countryCards": {
+    "title": "Odkrywaj niezwykłe wycieczki po Afryce",
+    "loading": "Ładowanie...",
+    "tours": "{count} WYCIECZEK",
+    "tour": "{count} WYCIECZKA"
+  },
+  "numbers": {
+    "title": "Nasz wpływ w liczbach",
+    "subtitle": "Doświadcz luksusowych safari tworzonych z pasją.",
+    "tours": "Wyselekcjonowane wycieczki",
+    "destinations": "Obsługiwane kierunki",
+    "travelers": "Zadowoleni podróżnicy"
+  },
+  "tours": {
+    "title": "Odkryj nasze wycieczki",
+    "subtitle": "Poznaj niezapomniane safari w Afryce Wschodniej.",
+    "noResults": "Nie znaleziono wycieczek pasujących do filtrów.",
+    "exploreAll": "Zobacz wszystkie wycieczki",
+    "from": "Od",
+    "safari": "Safari"
   }
 }
+

@@ -1,82 +1,123 @@
 {
   "hero": {
     "title": "夢のサファリを発見しよう",
-    "subtitle": "厳選されたサファリ体験で、アフリカで最も息をのむような目的地を探索しましょう。"
+    "subtitle": "厳選されたサファリ体験で、アフリカの息をのむような絶景を探索しましょう。"
   },
   "footer": {
     "newsletter": {
-      "title": "旅行のニュースやインスピレーションを受け取りたいですか？",
+      "title": "旅行ニュースやインスピレーションを受け取りませんか？",
       "subtitle": "ニュースレターに登録して、抽選に参加しましょう。",
-      "placeholder": "メール",
-      "button": "新規登録して下さい"
+      "placeholder": "メールアドレス",
+      "button": "登録する"
     },
     "company": {
-      "name": "アフリカの平原で豪華なサファリ体験",
+      "name": "LUXE PLAINS AFRICA SAFARIS",
       "about": "Luxe Plains Africa Safarisについて",
       "registered": "Luxe Plains Africa Safaris Ltd.",
-      "country": "ケニアで登録済み",
-      "address1": "登録事務所：スタンダードビル、",
-      "address2": "3階、スイートNo.5"
+      "country": "ケニア登録",
+      "address1": "登記住所：スタンダードビル、",
+      "address2": "3階、5号室"
     },
     "information": {
       "title": "情報",
       "bookWithConfidence": "安心して予約",
       "privacyPolicy": "プライバシーポリシー",
       "termsAndConditions": "利用規約",
-      "onlinePayment": "オンラインでの決済などで"
+      "onlinePayment": "オンライン決済"
     },
     "accreditations": {
-      "title": "各種認定"
+      "title": "認定"
     }
   },
   "nav": {
     "home": "ホーム",
-    "tours": "ツアー",
-    "about": "情報",
-    "contact": "お問い合わせ"
+    "ourTours": "ツアー一覧",
+    "destination": "目的地",
+    "accommodation": "宿泊施設",
+    "practicalInfo": "旅行情報",
+    "contact": "お問い合わせ",
+    "callUs": "お電話：",
+    "search": "検索",
+    "safariType": "サファリタイプ",
+    "viewAllTours": "すべてのツアーを見る →",
+    "duration": "期間",
+    "noDurations": "期間がありません",
+    "allType": "すべての{type} →",
+    "destinations": "目的地",
+    "noDestinations": "利用可能な目的地はありません",
+    "byDestination": "目的地別",
+    "typeDestinations": "{type}の目的地",
+    "destTours": "{name}のツアー",
+    "allTypeTours": "すべての{type}ツアー →",
+    "viewAllDestinations": "すべての目的地を見る →"
   },
   "common": {
     "bookNow": "今すぐ予約",
-    "exploreTours": "ツアーを探す",
-    "learnMore": "詳細はこちら",
-    "readMore": "詳細はこちら",
-    "loading": "読み込み中・・・",
-    "viewAll": "すべて表示"
+    "exploreTours": "ツアーを見る",
+    "learnMore": "詳細を見る",
+    "readMore": "続きを読む",
+    "loading": "読み込み中...",
+    "viewAll": "すべてを見る"
   },
   "whyUs": {
-    "tagline": "私たちと一緒に旅行する理由",
-    "title": "Luxe Safarisを選ぶ理由",
-    "subtitle": "ラグジュアリー、手頃な価格、パーソナライズされたケアを組み合わせて、アフリカを探索するすべての旅行者に忘れられないサファリ体験を提供します。",
+    "tagline": "私たちを選ぶ理由",
+    "title": "Luxe Safarisが選ばれる理由",
+    "subtitle": "ラグジュアリー、手頃な価格、そしてパーソナライズされたサービスを組み合わせ、アフリカを旅するすべての旅行者に忘れられないサファリ体験を提供します。",
     "cta": {
       "title": "アフリカの冒険を始めよう",
-      "subtitle": "細心の注意を払って作られた贅沢なサファリ体験を発見しましょう。",
-      "button": "ツアーを探す"
+      "subtitle": "丁寧さ、信頼性、そして卓越した価値で作られたラグジュアリーサファリ体験を発見しましょう。",
+      "button": "ツアーを見る"
     },
     "features": {
       "luxury": {
-        "title": "ラグジュアリーな体験",
-        "description": "厳選されたロッジ、プレミアムサファリキャンプ、快適さとエレガントさを追求した忘れられない冒険をお楽しみください。"
+        "title": "ラグジュアリー体験",
+        "description": "厳選されたロッジ、高級サファリキャンプ、快適さと優雅さを追求した忘れられない冒険をお楽しみください。"
       },
       "affordable": {
-        "title": "手頃な価格のエクセレンス",
-        "description": "品質や快適さを損なうことなく、競争力のある価格で世界クラスのサファリ体験を提供します。"
+        "title": "手頃な価格の上質さ",
+        "description": "品質や快適さを妥協することなく、世界クラスのサファリ体験を競争力のある価格で提供します。"
       },
       "personalizedCare": {
-        "title": "パーソナライズされたケア",
-        "description": "到着から出発まで、私たちのチームは専用の注意とシームレスなサービスですべての旅行者をサポートします。"
+        "title": "パーソナルケア",
+        "description": "到着から出発まで、専任チームがすべての旅行者をサポートします。"
       },
       "authentic": {
-        "title": "本格的なアフリカンアドベンチャー",
-        "description": "息をのむような野生動物、豊かな文化、地元のサファリエキスパートが厳選した象徴的な目的地を体験してください。"
+        "title": "本物のアフリカ体験",
+        "description": "野生動物、豊かな文化、象徴的な目的地を地元のサファリエキスパートが厳選してご案内します。"
       },
       "trusted": {
-        "title": "信頼性と安全性",
-        "description": "安全な予約、信頼できるサファリパートナー、信頼できるカスタマーサポートで安心して旅行しましょう。"
+        "title": "信頼と安心",
+        "description": "安全な予約、信頼できるサファリパートナー、安心のサポートで安心して旅行できます。"
       },
       "forEveryone": {
         "title": "すべての旅行者のために",
-        "description": "一人でも、カップルでも、ファミリーでも、グループでも、あらゆる旅行スタイルに合わせたサファリ旅行をお届けします。"
+        "description": "一人旅、カップル、家族、グループなど、あらゆる旅行スタイルに合わせたサファリを提供します。"
       }
     }
+  },
+  "cta": {
+    "findYourSafari": "あなたのサファリを探す"
+  },
+  "countryCards": {
+    "title": "アフリカ各地の特別なツアーを探索",
+    "loading": "読み込み中...",
+    "tours": "{count}ツアー",
+    "tour": "{count}ツアー"
+  },
+  "numbers": {
+    "title": "私たちの実績",
+    "subtitle": "情熱を込めて作られたラグジュアリーサファリを体験してください。",
+    "tours": "厳選ツアー",
+    "destinations": "対象地域",
+    "travelers": "満足した旅行者"
+  },
+  "tours": {
+    "title": "ツアーを見る",
+    "subtitle": "東アフリカの忘れられないサファリ体験を発見しましょう。",
+    "noResults": "条件に一致するツアーが見つかりませんでした。",
+    "exploreAll": "すべてのツアーを見る",
+    "from": "最安",
+    "safari": "サファリ"
   }
 }
+

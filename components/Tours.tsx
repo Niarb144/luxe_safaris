@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
 
 type ToursListProps = {
   limit?: number;
@@ -21,6 +22,9 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState("All");
 
+  const locale = useLocale();
+  const t = useTranslations("tours");
+
   const search = searchParams?.search || "";
   const destination = searchParams?.destination || "";
   const duration = searchParams?.duration || "";
@@ -29,58 +33,66 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
   useEffect(() => {
     async function fetchTours() {
       const { data, error } = await supabase
-      .from("tours")
-      .select(`
-        *,
-        tour_images (image_url, is_main),
-        tour_holiday_types (holiday_types (id, name)),
-        tour_destinations (destinations (id, name))
-      `);
+        .from("tours")
+        .select(`
+          *,
+          tour_images (image_url, is_main),
+          tour_holiday_types (holiday_types (id, name)),
+          tour_destinations (destinations (id, name))
+        `);
 
       if (error) { console.error(error); return; }
 
+      // ── Fetch translations for all tours in one query ──────────────────────
+      let translationMap = new Map<string, Record<string, string>>()
+
+      if (locale !== 'en' && data.length > 0) {
+        const tourIds = data.map(t => t.id)
+
+        const { data: translationsData } = await supabase
+          .from('translations')
+          .select('record_id, field, translated_text')
+          .eq('table_name', 'tours')
+          .eq('locale', locale)
+          .in('record_id', tourIds)
+          .in('field', ['title', 'description', 'duration'])
+
+        translationsData?.forEach(({ record_id, field, translated_text }) => {
+          if (!translationMap.has(record_id)) translationMap.set(record_id, {})
+          translationMap.get(record_id)![field] = translated_text
+        })
+      }
+
+      // ── Format and merge translations ──────────────────────────────────────
       const formatted = data.map((tour) => {
         const mainImage = tour.tour_images?.find((img: any) => img.is_main);
         const countrySlug = tour.country
-        ? tour.country.toLowerCase().replace(/\s+/g, "-")
-        : "";
+          ? tour.country.toLowerCase().replace(/\s+/g, "-")
+          : "";
+
+        const translations = translationMap.get(tour.id) ?? {}
 
         return {
           ...tour,
-          coverImage:
-            mainImage?.image_url || "/images/logo.svg",
-
-          holidayTypes:
-            tour.tour_holiday_types?.map(
-              (t: any) => t.holiday_types?.name
-            ) || [],
-
-          destinations:
-            tour.tour_destinations?.map(
-              (d: any) => d.destinations?.name
-            ) || [],
-
+          ...translations,
+          coverImage: mainImage?.image_url || "/images/logo.svg",
+          holidayTypes: tour.tour_holiday_types?.map((t: any) => t.holiday_types?.name) || [],
+          destinations: tour.tour_destinations?.map((d: any) => d.destinations?.name) || [],
           countrySlug,
         };
       });
 
       setTours(formatted);
       setLoading(false);
-      // console.log(formatted[0]);
     }
 
     fetchTours();
-  }, []);
+  }, [locale]);
 
   const categories = useMemo(() => {
     const unique = Array.from(
-      new Set(
-        tours
-          .map((tour) => tour.country)
-          .filter(Boolean)
-      )
+      new Set(tours.map((tour) => tour.country).filter(Boolean))
     );
-
     return ["All", ...unique];
   }, [tours]);
 
@@ -92,14 +104,6 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
     const holidayMatch = !holidayType || tour.holidayTypes?.includes(holidayType);
     return locationMatch && searchMatch && destinationMatch && durationMatch && holidayMatch;
   });
-
-  // console.log("Active:", active);
-  // console.log(
-  //   tours.map((t) => ({
-  //     title: t.title,
-  //     country: t.country,
-  //   }))
-  // );
 
   const displayed = limit ? filteredTours.slice(0, limit) : filteredTours;
   const hasMore = limit ? filteredTours.length > limit : false;
@@ -130,10 +134,10 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
         {/* Heading */}
         <div className="text-center">
           <h2 className="text-4xl font-bold text-[#3b2a1d]">
-            Explore Our Tours
+            {t("title")}
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Discover unforgettable safari experiences across East Africa.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -187,7 +191,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
                   <div className="relative h-full flex flex-col justify-between p-7">
                     <div>
                       <span className="text-white font-semibold text-sm tracking-wide">
-                        {tour.country || "Safari"}
+                        {tour.country || t("safari")}
                       </span>
                     </div>
                     <div>
@@ -205,7 +209,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
                         </div>
                         <div className="bg-[#b77e24] rounded-2xl px-5 py-2">
                           <span className="text-white font-bold text-sm">
-                            From ${tour.price}
+                            {t("from")} ${tour.price}
                           </span>
                         </div>
                       </div>
@@ -220,7 +224,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
         {/* Empty state */}
         {displayed.length === 0 && (
           <p className="text-center mt-10 text-gray-500">
-            No tours found matching your filters.
+            {t("noResults")}
           </p>
         )}
 
@@ -231,7 +235,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
               href="/tours"
               className="group inline-flex items-center gap-3 bg-[#041f0e] hover:bg-[#062b12] text-white pl-6 pr-5 py-3.5 rounded-full border border-[#b77e24]/30 hover:border-[#b77e24]/60 transition-all duration-300 font-semibold text-sm uppercase tracking-wider shadow-lg"
             >
-              Explore All Tours
+              {t("exploreAll")}
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#b77e24] group-hover:bg-[#a06d1f] transition-colors duration-200 shrink-0">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

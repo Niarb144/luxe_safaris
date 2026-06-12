@@ -11,8 +11,7 @@ import SearchButton from "./SearchButton";
 import TourSearch from "./TourSearch";
 import { supabase } from "@/lib/supabase";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { useTranslation } from "@/components/UseTranslation"; 
-
+import { useTranslations } from "next-intl";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -28,11 +27,10 @@ interface DestinationGroup {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const COUNTRY_ORDER = ["Kenya", "Uganda"];          // shown first; rest sorted alphabetically
+const COUNTRY_ORDER = ["Kenya", "Uganda"];
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-/** Thin animated underline shown on the active nav link */
 function ActiveBar() {
   return (
     <motion.span
@@ -42,20 +40,20 @@ function ActiveBar() {
   );
 }
 
-
 // ─── Tours mega-dropdown ──────────────────────────────────────────────────────
 
 interface ToursDropdownProps {
   holidayTypes: HolidayType[];
-  durationsByType: Map<string, string[]>;     // key = holiday_type id
-  destinationsByType: Map<string, { id: string; name: string }[]>; // key = holiday_type id
-  allTourDestinations: { id: string; name: string }[]; // flat list for "no type hovered" state
+  durationsByType: Map<string, string[]>;
+  destinationsByType: Map<string, { id: string; name: string }[]>;
+  allTourDestinations: { id: string; name: string }[];
   scrolled: boolean;
 }
 
 function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allTourDestinations, scrolled }: ToursDropdownProps) {
   const router = useRouter();
   const pathname = usePathname();
+  const t = useTranslations("nav");
   const [hoveredType, setHoveredType] = useState<{ id: string; name: string } | null>(null);
   const [open, setOpen] = useState(false);
   const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -78,40 +76,27 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
     setHoveredType(null);
   };
 
-  // Destinations to show: scoped to hovered type, or all tour destinations
   const visibleDestinations = hoveredType
     ? (destinationsByType.get(hoveredType.id) ?? [])
     : allTourDestinations;
 
   return (
-    <div
-      className="relative group"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {/* trigger */}
+    <div className="relative group" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Link
         href="/tours"
         className={`text-sm font-medium transition-colors nav-link flex items-center gap-1 ${
           scrolled ? "text-black" : "text-white"
         }`}
       >
-        Our Tours
-        <motion.span
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="inline-block"
-        >
+        {t("ourTours")}
+        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }} className="inline-block">
           <ChevronRight size={13} className="rotate-90" />
         </motion.span>
       </Link>
 
       {pathname === "/tours" && <ActiveBar />}
-
-      {/* hover underline */}
       <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#041f0e] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
 
-      {/* dropdown panel */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -125,7 +110,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
             {/* COL 1 – Safari Types */}
             <div className="bg-[#10261f] w-52 flex-shrink-0 py-3">
               <p className="px-5 py-2 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold">
-                Safari Type
+                {t("safariType")}
               </p>
               {holidayTypes.map((ht) => (
                 <button
@@ -147,12 +132,12 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                   onClick={() => navigate({})}
                   className="w-full text-left px-5 py-2.5 text-xs text-[#b77e24] hover:text-white transition-colors cursor-pointer"
                 >
-                  View all tours →
+                  {t("viewAllTours")}
                 </button>
               </div>
             </div>
 
-            {/* COL 2 – Duration (scoped to hovered type) */}
+            {/* COL 2 – Duration */}
             <AnimatePresence mode="wait">
               {hoveredType && (
                 <motion.div
@@ -164,7 +149,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                   className="bg-[#0d1f18] border-l border-white/10 w-48 flex-shrink-0 py-3"
                 >
                   <p className="px-5 py-2 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold">
-                    Duration
+                    {t("duration")}
                   </p>
                   {(durationsByType.get(hoveredType.id) ?? []).map((dur) => (
                     <button
@@ -176,14 +161,14 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                     </button>
                   ))}
                   {(durationsByType.get(hoveredType.id) ?? []).length === 0 && (
-                    <p className="px-5 py-2 text-sm text-white/40 italic">No durations</p>
+                    <p className="px-5 py-2 text-sm text-white/40 italic">{t("noDurations")}</p>
                   )}
                   <div className="border-t border-white/10 mt-2 pt-2">
                     <button
                       onClick={() => navigate({ type: hoveredType.name })}
                       className="w-full text-left px-5 py-2.5 text-xs text-[#b77e24] hover:text-white transition-colors cursor-pointer"
                     >
-                      All {hoveredType.name} →
+                      {t("allType", { type: hoveredType.name })}
                     </button>
                   </div>
                 </motion.div>
@@ -199,7 +184,7 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
               className="bg-[#0a1a12] border-l border-white/10 w-[100%] flex-shrink-0 py-3 overflow-y-auto max-h-100"
             >
               <p className="px-5 py-2 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold sticky top-0 bg-[#0a1a12]">
-                {hoveredType ? `${hoveredType.name} Destinations` : "By Destination"}
+                {hoveredType ? t("typeDestinations", { type: hoveredType.name }) : t("byDestination")}
               </p>
               {visibleDestinations.map((dest) => (
                 <button
@@ -213,14 +198,13 @@ function ToursDropdown({ holidayTypes, durationsByType, destinationsByType, allT
                   }
                   className="w-full text-left px-5 py-2.5 text-sm text-white/80 hover:text-white hover:bg-white/10 hover:translate-x-0.5 transition-all duration-150 cursor-pointer"
                 >
-                  {dest.name} Tours
+                  {t("destTours", { name: dest.name })}
                 </button>
               ))}
               {visibleDestinations.length === 0 && (
-                <p className="px-5 py-2 text-sm text-white/40 italic">No destinations available</p>
+                <p className="px-5 py-2 text-sm text-white/40 italic">{t("noDestinations")}</p>
               )}
             </motion.div>
-
           </motion.div>
         )}
       </AnimatePresence>
@@ -238,6 +222,7 @@ interface DestinationsDropdownProps {
 function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
   const router = useRouter();
   const pathname = usePathname();
+  const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
   const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -256,29 +241,20 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
   };
 
   return (
-    <div
-      className="relative group"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="relative group" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Link
         href="/destinations"
         className={`text-sm font-medium transition-colors nav-link flex items-center gap-1 ${
           scrolled ? "text-black" : "text-white"
         }`}
       >
-        Destination
-        <motion.span
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="inline-block"
-        >
+        {t("destination")}
+        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }} className="inline-block">
           <ChevronRight size={13} className="rotate-90" />
         </motion.span>
       </Link>
 
       {pathname === "/destinations" && <ActiveBar />}
-
       <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#041f0e] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
 
       <AnimatePresence>
@@ -297,14 +273,12 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
             >
               {groups.map((group) => (
                 <div key={group.country} className="px-4 border-r border-white/10 last:border-r-0">
-                  {/* Country heading – also a link */}
                   <button
                     onClick={() => navigate({ country: group.country })}
                     className="flex items-center gap-1 text-[10px] uppercase tracking-[3px] text-[#b77e24] font-semibold mb-2 hover:text-white transition-colors w-full text-left cursor-pointer"
                   >
-                    {group.country} destinations
+                    {t("destination")} — {group.country}
                   </button>
-
                   {group.destinations.map((dest) => (
                     <button
                       key={dest.id}
@@ -314,13 +288,12 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
                       {dest.name}
                     </button>
                   ))}
-
                   <div className="border-t border-white/10 mt-2 pt-2">
                     <button
                       onClick={() => navigate({ country: group.country })}
                       className="text-xs text-[#b77e24] hover:text-white transition-colors cursor-pointer"
                     >
-                      All {group.country} →
+                      {t("allType", { type: group.country })}
                     </button>
                   </div>
                 </div>
@@ -333,25 +306,9 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
   );
 }
 
-// ─── Static nav links (no dropdown) ──────────────────────────────────────────
+// ─── Static nav links ─────────────────────────────────────────────────────────
 
-const STATIC_LINKS = [
-  { name: "Home",          href: "/" },
-  { name: "Accommodation", href: "/accommodations" },
-  { name: "Practical Info",href: "/info" },
-  { name: "Contact",       href: "/contact" },
-  // { name: "Blog",          href: "/blog" }, coming soon
-];
-
-function StaticLink({
-  name,
-  href,
-  scrolled,
-}: {
-  name: string;
-  href: string;
-  scrolled: boolean;
-}) {
+function StaticLink({ name, href, scrolled }: { name: string; href: string; scrolled: boolean }) {
   const pathname = usePathname();
   return (
     <div className="relative group">
@@ -372,13 +329,25 @@ function StaticLink({
 // ─── Main Navbar ──────────────────────────────────────────────────────────────
 
 export default function Navbar() {
-  const [scrolled, setScrolled]         = useState(false);
-  const [menuOpen, setMenuOpen]         = useState(false);
+  const t = useTranslations("nav");
+  const [scrolled, setScrolled]       = useState(false);
+  const [menuOpen, setMenuOpen]       = useState(false);
   const [holidayTypes, setHolidayTypes] = useState<HolidayType[]>([]);
-  const [destGroups, setDestGroups]     = useState<DestinationGroup[]>([]);
-  const [durationsByType, setDurationsByType]         = useState<Map<string, string[]>>(new Map());
-  const [destinationsByType, setDestinationsByType]   = useState<Map<string, { id: string; name: string }[]>>(new Map());
+  const [destGroups, setDestGroups]   = useState<DestinationGroup[]>([]);
+  const [durationsByType, setDurationsByType]       = useState<Map<string, string[]>>(new Map());
+  const [destinationsByType, setDestinationsByType] = useState<Map<string, { id: string; name: string }[]>>(new Map());
   const [allTourDestinations, setAllTourDestinations] = useState<{ id: string; name: string }[]>([]);
+  const [mobileToursOpen, setMobileToursOpen] = useState(false);
+  const [mobileDestOpen, setMobileDestOpen]   = useState(false);
+  const [mobileHoveredType, setMobileHoveredType] = useState<string | null>(null);
+
+  // Static links — defined inside component so t() works
+  const STATIC_LINKS = [
+    { name: t("home"),          href: "/" },
+    { name: t("accommodation"), href: "/accommodations" },
+    { name: t("practicalInfo"), href: "/info" },
+    { name: t("contact"),       href: "/contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -391,29 +360,18 @@ export default function Navbar() {
   }, []);
 
   async function fetchDropdownData() {
-    // Holiday types
-    const { data: typeData } = await supabase
-      .from("holiday_types")
-      .select("id,name")
-      .order("name");
+    const { data: typeData } = await supabase.from("holiday_types").select("id,name").order("name");
+    const { data: joinData } = await supabase.from("tour_holiday_types").select("holiday_type_id, tours(id, duration)");
 
-    // Durations per holiday type via join table
-    // Fetches tour_holiday_types joined with tours to get the duration for each type
-    const { data: joinData } = await supabase
-      .from("tour_holiday_types")
-      .select("holiday_type_id, tours(id, duration)");
-
-    // Build map: holiday_type_id → sorted unique durations
     const durMap = new Map<string, string[]>();
     (joinData || []).forEach((row: any) => {
-      const typeId  = row.holiday_type_id as string;
+      const typeId = row.holiday_type_id as string;
       const duration = row.tours?.duration as string | undefined;
       if (!typeId || !duration) return;
       if (!durMap.has(typeId)) durMap.set(typeId, []);
       const existing = durMap.get(typeId)!;
       if (!existing.includes(duration)) existing.push(duration);
     });
-    // Sort each list (numeric-aware: "3 Days" < "7 Days" < "10 Days")
     durMap.forEach((durations) => {
       durations.sort((a, b) => {
         const numA = parseInt(a, 10);
@@ -422,22 +380,12 @@ export default function Navbar() {
       });
     });
 
-    // Destinations with country field
-    const { data: destData } = await supabase
-      .from("destinations")
-      .select("id,name,country")
-      .order("name");
+    const { data: destData } = await supabase.from("destinations").select("id,name,country").order("name");
+    const { data: tourDestData } = await supabase.from("tour_destinations").select("tour_id, destinations(id, name)");
 
     setHolidayTypes(typeData || []);
     setDurationsByType(durMap);
 
-    // Destinations linked to tours via tour_destinations join table
-    // Pull tour_id + destination details, then cross-reference tour_holiday_types to scope by type
-    const { data: tourDestData } = await supabase
-      .from("tour_destinations")
-      .select("tour_id, destinations(id, name)");
-
-    // Build a map: tour_id → destinations[]
     const tourToDestMap = new Map<string, { id: string; name: string }[]>();
     (tourDestData || []).forEach((row: any) => {
       const tourId = row.tour_id as string;
@@ -448,17 +396,15 @@ export default function Navbar() {
       if (!existing.find((d) => d.id === dest.id)) existing.push(dest);
     });
 
-    // Build tour_id → holiday_type_id[] map from earlier joinData
     const tourToTypesMap = new Map<string, string[]>();
     (joinData || []).forEach((row: any) => {
-      const tourId = row.tours?.id as string | undefined; // need tour id
+      const tourId = row.tours?.id as string | undefined;
       const typeId = row.holiday_type_id as string;
       if (!tourId || !typeId) return;
       if (!tourToTypesMap.has(tourId)) tourToTypesMap.set(tourId, []);
       if (!tourToTypesMap.get(tourId)!.includes(typeId)) tourToTypesMap.get(tourId)!.push(typeId);
     });
 
-    // Build destinationsByType map: holiday_type_id → unique destinations[]
     const destByTypeMap = new Map<string, { id: string; name: string }[]>();
     tourToDestMap.forEach((dests, tourId) => {
       const typeIds = tourToTypesMap.get(tourId) ?? [];
@@ -470,10 +416,8 @@ export default function Navbar() {
         });
       });
     });
-    // Sort each destination list alphabetically
     destByTypeMap.forEach((dests) => dests.sort((a, b) => a.name.localeCompare(b.name)));
 
-    // All unique tour destinations (flat, sorted) for the "no type selected" state
     const allDestsMap = new Map<string, { id: string; name: string }>();
     tourToDestMap.forEach((dests) => dests.forEach((d) => allDestsMap.set(d.id, d)));
     const allDestsSorted = Array.from(allDestsMap.values()).sort((a, b) => a.name.localeCompare(b.name));
@@ -482,29 +426,19 @@ export default function Navbar() {
     setAllTourDestinations(allDestsSorted);
 
     if (destData) {
-      // Group destinations by country, respecting COUNTRY_ORDER priority
       const map: Record<string, { id: string; name: string }[]> = {};
       destData.forEach((d) => {
         const c = d.country || "Other";
         if (!map[c]) map[c] = [];
         map[c].push({ id: d.id, name: d.name });
       });
-
       const ordered = [
         ...COUNTRY_ORDER.filter((c) => map[c]),
-        ...Object.keys(map)
-          .filter((c) => !COUNTRY_ORDER.includes(c))
-          .sort(),
+        ...Object.keys(map).filter((c) => !COUNTRY_ORDER.includes(c)).sort(),
       ];
-
       setDestGroups(ordered.map((country) => ({ country, destinations: map[country] })));
     }
   }
-
-  // ── Mobile accordion state
-  const [mobileToursOpen, setMobileToursOpen] = useState(false);
-  const [mobileDestOpen, setMobileDestOpen]   = useState(false);
-  const [mobileHoveredType, setMobileHoveredType] = useState<string | null>(null);
 
   const router = useRouter();
   const navigate = (path: string, params: Record<string, string> = {}) => {
@@ -515,11 +449,7 @@ export default function Navbar() {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-100 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-transparent"
-      }`}
-    >
+    <header className={`fixed top-0 left-0 w-full z-100 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/">
@@ -528,7 +458,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-8 items-center">
-          <StaticLink name="Home" href="/" scrolled={scrolled} />
+          <StaticLink name={t("home")} href="/" scrolled={scrolled} />
 
           <ToursDropdown
             holidayTypes={holidayTypes}
@@ -541,7 +471,7 @@ export default function Navbar() {
           <DestinationsDropdown groups={destGroups} scrolled={scrolled} />
 
           {STATIC_LINKS.filter((l) => l.href !== "/").map((link) => (
-           <StaticLink key={link.href} name={link.name} href={link.href} scrolled={scrolled} /> 
+            <StaticLink key={link.href} name={link.name} href={link.href} scrolled={scrolled} />
           ))}
         </nav>
 
@@ -549,7 +479,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <SearchButton />
           <div className="bg-[#b77e24] text-white px-4 py-2 rounded text-sm flex flex-col leading-tight">
-            <p className="font-medium">Call Us:</p>
+            <p className="font-medium">{t("callUs")}</p>
             <div className="flex flex-col sm:flex-row sm:gap-2">
               <span>+254 719 136 129</span>
               <span className="hidden sm:inline">/</span>
@@ -578,7 +508,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── Mobile Menu ── */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -589,9 +519,8 @@ export default function Navbar() {
           >
             <div className="flex flex-col px-6 py-4 gap-1">
 
-              {/* Home */}
               <Link href="/" onClick={() => setMenuOpen(false)} className="text-black text-sm font-medium border-b pb-2 py-2">
-                Home
+                {t("home")}
               </Link>
 
               {/* Tours accordion */}
@@ -600,7 +529,7 @@ export default function Navbar() {
                   onClick={() => setMobileToursOpen(!mobileToursOpen)}
                   className="w-full flex items-center justify-between py-2 text-black text-sm font-medium"
                 >
-                  Our Tours
+                  {t("ourTours")}
                   <ChevronRight size={14} className={`transition-transform ${mobileToursOpen ? "rotate-90" : ""}`} />
                 </button>
 
@@ -640,11 +569,10 @@ export default function Navbar() {
                                       {dur}
                                     </button>
                                   ))}
-                                  {/* Destinations for this type */}
                                   {(destinationsByType.get(ht.id) ?? []).length > 0 && (
                                     <>
                                       <p className="mt-2 text-[10px] uppercase tracking-widest text-[#b77e24] font-semibold">
-                                        Destinations
+                                        {t("destinations")}
                                       </p>
                                       {(destinationsByType.get(ht.id) ?? []).map((dest) => (
                                         <button
@@ -652,7 +580,7 @@ export default function Navbar() {
                                           onClick={() => navigate("/tours", { type: ht.name, destination: dest.name })}
                                           className="block py-1 text-xs text-gray-500 hover:text-[#b77e24] transition-colors"
                                         >
-                                          {dest.name} Tours
+                                          {t("destTours", { name: dest.name })}
                                         </button>
                                       ))}
                                     </>
@@ -661,19 +589,15 @@ export default function Navbar() {
                                     onClick={() => navigate("/tours", { type: ht.name })}
                                     className="block py-1 text-xs text-[#b77e24]"
                                   >
-                                    All {ht.name} tours →
+                                    {t("allTypeTours", { type: ht.name })}
                                   </button>
                                 </motion.div>
                               )}
                             </AnimatePresence>
                           </div>
                         ))}
-
-                        <button
-                          onClick={() => navigate("/tours")}
-                          className="mt-1 text-xs text-[#b77e24]"
-                        >
-                          View all tours →
+                        <button onClick={() => navigate("/tours")} className="mt-1 text-xs text-[#b77e24]">
+                          {t("viewAllTours")}
                         </button>
                       </div>
                     </motion.div>
@@ -687,7 +611,7 @@ export default function Navbar() {
                   onClick={() => setMobileDestOpen(!mobileDestOpen)}
                   className="w-full flex items-center justify-between py-2 text-black text-sm font-medium"
                 >
-                  Destination
+                  {t("destination")}
                   <ChevronRight size={14} className={`transition-transform ${mobileDestOpen ? "rotate-90" : ""}`} />
                 </button>
 
@@ -716,11 +640,8 @@ export default function Navbar() {
                             ))}
                           </div>
                         ))}
-                        <button
-                          onClick={() => navigate("/destinations")}
-                          className="mt-1 text-xs text-[#b77e24]"
-                        >
-                          View all destinations →
+                        <button onClick={() => navigate("/destinations")} className="mt-1 text-xs text-[#b77e24]">
+                          {t("viewAllDestinations")}
                         </button>
                       </div>
                     </motion.div>
@@ -728,7 +649,7 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              {/* Rest of static links */}
+              {/* Static links */}
               {STATIC_LINKS.filter((l) => l.href !== "/").map((link) => (
                 <Link
                   key={link.href}
@@ -742,7 +663,7 @@ export default function Navbar() {
             </div>
 
             <div className="px-6 py-4 flex items-center gap-4">
-              <p className="text-gray-600 text-sm">Search</p>
+              <p className="text-gray-600 text-sm">{t("search")}</p>
               <SearchButton />
             </div>
           </motion.div>

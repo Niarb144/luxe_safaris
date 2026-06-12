@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useTranslation } from "@/components/UseTranslation";
+import { useTranslations } from "next-intl";
 
 // Counter hook
 function useCountUp(end: number, duration: number = 2) {
@@ -31,16 +31,9 @@ function useCountUp(end: number, duration: number = 2) {
 }
 
 // Stat card
-function StatCard({
-  label,
-  value,
-}: {
-  label: string;
-  value: number;
-}) {
+function StatCard({ label, value }: { label: string; value: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
   const count = useCountUp(isInView ? value : 0);
 
   return (
@@ -54,48 +47,27 @@ function StatCard({
       <h3 className="text-4xl md:text-5xl font-bold text-yellow-600">
         {count}+
       </h3>
-
-      <p className="mt-2 text-gray-600">
-        {label}
-      </p>
+      <p className="mt-2 text-gray-600">{label}</p>
     </motion.div>
   );
 }
 
-
 export default function Numbers() {
-  const [stats, setStats] = useState({
-    tours: 0,
-    destinations: 0,
-    travelers: 0,
-  });
+  const [stats, setStats] = useState({ tours: 0, destinations: 0, travelers: 0 });
+  const t = useTranslations("numbers");
 
   useEffect(() => {
     async function fetchCounts() {
       try {
-        // Count tours
-        const { count: toursCount } = await supabase
-          .from("tours")
-          .select("*", {
-            count: "exact",
-            head: true,
-          });
-
-        // Count destinations
-        const { count: destinationsCount } = await supabase
-          .from("destinations")
-          .select("*", {
-            count: "exact",
-            head: true,
-          });
-
-        // Count travelers/bookings (optional)
-        const { count: travelersCount } = await supabase
-          .from("bookings")
-          .select("*", {
-            count: "exact",
-            head: true,
-          });
+        const [
+          { count: toursCount },
+          { count: destinationsCount },
+          { count: travelersCount },
+        ] = await Promise.all([
+          supabase.from("tours").select("*", { count: "exact", head: true }),
+          supabase.from("destinations").select("*", { count: "exact", head: true }),
+          supabase.from("bookings").select("*", { count: "exact", head: true }),
+        ])
 
         setStats({
           tours: toursCount || 0,
@@ -120,7 +92,7 @@ export default function Numbers() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-5xl font-bold text-gray-900"
         >
-          Our Impact in Numbers
+          {t("title")}
         </motion.h2>
 
         <motion.p
@@ -129,27 +101,15 @@ export default function Numbers() {
           transition={{ delay: 0.2 }}
           className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto"
         >
-          Experience luxury safaris crafted with passion.
+          {t("subtitle")}
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-
-          <StatCard
-            label="Curated Tours"
-            value={stats.tours}
-          />
-
-          <StatCard
-            label="Destinations Covered"
-            value={stats.destinations}
-          />
-
-          <StatCard
-            label="Happy Travelers"
-            value={stats.travelers}
-          />
-
+          <StatCard label={t("tours")} value={stats.tours} />
+          <StatCard label={t("destinations")} value={stats.destinations} />
+          <StatCard label={t("travelers")} value={stats.travelers} />
         </div>
+
       </div>
     </section>
   );

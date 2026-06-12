@@ -1,82 +1,122 @@
 {
   "hero": {
-    "title": "探索您的梦想野生动物园",
-    "subtitle": "通过精心策划的野生动物园体验，探索非洲最令人惊叹的目的地。"
+    "title": "发现你梦想中的非洲狩猎之旅",
+    "subtitle": "通过精心策划的狩猎体验，探索非洲最令人叹为观止的目的地。"
   },
   "footer": {
     "newsletter": {
-      "title": "想接收旅游新闻和旅行灵感吗？",
-      "subtitle": "订阅我们的时事通讯，参加我们的抽奖活动。",
-      "placeholder": "电子邮箱",
-      "button": "注册我"
+      "title": "想要接收旅行资讯与灵感吗？",
+      "subtitle": "订阅我们的新闻通讯并参与幸运抽奖。",
+      "placeholder": "电子邮件",
+      "button": "立即订阅"
     },
     "company": {
-      "name": "豪华平原非洲之旅",
-      "about": "关于Luxe Plains Africa Safaris",
+      "name": "LUXE PLAINS AFRICA SAFARIS",
+      "about": "关于 Luxe Plains Africa Safaris",
       "registered": "Luxe Plains Africa Safaris Ltd.",
-      "country": "在肯尼亚注册",
-      "address1": "注册办事处：标准大厦，",
-      "address2": "5号套房3楼"
+      "country": "注册于肯尼亚",
+      "address1": "注册办公地址：Standard Building，",
+      "address2": "3楼，5号办公室"
     },
     "information": {
       "title": "信息",
       "bookWithConfidence": "放心预订",
-      "privacyPolicy": "隐私条款",
-      "termsAndConditions": "条款和声明",
-      "onlinePayment": "网上快捷支付"
+      "privacyPolicy": "隐私政策",
+      "termsAndConditions": "条款与条件",
+      "onlinePayment": "在线支付"
     },
     "accreditations": {
-      "title": "认证"
+      "title": "资质认证"
     }
   },
   "nav": {
-    "home": "主页",
-    "tours": "旅游",
-    "about": "软件简介",
-    "contact": "联系方式"
+    "home": "首页",
+    "ourTours": "我们的行程",
+    "destination": "目的地",
+    "accommodation": "住宿",
+    "practicalInfo": "实用信息",
+    "contact": "联系我们",
+    "callUs": "致电我们：",
+    "search": "搜索",
+    "safariType": "狩猎类型",
+    "viewAllTours": "查看所有行程 →",
+    "duration": "时长",
+    "noDurations": "暂无时长信息",
+    "allType": "所有{type} →",
+    "destinations": "目的地",
+    "noDestinations": "暂无可用目的地",
+    "byDestination": "按目的地",
+    "typeDestinations": "{type}目的地",
+    "destTours": "{name}行程",
+    "allTypeTours": "所有{type}行程 →",
+    "viewAllDestinations": "查看所有目的地 →"
   },
   "common": {
-    "bookNow": "立即订座",
-    "exploreTours": "探索之旅",
-    "learnMore": "了解详情",
-    "readMore": "了解更多",
-    "loading": "正在載入...",
-    "viewAll": "檢視全部"
+    "bookNow": "立即预订",
+    "exploreTours": "探索行程",
+    "learnMore": "了解更多",
+    "readMore": "阅读更多",
+    "loading": "加载中...",
+    "viewAll": "查看全部"
   },
   "whyUs": {
-    "tagline": "一起旅行吧！",
-    "title": "为什么选择Luxe Safaris",
-    "subtitle": "我们将奢华、实惠和个性化护理相结合，为每一位探索非洲的旅行者创造难忘的野生动物园体验。",
+    "tagline": "为什么选择我们",
+    "title": "为什么选择 Luxe Safaris",
+    "subtitle": "我们将奢华、实惠与个性化服务相结合，为每一位探索非洲的旅行者打造难忘的狩猎体验。",
     "cta": {
-      "title": "开始您的非洲之旅",
-      "subtitle": "探索精心打造、真实可靠、物超所值的奢华野生动物园体验。",
-      "button": "探索之旅"
+      "title": "开启你的非洲冒险",
+      "subtitle": "探索以用心、真实与卓越价值打造的奢华狩猎体验。",
+      "button": "查看行程"
     },
     "features": {
       "luxury": {
         "title": "奢华体验",
-        "description": "享受精心挑选的小屋、顶级野生动物园营地，以及专为舒适和优雅而设计的难忘冒险。"
+        "description": "享受精心挑选的酒店、高端狩猎营地以及专为舒适与优雅设计的难忘冒险。"
       },
       "affordable": {
-        "title": "经济实惠的卓越服务",
-        "description": "我们以具有竞争力的价格提供世界一流的野生动物园体验，而不会影响质量或舒适度。"
+        "title": "高性价比奢华",
+        "description": "我们以具有竞争力的价格提供世界级狩猎体验，同时不牺牲品质与舒适。"
       },
       "personalizedCare": {
-        "title": "个性化护理",
-        "description": "从抵达到离开，我们的团队以专注的关注和无缝的服务为每位旅客提供支持。"
+        "title": "个性化服务",
+        "description": "从抵达到离开，我们的团队为每位旅行者提供全程贴心服务。"
       },
       "authentic": {
-        "title": "正宗非洲多天探险体验",
-        "description": "体验由当地野生动物园专家精心挑选的令人惊叹的野生动物、丰富的文化和标志性目的地。"
+        "title": "真实非洲体验",
+        "description": "体验壮丽的野生动物、丰富的文化以及由本地专家策划的标志性目的地。"
       },
       "trusted": {
-        "title": "安全可靠，值得信赖",
-        "description": "安全预订、值得信赖的Safari合作伙伴和可靠的客户支持，让您安心出行。"
+        "title": "安全可靠",
+        "description": "通过安全预订、可信赖的合作伙伴和可靠的客户支持安心旅行。"
       },
       "forEveryone": {
-        "title": "适合每一位旅客",
-        "description": "无论是单人旅行、情侣旅行、家庭旅行还是团体旅行，我们都能为您量身定制适合各种旅行风格的野生动物园之旅。"
+        "title": "适合所有旅行者",
+        "description": "无论是独行、情侣、家庭还是团队，我们都能打造适合每种旅行风格的狩猎行程。"
       }
     }
+  },
+  "cta": {
+    "findYourSafari": "找到你的狩猎之旅"
+  },
+  "countryCards": {
+    "title": "探索非洲各地的精彩行程",
+    "loading": "加载中...",
+    "tours": "{count}个行程",
+    "tour": "{count}个行程"
+  },
+  "numbers": {
+    "title": "我们的数据成果",
+    "subtitle": "体验充满热情打造的奢华狩猎之旅。",
+    "tours": "精选行程",
+    "destinations": "覆盖目的地",
+    "travelers": "满意旅客"
+  },
+  "tours": {
+    "title": "探索我们的行程",
+    "subtitle": "发现东非难忘的狩猎体验。",
+    "noResults": "未找到符合条件的行程。",
+    "exploreAll": "查看所有行程",
+    "from": "起价",
+    "safari": "狩猎"
   }
 }

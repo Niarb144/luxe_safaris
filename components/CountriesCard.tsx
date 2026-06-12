@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const countryImages: Record<string, string> = {
   Kenya: "/images/kenya.jpg",
@@ -16,6 +17,7 @@ const countryImages: Record<string, string> = {
 export default function CountryCards() {
   const [countries, setCountries] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const t = useTranslations("countryCards");
 
   useEffect(() => {
     async function fetchCountries() {
@@ -47,7 +49,6 @@ export default function CountryCards() {
           }
 
           acc[key].tours += 1;
-
           return acc;
         },
         {}
@@ -65,7 +66,7 @@ export default function CountryCards() {
   }, []);
 
   if (loading)
-    return <div className="py-20 text-center">Loading...</div>;
+    return <div className="py-20 text-center">{t("loading")}</div>;
 
   return (
     <section className="w-full py-16 bg-[#faf6f1]">
@@ -73,12 +74,11 @@ export default function CountryCards() {
 
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-4xl font-semibold text-gray-900">
-            Explore Extraordinary Tours Across Africa
+            {t("title")}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
           {countries.map((country) => (
             <Link
               key={country.slug}
@@ -88,7 +88,6 @@ export default function CountryCards() {
                 whileHover={{ scale: 1.03 }}
                 className="relative rounded-2xl overflow-hidden shadow-lg cursor-pointer"
               >
-
                 <div className="relative h-[300px] w-full">
                   {country.image ? (
                     <Image
@@ -106,21 +105,18 @@ export default function CountryCards() {
                 <div className="absolute inset-0 bg-black/40" />
 
                 <div className="absolute bottom-6 left-6 text-white">
-
                   <h3 className="text-2xl font-semibold">
                     {country.name}
                   </h3>
 
                   <div className="mt-2 inline-block bg-[#b77e24] px-4 py-1 rounded-full text-sm">
-                    {`${country.tours} TOUR${country.tours !== 1 ? "S" : ""}`}
+                    {t(country.tours !== 1 ? "tours" : "tour", { count: country.tours })}
                   </div>
-
                 </div>
 
               </motion.div>
             </Link>
           ))}
-
         </div>
       </div>
     </section>

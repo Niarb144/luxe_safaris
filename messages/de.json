@@ -1,28 +1,28 @@
 {
   "hero": {
-    "title": "Entdecke deine Traum-Safari",
-    "subtitle": "Erkunden Sie Afrikas atemberaubendste Reiseziele mit kuratierten Safari-Erlebnissen."
+    "title": "Entdecken Sie Ihre Traum-Safari",
+    "subtitle": "Erkunden Sie Afrikas atemberaubendste Reiseziele mit sorgfältig zusammengestellten Safari-Erlebnissen."
   },
   "footer": {
     "newsletter": {
-      "title": "Möchtest du Neuigkeiten und Inspirationen zu Reisen erhalten?",
-      "subtitle": "Melden Sie sich für unseren Newsletter an und nehmen Sie an unserer Glücksziehung teil.",
-      "placeholder": "Mail",
-      "button": "Jetzt registrieren"
+      "title": "Möchten Sie Reise-News und Inspiration erhalten?",
+      "subtitle": "Melden Sie sich für unseren Newsletter an und nehmen Sie an unserer Verlosung teil.",
+      "placeholder": "E-Mail",
+      "button": "Jetzt anmelden"
     },
     "company": {
-      "name": "LUXURIÖSE SAFARIS IN DEN EBENEN AFRIKAS",
-      "about": "Über Luxe Plains Afrika Safaris",
+      "name": "LUXE PLAINS AFRICA SAFARIS",
+      "about": "Über Luxe Plains Africa Safaris",
       "registered": "Luxe Plains Africa Safaris Ltd.",
-      "country": "Eingetragen in Kenia",
-      "address1": "Sitz der Gesellschaft: Standard Building,",
-      "address2": "3. Stock, Suite Nr. 5"
+      "country": "Registriert in Kenia",
+      "address1": "Eingetragener Firmensitz: Standard Building,",
+      "address2": "3. Etage, Suite Nr. 5"
     },
     "information": {
       "title": "Informationen",
-      "bookWithConfidence": "Buchen Sie mit Zuversicht",
-      "privacyPolicy": "Datenschutz",
-      "termsAndConditions": "AGB",
+      "bookWithConfidence": "Mit Vertrauen buchen",
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "termsAndConditions": "Allgemeine Geschäftsbedingungen",
       "onlinePayment": "Online-Zahlung"
     },
     "accreditations": {
@@ -30,53 +30,94 @@
     }
   },
   "nav": {
-    "home": "Home",
-    "tours": "Touren",
-    "about": "Über",
-    "contact": "Kontakt"
+    "home": "Startseite",
+    "ourTours": "Unsere Touren",
+    "destination": "Reiseziele",
+    "accommodation": "Unterkünfte",
+    "practicalInfo": "Praktische Informationen",
+    "contact": "Kontakt",
+    "callUs": "Rufen Sie uns an:",
+    "search": "Suchen",
+    "safariType": "Safari-Typ",
+    "viewAllTours": "Alle Touren anzeigen →",
+    "duration": "Dauer",
+    "noDurations": "Keine Dauer verfügbar",
+    "allType": "Alle {type} →",
+    "destinations": "Reiseziele",
+    "noDestinations": "Keine Reiseziele verfügbar",
+    "byDestination": "Nach Reiseziel",
+    "typeDestinations": "{type} Reiseziele",
+    "destTours": "{name} Touren",
+    "allTypeTours": "Alle {type} Touren →",
+    "viewAllDestinations": "Alle Reiseziele anzeigen →"
   },
   "common": {
     "bookNow": "Jetzt buchen",
-    "exploreTours": "Entdecken Sie unsere Touren",
+    "exploreTours": "Touren entdecken",
     "learnMore": "Mehr erfahren",
-    "readMore": "Mehr lesen",
-    "loading": "Wird geladen …",
-    "viewAll": "Alles anzeigen"
+    "readMore": "Weiterlesen",
+    "loading": "Wird geladen...",
+    "viewAll": "Alle anzeigen"
   },
   "whyUs": {
-    "tagline": "Warum Spielraum mit uns?",
-    "title": "Warum Luxe Safaris?",
-    "subtitle": "Wir kombinieren Luxus, Erschwinglichkeit und persönliche Betreuung, um unvergessliche Safari-Erlebnisse für jeden Reisenden zu schaffen, der Afrika erkundet.",
+    "tagline": "Warum mit uns reisen",
+    "title": "Warum Luxe Safaris wählen",
+    "subtitle": "Wir verbinden Luxus, Erschwinglichkeit und persönlichen Service, um unvergessliche Safari-Erlebnisse für jeden Afrika-Reisenden zu schaffen.",
     "cta": {
-      "title": "Beginne dein afrikanisches Abenteuer",
-      "subtitle": "Entdecken Sie luxuriöse Safari-Erlebnisse mit Sorgfalt, Authentizität und außergewöhnlichem Wert.",
-      "button": "Entdecken Sie unsere Touren"
+      "title": "Beginnen Sie Ihr Afrika-Abenteuer",
+      "subtitle": "Entdecken Sie luxuriöse Safari-Erlebnisse, die mit Sorgfalt, Authentizität und außergewöhnlichem Wert gestaltet wurden.",
+      "button": "Touren entdecken"
     },
     "features": {
       "luxury": {
-        "title": "Luxuriöse Entdeckungen",
-        "description": "Genießen Sie handverlesene Lodges, Premium-Safari-Camps und unvergessliche Abenteuer, die auf Komfort und Eleganz ausgelegt sind."
+        "title": "Luxuriöse Erlebnisse",
+        "description": "Genießen Sie handverlesene Lodges, erstklassige Safari-Camps und unvergessliche Abenteuer, die für Komfort und Eleganz geschaffen wurden."
       },
       "affordable": {
         "title": "Erschwingliche Exzellenz",
-        "description": "Wir bieten erstklassige Safari-Erlebnisse zu wettbewerbsfähigen Preisen, ohne Kompromisse bei Qualität oder Komfort einzugehen."
+        "description": "Wir bieten Safari-Erlebnisse von Weltklasse zu wettbewerbsfähigen Preisen, ohne Kompromisse bei Qualität oder Komfort einzugehen."
       },
       "personalizedCare": {
-        "title": "Individuell abgestimmter Therapieplan",
-        "description": "Von der Ankunft bis zur Abreise unterstützt unser Team jeden Reisenden mit engagierter Aufmerksamkeit und nahtlosem Service."
+        "title": "Persönlicher Service",
+        "description": "Von der Ankunft bis zur Abreise unterstützt unser Team jeden Reisenden mit individueller Betreuung und nahtlosem Service."
       },
       "authentic": {
         "title": "Authentische afrikanische Abenteuer",
-        "description": "Erlebe atemberaubende Wildtiere, reiche Kulturen und ikonische Reiseziele, die von lokalen Safari-Experten kuratiert wurden."
+        "description": "Erleben Sie atemberaubende Tierwelt, reiche Kulturen und ikonische Reiseziele, ausgewählt von lokalen Safari-Experten."
       },
       "trusted": {
-        "title": "Vertrauenswürdig und sicher",
-        "description": "Sicher reisen mit sicheren Buchungen, vertrauenswürdigen Safari-Partnern und zuverlässigem Kundensupport."
+        "title": "Vertrauenswürdig & Sicher",
+        "description": "Reisen Sie mit Vertrauen dank sicherer Buchungen, zuverlässiger Safari-Partner und kompetentem Kundensupport."
       },
       "forEveryone": {
         "title": "Für jeden Reisenden",
-        "description": "Ob Solo, Paare, Familien oder Gruppen, wir kreieren Safari-Reisen, die auf jeden Reisestil zugeschnitten sind."
+        "description": "Ob Alleinreisende, Paare, Familien oder Gruppen – wir gestalten Safari-Reisen passend zu jedem Reisestil."
       }
     }
+  },
+  "cta": {
+    "findYourSafari": "Finden Sie Ihre Safari"
+  },
+  "countryCards": {
+    "title": "Entdecken Sie außergewöhnliche Touren in ganz Afrika",
+    "loading": "Wird geladen...",
+    "tours": "{count} TOUREN",
+    "tour": "{count} TOUR"
+  },
+  "numbers": {
+    "title": "Unser Einfluss in Zahlen",
+    "subtitle": "Erleben Sie mit Leidenschaft gestaltete Luxus-Safaris.",
+    "tours": "Ausgewählte Touren",
+    "destinations": "Abgedeckte Reiseziele",
+    "travelers": "Zufriedene Reisende"
+  },
+  "tours": {
+    "title": "Entdecken Sie unsere Touren",
+    "subtitle": "Entdecken Sie unvergessliche Safari-Erlebnisse in Ostafrika.",
+    "noResults": "Keine Touren entsprechen Ihren Filtern.",
+    "exploreAll": "Alle Touren entdecken",
+    "from": "Ab",
+    "safari": "Safari"
   }
 }
+

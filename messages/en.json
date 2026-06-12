@@ -31,9 +31,25 @@
   },
   "nav": {
     "home": "Home",
-    "tours": "Tours",
-    "about": "About",
-    "contact": "Contact"
+    "ourTours": "Our Tours",
+    "destination": "Destination",
+    "accommodation": "Accommodation",
+    "practicalInfo": "Practical Info",
+    "contact": "Contact",
+    "callUs": "Call Us:",
+    "search": "Search",
+    "safariType": "Safari Type",
+    "viewAllTours": "View all tours →",
+    "duration": "Duration",
+    "noDurations": "No durations",
+    "allType": "All {type} →",
+    "destinations": "Destinations",
+    "noDestinations": "No destinations available",
+    "byDestination": "By Destination",
+    "typeDestinations": "{type} Destinations",
+    "destTours": "{name} Tours",
+    "allTypeTours": "All {type} tours →",
+    "viewAllDestinations": "View all destinations →"
   },
   "common": {
     "bookNow": "Book Now",
@@ -78,5 +94,29 @@
         "description": "Whether solo, couples, families, or groups, we create safari journeys tailored to every travel style."
       }
     }
+  },
+  "cta": {
+    "findYourSafari": "Find Your Safari"
+  },
+  "countryCards": {
+    "title": "Explore Extraordinary Tours Across Africa",
+    "loading": "Loading...",
+    "tours": "{count} TOURS",
+    "tour": "{count} TOUR"
+  },
+  "numbers": {
+    "title": "Our Impact in Numbers",
+    "subtitle": "Experience luxury safaris crafted with passion.",
+    "tours": "Curated Tours",
+    "destinations": "Destinations Covered",
+    "travelers": "Happy Travelers"
+  },
+  "tours": {
+    "title": "Explore Our Tours",
+    "subtitle": "Discover unforgettable safari experiences across East Africa.",
+    "noResults": "No tours found matching your filters.",
+    "exploreAll": "Explore All Tours",
+    "from": "From",
+    "safari": "Safari"
   }
 }

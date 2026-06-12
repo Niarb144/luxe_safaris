@@ -1,82 +1,123 @@
 {
   "hero": {
-    "title": "Descubra o Safari dos Seus Sonhos",
-    "subtitle": "Explore os destinos mais deslumbrantes da África com experiências de safári selecionadas."
+    "title": "Descubra o safari dos seus sonhos",
+    "subtitle": "Explore os destinos mais impressionantes de África com experiências de safari cuidadosamente selecionadas."
   },
   "footer": {
     "newsletter": {
-      "title": "Quer receber novidades e inspirações sobre viagens?",
+      "title": "Quer receber notícias e inspiração de viagens?",
       "subtitle": "Subscreva a nossa newsletter e participe no nosso sorteio.",
-      "placeholder": "E-mail",
-      "button": "Inscrever-me"
+      "placeholder": "Email",
+      "button": "Subscrever"
     },
     "company": {
-      "name": "SAFÁRIS EM LUXE PLAINS NA ÁFRICA",
+      "name": "LUXE PLAINS AFRICA SAFARIS",
       "about": "Sobre a Luxe Plains Africa Safaris",
       "registered": "Luxe Plains Africa Safaris Ltd.",
-      "country": "Registado no Quénia",
-      "address1": "Sede: Edifício Padrão,",
-      "address2": "3º Andar, Suite No.5"
+      "country": "Registada no Quénia",
+      "address1": "Sede registada: Standard Building,",
+      "address2": "3.º andar, escritório n.º 5"
     },
     "information": {
       "title": "Informação",
       "bookWithConfidence": "Reserve com confiança",
       "privacyPolicy": "Política de privacidade",
-      "termsAndConditions": "Termos e Condições",
-      "onlinePayment": "Pagamento Online"
+      "termsAndConditions": "Termos e condições",
+      "onlinePayment": "Pagamento online"
     },
     "accreditations": {
       "title": "Acreditações"
     }
   },
   "nav": {
-    "home": "Casa",
-    "tours": "Excursões",
-    "about": "Sobre",
-    "contact": "Contacto"
+    "home": "Início",
+    "ourTours": "Os nossos tours",
+    "destination": "Destino",
+    "accommodation": "Alojamento",
+    "practicalInfo": "Informações práticas",
+    "contact": "Contacto",
+    "callUs": "Ligue-nos:",
+    "search": "Pesquisar",
+    "safariType": "Tipo de safari",
+    "viewAllTours": "Ver todos os tours →",
+    "duration": "Duração",
+    "noDurations": "Sem durações disponíveis",
+    "allType": "Todos os {type} →",
+    "destinations": "Destinos",
+    "noDestinations": "Sem destinos disponíveis",
+    "byDestination": "Por destino",
+    "typeDestinations": "Destinos de {type}",
+    "destTours": "Tours de {name}",
+    "allTypeTours": "Todos os tours de {type} →",
+    "viewAllDestinations": "Ver todos os destinos →"
   },
   "common": {
-    "bookNow": "Agende Agora!",
-    "exploreTours": "Explorar excursões",
+    "bookNow": "Reservar agora",
+    "exploreTours": "Explorar tours",
     "learnMore": "Saber mais",
-    "readMore": "Ler Mais",
-    "loading": "A carregar ...",
+    "readMore": "Ler mais",
+    "loading": "A carregar...",
     "viewAll": "Ver tudo"
   },
   "whyUs": {
-    "tagline": "VIAJE CONOSCO",
-    "title": "Porquê escolher a Luxe Safaris",
-    "subtitle": "Combinamos luxo, acessibilidade e atendimento personalizado para criar experiências de safári inesquecíveis para todos os viajantes que exploram a África.",
+    "tagline": "Por que viajar connosco",
+    "title": "Por que escolher a Luxe Safaris",
+    "subtitle": "Combinamos luxo, acessibilidade e atendimento personalizado para criar experiências de safari inesquecíveis para cada viajante em África.",
     "cta": {
-      "title": "Comece a sua aventura em África",
-      "subtitle": "Descubra experiências de safári de luxo criadas com cuidado, autenticidade e valor excepcional.",
-      "button": "Explorar excursões"
+      "title": "Comece a sua aventura africana",
+      "subtitle": "Descubra experiências de safari de luxo criadas com cuidado, autenticidade e valor excecional.",
+      "button": "Explorar tours"
     },
     "features": {
       "luxury": {
         "title": "Experiências de luxo",
-        "description": "Desfrute de alojamentos escolhidos a dedo, acampamentos de safári premium e aventuras inesquecíveis projetadas para conforto e elegância."
+        "description": "Desfrute de lodges selecionados, acampamentos de safari premium e aventuras inesquecíveis pensadas para conforto e elegância."
       },
       "affordable": {
-        "title": "Excelência Acessível",
-        "description": "Oferecemos experiências de safári de classe mundial a preços competitivos, sem comprometer a qualidade ou o conforto."
+        "title": "Excelência acessível",
+        "description": "Oferecemos experiências de safari de classe mundial a preços competitivos sem comprometer a qualidade ou o conforto."
       },
       "personalizedCare": {
-        "title": "Atendimento Personalizado",
-        "description": "Da chegada à partida, a nossa equipa apoia todos os viajantes com atenção dedicada e serviço contínuo."
+        "title": "Atenção personalizada",
+        "description": "Da chegada à partida, a nossa equipa apoia cada viajante com atenção dedicada e serviço impecável."
       },
       "authentic": {
         "title": "Aventuras africanas autênticas",
-        "description": "Experimente a vida selvagem de tirar o fôlego, culturas ricas e destinos icônicos com curadoria de especialistas locais em safári."
+        "description": "Experimente vida selvagem impressionante, culturas ricas e destinos icónicos selecionados por especialistas locais de safari."
       },
       "trusted": {
         "title": "Confiável e seguro",
-        "description": "Viaje com confiança com reservas seguras, parceiros de safári confiáveis e suporte ao cliente confiável."
+        "description": "Viaje com confiança através de reservas seguras, parceiros de safari confiáveis e apoio ao cliente fiável."
       },
       "forEveryone": {
         "title": "Para todos os viajantes",
-        "description": "Quer seja a solo, casais, famílias ou grupos, criamos viagens de safari adaptadas a cada estilo de viagem."
+        "description": "Seja sozinho, em casal, em família ou em grupo, criamos viagens de safari adaptadas a todos os estilos de viagem."
       }
     }
+  },
+  "cta": {
+    "findYourSafari": "Encontre o seu safari"
+  },
+  "countryCards": {
+    "title": "Explore tours extraordinários pela África",
+    "loading": "A carregar...",
+    "tours": "{count} TOURS",
+    "tour": "{count} TOUR"
+  },
+  "numbers": {
+    "title": "O nosso impacto em números",
+    "subtitle": "Experimente safaris de luxo criados com paixão.",
+    "tours": "Tours selecionados",
+    "destinations": "Destinos abrangidos",
+    "travelers": "Viajantes satisfeitos"
+  },
+  "tours": {
+    "title": "Explore os nossos tours",
+    "subtitle": "Descubra experiências de safari inesquecíveis na África Oriental.",
+    "noResults": "Nenhum tour encontrado com os filtros selecionados.",
+    "exploreAll": "Explorar todos os tours",
+    "from": "Desde",
+    "safari": "Safari"
   }
 }
+
