@@ -6,9 +6,14 @@ import { useEffect, useState } from "react";
 import SafariCTA from "@/components/QuizButton";
 import Accommodations from "@/components/Accommodations";
 import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function AccommodationsPage() {
   const [loaded, setLoaded] = useState(false);
+
+  // for translations
+  const locale = useLocale();
+  const t = useTranslations("accommodations");
 
   useEffect(() => {
     setLoaded(true);
@@ -41,7 +46,7 @@ export default function AccommodationsPage() {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="text-4xl md:text-6xl font-bold text-white leading-tight"
             >
-              Accommodations
+              {t("title")}
             </motion.h1>
     
             <motion.div

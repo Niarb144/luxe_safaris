@@ -260,6 +260,11 @@
     "persons": "{count} personen",
     "pax": "{count} pax",
     "footnote": "* Prijzen zijn per persoon per nacht en worden weergegeven in {currency}. Tarieven kunnen variëren — neem contact met ons op voor actuele beschikbaarheid en een exacte offerte."
+  },
+  "accommodationsPage": {
+    "title": "Accommodaties in Oost-Afrika",
+    "subtitle": "Ontdek onze zorgvuldig samengestelde selectie accommodaties, van luxe lodges tot boetiekhotels, elk met een unieke mix van comfort en lokale charme.",
+    "loading": "Accommodaties laden..."
   }
 }
 

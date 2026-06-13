@@ -260,5 +260,10 @@
     "persons": "{count} personnes",
     "pax": "{count} pax",
     "footnote": "* Les prix sont indiqués par personne et par nuit en {currency}. Les tarifs peuvent varier — contactez-nous pour les disponibilités actuelles et un devis précis."
+  },
+  "accommodationsPage": {
+    "title": "Hébergements en Afrique de l’Est",
+    "subtitle": "Découvrez notre sélection d’hébergements, des lodges de luxe aux hôtels de charme, chacun offrant un mélange unique de confort et d’authenticité locale.",
+    "loading": "Chargement des hébergements..."
   }
 }

@@ -260,5 +260,10 @@
     "persons": "{count} 人",
     "pax": "{count} 人",
     "footnote": "* 价格为每人每晚，并以 {currency} 显示。价格可能会有所变动——请联系我们获取最新可用性和准确报价。"
+  },
+  "accommodationsPage": {
+    "title": "东非住宿",
+    "subtitle": "探索我们精心挑选的住宿，从豪华营地到精品酒店，每一家都融合了舒适与当地特色。",
+    "loading": "正在加载住宿..."
   }
 }

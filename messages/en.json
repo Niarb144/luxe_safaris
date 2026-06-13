@@ -251,5 +251,10 @@
     "persons": "{count} Persons",
     "pax": "{count} pax",
     "footnote": "* Prices are per person per night and displayed in {currency}. Rates may vary — contact us for current availability and exact quotes."
+  },
+  "accommodationsPage": {
+    "title": "Accommodations Across East Africa",
+    "subtitle": "Explore our curated selection of accommodations, from luxury lodges to boutique hotels, each offering a unique blend of comfort and local charm.",
+    "loading": "Loading accommodations..."
   }
 }

@@ -260,6 +260,11 @@
     "persons": "{count} Personen",
     "pax": "{count} Gäste",
     "footnote": "* Die Preise gelten pro Person und Nacht und werden in {currency} angezeigt. Die Preise können variieren – kontaktieren Sie uns für aktuelle Verfügbarkeiten und genaue Angebote."
+  },
+  "accommodationsPage": {
+    "title": "Unterkünfte in Ostafrika",
+    "subtitle": "Entdecken Sie unsere kuratierte Auswahl an Unterkünften – von Luxus-Lodges bis hin zu Boutique-Hotels, die Komfort und lokalen Charme vereinen.",
+    "loading": "Unterkünfte werden geladen..."
   }
 }
 

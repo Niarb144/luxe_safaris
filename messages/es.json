@@ -260,6 +260,11 @@
     "persons": "{count} personas",
     "pax": "{count} pax",
     "footnote": "* Los precios son por persona y por noche y se muestran en {currency}. Las tarifas pueden variar; contáctanos para conocer la disponibilidad actual y recibir una cotización exacta."
+  },
+  "accommodationsPage": {
+    "title": "Alojamientos en África Oriental",
+    "subtitle": "Explora nuestra selección de alojamientos, desde lodges de lujo hasta hoteles boutique, cada uno con una combinación única de comodidad y encanto local.",
+    "loading": "Cargando alojamientos..."
   }
 }
 

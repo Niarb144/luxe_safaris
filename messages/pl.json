@@ -260,6 +260,11 @@
     "persons": "{count} osób",
     "pax": "{count} pax",
     "footnote": "* Ceny dotyczą jednej osoby za noc i są podane w {currency}. Stawki mogą się różnić — skontaktuj się z nami, aby uzyskać aktualną dostępność i dokładną wycenę."
+  },
+  "accommodationsPage": {
+    "title": "Zakwaterowanie w Afryce Wschodniej",
+    "subtitle": "Odkryj naszą wyselekcjonowaną ofertę zakwaterowania, od luksusowych lodży po hotele butikowe, każdy z unikalnym połączeniem komfortu i lokalnego uroku.",
+    "loading": "Ładowanie zakwaterowania..."
   }
 }
 

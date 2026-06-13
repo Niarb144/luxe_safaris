@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
 
 type Accommodation = {
   id: string;
@@ -22,6 +23,9 @@ export default function Accommodations() {
   const [accommodations, setAccommodations  ] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState("All");
+  // for translations
+  const locale = useLocale();
+  const t = useTranslations("accommodationsPage");
 
   useEffect(() => {
     fetchAccommodations();
@@ -65,7 +69,7 @@ export default function Accommodations() {
       : accommodations.filter((accommodation) => accommodation.country_location === active);
 
   if (loading) {
-    return <p>Loading accommodations...</p>;
+    return <p>{t("loading")}</p>;
   }
 
   return (
@@ -73,11 +77,11 @@ export default function Accommodations() {
     {/* Heading */}
     <div className="text-center">
       <h2 className="text-4xl font-bold text-[#3b2a1d] mt-10">
-        Accommodations Across East Africa
+        {t("title")}
       </h2>
 
       <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-        Explore our curated selection of accommodations, from luxury lodges to boutique hotels, each offering a unique blend of comfort and local charm.
+        {t("subtitle")}
       </p>
     </div>
     {/* Filters */}
