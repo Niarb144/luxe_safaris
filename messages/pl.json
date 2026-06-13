@@ -166,6 +166,100 @@
     "safariType": "Typ safari",
     "clearFilters": "Wyczyść filtry",
     "searchSafaris": "Szukaj safari"
+  },
+  "accommodations": {
+    "title": "Zakwaterowanie",
+    "subtitle": "Opcje zakwaterowania na safari",
+    "levelSuffix": "Poziom",
+    "levels": {
+      "Economy": "Ekonomiczny",
+      "Comfort": "Komfort",
+      "Luxury": "Luksus",
+      "Superior Luxury": "Super Luksus"
+    },
+    "country": "Kraj",
+    "destination": "Miejsce docelowe",
+    "accommodation": "Zakwaterowanie",
+    "countryLabel": "Kraj:",
+    "destinationLabel": "Miejsce docelowe:"
+  },
+  "safariHero": {
+    "title": "Wycieczki dopasowane do Twoich marzeń"
+  },
+  "bookingCard": {
+    "from": "Od",
+    "perPerson": "/ osoba",
+    "bookNow": "Zarezerwuj teraz",
+    "whatsappInquiry": "Zapytanie WhatsApp",
+    "whatsappMessage": "Chcę zarezerwować {title}"
+  },
+  "tourLayout": {
+    "home": "Strona główna",
+    "allTours": "Wszystkie wycieczki",
+    "menu": {
+      "overview": "Przegląd",
+      "highlights": "Najważniejsze atrakcje",
+      "inclusions": "W cenie",
+      "exclusions": "Nie obejmuje",
+      "itinerary": "Plan podróży",
+      "route": "Trasa",
+      "gallery": "Galeria",
+      "accommodations": "Zakwaterowanie",
+      "pricing": "Cennik",
+      "whyChoose": "Dlaczego warto",
+      "faq": "FAQ"
+    },
+    "whyChooseTitle": "Dlaczego warto wybrać to safari",
+    "noDescription": "Brak opisu.",
+    "from": "Od",
+    "bookThisTour": "Zarezerwuj tę wycieczkę",
+    "reserveYourSpot": "Zarezerwuj miejsce",
+    "closeBookingModal": "Zamknij okno rezerwacji"
+  },
+  "relatedTours": {
+    "tagline": "Odkrywaj więcej",
+    "title": "Powiązane wycieczki"
+  },
+  "tourDetails": {
+    "whatsExcluded": "Co nie jest wliczone",
+    "whatsIncluded": "Co jest wliczone",
+    "faqs": "FAQ",
+    "galleryTitle": "Galeria wycieczki",
+    "gallerySubtitle": "Zobacz momenty z tej niezapomnianej safari.",
+    "highlightsTitle": "Najważniejsze atrakcje",
+    "readMore": "Czytaj więcej",
+    "readLess": "Zwiń",
+    "itinerary": "Plan podróży",
+    "day": "Dzień {number}",
+    "route": "Trasa"
+  },
+  "tourPricing": {
+    "title": "Cennik safari",
+    "seasons": {
+      "LOW": {
+        "label": "Sezon niski",
+        "subtitle": "Mar, Kwi, Maj i 1 lis – 19 gru"
+      },
+      "HIGH": {
+        "label": "Sezon wysoki",
+        "subtitle": "Reszta roku"
+      },
+      "PEAK": {
+        "label": "Sezon szczytowy",
+        "subtitle": "Sty, Lip, Sie, Wrz i 20–31 gru"
+      }
+    },
+    "classifications": {
+      "economy": "Ekonomiczny",
+      "comfort": "Komfort",
+      "luxury": "Luksus",
+      "superior_luxury": "Super Luksus"
+    },
+    "perPerson": "{currency} / osoba",
+    "season": "Sezon",
+    "persons": "{count} osób",
+    "pax": "{count} pax",
+    "footnote": "* Ceny dotyczą jednej osoby za noc i są podane w {currency}. Stawki mogą się różnić — skontaktuj się z nami, aby uzyskać aktualną dostępność i dokładną wycenę."
   }
 }
 

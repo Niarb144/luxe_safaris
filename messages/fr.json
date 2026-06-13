@@ -166,5 +166,99 @@
     "safariType": "Type de safari",
     "clearFilters": "Effacer les filtres",
     "searchSafaris": "Rechercher des safaris"
+  },
+  "accommodations": {
+    "title": "Hébergements",
+    "subtitle": "Vos options d'hébergement pour le safari",
+    "levelSuffix": "Catégorie",
+    "levels": {
+      "Economy": "Économique",
+      "Comfort": "Confort",
+      "Luxury": "Luxe",
+      "Superior Luxury": "Luxe Supérieur"
+    },
+    "country": "Pays",
+    "destination": "Destination",
+    "accommodation": "Hébergement",
+    "countryLabel": "Pays :",
+    "destinationLabel": "Destination :"
+  },
+  "safariHero": {
+    "title": "Des circuits adaptés à vos rêves"
+  },
+  "bookingCard": {
+    "from": "À partir de",
+    "perPerson": "/ personne",
+    "bookNow": "Réserver maintenant",
+    "whatsappInquiry": "Demande via WhatsApp",
+    "whatsappMessage": "Je souhaite réserver {title}"
+  },
+  "tourLayout": {
+    "home": "Accueil",
+    "allTours": "Tous les circuits",
+    "menu": {
+      "overview": "Aperçu",
+      "highlights": "Points forts",
+      "inclusions": "Inclus",
+      "exclusions": "Non inclus",
+      "itinerary": "Itinéraire",
+      "route": "Parcours",
+      "gallery": "Galerie",
+      "accommodations": "Hébergements",
+      "pricing": "Tarifs",
+      "whyChoose": "Pourquoi choisir",
+      "faq": "FAQ"
+    },
+    "whyChooseTitle": "Pourquoi choisir ce safari",
+    "noDescription": "Aucune description fournie.",
+    "from": "À partir de",
+    "bookThisTour": "Réserver ce circuit",
+    "reserveYourSpot": "Réservez votre place",
+    "closeBookingModal": "Fermer la fenêtre de réservation"
+  },
+  "relatedTours": {
+    "tagline": "Explorer davantage",
+    "title": "Circuits similaires"
+  },
+  "tourDetails": {
+    "whatsExcluded": "Ce qui n'est pas inclus",
+    "whatsIncluded": "Ce qui est inclus",
+    "faqs": "FAQ",
+    "galleryTitle": "Galerie du circuit",
+    "gallerySubtitle": "Découvrez des moments de cette expérience safari inoubliable.",
+    "highlightsTitle": "Points forts du circuit",
+    "readMore": "Lire plus",
+    "readLess": "Lire moins",
+    "itinerary": "Itinéraire",
+    "day": "Jour {number}",
+    "route": "Parcours"
+  },
+  "tourPricing": {
+    "title": "Tarifs du safari",
+    "seasons": {
+      "LOW": {
+        "label": "Basse saison",
+        "subtitle": "Mars, Avril, Mai & 1 Nov – 19 Déc"
+      },
+      "HIGH": {
+        "label": "Haute saison",
+        "subtitle": "Reste de l'année"
+      },
+      "PEAK": {
+        "label": "Très haute saison",
+        "subtitle": "Jan, Juil, Août, Sep & 20–31 Déc"
+      }
+    },
+    "classifications": {
+      "economy": "Économique",
+      "comfort": "Confort",
+      "luxury": "Luxe",
+      "superior_luxury": "Luxe Supérieur"
+    },
+    "perPerson": "{currency} / personne",
+    "season": "Saison",
+    "persons": "{count} personnes",
+    "pax": "{count} pax",
+    "footnote": "* Les prix sont indiqués par personne et par nuit en {currency}. Les tarifs peuvent varier — contactez-nous pour les disponibilités actuelles et un devis précis."
   }
 }

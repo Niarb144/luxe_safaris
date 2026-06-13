@@ -2,18 +2,25 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+
+// Keep these as English keys — they must match the untranslated
+// `classification` values stored in Supabase for filtering to work
+// correctly regardless of the active locale.
+const LEVEL_KEYS = ["Economy", "Comfort", "Luxury", "Superior Luxury"];
 
 export default function Accommodations({
   accommodations,
 }: {
   accommodations: any[];
 }) {
+  const t = useTranslations("accommodations");
+
   if (!accommodations?.length) return null;
 
-  const levels = ["Economy", "Comfort", "Luxury", "Superior Luxury"];
   const [activeLevel, setActiveLevel] = useState("Economy");
 
-  /* FILTER BY LEVEL */
+  /* FILTER BY LEVEL — compares against English classification value */
   const filtered = accommodations.filter(
     (hotel) => hotel.classification === activeLevel
   );
@@ -21,21 +28,19 @@ export default function Accommodations({
   /* GROUP BY DESTINATION */
   const grouped = filtered.reduce((acc: any, hotel: any) => {
     const destination = hotel.destinations?.name || "Other";
-
     if (!acc[destination]) acc[destination] = [];
     acc[destination].push(hotel);
-
     return acc;
   }, {});
 
   return (
     <div className="py-12">
-      <h2 className="text-4xl font-bold uppercase mb-2">Accommodations</h2>
-      <p className="text-gray-600 mb-8">You Safari accommodation options</p>
+      <h2 className="text-4xl font-bold uppercase mb-2">{t("title")}</h2>
+      <p className="text-gray-600 mb-8">{t("subtitle")}</p>
 
       {/* LEVEL TABS */}
       <div className="flex overflow-x-auto mb-8 rounded-xl border border-[#b77e24]/20 bg-[#041f0e]/5 p-1 gap-1">
-        {levels.map((level) => (
+        {LEVEL_KEYS.map((level) => (
           <button
             key={level}
             onClick={() => setActiveLevel(level)}
@@ -45,7 +50,7 @@ export default function Accommodations({
                 : "text-[#041f0e]/70 hover:text-[#b77e24] hover:bg-[#b77e24]/8"
             }`}
           >
-            {level} Level
+            {t(`levels.${level}`)} {t("levelSuffix")}
           </button>
         ))}
       </div>
@@ -53,7 +58,7 @@ export default function Accommodations({
       <div className="rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
         {Object.entries(grouped).map(([destination, hotels]: any, groupIndex) => (
           <div key={destination} className={groupIndex > 0 ? "border-t border-gray-200" : ""}>
-            
+
             {/* DESTINATION HEADER */}
             <div className="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#041f0e] to-[#041f0e]/85">
               <span className="w-1 h-5 rounded-full bg-[#b77e24] shrink-0" />
@@ -67,22 +72,19 @@ export default function Accommodations({
               <thead>
                 <tr className="bg-gray-50 border-b border-gray-200 text-left">
                   <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 w-1/4">
-                    Country
+                    {t("country")}
                   </th>
                   <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 w-1/4">
-                    Destination
+                    {t("destination")}
                   </th>
                   <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
-                    Accommodation
+                    {t("accommodation")}
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {hotels.map((hotel: any) => (
-                  <tr
-                    key={hotel.id}
-                    className="group hover:bg-amber-50/50 transition-colors duration-150"
-                  >
+                  <tr key={hotel.id} className="group hover:bg-amber-50/50 transition-colors duration-150">
                     <td className="px-6 py-4 text-sm text-gray-600">
                       {hotel.country_location}
                     </td>
@@ -123,13 +125,13 @@ export default function Accommodations({
                   <div className="flex flex-wrap gap-x-4 gap-y-1">
                     {hotel.country_location && (
                       <span className="text-xs text-gray-500">
-                        <span className="font-medium text-gray-700">Country:</span>{" "}
+                        <span className="font-medium text-gray-700">{t("countryLabel")}</span>{" "}
                         {hotel.country_location}
                       </span>
                     )}
                     {hotel.destinations?.name && (
                       <span className="text-xs text-gray-500">
-                        <span className="font-medium text-gray-700">Destination:</span>{" "}
+                        <span className="font-medium text-gray-700">{t("destinationLabel")}</span>{" "}
                         {hotel.destinations.name}
                       </span>
                     )}

@@ -166,5 +166,99 @@
     "safariType": "狩猎类型",
     "clearFilters": "清除筛选",
     "searchSafaris": "搜索狩猎行程"
+  },
+  "accommodations": {
+    "title": "住宿",
+    "subtitle": "您的狩猎旅行住宿选项",
+    "levelSuffix": "等级",
+    "levels": {
+      "Economy": "经济型",
+      "Comfort": "舒适型",
+      "Luxury": "豪华型",
+      "Superior Luxury": "超豪华型"
+    },
+    "country": "国家",
+    "destination": "目的地",
+    "accommodation": "住宿",
+    "countryLabel": "国家：",
+    "destinationLabel": "目的地："
+  },
+  "safariHero": {
+    "title": "为您的梦想量身定制的旅行"
+  },
+  "bookingCard": {
+    "from": "起价",
+    "perPerson": "/ 人",
+    "bookNow": "立即预订",
+    "whatsappInquiry": "WhatsApp咨询",
+    "whatsappMessage": "我想预订 {title}"
+  },
+  "tourLayout": {
+    "home": "首页",
+    "allTours": "所有行程",
+    "menu": {
+      "overview": "概览",
+      "highlights": "亮点",
+      "inclusions": "包含内容",
+      "exclusions": "不包含内容",
+      "itinerary": "行程安排",
+      "route": "路线",
+      "gallery": "相册",
+      "accommodations": "住宿",
+      "pricing": "价格",
+      "whyChoose": "选择理由",
+      "faq": "常见问题"
+    },
+    "whyChooseTitle": "为什么选择此狩猎行程",
+    "noDescription": "暂无描述。",
+    "from": "起价",
+    "bookThisTour": "预订此行程",
+    "reserveYourSpot": "预留您的位置",
+    "closeBookingModal": "关闭预订窗口"
+  },
+  "relatedTours": {
+    "tagline": "探索更多",
+    "title": "相关行程"
+  },
+  "tourDetails": {
+    "whatsExcluded": "不包含内容",
+    "whatsIncluded": "包含内容",
+    "faqs": "常见问题",
+    "galleryTitle": "行程相册",
+    "gallerySubtitle": "探索这段难忘狩猎体验的精彩瞬间。",
+    "highlightsTitle": "行程亮点",
+    "readMore": "阅读更多",
+    "readLess": "收起",
+    "itinerary": "行程安排",
+    "day": "第 {number} 天",
+    "route": "路线"
+  },
+  "tourPricing": {
+    "title": "狩猎价格",
+    "seasons": {
+      "LOW": {
+        "label": "淡季",
+        "subtitle": "3月、4月、5月及11月1日–12月19日"
+      },
+      "HIGH": {
+        "label": "旺季",
+        "subtitle": "全年其他时间"
+      },
+      "PEAK": {
+        "label": "高峰季",
+        "subtitle": "1月、7月、8月、9月及12月20–31日"
+      }
+    },
+    "classifications": {
+      "economy": "经济型",
+      "comfort": "舒适型",
+      "luxury": "豪华型",
+      "superior_luxury": "超豪华型"
+    },
+    "perPerson": "{currency} / 人",
+    "season": "季节",
+    "persons": "{count} 人",
+    "pax": "{count} 人",
+    "footnote": "* 价格为每人每晚，并以 {currency} 显示。价格可能会有所变动——请联系我们获取最新可用性和准确报价。"
   }
 }

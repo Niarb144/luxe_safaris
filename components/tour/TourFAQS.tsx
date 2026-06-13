@@ -1,12 +1,16 @@
+"use client";
 
+import { useTranslations } from "next-intl";
 
 export default function TourFAQS({ items }: any) {
+  const t = useTranslations("tourDetails");
+
   if (!items?.length) return null;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
       <h2 className="text-2xl font-semibold mb-3 text-gray-800">
-        FAQs
+        {t("faqs")}
       </h2>
       {items.map((faq: any) => (
         <div key={faq.id} className="mb-4">

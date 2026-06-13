@@ -166,6 +166,100 @@
     "safariType": "Safaritype",
     "clearFilters": "Filters wissen",
     "searchSafaris": "Zoek safari's"
+  },
+  "accommodations": {
+    "title": "Accommodaties",
+    "subtitle": "Jouw safari-accommodatieopties",
+    "levelSuffix": "Niveau",
+    "levels": {
+      "Economy": "Economy",
+      "Comfort": "Comfort",
+      "Luxury": "Luxe",
+      "Superior Luxury": "Superieure Luxe"
+    },
+    "country": "Land",
+    "destination": "Bestemming",
+    "accommodation": "Accommodatie",
+    "countryLabel": "Land:",
+    "destinationLabel": "Bestemming:"
+  },
+  "safariHero": {
+    "title": "Tours afgestemd op jouw dromen"
+  },
+  "bookingCard": {
+    "from": "Vanaf",
+    "perPerson": "/ persoon",
+    "bookNow": "Nu boeken",
+    "whatsappInquiry": "WhatsApp aanvraag",
+    "whatsappMessage": "Ik wil {title} boeken"
+  },
+  "tourLayout": {
+    "home": "Home",
+    "allTours": "Alle tours",
+    "menu": {
+      "overview": "Overzicht",
+      "highlights": "Hoogtepunten",
+      "inclusions": "Inbegrepen",
+      "exclusions": "Niet inbegrepen",
+      "itinerary": "Reisroute",
+      "route": "Route",
+      "gallery": "Galerij",
+      "accommodations": "Accommodaties",
+      "pricing": "Prijzen",
+      "whyChoose": "Waarom kiezen",
+      "faq": "FAQ"
+    },
+    "whyChooseTitle": "Waarom deze safari kiezen",
+    "noDescription": "Geen beschrijving beschikbaar.",
+    "from": "Vanaf",
+    "bookThisTour": "Deze tour boeken",
+    "reserveYourSpot": "Reserveer je plek",
+    "closeBookingModal": "Boekingsvenster sluiten"
+  },
+  "relatedTours": {
+    "tagline": "Ontdek meer",
+    "title": "Gerelateerde tours"
+  },
+  "tourDetails": {
+    "whatsExcluded": "Wat is niet inbegrepen",
+    "whatsIncluded": "Wat is inbegrepen",
+    "faqs": "FAQ",
+    "galleryTitle": "Tourgalerij",
+    "gallerySubtitle": "Ontdek momenten van deze onvergetelijke safari-ervaring.",
+    "highlightsTitle": "Tourhoogtepunten",
+    "readMore": "Lees meer",
+    "readLess": "Minder lezen",
+    "itinerary": "Reisroute",
+    "day": "Dag {number}",
+    "route": "Route"
+  },
+  "tourPricing": {
+    "title": "Safariprijzen",
+    "seasons": {
+      "LOW": {
+        "label": "Laagseizoen",
+        "subtitle": "Mrt, Apr, Mei & 1 nov – 19 dec"
+      },
+      "HIGH": {
+        "label": "Hoogseizoen",
+        "subtitle": "Rest van het jaar"
+      },
+      "PEAK": {
+        "label": "Piekseizoen",
+        "subtitle": "Jan, Jul, Aug, Sep & 20–31 dec"
+      }
+    },
+    "classifications": {
+      "economy": "Economy",
+      "comfort": "Comfort",
+      "luxury": "Luxe",
+      "superior_luxury": "Superieure Luxe"
+    },
+    "perPerson": "{currency} / persoon",
+    "season": "Seizoen",
+    "persons": "{count} personen",
+    "pax": "{count} pax",
+    "footnote": "* Prijzen zijn per persoon per nacht en worden weergegeven in {currency}. Tarieven kunnen variëren — neem contact met ons op voor actuele beschikbaarheid en een exacte offerte."
   }
 }
 

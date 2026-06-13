@@ -166,6 +166,100 @@
     "safariType": "نوع السفاري",
     "clearFilters": "مسح الفلاتر",
     "searchSafaris": "ابحث عن رحلات السفاري"
+  },
+  "accommodations": {
+    "title": "أماكن الإقامة",
+    "subtitle": "خيارات الإقامة في رحلات السفاري الخاصة بك",
+    "levelSuffix": "المستوى",
+    "levels": {
+      "Economy": "اقتصادي",
+      "Comfort": "مريح",
+      "Luxury": "فاخر",
+      "Superior Luxury": "فاخر للغاية"
+    },
+    "country": "البلد",
+    "destination": "الوجهة",
+    "accommodation": "الإقامة",
+    "countryLabel": "البلد:",
+    "destinationLabel": "الوجهة:"
+  },
+  "safariHero": {
+    "title": "رحلات مصممة لتحقيق أحلامك"
+  },
+  "bookingCard": {
+    "from": "ابتداءً من",
+    "perPerson": "/ للشخص",
+    "bookNow": "احجز الآن",
+    "whatsappInquiry": "استفسار عبر واتساب",
+    "whatsappMessage": "أرغب في حجز {title}"
+  },
+  "tourLayout": {
+    "home": "الرئيسية",
+    "allTours": "جميع الرحلات",
+    "menu": {
+      "overview": "نظرة عامة",
+      "highlights": "أبرز النقاط",
+      "inclusions": "يشمل",
+      "exclusions": "لا يشمل",
+      "itinerary": "مسار الرحلة",
+      "route": "المسار",
+      "gallery": "المعرض",
+      "accommodations": "الإقامة",
+      "pricing": "الأسعار",
+      "whyChoose": "لماذا تختارنا",
+      "faq": "الأسئلة الشائعة"
+    },
+    "whyChooseTitle": "لماذا تختار هذه الرحلة",
+    "noDescription": "لا يوجد وصف متاح.",
+    "from": "ابتداءً من",
+    "bookThisTour": "احجز هذه الرحلة",
+    "reserveYourSpot": "احجز مكانك",
+    "closeBookingModal": "إغلاق نافذة الحجز"
+  },
+  "relatedTours": {
+    "tagline": "استكشف المزيد",
+    "title": "رحلات ذات صلة"
+  },
+  "tourDetails": {
+    "whatsExcluded": "ما لا يشمله العرض",
+    "whatsIncluded": "ما يشمله العرض",
+    "faqs": "الأسئلة الشائعة",
+    "galleryTitle": "معرض الرحلة",
+    "gallerySubtitle": "استكشف لحظات هذه التجربة الفريدة من نوعها في السفاري.",
+    "highlightsTitle": "أبرز مميزات الرحلة",
+    "readMore": "اقرأ المزيد",
+    "readLess": "عرض أقل",
+    "itinerary": "البرنامج",
+    "day": "اليوم {number}",
+    "route": "المسار"
+  },
+  "tourPricing": {
+    "title": "أسعار السفاري",
+    "seasons": {
+      "LOW": {
+        "label": "الموسم المنخفض",
+        "subtitle": "مارس، أبريل، مايو و1 نوفمبر – 19 ديسمبر"
+      },
+      "HIGH": {
+        "label": "الموسم العالي",
+        "subtitle": "بقية السنة"
+      },
+      "PEAK": {
+        "label": "موسم الذروة",
+        "subtitle": "يناير، يوليو، أغسطس، سبتمبر و20–31 ديسمبر"
+      }
+    },
+    "classifications": {
+      "economy": "اقتصادي",
+      "comfort": "مريح",
+      "luxury": "فاخر",
+      "superior_luxury": "فاخر للغاية"
+    },
+    "perPerson": "{currency} / للشخص",
+    "season": "الموسم",
+    "persons": "{count} أشخاص",
+    "pax": "{count} شخص",
+    "footnote": "* الأسعار لكل شخص في الليلة وتُعرض بـ {currency}. قد تختلف الأسعار — تواصل معنا للحصول على التوفر والأسعار الدقيقة."
   }
 }
 

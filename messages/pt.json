@@ -1,123 +1,264 @@
 {
   "hero": {
-    "title": "Descubra o safari dos seus sonhos",
-    "subtitle": "Explore os destinos mais impressionantes de África com experiências de safari cuidadosamente selecionadas."
+    "title": "Descubra o Safari dos Seus Sonhos",
+    "subtitle": "Explore os destinos mais deslumbrantes de África com experiências de safari cuidadosamente selecionadas."
   },
   "footer": {
     "newsletter": {
-      "title": "Quer receber notícias e inspiração de viagens?",
-      "subtitle": "Subscreva a nossa newsletter e participe no nosso sorteio.",
+      "title": "Quer receber notícias de viagens e inspiração?",
+      "subtitle": "Inscreva-se na nossa newsletter e participe no nosso sorteio.",
       "placeholder": "Email",
-      "button": "Subscrever"
+      "button": "Inscreva-me"
     },
     "company": {
       "name": "LUXE PLAINS AFRICA SAFARIS",
       "about": "Sobre a Luxe Plains Africa Safaris",
       "registered": "Luxe Plains Africa Safaris Ltd.",
       "country": "Registada no Quénia",
-      "address1": "Sede registada: Standard Building,",
-      "address2": "3.º andar, escritório n.º 5"
+      "address1": "Sede: Standard Building,",
+      "address2": "3º Andar, Sala Nº 5"
     },
     "information": {
-      "title": "Informação",
+      "title": "Informações",
       "bookWithConfidence": "Reserve com confiança",
-      "privacyPolicy": "Política de privacidade",
-      "termsAndConditions": "Termos e condições",
-      "onlinePayment": "Pagamento online"
+      "privacyPolicy": "Política de Privacidade",
+      "termsAndConditions": "Termos e Condições",
+      "onlinePayment": "Pagamento Online"
     },
     "accreditations": {
-      "title": "Acreditações"
+      "title": "Credenciações"
     }
   },
   "nav": {
     "home": "Início",
-    "ourTours": "Os nossos tours",
+    "ourTours": "Os Nossos Tours",
     "destination": "Destino",
     "accommodation": "Alojamento",
-    "practicalInfo": "Informações práticas",
+    "practicalInfo": "Informações Práticas",
     "contact": "Contacto",
     "callUs": "Ligue-nos:",
     "search": "Pesquisar",
-    "safariType": "Tipo de safari",
+    "safariType": "Tipo de Safari",
     "viewAllTours": "Ver todos os tours →",
     "duration": "Duração",
-    "noDurations": "Sem durações disponíveis",
-    "allType": "Todos os {type} →",
+    "noDurations": "Sem durações",
+    "allType": "Todos {type} →",
     "destinations": "Destinos",
     "noDestinations": "Sem destinos disponíveis",
-    "byDestination": "Por destino",
-    "typeDestinations": "Destinos de {type}",
+    "byDestination": "Por Destino",
+    "typeDestinations": "Destinos {type}",
     "destTours": "Tours de {name}",
-    "allTypeTours": "Todos os tours de {type} →",
+    "allTypeTours": "Todos os tours {type} →",
     "viewAllDestinations": "Ver todos os destinos →"
   },
   "common": {
-    "bookNow": "Reservar agora",
-    "exploreTours": "Explorar tours",
-    "learnMore": "Saber mais",
-    "readMore": "Ler mais",
+    "bookNow": "Reservar Agora",
+    "exploreTours": "Explorar Tours",
+    "learnMore": "Saber Mais",
+    "readMore": "Ler Mais",
     "loading": "A carregar...",
-    "viewAll": "Ver tudo"
+    "viewAll": "Ver Todos"
   },
   "whyUs": {
     "tagline": "Por que viajar connosco",
     "title": "Por que escolher a Luxe Safaris",
-    "subtitle": "Combinamos luxo, acessibilidade e atendimento personalizado para criar experiências de safari inesquecíveis para cada viajante em África.",
+    "subtitle": "Combinamos luxo, preços acessíveis e atendimento personalizado para criar experiências de safari inesquecíveis em África.",
     "cta": {
       "title": "Comece a sua aventura africana",
-      "subtitle": "Descubra experiências de safari de luxo criadas com cuidado, autenticidade e valor excecional.",
-      "button": "Explorar tours"
+      "subtitle": "Descubra experiências de safari de luxo criadas com cuidado, autenticidade e excelente valor.",
+      "button": "Explorar Tours"
     },
     "features": {
       "luxury": {
-        "title": "Experiências de luxo",
-        "description": "Desfrute de lodges selecionados, acampamentos de safari premium e aventuras inesquecíveis pensadas para conforto e elegância."
+        "title": "Experiências de Luxo",
+        "description": "Desfrute de lodges selecionados, acampamentos premium e aventuras inesquecíveis com conforto e elegância."
       },
       "affordable": {
-        "title": "Excelência acessível",
-        "description": "Oferecemos experiências de safari de classe mundial a preços competitivos sem comprometer a qualidade ou o conforto."
+        "title": "Excelência Acessível",
+        "description": "Oferecemos experiências de safari de classe mundial a preços competitivos sem comprometer a qualidade."
       },
       "personalizedCare": {
-        "title": "Atenção personalizada",
-        "description": "Da chegada à partida, a nossa equipa apoia cada viajante com atenção dedicada e serviço impecável."
+        "title": "Atendimento Personalizado",
+        "description": "Desde a chegada até à partida, a nossa equipa apoia cada viajante com atenção dedicada."
       },
       "authentic": {
-        "title": "Aventuras africanas autênticas",
-        "description": "Experimente vida selvagem impressionante, culturas ricas e destinos icónicos selecionados por especialistas locais de safari."
+        "title": "Aventuras Africanas Autênticas",
+        "description": "Experimente vida selvagem impressionante, culturas ricas e destinos icónicos."
       },
       "trusted": {
-        "title": "Confiável e seguro",
-        "description": "Viaje com confiança através de reservas seguras, parceiros de safari confiáveis e apoio ao cliente fiável."
+        "title": "Fiável e Seguro",
+        "description": "Viaje com confiança com reservas seguras e parceiros de confiança."
       },
       "forEveryone": {
-        "title": "Para todos os viajantes",
-        "description": "Seja sozinho, em casal, em família ou em grupo, criamos viagens de safari adaptadas a todos os estilos de viagem."
+        "title": "Para Todos os Viajantes",
+        "description": "Sozinho, em casal, família ou grupo — criamos viagens adaptadas a todos."
       }
     }
   },
   "cta": {
-    "findYourSafari": "Encontre o seu safari"
+    "findYourSafari": "Encontre o Seu Safari"
   },
   "countryCards": {
-    "title": "Explore tours extraordinários pela África",
+    "title": "Explore Tours Extraordinários em África",
     "loading": "A carregar...",
     "tours": "{count} TOURS",
     "tour": "{count} TOUR"
   },
   "numbers": {
-    "title": "O nosso impacto em números",
+    "title": "O Nosso Impacto em Números",
     "subtitle": "Experimente safaris de luxo criados com paixão.",
-    "tours": "Tours selecionados",
-    "destinations": "Destinos abrangidos",
-    "travelers": "Viajantes satisfeitos"
+    "tours": "Tours Selecionados",
+    "destinations": "Destinos Cobertos",
+    "travelers": "Viajantes Felizes"
   },
   "tours": {
-    "title": "Explore os nossos tours",
-    "subtitle": "Descubra experiências de safari inesquecíveis na África Oriental.",
+    "title": "Explore os Nossos Tours",
+    "subtitle": "Descubra experiências inesquecíveis de safari na África Oriental.",
     "noResults": "Nenhum tour encontrado com os filtros selecionados.",
-    "exploreAll": "Explorar todos os tours",
+    "exploreAll": "Explorar Todos os Tours",
     "from": "Desde",
     "safari": "Safari"
+  },
+  "destinations": {
+    "title": "Destinos em África Oriental",
+    "subtitle": "Explore a nossa seleção de destinos de safari inesquecíveis.",
+    "noResults": "Nenhum destino encontrado com os filtros selecionados.",
+    "exploreAll": "Explorar Todos os Destinos"
+  },
+  "reviews": {
+    "tagline": "Experiências dos Hóspedes",
+    "title": "Histórias dos Nossos Viajantes",
+    "subtitle": "Descubra porque viajantes de todo o mundo confiam na Luxe Safaris.",
+    "items": {
+      "review1": {
+        "country": "Reino Unido",
+        "text": "A Luxe Safaris proporcionou-nos uma aventura africana inesquecível. Tudo foi perfeitamente organizado."
+      },
+      "review2": {
+        "country": "Quénia",
+        "text": "O serviço foi excecional. A experiência de safari foi luxuosa, pessoal e autêntica."
+      },
+      "review3": {
+        "country": "Espanha",
+        "text": "Ver os Big Five enquanto ficávamos em acampamentos incríveis foi um sonho realizado."
+      }
+    }
+  },
+  "accreditation": {
+    "title": "As Nossas Credenciações e Segurança de Reserva"
+  },
+  "contactCard": {
+    "tagline": "Precisa de Ajuda?",
+    "title": "Tem Alguma Questão? Fale Connosco",
+    "description": "Os nossos especialistas em safari estão prontos para ajudar a planear a sua viagem perfeita a África.",
+    "callUs": "Ligue-nos",
+    "email": "Email",
+    "officeHours": "Horário de Atendimento",
+    "officeHoursValue": "Segunda – Sexta 8:00 – 18:00",
+    "contactTeam": "Contactar a Equipa"
+  },
+  "search": {
+    "tagline": "Pesquisa de Safari de Luxo",
+    "title": "Encontre a Sua Viagem Perfeita",
+    "tourName": "Nome do Tour",
+    "selectDestination": "Selecionar Destino",
+    "duration": "Duração",
+    "safariType": "Tipo de Safari",
+    "clearFilters": "Limpar Filtros",
+    "searchSafaris": "Pesquisar Safaris"
+  },
+  "accommodations": {
+    "title": "Alojamentos",
+    "subtitle": "Opções de alojamento para o seu safari",
+    "levelSuffix": "Nível",
+    "levels": {
+      "Economy": "Económico",
+      "Comfort": "Conforto",
+      "Luxury": "Luxo",
+      "Superior Luxury": "Luxo Superior"
+    },
+    "country": "País",
+    "destination": "Destino",
+    "accommodation": "Alojamento",
+    "countryLabel": "País:",
+    "destinationLabel": "Destino:"
+  },
+  "safariHero": {
+    "title": "Tours Adaptados aos Seus Sonhos"
+  },
+  "bookingCard": {
+    "from": "Desde",
+    "perPerson": "/ pessoa",
+    "bookNow": "Reservar Agora",
+    "whatsappInquiry": "Consulta WhatsApp",
+    "whatsappMessage": "Quero reservar {title}"
+  },
+  "tourLayout": {
+    "home": "Início",
+    "allTours": "Todos os Tours",
+    "menu": {
+      "overview": "Visão Geral",
+      "highlights": "Destaques",
+      "inclusions": "Inclui",
+      "exclusions": "Não Inclui",
+      "itinerary": "Itinerário",
+      "route": "Rota",
+      "gallery": "Galeria",
+      "accommodations": "Alojamentos",
+      "pricing": "Preços",
+      "whyChoose": "Porquê Escolher",
+      "faq": "FAQs"
+    },
+    "whyChooseTitle": "Porquê Escolher Este Safari",
+    "noDescription": "Nenhuma descrição disponível.",
+    "from": "Desde",
+    "bookThisTour": "Reservar Este Tour",
+    "reserveYourSpot": "Reserve o Seu Lugar",
+    "closeBookingModal": "Fechar janela de reserva"
+  },
+  "relatedTours": {
+    "tagline": "Explorar Mais",
+    "title": "Tours Relacionados"
+  },
+  "tourDetails": {
+    "whatsExcluded": "O que não está incluído",
+    "whatsIncluded": "O que está incluído",
+    "faqs": "FAQs",
+    "galleryTitle": "Galeria do Tour",
+    "gallerySubtitle": "Explore momentos desta experiência de safari inesquecível.",
+    "highlightsTitle": "Destaques do Tour",
+    "readMore": "Ler Mais",
+    "readLess": "Ler Menos",
+    "itinerary": "Itinerário",
+    "day": "Dia {number}",
+    "route": "Rota"
+  },
+  "tourPricing": {
+    "title": "Tarifas de Safari",
+    "seasons": {
+      "LOW": {
+        "label": "Época Baixa",
+        "subtitle": "Mar, Abr, Mai e 1 Nov – 19 Dez"
+      },
+      "HIGH": {
+        "label": "Época Alta",
+        "subtitle": "Resto do ano"
+      },
+      "PEAK": {
+        "label": "Época de Pico",
+        "subtitle": "Jan, Jul, Ago, Set e 20–31 Dez"
+      }
+    },
+    "classifications": {
+      "economy": "Económico",
+      "comfort": "Conforto",
+      "luxury": "Luxo",
+      "superior_luxury": "Luxo Superior"
+    },
+    "perPerson": "{currency} / pessoa",
+    "season": "Época",
+    "persons": "{count} Pessoas",
+    "pax": "{count} pax",
+    "footnote": "* Os preços são por pessoa por noite e apresentados em {currency}. As tarifas podem variar — contacte-nos para disponibilidade atual e orçamento exato."
   }
 }
-

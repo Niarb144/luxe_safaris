@@ -166,6 +166,100 @@
     "safariType": "Safari-Typ",
     "clearFilters": "Filter zurücksetzen",
     "searchSafaris": "Safaris suchen"
+  },
+  "accommodations": {
+    "title": "Unterkünfte",
+    "subtitle": "Ihre Safari-Unterkunftsoptionen",
+    "levelSuffix": "Kategorie",
+    "levels": {
+      "Economy": "Economy",
+      "Comfort": "Komfort",
+      "Luxury": "Luxus",
+      "Superior Luxury": "Superiorer Luxus"
+    },
+    "country": "Land",
+    "destination": "Reiseziel",
+    "accommodation": "Unterkunft",
+    "countryLabel": "Land:",
+    "destinationLabel": "Reiseziel:"
+  },
+  "safariHero": {
+    "title": "Touren, die auf Ihre Träume zugeschnitten sind"
+  },
+  "bookingCard": {
+    "from": "Ab",
+    "perPerson": "/ Person",
+    "bookNow": "Jetzt buchen",
+    "whatsappInquiry": "WhatsApp-Anfrage",
+    "whatsappMessage": "Ich möchte {title} buchen"
+  },
+  "tourLayout": {
+    "home": "Startseite",
+    "allTours": "Alle Touren",
+    "menu": {
+      "overview": "Überblick",
+      "highlights": "Höhepunkte",
+      "inclusions": "Inklusive Leistungen",
+      "exclusions": "Nicht enthalten",
+      "itinerary": "Reiseverlauf",
+      "route": "Route",
+      "gallery": "Galerie",
+      "accommodations": "Unterkünfte",
+      "pricing": "Preise",
+      "whyChoose": "Warum wählen",
+      "faq": "FAQs"
+    },
+    "whyChooseTitle": "Warum diese Safari wählen",
+    "noDescription": "Keine Beschreibung verfügbar.",
+    "from": "Ab",
+    "bookThisTour": "Diese Tour buchen",
+    "reserveYourSpot": "Platz reservieren",
+    "closeBookingModal": "Buchungsfenster schließen"
+  },
+  "relatedTours": {
+    "tagline": "Mehr entdecken",
+    "title": "Ähnliche Touren"
+  },
+  "tourDetails": {
+    "whatsExcluded": "Nicht enthalten",
+    "whatsIncluded": "Inbegriffen",
+    "faqs": "FAQs",
+    "galleryTitle": "Tour-Galerie",
+    "gallerySubtitle": "Entdecken Sie Momente dieser unvergesslichen Safari-Erfahrung.",
+    "highlightsTitle": "Tour-Highlights",
+    "readMore": "Mehr lesen",
+    "readLess": "Weniger anzeigen",
+    "itinerary": "Reiseverlauf",
+    "day": "Tag {number}",
+    "route": "Route"
+  },
+  "tourPricing": {
+    "title": "Safari-Preise",
+    "seasons": {
+      "LOW": {
+        "label": "Nebensaison",
+        "subtitle": "März, April, Mai & 1. Nov – 19. Dez"
+      },
+      "HIGH": {
+        "label": "Hochsaison",
+        "subtitle": "Rest des Jahres"
+      },
+      "PEAK": {
+        "label": "Spitzensaison",
+        "subtitle": "Jan, Jul, Aug, Sep & 20.–31. Dez"
+      }
+    },
+    "classifications": {
+      "economy": "Economy",
+      "comfort": "Komfort",
+      "luxury": "Luxus",
+      "superior_luxury": "Superiorer Luxus"
+    },
+    "perPerson": "{currency} / Person",
+    "season": "Saison",
+    "persons": "{count} Personen",
+    "pax": "{count} Gäste",
+    "footnote": "* Die Preise gelten pro Person und Nacht und werden in {currency} angezeigt. Die Preise können variieren – kontaktieren Sie uns für aktuelle Verfügbarkeiten und genaue Angebote."
   }
 }
 

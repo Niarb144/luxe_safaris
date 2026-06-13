@@ -166,6 +166,100 @@
     "safariType": "Тип сафари",
     "clearFilters": "Очистить фильтры",
     "searchSafaris": "Найти сафари"
+  },
+  "accommodations": {
+    "title": "Размещение",
+    "subtitle": "Варианты размещения на сафари",
+    "levelSuffix": "Уровень",
+    "levels": {
+      "Economy": "Эконом",
+      "Comfort": "Комфорт",
+      "Luxury": "Люкс",
+      "Superior Luxury": "Супер-люкс"
+    },
+    "country": "Страна",
+    "destination": "Направление",
+    "accommodation": "Размещение",
+    "countryLabel": "Страна:",
+    "destinationLabel": "Направление:"
+  },
+  "safariHero": {
+    "title": "Туры, созданные для ваших мечтаний"
+  },
+  "bookingCard": {
+    "from": "От",
+    "perPerson": "/ человек",
+    "bookNow": "Забронировать",
+    "whatsappInquiry": "Запрос в WhatsApp",
+    "whatsappMessage": "Я хочу забронировать {title}"
+  },
+  "tourLayout": {
+    "home": "Главная",
+    "allTours": "Все туры",
+    "menu": {
+      "overview": "Обзор",
+      "highlights": "Основные моменты",
+      "inclusions": "Включено",
+      "exclusions": "Не включено",
+      "itinerary": "Маршрут",
+      "route": "Путь",
+      "gallery": "Галерея",
+      "accommodations": "Размещение",
+      "pricing": "Цены",
+      "whyChoose": "Почему выбрать",
+      "faq": "FAQ"
+    },
+    "whyChooseTitle": "Почему стоит выбрать это сафари",
+    "noDescription": "Описание отсутствует.",
+    "from": "От",
+    "bookThisTour": "Забронировать тур",
+    "reserveYourSpot": "Забронировать место",
+    "closeBookingModal": "Закрыть окно бронирования"
+  },
+  "relatedTours": {
+    "tagline": "Исследуйте больше",
+    "title": "Похожие туры"
+  },
+  "tourDetails": {
+    "whatsExcluded": "Что не включено",
+    "whatsIncluded": "Что включено",
+    "faqs": "FAQ",
+    "galleryTitle": "Галерея тура",
+    "gallerySubtitle": "Откройте моменты этого незабываемого сафари.",
+    "highlightsTitle": "Основные моменты тура",
+    "readMore": "Читать далее",
+    "readLess": "Скрыть",
+    "itinerary": "Маршрут",
+    "day": "День {number}",
+    "route": "Путь"
+  },
+  "tourPricing": {
+    "title": "Цены на сафари",
+    "seasons": {
+      "LOW": {
+        "label": "Низкий сезон",
+        "subtitle": "Март, Апрель, Май и 1 ноя – 19 дек"
+      },
+      "HIGH": {
+        "label": "Высокий сезон",
+        "subtitle": "Остальная часть года"
+      },
+      "PEAK": {
+        "label": "Пиковый сезон",
+        "subtitle": "Янв, Июл, Авг, Сен и 20–31 дек"
+      }
+    },
+    "classifications": {
+      "economy": "Эконом",
+      "comfort": "Комфорт",
+      "luxury": "Люкс",
+      "superior_luxury": "Супер-люкс"
+    },
+    "perPerson": "{currency} / человек",
+    "season": "Сезон",
+    "persons": "{count} человек",
+    "pax": "{count} чел.",
+    "footnote": "* Цены указаны за человека за ночь и отображаются в {currency}. Тарифы могут меняться — свяжитесь с нами для получения актуальной информации и точной стоимости."
   }
 }
 

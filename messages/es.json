@@ -166,6 +166,100 @@
     "safariType": "Tipo de safari",
     "clearFilters": "Limpiar filtros",
     "searchSafaris": "Buscar safaris"
+  },
+  "accommodations": {
+    "title": "Alojamientos",
+    "subtitle": "Tus opciones de alojamiento para safari",
+    "levelSuffix": "Categoría",
+    "levels": {
+      "Economy": "Económico",
+      "Comfort": "Confort",
+      "Luxury": "Lujo",
+      "Superior Luxury": "Lujo Superior"
+    },
+    "country": "País",
+    "destination": "Destino",
+    "accommodation": "Alojamiento",
+    "countryLabel": "País:",
+    "destinationLabel": "Destino:"
+  },
+  "safariHero": {
+    "title": "Tours diseñados para tus sueños"
+  },
+  "bookingCard": {
+    "from": "Desde",
+    "perPerson": "/ persona",
+    "bookNow": "Reservar ahora",
+    "whatsappInquiry": "Consulta por WhatsApp",
+    "whatsappMessage": "Quiero reservar {title}"
+  },
+  "tourLayout": {
+    "home": "Inicio",
+    "allTours": "Todos los tours",
+    "menu": {
+      "overview": "Resumen",
+      "highlights": "Aspectos destacados",
+      "inclusions": "Incluye",
+      "exclusions": "No incluye",
+      "itinerary": "Itinerario",
+      "route": "Ruta",
+      "gallery": "Galería",
+      "accommodations": "Alojamientos",
+      "pricing": "Precios",
+      "whyChoose": "Por qué elegirnos",
+      "faq": "Preguntas frecuentes"
+    },
+    "whyChooseTitle": "Por qué elegir este safari",
+    "noDescription": "No se ha proporcionado descripción.",
+    "from": "Desde",
+    "bookThisTour": "Reservar este tour",
+    "reserveYourSpot": "Reserva tu plaza",
+    "closeBookingModal": "Cerrar ventana de reserva"
+  },
+  "relatedTours": {
+    "tagline": "Explora más",
+    "title": "Tours relacionados"
+  },
+  "tourDetails": {
+    "whatsExcluded": "Qué no está incluido",
+    "whatsIncluded": "Qué está incluido",
+    "faqs": "Preguntas frecuentes",
+    "galleryTitle": "Galería del tour",
+    "gallerySubtitle": "Explora momentos de esta inolvidable experiencia de safari.",
+    "highlightsTitle": "Aspectos destacados del tour",
+    "readMore": "Leer más",
+    "readLess": "Leer menos",
+    "itinerary": "Itinerario",
+    "day": "Día {number}",
+    "route": "Ruta"
+  },
+  "tourPricing": {
+    "title": "Tarifas de safari",
+    "seasons": {
+      "LOW": {
+        "label": "Temporada baja",
+        "subtitle": "Mar, Abr, May y 1 Nov – 19 Dic"
+      },
+      "HIGH": {
+        "label": "Temporada alta",
+        "subtitle": "Resto del año"
+      },
+      "PEAK": {
+        "label": "Temporada pico",
+        "subtitle": "Ene, Jul, Ago, Sep y 20–31 Dic"
+      }
+    },
+    "classifications": {
+      "economy": "Económico",
+      "comfort": "Confort",
+      "luxury": "Lujo",
+      "superior_luxury": "Lujo Superior"
+    },
+    "perPerson": "{currency} / persona",
+    "season": "Temporada",
+    "persons": "{count} personas",
+    "pax": "{count} pax",
+    "footnote": "* Los precios son por persona y por noche y se muestran en {currency}. Las tarifas pueden variar; contáctanos para conocer la disponibilidad actual y recibir una cotización exacta."
   }
 }
 

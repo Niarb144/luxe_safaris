@@ -18,15 +18,29 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-
+import { useTranslations } from "next-intl";
 
 export default function TourLayout({ tour, mainImage, relatedTours, accommodations }: any) {
+  const t = useTranslations("tourLayout");
   const [loaded, setLoaded] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
   const [bookingCardVisible, setBookingCardVisible] = useState(true);
-  const [bookingModalOpen, setBookingModalOpen] = useState(false); // NEW
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const bookingCardRef = useRef<HTMLDivElement>(null);
+
+  const menuItems = [
+    { id: "overview", label: t("menu.overview") },
+    { id: "highlights", label: t("menu.highlights") },
+    { id: "inclusions", label: t("menu.inclusions") },
+    { id: "exclusions", label: t("menu.exclusions") },
+    { id: "itinerary", label: t("menu.itinerary") },
+    { id: "route", label: t("menu.route") },
+    { id: "gallery", label: t("menu.gallery") },
+    { id: "accommodations", label: t("menu.accommodations") },
+    { id: "pricing", label: t("menu.pricing") },
+    { id: "why-choose", label: t("menu.whyChoose") },
+    { id: "faq", label: t("menu.faq") },
+  ];
 
   useEffect(() => {
     setLoaded(true);
@@ -63,7 +77,6 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
     return () => observer.disconnect();
   }, []);
 
-  // Lock body scroll when modal is open
   useEffect(() => {
     if (bookingModalOpen) {
       document.body.style.overflow = "hidden";
@@ -72,20 +85,6 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
     }
     return () => { document.body.style.overflow = ""; };
   }, [bookingModalOpen]);
-
-  const menuItems = [
-    { id: "overview", label: "Overview" },
-    { id: "highlights", label: "Highlights" },
-    { id: "inclusions", label: "Inclusions" },
-    { id: "exclusions", label: "Exclusions" },
-    { id: "itinerary", label: "Itinerary" },
-    { id: "route", label: "Route" },
-    { id: "gallery", label: "Gallery" },
-    { id: "accommodations", label: "Accommodations" },
-    { id: "pricing", label: "Pricing" },
-    { id: "why-choose", label: "Why Choose" },
-    { id: "faq", label: "FAQs" },
-  ];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -111,9 +110,9 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
             className="text-sm uppercase tracking-[0.3em] text-[#d4a54b] font-medium mb-4"
           >
-            <Link href="/" className="hover:text-[#d4a54b] transition cursor-pointer">Home</Link>
+            <Link href="/" className="hover:text-[#d4a54b] transition cursor-pointer">{t("home")}</Link>
             &nbsp;/&nbsp;
-            <Link href="/tours" className="hover:text-[#d4a54b] transition cursor-pointer">All Tours</Link>
+            <Link href="/tours" className="hover:text-[#d4a54b] transition cursor-pointer">{t("allTours")}</Link>
             &nbsp;/&nbsp; {tour.title}
           </motion.p>
           <motion.h1
@@ -199,8 +198,8 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
 
         {/* Why choose this safari */}
         <section className="mb-10 mt-20 max-w-4xl mx-auto px-6" id="why-choose" data-section="why-choose">
-          <h2 className="text-2xl font-semibold mb-3">Why Choose This Safari</h2>
-          <p className="text-gray-600">{tour.why_choose_safari || "No description provided."}</p>
+          <h2 className="text-2xl font-semibold mb-3">{t("whyChooseTitle")}</h2>
+          <p className="text-gray-600">{tour.why_choose_safari || t("noDescription")}</p>
         </section>
 
         {/* FAQs */}
@@ -228,12 +227,12 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
               {tour.price && (
                 <>
                   <span className="text-[#b77e24] font-bold text-base tracking-tight">
-                    From {tour.price.toLocaleString()}
+                    {t("from")} {tour.price.toLocaleString()}
                   </span>
                   <span className="w-px h-4 bg-white/20 rounded-full" />
                 </>
               )}
-              <span className="font-semibold text-sm uppercase tracking-wider cursor-pointer">Book This Tour</span>
+              <span className="font-semibold text-sm uppercase tracking-wider cursor-pointer">{t("bookThisTour")}</span>
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#b77e24] group-hover:bg-[#a06d1f] transition-colors duration-200 shrink-0 cursor-pointer">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 9v7.5" />
@@ -258,7 +257,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
               onClick={() => setBookingModalOpen(false)}
             />
 
-            {/* Modal panel — slides up from bottom on mobile, centers on desktop */}
+            {/* Modal panel */}
             <motion.div
               initial={{ opacity: 0, y: 60, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -270,13 +269,13 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
                 {/* Modal header */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-[#041f0e]">
                   <div>
-                    <p className="text-xs uppercase tracking-widest text-[#b77e24] font-semibold">Reserve Your Spot</p>
+                    <p className="text-xs uppercase tracking-widest text-[#b77e24] font-semibold">{t("reserveYourSpot")}</p>
                     <h3 className="text-white font-bold text-lg leading-tight mt-0.5 line-clamp-1">{tour.title}</h3>
                   </div>
                   <button
                     onClick={() => setBookingModalOpen(false)}
                     className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 shrink-0 ml-4 cursor-pointer"
-                    aria-label="Close booking modal"
+                    aria-label={t("closeBookingModal")}
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -284,7 +283,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
                   </button>
                 </div>
 
-                {/* BookingCard rendered inside — max height with scroll for small screens */}
+                {/* BookingCard rendered inside */}
                 <div className="overflow-y-auto max-h-[75vh] md:max-h-[70vh]">
                   <BookingCard tour={tour} />
                 </div>

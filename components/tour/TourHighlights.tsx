@@ -3,12 +3,11 @@
 import { useState } from "react";
 import * as Icons from "lucide-react";
 import { LucideIcon } from "lucide-react";
-
+import { useTranslations } from "next-intl";
 
 export default function TourHighlights({ items }: any) {
-  const [expanded, setExpanded] = useState<number | null>(
-    null
-  );
+  const [expanded, setExpanded] = useState<number | null>(null);
+  const t = useTranslations("tourDetails");
 
   if (!items?.length) return null;
 
@@ -16,7 +15,7 @@ export default function TourHighlights({ items }: any) {
     <div className="max-w-5xl mx-auto px-4 py-16">
 
       <h2 className="text-3xl font-semibold mb-8 text-gray-800">
-        Tour Highlights
+        {t("highlightsTitle")}
       </h2>
 
       <div className="grid md:grid-cols-2 gap-6">
@@ -24,9 +23,7 @@ export default function TourHighlights({ items }: any) {
         {items.map((highlight: any, index: number) => {
 
           const Icon =
-            (Icons[
-              highlight.icon as keyof typeof Icons
-            ] as LucideIcon) || Icons.Star;
+            (Icons[highlight.icon as keyof typeof Icons] as LucideIcon) || Icons.Star;
 
           const isExpanded = expanded === index;
 
@@ -38,7 +35,6 @@ export default function TourHighlights({ items }: any) {
 
               {/* Header */}
               <div className="flex items-center gap-4 mb-4">
-
                 <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center">
                   <Icon className="w-6 h-6 text-[#b77e24]" />
                 </div>
@@ -46,38 +42,23 @@ export default function TourHighlights({ items }: any) {
                 <h3 className="text-xl font-semibold text-[#b77e24]">
                   {highlight.title}
                 </h3>
-
               </div>
 
               {/* Description */}
               <div className="text-gray-600 leading-relaxed">
-
-                <p
-                  className={`transition-all duration-300 ${
-                    isExpanded
-                      ? ""
-                      : "line-clamp-3"
-                  }`}
-                >
+                <p className={`transition-all duration-300 ${isExpanded ? "" : "line-clamp-3"}`}>
                   {highlight.description}
                 </p>
 
                 {/* Read More */}
                 {highlight.description.length > 120 && (
                   <button
-                    onClick={() =>
-                      setExpanded(
-                        isExpanded ? null : index
-                      )
-                    }
+                    onClick={() => setExpanded(isExpanded ? null : index)}
                     className="mt-3 text-[#b77e24] font-medium hover:underline"
                   >
-                    {isExpanded
-                      ? "Read Less"
-                      : "Read More"}
+                    {isExpanded ? t("readLess") : t("readMore")}
                   </button>
                 )}
-
               </div>
 
             </div>

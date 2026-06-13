@@ -3,9 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import { useTranslations } from "next-intl";
 
 export default function RelatedTours({ tours }: any) {
+  const t = useTranslations("relatedTours");
+
   if (!tours?.length) return null;
 
   return (
@@ -13,11 +15,11 @@ export default function RelatedTours({ tours }: any) {
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-12">
           <p className="text-[#b77e24] uppercase tracking-[0.3em] text-sm font-medium">
-            Explore More
+            {t("tagline")}
           </p>
 
           <h2 className="text-4xl font-bold text-gray-900 mt-3">
-            Related Tours
+            {t("title")}
           </h2>
         </div>
 
@@ -36,10 +38,7 @@ export default function RelatedTours({ tours }: any) {
               >
                 <div className="relative h-[260px] overflow-hidden">
                   <Image
-                    src={
-                      tour?.tour_images?.[0]?.image_url ||
-                      "/placeholder.jpg"
-                    }
+                    src={tour?.tour_images?.[0]?.image_url || "/placeholder.jpg"}
                     alt={tour.title}
                     fill
                     className="object-cover group-hover:scale-105 transition duration-700"

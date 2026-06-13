@@ -166,6 +166,100 @@
     "safariType": "サファリタイプ",
     "clearFilters": "フィルターをクリア",
     "searchSafaris": "サファリを検索"
+  },
+  "accommodations": {
+    "title": "宿泊施設",
+    "subtitle": "サファリでご利用いただける宿泊施設",
+    "levelSuffix": "クラス",
+    "levels": {
+      "Economy": "エコノミー",
+      "Comfort": "コンフォート",
+      "Luxury": "ラグジュアリー",
+      "Superior Luxury": "スーペリアラグジュアリー"
+    },
+    "country": "国",
+    "destination": "目的地",
+    "accommodation": "宿泊施設",
+    "countryLabel": "国：",
+    "destinationLabel": "目的地："
+  },
+  "safariHero": {
+    "title": "あなたの夢に合わせたツアー"
+  },
+  "bookingCard": {
+    "from": "料金",
+    "perPerson": "/ 1名様",
+    "bookNow": "今すぐ予約",
+    "whatsappInquiry": "WhatsAppで問い合わせ",
+    "whatsappMessage": "{title}を予約したいです"
+  },
+  "tourLayout": {
+    "home": "ホーム",
+    "allTours": "すべてのツアー",
+    "menu": {
+      "overview": "概要",
+      "highlights": "ハイライト",
+      "inclusions": "含まれるもの",
+      "exclusions": "含まれないもの",
+      "itinerary": "旅程",
+      "route": "ルート",
+      "gallery": "ギャラリー",
+      "accommodations": "宿泊施設",
+      "pricing": "料金",
+      "whyChoose": "選ばれる理由",
+      "faq": "よくある質問"
+    },
+    "whyChooseTitle": "このサファリを選ぶ理由",
+    "noDescription": "説明はありません。",
+    "from": "料金",
+    "bookThisTour": "このツアーを予約",
+    "reserveYourSpot": "席を確保する",
+    "closeBookingModal": "予約ウィンドウを閉じる"
+  },
+  "relatedTours": {
+    "tagline": "さらに探す",
+    "title": "関連ツアー"
+  },
+  "tourDetails": {
+    "whatsExcluded": "含まれないもの",
+    "whatsIncluded": "含まれるもの",
+    "faqs": "よくある質問",
+    "galleryTitle": "ツアーギャラリー",
+    "gallerySubtitle": "この忘れられないサファリ体験の瞬間をご覧ください。",
+    "highlightsTitle": "ツアーの見どころ",
+    "readMore": "続きを読む",
+    "readLess": "閉じる",
+    "itinerary": "旅程",
+    "day": "{number}日目",
+    "route": "ルート"
+  },
+  "tourPricing": {
+    "title": "サファリ料金",
+    "seasons": {
+      "LOW": {
+        "label": "ローシーズン",
+        "subtitle": "3月、4月、5月、11月1日〜12月19日"
+      },
+      "HIGH": {
+        "label": "ハイシーズン",
+        "subtitle": "その他の期間"
+      },
+      "PEAK": {
+        "label": "ピークシーズン",
+        "subtitle": "1月、7月、8月、9月、12月20日〜31日"
+      }
+    },
+    "classifications": {
+      "economy": "エコノミー",
+      "comfort": "コンフォート",
+      "luxury": "ラグジュアリー",
+      "superior_luxury": "スーペリアラグジュアリー"
+    },
+    "perPerson": "{currency} / 1名様",
+    "season": "シーズン",
+    "persons": "{count}名",
+    "pax": "{count}名様",
+    "footnote": "* 料金は1名様1泊あたりで、{currency}で表示されています。料金は変動する場合があります。最新の空き状況や正確なお見積もりについてはお問い合わせください。"
   }
 }
 

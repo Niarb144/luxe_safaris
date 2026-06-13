@@ -1,6 +1,10 @@
+"use client";
 
+import { useTranslations } from "next-intl";
 
 export default function TourItinerary({ items }: any) {
+  const t = useTranslations("tourDetails");
+
   if (!items?.length) return null;
 
   const sorted = [...items].sort((a, b) => a.day - b.day);
@@ -8,7 +12,7 @@ export default function TourItinerary({ items }: any) {
   return (
     <div>
       <h2 className="text-xl font-semibold mb-4">
-        Itinerary
+        {t("itinerary")}
       </h2>
 
       <div className="space-y-10">
@@ -27,16 +31,12 @@ export default function TourItinerary({ items }: any) {
             return acc;
           }, {})
         ).map((group: any) => (
-          <div
-            key={group.day_number}
-            className="flex gap-5 items-start"
-          >
+          <div key={group.day_number} className="flex gap-5 items-start">
             {/* Day Circle */}
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 bg-yellow-600 text-white rounded-full flex items-center justify-center font-bold shadow-md">
                 {group.day}
               </div>
-
               <div className="w-px flex-1 bg-gray-300 mt-2"></div>
             </div>
 
@@ -44,7 +44,7 @@ export default function TourItinerary({ items }: any) {
             <div className="flex-1">
               <div className="mb-5">
                 <h3 className="text-xl font-bold text-gray-900">
-                  Day {group.day_number}
+                  {t("day", { number: group.day_number })}
                 </h3>
               </div>
 

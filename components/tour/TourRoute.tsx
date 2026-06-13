@@ -1,9 +1,15 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function TourRoute({ routes }: any) {
+  const t = useTranslations("tourDetails");
+
   if (!routes?.length) return null;
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-4">Route</h2>
+      <h2 className="text-xl font-semibold mb-4">{t("route")}</h2>
 
       {routes.map((route: any) => (
         <div key={route.id}>
