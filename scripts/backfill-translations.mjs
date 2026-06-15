@@ -1,6 +1,7 @@
 /**
  * backfill-translations.mjs
  * Translates all existing Supabase content into the universal translations table.
+ * Uses Azure Translator (2M free chars/month) — fast, no daily quota issues.
  *
  * Safe to rerun at any time:
  *   - Skips already translated records
@@ -8,12 +9,13 @@
  *   - Add new tables/columns to TABLES config and rerun — existing data untouched
  *
  * Usage:
- *   MYMEMORY_EMAIL=you@email.com node scripts/backfill-translations.mjs
+ *   node scripts/backfill-translations.mjs
  *
- * Required env vars (in .env.local or passed inline):
+ * Required env vars (in .env.local):
  *   NEXT_PUBLIC_SUPABASE_URL
- *   SUPABASE_SERVICE_KEY   ← service role key, not anon key
- *   MYMEMORY_EMAIL         ← optional but strongly recommended for 10x quota
+ *   SUPABASE_SERVICE_KEY      ← service role key, not anon key
+ *   AZURE_TRANSLATOR_KEY
+ *   AZURE_TRANSLATOR_REGION
  */
 
 import { createClient } from '@supabase/supabase-js'
@@ -29,9 +31,16 @@ dotenv.config({ path: path.join(__dirname, '../.env.local') })
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY
-const MYMEMORY_EMAIL = process.env.MYMEMORY_EMAIL ?? ''
+const AZURE_KEY = process.env.AZURE_TRANSLATOR_KEY
+const AZURE_REGION = process.env.AZURE_TRANSLATOR_REGION
 
 const LOCALES = ['fr', 'de', 'es', 'it', 'nl', 'pl', 'zh', 'ja', 'ru', 'ar', 'pt']
+
+// Azure uses different codes for some languages
+const AZURE_LANG_MAP = {
+  zh: 'zh-Hans', // Simplified Chinese
+  pt: 'pt-pt',   // European Portuguese (vs pt-br for Brazilian)
+}
 
 /**
  * TABLES config — the single source of truth for what gets translated.
@@ -45,7 +54,7 @@ const TABLES = [
   },
   {
     name: 'accommodations',
-    fields: ['accommodation_type', 'classification', 'description', 'hotel_name', 'location'],
+    fields: ['accommodation_type', 'description', 'hotel_name', 'location'],
   },
   {
     name: 'countries',
@@ -100,6 +109,11 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
   process.exit(1)
 }
 
+if (!AZURE_KEY || !AZURE_REGION) {
+  console.error('✗ Missing AZURE_TRANSLATOR_KEY or AZURE_TRANSLATOR_REGION in .env.local')
+  process.exit(1)
+}
+
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY)
 
 // ─── Translation ──────────────────────────────────────────────────────────────
@@ -109,25 +123,36 @@ const delay = (ms) => new Promise(r => setTimeout(r, ms))
 async function translateText(text, targetLang, retries = 3) {
   if (!text || text.trim() === '') return text
 
-  const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLang}${MYMEMORY_EMAIL ? `&de=${MYMEMORY_EMAIL}` : ''}`
+  const azureLang = AZURE_LANG_MAP[targetLang] || targetLang
 
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
-      const res = await fetch(url)
-      const data = await res.json()
+      const res = await fetch(
+        `https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=${azureLang}`,
+        {
+          method: 'POST',
+          headers: {
+            'Ocp-Apim-Subscription-Key': AZURE_KEY,
+            'Ocp-Apim-Subscription-Region': AZURE_REGION,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify([{ Text: text }]),
+        }
+      )
 
-      if (data.responseData?.translatedText?.includes('MYMEMORY WARNING')) {
-        console.error(`\n⚠  Daily quota reached. Rerun tomorrow — already translated records will be skipped.\n`)
-        process.exit(1)
+      if (!res.ok) {
+        const errBody = await res.text()
+        throw new Error(`Azure API error ${res.status}: ${errBody}`)
       }
 
-      return data.responseData?.translatedText ?? text
-    } catch {
+      const data = await res.json()
+      return data[0]?.translations?.[0]?.text ?? text
+    } catch (err) {
       if (attempt === retries) {
-        console.warn(`  ⚠ Translation failed after ${retries} attempts — keeping original`)
+        console.warn(`  ⚠ Translation failed after ${retries} attempts — keeping original (${err.message})`)
         return text
       }
-      await delay(1000 * attempt) // backoff: 1s, 2s, 3s
+      await delay(500 * attempt) // backoff: 0.5s, 1s, 1.5s
     }
   }
   return text
@@ -153,10 +178,10 @@ const stats = { translated: 0, skipped: 0, failed: 0 }
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 async function run() {
-  console.log(`\n🌍 Luxe Plains — Supabase Translation Backfill`)
+  console.log(`\n🌍 Luxe Plains — Supabase Translation Backfill (Azure)`)
   console.log(`   Tables:  ${TABLES.length}`)
   console.log(`   Locales: ${LOCALES.join(', ')}`)
-  console.log(`   Email:   ${MYMEMORY_EMAIL || 'not set — add MYMEMORY_EMAIL for 50k chars/day'}`)
+  console.log(`   Region:  ${AZURE_REGION}`)
   console.log(`────────────────────────────────────────────────\n`)
 
   for (const table of TABLES) {
@@ -224,7 +249,7 @@ async function run() {
             stats.translated++
           }
 
-          await delay(350) // respect MyMemory rate limit
+          await delay(30) // light pacing — Azure free tier is generous
         }
       }
     }
