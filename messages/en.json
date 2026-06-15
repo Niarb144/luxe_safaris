@@ -256,5 +256,259 @@
     "title": "Accommodations Across East Africa",
     "subtitle": "Explore our curated selection of accommodations, from luxury lodges to boutique hotels, each offering a unique blend of comfort and local charm.",
     "loading": "Loading accommodations..."
+  },
+  "practicalInfo": {
+    "hero": {
+      "title": "Practical Travel Information",
+      "subtitle": "Essential guidance for travelers visiting Kenya, Uganda and Tanzania — visas, vaccinations, safety tips, currencies and more."
+    },
+    "intro": {
+      "title": "Before You Travel",
+      "text": "Entry requirements, vaccination rules and travel advisories may change over time. Always confirm with official government sources before departure. The information below provides general guidance for East African travel."
+    },
+    "sections": {
+      "visa": {
+        "title": "Visa & Entry Requirements",
+        "items": {
+          "0": "Kenya: eVisa required for many travelers. East Africa Tourist Visa available.",
+          "1": "Uganda: eVisa required for most visitors.",
+          "2": "Tanzania: Visa on arrival available for many nationalities.",
+          "3": "East Africa Tourist Visa covers Kenya, Uganda & Rwanda (single visa).",
+          "4": "Passport validity: Minimum 6 months before expiry."
+        }
+      },
+      "health": {
+        "title": "Health & Vaccinations",
+        "items": {
+          "0": "Yellow Fever certificate required when traveling between endemic countries.",
+          "1": "Malaria prevention recommended for safari regions.",
+          "2": "Routine vaccinations advised (Tetanus, Hepatitis A/B, Typhoid).",
+          "3": "Carry personal medication and prescriptions."
+        }
+      },
+      "currency": {
+        "title": "Currency & Payments",
+        "items": {
+          "0": "Kenya: Kenyan Shilling (KES)",
+          "1": "Uganda: Ugandan Shilling (UGX)",
+          "2": "Tanzania: Tanzanian Shilling (TZS)",
+          "3": "USD widely accepted for tourism (newer notes preferred).",
+          "4": "Visa & Mastercard accepted in most hotels/lodges."
+        }
+      },
+      "safety": {
+        "title": "Safety Tips",
+        "items": {
+          "0": "Use registered guides and operators.",
+          "1": "Avoid displaying valuables in cities.",
+          "2": "Follow park ranger instructions during safaris.",
+          "3": "Keep copies of passports and insurance documents."
+        }
+      },
+      "bestTime": {
+        "title": "Best Time To Travel",
+        "items": {
+          "0": "June–October: Dry season, ideal for wildlife viewing.",
+          "1": "December–March: Good for safaris and beach holidays.",
+          "2": "April–May: Rainy season in many regions."
+        }
+      },
+      "connectivity": {
+        "title": "Connectivity",
+        "items": {
+          "0": "SIM cards available at airports.",
+          "1": "Popular providers: Safaricom, Airtel, MTN.",
+          "2": "Hotels and lodges usually provide WiFi."
+        }
+      },
+      "transport": {
+        "title": "Transport & Border Crossings",
+        "items": {
+          "0": "Road travel between Kenya, Uganda & Tanzania possible.",
+          "1": "Carry passport and visa documentation.",
+          "2": "Border processing times vary.",
+          "3": "Domestic flights common for safari routes."
+        }
+      },
+      "emergency": {
+        "title": "Emergency Contacts",
+        "items": {
+          "0": "Kenya Emergency: 999 / 112",
+          "1": "Uganda Emergency: 999",
+          "2": "Tanzania Emergency: 112",
+          "3": "Always have your embassy contacts available."
+        }
+      }
+    },
+    "borderTable": {
+      "title": "Cross-Border Travel Overview",
+      "headers": {
+        "route": "Route",
+        "visa": "Visa",
+        "vaccination": "Vaccination",
+        "notes": "Notes"
+      },
+      "rows": {
+        "kenyaUganda": {
+          "route": "Kenya → Uganda",
+          "visa": "East Africa Visa accepted",
+          "vaccination": "Yellow Fever may be required",
+          "notes": "Border queues vary"
+        },
+        "kenyaTanzania": {
+          "route": "Kenya → Tanzania",
+          "visa": "Separate Tanzania visa often needed",
+          "vaccination": "Yellow Fever rules may apply",
+          "notes": "Passport required"
+        },
+        "ugandaTanzania": {
+          "route": "Uganda → Tanzania",
+          "visa": "Separate entry requirements",
+          "vaccination": "Check latest advisories",
+          "notes": "Flights commonly preferred"
+        }
+      }
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Have a question?",
+      "subtitle": "We're here to help!"
+    },
+    "title": "Contact Us",
+    "subtitle": "Plan your next adventure with our team",
+    "form": {
+      "title": "Send us a message",
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "messagePlaceholder": "Your Message",
+      "sending": "Sending...",
+      "send": "Send Message",
+      "errorRecaptcha": "Security verification is not ready. Please try again.",
+      "errorGeneric": "Failed to send message.",
+      "errorUnexpected": "Something went wrong. Please try again later.",
+      "success": "Thank you for contacting us. We'll get back to you shortly."
+    },
+    "reachUs": "Reach Us Directly",
+    "contacts": {
+      "support": {
+        "name": "Customer Support",
+        "role": "General inquiries & bookings"
+      },
+      "specialist": {
+        "name": "Safari Specialist",
+        "role": "Custom safari planning"
+      },
+      "emergency": {
+        "name": "Emergency Line",
+        "role": "24/7 urgent support"
+      }
+    },
+    "location": "Nairobi, Kenya"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: May 2026",
+    "informationWeCollect": {
+      "title": "Information We Collect",
+      "items": {
+        "0": "Name",
+        "1": "Email",
+        "2": "Phone number",
+        "3": "Passport details (when required)",
+        "4": "Booking information",
+        "5": "Payment metadata",
+        "6": "Device/browser information"
+      }
+    },
+    "whyWeCollect": {
+      "title": "Why We Collect Data",
+      "items": {
+        "0": "Process bookings",
+        "1": "Customer support",
+        "2": "Marketing newsletters",
+        "3": "Improve services",
+        "4": "Legal compliance"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "text": "We use essential, analytics and marketing cookies. Users can customise preferences."
+    },
+    "thirdParties": {
+      "title": "Third Parties",
+      "text": "Google Analytics, Meta Pixel, Stripe, Resend, Supabase and other providers may process limited data."
+    },
+    "userRights": {
+      "title": "User Rights",
+      "items": {
+        "0": "Access your data",
+        "1": "Delete data",
+        "2": "Correct inaccuracies",
+        "3": "Withdraw consent"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Terms & Conditions",
+    "lastUpdated": "Last updated: May 2026",
+    "sections": {
+      "1": {
+        "title": "1. Booking Confirmation",
+        "text": "Bookings become confirmed only after receipt of deposit/payment and written confirmation."
+      },
+      "2": {
+        "title": "2. Deposits & Payments",
+        "items": {
+          "0": "Deposit required to secure bookings.",
+          "1": "Remaining balance payable before travel.",
+          "2": "Late payment may lead to cancellation."
+        }
+      },
+      "3": {
+        "title": "3. Cancellation Policy",
+        "items": {
+          "0": "60+ days → full refund less admin fees",
+          "1": "30–59 days → partial refund",
+          "2": "0–29 days → non-refundable unless specified"
+        }
+      },
+      "4": {
+        "title": "4. Changes To Itinerary",
+        "text": "Routes, accommodation or activities may change due to weather, government restrictions, safety concerns, wildlife movement or operational needs."
+      },
+      "5": {
+        "title": "5. Passports & Visas",
+        "text": "Guests are responsible for ensuring valid passports, visas and entry requirements."
+      },
+      "6": {
+        "title": "6. Health Requirements",
+        "text": "Travelers are responsible for vaccinations, medications and medical suitability."
+      },
+      "7": {
+        "title": "7. Travel Insurance",
+        "text": "Comprehensive insurance covering cancellation, evacuation and medical emergencies is strongly recommended."
+      },
+      "8": {
+        "title": "8. Wildlife & Safari Risks",
+        "text": "Safari activities involve inherent risks. Participants must follow guides' instructions."
+      },
+      "9": {
+        "title": "9. Limitation Of Liability",
+        "text": "The company is not liable for injury, loss, delays, theft, weather disruptions or acts outside reasonable control."
+      },
+      "10": {
+        "title": "10. Force Majeure",
+        "text": "Includes pandemics, political instability, strikes, war, natural disasters etc."
+      },
+      "11": {
+        "title": "11. Photography Consent",
+        "text": "Images captured during tours may be used for marketing unless participants opt out."
+      },
+      "12": {
+        "title": "12. Governing Law",
+        "text": "Governed by laws applicable in the country where the company is registered."
+      }
+    }
   }
 }

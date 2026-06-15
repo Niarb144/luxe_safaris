@@ -265,6 +265,260 @@
     "title": "Accommodaties in Oost-Afrika",
     "subtitle": "Ontdek onze zorgvuldig samengestelde selectie accommodaties, van luxe lodges tot boetiekhotels, elk met een unieke mix van comfort en lokale charme.",
     "loading": "Accommodaties laden..."
+  },
+  "practicalInfo": {
+    "hero": {
+      "title": "Praktische Reisinformatie",
+      "subtitle": "Essentiële informatie voor reizigers die Kenia, Oeganda en Tanzania bezoeken — visa, vaccinaties, veiligheidstips, valuta en meer."
+    },
+    "intro": {
+      "title": "Voor Uw Reis",
+      "text": "Toegangsvereisten, vaccinatieregels en reisadviezen kunnen in de loop van de tijd veranderen. Controleer altijd de officiële overheidsbronnen voordat u vertrekt. De onderstaande informatie biedt algemene richtlijnen voor reizen in Oost-Afrika."
+    },
+    "sections": {
+      "visa": {
+        "title": "Visa- en Toegangsvereisten",
+        "items": {
+          "0": "Kenia: eVisa vereist voor veel reizigers. Het Oost-Afrika Toeristenvisum is beschikbaar.",
+          "1": "Oeganda: eVisa vereist voor de meeste bezoekers.",
+          "2": "Tanzania: Visum bij aankomst beschikbaar voor veel nationaliteiten.",
+          "3": "Het Oost-Afrika Toeristenvisum geldt voor Kenia, Oeganda en Rwanda (één visum).",
+          "4": "Paspoortgeldigheid: minimaal 6 maanden voor de vervaldatum."
+        }
+      },
+      "health": {
+        "title": "Gezondheid & Vaccinaties",
+        "items": {
+          "0": "Een vaccinatiebewijs tegen gele koorts kan vereist zijn bij reizen tussen endemische landen.",
+          "1": "Malariapreventie wordt aanbevolen voor safarigebieden.",
+          "2": "Routinevaccinaties worden aanbevolen (Tetanus, Hepatitis A/B, Tyfus).",
+          "3": "Neem persoonlijke medicijnen en voorschriften mee."
+        }
+      },
+      "currency": {
+        "title": "Valuta & Betalingen",
+        "items": {
+          "0": "Kenia: Keniaanse Shilling (KES)",
+          "1": "Oeganda: Oegandese Shilling (UGX)",
+          "2": "Tanzania: Tanzaniaanse Shilling (TZS)",
+          "3": "USD wordt algemeen geaccepteerd in het toerisme (nieuwere bankbiljetten hebben de voorkeur).",
+          "4": "Visa en Mastercard worden geaccepteerd in de meeste hotels en lodges."
+        }
+      },
+      "safety": {
+        "title": "Veiligheidstips",
+        "items": {
+          "0": "Gebruik geregistreerde gidsen en touroperators.",
+          "1": "Vermijd het tonen van waardevolle spullen in steden.",
+          "2": "Volg tijdens safari's altijd de instructies van parkwachters.",
+          "3": "Bewaar kopieën van uw paspoort en verzekeringsdocumenten."
+        }
+      },
+      "bestTime": {
+        "title": "Beste Reisperiode",
+        "items": {
+          "0": "Juni–Oktober: droog seizoen, ideaal voor het spotten van wilde dieren.",
+          "1": "December–Maart: uitstekend voor safari's en strandvakanties.",
+          "2": "April–Mei: regenseizoen in veel regio's."
+        }
+      },
+      "connectivity": {
+        "title": "Connectiviteit",
+        "items": {
+          "0": "SIM-kaarten zijn verkrijgbaar op luchthavens.",
+          "1": "Populaire providers: Safaricom, Airtel, MTN.",
+          "2": "Hotels en lodges bieden meestal wifi aan."
+        }
+      },
+      "transport": {
+        "title": "Vervoer & Grensovergangen",
+        "items": {
+          "0": "Reizen over de weg tussen Kenia, Oeganda en Tanzania is mogelijk.",
+          "1": "Neem uw paspoort en visumdocumenten mee.",
+          "2": "De verwerkingstijden aan grensovergangen kunnen variëren.",
+          "3": "Binnenlandse vluchten zijn gebruikelijk voor safariroutes."
+        }
+      },
+      "emergency": {
+        "title": "Noodcontacten",
+        "items": {
+          "0": "Noodnummer Kenia: 999 / 112",
+          "1": "Noodnummer Oeganda: 999",
+          "2": "Noodnummer Tanzania: 112",
+          "3": "Zorg ervoor dat u altijd de contactgegevens van uw ambassade bij de hand heeft."
+        }
+      }
+    },
+    "borderTable": {
+      "title": "Overzicht van Grensoverschrijdende Reizen",
+      "headers": {
+        "route": "Route",
+        "visa": "Visum",
+        "vaccination": "Vaccinatie",
+        "notes": "Opmerkingen"
+      },
+      "rows": {
+        "kenyaUganda": {
+          "route": "Kenia → Oeganda",
+          "visa": "Oost-Afrika Visum geaccepteerd",
+          "vaccination": "Vaccinatie tegen gele koorts kan vereist zijn",
+          "notes": "Wachttijden aan de grens variëren"
+        },
+        "kenyaTanzania": {
+          "route": "Kenia → Tanzania",
+          "visa": "Vaak is een apart Tanzaniaans visum nodig",
+          "vaccination": "Regels voor gele koorts kunnen van toepassing zijn",
+          "notes": "Paspoort vereist"
+        },
+        "ugandaTanzania": {
+          "route": "Oeganda → Tanzania",
+          "visa": "Afzonderlijke toegangsvereisten",
+          "vaccination": "Controleer de meest recente reisadviezen",
+          "notes": "Vluchten hebben vaak de voorkeur"
+        }
+      }
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Heeft u een vraag?",
+      "subtitle": "Wij helpen u graag!"
+    },
+    "title": "Neem Contact Met Ons Op",
+    "subtitle": "Plan uw volgende avontuur met ons team",
+    "form": {
+      "title": "Stuur ons een bericht",
+      "namePlaceholder": "Uw naam",
+      "emailPlaceholder": "Uw e-mailadres",
+      "messagePlaceholder": "Uw bericht",
+      "sending": "Verzenden...",
+      "send": "Bericht Verzenden",
+      "errorRecaptcha": "De beveiligingscontrole is nog niet gereed. Probeer het opnieuw.",
+      "errorGeneric": "Bericht verzenden mislukt.",
+      "errorUnexpected": "Er is iets misgegaan. Probeer het later opnieuw.",
+      "success": "Bedankt voor uw bericht. Wij nemen zo spoedig mogelijk contact met u op."
+    },
+    "reachUs": "Neem Direct Contact Met Ons Op",
+    "contacts": {
+      "support": {
+        "name": "Klantenservice",
+        "role": "Algemene vragen en boekingen"
+      },
+      "specialist": {
+        "name": "Safari Specialist",
+        "role": "Persoonlijke safari-planning"
+      },
+      "emergency": {
+        "name": "Noodlijn",
+        "role": "24/7 spoedondersteuning"
+      }
+    },
+    "location": "Nairobi, Kenia"
+  },
+  "privacyPolicy": {
+    "title": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt: Mei 2026",
+    "informationWeCollect": {
+      "title": "Welke Gegevens Wij Verzamelen",
+      "items": {
+        "0": "Naam",
+        "1": "E-mailadres",
+        "2": "Telefoonnummer",
+        "3": "Paspoortgegevens (indien vereist)",
+        "4": "Boekingsinformatie",
+        "5": "Betalingsmetadata",
+        "6": "Apparaat-/browserinformatie"
+      }
+    },
+    "whyWeCollect": {
+      "title": "Waarom Wij Gegevens Verzamelen",
+      "items": {
+        "0": "Boekingen verwerken",
+        "1": "Klantenondersteuning",
+        "2": "Marketingnieuwsbrieven",
+        "3": "Diensten verbeteren",
+        "4": "Wettelijke naleving"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "text": "Wij gebruiken essentiële, analytische en marketingcookies. Gebruikers kunnen hun voorkeuren aanpassen."
+    },
+    "thirdParties": {
+      "title": "Derde Partijen",
+      "text": "Google Analytics, Meta Pixel, Stripe, Resend, Supabase en andere aanbieders kunnen beperkte gegevens verwerken."
+    },
+    "userRights": {
+      "title": "Gebruikersrechten",
+      "items": {
+        "0": "Toegang tot uw gegevens",
+        "1": "Gegevens verwijderen",
+        "2": "Onjuistheden corrigeren",
+        "3": "Toestemming intrekken"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Algemene Voorwaarden",
+    "lastUpdated": "Laatst bijgewerkt: Mei 2026",
+    "sections": {
+      "1": {
+        "title": "1. Boekingsbevestiging",
+        "text": "Boekingen zijn pas bevestigd na ontvangst van de aanbetaling/betaling en schriftelijke bevestiging."
+      },
+      "2": {
+        "title": "2. Aanbetalingen & Betalingen",
+        "items": {
+          "0": "Een aanbetaling is vereist om een boeking te bevestigen.",
+          "1": "Het resterende saldo moet vóór vertrek worden betaald.",
+          "2": "Te late betaling kan leiden tot annulering."
+        }
+      },
+      "3": {
+        "title": "3. Annuleringsbeleid",
+        "items": {
+          "0": "60+ dagen → volledige terugbetaling minus administratiekosten",
+          "1": "30–59 dagen → gedeeltelijke terugbetaling",
+          "2": "0–29 dagen → niet restitueerbaar tenzij anders vermeld"
+        }
+      },
+      "4": {
+        "title": "4. Wijzigingen in de Reisroute",
+        "text": "Routes, accommodaties of activiteiten kunnen wijzigen vanwege weersomstandigheden, overheidsbeperkingen, veiligheidsredenen, bewegingen van wilde dieren of operationele behoeften."
+      },
+      "5": {
+        "title": "5. Paspoorten & Visa",
+        "text": "Gasten zijn verantwoordelijk voor geldige paspoorten, visa en andere toegangsvereisten."
+      },
+      "6": {
+        "title": "6. Gezondheidsvereisten",
+        "text": "Reizigers zijn verantwoordelijk voor vaccinaties, medicatie en medische geschiktheid."
+      },
+      "7": {
+        "title": "7. Reisverzekering",
+        "text": "Een uitgebreide verzekering die annulering, evacuatie en medische noodgevallen dekt, wordt sterk aanbevolen."
+      },
+      "8": {
+        "title": "8. Risico's van Safari's en Wilde Dieren",
+        "text": "Safari-activiteiten brengen inherente risico's met zich mee. Deelnemers moeten de instructies van gidsen opvolgen."
+      },
+      "9": {
+        "title": "9. Beperking van Aansprakelijkheid",
+        "text": "Het bedrijf is niet aansprakelijk voor letsel, verlies, vertragingen, diefstal, weersverstoringen of gebeurtenissen buiten redelijke controle."
+      },
+      "10": {
+        "title": "10. Overmacht",
+        "text": "Omvat pandemieën, politieke instabiliteit, stakingen, oorlogen, natuurrampen enzovoort."
+      },
+      "11": {
+        "title": "11. Toestemming voor Fotografie",
+        "text": "Foto's die tijdens tours worden gemaakt, kunnen worden gebruikt voor marketingdoeleinden, tenzij deelnemers bezwaar maken."
+      },
+      "12": {
+        "title": "12. Toepasselijk Recht",
+        "text": "Onderworpen aan de wetten die gelden in het land waar het bedrijf is geregistreerd."
+      }
+    }
   }
 }
 

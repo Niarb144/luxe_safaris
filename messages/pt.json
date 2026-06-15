@@ -265,5 +265,259 @@
     "title": "Alojamentos na África Oriental",
     "subtitle": "Explore a nossa seleção de alojamentos, desde lodges de luxo a hotéis boutique, cada um oferecendo uma combinação única de conforto e charme local.",
     "loading": "A carregar alojamentos..."
+  },
+  "practicalInfo": {
+    "hero": {
+      "title": "Informações Práticas de Viagem",
+      "subtitle": "Orientações essenciais para viajantes para o Quénia, Uganda e Tanzânia — vistos, vacinas, dicas de segurança, moedas e muito mais."
+    },
+    "intro": {
+      "title": "Antes de Viajar",
+      "text": "Os requisitos de entrada, regras de vacinação e recomendações de viagem podem mudar ao longo do tempo. Verifique sempre as fontes oficiais do governo antes de viajar. As informações abaixo fornecem orientações gerais para viagens na África Oriental."
+    },
+    "sections": {
+      "visa": {
+        "title": "Visto e Requisitos de Entrada",
+        "items": {
+          "0": "Quénia: eVisa exigido para muitos viajantes. Visto de Turismo da África Oriental disponível.",
+          "1": "Uganda: eVisa exigido para a maioria dos visitantes.",
+          "2": "Tanzânia: visto à chegada disponível para muitas nacionalidades.",
+          "3": "O visto de Turismo da África Oriental cobre Quénia, Uganda e Ruanda (visto único).",
+          "4": "Validade do passaporte: mínimo de 6 meses antes da expiração."
+        }
+      },
+      "health": {
+        "title": "Saúde e Vacinação",
+        "items": {
+          "0": "Certificado de febre-amarela pode ser exigido ao viajar entre países endémicos.",
+          "1": "Recomenda-se prevenção da malária nas regiões de safari.",
+          "2": "Vacinas de rotina recomendadas (tétano, hepatite A/B, febre tifóide).",
+          "3": "Leve medicamentos pessoais e prescrições médicas."
+        }
+      },
+      "currency": {
+        "title": "Moeda e Pagamentos",
+        "items": {
+          "0": "Quénia: Xelim queniano (KES)",
+          "1": "Uganda: Xelim ugandês (UGX)",
+          "2": "Tanzânia: Xelim tanzaniano (TZS)",
+          "3": "Dólar americano amplamente aceito no turismo (notas recentes preferidas).",
+          "4": "Visa e Mastercard aceites na maioria dos hotéis e lodges."
+        }
+      },
+      "safety": {
+        "title": "Dicas de Segurança",
+        "items": {
+          "0": "Utilize guias e operadores licenciados.",
+          "1": "Evite exibir objetos de valor nas cidades.",
+          "2": "Siga as instruções dos guardas dos parques durante os safaris.",
+          "3": "Mantenha cópias do passaporte e documentos de seguro."
+        }
+      },
+      "bestTime": {
+        "title": "Melhor Época para Viajar",
+        "items": {
+          "0": "Junho–outubro: estação seca, ideal para observação de vida selvagem.",
+          "1": "Dezembro–março: bom para safaris e férias na praia.",
+          "2": "Abril–maio: época das chuvas em muitas regiões."
+        }
+      },
+      "connectivity": {
+        "title": "Conectividade",
+        "items": {
+          "0": "Cartões SIM disponíveis nos aeroportos.",
+          "1": "Operadoras populares: Safaricom, Airtel, MTN.",
+          "2": "Hotéis e lodges geralmente oferecem Wi-Fi."
+        }
+      },
+      "transport": {
+        "title": "Transporte e Passagens de Fronteira",
+        "items": {
+          "0": "Viagens por estrada entre Quénia, Uganda e Tanzânia são possíveis.",
+          "1": "Leve passaporte e documentação de visto.",
+          "2": "Os tempos de passagem na fronteira variam.",
+          "3": "Voos domésticos são comuns para rotas de safari."
+        }
+      },
+      "emergency": {
+        "title": "Contactos de Emergência",
+        "items": {
+          "0": "Quénia: 999 / 112",
+          "1": "Uganda: 999",
+          "2": "Tanzânia: 112",
+          "3": "Tenha sempre os contactos da sua embaixada consigo."
+        }
+      }
+    },
+    "borderTable": {
+      "title": "Visão Geral de Travessia de Fronteiras",
+      "headers": {
+        "route": "Rota",
+        "visa": "Visto",
+        "vaccination": "Vacinação",
+        "notes": "Notas"
+      },
+      "rows": {
+        "kenyaUganda": {
+          "route": "Quénia → Uganda",
+          "visa": "Visto da África Oriental aceite",
+          "vaccination": "Pode ser exigida vacina contra febre-amarela",
+          "notes": "O tempo de espera na fronteira varia"
+        },
+        "kenyaTanzania": {
+          "route": "Quénia → Tanzânia",
+          "visa": "Geralmente necessário visto separado da Tanzânia",
+          "vaccination": "Podem aplicar-se regras de febre-amarela",
+          "notes": "Passaporte necessário"
+        },
+        "ugandaTanzania": {
+          "route": "Uganda → Tanzânia",
+          "visa": "Requisitos de entrada separados",
+          "vaccination": "Verifique as recomendações mais recentes",
+          "notes": "Voos são frequentemente preferidos"
+        }
+      }
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Tem alguma pergunta?",
+      "subtitle": "Estamos aqui para ajudar!"
+    },
+    "title": "Contacte-nos",
+    "subtitle": "Planeie a sua próxima aventura com a nossa equipa",
+    "form": {
+      "title": "Envie-nos uma mensagem",
+      "namePlaceholder": "O seu nome",
+      "emailPlaceholder": "O seu email",
+      "messagePlaceholder": "A sua mensagem",
+      "sending": "A enviar...",
+      "send": "Enviar mensagem",
+      "errorRecaptcha": "A verificação de segurança não está pronta. Tente novamente.",
+      "errorGeneric": "Falha ao enviar mensagem.",
+      "errorUnexpected": "Algo correu mal. Tente novamente mais tarde.",
+      "success": "Obrigado pelo seu contacto. Responderemos em breve."
+    },
+    "reachUs": "Contacte-nos diretamente",
+    "contacts": {
+      "support": {
+        "name": "Apoio ao Cliente",
+        "role": "Consultas gerais e reservas"
+      },
+      "specialist": {
+        "name": "Especialista em Safari",
+        "role": "Planeamento de safaris personalizados"
+      },
+      "emergency": {
+        "name": "Linha de Emergência",
+        "role": "Suporte 24/7"
+      }
+    },
+    "location": "Nairobi, Quénia"
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidade",
+    "lastUpdated": "Última atualização: maio de 2026",
+    "informationWeCollect": {
+      "title": "Informação que Recolhemos",
+      "items": {
+        "0": "Nome",
+        "1": "Email",
+        "2": "Número de telefone",
+        "3": "Dados do passaporte (quando necessário)",
+        "4": "Informações de reserva",
+        "5": "Dados de pagamento",
+        "6": "Informação do dispositivo/navegador"
+      }
+    },
+    "whyWeCollect": {
+      "title": "Por que Recolhemos Dados",
+      "items": {
+        "0": "Processar reservas",
+        "1": "Apoio ao cliente",
+        "2": "Newsletters de marketing",
+        "3": "Melhorar serviços",
+        "4": "Conformidade legal"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "text": "Utilizamos cookies essenciais, analíticos e de marketing. Os utilizadores podem personalizar as preferências."
+    },
+    "thirdParties": {
+      "title": "Terceiros",
+      "text": "Google Analytics, Meta Pixel, Stripe, Resend, Supabase e outros fornecedores podem processar dados limitados."
+    },
+    "userRights": {
+      "title": "Direitos do Utilizador",
+      "items": {
+        "0": "Aceder aos seus dados",
+        "1": "Eliminar dados",
+        "2": "Corrigir informações incorretas",
+        "3": "Retirar consentimento"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Termos e Condições",
+    "lastUpdated": "Última atualização: maio de 2026",
+    "sections": {
+      "1": {
+        "title": "1. Confirmação de Reserva",
+        "text": "As reservas só são confirmadas após receção do depósito/pagamento e confirmação escrita."
+      },
+      "2": {
+        "title": "2. Depósitos e Pagamentos",
+        "items": {
+          "0": "Depósito necessário para garantir reservas.",
+          "1": "O saldo restante deve ser pago antes da viagem.",
+          "2": "Pagamento tardio pode levar ao cancelamento."
+        }
+      },
+      "3": {
+        "title": "3. Política de Cancelamento",
+        "items": {
+          "0": "60+ dias → reembolso total menos taxas",
+          "1": "30–59 dias → reembolso parcial",
+          "2": "0–29 dias → não reembolsável (salvo indicação em contrário)"
+        }
+      },
+      "4": {
+        "title": "4. Alterações ao Itinerário",
+        "text": "Rotas, alojamento ou atividades podem mudar devido ao clima, restrições governamentais, segurança, migração de animais ou necessidades operacionais."
+      },
+      "5": {
+        "title": "5. Passaportes e Vistos",
+        "text": "Os viajantes são responsáveis por garantir passaportes, vistos e requisitos de entrada válidos."
+      },
+      "6": {
+        "title": "6. Requisitos de Saúde",
+        "text": "Os viajantes são responsáveis por vacinas, medicamentos e aptidão médica."
+      },
+      "7": {
+        "title": "7. Seguro de Viagem",
+        "text": "Recomenda-se fortemente seguro abrangente cobrindo cancelamento, evacuação e emergências médicas."
+      },
+      "8": {
+        "title": "8. Riscos de Vida Selvagem e Safari",
+        "text": "As atividades de safari envolvem riscos inerentes. Os participantes devem seguir as instruções dos guias."
+      },
+      "9": {
+        "title": "9. Limitação de Responsabilidade",
+        "text": "A empresa não é responsável por lesões, perdas, atrasos, roubos, condições meteorológicas ou eventos fora do controlo razoável."
+      },
+      "10": {
+        "title": "10. Força Maior",
+        "text": "Inclui pandemias, instabilidade política, greves, guerras, desastres naturais, etc."
+      },
+      "11": {
+        "title": "11. Consentimento para Fotografia",
+        "text": "As imagens captadas durante as viagens podem ser usadas para marketing, salvo recusa dos participantes."
+      },
+      "12": {
+        "title": "12. Lei Aplicável",
+        "text": "Regido pelas leis do país onde a empresa está registada."
+      }
+    }
   }
 }

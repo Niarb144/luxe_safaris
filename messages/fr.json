@@ -265,5 +265,259 @@
     "title": "Hébergements en Afrique de l’Est",
     "subtitle": "Découvrez notre sélection d’hébergements, des lodges de luxe aux hôtels de charme, chacun offrant un mélange unique de confort et d’authenticité locale.",
     "loading": "Chargement des hébergements..."
+  },
+  "practicalInfo": {
+    "hero": {
+      "title": "Informations Pratiques de Voyage",
+      "subtitle": "Conseils essentiels pour les voyageurs visitant le Kenya, l’Ouganda et la Tanzanie — visas, vaccinations, conseils de sécurité, devises et plus encore."
+    },
+    "intro": {
+      "title": "Avant Votre Voyage",
+      "text": "Les conditions d’entrée, les règles de vaccination et les avis aux voyageurs peuvent évoluer. Vérifiez toujours les informations auprès des sources gouvernementales officielles avant votre départ. Les informations ci-dessous fournissent des conseils généraux pour voyager en Afrique de l’Est."
+    },
+    "sections": {
+      "visa": {
+        "title": "Visa et Conditions d’Entrée",
+        "items": {
+          "0": "Kenya : eVisa requis pour de nombreux voyageurs. Visa touristique d’Afrique de l’Est disponible.",
+          "1": "Ouganda : eVisa requis pour la plupart des visiteurs.",
+          "2": "Tanzanie : Visa à l’arrivée disponible pour de nombreuses nationalités.",
+          "3": "Le visa touristique d’Afrique de l’Est couvre le Kenya, l’Ouganda et le Rwanda (visa unique).",
+          "4": "Validité du passeport : minimum 6 mois avant expiration."
+        }
+      },
+      "health": {
+        "title": "Santé et Vaccinations",
+        "items": {
+          "0": "Le certificat de vaccination contre la fièvre jaune est requis lors des déplacements entre pays endémiques.",
+          "1": "Une prévention contre le paludisme est recommandée dans les régions de safari.",
+          "2": "Les vaccinations de routine sont conseillées (Tétanos, Hépatite A/B, Typhoïde).",
+          "3": "Emportez vos médicaments personnels ainsi que vos ordonnances."
+        }
+      },
+      "currency": {
+        "title": "Monnaie et Paiements",
+        "items": {
+          "0": "Kenya : Shilling kényan (KES)",
+          "1": "Ouganda : Shilling ougandais (UGX)",
+          "2": "Tanzanie : Shilling tanzanien (TZS)",
+          "3": "Le dollar américain est largement accepté dans le secteur touristique (les billets récents sont préférés).",
+          "4": "Les cartes Visa et Mastercard sont acceptées dans la plupart des hôtels et lodges."
+        }
+      },
+      "safety": {
+        "title": "Conseils de Sécurité",
+        "items": {
+          "0": "Utilisez des guides et opérateurs agréés.",
+          "1": "Évitez d’exposer vos objets de valeur dans les villes.",
+          "2": "Suivez les instructions des gardes du parc pendant les safaris.",
+          "3": "Conservez des copies de vos passeports et documents d’assurance."
+        }
+      },
+      "bestTime": {
+        "title": "Meilleure Période pour Voyager",
+        "items": {
+          "0": "Juin–Octobre : saison sèche, idéale pour l’observation de la faune.",
+          "1": "Décembre–Mars : excellente période pour les safaris et les vacances balnéaires.",
+          "2": "Avril–Mai : saison des pluies dans de nombreuses régions."
+        }
+      },
+      "connectivity": {
+        "title": "Connectivité",
+        "items": {
+          "0": "Cartes SIM disponibles dans les aéroports.",
+          "1": "Principaux opérateurs : Safaricom, Airtel, MTN.",
+          "2": "Les hôtels et lodges proposent généralement le Wi-Fi."
+        }
+      },
+      "transport": {
+        "title": "Transport et Passages Frontaliers",
+        "items": {
+          "0": "Les déplacements routiers entre le Kenya, l’Ouganda et la Tanzanie sont possibles.",
+          "1": "Ayez toujours votre passeport et vos documents de visa.",
+          "2": "Les délais de passage aux frontières peuvent varier.",
+          "3": "Les vols domestiques sont fréquents pour les circuits safari."
+        }
+      },
+      "emergency": {
+        "title": "Contacts d’Urgence",
+        "items": {
+          "0": "Urgences au Kenya : 999 / 112",
+          "1": "Urgences en Ouganda : 999",
+          "2": "Urgences en Tanzanie : 112",
+          "3": "Gardez toujours les coordonnées de votre ambassade à portée de main."
+        }
+      }
+    },
+    "borderTable": {
+      "title": "Aperçu des Voyages Transfrontaliers",
+      "headers": {
+        "route": "Itinéraire",
+        "visa": "Visa",
+        "vaccination": "Vaccination",
+        "notes": "Remarques"
+      },
+      "rows": {
+        "kenyaUganda": {
+          "route": "Kenya → Ouganda",
+          "visa": "Visa d’Afrique de l’Est accepté",
+          "vaccination": "La vaccination contre la fièvre jaune peut être requise",
+          "notes": "Les files d’attente à la frontière varient"
+        },
+        "kenyaTanzania": {
+          "route": "Kenya → Tanzanie",
+          "visa": "Un visa distinct pour la Tanzanie est souvent nécessaire",
+          "vaccination": "Les règles relatives à la fièvre jaune peuvent s’appliquer",
+          "notes": "Passeport requis"
+        },
+        "ugandaTanzania": {
+          "route": "Ouganda → Tanzanie",
+          "visa": "Conditions d’entrée distinctes",
+          "vaccination": "Consultez les derniers avis",
+          "notes": "Les vols sont souvent privilégiés"
+        }
+      }
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Une question ?",
+      "subtitle": "Nous sommes là pour vous aider !"
+    },
+    "title": "Contactez-nous",
+    "subtitle": "Planifiez votre prochaine aventure avec notre équipe",
+    "form": {
+      "title": "Envoyez-nous un message",
+      "namePlaceholder": "Votre nom",
+      "emailPlaceholder": "Votre e-mail",
+      "messagePlaceholder": "Votre message",
+      "sending": "Envoi en cours...",
+      "send": "Envoyer le message",
+      "errorRecaptcha": "La vérification de sécurité n’est pas prête. Veuillez réessayer.",
+      "errorGeneric": "Échec de l’envoi du message.",
+      "errorUnexpected": "Une erreur est survenue. Veuillez réessayer plus tard.",
+      "success": "Merci de nous avoir contactés. Nous vous répondrons dans les plus brefs délais."
+    },
+    "reachUs": "Contactez-nous directement",
+    "contacts": {
+      "support": {
+        "name": "Service Client",
+        "role": "Demandes générales et réservations"
+      },
+      "specialist": {
+        "name": "Spécialiste Safari",
+        "role": "Planification de safaris sur mesure"
+      },
+      "emergency": {
+        "name": "Ligne d’Urgence",
+        "role": "Assistance urgente 24h/24 et 7j/7"
+      }
+    },
+    "location": "Nairobi, Kenya"
+  },
+  "privacyPolicy": {
+    "title": "Politique de Confidentialité",
+    "lastUpdated": "Dernière mise à jour : Mai 2026",
+    "informationWeCollect": {
+      "title": "Informations que Nous Collectons",
+      "items": {
+        "0": "Nom",
+        "1": "Adresse e-mail",
+        "2": "Numéro de téléphone",
+        "3": "Informations de passeport (si nécessaire)",
+        "4": "Informations de réservation",
+        "5": "Métadonnées de paiement",
+        "6": "Informations sur l’appareil/le navigateur"
+      }
+    },
+    "whyWeCollect": {
+      "title": "Pourquoi Nous Collectons des Données",
+      "items": {
+        "0": "Traiter les réservations",
+        "1": "Assistance clientèle",
+        "2": "Newsletters marketing",
+        "3": "Améliorer nos services",
+        "4": "Conformité légale"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "text": "Nous utilisons des cookies essentiels, analytiques et marketing. Les utilisateurs peuvent personnaliser leurs préférences."
+    },
+    "thirdParties": {
+      "title": "Tiers",
+      "text": "Google Analytics, Meta Pixel, Stripe, Resend, Supabase et d’autres fournisseurs peuvent traiter des données limitées."
+    },
+    "userRights": {
+      "title": "Droits des Utilisateurs",
+      "items": {
+        "0": "Accéder à vos données",
+        "1": "Supprimer vos données",
+        "2": "Corriger les informations inexactes",
+        "3": "Retirer votre consentement"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Conditions Générales",
+    "lastUpdated": "Dernière mise à jour : Mai 2026",
+    "sections": {
+      "1": {
+        "title": "1. Confirmation de Réservation",
+        "text": "Les réservations ne sont confirmées qu’après réception de l’acompte/paiement et d’une confirmation écrite."
+      },
+      "2": {
+        "title": "2. Acomptes et Paiements",
+        "items": {
+          "0": "Un acompte est requis pour garantir la réservation.",
+          "1": "Le solde restant doit être payé avant le voyage.",
+          "2": "Un paiement tardif peut entraîner l’annulation."
+          }
+      },
+      "3": {
+        "title": "3. Politique d’Annulation",
+        "items": {
+          "0": "60 jours ou plus → remboursement intégral moins les frais administratifs",
+          "1": "30–59 jours → remboursement partiel",
+          "2": "0–29 jours → non remboursable sauf indication contraire"
+        }
+      },
+      "4": {
+        "title": "4. Modifications de l’Itinéraire",
+        "text": "Les itinéraires, hébergements ou activités peuvent être modifiés en raison de la météo, de restrictions gouvernementales, de considérations de sécurité, des mouvements de la faune ou de besoins opérationnels."
+      },
+      "5": {
+        "title": "5. Passeports et Visas",
+        "text": "Les voyageurs sont responsables de la validité de leurs passeports, visas et autres conditions d’entrée."
+      },
+      "6": {
+        "title": "6. Exigences de Santé",
+        "text": "Les voyageurs sont responsables des vaccinations, médicaments et de leur aptitude médicale à voyager."
+      },
+      "7": {
+        "title": "7. Assurance Voyage",
+        "text": "Une assurance complète couvrant les annulations, évacuations et urgences médicales est fortement recommandée."
+      },
+      "8": {
+        "title": "8. Risques liés à la Faune et aux Safaris",
+        "text": "Les activités de safari comportent des risques inhérents. Les participants doivent suivre les instructions des guides."
+      },
+      "9": {
+        "title": "9. Limitation de Responsabilité",
+        "text": "L’entreprise n’est pas responsable des blessures, pertes, retards, vols, perturbations météorologiques ou événements hors de son contrôle raisonnable."
+      },
+      "10": {
+        "title": "10. Force Majeure",
+        "text": "Inclut les pandémies, l’instabilité politique, les grèves, les guerres, les catastrophes naturelles, etc."
+      },
+      "11": {
+        "title": "11. Consentement à la Photographie",
+        "text": "Les images prises durant les circuits peuvent être utilisées à des fins marketing sauf opposition des participants."
+      },
+      "12": {
+        "title": "12. Droit Applicable",
+        "text": "Les présentes conditions sont régies par les lois applicables dans le pays où l’entreprise est enregistrée."
+      }
+    }
   }
 }

@@ -265,6 +265,260 @@
     "title": "Alloggi in Africa Orientale",
     "subtitle": "Scopri la nostra selezione di alloggi, dai lodge di lusso agli hotel boutique, ognuno con un mix unico di comfort e fascino locale.",
     "loading": "Caricamento degli alloggi..."
+  },
+  "practicalInfo": {
+    "hero": {
+      "title": "Informazioni Pratiche di Viaggio",
+      "subtitle": "Informazioni essenziali per i viaggiatori che visitano Kenya, Uganda e Tanzania: visti, vaccinazioni, consigli di sicurezza, valute e molto altro."
+    },
+    "intro": {
+      "title": "Prima di Partire",
+      "text": "I requisiti di ingresso, le norme sulle vaccinazioni e gli avvisi di viaggio possono cambiare nel tempo. Verifica sempre le informazioni presso fonti governative ufficiali prima della partenza. Le informazioni riportate di seguito forniscono indicazioni generali per viaggiare nell’Africa orientale."
+    },
+    "sections": {
+      "visa": {
+        "title": "Visti e Requisiti di Ingresso",
+        "items": {
+          "0": "Kenya: eVisa richiesto per molti viaggiatori. Disponibile il Visto Turistico dell’Africa Orientale.",
+          "1": "Uganda: eVisa richiesto per la maggior parte dei visitatori.",
+          "2": "Tanzania: visto all’arrivo disponibile per molte nazionalità.",
+          "3": "Il Visto Turistico dell’Africa Orientale copre Kenya, Uganda e Ruanda (visto unico).",
+          "4": "Validità del passaporto: minimo 6 mesi prima della scadenza."
+        }
+      },
+      "health": {
+        "title": "Salute e Vaccinazioni",
+        "items": {
+          "0": "Il certificato di vaccinazione contro la febbre gialla può essere richiesto quando si viaggia tra paesi endemici.",
+          "1": "La profilassi antimalarica è raccomandata per le regioni dei safari.",
+          "2": "Si consigliano le vaccinazioni di routine (Tetano, Epatite A/B, Tifo).",
+          "3": "Porta con te i farmaci personali e le relative prescrizioni."
+        }
+      },
+      "currency": {
+        "title": "Valuta e Pagamenti",
+        "items": {
+          "0": "Kenya: Scellino Keniota (KES)",
+          "1": "Uganda: Scellino Ugandese (UGX)",
+          "2": "Tanzania: Scellino Tanzaniano (TZS)",
+          "3": "Il dollaro statunitense è ampiamente accettato nel settore turistico (preferibilmente banconote recenti).",
+          "4": "Visa e Mastercard sono accettate nella maggior parte degli hotel e lodge."
+        }
+      },
+      "safety": {
+        "title": "Consigli di Sicurezza",
+        "items": {
+          "0": "Utilizza guide e operatori autorizzati.",
+          "1": "Evita di mostrare oggetti di valore nelle città.",
+          "2": "Segui le istruzioni dei ranger durante i safari.",
+          "3": "Conserva copie del passaporto e dei documenti assicurativi."
+        }
+      },
+      "bestTime": {
+        "title": "Periodo Migliore per Viaggiare",
+        "items": {
+          "0": "Giugno–Ottobre: stagione secca, ideale per l’osservazione della fauna.",
+          "1": "Dicembre–Marzo: ottimo periodo per safari e vacanze al mare.",
+          "2": "Aprile–Maggio: stagione delle piogge in molte regioni."
+        }
+      },
+      "connectivity": {
+        "title": "Connettività",
+        "items": {
+          "0": "Le schede SIM sono disponibili negli aeroporti.",
+          "1": "Operatori più diffusi: Safaricom, Airtel, MTN.",
+          "2": "Hotel e lodge offrono generalmente il Wi-Fi."
+        }
+      },
+      "transport": {
+        "title": "Trasporti e Attraversamenti di Frontiera",
+        "items": {
+          "0": "È possibile viaggiare via terra tra Kenya, Uganda e Tanzania.",
+          "1": "Porta sempre con te passaporto e documentazione del visto.",
+          "2": "I tempi di attesa alle frontiere possono variare.",
+          "3": "I voli nazionali sono comuni sulle rotte safari."
+        }
+      },
+      "emergency": {
+        "title": "Contatti di Emergenza",
+        "items": {
+          "0": "Emergenze in Kenya: 999 / 112",
+          "1": "Emergenze in Uganda: 999",
+          "2": "Emergenze in Tanzania: 112",
+          "3": "Tieni sempre a disposizione i contatti della tua ambasciata."
+        }
+      }
+    },
+    "borderTable": {
+      "title": "Panoramica dei Viaggi Transfrontalieri",
+      "headers": {
+        "route": "Percorso",
+        "visa": "Visto",
+        "vaccination": "Vaccinazione",
+        "notes": "Note"
+      },
+      "rows": {
+        "kenyaUganda": {
+          "route": "Kenya → Uganda",
+          "visa": "Visto dell’Africa Orientale accettato",
+          "vaccination": "Potrebbe essere richiesta la vaccinazione contro la febbre gialla",
+          "notes": "I tempi di attesa alla frontiera possono variare"
+        },
+        "kenyaTanzania": {
+          "route": "Kenya → Tanzania",
+          "visa": "Spesso è necessario un visto separato per la Tanzania",
+          "vaccination": "Potrebbero applicarsi le norme sulla febbre gialla",
+          "notes": "Passaporto richiesto"
+        },
+        "ugandaTanzania": {
+          "route": "Uganda → Tanzania",
+          "visa": "Requisiti di ingresso separati",
+          "vaccination": "Verificare gli avvisi più recenti",
+          "notes": "Spesso si preferiscono i voli"
+        }
+      }
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Hai una domanda?",
+      "subtitle": "Siamo qui per aiutarti!"
+    },
+    "title": "Contattaci",
+    "subtitle": "Pianifica la tua prossima avventura con il nostro team",
+    "form": {
+      "title": "Inviaci un messaggio",
+      "namePlaceholder": "Il tuo nome",
+      "emailPlaceholder": "La tua email",
+      "messagePlaceholder": "Il tuo messaggio",
+      "sending": "Invio in corso...",
+      "send": "Invia messaggio",
+      "errorRecaptcha": "La verifica di sicurezza non è pronta. Riprova.",
+      "errorGeneric": "Impossibile inviare il messaggio.",
+      "errorUnexpected": "Si è verificato un errore. Riprova più tardi.",
+      "success": "Grazie per averci contattato. Ti risponderemo al più presto."
+    },
+    "reachUs": "Contattaci Direttamente",
+    "contacts": {
+      "support": {
+        "name": "Assistenza Clienti",
+        "role": "Richieste generali e prenotazioni"
+      },
+      "specialist": {
+        "name": "Specialista Safari",
+        "role": "Pianificazione di safari personalizzati"
+      },
+      "emergency": {
+        "name": "Linea di Emergenza",
+        "role": "Assistenza urgente 24/7"
+      }
+    },
+    "location": "Nairobi, Kenya"
+  },
+  "privacyPolicy": {
+    "title": "Informativa sulla Privacy",
+    "lastUpdated": "Ultimo aggiornamento: Maggio 2026",
+    "informationWeCollect": {
+      "title": "Informazioni che Raccogliamo",
+      "items": {
+        "0": "Nome",
+        "1": "Email",
+        "2": "Numero di telefono",
+        "3": "Dettagli del passaporto (quando richiesto)",
+        "4": "Informazioni di prenotazione",
+        "5": "Metadati di pagamento",
+        "6": "Informazioni sul dispositivo/browser"
+      }
+    },
+    "whyWeCollect": {
+      "title": "Perché Raccogliamo i Dati",
+      "items": {
+        "0": "Elaborare le prenotazioni",
+        "1": "Assistenza clienti",
+        "2": "Newsletter di marketing",
+        "3": "Migliorare i servizi",
+        "4": "Conformità legale"
+      }
+    },
+    "cookies": {
+      "title": "Cookie",
+      "text": "Utilizziamo cookie essenziali, analitici e di marketing. Gli utenti possono personalizzare le proprie preferenze."
+    },
+    "thirdParties": {
+      "title": "Terze Parti",
+      "text": "Google Analytics, Meta Pixel, Stripe, Resend, Supabase e altri fornitori possono elaborare dati limitati."
+    },
+    "userRights": {
+      "title": "Diritti dell’Utente",
+      "items": {
+        "0": "Accedere ai propri dati",
+        "1": "Eliminare i dati",
+        "2": "Correggere eventuali inesattezze",
+        "3": "Revocare il consenso"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Termini e Condizioni",
+    "lastUpdated": "Ultimo aggiornamento: Maggio 2026",
+    "sections": {
+      "1": {
+        "title": "1. Conferma della Prenotazione",
+        "text": "Le prenotazioni sono confermate solo dopo la ricezione del deposito/pagamento e della conferma scritta."
+      },
+      "2": {
+        "title": "2. Depositi e Pagamenti",
+        "items": {
+          "0": "È richiesto un deposito per garantire la prenotazione.",
+          "1": "Il saldo restante deve essere pagato prima del viaggio.",
+          "2": "Il pagamento tardivo può comportare la cancellazione."
+        }
+      },
+      "3": {
+        "title": "3. Politica di Cancellazione",
+        "items": {
+          "0": "60+ giorni → rimborso completo meno le spese amministrative",
+          "1": "30–59 giorni → rimborso parziale",
+          "2": "0–29 giorni → non rimborsabile salvo diversa indicazione"
+        }
+      },
+      "4": {
+        "title": "4. Modifiche all’Itinerario",
+        "text": "Percorsi, alloggi o attività possono essere modificati a causa di condizioni meteorologiche, restrizioni governative, motivi di sicurezza, spostamenti della fauna selvatica o esigenze operative."
+      },
+      "5": {
+        "title": "5. Passaporti e Visti",
+        "text": "Gli ospiti sono responsabili di garantire la validità di passaporti, visti e requisiti di ingresso."
+      },
+      "6": {
+        "title": "6. Requisiti Sanitari",
+        "text": "I viaggiatori sono responsabili delle vaccinazioni, dei farmaci e della propria idoneità medica."
+      },
+      "7": {
+        "title": "7. Assicurazione di Viaggio",
+        "text": "Si raccomanda vivamente un’assicurazione completa che copra cancellazioni, evacuazioni ed emergenze mediche."
+      },
+      "8": {
+        "title": "8. Rischi della Fauna Selvatica e dei Safari",
+        "text": "Le attività safari comportano rischi intrinseci. I partecipanti devono seguire le istruzioni delle guide."
+      },
+      "9": {
+        "title": "9. Limitazione di Responsabilità",
+        "text": "La società non è responsabile per lesioni, perdite, ritardi, furti, interruzioni dovute al maltempo o eventi al di fuori del proprio ragionevole controllo."
+      },
+      "10": {
+        "title": "10. Forza Maggiore",
+        "text": "Include pandemie, instabilità politica, scioperi, guerre, disastri naturali, ecc."
+      },
+      "11": {
+        "title": "11. Consenso alla Fotografia",
+        "text": "Le immagini scattate durante i tour possono essere utilizzate per finalità di marketing, salvo diversa indicazione dei partecipanti."
+      },
+      "12": {
+        "title": "12. Legge Applicabile",
+        "text": "Regolato dalle leggi applicabili nel paese in cui la società è registrata."
+      }
+    }
   }
 }
 

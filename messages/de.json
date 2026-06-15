@@ -265,6 +265,260 @@
     "title": "Unterkünfte in Ostafrika",
     "subtitle": "Entdecken Sie unsere kuratierte Auswahl an Unterkünften – von Luxus-Lodges bis hin zu Boutique-Hotels, die Komfort und lokalen Charme vereinen.",
     "loading": "Unterkünfte werden geladen..."
+  },
+  "practicalInfo": {
+    "hero": {
+      "title": "Praktische Reiseinformationen",
+      "subtitle": "Wichtige Hinweise für Reisende nach Kenia, Uganda und Tansania – Visa, Impfungen, Sicherheitstipps, Währungen und mehr."
+    },
+    "intro": {
+      "title": "Vor Ihrer Reise",
+      "text": "Einreisebestimmungen, Impfanforderungen und Reisehinweise können sich ändern. Informieren Sie sich daher stets bei offiziellen Regierungsstellen vor Ihrer Abreise. Die folgenden Informationen dienen als allgemeine Orientierungshilfe für Reisen in Ostafrika."
+    },
+    "sections": {
+      "visa": {
+        "title": "Visa- und Einreisebestimmungen",
+        "items": {
+          "0": "Kenia: Für viele Reisende ist ein eVisum erforderlich. Das Ostafrika-Touristenvisum ist verfügbar.",
+          "1": "Uganda: Für die meisten Besucher ist ein eVisum erforderlich.",
+          "2": "Tansania: Für viele Nationalitäten ist ein Visum bei Ankunft erhältlich.",
+          "3": "Das Ostafrika-Touristenvisum gilt für Kenia, Uganda und Ruanda (ein einziges Visum).",
+          "4": "Passgültigkeit: Mindestens 6 Monate über das Ablaufdatum hinaus."
+        }
+      },
+      "health": {
+        "title": "Gesundheit & Impfungen",
+        "items": {
+          "0": "Ein Gelbfieberimpfnachweis kann bei Reisen zwischen Endemiegebieten erforderlich sein.",
+          "1": "Malariaprophylaxe wird für Safari-Regionen empfohlen.",
+          "2": "Standardimpfungen werden empfohlen (Tetanus, Hepatitis A/B, Typhus).",
+          "3": "Führen Sie persönliche Medikamente und Rezepte mit sich."
+        }
+      },
+      "currency": {
+        "title": "Währung & Zahlungen",
+        "items": {
+          "0": "Kenia: Kenianischer Schilling (KES)",
+          "1": "Uganda: Uganda-Schilling (UGX)",
+          "2": "Tansania: Tansanischer Schilling (TZS)",
+          "3": "US-Dollar werden im Tourismussektor weitgehend akzeptiert (neuere Banknoten werden bevorzugt).",
+          "4": "Visa und Mastercard werden in den meisten Hotels und Lodges akzeptiert."
+        }
+      },
+      "safety": {
+        "title": "Sicherheitstipps",
+        "items": {
+          "0": "Nutzen Sie registrierte Reiseleiter und Anbieter.",
+          "1": "Vermeiden Sie es, Wertsachen in Städten offen zu zeigen.",
+          "2": "Befolgen Sie während Safaris die Anweisungen der Ranger.",
+          "3": "Bewahren Sie Kopien Ihres Reisepasses und Ihrer Versicherungsunterlagen auf."
+        }
+      },
+      "bestTime": {
+        "title": "Beste Reisezeit",
+        "items": {
+          "0": "Juni–Oktober: Trockenzeit, ideal zur Wildtierbeobachtung.",
+          "1": "Dezember–März: Gute Zeit für Safaris und Strandurlaube.",
+          "2": "April–Mai: Regenzeit in vielen Regionen."
+        }
+      },
+      "connectivity": {
+        "title": "Konnektivität",
+        "items": {
+          "0": "SIM-Karten sind an Flughäfen erhältlich.",
+          "1": "Beliebte Anbieter: Safaricom, Airtel, MTN.",
+          "2": "Hotels und Lodges bieten in der Regel WLAN an."
+        }
+      },
+      "transport": {
+        "title": "Transport & Grenzübertritte",
+        "items": {
+          "0": "Straßenreisen zwischen Kenia, Uganda und Tansania sind möglich.",
+          "1": "Führen Sie stets Reisepass und Visadokumente mit sich.",
+          "2": "Die Bearbeitungszeiten an Grenzübergängen können variieren.",
+          "3": "Inlandsflüge sind auf Safari-Routen weit verbreitet."
+        }
+      },
+      "emergency": {
+        "title": "Notfallkontakte",
+        "items": {
+          "0": "Kenia Notruf: 999 / 112",
+          "1": "Uganda Notruf: 999",
+          "2": "Tansania Notruf: 112",
+          "3": "Halten Sie stets die Kontaktdaten Ihrer Botschaft bereit."
+        }
+      }
+    },
+    "borderTable": {
+      "title": "Überblick über grenzüberschreitende Reisen",
+      "headers": {
+        "route": "Route",
+        "visa": "Visum",
+        "vaccination": "Impfung",
+        "notes": "Hinweise"
+      },
+      "rows": {
+        "kenyaUganda": {
+          "route": "Kenia → Uganda",
+          "visa": "Ostafrika-Visum akzeptiert",
+          "vaccination": "Gelbfieberimpfung kann erforderlich sein",
+          "notes": "Wartezeiten an der Grenze variieren"
+        },
+        "kenyaTanzania": {
+          "route": "Kenia → Tansania",
+          "visa": "Separates Tansania-Visum häufig erforderlich",
+          "vaccination": "Gelbfieberbestimmungen können gelten",
+          "notes": "Reisepass erforderlich"
+        },
+        "ugandaTanzania": {
+          "route": "Uganda → Tansania",
+          "visa": "Separate Einreisebestimmungen",
+          "vaccination": "Aktuelle Reisehinweise prüfen",
+          "notes": "Flüge werden häufig bevorzugt"
+        }
+      }
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Haben Sie eine Frage?",
+      "subtitle": "Wir sind für Sie da!"
+    },
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Planen Sie Ihr nächstes Abenteuer mit unserem Team",
+    "form": {
+      "title": "Senden Sie uns eine Nachricht",
+      "namePlaceholder": "Ihr Name",
+      "emailPlaceholder": "Ihre E-Mail-Adresse",
+      "messagePlaceholder": "Ihre Nachricht",
+      "sending": "Wird gesendet...",
+      "send": "Nachricht senden",
+      "errorRecaptcha": "Die Sicherheitsüberprüfung ist noch nicht bereit. Bitte versuchen Sie es erneut.",
+      "errorGeneric": "Nachricht konnte nicht gesendet werden.",
+      "errorUnexpected": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
+      "success": "Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze bei Ihnen melden."
+    },
+    "reachUs": "Kontaktieren Sie uns direkt",
+    "contacts": {
+      "support": {
+        "name": "Kundensupport",
+        "role": "Allgemeine Anfragen & Buchungen"
+      },
+      "specialist": {
+        "name": "Safari-Spezialist",
+        "role": "Individuelle Safari-Planung"
+      },
+      "emergency": {
+        "name": "Notfall-Hotline",
+        "role": "24/7 Soforthilfe"
+      }
+    },
+    "location": "Nairobi, Kenia"
+  },
+  "privacyPolicy": {
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert: Mai 2026",
+    "informationWeCollect": {
+      "title": "Welche Informationen wir sammeln",
+      "items": {
+        "0": "Name",
+        "1": "E-Mail-Adresse",
+        "2": "Telefonnummer",
+        "3": "Passdaten (falls erforderlich)",
+        "4": "Buchungsinformationen",
+        "5": "Zahlungsmetadaten",
+        "6": "Geräte-/Browserinformationen"
+      }
+    },
+    "whyWeCollect": {
+      "title": "Warum wir Daten sammeln",
+      "items": {
+        "0": "Buchungen bearbeiten",
+        "1": "Kundensupport",
+        "2": "Marketing-Newsletter",
+        "3": "Dienstleistungen verbessern",
+        "4": "Gesetzliche Vorschriften einhalten"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "text": "Wir verwenden essenzielle, Analyse- und Marketing-Cookies. Nutzer können ihre Einstellungen anpassen."
+    },
+    "thirdParties": {
+      "title": "Drittanbieter",
+      "text": "Google Analytics, Meta Pixel, Stripe, Resend, Supabase und andere Anbieter können begrenzte Daten verarbeiten."
+    },
+    "userRights": {
+      "title": "Benutzerrechte",
+      "items": {
+        "0": "Auf Ihre Daten zugreifen",
+        "1": "Daten löschen",
+        "2": "Fehler korrigieren",
+        "3": "Einwilligung widerrufen"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Allgemeine Geschäftsbedingungen",
+    "lastUpdated": "Zuletzt aktualisiert: Mai 2026",
+    "sections": {
+      "1": {
+        "title": "1. Buchungsbestätigung",
+        "text": "Buchungen gelten erst nach Eingang der Anzahlung/Zahlung und schriftlicher Bestätigung als bestätigt."
+      },
+      "2": {
+        "title": "2. Anzahlungen & Zahlungen",
+        "items": {
+          "0": "Zur Sicherung der Buchung ist eine Anzahlung erforderlich.",
+          "1": "Der Restbetrag ist vor Reiseantritt zu zahlen.",
+          "2": "Verspätete Zahlungen können zur Stornierung führen."
+        }
+      },
+      "3": {
+        "title": "3. Stornierungsbedingungen",
+        "items": {
+          "0": "60+ Tage → volle Rückerstattung abzüglich Verwaltungsgebühren",
+          "1": "30–59 Tage → teilweise Rückerstattung",
+          "2": "0–29 Tage → keine Rückerstattung, sofern nicht anders angegeben"
+        }
+      },
+      "4": {
+        "title": "4. Änderungen des Reiseplans",
+        "text": "Routen, Unterkünfte oder Aktivitäten können sich aufgrund von Wetterbedingungen, behördlichen Einschränkungen, Sicherheitsaspekten, Wildtierbewegungen oder betrieblichen Anforderungen ändern."
+      },
+      "5": {
+        "title": "5. Reisepässe & Visa",
+        "text": "Gäste sind selbst dafür verantwortlich, gültige Reisepässe, Visa und Einreisevoraussetzungen sicherzustellen."
+      },
+      "6": {
+        "title": "6. Gesundheitsanforderungen",
+        "text": "Reisende sind selbst für Impfungen, Medikamente und ihre gesundheitliche Eignung verantwortlich."
+      },
+      "7": {
+        "title": "7. Reiseversicherung",
+        "text": "Eine umfassende Versicherung für Stornierungen, Evakuierungen und medizinische Notfälle wird dringend empfohlen."
+      },
+      "8": {
+        "title": "8. Risiken von Wildtierbeobachtungen & Safaris",
+        "text": "Safari-Aktivitäten sind mit inhärenten Risiken verbunden. Teilnehmer müssen den Anweisungen der Reiseleiter folgen."
+      },
+      "9": {
+        "title": "9. Haftungsbeschränkung",
+        "text": "Das Unternehmen haftet nicht für Verletzungen, Verluste, Verzögerungen, Diebstahl, wetterbedingte Störungen oder Ereignisse außerhalb seines Einflussbereichs."
+      },
+      "10": {
+        "title": "10. Höhere Gewalt",
+        "text": "Dazu zählen Pandemien, politische Instabilität, Streiks, Kriege, Naturkatastrophen usw."
+      },
+      "11": {
+        "title": "11. Zustimmung zur Fotografie",
+        "text": "Während der Tour aufgenommenes Bildmaterial kann zu Marketingzwecken verwendet werden, sofern Teilnehmer dem nicht widersprechen."
+      },
+      "12": {
+        "title": "12. Anwendbares Recht",
+        "text": "Es gelten die Gesetze des Landes, in dem das Unternehmen registriert ist."
+      }
+    }
   }
 }
 

@@ -265,6 +265,260 @@
     "title": "Zakwaterowanie w Afryce Wschodniej",
     "subtitle": "Odkryj naszą wyselekcjonowaną ofertę zakwaterowania, od luksusowych lodży po hotele butikowe, każdy z unikalnym połączeniem komfortu i lokalnego uroku.",
     "loading": "Ładowanie zakwaterowania..."
+  },
+  "practicalInfo": {
+    "hero": {
+      "title": "Praktyczne Informacje Podróżne",
+      "subtitle": "Niezbędne wskazówki dla podróżnych odwiedzających Kenię, Ugandę i Tanzanię — wizy, szczepienia, porady bezpieczeństwa, waluty i więcej."
+    },
+    "intro": {
+      "title": "Przed Podróżą",
+      "text": "Wymagania wjazdowe, zasady szczepień i ostrzeżenia podróżne mogą się zmieniać z czasem. Zawsze sprawdzaj oficjalne źródła rządowe przed wyjazdem. Poniższe informacje stanowią ogólne wskazówki dotyczące podróży po Afryce Wschodniej."
+    },
+    "sections": {
+      "visa": {
+        "title": "Wizy i Wymagania Wjazdowe",
+        "items": {
+          "0": "Kenia: e-wiza wymagana dla wielu podróżnych. Dostępna Wiza Turystyczna Afryki Wschodniej.",
+          "1": "Uganda: e-wiza wymagana dla większości odwiedzających.",
+          "2": "Tanzania: wiza na lotnisku dostępna dla wielu narodowości.",
+          "3": "Wiza Turystyczna Afryki Wschodniej obejmuje Kenię, Ugandę i Rwandę (jedna wiza).",
+          "4": "Ważność paszportu: minimum 6 miesięcy przed datą wygaśnięcia."
+        }
+      },
+      "health": {
+        "title": "Zdrowie i Szczepienia",
+        "items": {
+          "0": "Certyfikat szczepienia przeciw żółtej febrze może być wymagany przy podróży między krajami endemicznymi.",
+          "1": "Profilaktyka przeciwmalaryczna zalecana w regionach safari.",
+          "2": "Zalecane szczepienia rutynowe (tężec, WZW A/B, dur brzuszny).",
+          "3": "Zabierz własne leki i recepty."
+        }
+      },
+      "currency": {
+        "title": "Waluta i Płatności",
+        "items": {
+          "0": "Kenia: szyling kenijski (KES)",
+          "1": "Uganda: szyling ugandyjski (UGX)",
+          "2": "Tanzania: szyling tanzański (TZS)",
+          "3": "Dolar amerykański powszechnie akceptowany w turystyce (preferowane nowe banknoty).",
+          "4": "Visa i Mastercard akceptowane w większości hoteli i lodży."
+        }
+      },
+      "safety": {
+        "title": "Wskazówki Bezpieczeństwa",
+        "items": {
+          "0": "Korzystaj z licencjonowanych przewodników i operatorów.",
+          "1": "Unikaj eksponowania kosztowności w miastach.",
+          "2": "Podczas safari stosuj się do poleceń strażników parkowych.",
+          "3": "Przechowuj kopie paszportu i dokumentów ubezpieczeniowych."
+        }
+      },
+      "bestTime": {
+        "title": "Najlepszy Czas na Podróż",
+        "items": {
+          "0": "Czerwiec–październik: pora sucha, idealna do obserwacji zwierząt.",
+          "1": "Grudzień–marzec: dobry okres na safari i wypoczynek nad morzem.",
+          "2": "Kwiecień–maj: pora deszczowa w wielu regionach."
+        }
+      },
+      "connectivity": {
+        "title": "Łączność",
+        "items": {
+          "0": "Karty SIM dostępne na lotniskach.",
+          "1": "Popularni operatorzy: Safaricom, Airtel, MTN.",
+          "2": "Hotele i lodże zazwyczaj oferują Wi-Fi."
+        }
+      },
+      "transport": {
+        "title": "Transport i Przekraczanie Granic",
+        "items": {
+          "0": "Możliwe podróże drogowe między Kenią, Ugandą i Tanzanią.",
+          "1": "Zabierz paszport i dokumenty wizowe.",
+          "2": "Czas odprawy na granicach może się różnić.",
+          "3": "Loty krajowe są powszechne na trasach safari."
+        }
+      },
+      "emergency": {
+        "title": "Numery Alarmowe",
+        "items": {
+          "0": "Kenia: 999 / 112",
+          "1": "Uganda: 999",
+          "2": "Tanzania: 112",
+          "3": "Zawsze miej przy sobie kontakt do ambasady."
+        }
+      }
+    },
+    "borderTable": {
+      "title": "Przegląd Przekraczania Granic",
+      "headers": {
+        "route": "Trasa",
+        "visa": "Wiza",
+        "vaccination": "Szczepienia",
+        "notes": "Uwagi"
+      },
+      "rows": {
+        "kenyaUganda": {
+          "route": "Kenia → Uganda",
+          "visa": "Akceptowana Wiza Afryki Wschodniej",
+          "vaccination": "Może być wymagane szczepienie przeciw żółtej febrze",
+          "notes": "Czas oczekiwania na granicy może się różnić"
+        },
+        "kenyaTanzania": {
+          "route": "Kenia → Tanzania",
+          "visa": "Często wymagane osobne wizy do Tanzanii",
+          "vaccination": "Mogą obowiązywać przepisy dotyczące żółtej febry",
+          "notes": "Wymagany paszport"
+        },
+        "ugandaTanzania": {
+          "route": "Uganda → Tanzania",
+          "visa": "Oddzielne wymagania wjazdowe",
+          "vaccination": "Sprawdź najnowsze zalecenia",
+          "notes": "Często preferowane są loty"
+        }
+      }
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Masz pytanie?",
+      "subtitle": "Jesteśmy tutaj, aby pomóc!"
+    },
+    "title": "Skontaktuj się z nami",
+    "subtitle": "Zaplanuj swoją kolejną przygodę z naszym zespołem",
+    "form": {
+      "title": "Wyślij nam wiadomość",
+      "namePlaceholder": "Twoje imię",
+      "emailPlaceholder": "Twój e-mail",
+      "messagePlaceholder": "Twoja wiadomość",
+      "sending": "Wysyłanie...",
+      "send": "Wyślij wiadomość",
+      "errorRecaptcha": "Weryfikacja bezpieczeństwa nie jest gotowa. Spróbuj ponownie.",
+      "errorGeneric": "Nie udało się wysłać wiadomości.",
+      "errorUnexpected": "Coś poszło nie tak. Spróbuj ponownie później.",
+      "success": "Dziękujemy za kontakt. Odpowiemy wkrótce."
+    },
+    "reachUs": "Skontaktuj się bezpośrednio",
+    "contacts": {
+      "support": {
+        "name": "Obsługa klienta",
+        "role": "Ogólne zapytania i rezerwacje"
+      },
+      "specialist": {
+        "name": "Specjalista Safari",
+        "role": "Indywidualne planowanie safari"
+      },
+      "emergency": {
+        "name": "Linia alarmowa",
+        "role": "Wsparcie 24/7 w nagłych przypadkach"
+      }
+    },
+    "location": "Nairobi, Kenia"
+  },
+  "privacyPolicy": {
+    "title": "Polityka Prywatności",
+    "lastUpdated": "Ostatnia aktualizacja: maj 2026",
+    "informationWeCollect": {
+      "title": "Informacje, które zbieramy",
+      "items": {
+        "0": "Imię i nazwisko",
+        "1": "E-mail",
+        "2": "Numer telefonu",
+        "3": "Dane paszportowe (w razie potrzeby)",
+        "4": "Informacje o rezerwacji",
+        "5": "Metadane płatności",
+        "6": "Informacje o urządzeniu/przeglądarce"
+      }
+    },
+    "whyWeCollect": {
+      "title": "Dlaczego zbieramy dane",
+      "items": {
+        "0": "Realizacja rezerwacji",
+        "1": "Obsługa klienta",
+        "2": "Newsletter marketingowy",
+        "3": "Ulepszanie usług",
+        "4": "Zgodność z prawem"
+      }
+    },
+    "cookies": {
+      "title": "Pliki cookies",
+      "text": "Używamy niezbędnych, analitycznych i marketingowych plików cookies. Użytkownicy mogą dostosować preferencje."
+    },
+    "thirdParties": {
+      "title": "Podmioty trzecie",
+      "text": "Google Analytics, Meta Pixel, Stripe, Resend, Supabase i inni dostawcy mogą przetwarzać ograniczone dane."
+    },
+    "userRights": {
+      "title": "Prawa użytkownika",
+      "items": {
+        "0": "Dostęp do danych",
+        "1": "Usunięcie danych",
+        "2": "Korekta nieścisłości",
+        "3": "Wycofanie zgody"
+      }
+    }
+  },
+  "termsPage": {
+    "title": "Regulamin",
+    "lastUpdated": "Ostatnia aktualizacja: maj 2026",
+    "sections": {
+      "1": {
+        "title": "1. Potwierdzenie rezerwacji",
+        "text": "Rezerwacja zostaje potwierdzona dopiero po otrzymaniu zaliczki/płatności oraz pisemnego potwierdzenia."
+      },
+      "2": {
+        "title": "2. Zaliczki i płatności",
+        "items": {
+          "0": "Wymagana zaliczka w celu potwierdzenia rezerwacji.",
+          "1": "Pozostała kwota płatna przed podróżą.",
+          "2": "Opóźniona płatność może skutkować anulowaniem."
+        }
+      },
+      "3": {
+        "title": "3. Polityka anulowania",
+        "items": {
+          "0": "60+ dni → pełny zwrot minus opłaty administracyjne",
+          "1": "30–59 dni → częściowy zwrot",
+          "2": "0–29 dni → brak zwrotu, chyba że określono inaczej"
+        }
+      },
+      "4": {
+        "title": "4. Zmiany w planie podróży",
+        "text": "Trasy, zakwaterowanie lub aktywności mogą ulec zmianie z powodu pogody, ograniczeń rządowych, bezpieczeństwa, migracji zwierząt lub potrzeb operacyjnych."
+      },
+      "5": {
+        "title": "5. Paszporty i wizy",
+        "text": "Goście są odpowiedzialni za ważne paszporty, wizy i wymagania wjazdowe."
+      },
+      "6": {
+        "title": "6. Wymagania zdrowotne",
+        "text": "Podróżni są odpowiedzialni za szczepienia, leki i stan zdrowia."
+      },
+      "7": {
+        "title": "7. Ubezpieczenie podróżne",
+        "text": "Zaleca się kompleksowe ubezpieczenie obejmujące anulacje, ewakuację i nagłe przypadki medyczne."
+      },
+      "8": {
+        "title": "8. Ryzyko safari i dzikiej przyrody",
+        "text": "Safari wiąże się z nieodłącznym ryzykiem. Uczestnicy muszą stosować się do instrukcji przewodników."
+      },
+      "9": {
+        "title": "9. Ograniczenie odpowiedzialności",
+        "text": "Firma nie ponosi odpowiedzialności za obrażenia, straty, opóźnienia, kradzieże, warunki pogodowe lub zdarzenia poza kontrolą."
+      },
+      "10": {
+        "title": "10. Siła wyższa",
+        "text": "Obejmuje pandemie, niestabilność polityczną, strajki, wojny, klęski żywiołowe itp."
+      },
+      "11": {
+        "title": "11. Zgoda na zdjęcia",
+        "text": "Zdjęcia wykonane podczas wycieczek mogą być używane w celach marketingowych, chyba że uczestnik się sprzeciwi."
+      },
+      "12": {
+        "title": "12. Prawo właściwe",
+        "text": "Podlega prawu kraju, w którym firma jest zarejestrowana."
+      }
+    }
   }
 }
 
