@@ -519,5 +519,34 @@
         "text": "Les présentes conditions sont régies par les lois applicables dans le pays où l’entreprise est enregistrée."
       }
     }
+  },
+  "bookingModal": {
+    "reserveYourSpot": "Réservez votre place",
+    "bookSafari": "Réserver le safari {title}",
+    "closeForm": "Fermer le formulaire de réservation",
+    "success": {
+      "title": "Réservation envoyée !",
+      "message": "Merci pour votre demande. Notre équipe vous contactera bientôt pour confirmer votre safari.",
+      "done": "Terminé"
+    },
+    "form": {
+      "fullName": "Nom complet",
+      "fullNamePlaceholder": "ex. Jane Doe",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "phone": "Numéro de téléphone",
+      "phonePlaceholder": "+254 700 000 000",
+      "adults": "Adultes",
+      "children": "Enfants",
+      "travelDate": "Date de voyage",
+      "specialRequests": "Demandes spéciales",
+      "specialRequestsPlaceholder": "Besoins alimentaires, accessibilité, activités préférées...",
+      "submitting": "Envoi en cours...",
+      "confirmBooking": "Confirmer la réservation",
+      "cancel": "Annuler"
+    },
+    "errors": {
+      "recaptchaUnavailable": "Vérification de sécurité indisponible"
+    }
   }
 }

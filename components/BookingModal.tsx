@@ -2,9 +2,8 @@
 
 import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
-import {
-  useGoogleReCaptcha,
-} from "react-google-recaptcha-v3";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { useTranslations } from "next-intl";
 
 export default function BookingModal({
   open,
@@ -21,8 +20,8 @@ export default function BookingModal({
   const [submitted, setSubmitted] = useState(false);
   const [mounted, setMounted] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
-  const { executeRecaptcha } =
-  useGoogleReCaptcha();
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const t = useTranslations("bookingModal");
 
   useEffect(() => {
     setMounted(true);
@@ -55,24 +54,20 @@ export default function BookingModal({
     }
   };
 
-  async function handleSubmit(
-    e: React.FormEvent<HTMLFormElement>
-  ) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!executeRecaptcha) {
-      alert("Security check unavailable");
+      alert(t("errors.recaptchaUnavailable"));
       return;
     }
 
     setLoading(true);
 
     const formElement = e.currentTarget;
-
     const form = new FormData(formElement);
 
-    const recaptchaToken =
-      await executeRecaptcha("booking_submit");
+    const recaptchaToken = await executeRecaptcha("booking_submit");
 
     const booking = {
       tour_id: tourId,
@@ -87,17 +82,11 @@ export default function BookingModal({
     };
 
     try {
-      const response = await fetch(
-        "/api/booking",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type":
-              "application/json",
-          },
-          body: JSON.stringify(booking),
-        }
-      );
+      const response = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(booking),
+      });
 
       const data = await response.json();
 
@@ -127,22 +116,21 @@ export default function BookingModal({
         className="relative bg-white w-full max-w-lg max-h-[92vh] sm:max-h-[88vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col"
       >
 
-        {/* ── Header ── */}
+        {/* Header */}
         <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-[#041f0e] rounded-t-3xl sm:rounded-t-3xl shrink-0">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-[#b77e24] font-semibold">
-              Reserve Your Spot
+              {t("reserveYourSpot")}
             </p>
             <h2 className="text-white font-bold text-lg leading-tight mt-0.5">
-              Book {tourTitle} safari
+              {t("bookSafari", { title: tourTitle })}
             </h2>
           </div>
 
-          {/* ── Close button ── */}
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close booking form"
+            aria-label={t("closeForm")}
             className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 shrink-0"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -151,7 +139,7 @@ export default function BookingModal({
           </button>
         </div>
 
-        {/* ── Body ── */}
+        {/* Body */}
         <div className="px-6 py-6 flex-1">
 
           {submitted ? (
@@ -162,15 +150,15 @@ export default function BookingModal({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-800">Booking Submitted!</h3>
+              <h3 className="text-xl font-bold text-gray-800">{t("success.title")}</h3>
               <p className="text-gray-500 text-sm max-w-xs">
-                Thank you for your request. Our team will be in touch shortly to confirm your safari.
+                {t("success.message")}
               </p>
               <button
                 onClick={onClose}
                 className="mt-2 bg-[#b77e24] hover:bg-[#a06d1f] text-white px-8 py-3 rounded-xl font-semibold text-sm transition-colors duration-200 cursor-pointer"
               >
-                Done
+                {t("success.done")}
               </button>
             </div>
           ) : (
@@ -179,12 +167,12 @@ export default function BookingModal({
               {/* Full Name */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  Full Name
+                  {t("form.fullName")}
                 </label>
                 <input
                   name="name"
                   required
-                  placeholder="e.g. Jane Doe"
+                  placeholder={t("form.fullNamePlaceholder")}
                   className="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
                 />
               </div>
@@ -192,13 +180,13 @@ export default function BookingModal({
               {/* Email */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  Email Address
+                  {t("form.email")}
                 </label>
                 <input
                   name="email"
                   type="email"
                   required
-                  placeholder="you@example.com"
+                  placeholder={t("form.emailPlaceholder")}
                   className="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
                 />
               </div>
@@ -206,11 +194,11 @@ export default function BookingModal({
               {/* Phone */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  Phone Number
+                  {t("form.phone")}
                 </label>
                 <input
                   name="phone"
-                  placeholder="+254 700 000 000"
+                  placeholder={t("form.phonePlaceholder")}
                   className="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
                 />
               </div>
@@ -219,7 +207,7 @@ export default function BookingModal({
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                    Adults
+                    {t("form.adults")}
                   </label>
                   <input
                     type="number"
@@ -231,7 +219,7 @@ export default function BookingModal({
                 </div>
                 <div className="space-y-1">
                   <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                    Children
+                    {t("form.children")}
                   </label>
                   <input
                     type="number"
@@ -246,7 +234,7 @@ export default function BookingModal({
               {/* Travel Date */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  Travel Date
+                  {t("form.travelDate")}
                 </label>
                 <input
                   type="date"
@@ -259,17 +247,17 @@ export default function BookingModal({
               {/* Special Requests */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  Special Requests
+                  {t("form.specialRequests")}
                 </label>
                 <textarea
                   name="requests"
                   rows={3}
-                  placeholder="Dietary needs, accessibility requirements, preferred activities..."
+                  placeholder={t("form.specialRequestsPlaceholder")}
                   className="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200 resize-none"
                 />
               </div>
 
-              {/* ── Actions ── */}
+              {/* Actions */}
               <div className="flex gap-3 pt-2">
                 <button
                   type="submit"
@@ -282,10 +270,10 @@ export default function BookingModal({
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
                       </svg>
-                      Submitting...
+                      {t("form.submitting")}
                     </>
                   ) : (
-                    "Confirm Booking"
+                    t("form.confirmBooking")
                   )}
                 </button>
 
@@ -294,7 +282,7 @@ export default function BookingModal({
                   onClick={onClose}
                   className="px-5 py-3 rounded-xl border border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50 font-semibold text-sm transition-colors duration-200 cursor-pointer"
                 >
-                  "Cancel"
+                  {t("form.cancel")}
                 </button>
               </div>
 

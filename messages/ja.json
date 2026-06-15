@@ -519,6 +519,35 @@
         "text": "会社が登録されている国の法律に準拠します。"
       }
     }
+  },
+  "bookingModal": {
+    "reserveYourSpot": "席を確保する",
+    "bookSafari": "{title}サファリを予約する",
+    "closeForm": "予約フォームを閉じる",
+    "success": {
+      "title": "予約が送信されました！",
+      "message": "ご依頼ありがとうございます。サファリの確認のため、担当チームより近日中にご連絡いたします。",
+      "done": "完了"
+    },
+    "form": {
+      "fullName": "氏名",
+      "fullNamePlaceholder": "例：Jane Doe",
+      "email": "メールアドレス",
+      "emailPlaceholder": "you@example.com",
+      "phone": "電話番号",
+      "phonePlaceholder": "+254 700 000 000",
+      "adults": "大人",
+      "children": "子供",
+      "travelDate": "旅行日",
+      "specialRequests": "特別なリクエスト",
+      "specialRequestsPlaceholder": "食事制限、アクセシビリティ、希望アクティビティなど...",
+      "submitting": "送信中...",
+      "confirmBooking": "予約を確定する",
+      "cancel": "キャンセル"
+    },
+    "errors": {
+      "recaptchaUnavailable": "セキュリティ確認が利用できません"
+    }
   }
 }
 

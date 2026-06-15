@@ -519,6 +519,35 @@
         "text": "تخضع للقوانين المعمول بها في بلد تسجيل الشركة."
       }
     }
+  },
+  "bookingModal": {
+    "reserveYourSpot": "احجز مكانك",
+    "bookSafari": "احجز رحلة سفاري {title}",
+    "closeForm": "إغلاق نموذج الحجز",
+    "success": {
+      "title": "تم إرسال الحجز!",
+      "message": "شكرًا لطلبك. سيتواصل معك فريقنا قريبًا لتأكيد رحلة السفاري الخاصة بك.",
+      "done": "تم"
+    },
+    "form": {
+      "fullName": "الاسم الكامل",
+      "fullNamePlaceholder": "مثال: Jane Doe",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "you@example.com",
+      "phone": "رقم الهاتف",
+      "phonePlaceholder": "+254 700 000 000",
+      "adults": "البالغون",
+      "children": "الأطفال",
+      "travelDate": "تاريخ السفر",
+      "specialRequests": "طلبات خاصة",
+      "specialRequestsPlaceholder": "الاحتياجات الغذائية، متطلبات الوصول، الأنشطة المفضلة...",
+      "submitting": "جارٍ الإرسال...",
+      "confirmBooking": "تأكيد الحجز",
+      "cancel": "إلغاء"
+    },
+    "errors": {
+      "recaptchaUnavailable": "التحقق الأمني غير متاح"
+    }
   }
 }
 

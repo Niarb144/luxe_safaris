@@ -519,6 +519,35 @@
         "text": "Onderworpen aan de wetten die gelden in het land waar het bedrijf is geregistreerd."
       }
     }
+  },
+  "bookingModal": {
+    "reserveYourSpot": "Reserveer je plek",
+    "bookSafari": "Boek safari {title}",
+    "closeForm": "Sluit boekingsformulier",
+    "success": {
+      "title": "Boeking verzonden!",
+      "message": "Bedankt voor je aanvraag. Ons team neemt binnenkort contact met je op om je safari te bevestigen.",
+      "done": "Klaar"
+    },
+    "form": {
+      "fullName": "Volledige naam",
+      "fullNamePlaceholder": "bijv. Jane Doe",
+      "email": "E-mailadres",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Telefoonnummer",
+      "phonePlaceholder": "+254 700 000 000",
+      "adults": "Volwassenen",
+      "children": "Kinderen",
+      "travelDate": "Reisdatum",
+      "specialRequests": "Speciale verzoeken",
+      "specialRequestsPlaceholder": "Dieetwensen, toegankelijkheid, voorkeuractiviteiten...",
+      "submitting": "Verzenden...",
+      "confirmBooking": "Bevestig boeking",
+      "cancel": "Annuleren"
+    },
+    "errors": {
+      "recaptchaUnavailable": "Beveiligingscontrole niet beschikbaar"
+    }
   }
 }
 

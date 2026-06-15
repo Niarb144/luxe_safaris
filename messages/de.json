@@ -519,6 +519,35 @@
         "text": "Es gelten die Gesetze des Landes, in dem das Unternehmen registriert ist."
       }
     }
+  },
+  "bookingModal": {
+    "reserveYourSpot": "Sichern Sie sich Ihren Platz",
+    "bookSafari": "Safari {title} buchen",
+    "closeForm": "Buchungsformular schließen",
+    "success": {
+      "title": "Buchung eingereicht!",
+      "message": "Vielen Dank für Ihre Anfrage. Unser Team wird sich in Kürze mit Ihnen in Verbindung setzen, um Ihre Safari zu bestätigen.",
+      "done": "Fertig"
+    },
+    "form": {
+      "fullName": "Vollständiger Name",
+      "fullNamePlaceholder": "z. B. Jane Doe",
+      "email": "E-Mail-Adresse",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Telefonnummer",
+      "phonePlaceholder": "+254 700 000 000",
+      "adults": "Erwachsene",
+      "children": "Kinder",
+      "travelDate": "Reisedatum",
+      "specialRequests": "Besondere Wünsche",
+      "specialRequestsPlaceholder": "Ernährungsbedürfnisse, Barrierefreiheit, bevorzugte Aktivitäten...",
+      "submitting": "Wird gesendet...",
+      "confirmBooking": "Buchung bestätigen",
+      "cancel": "Abbrechen"
+    },
+    "errors": {
+      "recaptchaUnavailable": "Sicherheitsprüfung nicht verfügbar"
+    }
   }
 }
 

@@ -519,6 +519,35 @@
         "text": "Регулируется законодательством страны регистрации компании."
       }
     }
+  },
+  "bookingModal": {
+    "reserveYourSpot": "Забронируйте место",
+    "bookSafari": "Забронировать сафари {title}",
+    "closeForm": "Закрыть форму бронирования",
+    "success": {
+      "title": "Бронирование отправлено!",
+      "message": "Спасибо за ваш запрос. Наша команда свяжется с вами в ближайшее время для подтверждения сафари.",
+      "done": "Готово"
+    },
+    "form": {
+      "fullName": "Полное имя",
+      "fullNamePlaceholder": "например, Jane Doe",
+      "email": "Электронная почта",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Номер телефона",
+      "phonePlaceholder": "+254 700 000 000",
+      "adults": "Взрослые",
+      "children": "Дети",
+      "travelDate": "Дата поездки",
+      "specialRequests": "Особые пожелания",
+      "specialRequestsPlaceholder": "Диетические требования, доступность, предпочтительные активности...",
+      "submitting": "Отправка...",
+      "confirmBooking": "Подтвердить бронирование",
+      "cancel": "Отмена"
+    },
+    "errors": {
+      "recaptchaUnavailable": "Проверка безопасности недоступна"
+    }
   }
 }
 

@@ -519,5 +519,34 @@
         "text": "适用公司注册所在国家的法律。"
       }
     }
+  },
+  "bookingModal": {
+    "reserveYourSpot": "预订您的位置",
+    "bookSafari": "预订 {title} 狩猎之旅",
+    "closeForm": "关闭预订表单",
+    "success": {
+      "title": "预订已提交！",
+      "message": "感谢您的申请。我们的团队将尽快与您联系以确认您的狩猎行程。",
+      "done": "完成"
+    },
+    "form": {
+      "fullName": "全名",
+      "fullNamePlaceholder": "例如：Jane Doe",
+      "email": "电子邮箱",
+      "emailPlaceholder": "you@example.com",
+      "phone": "电话号码",
+      "phonePlaceholder": "+254 700 000 000",
+      "adults": "成人",
+      "children": "儿童",
+      "travelDate": "出行日期",
+      "specialRequests": "特殊要求",
+      "specialRequestsPlaceholder": "饮食要求、无障碍需求、偏好活动等...",
+      "submitting": "提交中...",
+      "confirmBooking": "确认预订",
+      "cancel": "取消"
+    },
+    "errors": {
+      "recaptchaUnavailable": "安全验证不可用"
+    }
   }
 }

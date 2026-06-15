@@ -510,5 +510,34 @@
         "text": "Governed by laws applicable in the country where the company is registered."
       }
     }
+  },
+  "bookingModal": {
+    "reserveYourSpot": "Reserve Your Spot",
+    "bookSafari": "Book {title} safari",
+    "closeForm": "Close booking form",
+    "success": {
+      "title": "Booking Submitted!",
+      "message": "Thank you for your request. Our team will be in touch shortly to confirm your safari.",
+      "done": "Done"
+    },
+    "form": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "e.g. Jane Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+254 700 000 000",
+      "adults": "Adults",
+      "children": "Children",
+      "travelDate": "Travel Date",
+      "specialRequests": "Special Requests",
+      "specialRequestsPlaceholder": "Dietary needs, accessibility requirements, preferred activities...",
+      "submitting": "Submitting...",
+      "confirmBooking": "Confirm Booking",
+      "cancel": "Cancel"
+    },
+    "errors": {
+      "recaptchaUnavailable": "Security check unavailable"
+    }
   }
 }
