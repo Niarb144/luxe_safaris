@@ -539,5 +539,35 @@
     "errors": {
       "recaptchaUnavailable": "Security check unavailable"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "Accommodation not found",
+    "overview": "Overview",
+    "accommodationType": "Accommodation Type",
+    "gallery": "Gallery",
+    "amenities": "Amenities",
+    "services": "Services",
+    "location": "Location",
+    "quickHighlights": "Quick Highlights",
+    "destination": "Destination:",
+    "class": "Class:",
+    "amenitiesLabel": "Amenities:",
+    "sidebar": {
+      "title": "Experience Luxury Safaris",
+      "subtitle": "Let us help you plan a tailored African safari stay experience.",
+      "enquireNow": "Enquire Now"
+    }
+  },
+  "destinationDetail": {
+    "about": "About",
+    "experience": "Experience",
+    "destinationHighlights": "Destination Highlights",
+    "information": "Information",
+    "quickFacts": "Quick Facts",
+    "explore": "Explore",
+    "location": "Location",
+    "safaris": "Safaris",
+    "toursIn": "Tours in {name}",
+    "from": "From"
   }
 }

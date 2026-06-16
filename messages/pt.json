@@ -548,5 +548,35 @@
     "errors": {
       "recaptchaUnavailable": "Verificação de segurança indisponível"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "Alojamento não encontrado",
+    "overview": "Visão geral",
+    "accommodationType": "Tipo de alojamento",
+    "gallery": "Galeria",
+    "amenities": "Comodidades",
+    "services": "Serviços",
+    "location": "Localização",
+    "quickHighlights": "Destaques",
+    "destination": "Destino:",
+    "class": "Classe:",
+    "amenitiesLabel": "Comodidades:",
+    "sidebar": {
+      "title": "Experimente safáris de luxo",
+      "subtitle": "Deixe-nos ajudá-lo a planear uma experiência de estadia de safári africano personalizada.",
+      "enquireNow": "Fazer consulta"
+    }
+  },
+  "destinationDetail": {
+    "about": "Sobre",
+    "experience": "Experiência",
+    "destinationHighlights": "Destaques do destino",
+    "information": "Informação",
+    "quickFacts": "Informações rápidas",
+    "explore": "Explorar",
+    "location": "Localização",
+    "safaris": "Safáris",
+    "toursIn": "Tours em {name}",
+    "from": "A partir de"
   }
 }

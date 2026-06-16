@@ -548,6 +548,36 @@
     "errors": {
       "recaptchaUnavailable": "Beveiligingscontrole niet beschikbaar"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "Accommodatie niet gevonden",
+    "overview": "Overzicht",
+    "accommodationType": "Type accommodatie",
+    "gallery": "Galerij",
+    "amenities": "Faciliteiten",
+    "services": "Diensten",
+    "location": "Locatie",
+    "quickHighlights": "Hoogtepunten",
+    "destination": "Bestemming:",
+    "class": "Klasse:",
+    "amenitiesLabel": "Faciliteiten:",
+    "sidebar": {
+      "title": "Ervaar luxe safari’s",
+      "subtitle": "Laat ons je helpen bij het plannen van een op maat gemaakte Afrikaanse safari-ervaring.",
+      "enquireNow": "Informeer nu"
+    }
+  },
+  "destinationDetail": {
+    "about": "Over",
+    "experience": "Ervaring",
+    "destinationHighlights": "Hoogtepunten van de bestemming",
+    "information": "Informatie",
+    "quickFacts": "Snelle feiten",
+    "explore": "Ontdekken",
+    "location": "Locatie",
+    "safaris": "Safari’s",
+    "toursIn": "Tours in {name}",
+    "from": "Vanaf"
   }
 }
 

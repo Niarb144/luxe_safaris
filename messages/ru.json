@@ -548,6 +548,36 @@
     "errors": {
       "recaptchaUnavailable": "Проверка безопасности недоступна"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "Проживание не найдено",
+    "overview": "Обзор",
+    "accommodationType": "Тип размещения",
+    "gallery": "Галерея",
+    "amenities": "Удобства",
+    "services": "Услуги",
+    "location": "Местоположение",
+    "quickHighlights": "Ключевые особенности",
+    "destination": "Направление:",
+    "class": "Класс:",
+    "amenitiesLabel": "Удобства:",
+    "sidebar": {
+      "title": "Ощутите роскошные сафари",
+      "subtitle": "Позвольте нам помочь вам спланировать индивидуальное сафари-путешествие по Африке.",
+      "enquireNow": "Запросить сейчас"
+    }
+  },
+  "destinationDetail": {
+    "about": "О",
+    "experience": "Опыт",
+    "destinationHighlights": "Основные особенности направления",
+    "information": "Информация",
+    "quickFacts": "Краткие факты",
+    "explore": "Исследовать",
+    "location": "Местоположение",
+    "safaris": "Сафари",
+    "toursIn": "Туры в {name}",
+    "from": "От"
   }
 }
 

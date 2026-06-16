@@ -1,50 +1,67 @@
 import { supabase } from "@/lib/supabase";
 import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
 import ContactCard from "@/components/ContactCard";
+import { getTranslations } from "next-intl/server";
+import { applyTranslation, applySubRecordTranslations } from "@/lib/translations";
 
 export default async function DestinationPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const t = await getTranslations("destinationDetail");
 
-  const { data: destination } = await supabase
+  const { data: destinationData } = await supabase
     .from("destinations")
     .select("*")
     .eq("slug", slug)
     .single();
 
-  if (!destination) return null;
+  if (!destinationData) return null;
+
+  // Translate the destination record itself
+  const destination = await applyTranslation(
+    "destinations",
+    destinationData,
+    ["name", "description", "country"],
+    locale
+  );
 
   const { data, error } = await supabase
-  .from("tour_destinations")
-  .select(`
-    tours (
-      id,
-      title,
-      slug,
-      price
-    )
-  `)
-  .eq("destination_id", destination.id);
+    .from("tour_destinations")
+    .select(`
+      tours (
+        id,
+        title,
+        slug,
+        price
+      )
+    `)
+    .eq("destination_id", destinationData.id);
 
   if (error) {
     console.error(error);
   }
 
-  const relatedTours = data?.map((item) => item.tours);
+  const rawRelatedTours = data?.map((item) => item.tours).filter(Boolean) ?? [];
 
-  console.log("Related Tours:", relatedTours); 
+  // Translate related tour titles
+  const relatedTours = await applySubRecordTranslations(
+    rawRelatedTours,
+    "tours",
+    ["title"],
+    locale
+  );
 
-  const destinationId = destination.id;
+  const destinationId = destinationData.id;
 
-  const { data: facts } = await supabase
+  const { data: rawFacts } = await supabase
     .from("destination_facts")
     .select("*")
     .eq("destination_id", destinationId);
 
-  const { data: highlights } = await supabase
+  const { data: rawHighlights } = await supabase
     .from("destination_highlights")
     .select("*")
     .eq("destination_id", destinationId);
@@ -53,6 +70,21 @@ export default async function DestinationPage({
     .from("destination_images")
     .select("*")
     .eq("destination_id", destinationId);
+
+  // Translate facts and highlights
+  const facts = await applySubRecordTranslations(
+    rawFacts ?? [],
+    "destination_facts",
+    ["fact"],
+    locale
+  );
+
+  const highlights = await applySubRecordTranslations(
+    rawHighlights ?? [],
+    "destination_highlights",
+    ["highlight"],
+    locale
+  );
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-gray-900">
@@ -67,10 +99,8 @@ export default async function DestinationPage({
           className="w-full h-full object-cover"
         />
 
-        {/* overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
 
-        {/* content */}
         <div className="absolute bottom-0 left-0 w-full">
           <div className="max-w-7xl mx-auto px-6 pb-16">
             <div className="max-w-3xl">
@@ -85,7 +115,6 @@ export default async function DestinationPage({
                   {destination.name}
                 </h1>
               )}
-
             </div>
           </div>
         </div>
@@ -97,7 +126,7 @@ export default async function DestinationPage({
         {destination.description && (
           <section className="prose max-w-none">
             <h2 className="text-4xl font-semibold leading-tight mb-6">
-                About <span className="text-[#b77e24]">{destination.name}</span>
+              {t("about")} <span className="text-[#b77e24]">{destination.name}</span>
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               {destination.description}
@@ -109,10 +138,7 @@ export default async function DestinationPage({
         {images && images.length > 1 && (
           <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {images.slice(1).map((image: any) => (
-              <div
-                key={image.id}
-                className="relative overflow-hidden rounded-[28px] h-[320px] group"
-              >
+              <div key={image.id} className="relative overflow-hidden rounded-[28px] h-[320px] group">
                 <img
                   src={image.image_url}
                   alt={destination.name}
@@ -128,11 +154,11 @@ export default async function DestinationPage({
           <section className="grid lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4">
               <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
-                Experience
+                {t("experience")}
               </p>
 
               <h2 className="text-4xl font-semibold leading-tight">
-                Destination Highlights
+                {t("destinationHighlights")}
               </h2>
             </div>
 
@@ -142,7 +168,6 @@ export default async function DestinationPage({
                   <span className="text-4xl text-gray-300 font-light">
                     0{index + 1}
                   </span>
-
                   <p className="text-lg leading-relaxed text-gray-700">
                     {item.highlight}
                   </p>
@@ -157,22 +182,18 @@ export default async function DestinationPage({
           <section className="grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
               <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
-                Information
+                {t("information")}
               </p>
 
               <h2 className="text-4xl font-semibold">
-                Quick Facts
+                {t("quickFacts")}
               </h2>
             </div>
 
             <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-8">
               {facts.map((fact: any) => (
-                <div
-                  key={fact.id}
-                  className="flex items-start gap-4"
-                >
+                <div key={fact.id} className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-black mt-3" />
-
                   <p className="text-gray-700 leading-relaxed text-lg">
                     {fact.fact}
                   </p>
@@ -187,11 +208,11 @@ export default async function DestinationPage({
           <section className="space-y-8">
             <div>
               <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
-                Explore
+                {t("explore")}
               </p>
 
               <h2 className="text-4xl font-semibold">
-                Location
+                {t("location")}
               </h2>
             </div>
 
@@ -209,34 +230,34 @@ export default async function DestinationPage({
           <section className="space-y-8">
             <div>
               <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
-                Safaris
+                {t("safaris")}
               </p>
 
               <h2 className="text-4xl font-semibold">
-                Tours in {destination.name}
+                {t("toursIn", { name: destination.name })}
               </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-             {relatedTours?.map((tour: any) => (
-              <a
-                key={tour.id}
-                href={`/tours/${tour.slug}`}
-                className="group bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
-              >
-                <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-semibold group-hover:opacity-70 transition">
-                    {tour.title}
-                  </h3>
+              {relatedTours?.map((tour: any) => (
+                <a
+                  key={tour.id}
+                  href={`/tours/${tour.slug}`}
+                  className="group bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
+                >
+                  <div className="p-6 space-y-4">
+                    <h3 className="text-2xl font-semibold group-hover:opacity-70 transition">
+                      {tour.title}
+                    </h3>
 
-                  {tour.price && (
-                    <p className="text-lg font-medium">
-                      From ${tour.price}
-                    </p>
-                  )}
-                </div>
-              </a>
-            ))}
+                    {tour.price && (
+                      <p className="text-lg font-medium">
+                        {t("from")} ${tour.price}
+                      </p>
+                    )}
+                  </div>
+                </a>
+              ))}
             </div>
           </section>
         )}

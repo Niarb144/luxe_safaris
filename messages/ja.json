@@ -548,6 +548,36 @@
     "errors": {
       "recaptchaUnavailable": "セキュリティ確認が利用できません"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "宿泊施設が見つかりません",
+    "overview": "概要",
+    "accommodationType": "宿泊タイプ",
+    "gallery": "ギャラリー",
+    "amenities": "設備",
+    "services": "サービス",
+    "location": "場所",
+    "quickHighlights": "主な特徴",
+    "destination": "目的地：",
+    "class": "クラス：",
+    "amenitiesLabel": "設備：",
+    "sidebar": {
+      "title": "ラグジュアリーサファリを体験",
+      "subtitle": "あなただけのアフリカサファリ滞在体験の計画をお手伝いします。",
+      "enquireNow": "問い合わせる"
+    }
+  },
+  "destinationDetail": {
+    "about": "概要",
+    "experience": "体験",
+    "destinationHighlights": "目的地のハイライト",
+    "information": "情報",
+    "quickFacts": "基本情報",
+    "explore": "探索",
+    "location": "場所",
+    "safaris": "サファリ",
+    "toursIn": "{name}のツアー",
+    "from": "料金"
   }
 }
 

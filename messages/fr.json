@@ -548,5 +548,35 @@
     "errors": {
       "recaptchaUnavailable": "Vérification de sécurité indisponible"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "Hébergement introuvable",
+    "overview": "Aperçu",
+    "accommodationType": "Type d’hébergement",
+    "gallery": "Galerie",
+    "amenities": "Équipements",
+    "services": "Services",
+    "location": "Emplacement",
+    "quickHighlights": "Points forts",
+    "destination": "Destination :",
+    "class": "Catégorie :",
+    "amenitiesLabel": "Équipements :",
+    "sidebar": {
+      "title": "Vivez des safaris de luxe",
+      "subtitle": "Laissez-nous vous aider à planifier une expérience de séjour safari africaine sur mesure.",
+      "enquireNow": "Faire une demande"
+    }
+  },
+  "destinationDetail": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "destinationHighlights": "Points forts de la destination",
+    "information": "Informations",
+    "quickFacts": "Informations clés",
+    "explore": "Explorer",
+    "location": "Emplacement",
+    "safaris": "Safaris",
+    "toursIn": "Circuits à {name}",
+    "from": "À partir de"
   }
 }

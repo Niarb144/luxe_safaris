@@ -548,6 +548,36 @@
     "errors": {
       "recaptchaUnavailable": "Weryfikacja bezpieczeństwa niedostępna"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "Nie znaleziono zakwaterowania",
+    "overview": "Przegląd",
+    "accommodationType": "Rodzaj zakwaterowania",
+    "gallery": "Galeria",
+    "amenities": "Udogodnienia",
+    "services": "Usługi",
+    "location": "Lokalizacja",
+    "quickHighlights": "Najważniejsze informacje",
+    "destination": "Miejsce docelowe:",
+    "class": "Klasa:",
+    "amenitiesLabel": "Udogodnienia:",
+    "sidebar": {
+      "title": "Doświadcz luksusowych safari",
+      "subtitle": "Pozwól nam pomóc Ci zaplanować spersonalizowany pobyt safari w Afryce.",
+      "enquireNow": "Zapytaj teraz"
+    }
+  },
+  "destinationDetail": {
+    "about": "O",
+    "experience": "Doświadczenie",
+    "destinationHighlights": "Najważniejsze atrakcje miejsca",
+    "information": "Informacje",
+    "quickFacts": "Szybkie fakty",
+    "explore": "Odkrywaj",
+    "location": "Lokalizacja",
+    "safaris": "Safari",
+    "toursIn": "Wycieczki w {name}",
+    "from": "Od"
   }
 }
 

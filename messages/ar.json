@@ -548,6 +548,36 @@
     "errors": {
       "recaptchaUnavailable": "التحقق الأمني غير متاح"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "لم يتم العثور على مكان الإقامة",
+    "overview": "نظرة عامة",
+    "accommodationType": "نوع الإقامة",
+    "gallery": "معرض الصور",
+    "amenities": "المرافق",
+    "services": "الخدمات",
+    "location": "الموقع",
+    "quickHighlights": "أبرز المميزات",
+    "destination": "الوجهة:",
+    "class": "الفئة:",
+    "amenitiesLabel": "المرافق:",
+    "sidebar": {
+      "title": "استمتع برحلات السفاري الفاخرة",
+      "subtitle": "دعنا نساعدك في التخطيط لتجربة إقامة سفاري أفريقية مصممة خصيصًا لك.",
+      "enquireNow": "استفسر الآن"
+    }
+  },
+  "destinationDetail": {
+    "about": "حول",
+    "experience": "التجربة",
+    "destinationHighlights": "أبرز معالم الوجهة",
+    "information": "المعلومات",
+    "quickFacts": "حقائق سريعة",
+    "explore": "استكشف",
+    "location": "الموقع",
+    "safaris": "رحلات السفاري",
+    "toursIn": "الجولات في {name}",
+    "from": "ابتداءً من"
   }
 }
 

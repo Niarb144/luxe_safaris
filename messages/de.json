@@ -548,6 +548,36 @@
     "errors": {
       "recaptchaUnavailable": "Sicherheitsprüfung nicht verfügbar"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "Unterkunft nicht gefunden",
+    "overview": "Übersicht",
+    "accommodationType": "Unterkunftsart",
+    "gallery": "Galerie",
+    "amenities": "Ausstattung",
+    "services": "Dienstleistungen",
+    "location": "Standort",
+    "quickHighlights": "Highlights",
+    "destination": "Reiseziel:",
+    "class": "Kategorie:",
+    "amenitiesLabel": "Ausstattung:",
+    "sidebar": {
+      "title": "Erleben Sie Luxussafaris",
+      "subtitle": "Lassen Sie uns Ihnen helfen, ein maßgeschneidertes afrikanisches Safari-Aufenthaltserlebnis zu planen.",
+      "enquireNow": "Jetzt anfragen"
+    }
+  },
+  "destinationDetail": {
+    "about": "Über",
+    "experience": "Erlebnis",
+    "destinationHighlights": "Highlights des Reiseziels",
+    "information": "Informationen",
+    "quickFacts": "Kurzinfos",
+    "explore": "Entdecken",
+    "location": "Standort",
+    "safaris": "Safaris",
+    "toursIn": "Touren in {name}",
+    "from": "Ab"
   }
 }
 

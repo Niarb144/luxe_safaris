@@ -548,6 +548,36 @@
     "errors": {
       "recaptchaUnavailable": "Verificación de seguridad no disponible"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "Alojamiento no encontrado",
+    "overview": "Descripción general",
+    "accommodationType": "Tipo de alojamiento",
+    "gallery": "Galería",
+    "amenities": "Servicios",
+    "services": "Servicios",
+    "location": "Ubicación",
+    "quickHighlights": "Aspectos destacados",
+    "destination": "Destino:",
+    "class": "Categoría:",
+    "amenitiesLabel": "Servicios:",
+    "sidebar": {
+      "title": "Vive safaris de lujo",
+      "subtitle": "Permítenos ayudarte a planificar una experiencia de estancia de safari africano a medida.",
+      "enquireNow": "Consultar ahora"
+    }
+  },
+  "destinationDetail": {
+    "about": "Acerca de",
+    "experience": "Experiencia",
+    "destinationHighlights": "Aspectos destacados del destino",
+    "information": "Información",
+    "quickFacts": "Datos rápidos",
+    "explore": "Explorar",
+    "location": "Ubicación",
+    "safaris": "Safaris",
+    "toursIn": "Tours en {name}",
+    "from": "Desde"
   }
 }
 

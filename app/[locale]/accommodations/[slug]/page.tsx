@@ -3,6 +3,8 @@ import Image from "next/image";
 import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
 import ContactCard from "@/components/ContactCard";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { applyTranslation } from "@/lib/translations";
 import {
   Wifi,
   Car,
@@ -23,11 +25,13 @@ import {
 export default async function AccommodationPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const t = await getTranslations("accommodationDetail");
+  const tLevels = await getTranslations("accommodations");
 
-  const { data: accommodation, error } = await supabase
+  const { data, error } = await supabase
     .from("accommodations")
     .select(
       `
@@ -41,13 +45,22 @@ export default async function AccommodationPage({
     .eq("slug", slug)
     .single();
 
-  if (error || !accommodation) {
+  if (error || !data) {
     return (
       <div className="max-w-5xl mx-auto p-10 text-center text-gray-600">
-        Accommodation not found
+        {t("notFound")}
       </div>
     );
   }
+
+  // Translate DB content — accommodation_type, description, hotel_name, location
+  // (classification is intentionally excluded — used for filter matching elsewhere)
+  const accommodation = await applyTranslation(
+    "accommodations",
+    data,
+    ["accommodation_type", "description", "hotel_name", "location"],
+    locale
+  );
 
   const amenityIcons: Record<string, any> = {
     wifi: Wifi,
@@ -66,8 +79,7 @@ export default async function AccommodationPage({
     const key = Object.keys(amenityIcons).find((k) =>
       amenity.toLowerCase().includes(k)
     );
-
-    return key ? amenityIcons[key] : Sparkles; // fallback icon
+    return key ? amenityIcons[key] : Sparkles;
   };
 
   return (
@@ -83,10 +95,8 @@ export default async function AccommodationPage({
           className="w-full h-full object-cover scale-105"
         />
 
-        {/* overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
 
-        {/* HERO CONTENT */}
         <div className="absolute bottom-0 left-0 w-full">
           <div className="max-w-7xl mx-auto px-6 pb-16">
             <div className="max-w-3xl space-y-4">
@@ -102,7 +112,7 @@ export default async function AccommodationPage({
 
               {accommodation.classification && (
                 <span className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1 rounded-full text-sm">
-                  {accommodation.classification}
+                  {tLevels(`levels.${accommodation.classification}`)}
                 </span>
               )}
             </div>
@@ -117,7 +127,7 @@ export default async function AccommodationPage({
           {/* DESCRIPTION */}
           {accommodation.description && (
             <section>
-              <h2 className="text-2xl font-semibold mb-4">Overview</h2>
+              <h2 className="text-2xl font-semibold mb-4">{t("overview")}</h2>
               <p className="text-gray-700 leading-relaxed text-lg">
                 {accommodation.description}
               </p>
@@ -129,7 +139,7 @@ export default async function AccommodationPage({
             <section>
               <div className="flex items-center gap-3 mb-4">
                 <HotelIcon className="w-5 h-5 text-[#0f2e1d]" />
-                <h2 className="text-2xl font-semibold">Accommodation Type</h2>
+                <h2 className="text-2xl font-semibold">{t("accommodationType")}</h2>
               </div>
               <p className="text-gray-700 leading-relaxed text-lg">
                 {accommodation.accommodation_type}
@@ -140,14 +150,11 @@ export default async function AccommodationPage({
           {/* IMAGE GALLERY */}
           {accommodation.images?.length > 0 && (
             <section>
-              <h2 className="text-2xl font-semibold mb-6">Gallery</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t("gallery")}</h2>
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {accommodation.images.map((image: string, index: number) => (
-                  <div
-                    key={index}
-                    className="overflow-hidden rounded-xl group"
-                  >
+                  <div key={index} className="overflow-hidden rounded-xl group">
                     <Image
                       src={image}
                       alt={accommodation.hotel_name}
@@ -164,22 +171,18 @@ export default async function AccommodationPage({
           {/* AMENITIES */}
           {accommodation.amenities?.length > 0 && (
             <section>
-              <h2 className="text-2xl font-semibold mb-6">Amenities</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t("amenities")}</h2>
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {accommodation.amenities.map((amenity: string) => {
                   const Icon = getAmenityIcon(amenity);
-
                   return (
                     <div
                       key={amenity}
                       className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-gray-200 hover:shadow-sm transition"
                     >
                       <Icon className="w-5 h-5 text-[#0f2e1d]" />
-
-                      <span className="text-sm text-gray-700 capitalize">
-                        {amenity}
-                      </span>
+                      <span className="text-sm text-gray-700 capitalize">{amenity}</span>
                     </div>
                   );
                 })}
@@ -190,7 +193,7 @@ export default async function AccommodationPage({
           {/* Services */}
           {accommodation.services?.length > 0 && (
             <section>
-              <h2 className="text-2xl font-semibold mb-6">Services</h2>
+              <h2 className="text-2xl font-semibold mb-6">{t("services")}</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {accommodation.services.map((service: string) => (
@@ -199,10 +202,7 @@ export default async function AccommodationPage({
                     className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white border border-gray-200 hover:shadow-sm transition"
                   >
                     <CheckIcon className="w-5 h-5 text-[#0f2e1d]" />
-
-                    <span className="text-sm text-gray-700 capitalize">
-                      {service}
-                    </span>
+                    <span className="text-sm text-gray-700 capitalize">{service}</span>
                   </div>
                 ))}
               </div>
@@ -214,7 +214,7 @@ export default async function AccommodationPage({
             <section>
               <div className="flex items-center gap-3 mb-4">
                 <MapIcon className="w-5 h-5 text-[#0f2e1d]" />
-                <h2 className="text-2xl font-semibold">Location</h2>
+                <h2 className="text-2xl font-semibold">{t("location")}</h2>
               </div>
               <p className="text-gray-700 leading-relaxed text-lg">
                 {accommodation.location}
@@ -234,33 +234,31 @@ export default async function AccommodationPage({
               </div>
             </section>
           )}
-          
+
         </div>
 
         {/* SIDEBAR */}
         <aside className="space-y-6 lg:sticky lg:top-24 h-fit">
           <div className="bg-white rounded-2xl shadow-sm border p-6 space-y-4">
-            <h3 className="text-lg font-semibold">Quick Highlights</h3>
+            <h3 className="text-lg font-semibold">{t("quickHighlights")}</h3>
 
             {accommodation.destinations?.name && (
               <div className="text-sm text-gray-600">
-                <span className="font-medium text-gray-900">Destination:</span>{" "}
+                <span className="font-medium text-gray-900">{t("destination")}</span>{" "}
                 {accommodation.destinations.name}
               </div>
             )}
 
             {accommodation.classification && (
               <div className="text-sm text-gray-600">
-                <span className="font-medium text-gray-900">Class:</span>{" "}
-                {accommodation.classification}
+                <span className="font-medium text-gray-900">{t("class")}</span>{" "}
+                {tLevels(`levels.${accommodation.classification}`)}
               </div>
             )}
 
             {accommodation.amenities?.length > 0 && (
               <div className="text-sm text-gray-600">
-                <span className="font-medium text-gray-900">
-                  Amenities:
-                </span>{" "}
+                <span className="font-medium text-gray-900">{t("amenitiesLabel")}</span>{" "}
                 {accommodation.amenities.slice(0, 4).join(", ")}...
               </div>
             )}
@@ -268,14 +266,14 @@ export default async function AccommodationPage({
 
           <div className="bg-[#0f2e1d] text-white rounded-2xl p-6">
             <h3 className="text-lg font-semibold mb-2">
-              Experience Luxury Safaris
+              {t("sidebar.title")}
             </h3>
             <p className="text-sm text-white/80 mb-4">
-              Let us help you plan a tailored African safari stay experience.
+              {t("sidebar.subtitle")}
             </p>
             <button className="w-full bg-[#c8a24a] hover:bg-[#b8923f] text-black font-medium py-3 rounded-xl transition">
               <Link className="inline-block mr-2" href="/contact">
-                Enquire Now
+                {t("sidebar.enquireNow")}
               </Link>
             </button>
           </div>

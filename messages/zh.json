@@ -548,5 +548,35 @@
     "errors": {
       "recaptchaUnavailable": "安全验证不可用"
     }
+  },
+  "accommodationDetail": {
+    "notFound": "未找到住宿",
+    "overview": "概览",
+    "accommodationType": "住宿类型",
+    "gallery": "图库",
+    "amenities": "设施",
+    "services": "服务",
+    "location": "位置",
+    "quickHighlights": "亮点",
+    "destination": "目的地：",
+    "class": "等级：",
+    "amenitiesLabel": "设施：",
+    "sidebar": {
+      "title": "体验奢华狩猎之旅",
+      "subtitle": "让我们帮助您规划量身定制的非洲狩猎住宿体验。",
+      "enquireNow": "立即咨询"
+    }
+  },
+  "destinationDetail": {
+    "about": "关于",
+    "experience": "体验",
+    "destinationHighlights": "目的地亮点",
+    "information": "信息",
+    "quickFacts": "快速信息",
+    "explore": "探索",
+    "location": "位置",
+    "safaris": "狩猎旅行",
+    "toursIn": "{name}的旅行",
+    "from": "起价"
   }
 }

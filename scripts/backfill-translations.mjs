@@ -1,7 +1,10 @@
 /**
  * backfill-translations.mjs
  * Translates all existing Supabase content into the universal translations table.
- * Uses Azure Translator (2M free chars/month) — fast, no daily quota issues.
+ * Uses Azure Translator (2M free chars/month).
+ *
+ * Supports both string fields and array fields (text[]) — array elements are
+ * translated individually and stored as a JSON-encoded array string.
  *
  * Safe to rerun at any time:
  *   - Skips already translated records
@@ -23,7 +26,6 @@ import * as dotenv from 'dotenv'
 import { fileURLToPath } from 'url'
 import path from 'path'
 
-// Load .env.local
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 dotenv.config({ path: path.join(__dirname, '../.env.local') })
 
@@ -36,16 +38,15 @@ const AZURE_REGION = process.env.AZURE_TRANSLATOR_REGION
 
 const LOCALES = ['fr', 'de', 'es', 'it', 'nl', 'pl', 'zh', 'ja', 'ru', 'ar', 'pt']
 
-// Azure uses different codes for some languages
 const AZURE_LANG_MAP = {
-  zh: 'zh-Hans', // Simplified Chinese
-  pt: 'pt-pt',   // European Portuguese (vs pt-br for Brazilian)
+  zh: 'zh-Hans',
+  pt: 'pt-pt',
 }
 
 /**
  * TABLES config — the single source of truth for what gets translated.
- * To add a new table: add an entry below with its translatable fields.
- * To add a new column: add the field name to the existing entry and rerun.
+ * fields: array of strings — supports both plain text columns and text[] array columns.
+ * Array columns are detected automatically at runtime (no config change needed).
  */
 const TABLES = [
   {
@@ -54,7 +55,7 @@ const TABLES = [
   },
   {
     name: 'accommodations',
-    fields: ['accommodation_type', 'description', 'hotel_name', 'location'],
+    fields: ['accommodation_type', 'description', 'hotel_name', 'location', 'amenities', 'services'],
   },
   {
     name: 'countries',
@@ -98,7 +99,7 @@ const TABLES = [
   },
   {
     name: 'tour_pricing',
-    fields: ['classification', 'season'],
+    fields: ['season'],
   },
 ]
 
@@ -120,7 +121,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY)
 
 const delay = (ms) => new Promise(r => setTimeout(r, ms))
 
-async function translateText(text, targetLang, retries = 3) {
+async function translateText(text, targetLang, retries = 5) {
   if (!text || text.trim() === '') return text
 
   const azureLang = AZURE_LANG_MAP[targetLang] || targetLang
@@ -142,6 +143,29 @@ async function translateText(text, targetLang, retries = 3) {
 
       if (!res.ok) {
         const errBody = await res.text()
+
+        if (res.status === 401) {
+          console.error(`\n✗ Azure 401 Unauthorized — key/region mismatch or invalid credentials.`)
+          console.error(`   Double-check AZURE_TRANSLATOR_KEY and AZURE_TRANSLATOR_REGION in .env.local`)
+          console.error(`   against the exact values on the Azure portal's Keys and Endpoint page.\n`)
+          process.exit(1)
+        }
+
+        if (res.status === 403) {
+          console.error(`\n⚠  Azure quota exceeded (403). Stopping — already translated records are saved.`)
+          console.error(`   Resets monthly on your Azure billing cycle. Rerun this script later.\n`)
+          process.exit(1)
+        }
+
+        if (res.status === 429) {
+          const waitTime = 1000 * attempt
+          if (attempt < retries) {
+            process.stdout.write(`(rate limited, waiting ${waitTime / 1000}s) `)
+            await delay(waitTime)
+            continue
+          }
+        }
+
         throw new Error(`Azure API error ${res.status}: ${errBody}`)
       }
 
@@ -152,10 +176,27 @@ async function translateText(text, targetLang, retries = 3) {
         console.warn(`  ⚠ Translation failed after ${retries} attempts — keeping original (${err.message})`)
         return text
       }
-      await delay(500 * attempt) // backoff: 0.5s, 1s, 1.5s
+      await delay(500 * attempt)
     }
   }
   return text
+}
+
+/**
+ * Translate an array of strings element by element.
+ * Returns a JSON-stringified array (matches how it'll be stored/retrieved).
+ */
+async function translateArray(arr, targetLang) {
+  const translated = []
+  for (const item of arr) {
+    if (typeof item !== 'string' || item.trim() === '') {
+      translated.push(item)
+      continue
+    }
+    translated.push(await translateText(item, targetLang))
+    await delay(150) // light pacing between array elements
+  }
+  return translated
 }
 
 // ─── Already translated check ─────────────────────────────────────────────────
@@ -167,7 +208,6 @@ async function getExistingTranslations(tableName, recordId) {
     .eq('table_name', tableName)
     .eq('record_id', recordId)
 
-  // Return a Set of 'locale:field' strings for fast lookup
   return new Set((data ?? []).map(r => `${r.locale}:${r.field}`))
 }
 
@@ -187,7 +227,6 @@ async function run() {
   for (const table of TABLES) {
     console.log(`\n📋 Table: ${table.name} (fields: ${table.fields.join(', ')})`)
 
-    // Fetch all rows for this table
     const { data: rows, error } = await supabase
       .from(table.name)
       .select(`id, ${table.fields.join(', ')}`)
@@ -205,15 +244,14 @@ async function run() {
     console.log(`  Found ${rows.length} row(s)`)
 
     for (const row of rows) {
-      // Check what's already translated for this record
       const existing = await getExistingTranslations(table.name, row.id)
 
       for (const locale of LOCALES) {
         for (const field of table.fields) {
           const value = row[field]
 
-          // Skip empty values
-          if (!value || value.trim() === '') continue
+          // Skip null/undefined
+          if (value === null || value === undefined) continue
 
           // Skip if already translated
           if (existing.has(`${locale}:${field}`)) {
@@ -221,9 +259,25 @@ async function run() {
             continue
           }
 
-          process.stdout.write(`  [${locale}] ${table.name}.${field} (${row.id.slice(0, 8)}...) ... `)
+          // Skip empty strings
+          if (typeof value === 'string' && value.trim() === '') continue
 
-          const translated = await translateText(value, locale)
+          // Skip empty arrays
+          if (Array.isArray(value) && value.length === 0) continue
+
+          let translatedValue
+
+          if (Array.isArray(value)) {
+            process.stdout.write(`  [${locale}] ${table.name}.${field} (${row.id.slice(0, 8)}..., array of ${value.length}) ... `)
+            const translatedArr = await translateArray(value, locale)
+            translatedValue = JSON.stringify(translatedArr)
+          } else if (typeof value === 'string') {
+            process.stdout.write(`  [${locale}] ${table.name}.${field} (${row.id.slice(0, 8)}...) ... `)
+            translatedValue = await translateText(value, locale)
+          } else {
+            console.warn(`  ⚠ Skipping ${table.name}.${field} — unsupported type (${typeof value})`)
+            continue
+          }
 
           const { error: insertError } = await supabase
             .from('translations')
@@ -232,11 +286,10 @@ async function run() {
               record_id: row.id,
               locale,
               field,
-              translated_text: translated,
+              translated_text: translatedValue,
             })
 
           if (insertError) {
-            // Unique constraint violation = already exists, safe to ignore
             if (insertError.code === '23505') {
               console.log('already exists ⏭')
               stats.skipped++
@@ -249,7 +302,7 @@ async function run() {
             stats.translated++
           }
 
-          await delay(30) // light pacing — Azure free tier is generous
+          await delay(200)
         }
       }
     }
