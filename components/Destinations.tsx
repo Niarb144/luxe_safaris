@@ -6,7 +6,7 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 type Destination = {
   id: string;
@@ -31,6 +31,7 @@ function DestinationsInner({ limit, searchParams }: DestinationsProps) {
   const [destinations, setDestinations] = useState<Destination[]>([]);
   const [loading, setLoading] = useState(true);
   const t = useTranslations("destinations");
+  const locale = useLocale();
 
   const router = useRouter();
   const pathname = usePathname();
@@ -49,7 +50,7 @@ function DestinationsInner({ limit, searchParams }: DestinationsProps) {
 
   useEffect(() => {
     fetchDestinations();
-  }, []);
+  }, [locale]); // re-fetch when locale changes
 
   async function fetchDestinations() {
     const { data, error } = await supabase
@@ -68,9 +69,39 @@ function DestinationsInner({ limit, searchParams }: DestinationsProps) {
 
     if (error) {
       console.error(error);
-    } else {
-      setDestinations(data || []);
+      setLoading(false);
+      return;
     }
+
+    const rows = data || [];
+
+    // ── Fetch translations for all destinations in one batch query ─────────
+    let translationMap = new Map<string, Record<string, string>>();
+
+    if (locale !== "en" && rows.length > 0) {
+      const destinationIds = rows.map((d) => d.id);
+
+      const { data: translationsData } = await supabase
+        .from("translations")
+        .select("record_id, field, translated_text")
+        .eq("table_name", "destinations")
+        .eq("locale", locale)
+        .in("record_id", destinationIds)
+        .in("field", ["name", "country"]);
+
+      translationsData?.forEach(({ record_id, field, translated_text }) => {
+        if (!translationMap.has(record_id)) translationMap.set(record_id, {});
+        translationMap.get(record_id)![field] = translated_text;
+      });
+    }
+
+    // ── Merge translations over original data ───────────────────────────────
+    const merged = rows.map((destination) => {
+      const translations = translationMap.get(destination.id) ?? {};
+      return { ...destination, ...translations };
+    });
+
+    setDestinations(merged);
     setLoading(false);
   }
 
