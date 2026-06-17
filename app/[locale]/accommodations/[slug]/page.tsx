@@ -58,7 +58,7 @@ export default async function AccommodationPage({
   const accommodation = await applyTranslation(
     "accommodations",
     data,
-    ["accommodation_type", "description", "hotel_name", "location"],
+    ["accommodation_type", "description", "hotel_name", "location", "amenities", "services"],
     locale
   );
 
