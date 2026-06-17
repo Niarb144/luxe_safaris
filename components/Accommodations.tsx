@@ -23,6 +23,7 @@ export default function Accommodations() {
   const [accommodations, setAccommodations  ] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState("All");
+  const [translations, setTranslations] = useState<any[]>([]);
   // for translations
   const locale = useLocale();
   const t = useTranslations("accommodationsPage");
@@ -40,33 +41,79 @@ export default function Accommodations() {
         country_location,
         slug,
         images
-        )
       `)
       .order("created_at", { ascending: false });
 
     if (error) {
       console.error(error);
-    } else {
-      setAccommodations(data || []);
+      setLoading(false);
+      return;
+    }
+
+    const accommodationData = data || [];
+
+    setAccommodations(accommodationData);
+
+    if (locale !== "en") {
+      const ids = accommodationData.map((a) => a.id);
+
+      const { data: translationData } = await supabase
+        .from("translations")
+        .select(`
+          record_id,
+          field,
+          translated_text
+        `)
+        .eq("table_name", "accommodations")
+        .eq("locale", locale)
+        .in("record_id", ids)
+        .in("field", ["hotel_name"]);
+
+      setTranslations(translationData || []);
     }
 
     setLoading(false);
   }
 
+  const translatedAccommodations = useMemo(() => {
+    return accommodations.map((accommodation) => {
+      const hotelNameTranslation = translations.find(
+        (t) =>
+          t.record_id === accommodation.id &&
+          t.field === "hotel_name"
+      );
+
+      return {
+        ...accommodation,
+        hotel_name:
+          hotelNameTranslation?.translated_text ||
+          accommodation.hotel_name,
+      };
+    });
+  }, [accommodations, translations]);
+
   // Generate categories dynamically
     const categories = useMemo(() => {
       const unique = Array.from(
-        new Set(accommodations.map((accommodation) => accommodation.country_location || "Other"))
+        new Set(
+          translatedAccommodations.map(
+            (accommodation) =>
+              accommodation.country_location || "Other"
+          )
+        )
       );
-  
+
       return ["All", ...unique];
-    }, [accommodations  ]);
+    }, [translatedAccommodations]);
 
      // Filter tours
-  const filtered =
+    const filtered =
     active === "All"
-      ? accommodations
-      : accommodations.filter((accommodation) => accommodation.country_location === active);
+      ? translatedAccommodations
+      : translatedAccommodations.filter(
+          (accommodation) =>
+            accommodation.country_location === active
+        );
 
   if (loading) {
     return <p>{t("loading")}</p>;
