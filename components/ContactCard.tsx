@@ -39,7 +39,7 @@ export default function ContactCard() {
                 <p className="text-sm uppercase tracking-widest text-[#d4a54b]">
                   {t("email")}
                 </p>
-                <a href="mailto:info@luxesafaris.com" className="mt-2 block text-lg text-gray-200 hover:text-[#d4a54b] transition">
+                <a href="mailto:info@luxeplainsafricasafaris.com" className="mt-2 block text-lg text-gray-200 hover:text-[#d4a54b] transition">
                   info@luxeplainsafricasafaris.com
                 </a>
               </div>

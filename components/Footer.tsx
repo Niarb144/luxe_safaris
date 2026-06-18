@@ -48,7 +48,7 @@ export default function Footer() {
           </p>
           <p className="text-sm mb-2">
             <FaEnvelope className="inline mr-2" />
-            info@luxeafricasafaris.com
+            info@luxeplainsafricasafaris.com
           </p>
           <p className="text-sm">
             <FaClock className="inline mr-2" />
