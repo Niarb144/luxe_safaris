@@ -6,48 +6,99 @@ import { supabase } from "@/lib/supabase";
 import { useTranslations } from "next-intl";
 
 // Counter hook
-function useCountUp(end: number, duration: number = 2) {
+function useCountUp(
+  end: number,
+  duration = 2000
+) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let start = 0;
-    const increment = end / (duration * 60);
+    if (end <= 0) {
+      setCount(0);
+      return;
+    }
 
-    const counter = setInterval(() => {
-      start += increment;
+    let startTimestamp: number;
 
-      if (start >= end) {
-        setCount(end);
-        clearInterval(counter);
-      } else {
-        setCount(Math.floor(start));
+    const step = (timestamp: number) => {
+      if (!startTimestamp)
+        startTimestamp = timestamp;
+
+      const progress = Math.min(
+        (timestamp - startTimestamp) /
+          duration,
+        1
+      );
+
+      setCount(
+        Math.floor(progress * end)
+      );
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
       }
-    }, 1000 / 60);
+    };
 
-    return () => clearInterval(counter);
+    requestAnimationFrame(step);
   }, [end, duration]);
 
   return count;
 }
 
 // Stat card
-function StatCard({ label, value }: { label: string; value: number }) {
+function StatCard({
+  label,
+  value,
+}: {
+  label: string;
+  value: number;
+}) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const count = useCountUp(isInView ? value : 0);
+
+  const isInView = useInView(ref, {
+    once: true,
+  });
+
+  const [hasStarted, setHasStarted] =
+    useState(false);
+
+  useEffect(() => {
+    if (isInView) {
+      setHasStarted(true);
+    }
+  }, [isInView]);
+
+  const count = useCountUp(
+    hasStarted ? value : 0
+  );
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6 }}
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      animate={
+        isInView
+          ? {
+              opacity: 1,
+              y: 0,
+            }
+          : {}
+      }
+      transition={{
+        duration: 0.6,
+      }}
       className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-md text-center"
     >
       <h3 className="text-4xl md:text-5xl font-bold text-yellow-600">
         {count}+
       </h3>
-      <p className="mt-2 text-gray-600">{label}</p>
+
+      <p className="mt-2 text-gray-600">
+        {label}
+      </p>
     </motion.div>
   );
 }
@@ -55,6 +106,7 @@ function StatCard({ label, value }: { label: string; value: number }) {
 export default function Numbers() {
   const [stats, setStats] = useState({ tours: 0, destinations: 0, travelers: 0 });
   const t = useTranslations("numbers");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchCounts() {
@@ -64,18 +116,24 @@ export default function Numbers() {
           { count: destinationsCount },
           { count: travelersCount },
         ] = await Promise.all([
-          supabase.from("tours").select("*", { count: "exact", head: true }),
-          supabase.from("destinations").select("*", { count: "exact", head: true }),
-          supabase.from("bookings").select("*", { count: "exact", head: true }),
-        ])
+          supabase
+            .from("tours")
+            .select("*", { count: "exact", head: true }),
+          supabase
+            .from("destinations")
+            .select("*", { count: "exact", head: true }),
+          supabase
+            .from("bookings")
+            .select("*", { count: "exact", head: true }),
+        ]);
 
         setStats({
-          tours: toursCount || 0,
-          destinations: destinationsCount || 0,
-          travelers: travelersCount || 0,
+          tours: toursCount ?? 0,
+          destinations: destinationsCount ?? 0,
+          travelers: travelersCount ?? 0,
         });
-      } catch (err) {
-        console.error("Error fetching counts:", err);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -105,9 +163,16 @@ export default function Numbers() {
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          <StatCard label={t("tours")} value={stats.tours} />
-          <StatCard label={t("destinations")} value={stats.destinations} />
-          <StatCard label={t("travelers")} value={stats.travelers} />
+         <StatCard
+            label={t("tours")}
+            value={loading ? 0 : stats.tours}
+          />
+          <StatCard 
+            label={t("destinations")} 
+            value={loading ? 0 : stats.destinations} />
+          <StatCard 
+            label={t("travelers")} 
+            value={loading ? 0 : stats.travelers} />
         </div>
 
       </div>
