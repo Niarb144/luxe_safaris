@@ -45,11 +45,11 @@ const MAX_CHUNK_LENGTH = 450
 const TABLES = [
   {
     name: 'tours',
-    fields: ['title', 'description', 'duration', 'why_choose_safari'],
+    fields: ['title', 'description', 'duration', 'why_choose_safari', 'country'],
   },
   {
     name: 'accommodations',
-    fields: ['accommodation_type', 'description', 'hotel_name', 'location','amenities', 'services'],
+    fields: ['accommodation_type', 'description', 'hotel_name', 'location','amenities', 'services', 'country_location'],
   },
   {
     name: 'countries',

@@ -55,7 +55,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
           .eq('table_name', 'tours')
           .eq('locale', locale)
           .in('record_id', tourIds)
-          .in('field', ['title', 'description', 'duration'])
+          .in('field', ['title', 'description', 'duration', 'country'])
 
         translationsData?.forEach(({ record_id, field, translated_text }) => {
           if (!translationMap.has(record_id)) translationMap.set(record_id, {})

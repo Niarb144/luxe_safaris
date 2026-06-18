@@ -61,7 +61,7 @@ export default function Accommodations() {
         .eq("table_name", "accommodations")
         .eq("locale", locale)
         .in("record_id", ids)
-        .in("field", ["hotel_name"]);
+        .in("field", ["hotel_name", "country_location"]);
 
       translationData?.forEach(({ record_id, field, translated_text }) => {
         if (!translationMap.has(record_id)) translationMap.set(record_id, {});
