@@ -11,7 +11,7 @@ import SearchButton from "./SearchButton";
 import TourSearch from "./TourSearch";
 import { supabase } from "@/lib/supabase";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -330,6 +330,7 @@ function StaticLink({ name, href, scrolled }: { name: string; href: string; scro
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const locale = useLocale();
   const [scrolled, setScrolled]       = useState(false);
   const [menuOpen, setMenuOpen]       = useState(false);
   const [holidayTypes, setHolidayTypes] = useState<HolidayType[]>([]);
@@ -357,12 +358,61 @@ export default function Navbar() {
 
   useEffect(() => {
     fetchDropdownData();
-  }, []);
+  }, [locale]);
 
   async function fetchDropdownData() {
+    // ── Fetch raw data (same as before) ─────────────────────────────────────
     const { data: typeData } = await supabase.from("holiday_types").select("id,name").order("name");
     const { data: joinData } = await supabase.from("tour_holiday_types").select("holiday_type_id, tours(id, duration)");
+    const { data: destData } = await supabase.from("destinations").select("id,name,country").order("name");
+    const { data: tourDestData } = await supabase.from("tour_destinations").select("tour_id, destinations(id, name)");
 
+    // ── Fetch translations in parallel (skip for English) ───────────────────
+    let htTranslations:   Record<string, string> = {};
+    let destTranslations: Record<string, string> = {};
+
+    if (locale !== "en") {
+      const htIds   = (typeData  || []).map((r: any) => r.id);
+      const destIds = (destData  || []).map((r: any) => r.id);
+
+      const [{ data: htTrans }, { data: destTrans }] = await Promise.all([
+        supabase
+          .from("translations")
+          .select("record_id, translated_text")
+          .eq("table_name", "holiday_types")
+          .eq("field", "name")
+          .eq("locale", locale)
+          .in("record_id", htIds),
+        supabase
+          .from("translations")
+          .select("record_id, translated_text")
+          .eq("table_name", "destinations")
+          .eq("field", "name")
+          .eq("locale", locale)
+          .in("record_id", destIds),
+      ]);
+
+      htTranslations = Object.fromEntries(
+        (htTrans || []).map((r: any) => [r.record_id, r.translated_text])
+      );
+      destTranslations = Object.fromEntries(
+        (destTrans || []).map((r: any) => [r.record_id, r.translated_text])
+      );
+    }
+
+    // ── Apply translations to holiday types ──────────────────────────────────
+    const translatedTypes: HolidayType[] = (typeData || []).map((ht: any) => ({
+      id: ht.id,
+      name: htTranslations[ht.id] ?? ht.name,
+    }));
+
+    // ── Apply translations to destinations ───────────────────────────────────
+    const translateDest = (dest: { id: string; name: string }) => ({
+      id: dest.id,
+      name: destTranslations[dest.id] ?? dest.name,
+    });
+
+    // ── Duration map (same logic as before) ──────────────────────────────────
     const durMap = new Map<string, string[]>();
     (joinData || []).forEach((row: any) => {
       const typeId = row.holiday_type_id as string;
@@ -380,12 +430,7 @@ export default function Navbar() {
       });
     });
 
-    const { data: destData } = await supabase.from("destinations").select("id,name,country").order("name");
-    const { data: tourDestData } = await supabase.from("tour_destinations").select("tour_id, destinations(id, name)");
-
-    setHolidayTypes(typeData || []);
-    setDurationsByType(durMap);
-
+    // ── Destination-by-type map (with translations applied) ──────────────────
     const tourToDestMap = new Map<string, { id: string; name: string }[]>();
     (tourDestData || []).forEach((row: any) => {
       const tourId = row.tour_id as string;
@@ -393,7 +438,7 @@ export default function Navbar() {
       if (!tourId || !dest) return;
       if (!tourToDestMap.has(tourId)) tourToDestMap.set(tourId, []);
       const existing = tourToDestMap.get(tourId)!;
-      if (!existing.find((d) => d.id === dest.id)) existing.push(dest);
+      if (!existing.find((d) => d.id === dest.id)) existing.push(translateDest(dest));
     });
 
     const tourToTypesMap = new Map<string, string[]>();
@@ -420,17 +465,17 @@ export default function Navbar() {
 
     const allDestsMap = new Map<string, { id: string; name: string }>();
     tourToDestMap.forEach((dests) => dests.forEach((d) => allDestsMap.set(d.id, d)));
-    const allDestsSorted = Array.from(allDestsMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+    const allDestsSorted = Array.from(allDestsMap.values()).sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
 
-    setDestinationsByType(destByTypeMap);
-    setAllTourDestinations(allDestsSorted);
-
+    // ── Destination groups for the Destinations dropdown (translated) ─────────
     if (destData) {
       const map: Record<string, { id: string; name: string }[]> = {};
-      destData.forEach((d) => {
+      destData.forEach((d: any) => {
         const c = d.country || "Other";
         if (!map[c]) map[c] = [];
-        map[c].push({ id: d.id, name: d.name });
+        map[c].push(translateDest({ id: d.id, name: d.name }));
       });
       const ordered = [
         ...COUNTRY_ORDER.filter((c) => map[c]),
@@ -438,6 +483,11 @@ export default function Navbar() {
       ];
       setDestGroups(ordered.map((country) => ({ country, destinations: map[country] })));
     }
+
+    setHolidayTypes(translatedTypes);
+    setDurationsByType(durMap);
+    setDestinationsByType(destByTypeMap);
+    setAllTourDestinations(allDestsSorted);
   }
 
   const router = useRouter();
