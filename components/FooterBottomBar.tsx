@@ -6,7 +6,7 @@ export default function FooterBottomBar() {
   return (
     <div className="border-t border-white/20 text-sm px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-3">
       <p>
-        © {new Date().getFullYear()} Luxe Plains Safaris. All rights reserved.
+        © {new Date().getFullYear()} Luxe Plains Africa Safaris. All rights reserved.
       </p>
       <p className="text-white/50 text-xs text-center">
         Protected by reCAPTCHA &mdash;{" "}
