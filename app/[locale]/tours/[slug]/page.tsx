@@ -65,6 +65,7 @@ export default async function TourPage({
     translatedExclusions,
     translatedFaqs,
     translatedPricing,
+    translatedHolidayTypes,
   ] = await Promise.all([
     applySubRecordTranslations(data.tour_itinerary ?? [], 'tour_itinerary', ['title', 'description'], locale),
     applySubRecordTranslations(data.tour_highlights ?? [], 'tour_highlights', ['title', 'description'], locale),
@@ -72,7 +73,23 @@ export default async function TourPage({
     applySubRecordTranslations(data.tour_exclusions ?? [], 'tour_exclusions', ['item'], locale),
     applySubRecordTranslations(data.tour_faqs ?? [], 'tour_faqs', ['question', 'answer'], locale),
     applySubRecordTranslations(data.tour_pricing ?? [], 'tour_pricing', ['classification', 'season'], locale),
+    applySubRecordTranslations(
+    data.tour_holiday_types?.map((t: any) => t.holiday_types).filter(Boolean) ?? [],
+      'holiday_types',
+      ['name'],
+      locale
+    ),
   ])
+
+  // Re-attach translated holiday_types back into the join shape
+  const translatedTourHolidayTypes = (data.tour_holiday_types ?? []).map(
+    (join: any) => ({
+      ...join,
+      holiday_types: translatedHolidayTypes.find(
+        (ht: any) => ht.id === join.holiday_types?.id
+      ) ?? join.holiday_types,
+    })
+  );
 
   // ── Accommodations ───────────────────────────────────────────────────────────
   const destinationIds =
@@ -121,6 +138,7 @@ export default async function TourPage({
         tour_exclusions: translatedExclusions,
         tour_faqs: translatedFaqs,
         tour_pricing: translatedPricing,
+        tour_holiday_types: translatedTourHolidayTypes,
       }}
       mainImage={mainImage}
       relatedTours={relatedTours}
