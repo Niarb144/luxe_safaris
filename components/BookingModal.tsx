@@ -2,6 +2,7 @@
 
 import { createPortal } from "react-dom";
 import { useEffect, useRef, useState } from "react";
+import Link from 'next/link';
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useTranslations } from "next-intl";
 
@@ -285,6 +286,30 @@ export default function BookingModal({
                   {t("form.cancel")}
                 </button>
               </div>
+
+              <p className="text-gray-500 text-xs text-center">
+                Protected by reCAPTCHA &mdash;{" "}
+                <Link
+                
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Privacy Policy
+                </Link>{" "}
+                &amp;{" "}
+                
+                <Link
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Terms of Service
+                </Link>{" "}
+                apply.
+              </p>
 
             </form>
           )}

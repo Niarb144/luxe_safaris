@@ -44,3 +44,13 @@ body {
     "Noto Color Emoji",
     sans-serif;
 }
+
+/* Hide by default */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
+/* Show when this class is on <body> */
+body.show-recaptcha .grecaptcha-badge {
+  visibility: visible;
+}

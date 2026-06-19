@@ -71,6 +71,21 @@ export default function ContactPage() {
     setLoaded(true);
   }, []);
 
+  useEffect(() => {
+    const wait = setInterval(() => {
+      const badge = document.querySelector('.grecaptcha-badge') as HTMLElement;
+      if (badge) {
+        document.body.classList.add('show-recaptcha');
+        clearInterval(wait);
+      }
+    }, 100);
+
+    return () => {
+      clearInterval(wait);
+      document.body.classList.remove('show-recaptcha');
+    };
+  }, []);
+
   return (
     <>
       <section className="relative h-[60vh] w-full flex items-center justify-center text-center overflow-hidden">
