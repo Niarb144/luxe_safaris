@@ -102,7 +102,7 @@ export default function CookieBanner() {
               marketing: true,
             })
           }
-          className="bg-black text-white hover:bg-gray-800 px-5 py-2 rounded-lg"
+          className="bg-black text-white hover:bg-gray-800 px-5 py-2 rounded-lg cursor-pointer"
         >
           Accept All
         </button>
@@ -111,12 +111,12 @@ export default function CookieBanner() {
         <button
           onClick={() =>
             updateConsent({
-              essential: true,
+              essential: false,
               analytics: false,
               marketing: false,
             })
           }
-          className="border px-5 py-2 rounded-lg hover:bg-gray-100 text-gray-600"
+          className="border px-5 py-2 rounded-lg hover:bg-gray-100 text-gray-600 cursor-pointer"
         >
           Reject All
         </button>
@@ -125,7 +125,7 @@ export default function CookieBanner() {
         {!customize ? (
           <button
             onClick={() => setCustomize(true)}
-            className="border px-5 py-2 rounded-lg hover:bg-gray-100 text-gray-600"
+            className="border px-5 py-2 rounded-lg hover:bg-gray-100 text-gray-600 cursor-pointer"
           >
             Customize
           </button>
