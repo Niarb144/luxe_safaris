@@ -52,7 +52,7 @@ export default function Footer() {
           </p>
           <p className="text-sm">
             <FaClock className="inline mr-2" />
-            Mon–Fri: 09:00 – 17:00
+            Mon–Fri: 08:00 – 17:00
           </p>
         </div>
 
