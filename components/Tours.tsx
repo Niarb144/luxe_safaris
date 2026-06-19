@@ -160,7 +160,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
           </div>
         )}
 
-        {/* Cards */}
+       {/* Cards */}
         <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-4">
           <AnimatePresence mode="popLayout">
             {displayed.map((tour) => (
@@ -189,26 +189,35 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#041f0e]/80 via-[#041f0e]/30 to-[#041f0e]/10" />
 
                   <div className="relative h-full flex flex-col justify-between p-7">
+                    {/* Top: country label */}
                     <div>
                       <span className="text-white font-semibold text-sm tracking-wide">
                         {tour.country || t("safari")}
                       </span>
                     </div>
+
+                    {/* Bottom: title + description (hover) + duration/price */}
                     <div>
-                      <h3 className="text-white text-lg font-extrabold">
+                      <h3 className="text-white text-base font-extrabold leading-snug mb-1 group-hover:mb-0 transition-all duration-300">
                         {tour.title}
                       </h3>
-                      <p className="text-white/80 mt-2 line-clamp-1 text-sm">
-                        {tour.description}
-                      </p>
-                      <div className="flex gap-4 mt-6 flex-wrap">
-                        <div className="rounded-lg px-5 py-2 backdrop-blur-md bg-white/10">
-                          <span className="text-white font-bold">
+
+                      {/* Description — hidden by default, slides in on hover */}
+                      <div className="max-h-0 overflow-hidden group-hover:max-h-[180px] transition-all duration-500 ease-in-out">
+                        <p className="text-white/80 text-xs leading-5 line-clamp-8 mt-1">
+                          {tour.description}
+                        </p>
+                      </div>
+
+                      {/* Duration + Price on one line */}
+                      <div className="flex items-center gap-3 mt-4">
+                        <div className="rounded-lg px-3 py-1.5 backdrop-blur-md bg-white/10">
+                          <span className="text-white font-bold text-xs">
                             {tour.duration}
                           </span>
                         </div>
-                        <div className="bg-[#b77e24] rounded-2xl px-5 py-2">
-                          <span className="text-white font-bold text-sm">
+                        <div className="bg-[#b77e24] rounded-2xl px-3 py-1.5">
+                          <span className="text-white font-bold text-xs">
                             {t("from")} ${tour.price}
                           </span>
                         </div>
