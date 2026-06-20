@@ -578,5 +578,86 @@
     "safaris": "Safáris",
     "toursIn": "Tours em {name}",
     "from": "A partir de"
+  },
+  "BookingConfidence": {
+    "hero": {
+      "eyebrow": "A tua viagem, garantida",
+      "title": "Reserva com confiança",
+      "subtitle": "Cada reserva da Luxe Plains é protegida, totalmente detalhada e apoiada por uma equipa que conhece este território muito antes da tua chegada. Sem custos escondidos, sem promessas vagas — apenas um caminho claro desde o pedido até à savana.",
+      "ctaPrimary": "Iniciar o teu pedido",
+      "ctaSecondary": "Ver como funciona a reserva",
+      "stampLine1": "Verificado",
+      "stampLine2": "Reserva segura"
+    },
+    "pillars": {
+      "secure": {
+        "title": "A tua reserva está protegida",
+        "body": "Os pagamentos são processados através de uma plataforma encriptada e compatível com PCI. Os depósitos são mantidos numa conta de cliente protegida e cada reserva é processada através de um operador turístico licenciado — nunca através de revendedores terceiros."
+      },
+      "transparent": {
+        "title": "Preços realmente claros",
+        "body": "O teu orçamento mostra o custo total antes de pagares sequer um cêntimo — sem surpresas de taxas de parques ou sobretaxas de combustível adicionadas depois. As condições de cancelamento e reembolso estão escritas em linguagem simples, não escondidas em letra pequena."
+      },
+      "unforgettable": {
+        "title": "Criado para a experiência, não para folhas de cálculo",
+        "body": "Pequenos grupos, veículos privados e guias que cresceram nesta terra. Cada lodge e acampamento no teu itinerário é nomeado e verificado pessoalmente — nunca apenas “padrão equivalente”."
+      }
+    },
+    "process": {
+      "title": "Como funciona realmente uma reserva na Luxe Plains",
+      "subtitle": "Quatro passos, cada um documentado por escrito antes de avançares para o seguinte.",
+      "step1": {
+        "title": "Fazer pedido",
+        "body": "Diz-nos as tuas datas, orçamento e a viagem que imaginas. Um membro da nossa equipa responde em até 24 horas — não um chatbot."
+      },
+      "step2": {
+        "title": "Personalizar",
+        "body": "Criamos e ajustamos o teu itinerário até estar perfeito, com cada lodge, transferência e atividade detalhados e orçamentados linha a linha."
+      },
+      "step3": {
+        "title": "Garantir datas",
+        "body": "Paga um depósito seguro através de um sistema de pagamento encriptado. Recebes de imediato uma confirmação por escrito e um calendário completo de pagamentos. [TODO: confirmar percentagem do depósito]"
+      },
+      "step4": {
+        "title": "Viajar com apoio completo",
+        "body": "Liquida o saldo antes da partida e viaja com um contacto local disponível 24/7, totalmente informado sobre a tua viagem antes da tua chegada. [TODO: confirmar prazo do pagamento do saldo]"
+      }
+    },
+    "badges": {
+      "title": "O que protege a tua reserva",
+      "encrypted": "Pagamentos encriptados",
+      "gdpr": "Tratamento de dados em conformidade com o RGPD",
+      "licensed": "Operador turístico licenciado",
+      "support": "Suporte local 24/7",
+      "refund": "Política de reembolso por escrito"
+    },
+    "faq": {
+      "title": "Perguntas sobre reservas, respondidas de forma clara",
+      "faq1": {
+        "q": "Que métodos de pagamento aceitam e são seguros?",
+        "a": "Aceitamos cartões de crédito principais e transferências bancárias através de uma plataforma de pagamento encriptada e compatível com PCI. Nunca armazenamos os dados completos do teu cartão nos nossos servidores."
+      },
+      "faq2": {
+        "q": "Qual é o valor do depósito e quando é pago o saldo?",
+        "a": "Um depósito garante as tuas datas no momento da reserva, e o saldo é pago antes da partida. Os valores exatos e prazos são confirmados por escrito antes de qualquer pagamento."
+      },
+      "faq3": {
+        "q": "O que acontece se precisar de cancelar?",
+        "a": "As nossas condições de cancelamento estão totalmente descritas na confirmação da reserva, incluindo valores reembolsáveis e prazos aplicáveis, para que saibas exatamente onde estás antes de te comprometeres."
+      },
+      "faq4": {
+        "q": "O meu dinheiro está protegido se algo correr mal?",
+        "a": "O teu depósito é mantido numa conta de cliente protegida e a tua reserva é emitida através de um operador turístico licenciado, pelo que o teu dinheiro nunca fica simplesmente numa conta pessoal."
+      },
+      "faq5": {
+        "q": "Os lodges e acampamentos serão os mesmos do orçamento?",
+        "a": "Sim. Cada acampamento indicado no teu itinerário é exatamente onde vais ficar. Se a disponibilidade mudar, contactamos-te sempre antes de qualquer substituição com alternativas."
+      }
+    },
+    "cta": {
+      "title": "Pronto para iniciar o teu pedido?",
+      "body": "Conta-nos a viagem que imaginas — responderemos em 24 horas com um plano claro e totalmente detalhado.",
+      "button": "Entrar em contacto"
+    }
   }
 }

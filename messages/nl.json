@@ -578,6 +578,87 @@
     "safaris": "Safari’s",
     "toursIn": "Tours in {name}",
     "from": "Vanaf"
+  },
+  "BookingConfidence": {
+    "hero": {
+      "eyebrow": "Jouw reis, gegarandeerd",
+      "title": "Boek met vertrouwen",
+      "subtitle": "Elke Luxe Plains-boeking is beveiligd, volledig gespecificeerd en ondersteund door een team dat dit gebied al kent lang voordat jij aankomt. Geen verborgen kosten, geen vage beloftes — alleen een duidelijk pad van aanvraag tot savanne.",
+      "ctaPrimary": "Start je aanvraag",
+      "ctaSecondary": "Bekijk hoe boeken werkt",
+      "stampLine1": "Geverifieerd",
+      "stampLine2": "Veilige boeking"
+    },
+    "pillars": {
+      "secure": {
+        "title": "Je boeking is beveiligd",
+        "body": "Betalingen verlopen via een versleuteld, PCI-conform betalingssysteem. Aanbetalingen worden bewaard op een beveiligde klantenrekening en elke boeking wordt verwerkt via een erkende touroperator — nooit via een derde partij."
+      },
+      "transparent": {
+        "title": "Prijzen die echt duidelijk zijn",
+        "body": "Je offerte toont de totale kosten voordat je ook maar één cent betaalt — geen verrassingen zoals parktoeslagen of later toegevoegde brandstoftoeslagen. Annulerings- en terugbetalingsvoorwaarden zijn in duidelijke taal geschreven en niet verborgen in kleine lettertjes."
+      },
+      "unforgettable": {
+        "title": "Gebouwd voor de ervaring, niet voor spreadsheets",
+        "body": "Kleine groepen, privévoertuigen en gidsen die met dit land zijn opgegroeid. Elke lodge en elk kamp in je reisroute is persoonlijk geselecteerd en gecontroleerd — nooit slechts “vergelijkbare standaard”."
+      }
+    },
+    "process": {
+      "title": "Hoe een Luxe Plains-boeking echt werkt",
+      "subtitle": "Vier stappen, elk schriftelijk vastgelegd voordat je doorgaat naar de volgende.",
+      "step1": {
+        "title": "Aanvraag",
+        "body": "Vertel ons je data, budget en de reis die je voor ogen hebt. Een teamlid reageert binnen 24 uur — geen chatbot."
+      },
+      "step2": {
+        "title": "Aanpassen",
+        "body": "We bouwen en verfijnen je reisroute totdat deze perfect is, met elke lodge, transfer en activiteit afzonderlijk geprijsd."
+      },
+      "step3": {
+        "title": "Je data vastleggen",
+        "body": "Betaal een beveiligde aanbetaling via een versleuteld betaalsysteem. Je ontvangt direct een schriftelijke bevestiging en een volledig betalingsschema. [TODO: aanbetalingspercentage bevestigen]"
+      },
+      "step4": {
+        "title": "Reis met volledige ondersteuning",
+        "body": "Betaal het resterende bedrag vóór vertrek en reis met 24/7 lokale ondersteuning die vooraf volledig is geïnformeerd over je reis. [TODO: deadline restbetaling bevestigen]"
+      }
+    },
+    "badges": {
+      "title": "Wat je boeking beschermt",
+      "encrypted": "Versleutelde betalingen",
+      "gdpr": "AVG-conforme gegevensverwerking",
+      "licensed": "Erkende touroperator",
+      "support": "24/7 ondersteuning ter plaatse",
+      "refund": "Schriftelijk terugbetalingsbeleid"
+    },
+    "faq": {
+      "title": "Boekingsvragen, duidelijk beantwoord",
+      "faq1": {
+        "q": "Welke betaalmethoden accepteren jullie en zijn ze veilig?",
+        "a": "We accepteren gangbare creditcards en bankoverschrijvingen via een versleuteld, PCI-conform betalingssysteem. We slaan nooit je volledige kaartgegevens op onze servers op."
+      },
+      "faq2": {
+        "q": "Hoeveel aanbetaling moet ik doen en wanneer is het resterende bedrag verschuldigd?",
+        "a": "Een aanbetaling bevestigt je reisdata op het moment van boeken, het resterende bedrag is verschuldigd vóór vertrek. Exacte bedragen en deadlines worden schriftelijk bevestigd voordat je betaalt."
+      },
+      "faq3": {
+        "q": "Wat gebeurt er als ik moet annuleren?",
+        "a": "Onze annuleringsvoorwaarden staan volledig beschreven in je boekingsbevestiging, inclusief eventuele terugbetalingen en deadlines, zodat je precies weet waar je aan toe bent voordat je bevestigt."
+      },
+      "faq4": {
+        "q": "Is mijn geld beschermd als er iets misgaat?",
+        "a": "Je aanbetaling wordt bewaard op een beveiligde klantenrekening en je boeking wordt uitgegeven via een erkende touroperator, waardoor je geld nooit zomaar op een persoonlijke rekening staat."
+      },
+      "faq5": {
+        "q": "Komen de lodges en kampen overeen met de offerte?",
+        "a": "Ja. Elk kamp dat in je reisroute staat, is precies waar je zult verblijven. Als beschikbaarheid verandert, nemen we altijd eerst contact met je op voordat er een alternatief wordt gemaakt."
+      }
+    },
+    "cta": {
+      "title": "Klaar om je aanvraag te starten?",
+      "body": "Vertel ons over de reis die je voor ogen hebt — we reageren binnen 24 uur met een duidelijk en volledig uitgewerkt plan.",
+      "button": "Neem contact op"
+    }
   }
 }
 

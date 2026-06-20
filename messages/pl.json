@@ -578,6 +578,87 @@
     "safaris": "Safari",
     "toursIn": "Wycieczki w {name}",
     "from": "Od"
+  },
+  "BookingConfidence": {
+    "hero": {
+      "eyebrow": "Twoja podróż, gwarantowana",
+      "title": "Rezerwuj z pewnością",
+      "subtitle": "Każda rezerwacja Luxe Plains jest zabezpieczona, w pełni szczegółowo opisana i wspierana przez zespół, który zna te tereny na długo przed Twoim przyjazdem. Bez ukrytych kosztów, bez niejasnych obietnic — tylko jasna droga od zapytania do sawanny.",
+      "ctaPrimary": "Rozpocznij zapytanie",
+      "ctaSecondary": "Zobacz, jak działa rezerwacja",
+      "stampLine1": "Zweryfikowane",
+      "stampLine2": "Bezpieczna rezerwacja"
+    },
+    "pillars": {
+      "secure": {
+        "title": "Twoja rezerwacja jest zabezpieczona",
+        "body": "Płatności są realizowane przez szyfrowaną bramkę płatniczą zgodną z PCI. Zaliczki są przechowywane na zabezpieczonym koncie klienta, a każda rezerwacja jest obsługiwana przez licencjonowanego organizatora turystyki — nigdy przez zewnętrznego pośrednika."
+      },
+      "transparent": {
+        "title": "Ceny, które naprawdę rozumiesz",
+        "body": "Twoja wycena pokazuje pełny koszt zanim zapłacisz choćby złotówkę — bez niespodziewanych opłat parkowych czy późniejszych dopłat paliwowych. Warunki anulacji i zwrotów są napisane prostym językiem, a nie ukryte w drobnym druku."
+      },
+      "unforgettable": {
+        "title": "Stworzone dla doświadczeń, nie arkuszy kalkulacyjnych",
+        "body": "Małe grupy, prywatne pojazdy i przewodnicy, którzy dorastali na tej ziemi. Każdy lodge i obóz w Twoim planie podróży jest osobiście sprawdzony i nazwany — nigdy jako „równoważny standard”."
+      }
+    },
+    "process": {
+      "title": "Jak naprawdę działa rezerwacja Luxe Plains",
+      "subtitle": "Cztery kroki, każdy udokumentowany na piśmie przed przejściem do następnego.",
+      "step1": {
+        "title": "Złóż zapytanie",
+        "body": "Podaj nam daty, budżet i podróż, którą sobie wyobrażasz. Członek naszego zespołu odpowie w ciągu 24 godzin — nie bot."
+      },
+      "step2": {
+        "title": "Dostosuj",
+        "body": "Tworzymy i dopracowujemy Twoją trasę, aż będzie idealna, z każdą kwaterą, transferem i aktywnością wycenioną osobno."
+      },
+      "step3": {
+        "title": "Zablokuj terminy",
+        "body": "Wpłać bezpieczną zaliczkę przez szyfrowany system płatności. Otrzymasz natychmiastowe potwierdzenie i pełny harmonogram płatności. [TODO: potwierdzić procent zaliczki]"
+      },
+      "step4": {
+        "title": "Podróżuj z pełnym wsparciem",
+        "body": "Opłać resztę przed wyjazdem i podróżuj z całodobowym kontaktem lokalnym, który zna Twoją trasę jeszcze przed Twoim przylotem. [TODO: potwierdzić termin płatności końcowej]"
+      }
+    },
+    "badges": {
+      "title": "Co chroni Twoją rezerwację",
+      "encrypted": "Szyfrowane płatności",
+      "gdpr": "Przetwarzanie danych zgodne z RODO",
+      "licensed": "Licencjonowany organizator turystyki",
+      "support": "Całodobowe wsparcie na miejscu",
+      "refund": "Pisemna polityka zwrotów"
+    },
+    "faq": {
+      "title": "Pytania o rezerwację, jasno wyjaśnione",
+      "faq1": {
+        "q": "Jakie metody płatności akceptujecie i czy są bezpieczne?",
+        "a": "Akceptujemy główne karty kredytowe i przelewy bankowe przez szyfrowaną bramkę płatniczą zgodną z PCI. Nigdy nie przechowujemy pełnych danych Twojej karty na naszych serwerach."
+      },
+      "faq2": {
+        "q": "Jaka jest wysokość zaliczki i kiedy płaci się resztę?",
+        "a": "Zaliczka zabezpiecza Twoje terminy w momencie rezerwacji, a reszta płatna jest przed wyjazdem. Dokładne kwoty i terminy są potwierdzane na piśmie przed dokonaniem płatności."
+      },
+      "faq3": {
+        "q": "Co jeśli będę musiał anulować?",
+        "a": "Warunki anulacji są w pełni opisane w potwierdzeniu rezerwacji, wraz z ewentualnymi zwrotami i terminami, abyś dokładnie wiedział, na czym stoisz przed podjęciem decyzji."
+      },
+      "faq4": {
+        "q": "Czy moje pieniądze są bezpieczne w razie problemów?",
+        "a": "Twoja zaliczka jest przechowywana na zabezpieczonym koncie klienta, a rezerwacja jest wystawiana przez licencjonowanego organizatora turystyki, więc środki nigdy nie trafiają na prywatne konto."
+      },
+      "faq5": {
+        "q": "Czy lodge i obozy będą zgodne z ofertą?",
+        "a": "Tak. Każdy obóz wskazany w Twoim planie podróży to dokładnie to miejsce, w którym się zatrzymasz. Jeśli dostępność się zmieni, skontaktujemy się z Tobą przed dokonaniem jakiejkolwiek zmiany."
+      }
+    },
+    "cta": {
+      "title": "Gotowy, aby rozpocząć zapytanie?",
+      "body": "Opowiedz nam o podróży, którą planujesz — odpowiemy w ciągu 24 godzin z jasnym i w pełni wycenionym planem.",
+      "button": "Skontaktuj się"
+    }
   }
 }
 

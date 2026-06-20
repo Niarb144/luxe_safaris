@@ -578,6 +578,87 @@
     "safaris": "Safaris",
     "toursIn": "Touren in {name}",
     "from": "Ab"
+  },
+  "BookingConfidence": {
+    "hero": {
+      "eyebrow": "Ihre Reise, garantiert",
+      "title": "Mit Vertrauen buchen",
+      "subtitle": "Jede Buchung bei Luxe Plains ist abgesichert, vollständig aufgeschlüsselt und wird von einem Team begleitet, das dieses Land lange vor Ihrer Ankunft kennt. Keine versteckten Kosten, keine vagen Versprechen – nur ein klarer Weg von der Anfrage bis zur Savanne.",
+      "ctaPrimary": "Anfrage starten",
+      "ctaSecondary": "So funktioniert die Buchung",
+      "stampLine1": "Verifiziert",
+      "stampLine2": "Sichere Buchung"
+    },
+    "pillars": {
+      "secure": {
+        "title": "Ihre Buchung, abgesichert",
+        "body": "Zahlungen erfolgen über eine verschlüsselte, PCI-konforme Zahlungsabwicklung. Anzahlungen werden auf einem geschützten Kundenkonto verwahrt, und jede Buchung wird über einen lizenzierten Reiseveranstalter abgewickelt – niemals über einen Drittanbieter."
+      },
+      "transparent": {
+        "title": "Preise, die wirklich verständlich sind",
+        "body": "Ihr Angebot zeigt die vollständigen Kosten, bevor Sie einen Cent bezahlen – keine überraschenden Parkgebühren und keine später hinzugefügten Treibstoffzuschläge. Stornierungs- und Erstattungsbedingungen sind klar formuliert und nicht im Kleingedruckten versteckt."
+      },
+      "unforgettable": {
+        "title": "Für das Erlebnis gemacht, nicht für Tabellenkalkulationen",
+        "body": "Kleine Gruppen, private Fahrzeuge und Guides, die mit diesem Land aufgewachsen sind. Jede Lodge und jedes Camp Ihrer Reiseroute wird namentlich genannt und persönlich geprüft – niemals nur „ähnlicher Standard“."
+      }
+    },
+    "process": {
+      "title": "So funktioniert eine Buchung bei Luxe Plains",
+      "subtitle": "Vier Schritte, von denen jeder schriftlich dokumentiert wird, bevor Sie zum nächsten übergehen.",
+      "step1": {
+        "title": "Anfragen",
+        "body": "Teilen Sie uns Ihre Reisedaten, Ihr Budget und Ihre Vorstellungen mit. Ein Mitglied unseres Teams antwortet innerhalb von 24 Stunden – kein Chatbot."
+      },
+      "step2": {
+        "title": "Anpassen",
+        "body": "Wir erstellen und überarbeiten Ihre Reiseroute so lange, bis sie perfekt passt – mit detaillierter Preisangabe für jedes Camp, jeden Transfer und jede Aktivität."
+      },
+      "step3": {
+        "title": "Ihre Termine sichern",
+        "body": "Leisten Sie eine geschützte Anzahlung über eine verschlüsselte Zahlungsabwicklung. Sie erhalten sofort eine schriftliche Bestätigung sowie einen vollständigen Zahlungsplan. [TODO: Anzahlungsprozentsatz bestätigen]"
+      },
+      "step4": {
+        "title": "Reisen mit voller Unterstützung",
+        "body": "Begleichen Sie den Restbetrag vor der Abreise und reisen Sie mit einem rund um die Uhr verfügbaren Ansprechpartner vor Ort, der bereits vor Ihrer Ankunft über Ihre Reise informiert ist. [TODO: Frist für Restzahlung bestätigen]"
+      }
+    },
+    "badges": {
+      "title": "Was Ihre Buchung schützt",
+      "encrypted": "Verschlüsselte Zahlungen",
+      "gdpr": "DSGVO-konforme Datenverarbeitung",
+      "licensed": "Lizenzierter Reiseveranstalter",
+      "support": "24/7-Unterstützung vor Ort",
+      "refund": "Schriftliche Rückerstattungsrichtlinie"
+    },
+    "faq": {
+      "title": "Buchungsfragen – klar beantwortet",
+      "faq1": {
+        "q": "Welche Zahlungsmethoden akzeptieren Sie und sind diese sicher?",
+        "a": "Wir akzeptieren gängige Kreditkarten und Banküberweisungen über ein verschlüsseltes, PCI-konformes Zahlungssystem. Ihre vollständigen Kartendaten werden niemals auf unseren Servern gespeichert."
+      },
+      "faq2": {
+        "q": "Wie hoch ist die Anzahlung und wann ist der Restbetrag fällig?",
+        "a": "Eine Anzahlung sichert Ihre Reisedaten zum Zeitpunkt der Buchung, der Restbetrag ist vor Reiseantritt fällig. Die genauen Beträge und Fristen werden Ihnen schriftlich bestätigt, bevor Sie eine Zahlung leisten."
+      },
+      "faq3": {
+        "q": "Was passiert, wenn ich stornieren muss?",
+        "a": "Unsere Stornierungsbedingungen werden vollständig in Ihrer Buchungsbestätigung aufgeführt, einschließlich erstattungsfähiger Beträge und geltender Fristen, damit Sie vor Ihrer Entscheidung genau wissen, woran Sie sind."
+      },
+      "faq4": {
+        "q": "Ist mein Geld geschützt, wenn etwas schiefgeht?",
+        "a": "Ihre Anzahlung wird auf einem geschützten Kundenkonto verwahrt, und Ihre Buchung erfolgt über einen lizenzierten Reiseveranstalter. Ihr Geld befindet sich daher niemals einfach auf einem privaten Konto."
+      },
+      "faq5": {
+        "q": "Entsprechen die Lodges und Camps dem, was mir angeboten wurde?",
+        "a": "Ja. Jedes in Ihrer Reiseroute genannte Camp ist genau das Camp, in dem Sie übernachten werden. Sollte sich die Verfügbarkeit ändern, kontaktieren wir Sie direkt und besprechen Alternativen, bevor wir eine Änderung vornehmen."
+      }
+    },
+    "cta": {
+      "title": "Bereit, Ihre Anfrage zu starten?",
+      "body": "Erzählen Sie uns von Ihrer Wunschreise – wir antworten innerhalb von 24 Stunden mit einem klaren und vollständig kalkulierten Plan.",
+      "button": "Kontakt aufnehmen"
+    }
   }
 }
 

@@ -578,6 +578,87 @@
     "safaris": "Safaris",
     "toursIn": "Tours en {name}",
     "from": "Desde"
+  },
+  "BookingConfidence": {
+    "hero": {
+      "eyebrow": "Tu viaje, garantizado",
+      "title": "Reserva con confianza",
+      "subtitle": "Cada reserva con Luxe Plains está protegida, completamente detallada y respaldada por un equipo que conoce estas tierras mucho antes de tu llegada. Sin costes ocultos ni promesas vagas: solo un camino claro desde la consulta inicial hasta la sabana.",
+      "ctaPrimary": "Inicia tu consulta",
+      "ctaSecondary": "Descubre cómo funciona la reserva",
+      "stampLine1": "Verificado",
+      "stampLine2": "Reserva segura"
+    },
+    "pillars": {
+      "secure": {
+        "title": "Tu reserva, protegida",
+        "body": "Los pagos se procesan mediante una plataforma cifrada y compatible con PCI. Los depósitos se mantienen en una cuenta protegida para clientes y cada reserva se gestiona a través de un operador turístico autorizado, nunca mediante un revendedor externo."
+      },
+      "transparent": {
+        "title": "Precios que realmente puedes entender",
+        "body": "Tu presupuesto muestra el coste total antes de que pagues un solo céntimo: sin sorpresas por tarifas de parques ni recargos por combustible añadidos después. Las condiciones de cancelación y reembolso están redactadas en un lenguaje claro, no escondidas en la letra pequeña."
+      },
+      "unforgettable": {
+        "title": "Diseñado para la experiencia, no para las hojas de cálculo",
+        "body": "Grupos reducidos, vehículos privados y guías que crecieron interpretando esta tierra. Cada lodge y campamento de tu itinerario está identificado y verificado personalmente, nunca como un simple «estándar similar»."
+      }
+    },
+    "process": {
+      "title": "Cómo funciona realmente una reserva con Luxe Plains",
+      "subtitle": "Cuatro pasos, cada uno documentado por escrito antes de pasar al siguiente.",
+      "step1": {
+        "title": "Consulta",
+        "body": "Cuéntanos tus fechas, tu presupuesto y el viaje que imaginas. Una persona de nuestro equipo te responderá en un plazo de 24 horas, no un chatbot."
+      },
+      "step2": {
+        "title": "Personaliza",
+        "body": "Diseñamos y ajustamos tu itinerario hasta que sea perfecto, con cada campamento, traslado y actividad presupuestados línea por línea."
+      },
+      "step3": {
+        "title": "Asegura tus fechas",
+        "body": "Realiza un depósito protegido a través de un sistema de pago cifrado. Recibirás inmediatamente una confirmación por escrito y un calendario completo de pagos. [TODO: confirmar porcentaje del depósito]"
+      },
+      "step4": {
+        "title": "Viaja con asistencia completa",
+        "body": "Abona el saldo restante antes de la salida y viaja con un contacto local disponible las 24 horas del día, los 7 días de la semana, informado sobre tu viaje antes de que llegues. [TODO: confirmar plazo para el pago del saldo restante]"
+      }
+    },
+    "badges": {
+      "title": "Qué protege tu reserva",
+      "encrypted": "Pagos cifrados",
+      "gdpr": "Gestión de datos conforme al RGPD",
+      "licensed": "Operador turístico autorizado",
+      "support": "Asistencia local 24/7",
+      "refund": "Política de reembolso por escrito"
+    },
+    "faq": {
+      "title": "Preguntas sobre reservas, respondidas con claridad",
+      "faq1": {
+        "q": "¿Qué métodos de pago aceptan y son seguros?",
+        "a": "Aceptamos las principales tarjetas de crédito y transferencias bancarias mediante una pasarela de pago cifrada y compatible con PCI. Nunca almacenamos los datos completos de tu tarjeta en nuestros servidores."
+      },
+      "faq2": {
+        "q": "¿Qué importe debo pagar como depósito y cuándo vence el saldo restante?",
+        "a": "Un depósito asegura tus fechas en el momento de la reserva y el saldo restante debe abonarse antes de la salida. Los importes exactos y los plazos se confirman por escrito antes de que realices cualquier pago."
+      },
+      "faq3": {
+        "q": "¿Qué ocurre si necesito cancelar?",
+        "a": "Nuestras condiciones de cancelación se detallan por completo en la confirmación de tu reserva, incluyendo cualquier importe reembolsable y los plazos aplicables, para que sepas exactamente cuál es tu situación antes de comprometerte."
+      },
+      "faq4": {
+        "q": "¿Mi dinero está protegido si algo sale mal?",
+        "a": "Tu depósito se mantiene en una cuenta protegida para clientes y tu reserva se emite a través de un operador turístico autorizado, por lo que tu dinero nunca permanece simplemente en una cuenta personal."
+      },
+      "faq5": {
+        "q": "¿Los lodges y campamentos serán los mismos que aparecen en el presupuesto?",
+        "a": "Sí. Cada campamento indicado en tu itinerario es exactamente el campamento en el que te alojarás. Si la disponibilidad cambia en algún momento, nos pondremos en contacto contigo directamente para ofrecerte alternativas antes de realizar cualquier sustitución."
+      }
+    },
+    "cta": {
+      "title": "¿Listo para iniciar tu consulta?",
+      "body": "Cuéntanos el viaje que imaginas y te responderemos en un plazo de 24 horas con un plan claro y completamente detallado.",
+      "button": "Ponte en contacto"
+    }
   }
 }
 

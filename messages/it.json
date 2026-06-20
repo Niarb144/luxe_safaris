@@ -578,6 +578,87 @@
     "safaris": "Safari",
     "toursIn": "Tour a {name}",
     "from": "Da"
+  },
+  "BookingConfidence": {
+    "hero": {
+      "eyebrow": "Il tuo viaggio, garantito",
+      "title": "Prenota con fiducia",
+      "subtitle": "Ogni prenotazione Luxe Plains è protetta, completamente dettagliata e supportata da un team che conosce queste terre molto prima del tuo arrivo. Nessun costo nascosto, nessuna promessa vaga — solo un percorso chiaro dalla richiesta fino alla savana.",
+      "ctaPrimary": "Inizia la tua richiesta",
+      "ctaSecondary": "Scopri come funziona la prenotazione",
+      "stampLine1": "Verificato",
+      "stampLine2": "Prenotazione sicura"
+    },
+    "pillars": {
+      "secure": {
+        "title": "La tua prenotazione, protetta",
+        "body": "I pagamenti vengono effettuati tramite una piattaforma crittografata conforme agli standard PCI. Gli acconti sono conservati in un conto cliente protetto e ogni prenotazione è gestita da un tour operator autorizzato — mai tramite rivenditori terzi."
+      },
+      "transparent": {
+        "title": "Prezzi davvero chiari",
+        "body": "Il tuo preventivo mostra il costo totale prima che tu paghi anche solo un centesimo — nessuna sorpresa per tasse dei parchi o supplementi carburante aggiunti successivamente. Le condizioni di cancellazione e rimborso sono scritte in linguaggio chiaro, non nascoste nelle clausole in piccolo."
+      },
+      "unforgettable": {
+        "title": "Pensato per l’esperienza, non per i fogli di calcolo",
+        "body": "Piccoli gruppi, veicoli privati e guide che sono cresciute in queste terre. Ogni lodge e campo del tuo itinerario è nominato e verificato personalmente — mai sostituito con un semplice “standard equivalente”."
+      }
+    },
+    "process": {
+      "title": "Come funziona realmente una prenotazione Luxe Plains",
+      "subtitle": "Quattro passaggi, ognuno documentato per iscritto prima di passare al successivo.",
+      "step1": {
+        "title": "Richiedi informazioni",
+        "body": "Raccontaci le tue date, il tuo budget e il viaggio che immagini. Un membro del nostro team risponde entro 24 ore — non un chatbot."
+      },
+      "step2": {
+        "title": "Personalizza",
+        "body": "Costruiamo e perfezioniamo il tuo itinerario finché non è perfetto, con ogni campo, trasferimento e attività dettagliati e prezzati riga per riga."
+      },
+      "step3": {
+        "title": "Blocca le tue date",
+        "body": "Versa un acconto protetto tramite pagamento crittografato. Riceverai immediatamente una conferma scritta e un piano di pagamento completo. [TODO: confermare percentuale acconto]"
+      },
+      "step4": {
+        "title": "Viaggia con assistenza completa",
+        "body": "Salda il resto prima della partenza e viaggia con un contatto locale disponibile 24/7, informato sul tuo viaggio prima del tuo arrivo. [TODO: confermare scadenza saldo]"
+      }
+    },
+    "badges": {
+      "title": "Cosa protegge la tua prenotazione",
+      "encrypted": "Pagamenti crittografati",
+      "gdpr": "Gestione dati conforme al GDPR",
+      "licensed": "Tour operator autorizzato",
+      "support": "Assistenza locale 24/7",
+      "refund": "Politica di rimborso scritta"
+    },
+    "faq": {
+      "title": "Domande sulla prenotazione, risposte chiare",
+      "faq1": {
+        "q": "Quali metodi di pagamento accettate e sono sicuri?",
+        "a": "Accettiamo le principali carte di credito e bonifici bancari tramite un gateway di pagamento crittografato conforme PCI. Non memorizziamo mai i dati completi della tua carta sui nostri server."
+      },
+      "faq2": {
+        "q": "Quanto devo pagare come acconto e quando è dovuto il saldo?",
+        "a": "Un acconto blocca le tue date al momento della prenotazione, mentre il saldo è dovuto prima della partenza. Importi esatti e scadenze vengono confermati per iscritto prima di qualsiasi pagamento."
+      },
+      "faq3": {
+        "q": "Cosa succede se devo cancellare?",
+        "a": "Le nostre condizioni di cancellazione sono riportate per intero nella conferma della prenotazione, inclusi eventuali importi rimborsabili e le relative scadenze, così sai esattamente a cosa vai incontro prima di impegnarti."
+      },
+      "faq4": {
+        "q": "I miei soldi sono protetti se qualcosa va storto?",
+        "a": "Il tuo acconto è conservato in un conto cliente protetto e la tua prenotazione è emessa da un tour operator autorizzato, quindi il tuo denaro non è mai semplicemente su un conto personale."
+      },
+      "faq5": {
+        "q": "I lodge e i campi saranno quelli indicati nel preventivo?",
+        "a": "Sì. Ogni campo indicato nel tuo itinerario è esattamente quello in cui soggiornerai. Se la disponibilità dovesse cambiare, ti contatteremo direttamente con alternative prima di qualsiasi sostituzione."
+      }
+    },
+    "cta": {
+      "title": "Pronto a iniziare la tua richiesta?",
+      "body": "Raccontaci il viaggio che immagini — ti risponderemo entro 24 ore con un piano chiaro e completamente dettagliato.",
+      "button": "Contattaci"
+    }
   }
 }
 

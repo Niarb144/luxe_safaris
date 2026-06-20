@@ -79,7 +79,7 @@ export default function Footer() {
           </h3>
           <ul className="space-y-2 text-sm">
             <li className="hover:underline cursor-pointer">
-              {t("information.bookWithConfidence")}
+              <a href="/booking-with-confidence">{t("information.bookWithConfidence")}</a>
             </li>
             <li className="hover:underline cursor-pointer">
               <a href="/privacy-policy">{t("information.privacyPolicy")}</a>

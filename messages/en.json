@@ -569,5 +569,86 @@
     "safaris": "Safaris",
     "toursIn": "Tours in {name}",
     "from": "From"
+  },
+  "BookingConfidence": {
+    "hero": {
+      "eyebrow": "Your journey, guaranteed",
+      "title": "Booking With Confidence",
+      "subtitle": "Every Luxe Plains booking is secured, itemised in full and backed by a team who has walked this ground long before you arrive. No hidden costs, no vague promises — just a clear path from enquiry to the savanna.",
+      "ctaPrimary": "Start your enquiry",
+      "ctaSecondary": "See how booking works",
+      "stampLine1": "Verified",
+      "stampLine2": "Secure Booking"
+    },
+    "pillars": {
+      "secure": {
+        "title": "Your booking, secured",
+        "body": "Payments run through encrypted, PCI-compliant checkout. Deposits are held in a protected client account, and every booking is processed under a licensed tour operator — never a third-party reseller."
+      },
+      "transparent": {
+        "title": "Pricing you can actually read",
+        "body": "Your quote shows the full cost before you pay a cent — no park-fee surprises, no fuel surcharges added later. Cancellation and refund terms are written in plain language, not buried in fine print."
+      },
+      "unforgettable": {
+        "title": "Built for the experience, not the spreadsheet",
+        "body": "Small groups, private vehicles, and guides who grew up reading this land. Every lodge and camp on your itinerary is named and vetted in person — never 'similar standard.'"
+      }
+    },
+    "process": {
+      "title": "How a Luxe Plains booking actually works",
+      "subtitle": "Four steps, each one documented in writing before you move to the next.",
+      "step1": {
+        "title": "Enquire",
+        "body": "Tell us your dates, your budget and the trip you're picturing. A person on our team replies within 24 hours — not a chatbot."
+      },
+      "step2": {
+        "title": "Customise",
+        "body": "We build, and rebuild, your itinerary until it's right, with every camp, transfer and activity priced line by line."
+      },
+      "step3": {
+        "title": "Secure your dates",
+        "body": "Pay a protected deposit through encrypted checkout. You receive written confirmation and a full payment schedule immediately. [TODO: confirm deposit %]"
+      },
+      "step4": {
+        "title": "Travel, fully supported",
+        "body": "Settle the balance ahead of departure and travel with a 24/7 in-country contact, briefed on your trip before you land. [TODO: confirm balance-due window]"
+      }
+    },
+    "badges": {
+      "title": "What's protecting your booking",
+      "encrypted": "Encrypted payments",
+      "gdpr": "GDPR-compliant data handling",
+      "licensed": "Licensed tour operator",
+      "support": "24/7 in-country support",
+      "refund": "Written refund policy"
+    },
+    "faq": {
+      "title": "Booking questions, answered plainly",
+      "faq1": {
+        "q": "What payment methods do you accept, and are they secure?",
+        "a": "We accept major credit cards and bank transfer through an encrypted, PCI-compliant payment gateway. We never store your full card details on our servers."
+      },
+      "faq2": {
+        "q": "How much deposit do I pay, and when is the balance due?",
+        "a": "A deposit secures your dates at the time of booking, with the balance due ahead of departure. Exact amounts and deadlines are confirmed in writing before you pay anything."
+      },
+      "faq3": {
+        "q": "What happens if I need to cancel?",
+        "a": "Our cancellation terms are set out in full in your booking confirmation, including any refundable portions and applicable deadlines, so you know where you stand before you commit."
+      },
+      "faq4": {
+        "q": "Is my money protected if something goes wrong?",
+        "a": "Your deposit is held in a protected client account, and your booking is issued under a licensed tour operator, so your payment is never just sitting in a personal account."
+      },
+      "faq5": {
+        "q": "Will the lodges and camps match what I was quoted?",
+        "a": "Yes. Every camp named in your itinerary is the camp you stay in. If availability ever changes, we contact you directly with alternatives before making any substitution."
+      }
+    },
+    "cta": {
+      "title": "Ready to start your enquiry?",
+      "body": "Tell us about the trip you're picturing — we'll reply within 24 hours with a clear, fully priced plan.",
+      "button": "Get in touch"
+    }
   }
 }

@@ -578,5 +578,86 @@
     "safaris": "Safaris",
     "toursIn": "Circuits à {name}",
     "from": "À partir de"
+  },
+  "BookingConfidence": {
+    "hero": {
+      "eyebrow": "Votre voyage, garanti",
+      "title": "Réservez en toute confiance",
+      "subtitle": "Chaque réservation Luxe Plains est sécurisée, entièrement détaillée et soutenue par une équipe qui connaît ces terres bien avant votre arrivée. Aucun coût caché, aucune promesse vague — simplement un parcours clair, de votre demande jusqu’à la savane.",
+      "ctaPrimary": "Commencer votre demande",
+      "ctaSecondary": "Voir comment fonctionne la réservation",
+      "stampLine1": "Vérifié",
+      "stampLine2": "Réservation sécurisée"
+    },
+    "pillars": {
+      "secure": {
+        "title": "Votre réservation, sécurisée",
+        "body": "Les paiements sont effectués via une plateforme chiffrée conforme aux normes PCI. Les acomptes sont conservés sur un compte client protégé et chaque réservation est traitée par un voyagiste agréé — jamais par un revendeur tiers."
+      },
+      "transparent": {
+        "title": "Des tarifs réellement transparents",
+        "body": "Votre devis affiche le coût total avant que vous ne versiez le moindre centime — aucune surprise liée aux frais de parc ni aux suppléments carburant ajoutés par la suite. Les conditions d’annulation et de remboursement sont rédigées dans un langage clair, sans être dissimulées dans les petites lignes."
+      },
+      "unforgettable": {
+        "title": "Conçu pour l’expérience, pas pour les tableaux Excel",
+        "body": "Petits groupes, véhicules privés et guides ayant grandi sur ces terres. Chaque lodge et chaque camp de votre itinéraire est nommé et vérifié en personne — jamais remplacé par un simple « niveau équivalent »."
+      }
+    },
+    "process": {
+      "title": "Comment fonctionne réellement une réservation Luxe Plains",
+      "subtitle": "Quatre étapes, chacune documentée par écrit avant de passer à la suivante.",
+      "step1": {
+        "title": "Faire une demande",
+        "body": "Indiquez-nous vos dates, votre budget et le voyage que vous imaginez. Un membre de notre équipe vous répond sous 24 heures — pas un chatbot."
+      },
+      "step2": {
+        "title": "Personnaliser",
+        "body": "Nous créons et ajustons votre itinéraire jusqu’à ce qu’il soit parfait, avec chaque camp, transfert et activité détaillés et tarifés ligne par ligne."
+      },
+      "step3": {
+        "title": "Réserver vos dates",
+        "body": "Versez un acompte sécurisé via une plateforme de paiement chiffrée. Vous recevez immédiatement une confirmation écrite ainsi qu’un calendrier complet des paiements. [TODO: confirmer le pourcentage de l’acompte]"
+      },
+      "step4": {
+        "title": "Voyager avec une assistance complète",
+        "body": "Réglez le solde avant votre départ et voyagez avec un contact local disponible 24h/24 et 7j/7, informé de votre voyage avant même votre arrivée. [TODO: confirmer l’échéance du paiement du solde]"
+      }
+    },
+    "badges": {
+      "title": "Ce qui protège votre réservation",
+      "encrypted": "Paiements chiffrés",
+      "gdpr": "Traitement des données conforme au RGPD",
+      "licensed": "Voyagiste agréé",
+      "support": "Assistance locale 24h/24 et 7j/7",
+      "refund": "Politique de remboursement écrite"
+    },
+    "faq": {
+      "title": "Questions sur la réservation, réponses claires",
+      "faq1": {
+        "q": "Quels moyens de paiement acceptez-vous et sont-ils sécurisés ?",
+        "a": "Nous acceptons les principales cartes bancaires ainsi que les virements bancaires via une passerelle de paiement chiffrée conforme aux normes PCI. Nous ne stockons jamais l’intégralité des données de votre carte sur nos serveurs."
+      },
+      "faq2": {
+        "q": "Quel acompte dois-je verser et quand le solde est-il dû ?",
+        "a": "Un acompte permet de garantir vos dates au moment de la réservation, tandis que le solde est à régler avant le départ. Les montants exacts et les échéances vous sont confirmés par écrit avant tout paiement."
+      },
+      "faq3": {
+        "q": "Que se passe-t-il si je dois annuler ?",
+        "a": "Nos conditions d’annulation sont détaillées dans votre confirmation de réservation, y compris les éventuels montants remboursables et les délais applicables, afin que vous sachiez exactement à quoi vous attendre avant de vous engager."
+      },
+      "faq4": {
+        "q": "Mon argent est-il protégé si quelque chose tourne mal ?",
+        "a": "Votre acompte est conservé sur un compte client protégé et votre réservation est émise par un voyagiste agréé, ce qui signifie que votre paiement n’est jamais simplement déposé sur un compte personnel."
+      },
+      "faq5": {
+        "q": "Les lodges et camps correspondront-ils à ceux indiqués dans mon devis ?",
+        "a": "Oui. Chaque camp mentionné dans votre itinéraire est celui dans lequel vous séjournerez. Si la disponibilité venait à changer, nous vous contacterions directement pour vous proposer des alternatives avant toute substitution."
+      }
+    },
+    "cta": {
+      "title": "Prêt à commencer votre demande ?",
+      "body": "Parlez-nous du voyage que vous imaginez — nous vous répondrons sous 24 heures avec un programme clair et entièrement chiffré.",
+      "button": "Nous contacter"
+    }
   }
 }
