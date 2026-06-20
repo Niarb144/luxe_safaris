@@ -25,6 +25,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import {
@@ -52,6 +53,7 @@ const PAYMENT_DETAILS = {
   mpesa: {
     paybill: '400xxxx', // e.g. "400200"
     accountHint: 'Your booking reference, e.g. LPA-2306', 
+    logo: '/images/mpesa.png'
   },
   bank: {
     bankName: 'Stanbic Bank Kenya',
@@ -60,6 +62,11 @@ const PAYMENT_DETAILS = {
     branch: 'BRANCHXXXX',
     swiftCode: 'SWIFT BIC XXXX', // Stanbic Bank Kenya's SWIFT/BIC — confirm with your relationship manager
     currency: 'ACCEPTED CURRENCIES', // e.g. "USD and KES"
+    logo: '/images/stanbic.jpg',
+  },
+  card_logo: {
+    visa: '/images/visa.png',
+    mastercard: '/images/mastecard.jpg'
   },
   cards: ['Visa', 'Mastercard'], // edit to match what your gateway actually supports
 };
@@ -319,6 +326,14 @@ export default function PaymentMethods() {
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
           {/* M-Pesa */}
           <PaymentMethodCard icon={Smartphone} title={t('mpesa.title')} body={t('mpesa.body')} delay={0}>
+           <div className="inline-block rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-green-400/40 hover:shadow-lg hover:scale-[1.03]">
+                <Image
+                    src={PAYMENT_DETAILS.mpesa.logo}
+                    alt="MPesa Logo"
+                    width={320}
+                    height={200}
+                />
+            </div>
             <CopyField label={t('mpesa.paybillLabel')} value={PAYMENT_DETAILS.mpesa.paybill} />
             <p className="text-xs leading-relaxed" style={{ color: `${IVORY}80` }}>
               {t('mpesa.accountHintLabel')}:{' '}
@@ -341,6 +356,14 @@ export default function PaymentMethods() {
 
           {/* Bank transfer */}
           <PaymentMethodCard icon={Landmark} title={t('bank.title')} body={t('bank.body')} delay={0.12}>
+            <div className="inline-block rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-blue-400/40 hover:shadow-lg hover:scale-[1.03]">
+                <Image
+                    src={PAYMENT_DETAILS.bank.logo}
+                    alt="Stanbic Logo"
+                    width={320}
+                    height={200}
+                />
+            </div>
             <CopyField label={t('bank.bankNameLabel')} value={PAYMENT_DETAILS.bank.bankName} />
             <CopyField label={t('bank.accountNameLabel')} value={PAYMENT_DETAILS.bank.accountName} />
             <CopyField label={t('bank.accountNumberLabel')} value={PAYMENT_DETAILS.bank.accountNumber} />
@@ -353,6 +376,25 @@ export default function PaymentMethods() {
 
           {/* Card */}
           <PaymentMethodCard icon={CreditCard} title={t('card.title')} body={t('card.body')} delay={0.24}>
+            <div className="flex items-center gap-6">
+                <div className="inline-block rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-red-400/40 hover:shadow-lg hover:scale-[1.03]">
+                    <Image
+                    src={PAYMENT_DETAILS.card_logo.mastercard}
+                    alt="Mastercard Logo"
+                    width={100}
+                    height={100}
+                    />
+                </div>
+
+                <div className="inline-block rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-blue-400/40 hover:shadow-lg hover:scale-[1.03]">
+                    <Image
+                    src={PAYMENT_DETAILS.card_logo.visa}
+                    alt="Visa Logo"
+                    width={100}
+                    height={100}
+                    />
+                </div>
+                </div>
             <div className="flex flex-wrap gap-2">
               {PAYMENT_DETAILS.cards.map((card) => (
                 <span
