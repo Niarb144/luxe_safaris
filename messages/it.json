@@ -659,6 +659,97 @@
       "body": "Raccontaci il viaggio che immagini — ti risponderemo entro 24 ore con un piano chiaro e completamente dettagliato.",
       "button": "Contattaci"
     }
+  },
+  "PaymentMethods": {
+    "hero": {
+      "eyebrow": "Metodi di pagamento",
+      "title": "Paga nel modo che preferisci",
+      "subtitle": "Scegli M-Pesa per un deposito immediato, un bonifico bancario per i pagamenti più grandi o la carta per un pagamento rapido e sicuro da qualsiasi luogo. Tutti i metodi confluiscono nello stesso conto protetto.",
+      "securityLink": "Come viene protetto il tuo pagamento"
+    },
+    "mpesa": {
+      "title": "Paga con M-Pesa",
+      "body": "Invia il tuo deposito o saldo immediatamente tramite Lipa na M-Pesa — l’opzione più veloce se paghi dal Kenya o dall’Africa orientale.",
+      "paybillLabel": "Numero Paybill",
+      "accountHintLabel": "Numero conto",
+      "step1": "Apri il menu M-Pesa sul tuo telefono",
+      "step2": "Seleziona Lipa na M-Pesa, poi Pay Bill",
+      "step3": "Inserisci il numero aziendale sopra",
+      "step4": "Inserisci il tuo riferimento di prenotazione come numero conto",
+      "step5": "Inserisci l’importo, conferma con il PIN e conserva la ricevuta SMS"
+    },
+    "bank": {
+      "title": "Bonifico bancario a Stanbic Bank",
+      "body": "Per pagamenti più grandi o bonifici dall’esterno dell’Africa orientale, paga direttamente sul nostro conto Stanbic Bank.",
+      "bankNameLabel": "Banca",
+      "accountNameLabel": "Nome del conto",
+      "accountNumberLabel": "Numero di conto",
+      "branchLabel": "Filiale",
+      "swiftLabel": "Codice SWIFT / BIC",
+      "note": "Accettiamo bonifici in {currency}. Utilizza il tuo riferimento di prenotazione come causale del pagamento e invia la conferma al tuo consulente safari così possiamo abbinarla alla tua prenotazione."
+    },
+    "card": {
+      "title": "Paga con carta",
+      "body": "Paga in modo sicuro online tramite il nostro sistema di pagamento crittografato — lo stesso sistema protetto descritto nella nostra pagina Prenota con fiducia.",
+      "note": "I pagamenti con carta vengono elaborati immediatamente. La tua banca potrebbe applicare commissioni per transazioni estere o conversione valuta — verifica con loro se paghi dall’estero."
+    },
+    "compare": {
+      "title": "Quale metodo dovresti scegliere?",
+      "headMethod": "Metodo",
+      "headTime": "Tempo di elaborazione",
+      "headCurrency": "Valuta",
+      "headBestFor": "Ideale per",
+      "mpesa": {
+        "method": "M-Pesa",
+        "time": "Immediato",
+        "currency": "KES",
+        "bestFor": "Depositi rapidi dal Kenya e dall’Africa orientale"
+      },
+      "bank": {
+        "method": "Bonifico bancario",
+        "time": "1–3 giorni lavorativi",
+        "currency": "USD / KES",
+        "bestFor": "Pagamenti più grandi e trasferimenti internazionali"
+      },
+      "card": {
+        "method": "Carta",
+        "time": "Immediato",
+        "currency": "USD (conversione automatica)",
+        "bestFor": "Viaggiatori internazionali, depositi e saldi"
+      }
+    },
+    "faq": {
+      "title": "Domande sui pagamenti, spiegate chiaramente",
+      "faq1": {
+        "q": "Quale metodo di pagamento dovrei usare?",
+        "a": "Se ti trovi in Kenya o in Africa orientale, M-Pesa è solitamente il più veloce per i depositi. Per pagamenti più grandi o bonifici dall’Europa e da altre regioni, bonifico bancario o carta funzionano bene — la carta è immediata, mentre il bonifico può richiedere alcuni giorni lavorativi."
+      },
+      "faq2": {
+        "q": "Ci sono commissioni di trasferimento?",
+        "a": "Non applichiamo commissioni aggiuntive per i pagamenti M-Pesa o con carta. Tuttavia, la tua banca potrebbe applicare commissioni per i bonifici internazionali — verifica prima di inviare importi elevati."
+      },
+      "faq3": {
+        "q": "In quale valuta devo pagare?",
+        "a": "I pagamenti M-Pesa vengono effettuati in scellini kenioti (KES). I bonifici bancari e i pagamenti con carta possono essere effettuati in USD o KES — il tuo preventivo confermerà la valuta della prenotazione."
+      },
+      "faq4": {
+        "q": "Come confermo che il mio pagamento è stato ricevuto?",
+        "a": "Per M-Pesa e bonifici bancari, invia la ricevuta SMS o la conferma del trasferimento al tuo consulente safari e la abbineremo alla tua prenotazione con conferma scritta. I pagamenti con carta vengono confermati automaticamente."
+      },
+      "faq5": {
+        "q": "Il pagamento con carta è sicuro?",
+        "a": "Sì. I pagamenti con carta vengono elaborati tramite un gateway crittografato conforme PCI e non vediamo né memorizziamo mai il numero completo della tua carta — consulta la nostra pagina Prenota con fiducia per i dettagli."
+      },
+      "faq6": {
+        "q": "Posso dividere il pagamento tra più metodi?",
+        "a": "Sì — molti clienti pagano il deposito con M-Pesa o carta e il saldo tramite bonifico bancario, o viceversa. Basta informare il tuo consulente safari così ogni pagamento viene registrato correttamente."
+      }
+    },
+    "cta": {
+      "title": "Non sei sicuro di quale opzione scegliere?",
+      "body": "Dicci da dove stai pagando e l’importo, e ti indicheremo il metodo più semplice.",
+      "button": "Parla con un consulente safari"
+    }
   }
 }
 

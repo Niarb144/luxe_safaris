@@ -659,6 +659,97 @@
       "body": "Vertel ons over de reis die je voor ogen hebt — we reageren binnen 24 uur met een duidelijk en volledig uitgewerkt plan.",
       "button": "Neem contact op"
     }
+  },
+  "PaymentMethods": {
+    "hero": {
+      "eyebrow": "Betaalmethoden",
+      "title": "Betaal op de manier die voor jou het beste werkt",
+      "subtitle": "Kies M-Pesa voor een directe aanbetaling, een bankoverschrijving voor grotere betalingen, of een kaart voor snelle en veilige betaling vanaf elke locatie. Alle methoden komen terecht op dezelfde beveiligde rekening.",
+      "securityLink": "Hoe je betaling wordt beschermd"
+    },
+    "mpesa": {
+      "title": "Betalen met M-Pesa",
+      "body": "Stuur je aanbetaling of saldo direct via Lipa na M-Pesa — de snelste optie als je betaalt vanuit Kenia of Oost-Afrika.",
+      "paybillLabel": "Paybill-nummer",
+      "accountHintLabel": "Rekeningnummer",
+      "step1": "Open het M-Pesa-menu op je telefoon",
+      "step2": "Selecteer Lipa na M-Pesa en daarna Pay Bill",
+      "step3": "Voer het bedrijfsnummer hierboven in",
+      "step4": "Voer je boekingsreferentie in als rekeningnummer",
+      "step5": "Voer het bedrag in, bevestig met je pincode en bewaar de sms-ontvangst"
+    },
+    "bank": {
+      "title": "Bankoverschrijving naar Stanbic Bank",
+      "body": "Voor grotere betalingen of overschrijvingen van buiten Oost-Afrika betaal je rechtstreeks naar onze Stanbic Bank-rekening.",
+      "bankNameLabel": "Bank",
+      "accountNameLabel": "Rekeninghouder",
+      "accountNumberLabel": "Rekeningnummer",
+      "branchLabel": "Filiaal",
+      "swiftLabel": "SWIFT / BIC-code",
+      "note": "Wij accepteren overschrijvingen in {currency}. Gebruik je boekingsreferentie als betalingskenmerk en stuur de overschrijvingsbevestiging naar je safariconsultant zodat we deze aan je boeking kunnen koppelen."
+    },
+    "card": {
+      "title": "Betalen met kaart",
+      "body": "Betaal veilig online via ons versleutelde betaalsysteem — hetzelfde beveiligde systeem als beschreven op onze pagina 'Boeken met vertrouwen'.",
+      "note": "Kaartbetalingen worden direct verwerkt. Je bank kan eigen kosten voor buitenlandse transacties of valutaconversie rekenen — controleer dit bij je bank als je vanuit het buitenland betaalt."
+    },
+    "compare": {
+      "title": "Welke methode moet je kiezen?",
+      "headMethod": "Methode",
+      "headTime": "Verwerkingstijd",
+      "headCurrency": "Valuta",
+      "headBestFor": "Beste voor",
+      "mpesa": {
+        "method": "M-Pesa",
+        "time": "Direct",
+        "currency": "KES",
+        "bestFor": "Snelle aanbetalingen vanuit Kenia en Oost-Afrika"
+      },
+      "bank": {
+        "method": "Bankoverschrijving",
+        "time": "1–3 werkdagen",
+        "currency": "USD / KES",
+        "bestFor": "Grotere betalingen en internationale overschrijvingen"
+      },
+      "card": {
+        "method": "Kaartbetaling",
+        "time": "Direct",
+        "currency": "USD (automatisch omgerekend)",
+        "bestFor": "Internationale reizigers, aanbetalingen en saldo's"
+      }
+    },
+    "faq": {
+      "title": "Betalingsvragen, duidelijk beantwoord",
+      "faq1": {
+        "q": "Welke betaalmethode moet ik gebruiken?",
+        "a": "Als je in Kenia of Oost-Afrika bent, is M-Pesa meestal het snelst voor aanbetalingen. Voor grotere betalingen of overschrijvingen vanuit Europa en andere regio’s werken bankoverschrijving of kaart goed — kaart is direct, terwijl een bankoverschrijving enkele werkdagen kan duren."
+      },
+      "faq2": {
+        "q": "Zijn er transactiekosten?",
+        "a": "Wij rekenen geen extra kosten voor M-Pesa- of kaartbetalingen. Je bank kan echter kosten in rekening brengen voor internationale overschrijvingen — controleer dit voordat je grotere bedragen verstuurt."
+      },
+      "faq3": {
+        "q": "In welke valuta moet ik betalen?",
+        "a": "M-Pesa-betalingen worden gedaan in Keniaanse shilling (KES). Bankoverschrijvingen en kaartbetalingen kunnen in USD of KES worden gedaan — je offerte bevestigt de juiste valuta voor je boeking."
+      },
+      "faq4": {
+        "q": "Hoe bevestig ik dat mijn betaling is ontvangen?",
+        "a": "Voor M-Pesa en bankoverschrijvingen stuur je de sms-ontvangst of overschrijvingsbevestiging naar je safariconsultant. Wij koppelen deze aan je boeking en bevestigen dit schriftelijk. Kaartbetalingen worden automatisch bevestigd."
+      },
+      "faq5": {
+        "q": "Is betalen met kaart veilig?",
+        "a": "Ja. Kaartbetalingen verlopen via een versleutelde, PCI-conforme betaalgateway en wij zien of bewaren je volledige kaartnummer nooit — zie onze pagina 'Boeken met vertrouwen' voor details."
+      },
+      "faq6": {
+        "q": "Kan ik mijn betaling opsplitsen over meerdere methoden?",
+        "a": "Ja — veel gasten betalen hun aanbetaling via M-Pesa of kaart en het saldo via bankoverschrijving, of andersom. Laat het je safariconsultant weten zodat elke betaling correct wordt verwerkt."
+      }
+    },
+    "cta": {
+      "title": "Weet je niet zeker welke optie je moet kiezen?",
+      "body": "Vertel ons waar je betaalt en hoeveel, en wij adviseren je de eenvoudigste methode.",
+      "button": "Neem contact op met een safariconsultant"
+    }
   }
 }
 

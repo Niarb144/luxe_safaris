@@ -659,6 +659,97 @@
       "body": "Cuéntanos el viaje que imaginas y te responderemos en un plazo de 24 horas con un plan claro y completamente detallado.",
       "button": "Ponte en contacto"
     }
+  },
+  "PaymentMethods": {
+    "hero": {
+      "eyebrow": "Formas de pago",
+      "title": "Paga como mejor te convenga",
+      "subtitle": "Elige M-Pesa para un depósito instantáneo, una transferencia bancaria para pagos más grandes o tarjeta para un pago rápido y seguro desde cualquier lugar. Todos los métodos van a la misma cuenta protegida.",
+      "securityLink": "Cómo se protege tu pago"
+    },
+    "mpesa": {
+      "title": "Pagar con M-Pesa",
+      "body": "Envía tu depósito o saldo al instante a través de Lipa na M-Pesa — la opción más rápida si pagas desde Kenia o África Oriental.",
+      "paybillLabel": "Número de Paybill",
+      "accountHintLabel": "Número de cuenta",
+      "step1": "Abre el menú de M-Pesa en tu teléfono",
+      "step2": "Selecciona Lipa na M-Pesa y luego Pay Bill",
+      "step3": "Introduce el número de empresa indicado arriba",
+      "step4": "Introduce tu referencia de reserva como número de cuenta",
+      "step5": "Introduce el importe, confirma con tu PIN y guarda el recibo SMS"
+    },
+    "bank": {
+      "title": "Transferencia bancaria a Stanbic Bank",
+      "body": "Para pagos más grandes o transferencias desde fuera de África Oriental, paga directamente a nuestra cuenta de Stanbic Bank.",
+      "bankNameLabel": "Banco",
+      "accountNameLabel": "Nombre de la cuenta",
+      "accountNumberLabel": "Número de cuenta",
+      "branchLabel": "Sucursal",
+      "swiftLabel": "Código SWIFT / BIC",
+      "note": "Aceptamos transferencias en {currency}. Utiliza tu referencia de reserva como concepto de pago y envía la confirmación de la transferencia a tu asesor de safari para poder vincularla a tu reserva."
+    },
+    "card": {
+      "title": "Pagar con tarjeta",
+      "body": "Paga de forma segura en línea a través de nuestro sistema de pago cifrado — el mismo sistema protegido descrito en nuestra página de Reserva con Confianza.",
+      "note": "Los pagos con tarjeta se procesan al instante. Tu banco puede aplicar comisiones por transacciones internacionales o conversión de divisa — consulta con ellos si pagas desde fuera de Kenia."
+    },
+    "compare": {
+      "title": "¿Qué método deberías elegir?",
+      "headMethod": "Método",
+      "headTime": "Tiempo de procesamiento",
+      "headCurrency": "Moneda",
+      "headBestFor": "Ideal para",
+      "mpesa": {
+        "method": "M-Pesa",
+        "time": "Instantáneo",
+        "currency": "KES",
+        "bestFor": "Depósitos rápidos desde Kenia y África Oriental"
+      },
+      "bank": {
+        "method": "Transferencia bancaria",
+        "time": "1–3 días hábiles",
+        "currency": "USD / KES",
+        "bestFor": "Pagos grandes y transferencias internacionales"
+      },
+      "card": {
+        "method": "Tarjeta",
+        "time": "Instantáneo",
+        "currency": "USD (con conversión automática)",
+        "bestFor": "Viajeros internacionales, depósitos y saldos"
+      }
+    },
+    "faq": {
+      "title": "Preguntas sobre pagos, respondidas claramente",
+      "faq1": {
+        "q": "¿Qué método de pago debería usar?",
+        "a": "Si estás en Kenia o África Oriental, M-Pesa suele ser la forma más rápida para depósitos. Para pagos más grandes o transferencias desde Europa u otras regiones, la transferencia bancaria o la tarjeta funcionan bien — la tarjeta es instantánea, mientras que la transferencia puede tardar varios días hábiles."
+      },
+      "faq2": {
+        "q": "¿Se me cobrarán comisiones por la transferencia?",
+        "a": "No cobramos comisiones adicionales por pagos con M-Pesa o tarjeta. Sin embargo, tu banco puede aplicar comisiones por transferencias internacionales — consulta con ellos antes de enviar importes grandes."
+      },
+      "faq3": {
+        "q": "¿En qué moneda debo pagar?",
+        "a": "Los pagos con M-Pesa se realizan en chelines kenianos (KES). Las transferencias bancarias y pagos con tarjeta pueden hacerse en USD o KES — tu presupuesto confirmará la moneda de tu reserva."
+      },
+      "faq4": {
+        "q": "¿Cómo confirmo que mi pago ha sido recibido?",
+        "a": "Para M-Pesa y transferencias bancarias, envía el recibo SMS o la confirmación de la transferencia a tu asesor de safari y lo vincularemos a tu reserva confirmándolo por escrito. Los pagos con tarjeta se confirman automáticamente en el momento del pago."
+      },
+      "faq5": {
+        "q": "¿Es seguro pagar con tarjeta?",
+        "a": "Sí. Los pagos con tarjeta se procesan a través de una pasarela cifrada y conforme a PCI, y nunca vemos ni almacenamos el número completo de tu tarjeta — consulta nuestra página de Reserva con Confianza para más detalles."
+      },
+      "faq6": {
+        "q": "¿Puedo dividir el pago entre varios métodos?",
+        "a": "Sí — muchos clientes pagan el depósito con M-Pesa o tarjeta y el saldo por transferencia bancaria, o viceversa. Solo informa a tu asesor de safari para que cada pago se registre correctamente."
+      }
+    },
+    "cta": {
+      "title": "¿No estás seguro de qué opción elegir?",
+      "body": "Dinos desde dónde pagas y cuánto, y te recomendaremos el método más sencillo.",
+      "button": "Hablar con un asesor de safari"
+    }
   }
 }
 

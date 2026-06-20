@@ -659,5 +659,96 @@
       "body": "Parlez-nous du voyage que vous imaginez — nous vous répondrons sous 24 heures avec un programme clair et entièrement chiffré.",
       "button": "Nous contacter"
     }
+  },
+  "PaymentMethods": {
+    "hero": {
+      "eyebrow": "Modes de paiement",
+      "title": "Payez comme vous le souhaitez",
+      "subtitle": "Choisissez M-Pesa pour un acompte instantané, un virement bancaire pour les paiements plus importants, ou une carte pour un paiement rapide et sécurisé depuis n’importe où. Chaque méthode est envoyée vers le même compte protégé.",
+      "securityLink": "Comment votre paiement est protégé"
+    },
+    "mpesa": {
+      "title": "Payer avec M-Pesa",
+      "body": "Envoyez votre acompte ou solde instantanément via Lipa na M-Pesa — l’option la plus rapide si vous payez depuis le Kenya ou l’Afrique de l’Est.",
+      "paybillLabel": "Numéro Paybill",
+      "accountHintLabel": "Numéro de compte",
+      "step1": "Ouvrez le menu M-Pesa sur votre téléphone",
+      "step2": "Sélectionnez Lipa na M-Pesa, puis Pay Bill",
+      "step3": "Entrez le numéro de l’entreprise ci-dessus",
+      "step4": "Entrez votre référence de réservation comme numéro de compte",
+      "step5": "Entrez le montant, confirmez avec votre code PIN et conservez le reçu SMS"
+    },
+    "bank": {
+      "title": "Virement bancaire vers Stanbic Bank",
+      "body": "Pour les paiements plus importants ou les virements depuis l’extérieur de l’Afrique de l’Est, payez directement sur notre compte Stanbic Bank.",
+      "bankNameLabel": "Banque",
+      "accountNameLabel": "Nom du compte",
+      "accountNumberLabel": "Numéro de compte",
+      "branchLabel": "Agence",
+      "swiftLabel": "Code SWIFT / BIC",
+      "note": "Nous acceptons les virements en {currency}. Veuillez utiliser votre référence de réservation comme motif de paiement et envoyer la confirmation du virement à votre conseiller safari afin que nous puissions l’associer à votre réservation."
+    },
+    "card": {
+      "title": "Payer par carte",
+      "body": "Payez en toute sécurité en ligne via notre système de paiement chiffré — le même système protégé décrit sur notre page Réserver en toute confiance.",
+      "note": "Les paiements par carte sont traités instantanément. Votre banque peut appliquer ses propres frais de transaction internationale ou de conversion de devise — vérifiez avec elle si vous payez depuis l’extérieur du Kenya."
+    },
+    "compare": {
+      "title": "Quel moyen devriez-vous choisir ?",
+      "headMethod": "Méthode",
+      "headTime": "Délai de traitement",
+      "headCurrency": "Devise",
+      "headBestFor": "Idéal pour",
+      "mpesa": {
+        "method": "M-Pesa",
+        "time": "Instantané",
+        "currency": "KES",
+        "bestFor": "Acomptes rapides depuis le Kenya et l’Afrique de l’Est"
+      },
+      "bank": {
+        "method": "Virement bancaire",
+        "time": "1–3 jours ouvrés",
+        "currency": "USD / KES",
+        "bestFor": "Paiements importants et virements internationaux"
+      },
+      "card": {
+        "method": "Carte bancaire",
+        "time": "Instantané",
+        "currency": "USD (conversion automatique)",
+        "bestFor": "Voyageurs internationaux, acomptes et soldes"
+      }
+    },
+    "faq": {
+      "title": "Questions sur les paiements, expliquées clairement",
+      "faq1": {
+        "q": "Quel moyen de paiement dois-je utiliser ?",
+        "a": "Si vous êtes au Kenya ou en Afrique de l’Est, M-Pesa est généralement le plus rapide pour les acomptes. Pour les paiements plus importants ou les virements depuis l’Europe ou d’autres régions, le virement bancaire ou la carte fonctionnent bien — la carte est instantanée, tandis que le virement peut prendre quelques jours ouvrés."
+      },
+      "faq2": {
+        "q": "Des frais de transfert sont-ils appliqués ?",
+        "a": "Nous n’appliquons aucun frais supplémentaire pour les paiements M-Pesa ou par carte. Votre banque peut toutefois facturer des frais pour les virements internationaux — vérifiez avant d’envoyer des montants importants."
+      },
+      "faq3": {
+        "q": "En quelle devise dois-je payer ?",
+        "a": "Les paiements M-Pesa sont effectués en shillings kényans (KES). Les virements bancaires et paiements par carte peuvent être effectués en USD ou en KES — votre devis confirmera la devise de votre réservation."
+      },
+      "faq4": {
+        "q": "Comment confirmer que mon paiement a été reçu ?",
+        "a": "Pour M-Pesa et les virements bancaires, envoyez le reçu SMS ou la confirmation de transfert à votre conseiller safari et nous l’associerons à votre réservation avec confirmation écrite. Les paiements par carte sont confirmés automatiquement."
+      },
+      "faq5": {
+        "q": "Le paiement par carte est-il sécurisé ?",
+        "a": "Oui. Les paiements par carte passent par une passerelle chiffrée conforme PCI, et nous ne voyons ni ne stockons jamais votre numéro de carte complet — voir notre page Réserver en toute confiance pour plus de détails."
+      },
+      "faq6": {
+        "q": "Puis-je répartir mon paiement entre plusieurs méthodes ?",
+        "a": "Oui — de nombreux clients paient leur acompte via M-Pesa ou carte et règlent le solde par virement bancaire, ou inversement. Informez simplement votre conseiller safari afin que chaque paiement soit correctement enregistré."
+      }
+    },
+    "cta": {
+      "title": "Vous ne savez pas quelle option choisir ?",
+      "body": "Dites-nous depuis où vous payez et le montant, et nous vous indiquerons la méthode la plus simple.",
+      "button": "Parler à un conseiller safari"
+    }
   }
 }

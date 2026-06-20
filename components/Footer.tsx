@@ -88,7 +88,7 @@ export default function Footer() {
               <a href="/termsandconditions">{t("information.termsAndConditions")}</a>
             </li>
             <li className="hover:underline cursor-pointer">
-              {t("information.onlinePayment")}
+              <a href="/payment-methods">{t("information.onlinePayment")}</a>
             </li>
           </ul>
         </div>

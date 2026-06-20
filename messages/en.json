@@ -650,5 +650,96 @@
       "body": "Tell us about the trip you're picturing — we'll reply within 24 hours with a clear, fully priced plan.",
       "button": "Get in touch"
     }
+  },
+  "PaymentMethods": {
+    "hero": {
+      "eyebrow": "Ways to pay",
+      "title": "Pay However Works Best for You",
+      "subtitle": "Choose M-Pesa for an instant deposit, a direct bank transfer for larger payments, or a card for fast, secure checkout from anywhere. Every method lands in the same protected account.",
+      "securityLink": "How your payment is protected"
+    },
+    "mpesa": {
+      "title": "Pay with M-Pesa",
+      "body": "Send your deposit or balance instantly through Lipa na M-Pesa — the quickest option if you're paying from Kenya or East Africa.",
+      "paybillLabel": "Paybill number",
+      "accountHintLabel": "Account number",
+      "step1": "Open the M-Pesa menu on your phone",
+      "step2": "Select Lipa na M-Pesa, then Pay Bill",
+      "step3": "Enter the business number above",
+      "step4": "Enter your booking reference as the account number",
+      "step5": "Enter the amount, confirm with your PIN, and keep the SMS receipt"
+    },
+    "bank": {
+      "title": "Bank transfer to Stanbic Bank",
+      "body": "For larger payments or transfers from outside East Africa, pay directly into our Stanbic Bank account.",
+      "bankNameLabel": "Bank",
+      "accountNameLabel": "Account name",
+      "accountNumberLabel": "Account number",
+      "branchLabel": "Branch",
+      "swiftLabel": "SWIFT / BIC code",
+      "note": "We accept transfers in {currency}. Please use your booking reference as the payment reference and email the transfer confirmation to your safari consultant so we can match it to your booking."
+    },
+    "card": {
+      "title": "Pay by card",
+      "body": "Pay securely online through our encrypted checkout — the same protected gateway covered on our Booking With Confidence page.",
+      "note": "Card payments are processed instantly. Your bank may apply its own foreign transaction or currency conversion fee — check with them if you're paying from outside Kenya."
+    },
+    "compare": {
+      "title": "Which method should you choose?",
+      "headMethod": "Method",
+      "headTime": "Processing time",
+      "headCurrency": "Currency",
+      "headBestFor": "Best for",
+      "mpesa": {
+        "method": "M-Pesa",
+        "time": "Instant",
+        "currency": "KES",
+        "bestFor": "Quick deposits from Kenya and East Africa"
+      },
+      "bank": {
+        "method": "Bank transfer",
+        "time": "1–3 business days",
+        "currency": "USD / KES",
+        "bestFor": "Larger payments and international transfers"
+      },
+      "card": {
+        "method": "Card payment",
+        "time": "Instant",
+        "currency": "USD (auto-converted)",
+        "bestFor": "International travellers, deposits and balances"
+      }
+    },
+    "faq": {
+      "title": "Payment questions, answered plainly",
+      "faq1": {
+        "q": "Which payment method should I use?",
+        "a": "If you're in Kenya or East Africa, M-Pesa is usually fastest for deposits. For larger payments or transfers from Europe and further afield, bank transfer or card both work well — card clears instantly, while a bank transfer can take a few business days."
+      },
+      "faq2": {
+        "q": "Will I be charged any transfer fees?",
+        "a": "M-Pesa and card payments are processed without an extra fee from us. Bank transfers may incur a fee from your own bank — it's worth checking with them before you send larger amounts."
+      },
+      "faq3": {
+        "q": "What currency should I pay in?",
+        "a": "M-Pesa payments are made in Kenyan shillings. Bank transfers and card payments can be made in US dollars or Kenyan shillings — your quote will confirm the currency for your booking."
+      },
+      "faq4": {
+        "q": "How do I confirm my payment has been received?",
+        "a": "For M-Pesa and bank transfers, send your safari consultant the SMS confirmation or transfer receipt and we'll match it to your booking and confirm in writing. Card payments are confirmed automatically at checkout."
+      },
+      "faq5": {
+        "q": "Is paying by card secure?",
+        "a": "Yes. Card payments run through an encrypted, PCI-compliant gateway, and we never see or store your full card number — see our Booking With Confidence page for the full breakdown."
+      },
+      "faq6": {
+        "q": "Can I split my payment between methods?",
+        "a": "Yes — many guests pay their deposit by M-Pesa or card and settle the balance by bank transfer, or vice versa. Just let your safari consultant know so each payment is recorded against the right booking."
+      }
+    },
+    "cta": {
+      "title": "Not sure which option fits your booking?",
+      "body": "Tell us where you're paying from and how much, and we'll point you to the simplest method.",
+      "button": "Ask a safari consultant"
+    }
   }
 }

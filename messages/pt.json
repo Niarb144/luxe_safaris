@@ -659,5 +659,96 @@
       "body": "Conta-nos a viagem que imaginas — responderemos em 24 horas com um plano claro e totalmente detalhado.",
       "button": "Entrar em contacto"
     }
+  },
+  "PaymentMethods": {
+    "hero": {
+      "eyebrow": "Métodos de pagamento",
+      "title": "Paga da forma que for melhor para ti",
+      "subtitle": "Escolhe M-Pesa para um depósito imediato, transferência bancária para pagamentos maiores ou cartão para um pagamento rápido e seguro a partir de qualquer lugar. Todos os métodos vão para a mesma conta protegida.",
+      "securityLink": "Como o teu pagamento é protegido"
+    },
+    "mpesa": {
+      "title": "Pagar com M-Pesa",
+      "body": "Envia o teu depósito ou saldo instantaneamente através de Lipa na M-Pesa — a opção mais rápida se estiveres a pagar a partir do Quénia ou da África Oriental.",
+      "paybillLabel": "Número Paybill",
+      "accountHintLabel": "Número da conta",
+      "step1": "Abre o menu M-Pesa no teu telemóvel",
+      "step2": "Seleciona Lipa na M-Pesa e depois Pay Bill",
+      "step3": "Insere o número da empresa acima",
+      "step4": "Insere a tua referência de reserva como número da conta",
+      "step5": "Insere o valor, confirma com o PIN e guarda o recibo SMS"
+    },
+    "bank": {
+      "title": "Transferência bancária para o Stanbic Bank",
+      "body": "Para pagamentos maiores ou transferências de fora da África Oriental, paga diretamente para a nossa conta do Stanbic Bank.",
+      "bankNameLabel": "Banco",
+      "accountNameLabel": "Nome da conta",
+      "accountNumberLabel": "Número da conta",
+      "branchLabel": "Agência",
+      "swiftLabel": "Código SWIFT / BIC",
+      "note": "Aceitamos transferências em {currency}. Usa a tua referência de reserva como descrição do pagamento e envia a confirmação da transferência ao teu consultor de safari para podermos associá-la à tua reserva."
+    },
+    "card": {
+      "title": "Pagar com cartão",
+      "body": "Paga em segurança online através do nosso sistema de pagamento encriptado — o mesmo sistema protegido descrito na nossa página Reservar com Confiança.",
+      "note": "Os pagamentos com cartão são processados de imediato. O teu banco pode aplicar taxas de transações internacionais ou conversão de moeda — confirma com eles se estiveres a pagar do estrangeiro."
+    },
+    "compare": {
+      "title": "Que método deves escolher?",
+      "headMethod": "Método",
+      "headTime": "Tempo de processamento",
+      "headCurrency": "Moeda",
+      "headBestFor": "Ideal para",
+      "mpesa": {
+        "method": "M-Pesa",
+        "time": "Imediato",
+        "currency": "KES",
+        "bestFor": "Depósitos rápidos a partir do Quénia e África Oriental"
+      },
+      "bank": {
+        "method": "Transferência bancária",
+        "time": "1–3 dias úteis",
+        "currency": "USD / KES",
+        "bestFor": "Pagamentos maiores e transferências internacionais"
+      },
+      "card": {
+        "method": "Cartão",
+        "time": "Imediato",
+        "currency": "USD (conversão automática)",
+        "bestFor": "Viajantes internacionais, depósitos e saldos"
+      }
+    },
+    "faq": {
+      "title": "Perguntas sobre pagamentos, respondidas de forma clara",
+      "faq1": {
+        "q": "Que método de pagamento devo usar?",
+        "a": "Se estiveres no Quénia ou África Oriental, o M-Pesa é normalmente o mais rápido para depósitos. Para pagamentos maiores ou transferências da Europa e outras regiões, transferência bancária ou cartão funcionam bem — o cartão é imediato, enquanto a transferência pode demorar alguns dias úteis."
+      },
+      "faq2": {
+        "q": "Existem taxas de transferência?",
+        "a": "Não cobramos taxas adicionais para pagamentos M-Pesa ou cartão. No entanto, o teu banco pode aplicar taxas para transferências internacionais — confirma antes de enviar valores elevados."
+      },
+      "faq3": {
+        "q": "Em que moeda devo pagar?",
+        "a": "Os pagamentos M-Pesa são feitos em xelins quenianos (KES). As transferências bancárias e pagamentos com cartão podem ser feitos em USD ou KES — o teu orçamento confirmará a moeda da reserva."
+      },
+      "faq4": {
+        "q": "Como confirmo que o meu pagamento foi recebido?",
+        "a": "Para M-Pesa e transferências bancárias, envia o recibo SMS ou confirmação da transferência ao teu consultor de safari e nós associamos à tua reserva com confirmação por escrito. Os pagamentos com cartão são confirmados automaticamente."
+      },
+      "faq5": {
+        "q": "O pagamento com cartão é seguro?",
+        "a": "Sim. Os pagamentos com cartão são processados através de uma plataforma encriptada e compatível com PCI, e nunca vemos nem armazenamos o teu número completo de cartão — consulta a página Reservar com Confiança para mais detalhes."
+      },
+      "faq6": {
+        "q": "Posso dividir o pagamento entre métodos?",
+        "a": "Sim — muitos clientes pagam o depósito com M-Pesa ou cartão e o saldo por transferência bancária, ou vice-versa. Basta informar o teu consultor de safari para que cada pagamento seja corretamente registado."
+      }
+    },
+    "cta": {
+      "title": "Não tens a certeza de qual opção escolher?",
+      "body": "Diz-nos de onde estás a pagar e quanto, e indicamos-te o método mais simples.",
+      "button": "Falar com um consultor de safari"
+    }
   }
 }

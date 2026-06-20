@@ -659,6 +659,97 @@
       "body": "Opowiedz nam o podróży, którą planujesz — odpowiemy w ciągu 24 godzin z jasnym i w pełni wycenionym planem.",
       "button": "Skontaktuj się"
     }
+  },
+  "PaymentMethods": {
+    "hero": {
+      "eyebrow": "Metody płatności",
+      "title": "Płać tak, jak Ci wygodnie",
+      "subtitle": "Wybierz M-Pesa dla natychmiastowej zaliczki, przelew bankowy dla większych płatności lub kartę dla szybkiej i bezpiecznej płatności z dowolnego miejsca. Wszystkie metody trafiają na to samo zabezpieczone konto.",
+      "securityLink": "Jak chroniona jest Twoja płatność"
+    },
+    "mpesa": {
+      "title": "Płatność M-Pesa",
+      "body": "Wyślij zaliczkę lub saldo natychmiast przez Lipa na M-Pesa — najszybsza opcja, jeśli płacisz z Kenii lub Afryki Wschodniej.",
+      "paybillLabel": "Numer Paybill",
+      "accountHintLabel": "Numer konta",
+      "step1": "Otwórz menu M-Pesa w telefonie",
+      "step2": "Wybierz Lipa na M-Pesa, a następnie Pay Bill",
+      "step3": "Wpisz powyższy numer firmy",
+      "step4": "Wpisz numer rezerwacji jako numer konta",
+      "step5": "Wpisz kwotę, potwierdź PIN-em i zachowaj SMS z potwierdzeniem"
+    },
+    "bank": {
+      "title": "Przelew bankowy do Stanbic Bank",
+      "body": "W przypadku większych płatności lub przelewów spoza Afryki Wschodniej zapłać bezpośrednio na nasze konto w Stanbic Bank.",
+      "bankNameLabel": "Bank",
+      "accountNameLabel": "Nazwa konta",
+      "accountNumberLabel": "Numer konta",
+      "branchLabel": "Oddział",
+      "swiftLabel": "Kod SWIFT / BIC",
+      "note": "Akceptujemy przelewy w {currency}. Użyj numeru rezerwacji jako tytułu przelewu i wyślij potwierdzenie do swojego konsultanta safari, abyśmy mogli przypisać płatność do rezerwacji."
+    },
+    "card": {
+      "title": "Płatność kartą",
+      "body": "Płać bezpiecznie online przez nasz szyfrowany system płatności — ten sam chroniony system opisany na stronie „Rezerwuj z pewnością”.",
+      "note": "Płatności kartą są przetwarzane natychmiast. Twój bank może naliczyć opłaty za transakcje zagraniczne lub przewalutowanie — sprawdź to, jeśli płacisz spoza Kenii."
+    },
+    "compare": {
+      "title": "Którą metodę wybrać?",
+      "headMethod": "Metoda",
+      "headTime": "Czas realizacji",
+      "headCurrency": "Waluta",
+      "headBestFor": "Najlepsze dla",
+      "mpesa": {
+        "method": "M-Pesa",
+        "time": "Natychmiast",
+        "currency": "KES",
+        "bestFor": "Szybkie zaliczki z Kenii i Afryki Wschodniej"
+      },
+      "bank": {
+        "method": "Przelew bankowy",
+        "time": "1–3 dni robocze",
+        "currency": "USD / KES",
+        "bestFor": "Większe płatności i przelewy międzynarodowe"
+      },
+      "card": {
+        "method": "Karta",
+        "time": "Natychmiast",
+        "currency": "USD (automatyczne przewalutowanie)",
+        "bestFor": "Podróżni międzynarodowi, zaliczki i salda"
+      }
+    },
+    "faq": {
+      "title": "Pytania o płatności, jasno wyjaśnione",
+      "faq1": {
+        "q": "Którą metodę płatności powinienem wybrać?",
+        "a": "Jeśli jesteś w Kenii lub Afryce Wschodniej, M-Pesa jest zwykle najszybsza dla zaliczek. W przypadku większych płatności lub przelewów z Europy i innych regionów dobrze sprawdzają się przelew bankowy lub karta — karta jest natychmiastowa, a przelew może trwać kilka dni roboczych."
+      },
+      "faq2": {
+        "q": "Czy są opłaty za przelew?",
+        "a": "Nie pobieramy dodatkowych opłat za płatności M-Pesa ani kartą. Twój bank może jednak naliczyć opłaty za przelewy międzynarodowe — sprawdź to przed wysłaniem większych kwot."
+      },
+      "faq3": {
+        "q": "W jakiej walucie powinienem płacić?",
+        "a": "Płatności M-Pesa są w szylingach kenijskich (KES). Przelewy bankowe i płatności kartą mogą być w USD lub KES — Twoja oferta potwierdzi właściwą walutę rezerwacji."
+      },
+      "faq4": {
+        "q": "Jak potwierdzić, że płatność została otrzymana?",
+        "a": "W przypadku M-Pesa i przelewów bankowych wyślij SMS lub potwierdzenie przelewu do swojego konsultanta safari, a my przypiszemy płatność do rezerwacji i potwierdzimy ją na piśmie. Płatności kartą są potwierdzane automatycznie."
+      },
+      "faq5": {
+        "q": "Czy płatność kartą jest bezpieczna?",
+        "a": "Tak. Płatności kartą są przetwarzane przez szyfrowaną bramkę zgodną z PCI, a my nigdy nie widzimy ani nie przechowujemy pełnego numeru karty — zobacz stronę „Rezerwuj z pewnością” po szczegóły."
+      },
+      "faq6": {
+        "q": "Czy mogę podzielić płatność na kilka metod?",
+        "a": "Tak — wielu klientów płaci zaliczkę M-Pesa lub kartą, a saldo przelewem bankowym lub odwrotnie. Poinformuj swojego konsultanta safari, aby każda płatność została poprawnie przypisana."
+      }
+    },
+    "cta": {
+      "title": "Nie wiesz, którą opcję wybrać?",
+      "body": "Powiedz nam, skąd płacisz i jaką kwotę, a doradzimy najprostszy sposób.",
+      "button": "Skontaktuj się z konsultantem safari"
+    }
   }
 }
 
