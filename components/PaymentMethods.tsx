@@ -41,9 +41,9 @@ import {
 } from 'lucide-react';
 
 const INK = '#B98A3E';
-const BG = '#14201A';
-const PANEL = '#1C2A20';
-const IVORY = '#F2EDE3';
+const BG = '#F2EDE3'; //#F2EDE3
+const PANEL = '#1C2A20'; //#
+const IVORY = '#14201A'; //#14201A
 
 /* ----------------------------------------------------------------------- */
 /* EDIT ME: real payment details                                           */
@@ -177,11 +177,11 @@ function PaymentMethodCard({
       </div>
       <h3
         className="mb-2 font-[family-name:var(--font-serif,serif)] text-xl leading-snug sm:text-2xl"
-        style={{ color: IVORY }}
+        style={{ color: BG }}
       >
         {title}
       </h3>
-      <p className="mb-6 text-sm leading-relaxed sm:text-base" style={{ color: `${IVORY}B3` }}>
+      <p className="mb-6 text-sm leading-relaxed sm:text-base" style={{ color: `${BG}B3` }}>
         {body}
       </p>
       <div className="mt-auto flex flex-col gap-3">{children}</div>
@@ -335,16 +335,16 @@ export default function PaymentMethods() {
                 />
             </div>
             <CopyField label={t('mpesa.paybillLabel')} value={PAYMENT_DETAILS.mpesa.paybill} />
-            <p className="text-xs leading-relaxed" style={{ color: `${IVORY}80` }}>
+            <p className="text-xs leading-relaxed" style={{ color: `${BG}80` }}>
               {t('mpesa.accountHintLabel')}:{' '}
-              <span style={{ color: `${IVORY}B3` }}>{PAYMENT_DETAILS.mpesa.accountHint}</span>
+              <span style={{ color: `${BG}B3` }}>{PAYMENT_DETAILS.mpesa.accountHint}</span>
             </p>
             <ol className="mt-2 flex flex-col gap-2">
               {mpesaSteps.map((s, i) => (
-                <li key={s} className="flex items-start gap-3 text-xs sm:text-sm" style={{ color: `${IVORY}99` }}>
+                <li key={s} className="flex items-start gap-3 text-xs sm:text-sm" style={{ color: `${BG}99` }}>
                   <span
                     className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full font-[family-name:var(--font-mono,monospace)] text-[10px]"
-                    style={{ border: `1px solid ${INK}80`, color: IVORY }}
+                    style={{ border: `1px solid ${INK}80`, color: BG }}
                   >
                     {i + 1}
                   </span>
@@ -369,7 +369,7 @@ export default function PaymentMethods() {
             <CopyField label={t('bank.accountNumberLabel')} value={PAYMENT_DETAILS.bank.accountNumber} />
             <CopyField label={t('bank.branchLabel')} value={PAYMENT_DETAILS.bank.branch} />
             <CopyField label={t('bank.swiftLabel')} value={PAYMENT_DETAILS.bank.swiftCode} />
-            <p className="mt-1 text-xs leading-relaxed" style={{ color: `${IVORY}80` }}>
+            <p className="mt-1 text-xs leading-relaxed" style={{ color: `${BG}80` }}>
               {t('bank.note', { currency: PAYMENT_DETAILS.bank.currency })}
             </p>
           </PaymentMethodCard>
@@ -406,7 +406,7 @@ export default function PaymentMethods() {
                 </span>
               ))}
             </div>
-            <p className="mt-1 text-xs leading-relaxed" style={{ color: `${IVORY}80` }}>
+            <p className="mt-1 text-xs leading-relaxed" style={{ color: `${BG}80` }}>
               {t('card.note')}
             </p>
           </PaymentMethodCard>
@@ -442,7 +442,7 @@ export default function PaymentMethods() {
                     <th
                       key={h}
                       className="px-5 py-3 font-[family-name:var(--font-mono,monospace)] text-[11px] font-normal uppercase tracking-[0.15em]"
-                      style={{ color: `${IVORY}80` }}
+                      style={{ color: `${BG}80` }}
                     >
                       {h}
                     </th>
@@ -510,11 +510,11 @@ export default function PaymentMethods() {
           <div>
             <h2
               className="mb-2 font-[family-name:var(--font-serif,serif)] text-2xl sm:text-3xl"
-              style={{ color: IVORY }}
+              style={{ color: BG }}
             >
               {t('cta.title')}
             </h2>
-            <p className="max-w-md text-sm sm:text-base" style={{ color: `${IVORY}99` }}>
+            <p className="max-w-md text-sm sm:text-base" style={{ color: `${BG}99` }}>
               {t('cta.body')}
             </p>
           </div>
