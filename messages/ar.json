@@ -538,6 +538,18 @@
       "phonePlaceholder": "+254 700 000 000",
       "adults": "البالغون",
       "children": "الأطفال",
+      "childrenUnder3": {
+        "label": "الأطفال دون سن 3 سنوات",
+        "pricing": "مجانًا"
+      },
+      "children4to11": {
+        "label": "الأطفال من عمر 4 إلى 11 سنة",
+        "pricing": "خصم بنسبة 40٪"
+      },
+      "children12to17": {
+        "label": "الأطفال من عمر 12 إلى 17 سنة",
+        "pricing": "خصم بنسبة 17٪"
+      },
       "travelDate": "تاريخ السفر",
       "specialRequests": "طلبات خاصة",
       "specialRequestsPlaceholder": "الاحتياجات الغذائية، متطلبات الوصول، الأنشطة المفضلة...",

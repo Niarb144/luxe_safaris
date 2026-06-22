@@ -538,6 +538,18 @@
       "phonePlaceholder": "+254 700 000 000",
       "adults": "Dorośli",
       "children": "Dzieci",
+      "childrenUnder3": {
+        "label": "Dzieci poniżej 3 lat",
+        "pricing": "Bezpłatnie"
+      },
+      "children4to11": {
+        "label": "Dzieci w wieku 4–11 lat",
+        "pricing": "Zastosowano 40% zniżki"
+      },
+      "children12to17": {
+        "label": "Dzieci w wieku 12–17 lat",
+        "pricing": "Zastosowano 17% zniżki"
+      },
       "travelDate": "Data podróży",
       "specialRequests": "Specjalne wymagania",
       "specialRequestsPlaceholder": "Dieta, dostępność, preferowane aktywności...",

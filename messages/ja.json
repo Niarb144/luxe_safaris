@@ -538,6 +538,18 @@
       "phonePlaceholder": "+254 700 000 000",
       "adults": "大人",
       "children": "子供",
+      "childrenUnder3": {
+        "label": "3歳未満の子供",
+        "pricing": "無料"
+      },
+      "children4to11": {
+        "label": "4〜11歳の子供",
+        "pricing": "40％割引適用"
+      },
+      "children12to17": {
+        "label": "12〜17歳の子供",
+        "pricing": "17％割引適用"
+      },
       "travelDate": "旅行日",
       "specialRequests": "特別なリクエスト",
       "specialRequestsPlaceholder": "食事制限、アクセシビリティ、希望アクティビティなど...",

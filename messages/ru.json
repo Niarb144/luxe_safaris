@@ -538,6 +538,18 @@
       "phonePlaceholder": "+254 700 000 000",
       "adults": "Взрослые",
       "children": "Дети",
+      "childrenUnder3": {
+        "label": "Дети до 3 лет",
+        "pricing": "Бесплатно"
+      },
+      "children4to11": {
+        "label": "Дети от 4 до 11 лет",
+        "pricing": "Скидка 40% применяется"
+      },
+      "children12to17": {
+        "label": "Дети от 12 до 17 лет",
+        "pricing": "Скидка 17% применяется"
+      },
       "travelDate": "Дата поездки",
       "specialRequests": "Особые пожелания",
       "specialRequestsPlaceholder": "Диетические требования, доступность, предпочтительные активности...",

@@ -538,6 +538,18 @@
       "phonePlaceholder": "+254 700 000 000",
       "adults": "成人",
       "children": "儿童",
+      "childrenUnder3": {
+        "label": "3岁以下儿童",
+        "pricing": "免费"
+      },
+      "children4to11": {
+        "label": "4至11岁儿童",
+        "pricing": "享受40%折扣"
+      },
+      "children12to17": {
+        "label": "12至17岁儿童",
+        "pricing": "享受17%折扣"
+      },
       "travelDate": "出行日期",
       "specialRequests": "特殊要求",
       "specialRequestsPlaceholder": "饮食要求、无障碍需求、偏好活动等...",

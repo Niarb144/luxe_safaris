@@ -538,6 +538,18 @@
       "phonePlaceholder": "+254 700 000 000",
       "adults": "Volwassenen",
       "children": "Kinderen",
+      "childrenUnder3": {
+        "label": "Kinderen jonger dan 3 jaar",
+        "pricing": "Gratis"
+      },
+      "children4to11": {
+        "label": "Kinderen van 4 tot 11 jaar",
+        "pricing": "40% korting toegepast"
+      },
+      "children12to17": {
+        "label": "Kinderen van 12 tot 17 jaar",
+        "pricing": "17% korting toegepast"
+      },
       "travelDate": "Reisdatum",
       "specialRequests": "Speciale verzoeken",
       "specialRequestsPlaceholder": "Dieetwensen, toegankelijkheid, voorkeuractiviteiten...",
