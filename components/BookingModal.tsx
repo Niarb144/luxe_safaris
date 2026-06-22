@@ -76,7 +76,9 @@ export default function BookingModal({
       email: form.get("email"),
       phone: form.get("phone"),
       adults: Number(form.get("adults")),
-      children: Number(form.get("children")),
+      children_under_3: Number(form.get("children_under_3")),
+      children_4_11: Number(form.get("children_4_11")),
+      children_12_17: Number(form.get("children_12_17")),
       travel_date: form.get("travel_date"),
       special_requests: form.get("requests"),
       recaptchaToken,
@@ -204,33 +206,87 @@ export default function BookingModal({
                 />
               </div>
 
-              {/* Adults / Children */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="space-y-1">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                    {t("form.adults")}
-                  </label>
-                  <input
-                    type="number"
-                    name="adults"
-                    min={1}
-                    defaultValue={1}
-                    className="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
-                  />
-                </div>
-                <div className="space-y-1">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
-                    {t("form.children")}
-                  </label>
-                  <input
-                    type="number"
-                    name="children"
-                    min={0}
-                    defaultValue={0}
-                    className="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
-                  />
-                </div>
+              {/* Adults */}
+              <div className="space-y-1">
+                <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
+                  {t("form.adults")}
+                </label>
+                <input
+                  type="number"
+                  name="adults"
+                  min={1}
+                  defaultValue={1}
+                  className="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
+                />
               </div>
+
+              {/* Children — age-group breakdown */}
+              <fieldset className="space-y-2">
+                <legend className="text-xs font-semibold uppercase tracking-wider text-gray-700 mb-1">
+                  {t("form.children")}
+                </legend>
+
+                <div className="rounded-2xl border border-gray-200 overflow-hidden divide-y divide-gray-100">
+
+                  {/* Under 3 — Free */}
+                  <div className="flex items-center gap-3 px-4 py-3 bg-gray-50">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-gray-800">
+                        {t("form.childrenUnder3.label")}
+                      </p>
+                      <p className="text-xs text-emerald-600 font-semibold mt-0.5">
+                        {t("form.childrenUnder3.pricing")}
+                      </p>
+                    </div>
+                    <input
+                      type="number"
+                      name="children_under_3"
+                      min={0}
+                      defaultValue={0}
+                      className="w-20 border border-gray-200 bg-white focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-2.5 rounded-xl text-gray-800 text-sm text-center transition-all duration-200 shrink-0"
+                    />
+                  </div>
+
+                  {/* Ages 4–11 — 40% off */}
+                  <div className="flex items-center gap-3 px-4 py-3 bg-gray-50">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-gray-800">
+                        {t("form.children4to11.label")}
+                      </p>
+                      <p className="text-xs text-[#b77e24] font-semibold mt-0.5">
+                        {t("form.children4to11.pricing")}
+                      </p>
+                    </div>
+                    <input
+                      type="number"
+                      name="children_4_11"
+                      min={0}
+                      defaultValue={0}
+                      className="w-20 border border-gray-200 bg-white focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-2.5 rounded-xl text-gray-800 text-sm text-center transition-all duration-200 shrink-0"
+                    />
+                  </div>
+
+                  {/* Ages 12–17 — 17% off */}
+                  <div className="flex items-center gap-3 px-4 py-3 bg-gray-50">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-gray-800">
+                        {t("form.children12to17.label")}
+                      </p>
+                      <p className="text-xs text-[#b77e24] font-semibold mt-0.5">
+                        {t("form.children12to17.pricing")}
+                      </p>
+                    </div>
+                    <input
+                      type="number"
+                      name="children_12_17"
+                      min={0}
+                      defaultValue={0}
+                      className="w-20 border border-gray-200 bg-white focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-2.5 rounded-xl text-gray-800 text-sm text-center transition-all duration-200 shrink-0"
+                    />
+                  </div>
+
+                </div>
+              </fieldset>
 
               {/* Travel Date */}
               <div className="space-y-1">
@@ -290,7 +346,6 @@ export default function BookingModal({
               <p className="text-gray-500 text-xs text-center">
                 Protected by reCAPTCHA &mdash;{" "}
                 <Link
-                
                   href="https://policies.google.com/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -299,7 +354,6 @@ export default function BookingModal({
                   Privacy Policy
                 </Link>{" "}
                 &amp;{" "}
-                
                 <Link
                   href="https://policies.google.com/terms"
                   target="_blank"
