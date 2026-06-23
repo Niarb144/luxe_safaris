@@ -456,7 +456,12 @@
         "2": "更正不准确的信息",
         "3": "撤回同意"
       }
-    }
+    },
+    "eyebrow": "隐私",
+    "titlePrefix": "隐私",
+    "titleAccent": "政策",
+    "contentsLabel": "目录",
+    "footerNote": "我们会谨慎处理您的数据。如有任何隐私问题，请直接联系我们。"
   },
   "termsPage": {
     "title": "条款与条件",
@@ -518,7 +523,12 @@
         "title": "12. 适用法律",
         "text": "适用公司注册所在国家的法律。"
       }
-    }
+    },
+    "eyebrow": "法务",
+    "titlePrefix": "服務條款",
+    "titleAccent": "条件",
+    "contentsLabel": "目录",
+    "footerNote": "通过我们预订即表示您确认已阅读并同意这些条款。"
   },
   "bookingModal": {
     "reserveYourSpot": "预订您的位置",

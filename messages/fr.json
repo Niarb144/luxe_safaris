@@ -456,7 +456,12 @@
         "2": "Corriger les informations inexactes",
         "3": "Retirer votre consentement"
       }
-    }
+    },
+    "eyebrow": "Confidentialité",
+    "titlePrefix": "Confidentialité",
+    "titleAccent": "Politique",
+    "contentsLabel": "Table des matières",
+    "footerNote": "Vos données sont traitées avec soin. Pour toute question relative à la confidentialité, veuillez nous contacter directement."
   },
   "termsPage": {
     "title": "Conditions Générales",
@@ -472,7 +477,7 @@
           "0": "Un acompte est requis pour garantir la réservation.",
           "1": "Le solde restant doit être payé avant le voyage.",
           "2": "Un paiement tardif peut entraîner l’annulation."
-          }
+        }
       },
       "3": {
         "title": "3. Politique d’Annulation",
@@ -518,7 +523,12 @@
         "title": "12. Droit Applicable",
         "text": "Les présentes conditions sont régies par les lois applicables dans le pays où l’entreprise est enregistrée."
       }
-    }
+    },
+    "eyebrow": "Légal",
+    "titlePrefix": "Termes et",
+    "titleAccent": "Conditions",
+    "contentsLabel": "Table des matières",
+    "footerNote": "En réservant avec nous, vous confirmez avoir lu et accepté ces conditions."
   },
   "bookingModal": {
     "reserveYourSpot": "Réservez votre place",

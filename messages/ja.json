@@ -456,7 +456,12 @@
         "2": "不正確な情報の修正",
         "3": "同意の撤回"
       }
-    }
+    },
+    "eyebrow": "個人情報保護",
+    "titlePrefix": "個人情報保護",
+    "titleAccent": "ポリシー",
+    "contentsLabel": "モクジ",
+    "footerNote": "お客様のデータは慎重に処理されます。プライバシーに関してご不明な点がございましたら、直接お問い合わせください。"
   },
   "termsPage": {
     "title": "利用規約",
@@ -518,7 +523,12 @@
         "title": "12. 準拠法",
         "text": "会社が登録されている国の法律に準拠します。"
       }
-    }
+    },
+    "eyebrow": "法律関係",
+    "titlePrefix": "利用規約",
+    "titleAccent": "条件",
+    "contentsLabel": "モクジ",
+    "footerNote": "当社でご予約いただくことで、本規約を読み、同意したものとみなされます。"
   },
   "bookingModal": {
     "reserveYourSpot": "席を確保する",
@@ -764,4 +774,3 @@
     }
   }
 }
-

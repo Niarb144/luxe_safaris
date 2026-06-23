@@ -456,7 +456,12 @@
         "2": "Onjuistheden corrigeren",
         "3": "Toestemming intrekken"
       }
-    }
+    },
+    "eyebrow": "Privacy",
+    "titlePrefix": "Privacy",
+    "titleAccent": "Beleidregel",
+    "contentsLabel": "Inhoud",
+    "footerNote": "Er wordt zorgvuldig met uw gegevens omgegaan. Neem voor privacykwesties rechtstreeks contact met ons op."
   },
   "termsPage": {
     "title": "Algemene Voorwaarden",
@@ -518,7 +523,12 @@
         "title": "12. Toepasselijk Recht",
         "text": "Onderworpen aan de wetten die gelden in het land waar het bedrijf is geregistreerd."
       }
-    }
+    },
+    "eyebrow": "Juridisch",
+    "titlePrefix": "voorwaarden",
+    "titleAccent": "Omstandigheden",
+    "contentsLabel": "Inhoud",
+    "footerNote": "Door bij ons te boeken, bevestig je dat je deze voorwaarden hebt gelezen en ermee akkoord gaat."
   },
   "bookingModal": {
     "reserveYourSpot": "Reserveer je plek",
@@ -764,4 +774,3 @@
     }
   }
 }
-

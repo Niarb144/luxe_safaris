@@ -456,7 +456,12 @@
         "2": "Fehler korrigieren",
         "3": "Einwilligung widerrufen"
       }
-    }
+    },
+    "eyebrow": "Datenschutz",
+    "titlePrefix": "Datenschutz",
+    "titleAccent": "Politik",
+    "contentsLabel": "Inhalte",
+    "footerNote": "Ihre Daten werden mit Sorgfalt behandelt. Bei Fragen zum Datenschutz wenden Sie sich bitte direkt an uns."
   },
   "termsPage": {
     "title": "Allgemeine Geschäftsbedingungen",
@@ -518,7 +523,12 @@
         "title": "12. Anwendbares Recht",
         "text": "Es gelten die Gesetze des Landes, in dem das Unternehmen registriert ist."
       }
-    }
+    },
+    "eyebrow": "Rechtswesen",
+    "titlePrefix": "AGB",
+    "titleAccent": "Konditionen",
+    "contentsLabel": "Inhalte",
+    "footerNote": "Mit der Buchung bei uns bestätigen Sie, dass Sie diese Bedingungen gelesen haben und ihnen zustimmen."
   },
   "bookingModal": {
     "reserveYourSpot": "Sichern Sie sich Ihren Platz",
@@ -764,4 +774,3 @@
     }
   }
 }
-

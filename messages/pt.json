@@ -456,7 +456,12 @@
         "2": "Corrigir informações incorretas",
         "3": "Retirar consentimento"
       }
-    }
+    },
+    "eyebrow": "Privacidade",
+    "titlePrefix": "Privacidade",
+    "titleAccent": "Políticas",
+    "contentsLabel": "Índice",
+    "footerNote": "Os seus dados são tratados com cuidado. Para quaisquer questões de privacidade, contacte-nos diretamente."
   },
   "termsPage": {
     "title": "Termos e Condições",
@@ -518,7 +523,12 @@
         "title": "12. Lei Aplicável",
         "text": "Regido pelas leis do país onde a empresa está registada."
       }
-    }
+    },
+    "eyebrow": "Jurídico",
+    "titlePrefix": "Termos",
+    "titleAccent": "Condições",
+    "contentsLabel": "Índice",
+    "footerNote": "Ao reservar connosco, confirma que leu e concorda com estes termos."
   },
   "bookingModal": {
     "reserveYourSpot": "Reserve o seu lugar",

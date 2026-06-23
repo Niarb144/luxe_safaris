@@ -456,7 +456,12 @@
         "2": "Korekta nieścisłości",
         "3": "Wycofanie zgody"
       }
-    }
+    },
+    "eyebrow": "Ochrona danych osobowych",
+    "titlePrefix": "Ochrona danych osobowych",
+    "titleAccent": "Polityka",
+    "contentsLabel": "Spis treści",
+    "footerNote": "Twoje dane są przetwarzane z zachowaniem ostrożności. W przypadku jakichkolwiek wątpliwości dotyczących prywatności skontaktuj się z nami bezpośrednio."
   },
   "termsPage": {
     "title": "Regulamin",
@@ -518,7 +523,12 @@
         "title": "12. Prawo właściwe",
         "text": "Podlega prawu kraju, w którym firma jest zarejestrowana."
       }
-    }
+    },
+    "eyebrow": "Informacje prawne",
+    "titlePrefix": "Warunki ",
+    "titleAccent": "Warunki",
+    "contentsLabel": "Spis treści",
+    "footerNote": "Rezerwując u nas, potwierdzasz, że znasz i akceptujesz niniejsze warunki."
   },
   "bookingModal": {
     "reserveYourSpot": "Zarezerwuj swoje miejsce",
@@ -764,4 +774,3 @@
     }
   }
 }
-

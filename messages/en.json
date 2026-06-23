@@ -408,7 +408,11 @@
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
+    "eyebrow": "Privacy",
+    "titlePrefix": "Privacy",
+    "titleAccent": "Policy",
     "lastUpdated": "Last updated: May 2026",
+    "contentsLabel": "Contents",
     "informationWeCollect": {
       "title": "Information We Collect",
       "items": {
@@ -447,7 +451,8 @@
         "2": "Correct inaccuracies",
         "3": "Withdraw consent"
       }
-    }
+    },
+    "footerNote": "Your data is handled with care. For any privacy concerns, please contact us directly."
   },
   "termsPage": {
     "title": "Terms & Conditions",
