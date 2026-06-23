@@ -451,7 +451,11 @@
   },
   "termsPage": {
     "title": "Terms & Conditions",
+    "eyebrow": "Legal",
+    "titlePrefix": "Terms &",
+    "titleAccent": "Conditions",
     "lastUpdated": "Last updated: May 2026",
+    "contentsLabel": "Contents",
     "sections": {
       "1": {
         "title": "1. Booking Confirmation",
@@ -509,7 +513,8 @@
         "title": "12. Governing Law",
         "text": "Governed by laws applicable in the country where the company is registered."
       }
-    }
+    },
+    "footerNote": "By booking with us you confirm you have read and agree to these terms."
   },
   "bookingModal": {
     "reserveYourSpot": "Reserve Your Spot",
