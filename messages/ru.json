@@ -117,7 +117,8 @@
     "noResults": "Туры по заданным фильтрам не найдены.",
     "exploreAll": "Посмотреть все туры",
     "from": "От",
-    "safari": "Сафари"
+    "safari": "Сафари",
+    "learnMore": "Подробнее"
   },
   "destinations": {
     "title": "Направления в Восточной Африке",
@@ -191,7 +192,8 @@
     "perPerson": "/ человек",
     "bookNow": "Забронировать",
     "whatsappInquiry": "Запрос в WhatsApp",
-    "whatsappMessage": "Я хочу забронировать {title}"
+    "whatsappMessage": "Я хочу забронировать {title}",
+    "enquireAboutTour": "Запрос о %@"
   },
   "tourLayout": {
     "home": "Главная",
@@ -214,7 +216,8 @@
     "from": "От",
     "bookThisTour": "Забронировать тур",
     "reserveYourSpot": "Забронировать место",
-    "closeBookingModal": "Закрыть окно бронирования"
+    "closeBookingModal": "Закрыть окно бронирования",
+    "enquire": "Подробнее"
   },
   "relatedTours": {
     "tagline": "Исследуйте больше",

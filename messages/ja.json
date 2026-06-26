@@ -117,7 +117,8 @@
     "noResults": "条件に一致するツアーが見つかりませんでした。",
     "exploreAll": "すべてのツアーを見る",
     "from": "最安",
-    "safari": "サファリ"
+    "safari": "サファリ",
+    "learnMore": "詳細はこちら"
   },
   "destinations": {
     "title": "東アフリカの目的地",
@@ -191,7 +192,8 @@
     "perPerson": "/ 1名様",
     "bookNow": "今すぐ予約",
     "whatsappInquiry": "WhatsAppで問い合わせ",
-    "whatsappMessage": "{title}を予約したいです"
+    "whatsappMessage": "{title}を予約したいです",
+    "enquireAboutTour": "%@ に関する問い合わせ"
   },
   "tourLayout": {
     "home": "ホーム",
@@ -214,7 +216,8 @@
     "from": "料金",
     "bookThisTour": "このツアーを予約",
     "reserveYourSpot": "席を確保する",
-    "closeBookingModal": "予約ウィンドウを閉じる"
+    "closeBookingModal": "予約ウィンドウを閉じる",
+    "enquire": "問い合わせ"
   },
   "relatedTours": {
     "tagline": "さらに探す",

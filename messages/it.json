@@ -117,7 +117,8 @@
     "noResults": "Nessun tour trovato con i filtri selezionati.",
     "exploreAll": "Esplora tutti i tour",
     "from": "Da",
-    "safari": "Safari"
+    "safari": "Safari",
+    "learnMore": "Per saperne di più"
   },
   "destinations": {
     "title": "Destinazioni in Africa Orientale",
@@ -191,7 +192,8 @@
     "perPerson": "/ persona",
     "bookNow": "Prenota ora",
     "whatsappInquiry": "Richiesta WhatsApp",
-    "whatsappMessage": "Vorrei prenotare {title}"
+    "whatsappMessage": "Vorrei prenotare {title}",
+    "enquireAboutTour": "Richiedi informazioni sul tour"
   },
   "tourLayout": {
     "home": "Home",
@@ -214,7 +216,8 @@
     "from": "Da",
     "bookThisTour": "Prenota questo tour",
     "reserveYourSpot": "Prenota il tuo posto",
-    "closeBookingModal": "Chiudi la finestra di prenotazione"
+    "closeBookingModal": "Chiudi la finestra di prenotazione",
+    "enquire": "Domande"
   },
   "relatedTours": {
     "tagline": "Scopri di più",

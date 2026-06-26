@@ -117,7 +117,8 @@
     "noResults": "Keine Touren entsprechen Ihren Filtern.",
     "exploreAll": "Alle Touren entdecken",
     "from": "Ab",
-    "safari": "Safari"
+    "safari": "Safari",
+    "learnMore": "Mehr erfahren"
   },
   "destinations": {
     "title": "Reiseziele in Ostafrika",
@@ -191,7 +192,8 @@
     "perPerson": "/ Person",
     "bookNow": "Jetzt buchen",
     "whatsappInquiry": "WhatsApp-Anfrage",
-    "whatsappMessage": "Ich möchte {title} buchen"
+    "whatsappMessage": "Ich möchte {title} buchen",
+    "enquireAboutTour": "Anfrage senden an"
   },
   "tourLayout": {
     "home": "Startseite",
@@ -214,7 +216,8 @@
     "from": "Ab",
     "bookThisTour": "Diese Tour buchen",
     "reserveYourSpot": "Platz reservieren",
-    "closeBookingModal": "Buchungsfenster schließen"
+    "closeBookingModal": "Buchungsfenster schließen",
+    "enquire": "Anfragen"
   },
   "relatedTours": {
     "tagline": "Mehr entdecken",

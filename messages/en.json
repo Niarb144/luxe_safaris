@@ -117,7 +117,8 @@
     "noResults": "No tours found matching your filters.",
     "exploreAll": "Explore All Tours",
     "from": "From",
-    "safari": "Safari"
+    "safari": "Safari",
+    "learnMore": "Learn More"
   },
   "destinations": {
     "title": "Destinations Across East Africa",
@@ -187,6 +188,7 @@
     "title": "Tours Tailored to Your Dreams"
   },
   "bookingCard": {
+    "enquireAboutTour": "Enquire about tour",
     "from": "From",
     "perPerson": "/ person",
     "bookNow": "Book Now",
@@ -196,6 +198,7 @@
   "tourLayout": {
   "home": "Home",
   "allTours": "All Tours",
+  "enquire": "Enquire",
   "menu": {
     "overview": "Overview",
     "highlights": "Highlights",
@@ -210,11 +213,11 @@
     "faq": "FAQs"
   },
   "whyChooseTitle": "Why Choose This Safari",
-    "noDescription": "No description provided.",
-    "from": "From",
-    "bookThisTour": "Book This Tour",
-    "reserveYourSpot": "Reserve Your Spot",
-    "closeBookingModal": "Close booking modal"
+  "noDescription": "No description provided.",
+  "from": "From",
+  "bookThisTour": "Book This Tour",
+  "reserveYourSpot": "Reserve Your Spot",
+  "closeBookingModal": "Close booking modal"
   },
   "relatedTours": {
     "tagline": "Explore More",

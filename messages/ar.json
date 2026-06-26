@@ -117,7 +117,8 @@
     "noResults": "لا توجد جولات تطابق الفلاتر.",
     "exploreAll": "استعرض جميع الجولات",
     "from": "من",
-    "safari": "سفاري"
+    "safari": "سفاري",
+    "learnMore": "اعرف المزيد عن المزايا"
   },
   "destinations": {
     "title": "وجهات في شرق أفريقيا",
@@ -191,7 +192,8 @@
     "perPerson": "/ للشخص",
     "bookNow": "احجز الآن",
     "whatsappInquiry": "استفسار عبر واتساب",
-    "whatsappMessage": "أرغب في حجز {title}"
+    "whatsappMessage": "أرغب في حجز {title}",
+    "enquireAboutTour": "استفسار عن %@"
   },
   "tourLayout": {
     "home": "الرئيسية",
@@ -214,7 +216,8 @@
     "from": "ابتداءً من",
     "bookThisTour": "احجز هذه الرحلة",
     "reserveYourSpot": "احجز مكانك",
-    "closeBookingModal": "إغلاق نافذة الحجز"
+    "closeBookingModal": "إغلاق نافذة الحجز",
+    "enquire": "استفسار"
   },
   "relatedTours": {
     "tagline": "استكشف المزيد",

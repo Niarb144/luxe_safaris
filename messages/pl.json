@@ -117,7 +117,8 @@
     "noResults": "Nie znaleziono wycieczek pasujących do filtrów.",
     "exploreAll": "Zobacz wszystkie wycieczki",
     "from": "Od",
-    "safari": "Safari"
+    "safari": "Safari",
+    "learnMore": "Dowiedz się więcej"
   },
   "destinations": {
     "title": "Destynacje w Afryce Wschodniej",
@@ -191,7 +192,8 @@
     "perPerson": "/ osoba",
     "bookNow": "Zarezerwuj teraz",
     "whatsappInquiry": "Zapytanie WhatsApp",
-    "whatsappMessage": "Chcę zarezerwować {title}"
+    "whatsappMessage": "Chcę zarezerwować {title}",
+    "enquireAboutTour": "Zapytaj o wycieczkę"
   },
   "tourLayout": {
     "home": "Strona główna",
@@ -214,7 +216,8 @@
     "from": "Od",
     "bookThisTour": "Zarezerwuj tę wycieczkę",
     "reserveYourSpot": "Zarezerwuj miejsce",
-    "closeBookingModal": "Zamknij okno rezerwacji"
+    "closeBookingModal": "Zamknij okno rezerwacji",
+    "enquire": "Wyślij zapytanie"
   },
   "relatedTours": {
     "tagline": "Odkrywaj więcej",

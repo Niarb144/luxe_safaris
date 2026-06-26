@@ -14,13 +14,19 @@ export default function BookingCard({ tour }: any) {
       <div className="bg-neutral-900 p-6 rounded-2xl shadow-lg space-y-4">
 
         <h2 className="text-2xl font-bold text-[#b77e24]">
-          <span className="text-lg font-normal text-gray-400">
-            {t("from")}{" "}
-          </span>
-           ${tour.price}
-          <span className="text-sm text-gray-400">
-            {" "}{t("perPerson")}
-          </span>
+          {tour.price === 0 ? (
+            t("enquireAboutTour")
+          ) : (
+            <>
+              <span className="text-lg font-normal text-gray-400">
+                {t("from")}{" "}
+              </span>
+              ${tour.price.toLocaleString()}
+              <span className="text-sm text-gray-400">
+                {" "}{t("perPerson")}
+              </span>
+            </>
+          )}
         </h2>
 
         <button

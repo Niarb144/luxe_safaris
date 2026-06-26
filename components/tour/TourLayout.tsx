@@ -224,14 +224,18 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
               onClick={() => setBookingModalOpen(true)}
               className="group flex items-center gap-3 bg-[#041f0e] hover:bg-[#062b12] text-white pl-5 pr-4 py-3.5 rounded-full shadow-2xl shadow-black/40 border border-[#b77e24]/30 transition-all duration-300 hover:border-[#b77e24]/60"
             >
-              {tour.price && (
+              {tour.price === 0 ? (
+                <span className="text-[#b77e24] font-bold text-base tracking-tight">
+                  {t("enquire")}
+                </span>
+              ) : tour.price ? (
                 <>
                   <span className="text-[#b77e24] font-bold text-base tracking-tight">
-                    {t("from")} {tour.price.toLocaleString()}
+                    {t("from")} ${tour.price.toLocaleString()}
                   </span>
                   <span className="w-px h-4 bg-white/20 rounded-full" />
                 </>
-              )}
+              ) : null}
               <span className="font-semibold text-sm uppercase tracking-wider cursor-pointer">{t("bookThisTour")}</span>
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#b77e24] group-hover:bg-[#a06d1f] transition-colors duration-200 shrink-0 cursor-pointer">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

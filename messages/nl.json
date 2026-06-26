@@ -117,7 +117,8 @@
     "noResults": "Geen tours gevonden die overeenkomen met je filters.",
     "exploreAll": "Alle tours bekijken",
     "from": "Vanaf",
-    "safari": "Safari"
+    "safari": "Safari",
+    "learnMore": "Meer informatie "
   },
   "destinations": {
     "title": "Bestemmingen in Oost-Afrika",
@@ -191,7 +192,8 @@
     "perPerson": "/ persoon",
     "bookNow": "Nu boeken",
     "whatsappInquiry": "WhatsApp aanvraag",
-    "whatsappMessage": "Ik wil {title} boeken"
+    "whatsappMessage": "Ik wil {title} boeken",
+    "enquireAboutTour": "Vraag over %@"
   },
   "tourLayout": {
     "home": "Home",
@@ -214,7 +216,8 @@
     "from": "Vanaf",
     "bookThisTour": "Deze tour boeken",
     "reserveYourSpot": "Reserveer je plek",
-    "closeBookingModal": "Boekingsvenster sluiten"
+    "closeBookingModal": "Boekingsvenster sluiten",
+    "enquire": "Informeren"
   },
   "relatedTours": {
     "tagline": "Ontdek meer",

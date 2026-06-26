@@ -117,7 +117,8 @@
     "noResults": "未找到符合条件的行程。",
     "exploreAll": "查看所有行程",
     "from": "起价",
-    "safari": "狩猎"
+    "safari": "狩猎",
+    "learnMore": "了解详情"
   },
   "destinations": {
     "title": "东非目的地",
@@ -191,7 +192,8 @@
     "perPerson": "/ 人",
     "bookNow": "立即预订",
     "whatsappInquiry": "WhatsApp咨询",
-    "whatsappMessage": "我想预订 {title}"
+    "whatsappMessage": "我想预订 {title}",
+    "enquireAboutTour": "查询有关%@事宜"
   },
   "tourLayout": {
     "home": "首页",
@@ -214,7 +216,8 @@
     "from": "起价",
     "bookThisTour": "预订此行程",
     "reserveYourSpot": "预留您的位置",
-    "closeBookingModal": "关闭预订窗口"
+    "closeBookingModal": "关闭预订窗口",
+    "enquire": "咨询"
   },
   "relatedTours": {
     "tagline": "探索更多",

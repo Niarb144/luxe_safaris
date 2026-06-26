@@ -218,7 +218,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
                         </div>
                         <div className="bg-[#b77e24] rounded-2xl px-3 py-1.5">
                           <span className="text-white font-bold text-xs">
-                            {t("from")} ${tour.price}
+                            {tour.price === 0 ? t("learnMore") : `${t("from")} $${tour.price.toLocaleString()}`}
                           </span>
                         </div>
                       </div>

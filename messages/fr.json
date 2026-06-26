@@ -117,7 +117,8 @@
     "noResults": "Aucun circuit ne correspond à vos filtres.",
     "exploreAll": "Explorer tous les circuits",
     "from": "À partir de",
-    "safari": "Safari"
+    "safari": "Safari",
+    "learnMore": "Learn More"
   },
   "destinations": {
     "title": "Destinations à travers l'Afrique de l'Est",
@@ -191,7 +192,8 @@
     "perPerson": "/ personne",
     "bookNow": "Réserver maintenant",
     "whatsappInquiry": "Demande via WhatsApp",
-    "whatsappMessage": "Je souhaite réserver {title}"
+    "whatsappMessage": "Je souhaite réserver {title}",
+    "enquireAboutTour": "Renseignez-vous sur"
   },
   "tourLayout": {
     "home": "Accueil",
@@ -214,7 +216,8 @@
     "from": "À partir de",
     "bookThisTour": "Réserver ce circuit",
     "reserveYourSpot": "Réservez votre place",
-    "closeBookingModal": "Fermer la fenêtre de réservation"
+    "closeBookingModal": "Fermer la fenêtre de réservation",
+    "enquire": "Demande d'informations"
   },
   "relatedTours": {
     "tagline": "Explorer davantage",
