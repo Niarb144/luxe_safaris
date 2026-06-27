@@ -33,12 +33,12 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-6 max-w-3xl">
+      <div className="relative z-10 px-6 mt-12 max-w-3xl">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={loaded ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-4xl md:text-6xl font-bold text-white leading-tight"
+          className="text-4xl md:text-6xl text-white leading-tight"
         >
           {t("title")}
         </motion.h1>

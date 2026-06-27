@@ -31,12 +31,12 @@ export default function SafariHero() {
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      <div className="relative z-10 px-6 max-w-3xl">
+      <div className="relative z-10 px-6 mt-12 max-w-3xl">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={loaded ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-6xl font-bold text-white"
+          className="text-4xl md:text-6xl text-white"
         >
           {t("title")}
         </motion.h1>

@@ -1,11 +1,9 @@
-// app/[locale]/layout.tsx
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/lib/i18n'
-
-// Keep ALL your existing imports
 import type { Metadata } from "next"
+import { Plus_Jakarta_Sans, Inter } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
@@ -19,6 +17,20 @@ import CookieBanner from "@/components/CookieBanner"
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 import { ConsentProvider } from "@/components/ConsentProvider"
 import Providers from "@/app/[locale]/providers"
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-heading",
+  display: "swap",
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "Luxe Plains Africa Safaris",
@@ -34,14 +46,12 @@ export default async function RootLayout({
 }) {
   const { locale } = await params
 
-  // Validate locale
   if (!routing.locales.includes(locale as any)) notFound()
 
-  // Load messages for this locale
   const messages = await getMessages()
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${plusJakarta.variable} ${inter.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <ClientLoaderWrapper>

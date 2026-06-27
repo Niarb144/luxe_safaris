@@ -39,11 +39,11 @@ export default function PracticalInfoPage() {
         <div className="absolute inset-0 bg-[url('/images/img1.webp')] bg-cover bg-center opacity-50"></div>
 
         <div className="relative z-10 text-center max-w-4xl px-6 py-12">
-          <div className="flex justify-center mb-5 text-5xl">
+          {/* <div className="flex justify-center mb-5 text-5xl">
             <FaGlobeAfrica />
-          </div>
+          </div> */}
 
-          <h1 className="text-5xl font-bold mb-4">
+          <h1 className="text-5xl mb-4">
             {t("hero.title")}
           </h1>
 
