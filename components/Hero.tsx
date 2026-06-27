@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import QuizButton from "./QuizButton";
+import CustomSafariButton from "./CustomSafariButton";
 import { useTranslations } from "next-intl";
 
 export function Hero() {
@@ -55,9 +56,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={loaded ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-8"
+          className="mt-8 flex flex-wrap items-center gap-4"
         >
           <QuizButton />
+          <CustomSafariButton />
         </motion.div>
       </div>
     </section>
