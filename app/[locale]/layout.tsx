@@ -12,6 +12,7 @@ import Footer from "@/components/Footer"
 import ClientLoaderWrapper from "@/components/ClientLoaderWrapper"
 import WhatsAppButton from "@/components/WhatsappFloatingButton"
 import { ScrollToTop } from "@/components/ScrollToTopButton"
+import CustomSafariButton from '@/components/CustomSafariButton'
 import { Suspense } from "react"
 import NavigationProgress from "@/components/NavigationProgress"
 import CookieBanner from "@/components/CookieBanner"
@@ -52,6 +53,7 @@ export default async function RootLayout({
                 </Suspense>
                 {children}
                 <Footer />
+                <CustomSafariButton />
                 <ScrollToTop />
                 <WhatsAppButton />
                 <CookieBanner />
