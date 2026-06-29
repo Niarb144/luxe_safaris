@@ -7,13 +7,6 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 
-const countryImages: Record<string, string> = {
-  Kenya: "/images/kenya.jpg",
-  Tanzania: "/images/tanzania.jpg",
-  Uganda: "/images/uganda.jpg",
-  Rwanda: "/images/rwanda.jpg",
-};
-
 export default function CountryCards() {
   const [countries, setCountries] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -24,10 +17,10 @@ export default function CountryCards() {
     async function fetchCountries() {
       setLoading(true);
 
-      // Fetch tours with their IDs so we can look up translations
       const { data, error } = await supabase
-        .from("tours")
-        .select("id, country");
+        .from("country_cards")
+        .select("id, name, slug, tours, image")
+        .order("tours", { ascending: false });
 
       if (error) {
         console.error(error);
@@ -35,63 +28,37 @@ export default function CountryCards() {
         return;
       }
 
-      // Group by country, keeping one representative tour ID per country
-      const grouped = (data || []).reduce((acc: any, tour: any) => {
-        if (!tour.country) return acc;
-        const key = tour.country.trim();
-        if (!acc[key]) {
-          acc[key] = {
-            name: key,          // English fallback
-            slug: key.toLowerCase(),
-            tours: 0,
-            image: countryImages[key] || "/images/default.jpg",
-            representativeId: tour.id, // one ID to look up the translation
-          };
-        }
-        acc[key].tours += 1;
-        return acc;
-      }, {});
+      let result = data || [];
 
-      // If not English, fetch translated country names from the translations table
       if (locale !== "en") {
-        const representativeIds = Object.values(grouped).map(
-          (c: any) => c.representativeId
-        );
+        const ids = result.map((c) => c.id);
 
         const { data: translationRows } = await supabase
           .from("translations")
           .select("record_id, translated_text")
-          .eq("table_name", "tours")
-          .eq("field", "country")
+          .eq("table_name", "countries")
+          .eq("field", "name")
           .eq("locale", locale)
-          .in("record_id", representativeIds);
+          .in("record_id", ids);
 
-        if (translationRows) {
-          // Build a map of record_id → translated country name
+        if (translationRows?.length) {
           const translationMap = Object.fromEntries(
             translationRows.map((row) => [row.record_id, row.translated_text])
           );
 
-          // Apply translations to each country group
-          for (const key of Object.keys(grouped)) {
-            const repId = grouped[key].representativeId;
-            if (translationMap[repId]) {
-              grouped[key].name = translationMap[repId];
-            }
-          }
+          result = result.map((c) => ({
+            ...c,
+            name: translationMap[c.id] ?? c.name,
+          }));
         }
       }
-
-      const result = Object.values(grouped).sort(
-        (a: any, b: any) => b.tours - a.tours
-      );
 
       setCountries(result);
       setLoading(false);
     }
 
     fetchCountries();
-  }, [locale]); // re-fetch when locale changes
+  }, [locale]);
 
   if (loading)
     return <div className="py-20 text-center">{t("loading")}</div>;

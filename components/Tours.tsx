@@ -11,6 +11,7 @@ type ToursListProps = {
   limit?: number;
   searchParams?: {
     search?: string;
+    country?: string;       // slug from CountryCards e.g. "kenya"
     destination?: string;
     duration?: string;
     type?: string;
@@ -25,15 +26,16 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
   const locale = useLocale();
   const t = useTranslations("tours");
 
-  const search = searchParams?.search || "";
-  const destination = searchParams?.destination || "";
-  const duration = searchParams?.duration || "";
-  const holidayType = searchParams?.type || "";
+  const search       = searchParams?.search      || "";
+  const countrySlugParam = searchParams?.country || "";   // e.g. "kenya"
+  const destination  = searchParams?.destination || "";
+  const duration     = searchParams?.duration    || "";
+  const holidayType  = searchParams?.type        || "";
 
   useEffect(() => {
     async function fetchTours() {
       const { data, error } = await supabase
-        .from("tours")
+        .from("tours_with_countries")           // ← view instead of "tours"
         .select(`
           *,
           tour_images (image_url, is_main),
@@ -43,42 +45,39 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
 
       if (error) { console.error(error); return; }
 
-      // ── Fetch translations for all tours in one query ──────────────────────
-      let translationMap = new Map<string, Record<string, string>>()
+      // ── Fetch translations ─────────────────────────────────────────────────
+      let translationMap = new Map<string, Record<string, string>>();
 
-      if (locale !== 'en' && data.length > 0) {
-        const tourIds = data.map(t => t.id)
+      if (locale !== "en" && data.length > 0) {
+        const tourIds = data.map((t) => t.id);
 
         const { data: translationsData } = await supabase
-          .from('translations')
-          .select('record_id, field, translated_text')
-          .eq('table_name', 'tours')
-          .eq('locale', locale)
-          .in('record_id', tourIds)
-          .in('field', ['title', 'description', 'duration', 'country', 'holiday_types'])
+          .from("translations")
+          .select("record_id, field, translated_text")
+          .eq("table_name", "tours")
+          .eq("locale", locale)
+          .in("record_id", tourIds)
+          .in("field", ["title", "description", "duration", "holiday_types"]);
+          // "country" removed — country names now come from the countries table
 
         translationsData?.forEach(({ record_id, field, translated_text }) => {
-          if (!translationMap.has(record_id)) translationMap.set(record_id, {})
-          translationMap.get(record_id)![field] = translated_text
-        })
+          if (!translationMap.has(record_id)) translationMap.set(record_id, {});
+          translationMap.get(record_id)![field] = translated_text;
+        });
       }
 
-      // ── Format and merge translations ──────────────────────────────────────
+      // ── Format and merge ───────────────────────────────────────────────────
       const formatted = data.map((tour) => {
-        const mainImage = tour.tour_images?.find((img: any) => img.is_main);
-        const countrySlug = tour.country
-          ? tour.country.toLowerCase().replace(/\s+/g, "-")
-          : "";
-
-        const translations = translationMap.get(tour.id) ?? {}
+        const mainImage    = tour.tour_images?.find((img: any) => img.is_main);
+        const translations = translationMap.get(tour.id) ?? {};
 
         return {
           ...tour,
           ...translations,
-          coverImage: mainImage?.image_url || "/images/logo.svg",
+          coverImage:   mainImage?.image_url || "/images/logo.svg",
           holidayTypes: tour.tour_holiday_types?.map((t: any) => t.holiday_types?.name) || [],
-          destinations: tour.tour_destinations?.map((d: any) => d.destinations?.name) || [],
-          countrySlug,
+          destinations: tour.tour_destinations?.map((d: any) => d.destinations?.name)  || [],
+          // countries & country_slugs come directly from the view as arrays
         };
       });
 
@@ -89,26 +88,30 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
     fetchTours();
   }, [locale]);
 
+  // Category pills: one entry per unique country name across all tours
   const categories = useMemo(() => {
     const unique = Array.from(
-      new Set(tours.map((tour) => tour.country).filter(Boolean))
+      new Set(tours.flatMap((tour) => tour.countries ?? []).filter(Boolean))
     );
     return ["All", ...unique];
   }, [tours]);
 
   const filteredTours = tours.filter((tour) => {
-    const locationMatch = active === "All" || tour.country === active;
-    const searchMatch = !search || tour.title?.toLowerCase().includes(search.toLowerCase());
-    const destinationMatch = !destination || tour.destinations?.includes(destination);
-    const durationMatch = !duration || String(tour.duration) === duration;
-    const holidayMatch = !holidayType || tour.holidayTypes?.includes(holidayType);
-    return locationMatch && searchMatch && destinationMatch && durationMatch && holidayMatch;
+    // Country pill filter uses the display name; slug param from CountryCards uses the slug array
+    const pillMatch   = active === "All" || (tour.countries ?? []).includes(active);
+    const slugMatch   = !countrySlugParam || (tour.country_slugs ?? []).includes(countrySlugParam);
+    const searchMatch = !search      || tour.title?.toLowerCase().includes(search.toLowerCase());
+    const destMatch   = !destination || (tour.destinations ?? []).includes(destination);
+    const durMatch    = !duration    || String(tour.duration) === duration;
+    const typeMatch   = !holidayType || (tour.holidayTypes ?? []).includes(holidayType);
+
+    return pillMatch && slugMatch && searchMatch && destMatch && durMatch && typeMatch;
   });
 
   const displayed = limit ? filteredTours.slice(0, limit) : filteredTours;
-  const hasMore = limit ? filteredTours.length > limit : false;
+  const hasMore   = limit ? filteredTours.length > limit : false;
 
-  // Skeleton loader
+  // ── Skeleton ───────────────────────────────────────────────────────────────
   if (loading) {
     return (
       <section className="py-4 bg-[#f5f1ea] w-full min-h-screen">
@@ -127,26 +130,23 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
     );
   }
 
+  // ── Render ─────────────────────────────────────────────────────────────────
   return (
     <section className="py-4 bg-[#f5f1ea] w-full min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Heading */}
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-[#3b2a1d]">
-            {t("title")}
-          </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            {t("subtitle")}
-          </p>
+          <h2 className="text-4xl font-bold text-[#3b2a1d]">{t("title")}</h2>
+          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">{t("subtitle")}</p>
         </div>
 
-        {/* Filters — full page only */}
+        {/* Country pill filters — full page only */}
         {!limit && (
           <div className="flex flex-wrap justify-center gap-4 mt-2">
             {categories.map((cat) => (
               <button
                 key={cat}
+                type="button"
                 onClick={() => setActive(cat)}
                 className={`px-6 py-2 rounded-full border transition cursor-pointer ${
                   active === cat
@@ -160,7 +160,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
           </div>
         )}
 
-       {/* Cards */}
+        {/* Cards */}
         <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-4">
           <AnimatePresence mode="popLayout">
             {displayed.map((tour) => (
@@ -189,36 +189,34 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#041f0e]/80 via-[#041f0e]/30 to-[#041f0e]/10" />
 
                   <div className="relative h-full flex flex-col justify-between p-7">
-                    {/* Top: country label */}
+                    {/* Top: country label(s) */}
                     <div>
                       <span className="text-white font-semibold text-sm tracking-wide">
-                        {tour.country || t("safari")}
+                        {(tour.countries ?? []).join(" · ") || t("safari")}
                       </span>
                     </div>
 
-                    {/* Bottom: title + description (hover) + duration/price */}
+                    {/* Bottom: title + hover description + duration/price */}
                     <div>
                       <h3 className="text-white text-base font-extrabold leading-snug mb-1 group-hover:mb-0 transition-all duration-300">
                         {tour.title}
                       </h3>
 
-                      {/* Description — hidden by default, slides in on hover */}
                       <div className="max-h-0 overflow-hidden group-hover:max-h-[180px] transition-all duration-500 ease-in-out">
                         <p className="text-white/80 text-xs leading-5 line-clamp-8 mt-1">
                           {tour.description}
                         </p>
                       </div>
 
-                      {/* Duration + Price on one line */}
                       <div className="flex items-center gap-3 mt-4">
                         <div className="rounded-lg px-3 py-1.5 backdrop-blur-md bg-white/10">
-                          <span className="text-white font-bold text-xs">
-                            {tour.duration}
-                          </span>
+                          <span className="text-white font-bold text-xs">{tour.duration}</span>
                         </div>
                         <div className="bg-[#b77e24] rounded-2xl px-3 py-1.5">
                           <span className="text-white font-bold text-xs">
-                            {tour.price === 0 ? t("learnMore") : `${t("from")} $${tour.price.toLocaleString()}`}
+                            {tour.price === 0
+                              ? t("learnMore")
+                              : `${t("from")} $${tour.price.toLocaleString()}`}
                           </span>
                         </div>
                       </div>
@@ -230,14 +228,10 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
           </AnimatePresence>
         </motion.div>
 
-        {/* Empty state */}
         {displayed.length === 0 && (
-          <p className="text-center mt-10 text-gray-500">
-            {t("noResults")}
-          </p>
+          <p className="text-center mt-10 text-gray-500">{t("noResults")}</p>
         )}
 
-        {/* See More button — homepage only */}
         {hasMore && (
           <div className="flex justify-center py-12">
             <Link
