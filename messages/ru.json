@@ -775,5 +775,132 @@
       "body": "Сообщите, откуда вы платите и сумму, и мы подскажем самый простой способ.",
       "button": "Связаться с консультантом по сафари"
     }
+  },
+  "safariInquiry": {
+    "sections": {
+      "yourDetails": "Ваши данные",
+      "tripPreferences": "Предпочтения в отношении поездок",
+      "numberOfGuests": "Число гостей",
+      "accommodation": "Место проживания"
+    },
+    "fields": {
+      "fullName": {
+        "label": "Имя и фамилия",
+        "placeholder": "например, Джейн Уильямсон"
+      },
+      "email": {
+        "label": "Адрес электронной почты",
+        "placeholder": "jane@example.com"
+      },
+      "mobile": {
+        "label": "Номер мобильного телефона",
+        "placeholder": "712 345 678"
+      },
+      "country": {
+        "label": "Страна",
+        "placeholder": "Выберите свою страну"
+      },
+      "destinations": {
+        "label": "Места назначения",
+        "placeholder": "Выберите пункты назначения",
+        "searchPlaceholder": "Поиск направления",
+        "selectedSingular": "Выбрано {count} направление",
+        "selectedPlural": "Выбрано {count} направлений",
+        "done": "Готово — выбрано {count}"
+      },
+      "holidayType": {
+        "label": "Тип праздника",
+        "placeholder": "Выберите тип отпуска"
+      }
+    },
+    "dialCode": {
+      "searchPlaceholder": "Поиск по странам",
+      "noResults": "Нет результатов"
+    },
+    "guests": {
+      "total": "Всего гостей: {count}",
+      "adults": {
+        "label": "Взрослые",
+        "sublabel": "Возраст 18+"
+      },
+      "infants": {
+        "label": "Маленькие дети",
+        "sublabel": "Возраст 0–3 года"
+      },
+      "children": {
+        "label": "Дети",
+        "sublabel": "Возраст 4–11 лет"
+      },
+      "juniors": {
+        "label": "Юниоры",
+        "sublabel": "Возраст 12–17 лет"
+      }
+    },
+    "errors": {
+      "fullNameRequired": "Пожалуйста, введите ваше Имя.",
+      "emailInvalid": "Введите действительный адрес электронной почты.",
+      "mobileRequired": "Пожалуйста, введите ваш номер телефона.",
+      "destinationsRequired": "Выберите хотя бы один пункт назначения.",
+      "countryRequired": "Выберите вашу страну.",
+      "holidayTypeRequired": "Выберите тип праздника.",
+      "classificationRequired": "Выберите класс размещения."
+    },
+    "submit": {
+      "label": "Мой запрос",
+      "loading": "Отправка запроса..."
+    },
+    "footer": "Мы отвечаем в течение 24 часов · Ваши данные никогда не передаются третьим лицам",
+    "success": {
+      "title": "Запрос получен",
+      "message": "Спасибо, {firstName}. Наша команда рассмотрит ваши предпочтения и свяжется с вами в течение 24 часов.",
+      "reset": "Отправить еще один запрос"
+    }
+  },
+  "customSafariPage": {
+    "meta": {
+      "title": "Запланируйте индивидуальное сафари | Сафари Luxe Plains Africa",
+      "description": "Расскажите нам о сафари вашей мечты, и наши специалисты составят индивидуальный маршрут специально для вас."
+    },
+    "hero": {
+      "eyebrow": "Сафари на заказ",
+      "heading": "Создайте дизайн своего сафари",
+      "subheading": "Поделитесь своим видением путешествий, и наши специалисты по сафари составят индивидуальный маршрут — от интимных лесных лагерей до эксклюзивных домиков."
+    }
+  },
+  "customSafariButton": {
+    "link": "Запланировать мое сафари"
+  },
+  "shared": {
+    "holidayTypes": {
+      "Wildlife Safari": "Сафари по дикой природе",
+      "Gorilla Trekking": "Трекинг по гориллам",
+      "Beach & Safari Combo": "Пляж и сафари",
+      "Birding Safari": "Птичье сафари",
+      "Photography Safari": "Фотосафари",
+      "Honeymoon Safari": "Сафари на медовый месяц",
+      "Family Safari": "Семейное сафари",
+      "Walking Safari": "Прогулочное сафари",
+      "Cultural Safari": "Культурное сафари",
+      "Luxury Safari": "Роскошное сафари",
+      "Budget Safari": "Бюджетное сафари"
+    },
+    "accommodationClassifications": {
+      "Economy": {
+        "label": "Эконом класс",
+        "description": "Удобные, хорошо управляемые лагеря и домики"
+      },
+      "Comfort": {
+        "label": "Комфорт",
+        "description": "Качество среднего уровня с отличным сервисом"
+      },
+      "Luxury": {
+        "label": "Элитный квартал",
+        "description": "Лагеря премиум-класса с исключительными удобствами"
+      },
+      "Superior Luxury": {
+        "label": "Улучшенный люкс",
+        "description": "Эксклюзивная недвижимость мирового класса для сафари"
+      }
+    }
   }
 }

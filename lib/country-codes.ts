@@ -1,4 +1,3 @@
-// lib/country-codes.ts
 export interface CountryDialCode {
   name: string;
   code: string;  // ISO 3166-1 alpha-2

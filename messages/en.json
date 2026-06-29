@@ -766,5 +766,120 @@
       "body": "Tell us where you're paying from and how much, and we'll point you to the simplest method.",
       "button": "Ask a safari consultant"
     }
+  },
+  "safariInquiry": {
+    "sections": {
+      "yourDetails": "Your Details",
+      "tripPreferences": "Trip Preferences",
+      "numberOfGuests": "Number of Guests",
+      "accommodation": "Accommodation"
+    },
+    "fields": {
+      "fullName": {
+        "label": "Full Name",
+        "placeholder": "e.g. Jane Williamson"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "jane@example.com"
+      },
+      "mobile": {
+        "label": "Mobile Number",
+        "placeholder": "712 345 678"
+      },
+      "country": {
+        "label": "Country",
+        "placeholder": "Select your country"
+      },
+      "destinations": {
+        "label": "Destinations",
+        "placeholder": "Select destinations",
+        "searchPlaceholder": "Search destinations…",
+        "selectedSingular": "{count} destination selected",
+        "selectedPlural": "{count} destinations selected",
+        "done": "Done — {count} selected"
+      },
+      "holidayType": {
+        "label": "Holiday Type",
+        "placeholder": "Select holiday type"
+      }
+    },
+    "dialCode": {
+      "searchPlaceholder": "Search country…",
+      "noResults": "No results"
+    },
+    "guests": {
+      "total": "{count} guests total",
+      "adults": {
+        "label": "Adults",
+        "sublabel": "Age 18+"
+      },
+      "infants": {
+        "label": "Infants",
+        "sublabel": "Age 0–3"
+      },
+      "children": {
+        "label": "Children",
+        "sublabel": "Age 4–11"
+      },
+      "juniors": {
+        "label": "Juniors",
+        "sublabel": "Age 12–17"
+      }
+    },
+    "errors": {
+      "fullNameRequired": "Please enter your name.",
+      "emailInvalid": "Enter a valid email address.",
+      "mobileRequired": "Please enter your mobile number.",
+      "destinationsRequired": "Select at least one destination.",
+      "countryRequired": "Select your country.",
+      "holidayTypeRequired": "Select a holiday type.",
+      "classificationRequired": "Select an accommodation class."
+    },
+    "submit": {
+      "label": "Send Inquiry",
+      "loading": "Sending inquiry…"
+    },
+    "footer": "We respond within 24 hours · Your details are never shared with third parties",
+    "success": {
+      "title": "Inquiry Received",
+      "message": "Thank you, {firstName}. Our team will review your safari preferences and reach out within 24 hours with a tailored proposal.",
+      "reset": "Submit another inquiry"
+    }
+  },
+  "customSafariPage": {
+    "meta": {
+      "title": "Plan a Custom Safari | Luxe Plains Africa Safaris",
+      "description": "Tell us your dream safari and our specialists will craft a tailor-made itinerary just for you."
+    },
+    "hero": {
+      "eyebrow": "Bespoke Safaris",
+      "heading": "Design Your Safari",
+      "subheading": "Share your travel vision and our safari specialists will craft a tailor-made itinerary — from intimate bush camps to exclusive lodges."
+    }
+  },
+  "customSafariButton": {
+    "link": "Plan My Safari"
+  },
+  "shared": {
+    "holidayTypes": {
+      "Wildlife Safari": "Wildlife Safari",
+      "Gorilla Trekking": "Gorilla Trekking",
+      "Beach & Safari Combo": "Beach & Safari Combo",
+      "Birding Safari": "Birding Safari",
+      "Photography Safari": "Photography Safari",
+      "Honeymoon Safari": "Honeymoon Safari",
+      "Family Safari": "Family Safari",
+      "Walking Safari": "Walking Safari",
+      "Cultural Safari": "Cultural Safari",
+      "Luxury Safari": "Luxury Safari",
+      "Budget Safari": "Budget Safari"
+    },
+    "accommodationClassifications": {
+      "Economy":         { "label": "Economy",         "description": "Comfortable, well-run camps & lodges" },
+      "Comfort":         { "label": "Comfort",          "description": "Mid-range quality with excellent service" },
+      "Luxury":          { "label": "Luxury",           "description": "Premium camps with exceptional amenities" },
+      "Superior Luxury": { "label": "Superior Luxury",  "description": "Exclusive, world-class safari properties" }
+    }
   }
 }

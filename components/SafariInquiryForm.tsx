@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import {
   User,
   Globe,
@@ -55,12 +56,8 @@ const INITIAL: FormState = {
 };
 
 /* ─────────────────────────────────────────────────────────────────────────── */
-/*  Design tokens (light theme)                                                 */
-/*  bg: #ffffff  surface: #f9f7f4  border: #e8e2d9                             */
-/*  text-primary: #14201A  text-muted: #6b7a6e                                 */
-/*  gold: #B98A3E  green: #14201A                                               */
+/*  Sub-components (defined outside main to avoid re-creating on each render)  */
 /* ─────────────────────────────────────────────────────────────────────────── */
-
 function FieldLabel({ children, required }: { children: React.ReactNode; required?: boolean }) {
   return (
     <label className="block text-[11px] font-semibold uppercase tracking-widest text-[#B98A3E] mb-2">
@@ -83,7 +80,6 @@ function inputClass(hasError?: boolean) {
   ].join(" ");
 }
 
-/* Section header */
 function SectionHeader({ icon: Icon, title }: { icon: React.ElementType; title: string }) {
   return (
     <div className="flex items-center gap-3 mb-5 pb-3 border-b border-[#e8e2d9]">
@@ -97,7 +93,6 @@ function SectionHeader({ icon: Icon, title }: { icon: React.ElementType; title: 
   );
 }
 
-/* Guest stepper */
 function GuestStepper({
   label, sublabel, value, onChange, min = 0, max = 20,
 }: {
@@ -141,6 +136,9 @@ function GuestStepper({
 /*  Main component                                                              */
 /* ─────────────────────────────────────────────────────────────────────────── */
 export default function SafariInquiryForm() {
+  const t = useTranslations("safariInquiry");
+  const s = useTranslations("shared");
+
   const [form, setForm]         = useState<FormState>(INITIAL);
   const [errors, setErrors]     = useState<Partial<Record<keyof FormState, string>>>({});
   const [status, setStatus]     = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -171,13 +169,13 @@ export default function SafariInquiryForm() {
 
   function validate(): boolean {
     const e: Partial<Record<keyof FormState, string>> = {};
-    if (!form.full_name.trim())                                    e.full_name      = "Please enter your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))           e.email          = "Enter a valid email address.";
-    if (!form.mobile_number.trim())                                e.mobile_number  = "Please enter your mobile number.";
-    if (form.destinations.length === 0)                            e.destinations   = "Select at least one destination.";
-    if (!form.country)                                             e.country        = "Select your country.";
-    if (!form.holiday_type)                                        e.holiday_type   = "Select a holiday type.";
-    if (!form.classification)                                      e.classification = "Select an accommodation class.";
+    if (!form.full_name.trim())                              e.full_name      = t("errors.fullNameRequired");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))    e.email          = t("errors.emailInvalid");
+    if (!form.mobile_number.trim())                          e.mobile_number  = t("errors.mobileRequired");
+    if (form.destinations.length === 0)                      e.destinations   = t("errors.destinationsRequired");
+    if (!form.country)                                       e.country        = t("errors.countryRequired");
+    if (!form.holiday_type)                                  e.holiday_type   = t("errors.holidayTypeRequired");
+    if (!form.classification)                                e.classification = t("errors.classificationRequired");
     setErrors(e);
     return Object.keys(e).length === 0;
   }
@@ -209,6 +207,9 @@ export default function SafariInquiryForm() {
     d.toLowerCase().includes(destSearch.toLowerCase())
   );
 
+  const totalGuests = form.adults + form.children_0_3 + form.children_4_11 + form.children_12_17;
+  const destCount   = form.destinations.length;
+
   /* ── Success ─────────────────────────────────────────────────────────────── */
   if (status === "success") {
     return (
@@ -216,10 +217,11 @@ export default function SafariInquiryForm() {
         <div className="w-16 h-16 rounded-full bg-[#14201A] flex items-center justify-center mb-6">
           <Check className="w-7 h-7 text-[#B98A3E]" />
         </div>
-        <h2 className="text-2xl font-serif text-[#14201A] mb-3">Inquiry Received</h2>
+        <h2 className="text-2xl font-serif text-[#14201A] mb-3">
+          {t("success.title")}
+        </h2>
         <p className="text-[#6b7a6e] max-w-sm text-sm leading-relaxed">
-          Thank you, {form.full_name.split(" ")[0]}. Our team will review your safari preferences
-          and reach out within 24 hours with a tailored proposal.
+          {t("success.message", { firstName: form.full_name.split(" ")[0] })}
         </p>
         <button
           type="button"
@@ -227,7 +229,7 @@ export default function SafariInquiryForm() {
           className="mt-8 px-6 py-2.5 border border-[#14201A]/20 text-[#14201A] text-sm rounded-lg
                      hover:bg-[#14201A]/5 transition-colors duration-200"
         >
-          Submit another inquiry
+          {t("success.reset")}
         </button>
       </div>
     );
@@ -240,15 +242,15 @@ export default function SafariInquiryForm() {
 
         {/* ── Contact ──────────────────────────────────────────────────────── */}
         <section>
-          <SectionHeader icon={User} title="Your Details" />
+          <SectionHeader icon={User} title={t("sections.yourDetails")} />
           <div className="space-y-4">
 
             {/* Full name */}
             <div>
-              <FieldLabel required>Full Name</FieldLabel>
+              <FieldLabel required>{t("fields.fullName.label")}</FieldLabel>
               <input
                 type="text"
-                placeholder="e.g. Jane Williamson"
+                placeholder={t("fields.fullName.placeholder")}
                 value={form.full_name}
                 onChange={(e) => { set("full_name", e.target.value); clearError("full_name"); }}
                 className={inputClass(!!errors.full_name)}
@@ -258,10 +260,10 @@ export default function SafariInquiryForm() {
 
             {/* Email */}
             <div>
-              <FieldLabel required>Email Address</FieldLabel>
+              <FieldLabel required>{t("fields.email.label")}</FieldLabel>
               <input
                 type="email"
-                placeholder="jane@example.com"
+                placeholder={t("fields.email.placeholder")}
                 value={form.email}
                 onChange={(e) => { set("email", e.target.value); clearError("email"); }}
                 className={inputClass(!!errors.email)}
@@ -271,7 +273,7 @@ export default function SafariInquiryForm() {
 
             {/* Mobile with dial code */}
             <div>
-              <FieldLabel required>Mobile Number</FieldLabel>
+              <FieldLabel required>{t("fields.mobile.label")}</FieldLabel>
               <div className="flex gap-2">
                 {/* Dial code picker */}
                 <div className="relative flex-shrink-0" ref={dialRef}>
@@ -295,7 +297,7 @@ export default function SafariInquiryForm() {
                       <div className="p-2 border-b border-[#e8e2d9]">
                         <input
                           type="text"
-                          placeholder="Search country…"
+                          placeholder={t("dialCode.searchPlaceholder")}
                           value={dialSearch}
                           onChange={(e) => setDialSearch(e.target.value)}
                           className="w-full bg-[#f9f7f4] border border-[#e8e2d9] rounded-lg px-3 py-2 text-xs
@@ -323,7 +325,9 @@ export default function SafariInquiryForm() {
                           </li>
                         ))}
                         {filteredDial.length === 0 && (
-                          <li className="px-4 py-3 text-xs text-[#14201A]/35 text-center">No results</li>
+                          <li className="px-4 py-3 text-xs text-[#14201A]/35 text-center">
+                            {t("dialCode.noResults")}
+                          </li>
                         )}
                       </ul>
                     </div>
@@ -332,7 +336,7 @@ export default function SafariInquiryForm() {
 
                 <input
                   type="tel"
-                  placeholder="712 345 678"
+                  placeholder={t("fields.mobile.placeholder")}
                   value={form.mobile_number}
                   onChange={(e) => { set("mobile_number", e.target.value); clearError("mobile_number"); }}
                   className={`${inputClass(!!errors.mobile_number)} flex-1`}
@@ -343,7 +347,7 @@ export default function SafariInquiryForm() {
 
             {/* Country */}
             <div>
-              <FieldLabel required>Country</FieldLabel>
+              <FieldLabel required>{t("fields.country.label")}</FieldLabel>
               <div className="relative">
                 <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#14201A]/25 pointer-events-none" />
                 <select
@@ -351,7 +355,7 @@ export default function SafariInquiryForm() {
                   onChange={(e) => { set("country", e.target.value); clearError("country"); }}
                   className={`${inputClass(!!errors.country)} pl-10 appearance-none cursor-pointer`}
                 >
-                  <option value="" disabled>Select your country</option>
+                  <option value="" disabled>{t("fields.country.placeholder")}</option>
                   {COUNTRIES.map((c) => <option key={c} value={c}>{c}</option>)}
                 </select>
                 <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#14201A]/25 pointer-events-none" />
@@ -363,12 +367,12 @@ export default function SafariInquiryForm() {
 
         {/* ── Trip Preferences ─────────────────────────────────────────────── */}
         <section>
-          <SectionHeader icon={MapPin} title="Trip Preferences" />
+          <SectionHeader icon={MapPin} title={t("sections.tripPreferences")} />
           <div className="space-y-4">
 
             {/* Destinations */}
             <div>
-              <FieldLabel required>Destinations</FieldLabel>
+              <FieldLabel required>{t("fields.destinations.label")}</FieldLabel>
               <div className="relative" ref={destRef}>
                 <button
                   type="button"
@@ -376,13 +380,18 @@ export default function SafariInquiryForm() {
                   className={[
                     "w-full flex items-center justify-between px-4 py-3 rounded-lg border text-sm bg-white text-left",
                     "focus:outline-none focus:ring-2 focus:ring-[#B98A3E]/40 focus:border-[#B98A3E] transition-all duration-150",
-                    errors.destinations ? "border-red-400" : "border-[#e8e2d9] hover:border-[#B98A3E]/50",
+                    errors.destinations ? "border-red-400" : "border-[#e8e2d9] hover:border-[#B98A3E]/50 cursor-pointer",
                   ].join(" ")}
                 >
-                  <span className={form.destinations.length ? "text-[#14201A]" : "text-[#14201A]/30"}>
-                    {form.destinations.length
-                      ? `${form.destinations.length} destination${form.destinations.length > 1 ? "s" : ""} selected`
-                      : "Select destinations"}
+                  <span className={destCount ? "text-[#14201A]" : "text-[#14201A]/30"}>
+                    {destCount
+                      ? t(
+                          destCount === 1
+                            ? "fields.destinations.selectedSingular"
+                            : "fields.destinations.selectedPlural",
+                          { count: destCount }
+                        )
+                      : t("fields.destinations.placeholder")}
                   </span>
                   <ChevronDown className={`w-4 h-4 text-[#14201A]/30 transition-transform flex-shrink-0 ${destOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -392,7 +401,7 @@ export default function SafariInquiryForm() {
                     <div className="p-2 border-b border-[#e8e2d9]">
                       <input
                         type="text"
-                        placeholder="Search destinations…"
+                        placeholder={t("fields.destinations.searchPlaceholder")}
                         value={destSearch}
                         onChange={(e) => setDestSearch(e.target.value)}
                         className="w-full bg-[#f9f7f4] border border-[#e8e2d9] rounded-lg px-3 py-2 text-xs
@@ -431,14 +440,14 @@ export default function SafariInquiryForm() {
                         );
                       })}
                     </ul>
-                    {form.destinations.length > 0 && (
+                    {destCount > 0 && (
                       <div className="p-2 border-t border-[#e8e2d9]">
                         <button
                           type="button"
                           onClick={() => setDestOpen(false)}
-                          className="w-full py-2 text-xs text-center text-[#B98A3E] hover:bg-[#B98A3E]/5 rounded-lg transition-colors"
+                          className="w-full py-2 text-xs text-center text-[#B98A3E] hover:bg-[#B98A3E]/5 rounded-lg transition-colors cursor-pointer"
                         >
-                          Done — {form.destinations.length} selected
+                          {t("fields.destinations.done", { count: destCount })}
                         </button>
                       </div>
                     )}
@@ -446,7 +455,7 @@ export default function SafariInquiryForm() {
                 )}
               </div>
 
-              {form.destinations.length > 0 && (
+              {destCount > 0 && (
                 <div className="flex flex-wrap gap-1.5 mt-2">
                   {form.destinations.map((d) => (
                     <span
@@ -458,7 +467,7 @@ export default function SafariInquiryForm() {
                       <button
                         type="button"
                         onClick={() => set("destinations", form.destinations.filter((x) => x !== d))}
-                        className="hover:text-[#B98A3E] transition-colors"
+                        className="hover:text-[#B98A3E] transition-colors cursor-pointer"
                       >
                         <X className="w-3 h-3" />
                       </button>
@@ -471,15 +480,19 @@ export default function SafariInquiryForm() {
 
             {/* Holiday type */}
             <div>
-              <FieldLabel required>Holiday Type</FieldLabel>
+              <FieldLabel required>{t("fields.holidayType.label")}</FieldLabel>
               <div className="relative">
                 <select
                   value={form.holiday_type}
                   onChange={(e) => { set("holiday_type", e.target.value); clearError("holiday_type"); }}
                   className={`${inputClass(!!errors.holiday_type)} appearance-none cursor-pointer`}
                 >
-                  <option value="" disabled>Select holiday type</option>
-                  {HOLIDAY_TYPES.map((h) => <option key={h} value={h}>{h}</option>)}
+                  <option value="" disabled>{t("fields.holidayType.placeholder")}</option>
+                  {HOLIDAY_TYPES.map((h) => 
+                    <option key={h} value={h}>
+                      {s(`holidayTypes.${h}`)}
+                    </option>
+                  )}
                 </select>
                 <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#14201A]/25 pointer-events-none" />
               </div>
@@ -490,21 +503,42 @@ export default function SafariInquiryForm() {
 
         {/* ── Guests ───────────────────────────────────────────────────────── */}
         <section>
-          <SectionHeader icon={Users} title="Number of Guests" />
+          <SectionHeader icon={Users} title={t("sections.numberOfGuests")} />
           <div className="bg-[#f9f7f4] border border-[#e8e2d9] rounded-xl px-5 py-1">
-            <GuestStepper label="Adults"   sublabel="Age 18+"  value={form.adults}         onChange={(v) => set("adults", v)}         min={1} />
-            <GuestStepper label="Infants"  sublabel="Age 0–3"  value={form.children_0_3}   onChange={(v) => set("children_0_3", v)}   />
-            <GuestStepper label="Children" sublabel="Age 4–11" value={form.children_4_11}  onChange={(v) => set("children_4_11", v)}  />
-            <GuestStepper label="Juniors"  sublabel="Age 12–17" value={form.children_12_17} onChange={(v) => set("children_12_17", v)} />
+            <GuestStepper
+              label={t("guests.adults.label")}
+              sublabel={t("guests.adults.sublabel")}
+              value={form.adults}
+              onChange={(v) => set("adults", v)}
+              min={1}
+            />
+            <GuestStepper
+              label={t("guests.infants.label")}
+              sublabel={t("guests.infants.sublabel")}
+              value={form.children_0_3}
+              onChange={(v) => set("children_0_3", v)}
+            />
+            <GuestStepper
+              label={t("guests.children.label")}
+              sublabel={t("guests.children.sublabel")}
+              value={form.children_4_11}
+              onChange={(v) => set("children_4_11", v)}
+            />
+            <GuestStepper
+              label={t("guests.juniors.label")}
+              sublabel={t("guests.juniors.sublabel")}
+              value={form.children_12_17}
+              onChange={(v) => set("children_12_17", v)}
+            />
           </div>
           <p className="mt-2 text-xs text-[#6b7a6e] text-right">
-            {form.adults + form.children_0_3 + form.children_4_11 + form.children_12_17} guests total
+            {t("guests.total", { count: totalGuests })}
           </p>
         </section>
 
         {/* ── Accommodation ────────────────────────────────────────────────── */}
         <section>
-          <SectionHeader icon={Star} title="Accommodation" />
+          <SectionHeader icon={Star} title={t("sections.accommodation")} />
           <div className="grid grid-cols-2 gap-3">
             {ACCOMMODATION_CLASSIFICATIONS.map((ac) => {
               const active = form.classification === ac.value;
@@ -514,7 +548,7 @@ export default function SafariInquiryForm() {
                   type="button"
                   onClick={() => { set("classification", ac.value); clearError("classification"); }}
                   className={[
-                    "relative flex flex-col text-left p-4 rounded-xl border transition-all duration-200",
+                    "relative flex flex-col text-left p-4 rounded-xl border transition-all duration-200 cursor-pointer",
                     active
                       ? "border-[#B98A3E] bg-[#B98A3E]/5 shadow-[0_0_0_1px_rgba(185,138,62,0.25)]"
                       : "border-[#e8e2d9] bg-white hover:border-[#B98A3E]/40 hover:bg-[#f9f7f4]",
@@ -526,10 +560,10 @@ export default function SafariInquiryForm() {
                     </span>
                   )}
                   <span className={`text-sm font-semibold mb-1 ${active ? "text-[#B98A3E]" : "text-[#14201A]"}`}>
-                    {ac.label}
+                    {s(`accommodationClassifications.${ac.value}.label`)}
                   </span>
                   <span className="text-[11px] leading-relaxed text-[#6b7a6e]">
-                    {ac.description}
+                    {s(`accommodationClassifications.${ac.value}.description`)}
                   </span>
                 </button>
               );
@@ -550,7 +584,7 @@ export default function SafariInquiryForm() {
           onClick={handleSubmit}
           disabled={status === "loading"}
           className={[
-            "w-full flex items-center justify-center gap-2.5 py-4 rounded-xl text-sm font-semibold",
+            "w-full flex items-center justify-center gap-2.5 py-4 rounded-xl text-sm font-semibold cursor-pointer",
             "tracking-wide uppercase transition-all duration-200",
             status === "loading"
               ? "bg-[#14201A]/40 text-white/60 cursor-not-allowed"
@@ -558,14 +592,14 @@ export default function SafariInquiryForm() {
           ].join(" ")}
         >
           {status === "loading" ? (
-            <><Loader2 className="w-4 h-4 animate-spin" /> Sending inquiry…</>
+            <><Loader2 className="w-4 h-4 animate-spin" /> {t("submit.loading")}</>
           ) : (
-            <><Send className="w-4 h-4" /> Send My Inquiry</>
+            <><Send className="w-4 h-4" /> {t("submit.label")}</>
           )}
         </button>
 
         <p className="text-center text-[11px] text-[#6b7a6e]">
-          We respond within 24 hours · Your details are never shared with third parties
+          {t("footer")}
         </p>
       </div>
     </div>

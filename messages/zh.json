@@ -775,5 +775,132 @@
       "body": "告诉我们你从哪里付款以及金额，我们会帮你选择最简单的方法。",
       "button": "联系旅行顾问"
     }
+  },
+  "safariInquiry": {
+    "sections": {
+      "yourDetails": "您的详细信息",
+      "tripPreferences": "行程首选项",
+      "numberOfGuests": "客人数量",
+      "accommodation": "住所"
+    },
+    "fields": {
+      "fullName": {
+        "label": "全名",
+        "placeholder": "例如： Jane Williamson"
+      },
+      "email": {
+        "label": "电子邮箱地址",
+        "placeholder": "jane@example.com"
+      },
+      "mobile": {
+        "label": "手机号码",
+        "placeholder": "712 345 678"
+      },
+      "country": {
+        "label": "国籍",
+        "placeholder": "选择国家或地区"
+      },
+      "destinations": {
+        "label": "目的地",
+        "placeholder": "选择目标",
+        "searchPlaceholder": "搜索目的地",
+        "selectedSingular": "已选择{count}个目的地",
+        "selectedPlural": "已选择{count}个目的地",
+        "done": "完成—已选择{count}项"
+      },
+      "holidayType": {
+        "label": "假日类型",
+        "placeholder": "選取假日"
+      }
+    },
+    "dialCode": {
+      "searchPlaceholder": "搜索国家",
+      "noResults": "搜不到"
+    },
+    "guests": {
+      "total": "总共{count}位房客",
+      "adults": {
+        "label": "成人",
+        "sublabel": "18岁以上"
+      },
+      "infants": {
+        "label": "婴儿",
+        "sublabel": "（0至3岁）"
+      },
+      "children": {
+        "label": "兒童",
+        "sublabel": "（4至11岁）"
+      },
+      "juniors": {
+        "label": "小辈们",
+        "sublabel": "12-17岁"
+      }
+    },
+    "errors": {
+      "fullNameRequired": "输入你的名字.",
+      "emailInvalid": "输入有效的电子邮件地址。",
+      "mobileRequired": "请输入手机号码",
+      "destinationsRequired": "至少选择一个。",
+      "countryRequired": "选择国家或地区",
+      "holidayTypeRequired": "选择节假日类型。",
+      "classificationRequired": "选择住宿等级。"
+    },
+    "submit": {
+      "label": "发送我的咨询",
+      "loading": "正在发送咨询……"
+    },
+    "footer": "我们会在24小时内回复·我们绝不会与第三方分享您的详细信息",
+    "success": {
+      "title": "查询已收到",
+      "message": "{firstName} ，谢谢您。我们的团队将审核您的野生动物园偏好，并在24小时内联系您，提供量身定制的建议。",
+      "reset": "提交其他咨询"
+    }
+  },
+  "customSafariPage": {
+    "meta": {
+      "title": "规划定制野生动物园|豪华平原非洲野生动物园",
+      "description": "告诉我们您的梦想之旅，我们的专家将为您量身定制行程。"
+    },
+    "hero": {
+      "eyebrow": "定制狩猎之旅",
+      "heading": "设计您的Safari",
+      "subheading": "分享您的旅行愿景，我们的野生动物园专家将为您量身定制行程—从私密的丛林营地到独家旅馆。"
+    }
+  },
+  "customSafariButton": {
+    "link": "规划我的野生动物园"
+  },
+  "shared": {
+    "holidayTypes": {
+      "Wildlife Safari": "野生动物园之旅",
+      "Gorilla Trekking": "大猩猩徒步之旅",
+      "Beach & Safari Combo": "海滩和野生动物园组合",
+      "Birding Safari": "观鸟之旅",
+      "Photography Safari": "摄影之旅",
+      "Honeymoon Safari": "蜜月之旅",
+      "Family Safari": "家庭野生动物园",
+      "Walking Safari": "徒步野生动物园",
+      "Cultural Safari": "文化野生动物园",
+      "Luxury Safari": "豪华野生动物园",
+      "Budget Safari": "Budget Safari"
+    },
+    "accommodationClassifications": {
+      "Economy": {
+        "label": "Economy",
+        "description": "舒适、运营良好的营地和旅馆"
+      },
+      "Comfort": {
+        "label": "舒适",
+        "description": "中档品质，优质服务"
+      },
+      "Luxury": {
+        "label": "豪华",
+        "description": "配备一流便利设施的豪华露营地"
+      },
+      "Superior Luxury": {
+        "label": "极致奢华",
+        "description": "世界一流的专属野生动物园"
+      }
+    }
   }
 }

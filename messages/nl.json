@@ -775,5 +775,132 @@
       "body": "Vertel ons waar je betaalt en hoeveel, en wij adviseren je de eenvoudigste methode.",
       "button": "Neem contact op met een safariconsultant"
     }
+  },
+  "safariInquiry": {
+    "sections": {
+      "yourDetails": "Uw gegevens",
+      "tripPreferences": "reisvoorkeuren",
+      "numberOfGuests": "Aantal personen (incl. uzelf)",
+      "accommodation": "Accommodatie"
+    },
+    "fields": {
+      "fullName": {
+        "label": "Voor- en familienaam",
+        "placeholder": "bijv. Jane Williamson"
+      },
+      "email": {
+        "label": "E-mail adres",
+        "placeholder": "jane@example.com"
+      },
+      "mobile": {
+        "label": "Mobiel nummer ",
+        "placeholder": "712 345 678"
+      },
+      "country": {
+        "label": "Land",
+        "placeholder": "Selecteer uw land"
+      },
+      "destinations": {
+        "label": "Bestemmingen",
+        "placeholder": "Bestemmingen selecteren",
+        "searchPlaceholder": "Zoek bestemmingen",
+        "selectedSingular": "{count} bestemming geselecteerd",
+        "selectedPlural": "{count} bestemmingen geselecteerd",
+        "done": "Klaar — {count} geselecteerd"
+      },
+      "holidayType": {
+        "label": "Reistype",
+        "placeholder": "Selecteer vakantietype"
+      }
+    },
+    "dialCode": {
+      "searchPlaceholder": "Land zoeken",
+      "noResults": "Geen resultaten"
+    },
+    "guests": {
+      "total": "{count} gasten in totaal",
+      "adults": {
+        "label": "Volwassenen",
+        "sublabel": "leeftijd 18+"
+      },
+      "infants": {
+        "label": "Zuigelingen",
+        "sublabel": "Leeftijd 0–3 jaar"
+      },
+      "children": {
+        "label": "Kinderen",
+        "sublabel": "Leeftijd 4–11"
+      },
+      "juniors": {
+        "label": "Junioren",
+        "sublabel": "Leeftijd 12–17 jaar"
+      }
+    },
+    "errors": {
+      "fullNameRequired": "Voer uw naam in.",
+      "emailInvalid": "Voer een geldig e-mailadres in.",
+      "mobileRequired": "Gelieve je mobiele nummer in te vullen",
+      "destinationsRequired": "Selecteer ten minste één bestemming.",
+      "countryRequired": "Selecteer uw land",
+      "holidayTypeRequired": "Selecteer een vakantietype.",
+      "classificationRequired": "Selecteer een accommodatieklasse."
+    },
+    "submit": {
+      "label": "Mijn aanvraag verzenden",
+      "loading": "Aanvraag wordt verzonden..."
+    },
+    "footer": "Wij reageren binnen 24 uur · Uw gegevens worden nooit met derden gedeeld",
+    "success": {
+      "title": "Aanvraag ontvangen",
+      "message": "Bedankt, {firstName}. Ons team beoordeelt je safari-voorkeuren en neemt binnen 24 uur contact met je op met een voorstel op maat.",
+      "reset": "Nog een aanvraag indienen"
+    }
+  },
+  "customSafariPage": {
+    "meta": {
+      "title": "Plan een safari op maat | Luxe Plains Africa Safaris",
+      "description": "Vertel ons uw droomsafari en onze specialisten stellen een op maat gemaakt reisschema voor u samen."
+    },
+    "hero": {
+      "eyebrow": "Safaris op maat",
+      "heading": "Ontwerp je safari",
+      "subheading": "Deel uw reisvisie en onze safarispecialisten stellen een op maat gemaakt reisschema samen — van intieme bushcamps tot exclusieve lodges."
+    }
+  },
+  "customSafariButton": {
+    "link": "Mijn safari plannen"
+  },
+  "shared": {
+    "holidayTypes": {
+      "Wildlife Safari": "Wildlife Safari",
+      "Gorilla Trekking": "Gorilla trekking",
+      "Beach & Safari Combo": "Strand- en safaricombinatie",
+      "Birding Safari": "Vogelsafari",
+      "Photography Safari": "Fotografiesafari",
+      "Honeymoon Safari": "Huwelijksreis Safari",
+      "Family Safari": "Familiesafari",
+      "Walking Safari": "Wandelsafari",
+      "Cultural Safari": "Culturele safari",
+      "Luxury Safari": "Luxe safari",
+      "Budget Safari": "Budget Safari"
+    },
+    "accommodationClassifications": {
+      "Economy": {
+        "label": "Economie",
+        "description": "Comfortabele, goed beheerde kampen en lodges"
+      },
+      "Comfort": {
+        "label": "Comfort",
+        "description": "Middenklasse kwaliteit met uitstekende service"
+      },
+      "Luxury": {
+        "label": "Luxury",
+        "description": "Premium-kampen met uitzonderlijke voorzieningen"
+      },
+      "Superior Luxury": {
+        "label": "Superieure luxe",
+        "description": "Exclusieve safaripanden van wereldklasse"
+      }
+    }
   }
 }

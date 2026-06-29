@@ -775,5 +775,132 @@
       "body": "أخبرنا من أين ستدفع وكم المبلغ، وسنرشدك إلى الطريقة الأسهل.",
       "button": "تحدث مع مستشار رحلات"
     }
+  },
+  "safariInquiry": {
+    "sections": {
+      "yourDetails": "معلوماتك",
+      "tripPreferences": "تفضيلات المشاوير",
+      "numberOfGuests": "عدد الضيوف",
+      "accommodation": "الإقامة"
+    },
+    "fields": {
+      "fullName": {
+        "label": "الاسم الكامل",
+        "placeholder": "على سبيل المثال، جين ويليامسون"
+      },
+      "email": {
+        "label": "البريد الإلكتروني:",
+        "placeholder": "jane@example.com"
+      },
+      "mobile": {
+        "label": "رقم الهاتف",
+        "placeholder": "712 345 678"
+      },
+      "country": {
+        "label": "البلد",
+        "placeholder": "اختر بلدك"
+      },
+      "destinations": {
+        "label": "الأماكن",
+        "placeholder": "انتقِ الأهداف",
+        "searchPlaceholder": "البحث عن وجهات",
+        "selectedSingular": "تم تحديد {count} وجهة",
+        "selectedPlural": "تم تحديد {count} وجهة (وجهات)",
+        "done": "تم — تم تحديد {count}"
+      },
+      "holidayType": {
+        "label": "نوع الرحلة",
+        "placeholder": "تحديد نوع العطلة"
+      }
+    },
+    "dialCode": {
+      "searchPlaceholder": "‫البحث عن دولة‬",
+      "noResults": "لا يوجد نتائج"
+    },
+    "guests": {
+      "total": "إجمالي {count} ضيفًا (ضيوف)",
+      "adults": {
+        "label": "البالغين",
+        "sublabel": "(العمر 18+) "
+      },
+      "infants": {
+        "label": "الرضّع ",
+        "sublabel": "العمر 0–3"
+      },
+      "children": {
+        "label": "للأطفال",
+        "sublabel": "العمر 4–11"
+      },
+      "juniors": {
+        "label": "الصغار",
+        "sublabel": "الفئة العمرية 12-17 عاما"
+      }
+    },
+    "errors": {
+      "fullNameRequired": "من فضلك أدخل اسمك.",
+      "emailInvalid": "ادخل عنوان بريد إلكتروني صحيح.",
+      "mobileRequired": "‫الرجاء إدخال رقم جوالك‬",
+      "destinationsRequired": "اختر وجهة واحدة على الأقل.",
+      "countryRequired": "اختر بلدك",
+      "holidayTypeRequired": "اختر نوع العطلة.",
+      "classificationRequired": "حدد فئة الإقامة."
+    },
+    "submit": {
+      "label": "إرسال استفساري",
+      "loading": "جارٍ إرسال الاستفسار..."
+    },
+    "footer": "نرد في غضون 24 ساعة · لا تتم مشاركة تفاصيلك مطلقًا مع أطراف ثالثة",
+    "success": {
+      "title": "تم استلام الاستفسار",
+      "message": "شكرًا لك، {firstName}. سيراجع فريقنا تفضيلاتك لرحلات السفاري وسيتواصل معك في غضون 24 ساعة من خلال اقتراح مخصص.",
+      "reset": "إرسال استفسار آخر"
+    }
+  },
+  "customSafariPage": {
+    "meta": {
+      "title": "خطط لرحلة سفاري مخصصة | Luxe Plains Africa Safaris",
+      "description": "أخبرنا عن رحلة سفاري أحلامك وسيقوم المتخصصون لدينا بصياغة دليل رحلة مصمم خصيصًا لك."
+    },
+    "hero": {
+      "eyebrow": "رحلات السفاري حسب الطلب",
+      "heading": "صمم Safari الخاص بك",
+      "subheading": "شارك رؤيتك للسفر وسيقوم أخصائيو السفاري لدينا بصياغة دليل رحلة مخصص — من مخيمات الأدغال الحميمة إلى النزل الحصرية."
+    }
+  },
+  "customSafariButton": {
+    "link": "خطط لرحلات السفاري الخاصة بي"
+  },
+  "shared": {
+    "holidayTypes": {
+      "Wildlife Safari": "رحلات السفاري للحياة البرية",
+      "Gorilla Trekking": "رحلات الغوريلا",
+      "Beach & Safari Combo": "كومبو الشاطئ والسفاري",
+      "Birding Safari": "رحلات السفاري للطيور",
+      "Photography Safari": "سفاري التصوير الفوتوغرافي",
+      "Honeymoon Safari": "رحلات السفاري لشهر العسل",
+      "Family Safari": "رحلات السفاري العائلية",
+      "Walking Safari": "رحلات السفاري سيرًا على الأقدام",
+      "Cultural Safari": "رحلات السفاري الثقافية",
+      "Luxury Safari": "رحلات السفاري الفاخرة",
+      "Budget Safari": "بدجت سفاري"
+    },
+    "accommodationClassifications": {
+      "Economy": {
+        "label": "فئة اقتصادية",
+        "description": "مخيمات ونزل مريحة وجيدة الإدارة"
+      },
+      "Comfort": {
+        "label": "كومفورت",
+        "description": "جودة متوسطة مع خدمة ممتازة"
+      },
+      "Luxury": {
+        "label": "صناعة الساعات الفاخرة",
+        "description": "معسكرات متميزة مع ميزات استثنائية"
+      },
+      "Superior Luxury": {
+        "label": "الرفاهية الفائقة",
+        "description": "عقارات رحلات سفاري حصرية وعالمية المستوى"
+      }
+    }
   }
 }

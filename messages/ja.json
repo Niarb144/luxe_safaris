@@ -775,5 +775,132 @@
       "body": "どこから支払うかと金額を教えていただければ、最も簡単な方法をご案内します。",
       "button": "サファリ担当者に相談する"
     }
+  },
+  "safariInquiry": {
+    "sections": {
+      "yourDetails": "詳細",
+      "tripPreferences": "乗車の設定",
+      "numberOfGuests": "招待客数",
+      "accommodation": "客室"
+    },
+    "fields": {
+      "fullName": {
+        "label": "氏名",
+        "placeholder": "例）ジェーン・ウィリアムソン"
+      },
+      "email": {
+        "label": "電子メールアドレス",
+        "placeholder": "jane@example.com"
+      },
+      "mobile": {
+        "label": "携帯電話番号",
+        "placeholder": "712 345 678"
+      },
+      "country": {
+        "label": "国",
+        "placeholder": "国を選択"
+      },
+      "destinations": {
+        "label": "アクセス",
+        "placeholder": "宛先を選択",
+        "searchPlaceholder": "行き先を検索",
+        "selectedSingular": "{count}宛先が選択されました",
+        "selectedPlural": "{count}宛先が選択されました",
+        "done": "完了— {count}件選択済み"
+      },
+      "holidayType": {
+        "label": "ホリデータイプ",
+        "placeholder": "休日の種類を選択してください"
+      }
+    },
+    "dialCode": {
+      "searchPlaceholder": "検索国",
+      "noResults": "見つかりませんでした"
+    },
+    "guests": {
+      "total": "合計{count}人",
+      "adults": {
+        "label": "大人",
+        "sublabel": "18歳以上"
+      },
+      "infants": {
+        "label": "幼児",
+        "sublabel": "0 ～ 3歳"
+      },
+      "children": {
+        "label": "子どもたち",
+        "sublabel": "4 ～ 11歳"
+      },
+      "juniors": {
+        "label": "ジュニア",
+        "sublabel": "12 ～ 17歳"
+      }
+    },
+    "errors": {
+      "fullNameRequired": "お名前を入力してください。",
+      "emailInvalid": "有効なメールアドレスを入力してください",
+      "mobileRequired": "携帯電話の番号を入力してください",
+      "destinationsRequired": "少なくとも1つの目的地を選択してください。",
+      "countryRequired": "あなたの国を選択。",
+      "holidayTypeRequired": "休日の種類を選択します。",
+      "classificationRequired": "宿泊クラスを選択してください。"
+    },
+    "submit": {
+      "label": "お問い合わせを送信",
+      "loading": "お問い合わせを送信しています…"
+    },
+    "footer": "24時間以内に返信いたします。・お客様の情報が第三者に開示されることはありません",
+    "success": {
+      "title": "問い合わせを受け付けました",
+      "message": "{firstName}様、ありがとうございます。お客様のサファリの好みを確認し、24時間以内にカスタマイズされた提案をお送りします。",
+      "reset": "別の問い合わせを送信する"
+    }
+  },
+  "customSafariPage": {
+    "meta": {
+      "title": "カスタムサファリを計画しよう|豪華な平原アフリカサファリ",
+      "description": "あなたの夢のサファリを教えてください。私たちの専門家があなたのためにカスタマイズされた旅程を作成します。"
+    },
+    "hero": {
+      "eyebrow": "オーダーメイドのサファリ体験",
+      "heading": "サファリをデザインする",
+      "subheading": "あなたの旅行のビジョンを共有してください。私たちのサファリスペシャリストが、親密なブッシュキャンプから特別なロッジまで、オーダーメイドの旅程を作成します。"
+    }
+  },
+  "customSafariButton": {
+    "link": "サファリを計画する"
+  },
+  "shared": {
+    "holidayTypes": {
+      "Wildlife Safari": "野生動物サファリ",
+      "Gorilla Trekking": "ゴリラトレッキング",
+      "Beach & Safari Combo": "ビーチ＆サファリコンボ",
+      "Birding Safari": "バードウォッチング・サファリ",
+      "Photography Safari": "写真撮影サファリ",
+      "Honeymoon Safari": "ハネムーンサファリ",
+      "Family Safari": "ファミリーサファリ",
+      "Walking Safari": "ウォーキングサファリ",
+      "Cultural Safari": "文化サファリ",
+      "Luxury Safari": "ラグジュアリーサファリ",
+      "Budget Safari": "バジェットサファリ"
+    },
+    "accommodationClassifications": {
+      "Economy": {
+        "label": "エコノミー",
+        "description": "快適で、よく運営されたキャンプ＆ロッジ"
+      },
+      "Comfort": {
+        "label": "快適",
+        "description": "優れたサービスとミッドレンジの品質"
+      },
+      "Luxury": {
+        "label": "ラグジュアリー",
+        "description": "優れたアメニティ・設備を備えたプレミアムキャンプ"
+      },
+      "Superior Luxury": {
+        "label": "スーペリアラグジュアリー",
+        "description": "世界トップクラスのサファリ施設"
+      }
+    }
   }
 }

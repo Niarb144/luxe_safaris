@@ -1,9 +1,12 @@
-// components/CustomSafariButton.tsx
 "use client";
+
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 
 export default function CustomSafariButton() {
+  const t = useTranslations("customSafariButton");
+
   return (
     <Link
       href="/custom-safari"
@@ -17,7 +20,7 @@ export default function CustomSafariButton() {
       ].join(" ")}
     >
       <ArrowRight className="w-4 h-4" />
-      Plan my safari
+      {t("link")}
     </Link>
   );
 }

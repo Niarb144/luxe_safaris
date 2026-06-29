@@ -775,5 +775,132 @@
       "body": "Dinos desde dónde pagas y cuánto, y te recomendaremos el método más sencillo.",
       "button": "Hablar con un asesor de safari"
     }
+  },
+  "safariInquiry": {
+    "sections": {
+      "yourDetails": "Tus Datos",
+      "tripPreferences": "Preferencies",
+      "numberOfGuests": "Número de personas",
+      "accommodation": "Alojamiento"
+    },
+    "fields": {
+      "fullName": {
+        "label": "Nombre y Apellidos",
+        "placeholder": "por ejemplo, Jane Williamson"
+      },
+      "email": {
+        "label": "Dirección de correo electrónico",
+        "placeholder": "jane@example.com"
+      },
+      "mobile": {
+        "label": "Número de teléfono móvil",
+        "placeholder": "712 345 678"
+      },
+      "country": {
+        "label": "País",
+        "placeholder": "Seleccione su país"
+      },
+      "destinations": {
+        "label": "Destinos",
+        "placeholder": "Seleccione destínos",
+        "searchPlaceholder": "Buscar Destinos",
+        "selectedSingular": "{count} destino seleccionado",
+        "selectedPlural": "{count} destinos seleccionados",
+        "done": "{count} seleccionados"
+      },
+      "holidayType": {
+        "label": "Tipo de Vacaciones",
+        "placeholder": "Selecciona el tipo de vacaciones"
+      }
+    },
+    "dialCode": {
+      "searchPlaceholder": "Buscar país",
+      "noResults": "Sin resultados"
+    },
+    "guests": {
+      "total": "{count} huéspedes en total",
+      "adults": {
+        "label": "Adultos",
+        "sublabel": "Edad 18+"
+      },
+      "infants": {
+        "label": "Recién nacidos",
+        "sublabel": "0 a 3 años"
+      },
+      "children": {
+        "label": "Infancia",
+        "sublabel": "Edad 4–11"
+      },
+      "juniors": {
+        "label": "Jóvenes",
+        "sublabel": "Edad 12–17"
+      }
+    },
+    "errors": {
+      "fullNameRequired": "Escriba su nombre.",
+      "emailInvalid": "Introduzca una dirección de correo electrónico válida.",
+      "mobileRequired": "Ingresa tu número de teléfono móvil.",
+      "destinationsRequired": "Selecciona al menos un destino.",
+      "countryRequired": "Seleccione su país.",
+      "holidayTypeRequired": "Selecciona un tipo de vacaciones.",
+      "classificationRequired": "Selecciona una clase de alojamiento."
+    },
+    "submit": {
+      "label": "Enviar mi consulta",
+      "loading": "Enviando su consulta ..."
+    },
+    "footer": "Respondemos en un plazo de 24 horas · Tus datos nunca se comparten con terceros",
+    "success": {
+      "title": "Consulta recibida",
+      "message": "Gracias, {firstName}. Nuestro equipo revisará tus preferencias de safari y se pondrá en contacto contigo en un plazo de 24 horas con una propuesta personalizada.",
+      "reset": "Enviar otra consulta"
+    }
+  },
+  "customSafariPage": {
+    "meta": {
+      "title": "Planifica un safari personalizado | Luxe Plains Africa Safaris",
+      "description": "Cuéntanos el safari de tus sueños y nuestros especialistas crearán un itinerario a medida para ti."
+    },
+    "hero": {
+      "eyebrow": "Safaris a medida",
+      "heading": "Diseña tu safari",
+      "subheading": "Comparte tu visión de viaje y nuestros especialistas en safaris crearán un itinerario a medida, desde campamentos íntimos hasta lodges exclusivos."
+    }
+  },
+  "customSafariButton": {
+    "link": "Planificar mi safari"
+  },
+  "shared": {
+    "holidayTypes": {
+      "Wildlife Safari": "Safari por la vida silvestre",
+      "Gorilla Trekking": "Senderismo con gorilas",
+      "Beach & Safari Combo": "Combo de playa y safari",
+      "Birding Safari": "Safari de observación de aves",
+      "Photography Safari": "Safari de fotografía",
+      "Honeymoon Safari": "Safari de luna de miel",
+      "Family Safari": "Safari familiar",
+      "Walking Safari": "Safari a pie",
+      "Cultural Safari": "Safari cultural",
+      "Luxury Safari": "Safari de lujo",
+      "Budget Safari": "Budget Safari"
+    },
+    "accommodationClassifications": {
+      "Economy": {
+        "label": "Economía",
+        "description": "Campamentos y alojamientos cómodos y bien gestionados"
+      },
+      "Comfort": {
+        "label": "Comodidad",
+        "description": "Calidad de gama media con excelente servicio"
+      },
+      "Luxury": {
+        "label": "Lujo",
+        "description": "Campamentos premium con servicios excepcionales"
+      },
+      "Superior Luxury": {
+        "label": "Lujo superior",
+        "description": "Propiedades exclusivas para safaris de primer nivel"
+      }
+    }
   }
 }
