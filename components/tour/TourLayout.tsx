@@ -218,7 +218,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+            className="fixed bottom-2 left-4 sm:left-1/2 sm:-translate-x-1/2 z-50"
           >
             <button
               onClick={() => setBookingModalOpen(true)}
