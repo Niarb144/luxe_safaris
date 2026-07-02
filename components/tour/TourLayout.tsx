@@ -239,11 +239,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
               onClick={() => setBookingModalOpen(true)}
               className="group flex items-center gap-3 bg-[#041f0e] hover:bg-[#062b12] text-white pl-5 pr-4 py-3.5 rounded-full shadow-2xl shadow-black/40 border border-[#b77e24]/30 transition-all duration-300 hover:border-[#b77e24]/60"
             >
-              {tour.price === 0 ? (
-                <span className="text-[#b77e24] font-bold text-base tracking-tight">
-                  {t("enquire")}
-                </span>
-              ) : tour.price ? (
+              {tour.price ? (
                 <>
                   <span className="text-[#b77e24] font-bold text-base tracking-tight">
                     {t("from")} ${tour.price.toLocaleString()}
@@ -251,7 +247,9 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
                   <span className="w-px h-4 bg-white/20 rounded-full" />
                 </>
               ) : null}
-              <span className="font-semibold text-sm uppercase tracking-wider cursor-pointer">{t("bookThisTour")}</span>
+              <span className="font-semibold text-sm uppercase tracking-wider cursor-pointer">
+                {tour.price === 0 ? t("getQuote") : t("bookThisTour")}
+              </span>
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#b77e24] group-hover:bg-[#a06d1f] transition-colors duration-200 shrink-0 cursor-pointer">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 9v7.5" />
@@ -328,7 +326,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
                   <button
                     onClick={() => setBookingModalOpen(false)}
                     aria-label={t("closeBookingModal")}
-                    className="ml-4 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+                    className="ml-4 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 cursor-pointer"
                   >
                     <svg
                       className="h-4 w-4"

@@ -142,7 +142,7 @@ export default function BookingModal({
             type="button"
             onClick={onClose}
             aria-label={t("closeForm")}
-            className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 shrink-0"
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 shrink-0 cursor-pointer"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -213,7 +213,7 @@ export default function BookingModal({
                     value={dialCode}
                     onChange={(e) => setDialCode(e.target.value)}
                     aria-label={t("form.dialCode")}
-                    className="w-[108px] shrink-0 border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
+                    className="w-[108px] shrink-0 border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200 cursor-pointer"
                   >
                     {COUNTRY_DIAL_CODES.map((c) => (
                       <option key={c.code} value={c.dial}>
@@ -240,7 +240,7 @@ export default function BookingModal({
                   name="country"
                   required
                   defaultValue=""
-                  className="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
+                  className="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200 cursor-pointer"
                 >
                   <option value="" disabled>
                     {t("form.countryPlaceholder")}
