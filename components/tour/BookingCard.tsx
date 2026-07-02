@@ -33,7 +33,7 @@ export default function BookingCard({ tour }: any) {
           onClick={() => setOpen(true)}
           className="bg-[#b77e24] text-white px-6 py-3 rounded-full w-full cursor-pointer hover:bg-[#b77e24]/80 transition"
         >
-          {t("bookNow")}
+          {tour.price === 0 ? t("getQuote") : t("bookNow")}
         </button>
 
         <BookingModal

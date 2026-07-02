@@ -190,10 +190,11 @@
     "title": "Tours Tailored to Your Dreams"
   },
   "bookingCard": {
-    "enquireAboutTour": "Enquire about tour",
+    "enquireAboutTour": "Reserve your spot",
     "from": "From",
     "perPerson": "/ person",
     "bookNow": "Book Now",
+    "getQuote": "Get a Quote",
     "whatsappInquiry": "WhatsApp Inquiry",
     "whatsappMessage": "I want to book {title}"
   },
@@ -540,8 +541,11 @@
       "fullNamePlaceholder": "e.g. Jane Doe",
       "email": "Email Address",
       "emailPlaceholder": "you@example.com",
+      "dialCode": "Dial code",
       "phone": "Phone Number",
-      "phonePlaceholder": "+254 700 000 000",
+      "phonePlaceholder": "700 000 000",
+      "country": "Country of Residence",
+      "countryPlaceholder": "Select your country",
       "adults": "Adults",
       "children": "Children",
       "childrenUnder3": {

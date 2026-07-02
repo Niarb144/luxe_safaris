@@ -33,6 +33,7 @@ export async function POST(req: Request) {
       full_name,
       email,
       phone,
+      country,
       adults,
       children_under_3,
       children_4_11,
@@ -80,6 +81,7 @@ export async function POST(req: Request) {
         full_name,
         email,
         phone,
+        country,
         adults,
         children_under_3: children_under_3 ?? 0,
         children_4_11: children_4_11 ?? 0,
@@ -104,7 +106,7 @@ export async function POST(req: Request) {
 
     // Send company notification
     await resend.emails.send({
-      from: "Bookings <info@luxeplainsafricasafaris.com>",
+      from: "Bookings <noreply@luxeplainsafricasafaris.com>",
       to: process.env.BOOKING_EMAIL!,
       subject: `New Booking Request - ${full_name}`,
       html: `
@@ -113,6 +115,7 @@ export async function POST(req: Request) {
         <p><strong>Name:</strong> ${full_name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Country:</strong> ${country || "Not provided"}</p>
         <p><strong>Adults:</strong> ${adults}</p>
         <p><strong>Children:</strong> ${childrenSummary}</p>
         <p><strong>Travel Date:</strong> ${travel_date}</p>

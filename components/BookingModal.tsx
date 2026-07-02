@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from 'next/link';
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useTranslations } from "next-intl";
+import { COUNTRY_DIAL_CODES, COUNTRIES } from "@/lib/country-codes"; 
+import "flag-icons/css/flag-icons.min.css";
 
 export default function BookingModal({
   open,
@@ -20,6 +22,7 @@ export default function BookingModal({
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [dialCode, setDialCode] = useState("+254"); // default Kenya — adjust as needed
   const panelRef = useRef<HTMLDivElement>(null);
   const { executeRecaptcha } = useGoogleReCaptcha();
   const t = useTranslations("bookingModal");
@@ -70,11 +73,15 @@ export default function BookingModal({
 
     const recaptchaToken = await executeRecaptcha("booking_submit");
 
+    const phoneNumber = form.get("phone");
+    const fullPhone = phoneNumber ? `${dialCode} ${phoneNumber}` : "";
+
     const booking = {
       tour_id: tourId,
       full_name: form.get("name"),
       email: form.get("email"),
-      phone: form.get("phone"),
+      phone: fullPhone,
+      country: form.get("country"),
       adults: Number(form.get("adults")),
       children_under_3: Number(form.get("children_under_3")),
       children_4_11: Number(form.get("children_4_11")),
@@ -194,16 +201,55 @@ export default function BookingModal({
                 />
               </div>
 
-              {/* Phone */}
+              {/* Phone — dial code + number */}
               <div className="space-y-1">
                 <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
                   {t("form.phone")}
                 </label>
-                <input
-                  name="phone"
-                  placeholder={t("form.phonePlaceholder")}
+                <div className="flex gap-2">
+                  <select
+                    name="dial_code"
+                    value={dialCode}
+                    onChange={(e) => setDialCode(e.target.value)}
+                    aria-label={t("form.dialCode")}
+                    className="w-[108px] shrink-0 border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
+                  >
+                    {COUNTRY_DIAL_CODES.map((c) => (
+                      <option key={c.code} value={c.dial}>
+                        {c.flag} {c.dial}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    name="phone"
+                    type="tel"
+                    inputMode="tel"
+                    placeholder={t("form.phonePlaceholder")}
+                    className="flex-1 min-w-0 border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
+                  />
+                </div>
+              </div>
+
+              {/* Country of residence */}
+              <div className="space-y-1">
+                <label className="text-xs font-semibold uppercase tracking-wider text-gray-700">
+                  {t("form.country")}
+                </label>
+                <select
+                  name="country"
+                  required
+                  defaultValue=""
                   className="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#b77e24] focus:ring-2 focus:ring-[#b77e24]/20 outline-none p-3 rounded-xl text-gray-800 text-sm transition-all duration-200"
-                />
+                >
+                  <option value="" disabled>
+                    {t("form.countryPlaceholder")}
+                  </option>
+                  {COUNTRIES.map((country) => (
+                    <option key={country} value={country}>
+                      {country}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               {/* Adults */}
