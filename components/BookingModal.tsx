@@ -78,6 +78,7 @@ export default function BookingModal({
 
     const booking = {
       tour_id: tourId,
+      tour_title: tourTitle,
       full_name: form.get("name"),
       email: form.get("email"),
       phone: fullPhone,
