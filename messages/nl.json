@@ -23,7 +23,8 @@
       "bookWithConfidence": "Boek met vertrouwen",
       "privacyPolicy": "Privacybeleid",
       "termsAndConditions": "Algemene voorwaarden",
-      "onlinePayment": "Online betaling"
+      "onlinePayment": "Online betaling",
+      "travelAdvisory": "negatief reisadvies"
     },
     "accreditations": {
       "title": "Accreditaties"
@@ -182,7 +183,8 @@
     "destination": "Bestemming",
     "accommodation": "Accommodatie",
     "countryLabel": "Land:",
-    "destinationLabel": "Bestemming:"
+    "destinationLabel": "Bestemming:",
+    "noAccommodations": "Geen beschikbare accommodatie voor deze les"
   },
   "safariHero": {
     "title": "Tours afgestemd op jouw dromen"

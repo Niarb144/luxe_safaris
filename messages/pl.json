@@ -23,7 +23,8 @@
       "bookWithConfidence": "Rezerwuj z pewnością",
       "privacyPolicy": "Polityka prywatności",
       "termsAndConditions": "Regulamin",
-      "onlinePayment": "Płatność online"
+      "onlinePayment": "Płatność online",
+      "travelAdvisory": "Komunikaty dla podróżnych"
     },
     "accreditations": {
       "title": "Akredytacje"
@@ -182,7 +183,8 @@
     "destination": "Miejsce docelowe",
     "accommodation": "Zakwaterowanie",
     "countryLabel": "Kraj:",
-    "destinationLabel": "Miejsce docelowe:"
+    "destinationLabel": "Miejsce docelowe:",
+    "noAccommodations": "Brak dostępnych zakwaterowań dla tej klasy"
   },
   "safariHero": {
     "title": "Wycieczki dopasowane do Twoich marzeń"

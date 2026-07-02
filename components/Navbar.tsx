@@ -306,6 +306,89 @@ function DestinationsDropdown({ groups, scrolled }: DestinationsDropdownProps) {
   );
 }
 
+// ─── Practical Info dropdown ───────────────────────────────────────────────────
+// Travel Advisory = the current /info page. The rest are the legal/booking pages.
+
+interface PracticalInfoLink {
+  name: string;
+  href: string;
+}
+
+function PracticalInfoDropdown({ scrolled }: { scrolled: boolean }) {
+  const pathname = usePathname();
+  const s = useTranslations("nav");
+  const p = useTranslations("footer");
+  const [open, setOpen] = useState(false);
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const links: PracticalInfoLink[] = [
+    { name: p("information.travelAdvisory", { default: "Travel Advisory" }), href: "/info" },
+    { name: p("information.bookWithConfidence"), href: "/booking-with-confidence" },
+    { name: p("information.privacyPolicy"), href: "/privacy-policy" },
+    { name: p("information.termsAndConditions"), href: "/termsandconditions" },
+    { name: p("information.onlinePayment"), href: "/payment-methods" },
+  ];
+
+  const handleMouseEnter = () => {
+    if (leaveTimer.current) clearTimeout(leaveTimer.current);
+    setOpen(true);
+  };
+  const handleMouseLeave = () => {
+    leaveTimer.current = setTimeout(() => setOpen(false), 120);
+  };
+
+  const isActive = links.some((l) => l.href === pathname);
+
+  return (
+    <div className="relative group" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className={`text-sm font-medium transition-colors nav-link flex items-center gap-1 cursor-pointer ${
+          scrolled ? "text-black" : "text-white"
+        }`}
+      >
+        {s("practicalInfo")}
+        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }} className="inline-block">
+          <ChevronRight size={13} className="rotate-90" />
+        </motion.span>
+      </button>
+
+      {isActive && <ActiveBar />}
+      <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#041f0e] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.2 }}
+            className="absolute left-0 top-full mt-3 z-[200] shadow-2xl rounded-2xl overflow-hidden border border-white/10 bg-[#10261f] py-2"
+            style={{ minWidth: 240 }}
+          >
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={`block px-5 py-2.5 text-sm transition-colors ${
+                  pathname === link.href
+                    ? "text-[#b77e24] bg-white/10"
+                    : "text-white/80 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 // ─── Static nav links ─────────────────────────────────────────────────────────
 
 function StaticLink({ name, href, scrolled }: { name: string; href: string; scrolled: boolean }) {
@@ -330,6 +413,7 @@ function StaticLink({ name, href, scrolled }: { name: string; href: string; scro
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const p = useTranslations("footer");
   const locale = useLocale();
   const [scrolled, setScrolled]       = useState(false);
   const [menuOpen, setMenuOpen]       = useState(false);
@@ -340,14 +424,22 @@ export default function Navbar() {
   const [allTourDestinations, setAllTourDestinations] = useState<{ id: string; name: string }[]>([]);
   const [mobileToursOpen, setMobileToursOpen] = useState(false);
   const [mobileDestOpen, setMobileDestOpen]   = useState(false);
+  const [mobilePracticalOpen, setMobilePracticalOpen] = useState(false);
   const [mobileHoveredType, setMobileHoveredType] = useState<string | null>(null);
 
-  // Static links — defined inside component so t() works
+  // Static links (Practical Info is now its own dropdown, rendered separately)
   const STATIC_LINKS = [
     { name: t("home"),          href: "/" },
     { name: t("accommodation"), href: "/accommodations" },
-    { name: t("practicalInfo"), href: "/info" },
     { name: t("contact"),       href: "/contact" },
+  ];
+
+  const PRACTICAL_INFO_LINKS = [
+    { name: p("information.travelAdvisory", { default: "Travel Advisory" }), href: "/info" },
+    { name: p("information.bookWithConfidence"), href: "/booking-with-confidence" },
+    { name: p("information.privacyPolicy"), href: "/privacy-policy" },
+    { name: p("information.termsAndConditions"), href: "/termsandconditions" },
+    { name: p("information.onlinePayment"), href: "/payment-methods" },
   ];
 
   useEffect(() => {
@@ -520,9 +612,11 @@ export default function Navbar() {
 
           <DestinationsDropdown groups={destGroups} scrolled={scrolled} />
 
-          {STATIC_LINKS.filter((l) => l.href !== "/").map((link) => (
-            <StaticLink key={link.href} name={link.name} href={link.href} scrolled={scrolled} />
-          ))}
+          <StaticLink name={t("accommodation")} href="/accommodations" scrolled={scrolled} />
+
+          <PracticalInfoDropdown scrolled={scrolled} />
+
+          <StaticLink name={t("contact")} href="/contact" scrolled={scrolled} />
         </nav>
 
         {/* Desktop right side */}
@@ -699,17 +793,58 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              {/* Static links */}
-              {STATIC_LINKS.filter((l) => l.href !== "/").map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-black text-sm font-medium border-b pb-2 py-2"
+              {/* Accommodation */}
+              <Link
+                href="/accommodations"
+                onClick={() => setMenuOpen(false)}
+                className="text-black text-sm font-medium border-b pb-2 py-2"
+              >
+                {t("accommodation")}
+              </Link>
+
+              {/* Practical Info accordion */}
+              <div className="border-b">
+                <button
+                  onClick={() => setMobilePracticalOpen(!mobilePracticalOpen)}
+                  className="w-full flex items-center justify-between py-2 text-black text-sm font-medium"
                 >
-                  {link.name}
-                </Link>
-              ))}
+                  {t("practicalInfo")}
+                  <ChevronRight size={14} className={`transition-transform ${mobilePracticalOpen ? "rotate-90" : ""}`} />
+                </button>
+
+                <AnimatePresence>
+                  {mobilePracticalOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-4 pb-2">
+                        {PRACTICAL_INFO_LINKS.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="block py-1.5 text-sm text-gray-700 hover:text-[#b77e24] transition-colors"
+                          >
+                            {link.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Contact */}
+              <Link
+                href="/contact"
+                onClick={() => setMenuOpen(false)}
+                className="text-black text-sm font-medium border-b pb-2 py-2"
+              >
+                {t("contact")}
+              </Link>
             </div>
 
             <div className="px-6 py-4 flex items-center gap-4">

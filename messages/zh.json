@@ -23,7 +23,8 @@
       "bookWithConfidence": "放心预订",
       "privacyPolicy": "隐私政策",
       "termsAndConditions": "条款与条件",
-      "onlinePayment": "在线支付"
+      "onlinePayment": "在线支付",
+      "travelAdvisory": "旅行建议"
     },
     "accreditations": {
       "title": "资质认证"
@@ -182,7 +183,8 @@
     "destination": "目的地",
     "accommodation": "住宿",
     "countryLabel": "国家：",
-    "destinationLabel": "目的地："
+    "destinationLabel": "目的地：",
+    "noAccommodations": "此课程没有可用的住宿"
   },
   "safariHero": {
     "title": "为您的梦想量身定制的旅行"

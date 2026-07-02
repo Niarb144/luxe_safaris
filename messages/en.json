@@ -20,6 +20,7 @@
     },
     "information": {
       "title": "Information",
+      "travelAdvisory": "Travel Advisory",
       "bookWithConfidence": "Book With Confidence",
       "privacyPolicy": "Privacy Policy",
       "termsAndConditions": "Terms & Conditions",
@@ -171,6 +172,7 @@
   "accommodations": {
     "title": "Accommodations",
     "subtitle": "Your Safari accommodation options",
+    "noAccommodations": "No available accommodation for this class",
     "levelSuffix": "Level",
     "levels": {
       "Economy": "Economy",

@@ -23,7 +23,8 @@
       "bookWithConfidence": "احجز بثقة",
       "privacyPolicy": "سياسة الخصوصية",
       "termsAndConditions": "الشروط والأحكام",
-      "onlinePayment": "الدفع عبر الإنترنت"
+      "onlinePayment": "الدفع عبر الإنترنت",
+      "travelAdvisory": "نصائح السفر"
     },
     "accreditations": {
       "title": "الاعتمادات"
@@ -182,7 +183,8 @@
     "destination": "الوجهة",
     "accommodation": "الإقامة",
     "countryLabel": "البلد:",
-    "destinationLabel": "الوجهة:"
+    "destinationLabel": "الوجهة:",
+    "noAccommodations": "لا توجد أماكن إقامة متاحة لهذه الفئة"
   },
   "safariHero": {
     "title": "رحلات مصممة لتحقيق أحلامك"

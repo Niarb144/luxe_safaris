@@ -23,7 +23,8 @@
       "bookWithConfidence": "安心して予約",
       "privacyPolicy": "プライバシーポリシー",
       "termsAndConditions": "利用規約",
-      "onlinePayment": "オンライン決済"
+      "onlinePayment": "オンライン決済",
+      "travelAdvisory": "トラベルアドバイザリー"
     },
     "accreditations": {
       "title": "認定"
@@ -182,7 +183,8 @@
     "destination": "目的地",
     "accommodation": "宿泊施設",
     "countryLabel": "国：",
-    "destinationLabel": "目的地："
+    "destinationLabel": "目的地：",
+    "noAccommodations": "このクラスには宿泊施設がありません"
   },
   "safariHero": {
     "title": "あなたの夢に合わせたツアー"

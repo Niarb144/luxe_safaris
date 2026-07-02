@@ -23,7 +23,8 @@
       "bookWithConfidence": "Бронируйте с уверенностью",
       "privacyPolicy": "Политика конфиденциальности",
       "termsAndConditions": "Условия использования",
-      "onlinePayment": "Онлайн-оплата"
+      "onlinePayment": "Онлайн-оплата",
+      "travelAdvisory": "Рекомендации по путешествиям"
     },
     "accreditations": {
       "title": "Аккредитации"
@@ -182,7 +183,8 @@
     "destination": "Направление",
     "accommodation": "Размещение",
     "countryLabel": "Страна:",
-    "destinationLabel": "Направление:"
+    "destinationLabel": "Направление:",
+    "noAccommodations": "Нет доступного жилья для этого класса"
   },
   "safariHero": {
     "title": "Туры, созданные для ваших мечтаний"

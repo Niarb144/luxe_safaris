@@ -23,7 +23,8 @@
       "bookWithConfidence": "Réservez en toute confiance",
       "privacyPolicy": "Politique de confidentialité",
       "termsAndConditions": "Conditions générales",
-      "onlinePayment": "Paiement en ligne"
+      "onlinePayment": "Paiement en ligne",
+      "travelAdvisory": "Conseils aux voyageurs"
     },
     "accreditations": {
       "title": "Accréditations"
@@ -182,7 +183,8 @@
     "destination": "Destination",
     "accommodation": "Hébergement",
     "countryLabel": "Pays :",
-    "destinationLabel": "Destination :"
+    "destinationLabel": "Destination :",
+    "noAccommodations": "Aucun hébergement disponible pour cette classe"
   },
   "safariHero": {
     "title": "Des circuits adaptés à vos rêves"
