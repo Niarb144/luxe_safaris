@@ -25,27 +25,27 @@ const CLASSIFICATION_STYLES: {
 }[] = [
   {
     key: "economy", icon: <IoStarOutline />,
-    headerBg: "bg-gray-700",  headerText: "text-gray-100",
+    headerBg: "bg-[#64748B]",  headerText: "text-gray-100",
     rowEven: "bg-gray-50",    rowOdd: "bg-white",
     badgeBg: "bg-gray-200",   badgeText: "text-gray-700",
   },
   {
     key: "comfort", icon: <IoStarSharp />,
-    headerBg: "bg-[#b8830a]", headerText: "text-white",
-    rowEven: "bg-amber-50",   rowOdd: "bg-white",
+    headerBg: "bg-[#0F766E]", headerText: "text-white",
+    rowEven: "bg-[#ECFDF5]",   rowOdd: "bg-white",
     badgeBg: "bg-amber-100",  badgeText: "text-amber-800",
   },
   {
     key: "luxury", icon: <MdHotelClass />,
-    headerBg: "bg-violet-700", headerText: "text-white",
-    rowEven: "bg-violet-50",  rowOdd: "bg-white",
-    badgeBg: "bg-violet-100", badgeText: "text-violet-800",
+    headerBg: "bg-[#C9A227]", headerText: "text-white",
+    rowEven: "bg-[#FFFBEB]",  rowOdd: "bg-white",
+    badgeBg: "bg-violet-100", badgeText: "text-[#C9A227]",
   },
   {
     key: "superior_luxury", icon: <FaCrown />,
-    headerBg: "bg-[#3d2008]", headerText: "text-[#f5e6c8]",
-    rowEven: "bg-yellow-50",  rowOdd: "bg-white",
-    badgeBg: "bg-yellow-100", badgeText: "text-yellow-800",
+    headerBg: "bg-[#111827]", headerText: "text-[#f5e6c8]",
+    rowEven: "bg-[#F3F4F6]",  rowOdd: "bg-[#E5E7EB]",
+    badgeBg: "bg-[#E5E7EB]", badgeText: "text-yellow-800",
   },
 ];
 

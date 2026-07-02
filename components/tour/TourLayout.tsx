@@ -78,12 +78,27 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
   }, []);
 
   useEffect(() => {
+    const html = document.documentElement;
+    const body = document.body;
+
     if (bookingModalOpen) {
-      document.body.style.overflow = "hidden";
+      html.style.overflowX = "hidden";
+      body.style.overflowX = "hidden";
+      body.style.overflow = "hidden";
+      body.style.touchAction = "none";
     } else {
-      document.body.style.overflow = "";
+      html.style.overflowX = "";
+      body.style.overflowX = "";
+      body.style.overflow = "";
+      body.style.touchAction = "";
     }
-    return () => { document.body.style.overflow = ""; };
+
+    return () => {
+      html.style.overflowX = "";
+      body.style.overflowX = "";
+      body.style.overflow = "";
+      body.style.touchAction = "";
+    };
   }, [bookingModalOpen]);
 
   const scrollToSection = (id: string) => {
@@ -248,54 +263,107 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
       </AnimatePresence>
 
       {/* BOOKING MODAL */}
-      <AnimatePresence>
-        {bookingModalOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
+      {/* BOOKING MODAL */}
+<AnimatePresence>
+  {bookingModalOpen && (
+    <>
+      {/* Backdrop */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.25 }}
+        className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm overflow-hidden"
+        onClick={() => setBookingModalOpen(false)}
+      />
+
+      {/* Modal */}
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 60 }}
+        transition={{
+          type: "spring",
+          stiffness: 320,
+          damping: 30,
+        }}
+        className="
+          fixed
+          inset-x-0
+          bottom-0
+          z-[70]
+          flex
+          justify-center
+          px-3
+          pb-[env(safe-area-inset-bottom)]
+          overflow-hidden
+
+          md:inset-0
+          md:items-center
+          md:px-4
+        "
+      >
+        <div
+          className="
+            w-full
+            max-w-lg
+            overflow-hidden
+            rounded-t-3xl
+            md:rounded-3xl
+            bg-neutral-900
+            shadow-2xl
+          "
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between border-b border-white/10 bg-[#041f0e] px-6 py-4">
+            <div className="min-w-0">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#b77e24]">
+                {t("reserveYourSpot")}
+              </p>
+
+              <h3 className="mt-1 line-clamp-1 text-lg font-bold text-white">
+                {tour.title}
+              </h3>
+            </div>
+
+            <button
               onClick={() => setBookingModalOpen(false)}
-            />
-
-            {/* Modal panel */}
-            <motion.div
-              initial={{ opacity: 0, y: 60, scale: 0.97 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 60, scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 320, damping: 32 }}
-              className="fixed z-[70] bottom-0 left-0 right-0 md:bottom-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-lg"
+              aria-label={t("closeBookingModal")}
+              className="ml-4 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
             >
-              <div className="bg-neutral-900 rounded-t-3xl md:rounded-3xl shadow-2xl overflow-hidden">
-                {/* Modal header */}
-                <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-[#041f0e]">
-                  <div>
-                    <p className="text-xs uppercase tracking-widest text-[#b77e24] font-semibold">{t("reserveYourSpot")}</p>
-                    <h3 className="text-white font-bold text-lg leading-tight mt-0.5 line-clamp-1">{tour.title}</h3>
-                  </div>
-                  <button
-                    onClick={() => setBookingModalOpen(false)}
-                    className="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors duration-200 shrink-0 ml-4 cursor-pointer"
-                    aria-label={t("closeBookingModal")}
-                  >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
 
-                {/* BookingCard rendered inside */}
-                <div className="overflow-y-auto max-h-[75vh] md:max-h-[70vh]">
-                  <BookingCard tour={tour} />
-                </div>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+          {/* Content */}
+          <div
+            className="
+              w-full
+              overflow-x-hidden
+              overflow-y-auto
+              max-h-[80dvh]
+              md:max-h-[70vh]
+            "
+          >
+            <BookingCard tour={tour} />
+          </div>
+        </div>
+      </motion.div>
+    </>
+  )}
+</AnimatePresence>
       <ContactCard />
     </>
   );

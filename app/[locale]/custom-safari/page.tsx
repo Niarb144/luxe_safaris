@@ -21,9 +21,9 @@ export default async function CustomSafariPage() {
     >
       {/* Hero strip */}
       <div className="border-b border-[#e8e2d9] py-30 px-6 text-center">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#B98A3E] mb-0">
+        {/* <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#B98A3E] mb-0">
           {t("hero.eyebrow")}
-        </p>
+        </p> */}
         <h1 className="text-4xl md:text-5xl text-[#14201A] leading-tight mb-4">
           {t("hero.heading")}
         </h1>
