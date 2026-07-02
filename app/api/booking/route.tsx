@@ -49,6 +49,63 @@ function formatReceivedAt() {
   );
 }
 
+// Shared email building blocks — keep header/footer/section styling consistent
+// across every transactional email (booking confirmation, inquiry, etc).
+function emailRow(label: string, value: string) {
+  return `
+    <tr>
+      <td style="padding:10px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#6b7a6e; width:40%;">
+        ${label}
+      </td>
+      <td style="padding:10px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#14201A; font-weight:600;">
+        ${value}
+      </td>
+    </tr>
+  `;
+}
+
+function emailSectionHeading(title: string) {
+  return `
+    <tr>
+      <td style="padding:28px 0 6px 0;">
+        <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#B98A3E; font-weight:700;">
+          ${title}
+        </p>
+        <div style="height:1px; background:#e8e2d9; margin-top:10px;"></div>
+      </td>
+    </tr>
+  `;
+}
+
+function emailHeader(subtitle: string) {
+  return `
+    <tr>
+      <td style="background:#14201A; padding:32px 32px 28px 32px;">
+        <p style="margin:0; font-family:Georgia,'Times New Roman',serif; font-size:20px; letter-spacing:1px; color:#B98A3E; font-weight:700;">
+          LUXE PLAINS AFRICA SAFARIS
+        </p>
+        <p style="margin:6px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#ffffff;">
+          ${subtitle}
+        </p>
+      </td>
+    </tr>
+  `;
+}
+
+function emailFooter(referenceLabel: string, referenceValue: string) {
+  return `
+    <tr>
+      <td style="background:#14201A; padding:16px 32px;">
+        <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#B98A3E;">
+          ${referenceLabel}: <span style="color:#ffffff;">${referenceValue}</span>
+          &nbsp;&middot;&nbsp;
+          <span style="color:#ffffff;">Received: ${formatReceivedAt()}</span>
+        </p>
+      </td>
+    </tr>
+  `;
+}
+
 function buildCustomerConfirmationEmail({
   full_name,
   tour_title,
@@ -80,43 +137,11 @@ function buildCustomerConfirmationEmail({
     Number(children_4_11) +
     Number(children_12_17);
 
-  const row = (label: string, value: string) => `
-    <tr>
-      <td style="padding:10px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#6b7a6e; width:40%;">
-        ${label}
-      </td>
-      <td style="padding:10px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#14201A; font-weight:600;">
-        ${value}
-      </td>
-    </tr>
-  `;
-
-  const sectionHeading = (title: string) => `
-    <tr>
-      <td style="padding:28px 0 6px 0;">
-        <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#B98A3E; font-weight:700;">
-          ${title}
-        </p>
-        <div style="height:1px; background:#e8e2d9; margin-top:10px;"></div>
-      </td>
-    </tr>
-  `;
-
   return `
   <div style="background:#f9f7f4; padding:32px 16px; font-family:Arial,Helvetica,sans-serif;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px; margin:0 auto; background:#F2EDE3; border-radius:10px; overflow:hidden; border:1px solid #e8e2d9;">
 
-      <!-- Header -->
-      <tr>
-        <td style="background:#14201A; padding:32px 32px 28px 32px;">
-          <p style="margin:0; font-family:Georgia,'Times New Roman',serif; font-size:20px; letter-spacing:1px; color:#B98A3E; font-weight:700;">
-            LUXE PLAINS AFRICA SAFARIS
-          </p>
-          <p style="margin:6px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; color:#ffffff;">
-            Your Safari Booking Request Has Been Received
-          </p>
-        </td>
-      </tr>
+      ${emailHeader("Your Safari Booking Request Has Been Received")}
 
       <!-- Body -->
       <tr>
@@ -136,10 +161,10 @@ function buildCustomerConfirmationEmail({
       <tr>
         <td style="padding:0 32px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-            ${sectionHeading("Trip Details")}
-            ${row("Safari", tour_title)}
-            ${row("Travel Date", formatTravelDate(travel_date))}
-            ${row("Guests", `${totalGuests} total`)}
+            ${emailSectionHeading("Trip Details")}
+            ${emailRow("Safari", tour_title)}
+            ${emailRow("Travel Date", formatTravelDate(travel_date))}
+            ${emailRow("Guests", `${totalGuests} total`)}
           </table>
         </td>
       </tr>
@@ -148,11 +173,11 @@ function buildCustomerConfirmationEmail({
       <tr>
         <td style="padding:0 32px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-            ${sectionHeading(`Guests (${totalGuests} Total)`)}
-            ${row("Adults", String(adults))}
-            ${row("Children (0–3)", String(children_under_3))}
-            ${row("Children (4–11)", String(children_4_11))}
-            ${row("Children (12–17)", String(children_12_17))}
+            ${emailSectionHeading(`Guests (${totalGuests} Total)`)}
+            ${emailRow("Adults", String(adults))}
+            ${emailRow("Children (0–3)", String(children_under_3))}
+            ${emailRow("Children (4–11)", String(children_4_11))}
+            ${emailRow("Children (12–17)", String(children_12_17))}
           </table>
         </td>
       </tr>
@@ -161,30 +186,97 @@ function buildCustomerConfirmationEmail({
       <tr>
         <td style="padding:0 32px 28px 32px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-            ${sectionHeading("Your Contact Details")}
-            ${row("Email", email)}
-            ${row("Mobile", phone || "Not provided")}
-            ${row("Country", country || "Not provided")}
+            ${emailSectionHeading("Your Contact Details")}
+            ${emailRow("Email", email)}
+            ${emailRow("Mobile", phone || "Not provided")}
+            ${emailRow("Country", country || "Not provided")}
           </table>
         </td>
       </tr>
 
-      <!-- Footer -->
-      <tr>
-        <td style="background:#14201A; padding:16px 32px;">
-          <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#B98A3E;">
-            Booking Reference: <span style="color:#ffffff;">${booking_reference}</span>
-            &nbsp;&middot;&nbsp;
-            <span style="color:#ffffff;">Received: ${formatReceivedAt()}</span>
-          </p>
-        </td>
-      </tr>
+      ${emailFooter("Booking Reference", booking_reference)}
 
     </table>
 
     <p style="max-width:600px; margin:16px auto 0 auto; text-align:center; font-family:Arial,Helvetica,sans-serif; font-size:11px; color:#6b7a6e;">
       If you have any questions in the meantime, simply reply to this email.
     </p>
+  </div>
+  `;
+}
+
+function buildCompanyNotificationEmail({
+  tour_title,
+  booking_reference,
+  full_name,
+  email,
+  phone,
+  country,
+  adults,
+  childrenSummary,
+  travel_date,
+  special_requests,
+}: {
+  tour_title: string;
+  booking_reference: string;
+  full_name: string;
+  email: string;
+  phone: string;
+  country: string;
+  adults: number;
+  childrenSummary: string;
+  travel_date: string;
+  special_requests: string;
+}) {
+  return `
+  <div style="background:#f9f7f4; padding:32px 16px; font-family:Arial,Helvetica,sans-serif;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px; margin:0 auto; background:#F2EDE3; border-radius:10px; overflow:hidden; border:1px solid #e8e2d9;">
+
+      ${emailHeader("New Safari Booking Request")}
+
+      <!-- Contact -->
+      <tr>
+        <td style="padding:28px 32px 0 32px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            ${emailSectionHeading("Contact")}
+            ${emailRow("Name", full_name)}
+            ${emailRow("Email", `<a href="mailto:${email}" style="color:#B98A3E; text-decoration:none;">${email}</a>`)}
+            ${emailRow("Mobile", phone || "Not provided")}
+            ${emailRow("Country", country || "Not provided")}
+          </table>
+        </td>
+      </tr>
+
+      <!-- Trip Details -->
+      <tr>
+        <td style="padding:0 32px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            ${emailSectionHeading("Trip Details")}
+            ${emailRow("Safari", tour_title)}
+            ${emailRow("Travel Date", formatTravelDate(travel_date))}
+            ${emailRow("Adults", String(adults))}
+            ${emailRow("Children", childrenSummary)}
+          </table>
+        </td>
+      </tr>
+
+      <!-- Special Requests -->
+      <tr>
+        <td style="padding:0 32px 28px 32px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            ${emailSectionHeading("Special Requests")}
+            <tr>
+              <td style="padding:10px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.6; color:#14201A;">
+                ${special_requests || "None"}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      ${emailFooter("Booking Reference", booking_reference)}
+
+    </table>
   </div>
   `;
 }
@@ -279,21 +371,19 @@ export async function POST(req: Request) {
     const { error: companyEmailError } = await resend.emails.send({
       from: "Bookings <noreply@luxeplainsafricasafaris.com>",
       to: process.env.BOOKING_EMAIL!,
-      subject: `New Booking Request - ${full_name}`,
-      html: `
-        <h2>New ${tour_title} Booking</h2>
-
-        <p><strong>Name:</strong> ${full_name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Country:</strong> ${country || "Not provided"}</p>
-        <p><strong>Adults:</strong> ${adults}</p>
-        <p><strong>Children:</strong> ${childrenSummary}</p>
-        <p><strong>Travel Date:</strong> ${travel_date}</p>
-
-        <p><strong>Special Requests</strong></p>
-        <p>${special_requests || "None"}</p>
-      `,
+      subject: `New Safari Request - ${full_name}`,
+      html: buildCompanyNotificationEmail({
+        tour_title,
+        booking_reference: insertedBooking?.booking_reference ?? "Pending",
+        full_name,
+        email,
+        phone,
+        country,
+        adults,
+        childrenSummary,
+        travel_date,
+        special_requests,
+      }),
     });
 
     if (companyEmailError) {
@@ -302,7 +392,7 @@ export async function POST(req: Request) {
 
     // Send customer confirmation email
     const { error: customerEmailError } = await resend.emails.send({
-      from: "Luxe Plains Africa Safaris <noreply@luxeplainsafricasafaris.com>",
+      from: "Luxe Plains Africa Safaris <info@luxeplainsafricasafaris.com>",
       to: email,
       subject: `Booking Request Received — ${tour_title}`,
       html: buildCustomerConfirmationEmail({

@@ -532,7 +532,7 @@
     "bookSafari": "Book {title} safari",
     "closeForm": "Close booking form",
     "success": {
-      "title": "Booking Submitted!",
+      "title": "Safari Details Submitted!",
       "message": "Thank you for your request. Our team will be in touch shortly to confirm your safari.",
       "done": "Done"
     },
