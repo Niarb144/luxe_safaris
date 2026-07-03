@@ -138,6 +138,14 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
           >
             {tour.title}
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={loaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+            className="text-lg text-white/90 mt-2 drop-shadow-md"
+          >
+            {tour.tagline}
+          </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
