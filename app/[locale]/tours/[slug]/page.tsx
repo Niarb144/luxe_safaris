@@ -113,15 +113,46 @@ export default async function TourPage({
   }
 
   // ── Related Tours ─────────────────────────────────────────────────────────
-  const { data: relatedToursData } = await supabase
+  const { data: relatedToursData, error: relatedToursError } = await supabase
     .from("tour_destinations")
-    .select(`tours(id, title, slug, tour_images(image_url))`)
+    .select(`
+      tours (
+        id,
+        title,
+        slug,
+        price,
+        tagline,
+        tour_images (
+          image_url,
+          is_main
+        )
+      )
+    `)
     .in("destination_id", destinationIds)
     .neq("tour_id", data.id)
     .limit(3);
 
-  const relatedTours =
+  if (relatedToursError) {
+    console.error("Failed to load related tours:", relatedToursError);
+  }
+
+  const rawRelatedTours =
     relatedToursData?.map((item) => item.tours).filter(Boolean) || [];
+
+  // Dedupe by tour id — guards against duplicate rows in the
+  // tour_destinations junction table (e.g. from a delete-then-insert
+  // save that silently only inserted due to a missing DELETE RLS policy).
+  const dedupedRelatedTours = Array.from(
+    new Map(rawRelatedTours.map((tour: any) => [tour.id, tour])).values()
+  );
+
+  // Translate related tour titles/taglines, consistent with the rest of the page
+  const relatedTours = await applySubRecordTranslations(
+    dedupedRelatedTours,
+    "tours",
+    ["title", "tagline"],
+    locale
+  );
 
   // Main Image
   const mainImage =

@@ -1,8 +1,13 @@
 import { supabase } from "@/lib/supabase";
 import WhyChooseLuxeSafaris from "@/components/WhyChooseUs";
 import ContactCard from "@/components/ContactCard";
+import DestinationGallery from "@/components/DestinationGallery";
+import SafeImage from "@/components/SafeImage";
 import { getTranslations } from "next-intl/server";
 import { applyTranslation, applySubRecordTranslations } from "@/lib/translations";
+
+const FALLBACK_HERO_IMAGE = "/images/img4.jpg";
+const FALLBACK_TOUR_IMAGE = "/images/img4.jpg";
 
 export default async function DestinationPage({
   params,
@@ -12,13 +17,16 @@ export default async function DestinationPage({
   const { slug, locale } = await params;
   const t = await getTranslations("destinationDetail");
 
-  const { data: destinationData } = await supabase
+  const { data: destinationData, error: destinationError } = await supabase
     .from("destinations")
     .select("*")
     .eq("slug", slug)
     .single();
 
-  if (!destinationData) return null;
+  if (destinationError || !destinationData) {
+    console.error("Destination not found:", destinationError);
+    return null;
+  }
 
   // Translate the destination record itself
   const destination = await applyTranslation(
@@ -28,74 +36,120 @@ export default async function DestinationPage({
     locale
   );
 
-  const { data, error } = await supabase
+  const destinationId = destinationData.id;
+
+  // ── Related tours (with main image resolution) ─────────────────────────────
+  const { data: relatedToursRaw, error: relatedToursError } = await supabase
     .from("tour_destinations")
-    .select(`
+    .select(
+      `
       tours (
         id,
         title,
+        tagline,
         slug,
-        price
+        price,
+        tour_images (
+          image_url,
+          is_main
+        )
       )
-    `)
-    .eq("destination_id", destinationData.id);
+    `
+    )
+    .eq("destination_id", destinationId);
 
-  if (error) {
-    console.error(error);
+  if (relatedToursError) {
+    console.error("Failed to load related tours:", relatedToursError);
   }
 
-  const rawRelatedTours = data?.map((item) => item.tours).filter(Boolean) ?? [];
+  const rawRelatedTours =
+    relatedToursRaw?.map((item) => item.tours).filter(Boolean) ?? [];
+
+  // Dedupe by tour id — guards against duplicate rows in the
+  // tour_destinations junction table (e.g. from a delete-then-insert
+  // save that silently only inserted due to a missing DELETE RLS policy).
+  const dedupedRelatedTours = Array.from(
+    new Map(rawRelatedTours.map((tour: any) => [tour.id, tour])).values()
+  );
 
   // Translate related tour titles
-  const relatedTours = await applySubRecordTranslations(
-    rawRelatedTours,
+  const translatedRelatedTours = await applySubRecordTranslations(
+    dedupedRelatedTours,
     "tours",
     ["title"],
     locale
   );
 
-  const destinationId = destinationData.id;
+  // Resolve a single main image per tour — mirrors the pattern used in TourPage
+  const relatedTours = translatedRelatedTours.map((tour: any) => {
+    const mainImage =
+      tour.tour_images?.find((img: any) => img.is_main === true)
+        ?.image_url || FALLBACK_TOUR_IMAGE;
 
-  const { data: rawFacts } = await supabase
-    .from("destination_facts")
-    .select("*")
-    .eq("destination_id", destinationId);
+    return { ...tour, mainImage };
+  });
 
-  const { data: rawHighlights } = await supabase
-    .from("destination_highlights")
-    .select("*")
-    .eq("destination_id", destinationId);
+  // ── Facts / Highlights / Images ─────────────────────────────────────────────
+  const [
+    { data: rawFacts, error: factsError },
+    { data: rawHighlights, error: highlightsError },
+    { data: images, error: imagesError },
+  ] = await Promise.all([
+    supabase
+      .from("destination_facts")
+      .select("*")
+      .eq("destination_id", destinationId),
+    supabase
+      .from("destination_highlights")
+      .select("*")
+      .eq("destination_id", destinationId),
+    supabase
+      .from("destination_images")
+      .select("*")
+      .eq("destination_id", destinationId)
+      .order("id", { ascending: true }),
+  ]);
 
-  const { data: images } = await supabase
-    .from("destination_images")
-    .select("*")
-    .eq("destination_id", destinationId);
+  if (factsError) console.error("Failed to load destination facts:", factsError);
+  if (highlightsError)
+    console.error("Failed to load destination highlights:", highlightsError);
+  if (imagesError)
+    console.error("Failed to load destination images:", imagesError);
 
   // Translate facts and highlights
-  const facts = await applySubRecordTranslations(
-    rawFacts ?? [],
-    "destination_facts",
-    ["fact"],
-    locale
-  );
+  const [facts, highlights] = await Promise.all([
+    applySubRecordTranslations(
+      rawFacts ?? [],
+      "destination_facts",
+      ["fact"],
+      locale
+    ),
+    applySubRecordTranslations(
+      rawHighlights ?? [],
+      "destination_highlights",
+      ["highlight"],
+      locale
+    ),
+  ]);
 
-  const highlights = await applySubRecordTranslations(
-    rawHighlights ?? [],
-    "destination_highlights",
-    ["highlight"],
-    locale
-  );
+  // ── Hero image resolution ────────────────────────────────────────────────
+  // NOTE: destination_images currently has no `is_main` column, so this falls
+  // back to array order (first row = hero). Once `is_main` is added to
+  // destination_images, swap this for the same `.find(is_main)` pattern used
+  // for tours below, for consistency and to remove the ordering dependency.
+  const heroImage = images?.[0]?.image_url || FALLBACK_HERO_IMAGE;
+
+  // Remaining images (excluding hero) feed the gallery
+  const galleryImages = images && images.length > 1 ? images.slice(1) : [];
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-gray-900">
       {/* HERO */}
       <section className="relative h-[85vh] min-h-[620px] overflow-hidden">
-        <img
-          src={
-            images?.[0]?.image_url ||
-            "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
-          }
-          alt={destination.name}
+        <SafeImage
+          src={heroImage}
+          fallbackSrc={FALLBACK_HERO_IMAGE}
+          alt={destination.name || ""}
           className="w-full h-full object-cover"
         />
 
@@ -126,7 +180,8 @@ export default async function DestinationPage({
         {destination.description && (
           <section className="prose max-w-none">
             <h2 className="text-4xl font-semibold leading-tight mb-6">
-              {t("about")} <span className="text-[#b77e24]">{destination.name}</span>
+              {t("about")}{" "}
+              <span className="text-[#b77e24]">{destination.name}</span>
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               {destination.description}
@@ -135,17 +190,12 @@ export default async function DestinationPage({
         )}
 
         {/* GALLERY */}
-        {images && images.length > 1 && (
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {images.slice(1).map((image: any) => (
-              <div key={image.id} className="relative overflow-hidden rounded-[28px] h-[320px] group">
-                <img
-                  src={image.image_url}
-                  alt={destination.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                />
-              </div>
-            ))}
+        {galleryImages.length > 0 && (
+          <section>
+            <DestinationGallery
+              images={galleryImages}
+              alt={destination.name || "Destination photo"}
+            />
           </section>
         )}
 
@@ -185,9 +235,7 @@ export default async function DestinationPage({
                 {t("information")}
               </p>
 
-              <h2 className="text-4xl font-semibold">
-                {t("quickFacts")}
-              </h2>
+              <h2 className="text-4xl font-semibold">{t("quickFacts")}</h2>
             </div>
 
             <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-8">
@@ -211,9 +259,7 @@ export default async function DestinationPage({
                 {t("explore")}
               </p>
 
-              <h2 className="text-4xl font-semibold">
-                {t("location")}
-              </h2>
+              <h2 className="text-4xl font-semibold">{t("location")}</h2>
             </div>
 
             <div className="overflow-hidden rounded-[32px] shadow-xl">
@@ -226,7 +272,8 @@ export default async function DestinationPage({
           </section>
         )}
 
-        {relatedTours && relatedTours.length > 0 && (
+        {/* RELATED TOURS */}
+        {relatedTours.length > 0 && (
           <section className="space-y-8">
             <div>
               <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
@@ -239,20 +286,36 @@ export default async function DestinationPage({
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {relatedTours?.map((tour: any) => (
+              {relatedTours.map((tour: any) => (
                 <a
                   key={tour.id}
                   href={`/tours/${tour.slug}`}
-                  className="group bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
+                  className="group relative overflow-hidden rounded-[28px] h-[380px] shadow-sm hover:shadow-xl transition duration-300"
                 >
-                  <div className="p-6 space-y-4">
-                    <h3 className="text-2xl font-semibold group-hover:opacity-70 transition">
+                  <SafeImage
+                    src={tour.mainImage}
+                    fallbackSrc={FALLBACK_TOUR_IMAGE}
+                    alt={tour.title || ""}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                  <div className="relative h-full flex flex-col justify-end p-6 space-y-2">
+                    <h3 className="text-2xl font-semibold text-white group-hover:opacity-90 transition">
                       {tour.title}
                     </h3>
+                    <p className="text-gray-300 text-sm leading-snug line-clamp-2">
+                      {tour.tagline}
+                    </p>
 
-                    {tour.price && (
-                      <p className="text-lg font-medium">
+                    {tour.price ? (
+                      <p className="text-lg font-medium text-white/90">
                         {t("from")} ${tour.price}
+                      </p>
+                    ) : (
+                      <p className="text-lg font-medium text-[#e8c98a]">
+                        {t("getQuote")}
                       </p>
                     )}
                   </div>

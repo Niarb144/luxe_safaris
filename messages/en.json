@@ -225,7 +225,8 @@
   },
   "relatedTours": {
     "tagline": "Explore More",
-    "title": "Related Tours"
+    "title": "Related Tours",
+    "getQuote":"Learn More"
   },
   "tourDetails": {
     "whatsExcluded": "What's excluded",
@@ -600,7 +601,8 @@
     "location": "Location",
     "safaris": "Safaris",
     "toursIn": "Tours in {name}",
-    "from": "From"
+    "from": "From",
+    "getQuote":"Learn more"
   },
   "BookingConfidence": {
     "hero": {
