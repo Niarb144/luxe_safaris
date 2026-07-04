@@ -195,7 +195,8 @@
     "bookNow": "立即预订",
     "whatsappInquiry": "WhatsApp咨询",
     "whatsappMessage": "我想预订 {title}",
-    "enquireAboutTour": "查询有关%@事宜"
+    "enquireAboutTour": "查询有关%@事宜",
+    "getQuote": "询价"
   },
   "tourLayout": {
     "home": "首页",
@@ -219,11 +220,13 @@
     "bookThisTour": "预订此行程",
     "reserveYourSpot": "预留您的位置",
     "closeBookingModal": "关闭预订窗口",
-    "enquire": "咨询"
+    "enquire": "咨询",
+    "getQuote": "询价"
   },
   "relatedTours": {
     "tagline": "探索更多",
-    "title": "相关行程"
+    "title": "相关行程",
+    "getQuote": "了解详情"
   },
   "tourDetails": {
     "whatsExcluded": "不包含内容",
@@ -570,7 +573,10 @@
       "specialRequestsPlaceholder": "饮食要求、无障碍需求、偏好活动等...",
       "submitting": "提交中...",
       "confirmBooking": "确认预订",
-      "cancel": "取消"
+      "cancel": "取消",
+      "dialCode": "拨号码",
+      "country": "居住国家/地区",
+      "countryPlaceholder": "选择国家或地区"
     },
     "errors": {
       "recaptchaUnavailable": "安全验证不可用"
@@ -604,7 +610,8 @@
     "location": "位置",
     "safaris": "狩猎旅行",
     "toursIn": "{name}的旅行",
-    "from": "起价"
+    "from": "起价",
+    "getQuote": "暸解更多"
   },
   "BookingConfidence": {
     "hero": {

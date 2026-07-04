@@ -195,7 +195,8 @@
     "bookNow": "今すぐ予約",
     "whatsappInquiry": "WhatsAppで問い合わせ",
     "whatsappMessage": "{title}を予約したいです",
-    "enquireAboutTour": "%@ に関する問い合わせ"
+    "enquireAboutTour": "%@ に関する問い合わせ",
+    "getQuote": "見積もりを依頼する"
   },
   "tourLayout": {
     "home": "ホーム",
@@ -219,11 +220,13 @@
     "bookThisTour": "このツアーを予約",
     "reserveYourSpot": "席を確保する",
     "closeBookingModal": "予約ウィンドウを閉じる",
-    "enquire": "問い合わせ"
+    "enquire": "問い合わせ",
+    "getQuote": "見積もりを依頼する"
   },
   "relatedTours": {
     "tagline": "さらに探す",
-    "title": "関連ツアー"
+    "title": "関連ツアー",
+    "getQuote": "詳細はこちら"
   },
   "tourDetails": {
     "whatsExcluded": "含まれないもの",
@@ -570,7 +573,10 @@
       "specialRequestsPlaceholder": "食事制限、アクセシビリティ、希望アクティビティなど...",
       "submitting": "送信中...",
       "confirmBooking": "予約を確定する",
-      "cancel": "キャンセル"
+      "cancel": "キャンセル",
+      "dialCode": "ダイヤルコード",
+      "country": "居住国",
+      "countryPlaceholder": "国を選択"
     },
     "errors": {
       "recaptchaUnavailable": "セキュリティ確認が利用できません"
@@ -604,7 +610,8 @@
     "location": "場所",
     "safaris": "サファリ",
     "toursIn": "{name}のツアー",
-    "from": "料金"
+    "from": "料金",
+    "getQuote": "さらに詳しく"
   },
   "BookingConfidence": {
     "hero": {

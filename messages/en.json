@@ -8,7 +8,11 @@
       "title": "Want to receive travel news and inspiration?",
       "subtitle": "Sign up to our newsletter and enter our lucky draw.",
       "placeholder": "Email",
-      "button": "Sign me up"
+      "button": "Sign me up",
+      "successMessage": "Thanks — you're subscribed!",
+      "submitting": "Subscribing...",
+      "invalidEmail": "Please enter a valid email address.",
+      "genericError": "Something went wrong. Please try again."
     },
     "company": {
       "name": "LUXE PLAINS AFRICA SAFARIS",

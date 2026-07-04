@@ -195,7 +195,8 @@
     "bookNow": "Reservar Agora",
     "whatsappInquiry": "Consulta WhatsApp",
     "whatsappMessage": "Quero reservar {title}",
-    "enquireAboutTour": "Informe-se sobre o passeio"
+    "enquireAboutTour": "Informe-se sobre o passeio",
+    "getQuote": "Obtenha um Orçamento"
   },
   "tourLayout": {
     "home": "Início",
@@ -219,11 +220,13 @@
     "bookThisTour": "Reservar Este Tour",
     "reserveYourSpot": "Reserve o Seu Lugar",
     "closeBookingModal": "Fechar janela de reserva",
-    "enquire": "Consultar"
+    "enquire": "Consultar",
+    "getQuote": "Obtenha um Orçamento"
   },
   "relatedTours": {
     "tagline": "Explorar Mais",
-    "title": "Tours Relacionados"
+    "title": "Tours Relacionados",
+    "getQuote": "Saber mais"
   },
   "tourDetails": {
     "whatsExcluded": "O que não está incluído",
@@ -570,7 +573,10 @@
       "specialRequestsPlaceholder": "Necessidades alimentares, acessibilidade, atividades preferidas...",
       "submitting": "A enviar...",
       "confirmBooking": "Confirmar reserva",
-      "cancel": "Cancelar"
+      "cancel": "Cancelar",
+      "dialCode": "Código de Marcação",
+      "country": "País de Residência",
+      "countryPlaceholder": "Selecione o seu país"
     },
     "errors": {
       "recaptchaUnavailable": "Verificação de segurança indisponível"
@@ -604,7 +610,8 @@
     "location": "Localização",
     "safaris": "Safáris",
     "toursIn": "Tours em {name}",
-    "from": "A partir de"
+    "from": "A partir de",
+    "getQuote": "Saiba mais"
   },
   "BookingConfidence": {
     "hero": {

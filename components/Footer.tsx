@@ -1,9 +1,11 @@
 import FooterBottomBar from "./FooterBottomBar";
+import NewsletterForm from "./NewsLetterForm";
 import { FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const locale = useLocale();
 
   return (
     <footer className="bg-[#b77e24] text-white mt-0">
@@ -20,16 +22,7 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="flex w-full md:w-auto gap-3">
-              <input
-                type="email"
-                placeholder={t("newsletter.placeholder")}
-                className="px-4 py-2 rounded-md text-black w-full md:w-64 bg-white/90 focus:outline-none focus:ring-2 focus:ring-[#b77e24]"
-              />
-              <button className="bg-[#b77e24] px-5 py-2 rounded-md font-medium hover:bg-orange-700 transition">
-                {t("newsletter.button")}
-              </button>
-            </div>
+            <NewsletterForm locale={locale} />
           </div>
         </div>
       </div>

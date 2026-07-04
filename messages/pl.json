@@ -195,7 +195,8 @@
     "bookNow": "Zarezerwuj teraz",
     "whatsappInquiry": "Zapytanie WhatsApp",
     "whatsappMessage": "Chcę zarezerwować {title}",
-    "enquireAboutTour": "Zapytaj o wycieczkę"
+    "enquireAboutTour": "Zapytaj o wycieczkę",
+    "getQuote": "Zapytaj o Cenę"
   },
   "tourLayout": {
     "home": "Strona główna",
@@ -219,11 +220,13 @@
     "bookThisTour": "Zarezerwuj tę wycieczkę",
     "reserveYourSpot": "Zarezerwuj miejsce",
     "closeBookingModal": "Zamknij okno rezerwacji",
-    "enquire": "Wyślij zapytanie"
+    "enquire": "Wyślij zapytanie",
+    "getQuote": "Zapytaj o Cenę"
   },
   "relatedTours": {
     "tagline": "Odkrywaj więcej",
-    "title": "Powiązane wycieczki"
+    "title": "Powiązane wycieczki",
+    "getQuote": "Dowiedz się więcej"
   },
   "tourDetails": {
     "whatsExcluded": "Co nie jest wliczone",
@@ -570,7 +573,10 @@
       "specialRequestsPlaceholder": "Dieta, dostępność, preferowane aktywności...",
       "submitting": "Wysyłanie...",
       "confirmBooking": "Potwierdź rezerwację",
-      "cancel": "Anuluj"
+      "cancel": "Anuluj",
+      "dialCode": "Numer kierunkowy",
+      "country": "Kraj zamieszkania",
+      "countryPlaceholder": "Wybierz swój kraj"
     },
     "errors": {
       "recaptchaUnavailable": "Weryfikacja bezpieczeństwa niedostępna"
@@ -604,7 +610,8 @@
     "location": "Lokalizacja",
     "safaris": "Safari",
     "toursIn": "Wycieczki w {name}",
-    "from": "Od"
+    "from": "Od",
+    "getQuote": "Zobacz"
   },
   "BookingConfidence": {
     "hero": {

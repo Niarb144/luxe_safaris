@@ -195,7 +195,8 @@
     "bookNow": "Nu boeken",
     "whatsappInquiry": "WhatsApp aanvraag",
     "whatsappMessage": "Ik wil {title} boeken",
-    "enquireAboutTour": "Vraag over %@"
+    "enquireAboutTour": "Vraag over %@",
+    "getQuote": "Vraag een offerte aan"
   },
   "tourLayout": {
     "home": "Home",
@@ -219,11 +220,13 @@
     "bookThisTour": "Deze tour boeken",
     "reserveYourSpot": "Reserveer je plek",
     "closeBookingModal": "Boekingsvenster sluiten",
-    "enquire": "Informeren"
+    "enquire": "Informeren",
+    "getQuote": "Vraag een offerte aan"
   },
   "relatedTours": {
     "tagline": "Ontdek meer",
-    "title": "Gerelateerde tours"
+    "title": "Gerelateerde tours",
+    "getQuote": "Meer informatie "
   },
   "tourDetails": {
     "whatsExcluded": "Wat is niet inbegrepen",
@@ -570,7 +573,10 @@
       "specialRequestsPlaceholder": "Dieetwensen, toegankelijkheid, voorkeuractiviteiten...",
       "submitting": "Verzenden...",
       "confirmBooking": "Bevestig boeking",
-      "cancel": "Annuleren"
+      "cancel": "Annuleren",
+      "dialCode": "kiescode",
+      "country": "Land van verblijf",
+      "countryPlaceholder": "Selecteer uw land"
     },
     "errors": {
       "recaptchaUnavailable": "Beveiligingscontrole niet beschikbaar"
@@ -604,7 +610,8 @@
     "location": "Locatie",
     "safaris": "Safari’s",
     "toursIn": "Tours in {name}",
-    "from": "Vanaf"
+    "from": "Vanaf",
+    "getQuote": "Meer informatie"
   },
   "BookingConfidence": {
     "hero": {

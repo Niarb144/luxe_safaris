@@ -195,7 +195,8 @@
     "bookNow": "Забронировать",
     "whatsappInquiry": "Запрос в WhatsApp",
     "whatsappMessage": "Я хочу забронировать {title}",
-    "enquireAboutTour": "Запрос о %@"
+    "enquireAboutTour": "Запрос о %@",
+    "getQuote": "Обновить"
   },
   "tourLayout": {
     "home": "Главная",
@@ -219,11 +220,13 @@
     "bookThisTour": "Забронировать тур",
     "reserveYourSpot": "Забронировать место",
     "closeBookingModal": "Закрыть окно бронирования",
-    "enquire": "Подробнее"
+    "enquire": "Подробнее",
+    "getQuote": "Обновить"
   },
   "relatedTours": {
     "tagline": "Исследуйте больше",
-    "title": "Похожие туры"
+    "title": "Похожие туры",
+    "getQuote": "Подробнее"
   },
   "tourDetails": {
     "whatsExcluded": "Что не включено",
@@ -570,7 +573,10 @@
       "specialRequestsPlaceholder": "Диетические требования, доступность, предпочтительные активности...",
       "submitting": "Отправка...",
       "confirmBooking": "Подтвердить бронирование",
-      "cancel": "Отмена"
+      "cancel": "Отмена",
+      "dialCode": "Код набора",
+      "country": "Страна проживания",
+      "countryPlaceholder": "Выберите свою страну"
     },
     "errors": {
       "recaptchaUnavailable": "Проверка безопасности недоступна"
@@ -604,7 +610,8 @@
     "location": "Местоположение",
     "safaris": "Сафари",
     "toursIn": "Туры в {name}",
-    "from": "От"
+    "from": "От",
+    "getQuote": "Подробнее"
   },
   "BookingConfidence": {
     "hero": {

@@ -195,7 +195,8 @@
     "bookNow": "احجز الآن",
     "whatsappInquiry": "استفسار عبر واتساب",
     "whatsappMessage": "أرغب في حجز {title}",
-    "enquireAboutTour": "استفسار عن %@"
+    "enquireAboutTour": "استفسار عن %@",
+    "getQuote": "طلب عرض أسعار"
   },
   "tourLayout": {
     "home": "الرئيسية",
@@ -219,11 +220,13 @@
     "bookThisTour": "احجز هذه الرحلة",
     "reserveYourSpot": "احجز مكانك",
     "closeBookingModal": "إغلاق نافذة الحجز",
-    "enquire": "استفسار"
+    "enquire": "استفسار",
+    "getQuote": "طلب عرض أسعار"
   },
   "relatedTours": {
     "tagline": "استكشف المزيد",
-    "title": "رحلات ذات صلة"
+    "title": "رحلات ذات صلة",
+    "getQuote": "اعرف المزيد عن المزايا"
   },
   "tourDetails": {
     "whatsExcluded": "ما لا يشمله العرض",
@@ -570,7 +573,10 @@
       "specialRequestsPlaceholder": "الاحتياجات الغذائية، متطلبات الوصول، الأنشطة المفضلة...",
       "submitting": "جارٍ الإرسال...",
       "confirmBooking": "تأكيد الحجز",
-      "cancel": "إلغاء"
+      "cancel": "إلغاء",
+      "dialCode": "رمز الاتصال",
+      "country": "بلد الإقامة",
+      "countryPlaceholder": "اختر بلدك"
     },
     "errors": {
       "recaptchaUnavailable": "التحقق الأمني غير متاح"
@@ -604,7 +610,8 @@
     "location": "الموقع",
     "safaris": "رحلات السفاري",
     "toursIn": "الجولات في {name}",
-    "from": "ابتداءً من"
+    "from": "ابتداءً من",
+    "getQuote": "تعرف على المزيد"
   },
   "BookingConfidence": {
     "hero": {

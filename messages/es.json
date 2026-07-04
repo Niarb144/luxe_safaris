@@ -195,7 +195,8 @@
     "bookNow": "Reservar ahora",
     "whatsappInquiry": "Consulta por WhatsApp",
     "whatsappMessage": "Quiero reservar {title}",
-    "enquireAboutTour": "Consultar sobre %@"
+    "enquireAboutTour": "Consultar sobre %@",
+    "getQuote": "Piede un presupuesto"
   },
   "tourLayout": {
     "home": "Inicio",
@@ -219,11 +220,13 @@
     "bookThisTour": "Reservar este tour",
     "reserveYourSpot": "Reserva tu plaza",
     "closeBookingModal": "Cerrar ventana de reserva",
-    "enquire": "Requerir"
+    "enquire": "Requerir",
+    "getQuote": "Piede un presupuesto"
   },
   "relatedTours": {
     "tagline": "Explora más",
-    "title": "Tours relacionados"
+    "title": "Tours relacionados",
+    "getQuote": "Descubre más"
   },
   "tourDetails": {
     "whatsExcluded": "Qué no está incluido",
@@ -570,7 +573,10 @@
       "specialRequestsPlaceholder": "Necesidades dietéticas, accesibilidad, actividades preferidas...",
       "submitting": "Enviando...",
       "confirmBooking": "Confirmar reserva",
-      "cancel": "Cancelar"
+      "cancel": "Cancelar",
+      "dialCode": "prefijo",
+      "country": "País de residencia",
+      "countryPlaceholder": "Seleccione su país"
     },
     "errors": {
       "recaptchaUnavailable": "Verificación de seguridad no disponible"
@@ -604,7 +610,8 @@
     "location": "Ubicación",
     "safaris": "Safaris",
     "toursIn": "Tours en {name}",
-    "from": "Desde"
+    "from": "Desde",
+    "getQuote": "Más información"
   },
   "BookingConfidence": {
     "hero": {
