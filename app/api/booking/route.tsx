@@ -371,6 +371,7 @@ export async function POST(req: Request) {
     const { error: companyEmailError } = await resend.emails.send({
       from: "Bookings <noreply@luxeplainsafricasafaris.com>",
       to: process.env.BOOKING_EMAIL!,
+      cc: process.env.INFO_EMAIL,
       subject: `New Safari Request - ${full_name}`,
       html: buildCompanyNotificationEmail({
         tour_title,
