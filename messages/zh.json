@@ -8,7 +8,11 @@
       "title": "想要接收旅行资讯与灵感吗？",
       "subtitle": "订阅我们的新闻通讯并参与幸运抽奖。",
       "placeholder": "电子邮件",
-      "button": "立即订阅"
+      "button": "立即订阅",
+      "successMessage": "谢谢！您已订阅！",
+      "submitting": "訂閱",
+      "invalidEmail": "请输入有效的电子邮件地址。",
+      "genericError": "出错了。请重试。"
     },
     "company": {
       "name": "LUXE PLAINS AFRICA SAFARIS",

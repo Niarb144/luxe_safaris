@@ -8,7 +8,11 @@
       "title": "Möchten Sie Reise-News und Inspiration erhalten?",
       "subtitle": "Melden Sie sich für unseren Newsletter an und nehmen Sie an unserer Verlosung teil.",
       "placeholder": "E-Mail",
-      "button": "Jetzt anmelden"
+      "button": "Jetzt anmelden",
+      "successMessage": "Vielen Dank — Sie sind abonniert!",
+      "submitting": "Abonniere...",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
+      "genericError": "Ein Fehler ist aufgetreten.. Bitte versuche es erneut."
     },
     "company": {
       "name": "LUXE PLAINS AFRICA SAFARIS",

@@ -8,7 +8,11 @@
       "title": "Wil je reisnieuws en inspiratie ontvangen?",
       "subtitle": "Meld je aan voor onze nieuwsbrief en doe mee aan onze loterij.",
       "placeholder": "E-mail",
-      "button": "Aanmelden"
+      "button": "Aanmelden",
+      "successMessage": "Bedankt — je bent geabonneerd!",
+      "submitting": "Abonneren...",
+      "invalidEmail": "Voer een geldig e-mailadres in.",
+      "genericError": "Er ging iets mis; probeer het nog eens."
     },
     "company": {
       "name": "LUXE PLAINS AFRICA SAFARIS",
