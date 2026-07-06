@@ -594,7 +594,7 @@ export default function SafariInquiryForm() {
           {status === "loading" ? (
             <><Loader2 className="w-4 h-4 animate-spin" /> {t("submit.loading")}</>
           ) : (
-            <><Send className="w-4 h-4" /> {t("submit.label")}</>
+            <> {t("submit.label")}</>
           )}
         </button>
 
