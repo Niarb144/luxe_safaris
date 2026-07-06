@@ -1,5 +1,12 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { Resend } from "resend";
+import {
+  emailHeader,
+  emailSectionHeading,
+  emailFooter,
+  emailButton,
+} from "@/lib/email/helpers"; // adjust path to match your project structure
 
 // Service-role client — server-only, never expose this key to the browser.
 const supabaseAdmin = createClient(
@@ -7,8 +14,44 @@ const supabaseAdmin = createClient(
   process.env.SUPABASE_SERVICE_KEY!
 );
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const RECAPTCHA_MIN_SCORE = Number(process.env.RECAPTCHA_MIN_SCORE ?? 0.3);
+
+// ── Welcome email template ────────────────────────────────────────────────
+function newsletterWelcomeEmail(email: string) {
+  return `
+    <div style="background:#f9f7f4; padding:32px 16px; font-family:Arial,Helvetica,sans-serif;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px; margin:0 auto; background:#F2EDE3; border-radius:10px; overflow:hidden; border:1px solid #e8e2d9;">
+
+        ${emailHeader("Welcome to Luxe Plains Africa Safaris")}
+
+        <!-- Welcome message -->
+        <tr>
+          <td style="padding:28px 32px 0 32px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+              ${emailSectionHeading("You're on the list")}
+              <tr>
+                <td style="padding:10px 0 20px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.7; color:#14201A;">
+                  Thank you for subscribing to the Luxe Plains Africa Safaris newsletter. You'll be the first to hear about new safari itineraries, seasonal offers, and travel inspiration from across East Africa's most iconic landscapes.
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:0 0 28px 0;">
+                  ${emailButton("Explore Our Safaris", "https://luxeplainsafricasafaris.com")}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        ${emailFooter("Subscribed Email", email)}
+
+      </table>
+    </div>
+  `;
+}
 
 export async function POST(request: Request) {
   try {
@@ -68,6 +111,19 @@ export async function POST(request: Request) {
 
       console.error("Newsletter insert error:", error);
       return NextResponse.json({ error: "server_error" }, { status: 500 });
+    }
+
+    // ── Send welcome email (non-fatal) ────────────────────────────────────────
+    const { error: emailError } = await resend.emails.send({
+      from: "Luxe Plains Africa Safaris <newsletter@luxeplainsafricasafaris.com>",
+      to: normalizedEmail,
+      subject: "Welcome to Luxe Plains Africa Safaris",
+      html: newsletterWelcomeEmail(normalizedEmail),
+    });
+
+    if (emailError) {
+      console.error("Newsletter welcome email error:", emailError);
+      // Don't fail the request — the subscription itself succeeded.
     }
 
     return NextResponse.json({ success: true });

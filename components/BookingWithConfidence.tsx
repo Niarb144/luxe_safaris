@@ -490,7 +490,7 @@ export default function BookingConfidence() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href="/custom-safari"
             className="inline-flex flex-shrink-0 items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-medium transition-transform duration-200 hover:scale-[1.03]"
             style={{ backgroundColor: INK, color: BG }}
           >
