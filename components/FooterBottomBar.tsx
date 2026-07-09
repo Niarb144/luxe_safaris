@@ -8,6 +8,18 @@ export default function FooterBottomBar() {
       <p>
         © {new Date().getFullYear()} Luxe Plains Africa Safaris. All rights reserved.
       </p>
+
+      <p>
+        Made with ❤️ by{" "}
+        <Link
+          href="https://teddybrian.vercel.app/"  
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          Nidari Inc
+        </Link>
+      </p>
       <p className="text-white/50 text-xs text-center">
         Protected by reCAPTCHA &mdash;{" "}
         <Link

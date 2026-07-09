@@ -25,10 +25,10 @@ export default function Home() {
         <Numbers />
         <ToursList limit={4}/>
         <Destinations limit={4} />
-        <ReviewsSection />
-        <AccreditationSection />
-        <ContactCard />
+        {/* <ReviewsSection /> */}
+        {/* <AccreditationSection /> */}
         <WhyChooseLuxeSafaris />
+        <ContactCard />
       </div>
     </>
   );
