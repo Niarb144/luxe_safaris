@@ -63,7 +63,7 @@ export default function WhyChooseLuxeSafaris() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md hover:border-[#d4af37]/50 transition-all duration-500 overflow-hidden"
+                className="group relative bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md hover:border-[#d4af37]/50 transition-all duration-500 overflow-hidden"
               >
                 {/* Hover Glow */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#d4af37]/10 to-transparent" />
@@ -101,7 +101,7 @@ export default function WhyChooseLuxeSafaris() {
           viewport={{ once: true }}
           className="mt-24 text-center"
         >
-          <div className="inline-flex flex-col md:flex-row items-center gap-6 bg-gradient-to-r from-[#1b2b20] to-[#111c15] border border-[#d4af37]/20 rounded-[32px] px-10 py-8 shadow-2xl">
+          <div className="inline-flex flex-col md:flex-row items-center gap-6 bg-gradient-to-r from-[#1b2b20] to-[#111c15] border border-[#d4af37]/20 rounded-2xl px-10 py-8 shadow-2xl">
             <div className="text-left">
               <h3 className="text-3xl font-bold text-white">
                 {t("cta.title")}
@@ -112,7 +112,7 @@ export default function WhyChooseLuxeSafaris() {
               </p>
             </div>
             <Link
-              className="bg-[#d4af37] hover:bg-[#c39f2e] text-black font-bold px-8 py-4 rounded-2xl transition duration-300 shadow-lg"
+              className="bg-[#d4af37] hover:bg-[#c39f2e] text-black font-bold px-8 py-4 rounded-lg transition duration-300 shadow-lg"
               href="/tours"
             >
               {t("cta.button")}

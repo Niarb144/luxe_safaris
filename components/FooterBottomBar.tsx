@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FooterBottomBar() {
   return (
@@ -9,17 +10,21 @@ export default function FooterBottomBar() {
         © {new Date().getFullYear()} Luxe Plains Africa Safaris. All rights reserved.
       </p>
 
-      <p>
-        Made with ❤️ by{" "}
-        <Link
-          href="https://teddybrian.vercel.app/"  
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline"
-        >
-          Nidari Inc
-        </Link>
-      </p>
+      <Link
+        href="https://teddybrian.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+      >
+        <Image
+          src="/images/teddy-logo.png"
+          alt="Nidari Inc"
+          width={22}
+          height={22}
+          className="rounded-sm"
+        />
+        <span>Powered by Nidari Inc</span>
+      </Link>
       <p className="text-white/50 text-xs text-center">
         Protected by reCAPTCHA &mdash;{" "}
         <Link

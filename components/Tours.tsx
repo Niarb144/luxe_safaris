@@ -122,7 +122,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-4">
             {Array.from({ length: limit ?? 8 }).map((_, i) => (
-              <div key={i} className="rounded-[32px] h-[400px] bg-gray-200 animate-pulse" />
+              <div key={i} className="rounded-2xl h-[400px] bg-gray-200 animate-pulse" />
             ))}
           </div>
         </div>
@@ -174,7 +174,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
               >
                 <Link
                   href={`/tours/${tour.slug}`}
-                  className="group relative overflow-hidden rounded-[32px] h-[400px] shadow-xl block"
+                  className="group relative overflow-hidden rounded-2xl h-[400px] shadow-xl block"
                 >
                   <div className="absolute inset-0">
                     <Image
