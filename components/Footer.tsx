@@ -1,6 +1,6 @@
 import FooterBottomBar from "./FooterBottomBar";
 import NewsletterForm from "./NewsLetterForm";
-import { FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaClock, FaInstagram, FaTiktok, FaFacebook } from "react-icons/fa";
 import { useTranslations, useLocale } from "next-intl";
 
 export default function Footer() {
@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
 
         {/* Accreditations */}
-        <div>
+        {/* <div>
           <h3 className="font-semibold mb-4">
             {t("accreditations.title")}
           </h3>
@@ -100,6 +100,30 @@ export default function Footer() {
             </div>
             <div className="bg-white/20 rounded-lg p-3 flex items-center justify-center hover:bg-white/30 transition">
               <img src="/images/Logo-TRA.png" alt="TRA" className="h-6 object-contain" />
+            </div>
+          </div>
+        </div> */}
+
+        {/* Social Media */}
+        <div>
+          <h3 className="font-semibold mb-4">
+            {t("social.title")}
+          </h3>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-white/20 rounded-lg p-3 flex items-center justify-center hover:bg-white/30 transition">
+              <a href="https://www.instagram.com/luxeplainsafrica/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="text-2xl" />
+              </a>
+            </div>
+            <div className="bg-white/20 rounded-lg p-3 flex items-center justify-center hover:bg-white/30 transition">
+              <a href="https://www.tiktok.com/@luxeplainsafrica" target="_blank" rel="noopener noreferrer">
+                <FaTiktok className="text-2xl" />
+              </a>
+            </div>
+            <div className="bg-white/20 rounded-lg p-3 flex items-center justify-center hover:bg-white/30 transition">
+              <a href="https://www.facebook.com/luxeplainsafrica" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="text-2xl" />
+              </a>
             </div>
           </div>
         </div>
