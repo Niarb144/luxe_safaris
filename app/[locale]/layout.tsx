@@ -33,9 +33,134 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Luxe Plains Africa Safaris",
-  description: "Luxe Plains Africa Safaris is a premier safari company...",
-}
+  metadataBase: new URL("https://www.luxeplainsafricasafaris.com"),
+
+  title: {
+    default: "Luxe Plains Africa Safaris | Luxury Plains Safaris",
+    template: "%s | Luxe Plains Africa Safaris",
+  },
+
+  description:
+    "Discover unforgettable luxury safaris across Kenya and East Africa with Luxe Plains Africa Safaris. Experience the Maasai Mara, Amboseli, Tsavo, Samburu, gorilla trekking, beach holidays, custom private tours, family vacations, honeymoon safaris, and authentic African adventures.",
+
+  applicationName: "Luxe Plains Africa Safaris",
+
+  keywords: [
+    "Kenya Safaris",
+    "Luxury Safaris Kenya",
+    "African Safaris",
+    "Safari Tours",
+    "Masai Mara Safari",
+    "Maasai Mara",
+    "Amboseli National Park",
+    "Tsavo National Park",
+    "Samburu National Reserve",
+    "Nairobi Tours",
+    "Kenya Wildlife Safari",
+    "Private Safari Kenya",
+    "Luxury Tours Africa",
+    "Big Five Safari",
+    "Migration Safari",
+    "Family Safari",
+    "Honeymoon Safari",
+    "East Africa Tours",
+    "Custom Safari",
+    "Beach Holidays Kenya",
+    "Mount Kenya Trekking",
+    "Travel Kenya",
+    "Tour Operator Kenya",
+    "African Wildlife",
+  ],
+
+  authors: [
+    {
+      name: "Luxe Plains Africa Safaris",
+      url: "https://www.luxeplainsafricasafaris.com",
+    },
+  ],
+
+  creator: "Luxe Plains Africa Safaris",
+  publisher: "Luxe Plains Africa Safaris",
+
+  category: "Travel",
+
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/en",
+      fr: "/fr",
+      de: "/de",
+      es: "/es",
+      it: "/it",
+      ja: "/ja",
+      ar: "/ar",
+      zh: "/zh",
+      ru: "/ru",
+      pt: "/pt",
+      nl: "/nl",
+      pl: "/pl",
+    },
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
+  },
+
+  openGraph: {
+    title: "Luxury Kenya Safaris | Luxe Plains Africa Safaris",
+
+    description:
+      "Experience luxury safaris, wildlife adventures, private tours, beach holidays, mountain trekking and tailor-made African travel across Kenya and East Africa.",
+
+    url: "https://www.luxeplainsafricasafaris.com",
+
+    siteName: "Luxe Plains Africa Safaris",
+
+    locale: "en_US",
+
+    type: "website",
+
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Luxury Kenya Safari",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: "Luxury Kenya Safaris",
+
+    description:
+      "Explore Kenya and East Africa with tailor-made luxury safaris.",
+
+    images: ["/og-image.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    // bing: "YOUR_BING_VERIFICATION"
+  },
+};
 
 export default async function RootLayout({
   children,
