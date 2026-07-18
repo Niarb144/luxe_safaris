@@ -22,9 +22,9 @@ export default function ContactPage() {
 
   // Contact cards — phone numbers untranslated, name/role come from en.json
   const contacts = [
-    { key: "support", phone: "+254 719 136 129" },
+    { key: "support", phone: "+254 716 686 006" },
     { key: "specialist", phone: "+254 722 486 677" },
-    { key: "emergency", phone: "+254 719 136 129" },
+    { key: "emergency", phone: "+254 716 686 006" },
   ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

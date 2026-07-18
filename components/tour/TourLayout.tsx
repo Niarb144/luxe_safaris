@@ -115,7 +115,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
         <div className="absolute inset-0 rounded-lg overflow-hidden">
           <Image src={mainImage} alt={tour.title} fill priority sizes="100vw" className="object-cover scale-105" />
           <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-black/5" />
         </div>
 
         <div className="relative z-10 px-6 max-w-4xl">

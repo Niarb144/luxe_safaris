@@ -31,8 +31,8 @@ export default function ContactCard() {
                 <p className="text-sm uppercase tracking-widest text-[#d4a54b]">
                   {t("callUs")}
                 </p>
-                <a href="tel:+254719136129" className="mt-2 block text-3xl font-semibold hover:text-[#d4a54b] transition">
-                  +254 719 136 129
+                <a href="tel:+254716686006" className="mt-2 block text-3xl font-semibold hover:text-[#d4a54b] transition">
+                  +254 716 686 006
                 </a>
               </div>
               <div className="border-t border-white/10 pt-6">

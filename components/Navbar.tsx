@@ -622,12 +622,29 @@ export default function Navbar() {
         {/* Desktop right side */}
         <div className="hidden md:flex items-center gap-4">
           <SearchButton />
-          <div className="bg-[#b77e24] text-white px-4 py-2 rounded text-sm flex flex-col leading-tight">
-            <p className="font-medium">{t("callUs")}</p>
-            <div className="flex flex-col sm:flex-row sm:gap-2">
-              <span>+254 719 136 129</span>
-              <span className="hidden sm:inline">/</span>
-              <span>+254 722 486 677</span>
+
+          <div className="bg-[#b77e24] text-white px-4 py-2 rounded text-sm">
+            <div className="grid grid-cols-[auto_1fr] gap-x-4 items-center">
+              {/* Left Column */}
+              <p className="font-medium whitespace-nowrap">
+                {t("callUs")}
+              </p>
+
+              {/* Right Column */}
+              <div className="flex flex-col leading-tight">
+                <a
+                  href="tel:+254716686006"
+                  className="hover:underline"
+                >
+                  +254 716 686 006
+                </a>
+                <a
+                  href="tel:+254722486677"
+                  className="hover:underline"
+                >
+                  +254 722 486 677
+                </a>
+              </div>
             </div>
           </div>
         </div>

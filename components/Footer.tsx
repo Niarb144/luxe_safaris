@@ -37,7 +37,7 @@ export default function Footer() {
           </h3>
           <p className="text-sm mb-2">
             <FaPhoneAlt className="inline mr-2" />
-            +254 719 136 129
+            +254 716 686 006
           </p>
           <p className="text-sm mb-2">
             <FaEnvelope className="inline mr-2" />
