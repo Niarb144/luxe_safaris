@@ -648,11 +648,11 @@
       },
       "step3": {
         "title": "Secure your dates",
-        "body": "Pay a protected deposit through encrypted checkout. You receive written confirmation and a full payment schedule immediately. [TODO: confirm deposit %]"
+        "body": "Pay a protected deposit through encrypted checkout. You receive written confirmation and a full payment schedule immediately. [Deposit  50%]"
       },
       "step4": {
         "title": "Travel, fully supported",
-        "body": "Settle the balance ahead of departure and travel with a 24/7 in-country contact, briefed on your trip before you land. [TODO: confirm balance-due window]"
+        "body": "Settle the balance ahead of departure and travel with a 24/7 in-country contact, briefed on your trip before you land. [Balance due 30 days before departure]"
       }
     },
     "badges": {
