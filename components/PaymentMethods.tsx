@@ -1,35 +1,11 @@
 'use client';
 
-/**
- * Payment Methods
- * ----------------
- * Explains the three ways a Luxe Plains Africa Safaris guest can pay:
- * M-Pesa Paybill, bank transfer to Stanbic Bank, and card payment.
- *
- * Visual system matches components/booking-confidence/BookingConfidence.tsx
- * (same savanna-dusk palette + serif/mono pairing) so the two trust-adjacent
- * pages feel like one family. If you build a third page like this, it's
- * worth pulling INK/BG/PANEL/IVORY out into a shared lib/theme.ts.
- *
- * Static UI copy lives in next-intl under the "PaymentMethods" namespace
- * (see messages/payment-methods.en.json — merge into your en.json, then
- * run your existing translate-messages.mjs to backfill the other locales).
- *
- * ACTION REQUIRED before shipping — edit PAYMENT_DETAILS below:
- *  - M-Pesa Paybill number
- *  - Stanbic Bank account name, account number, branch and SWIFT/BIC code
- *  - Confirm which card brands and currencies you actually accept
- * These are real financial details, so deliberately left as placeholders
- * rather than guessed — wrong digits here send a client's money astray.
- */
-
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import {
-  Smartphone,
   Landmark,
   CreditCard,
   Copy,
@@ -50,11 +26,6 @@ const IVORY = '#14201A'; //#14201A
 /* ----------------------------------------------------------------------- */
 
 const PAYMENT_DETAILS = {
-  mpesa: {
-    paybill: '400xxxx', // e.g. "400200"
-    accountHint: 'Your booking reference, e.g. LPA-2306', 
-    logo: '/images/mpesa.png'
-  },
   bank: {
     bankName: 'Stanbic Bank Kenya',
     accountName: 'ACOUNT NAMEXXXX', // e.g. "Luxe Plains Africa Safaris Ltd"
@@ -156,7 +127,7 @@ function PaymentMethodCard({
   delay,
   children,
 }: {
-  icon: typeof Smartphone;
+  icon: typeof Landmark;
   title: string;
   body: string;
   delay: number;
@@ -243,16 +214,9 @@ export default function PaymentMethods() {
   const heroFade = useFadeUp(0.1);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const mpesaSteps = ['step1', 'step2', 'step3', 'step4', 'step5'] as const;
   const faqs = ['faq1', 'faq2', 'faq3', 'faq4', 'faq5', 'faq6'] as const;
 
   const comparisonRows = [
-    {
-      method: t('compare.mpesa.method'),
-      time: t('compare.mpesa.time'),
-      currency: t('compare.mpesa.currency'),
-      bestFor: t('compare.mpesa.bestFor'),
-    },
     {
       method: t('compare.bank.method'),
       time: t('compare.bank.time'),
@@ -323,39 +287,9 @@ export default function PaymentMethods() {
       {/* Payment method cards                                              */}
       {/* ---------------------------------------------------------------- */}
       <section className="px-6 pb-20 sm:pb-28 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
-          {/* M-Pesa */}
-          <PaymentMethodCard icon={Smartphone} title={t('mpesa.title')} body={t('mpesa.body')} delay={0}>
-           <div className="inline-block rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-green-400/40 hover:shadow-lg hover:scale-[1.03]">
-                <Image
-                    src={PAYMENT_DETAILS.mpesa.logo}
-                    alt="MPesa Logo"
-                    width={320}
-                    height={200}
-                />
-            </div>
-            <CopyField label={t('mpesa.paybillLabel')} value={PAYMENT_DETAILS.mpesa.paybill} />
-            <p className="text-xs leading-relaxed" style={{ color: `${BG}80` }}>
-              {t('mpesa.accountHintLabel')}:{' '}
-              <span style={{ color: `${BG}B3` }}>{PAYMENT_DETAILS.mpesa.accountHint}</span>
-            </p>
-            <ol className="mt-2 flex flex-col gap-2">
-              {mpesaSteps.map((s, i) => (
-                <li key={s} className="flex items-start gap-3 text-xs sm:text-sm" style={{ color: `${BG}99` }}>
-                  <span
-                    className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full font-[family-name:var(--font-mono,monospace)] text-[10px]"
-                    style={{ border: `1px solid ${INK}80`, color: BG }}
-                  >
-                    {i + 1}
-                  </span>
-                  {t(`mpesa.${s}`)}
-                </li>
-              ))}
-            </ol>
-          </PaymentMethodCard>
-
+        <div className="mx-auto grid max-w-4xl gap-6 lg:grid-cols-2">
           {/* Bank transfer */}
-          <PaymentMethodCard icon={Landmark} title={t('bank.title')} body={t('bank.body')} delay={0.12}>
+          <PaymentMethodCard icon={Landmark} title={t('bank.title')} body={t('bank.body')} delay={0}>
             <div className="inline-block rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-blue-400/40 hover:shadow-lg hover:scale-[1.03]">
                 <Image
                     src={PAYMENT_DETAILS.bank.logo}
@@ -375,7 +309,7 @@ export default function PaymentMethods() {
           </PaymentMethodCard>
 
           {/* Card */}
-          <PaymentMethodCard icon={CreditCard} title={t('card.title')} body={t('card.body')} delay={0.24}>
+          <PaymentMethodCard icon={CreditCard} title={t('card.title')} body={t('card.body')} delay={0.12}>
             <div className="flex items-center gap-6">
                 <div className="inline-block rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-red-400/40 hover:shadow-lg hover:scale-[1.03]">
                     <Image

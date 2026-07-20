@@ -326,7 +326,7 @@ function PracticalInfoDropdown({ scrolled }: { scrolled: boolean }) {
     { name: p("information.bookWithConfidence"), href: "/booking-with-confidence" },
     { name: p("information.privacyPolicy"), href: "/privacy-policy" },
     { name: p("information.termsAndConditions"), href: "/termsandconditions" },
-    { name: p("information.onlinePayment"), href: "/payment-methods" },
+    // { name: p("information.onlinePayment"), href: "/payment-methods" },
   ];
 
   const handleMouseEnter = () => {
