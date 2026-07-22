@@ -174,7 +174,7 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
               >
                 <Link
                   href={`/tours/${tour.slug}`}
-                  className="group relative overflow-hidden rounded-2xl h-[400px] shadow-xl block"
+                  className="group relative overflow-hidden rounded-2xl h-[350px] shadow-xl block"
                 >
                   <div className="absolute inset-0">
                     <Image
@@ -182,11 +182,12 @@ export default function ToursList({ limit, searchParams }: ToursListProps) {
                       alt={tour.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      quality={90}
                       className="object-cover group-hover:scale-110 transition duration-700"
                     />
                   </div>
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#041f0e]/80 via-[#041f0e]/30 to-[#041f0e]/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#041f0e]/50 via-[#041f0e]/10 to-[#041f0e]/5" />
 
                   <div className="relative h-full flex flex-col justify-between p-7">
                     {/* Top: country label(s) */}
