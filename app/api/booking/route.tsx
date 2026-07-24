@@ -310,7 +310,7 @@ export async function POST(req: Request) {
 
     const captchaResult = await verifyRecaptcha(recaptchaToken);
 
-    console.log(captchaResult);
+    // console.log(captchaResult);
 
     if (!captchaResult.success) {
       return NextResponse.json(
