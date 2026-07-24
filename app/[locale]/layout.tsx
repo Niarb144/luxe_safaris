@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.luxeplainsafricasafaris.com"),
 
   title: {
-    default: "Luxe Plains Africa Safaris | Luxury Plains Safaris",
+    default: "Luxe Plains Africa Safaris",
     template: "%s | Luxe Plains Africa Safaris",
   },
 
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Luxury Kenya Safaris | Luxe Plains Africa Safaris",
+    title: "Luxury Kenya Safaris",
 
     description:
       "Experience luxury safaris, wildlife adventures, private tours, beach holidays, mountain trekking and tailor-made African travel across Kenya and East Africa.",
@@ -156,10 +156,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
 
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-    // bing: "YOUR_BING_VERIFICATION"
-  },
 };
 
 export default async function RootLayout({

@@ -1,3 +1,4 @@
+// app/robots.ts
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,11 +7,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/admin", "/admin/*", "/api", "/api/*"],
       },
     ],
-
     sitemap: "https://www.luxeplainsafricasafaris.com/sitemap.xml",
-
-    host: "https://www.luxeplainsafricasafaris.com",
   };
 }
