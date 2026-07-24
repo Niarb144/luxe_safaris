@@ -918,5 +918,77 @@
         "description": "Ekskluzywne, światowej klasy obiekty safari"
       }
     }
+  },
+  "pricingInfo": {
+    "title": "Na czym polegają ceny",
+    "description": "Cena za to safari jest obliczana dla każdego podróżnego na podstawie wieku. Dorośli płacą pełną stawkę, podczas gdy dzieci otrzymują zniżki w zależności od przedziału wiekowego — młodsze dzieci otrzymują większą zniżkę, a niemowlęta podróżują za darmo.",
+    "ageBrackets": {
+      "adults": {
+        "label": "Dorośli",
+        "age": "18 lat",
+        "rate": "Całość"
+      },
+      "olderChildren": {
+        "label": "Dzieci starsze",
+        "age": "12 do 17 lat",
+        "rate": "17% zniżki"
+      },
+      "youngerChildren": {
+        "label": "MŁODSZE DZIECI:",
+        "age": "4 – 11 lat",
+        "rate": "40% zniżki"
+      },
+      "infants": {
+        "label": "Niemowlęta",
+        "age": "0-3 lata",
+        "rate": "Wolny"
+      }
+    },
+    "comparison": {
+      "title": "Safari prywatne vs Safari współdzielone",
+      "description": "Uzyskaj jasną wycenę dokładnych dat i liczebności grupy od naszego zespołu lub porównaj poniżej, jak wygląda prywatne i wspólne safari.",
+      "tableHeaders": {
+        "factor": "Współczynnik",
+        "privateSafari": "Prywatne Safari",
+        "sharedSafari": "Safari współdzielone / grupowe"
+      },
+      "rows": {
+        "0": {
+          "factor": "Pojazd",
+          "privateSafari": "Ekskluzywny Land Cruiser 4x4 — tylko Twój",
+          "sharedSafari": "Współdzielony van lub jeep z innymi grupami"
+        },
+        "1": {
+          "factor": "Godzina rozpoczęcia gry",
+          "privateSafari": "W pełni elastyczny — pozostań tak długo, jak chcesz",
+          "sharedSafari": "Ustalony harmonogram niezależnie od obserwacji"
+        },
+        "2": {
+          "factor": "Pozycjonowanie dla widoków",
+          "privateSafari": "Pozycje prowadnicy pojazdu dla optymalnego kąta i światła",
+          "sharedSafari": "Stałe zatrzymanie grupowe, ograniczona repozycja"
+        },
+        "3": {
+          "factor": "Spotkania z dziką przyrodą",
+          "privateSafari": "Przewodnik może śledzić ruch zwierząt w czasie rzeczywistym",
+          "sharedSafari": "Trasa jest z góry ustalona — może pominąć ruchy"
+        },
+        "4": {
+          "factor": "Odbiór własny",
+          "privateSafari": "Od drzwi do drzwi z hotelu lub lotniska",
+          "sharedSafari": "Centralny punkt spotkań!"
+        },
+        "5": {
+          "factor": "Pace ",
+          "privateSafari": "Wszystko zależy od Twojej grupy i tego, co widzisz",
+          "sharedSafari": "Większość - tempo reguł w wielu grupach"
+        },
+        "6": {
+          "factor": "Ogólna wartość. ",
+          "privateSafari": "Wyższa jakość na godzinę, maksymalne prawdopodobieństwo widzenia",
+          "sharedSafari": "Niższa cena, mniejsza kontrola nad doświadczeniem"
+        }
+      }
+    }
   }
 }

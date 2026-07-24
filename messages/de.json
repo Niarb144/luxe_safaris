@@ -918,5 +918,77 @@
         "description": "Exklusive, erstklassige Safari-Immobilien"
       }
     }
+  },
+  "pricingInfo": {
+    "title": "So funktioniert das Preismodell",
+    "description": "Die Preise für diese Safari werden pro Reisendem basierend auf dem Alter berechnet. Erwachsene zahlen den vollen Preis, während Kinder je nach Altersgruppe Ermäßigungen erhalten — jüngere Kinder erhalten einen größeren Rabatt und Kleinkinder reisen kostenlos.",
+    "ageBrackets": {
+      "adults": {
+        "label": "Erwachsene",
+        "age": "18+ Jahre",
+        "rate": "Gesamt-Mietpreis"
+      },
+      "olderChildren": {
+        "label": "Für ältere Kinder",
+        "age": "12–17 Jahren entschuldet. ",
+        "rate": "(17 % Rabatt)"
+      },
+      "youngerChildren": {
+        "label": "Für jüngere Kinder",
+        "age": "4/11 Jahr",
+        "rate": "40 % Rabatt"
+      },
+      "infants": {
+        "label": "Kleinkinder",
+        "age": "0 - 3 Jahre",
+        "rate": "Kostenlos"
+      }
+    },
+    "comparison": {
+      "title": "Private Safari vs. gemeinsame Safari",
+      "description": "Erhalten Sie von unserem Team ein klares Angebot für Ihre genauen Daten und Ihre Gruppengröße oder vergleichen Sie, wie ein privates und ein gemeinsames Safari-Erlebnis im Allgemeinen aussehen.",
+      "tableHeaders": {
+        "factor": "Faktor",
+        "privateSafari": "Private Safari",
+        "sharedSafari": "Gemeinsame /Gruppensafari"
+      },
+      "rows": {
+        "0": {
+          "factor": "Fahrzeug",
+          "privateSafari": "Exklusiver 4x4-Landkreuzer - nur für Sie",
+          "sharedSafari": "Gemeinsamer Van oder Jeep mit anderen Gruppen"
+        },
+        "1": {
+          "factor": "SPIELANTRIE",
+          "privateSafari": "Voll flexibel — bleiben Sie so lange, wie Sie möchten",
+          "sharedSafari": "Fester Zeitplan unabhängig von Sichtungen"
+        },
+        "2": {
+          "factor": "Positionierung für Ansichten",
+          "privateSafari": "Führung positioniert Fahrzeug für optimalen Winkel und Licht",
+          "sharedSafari": "Fester Gruppenstopp, begrenzte Neupositionierung"
+        },
+        "3": {
+          "factor": "Begegnungen mit Wildtieren",
+          "privateSafari": "Guide kann Tierbewegungen in Echtzeit verfolgen",
+          "sharedSafari": "Route ist vorbestimmt — kann Bewegungen verpassen"
+        },
+        "4": {
+          "factor": "Abholung",
+          "privateSafari": "Tür-zu-Tür von Ihrem Hotel oder Flughafen",
+          "sharedSafari": "Zentraler Treffpunkt"
+        },
+        "5": {
+          "factor": "Tempo",
+          "privateSafari": "Ganz bestimmt von Ihrer Gruppe und dem, was Sie sehen",
+          "sharedSafari": "Mehrheitsregeltempo über mehrere Gruppen hinweg"
+        },
+        "6": {
+          "factor": "Bedeutung insgesamt",
+          "privateSafari": "Höhere Qualität pro Stunde, maximale Sichtungswahrscheinlichkeit",
+          "sharedSafari": "Niedrigerer Preis, weniger Kontrolle über die Erfahrung"
+        }
+      }
+    }
   }
 }

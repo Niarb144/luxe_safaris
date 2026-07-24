@@ -69,12 +69,15 @@ export default function TourGallery({ images }: any) {
                 setOpen(true);
               }}
             >
-              <Image
-                src={img.image_url}
-                alt={`Gallery ${i}`}
-                fill
-                className="object-cover group-hover:scale-110 transition duration-500"
-              />
+              
+            <Image
+              src={img.image_url}
+              alt={`Gallery ${i}`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover group-hover:scale-110 transition duration-500"
+            />
+
 
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition" />
 

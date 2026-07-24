@@ -918,5 +918,77 @@
         "description": "Exclusieve safaripanden van wereldklasse"
       }
     }
+  },
+  "pricingInfo": {
+    "title": "Hoe onze prijzen werken",
+    "description": "Prijzen voor deze safari worden per reiziger berekend op basis van leeftijd. Volwassenen betalen het volledige tarief, terwijl kinderen kortingen krijgen afhankelijk van hun leeftijdscategorie — jongere kinderen krijgen een grotere korting en baby's reizen gratis.",
+    "ageBrackets": {
+      "adults": {
+        "label": "Volwassenen",
+        "age": "18 jaar",
+        "rate": "Vol tarief\t"
+      },
+      "olderChildren": {
+        "label": "Oudere kinderen",
+        "age": "12-17 jaar",
+        "rate": "17% korting"
+      },
+      "youngerChildren": {
+        "label": "En de kleinsten?",
+        "age": "4 – 11 jaar",
+        "rate": "40% korting"
+      },
+      "infants": {
+        "label": "Zuigelingen",
+        "age": "0-3 jaar ",
+        "rate": "Vrij"
+      }
+    },
+    "comparison": {
+      "title": "Privé Safari vs Gedeelde Safari",
+      "description": "Ontvang van ons team een duidelijke offerte voor je exacte datums en groepsgrootte, of vergelijk hieronder hoe een privé- versus gedeelde safari-ervaring er over het algemeen uitziet.",
+      "tableHeaders": {
+        "factor": "Factor",
+        "privateSafari": "Privé Safari",
+        "sharedSafari": "Gedeeld / Groep Safari"
+      },
+      "rows": {
+        "0": {
+          "factor": "Voertuig",
+          "privateSafari": "Exclusieve 4x4 Land Cruiser — alleen van jou",
+          "sharedSafari": "Gedeelde bus of jeep met andere groepen"
+        },
+        "1": {
+          "factor": "Game drive timing",
+          "privateSafari": "Volledig flexibel — blijf zo lang als je wilt",
+          "sharedSafari": "Vast schema, ongeacht waarnemingen"
+        },
+        "2": {
+          "factor": "Positionering voor weergaven",
+          "privateSafari": "Geleidingsposities voertuig voor optimale hoek en licht",
+          "sharedSafari": "Vaste groepsstop, beperkte herpositionering"
+        },
+        "3": {
+          "factor": "Ontmoetingen met dieren in het wild",
+          "privateSafari": "Gids kan dierenbeweging in realtime volgen",
+          "sharedSafari": "Route is vooraf bepaald — kan bewegingen missen"
+        },
+        "4": {
+          "factor": "Afhalen",
+          "privateSafari": "Van deur tot deur vanaf je hotel of luchthaven",
+          "sharedSafari": "Centraal ontmoetingspunt"
+        },
+        "5": {
+          "factor": "Snelheid",
+          "privateSafari": "Volledig bepaald door je groep en wat je ziet",
+          "sharedSafari": "Meerderheid-regel tempo over meerdere groepen"
+        },
+        "6": {
+          "factor": "Totale gemiddelde waarde",
+          "privateSafari": "Hogere kwaliteit per uur, maximale waarnemingskans",
+          "sharedSafari": "Lagere prijs, minder controle over ervaring"
+        }
+      }
+    }
   }
 }

@@ -918,5 +918,77 @@
         "description": "世界一流的专属野生动物园"
       }
     }
+  },
+  "pricingInfo": {
+    "title": "定价的运作方式",
+    "description": "此野生动物园的价格按旅客的年龄计算。成人全额支付，儿童根据其年龄段享受折扣—年龄较小的儿童可享受更大的折扣，婴幼儿可免费旅行。",
+    "ageBrackets": {
+      "adults": {
+        "label": "成人",
+        "age": "18岁以上",
+        "rate": "全价"
+      },
+      "olderChildren": {
+        "label": "对于大一点的孩子。",
+        "age": "(12至17岁)",
+        "rate": "17%折扣"
+      },
+      "youngerChildren": {
+        "label": "小得多的孩子",
+        "age": "4 – 11年",
+        "rate": "四折优惠"
+      },
+      "infants": {
+        "label": "婴儿",
+        "age": "0-3岁",
+        "rate": "免费"
+      }
+    },
+    "comparison": {
+      "title": "私人野生动物园与共享野生动物园",
+      "description": "请向我们的团队获取确切日期和团体人数的清晰报价，或在下方比较私人和共享野生动物园体验的总体情况。",
+      "tableHeaders": {
+        "factor": "因素",
+        "privateSafari": "私人野生动物园",
+        "sharedSafari": "共享/群组Safari"
+      },
+      "rows": {
+        "0": {
+          "factor": "車輛",
+          "privateSafari": "独家四轮驱动陆地巡洋舰—仅限您",
+          "sharedSafari": "与其他团体共用面包车或吉普车"
+        },
+        "1": {
+          "factor": "游戏驱动器计时",
+          "privateSafari": "完全灵活—根据您的选择入住",
+          "sharedSafari": "固定的时间表，无论目击事件如何"
+        },
+        "2": {
+          "factor": "视图定位",
+          "privateSafari": "导轨定位车辆以获得最佳角度和光线",
+          "sharedSafari": "固定组停止，有限的重新定位"
+        },
+        "3": {
+          "factor": "野生动物体验",
+          "privateSafari": "导游可以实时跟踪动物的运动",
+          "sharedSafari": "路线是预先确定的—可能会错过移动"
+        },
+        "4": {
+          "factor": "取货",
+          "privateSafari": "从酒店或机场上门接送",
+          "sharedSafari": "中央集合点"
+        },
+        "5": {
+          "factor": "语速",
+          "privateSafari": "完全由您的团队和您看到的内容决定",
+          "sharedSafari": "跨越多个群体的多数人统治节奏"
+        },
+        "6": {
+          "factor": "整体价值",
+          "privateSafari": "每小时质量更高，最大目击概率",
+          "sharedSafari": "更低的价格，更少的体验控制权"
+        }
+      }
+    }
   }
 }

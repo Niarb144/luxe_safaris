@@ -918,5 +918,77 @@
         "description": "Proprietà esclusive per safari di livello mondiale"
       }
     }
+  },
+  "pricingInfo": {
+    "title": "Come funzionano i prezzi",
+    "description": "I prezzi per questo safari sono calcolati per viaggiatore in base all'età. Gli adulti pagano la tariffa intera, mentre i bambini ricevono sconti a seconda della fascia di età: i bambini più piccoli ricevono uno sconto maggiore e i neonati viaggiano gratis.",
+    "ageBrackets": {
+      "adults": {
+        "label": "Adulti",
+        "age": "Maggiori di 18 anni",
+        "rate": "Prezzo pieno"
+      },
+      "olderChildren": {
+        "label": "Per i ragazzi",
+        "age": "da 12 a 17 anni",
+        "rate": "Sconto del 17%"
+      },
+      "youngerChildren": {
+        "label": "FIGLI MINOR!\t",
+        "age": "4/11 anni",
+        "rate": "40%"
+      },
+      "infants": {
+        "label": "Neonata",
+        "age": "0-3 anni",
+        "rate": "Gratis"
+      }
+    },
+    "comparison": {
+      "title": "Safari privato e safari condiviso",
+      "description": "Richiedi un preventivo chiaro per le date esatte e le dimensioni del gruppo dal nostro team o confronta l'aspetto di un'esperienza di safari privata con quella condivisa di seguito.",
+      "tableHeaders": {
+        "factor": "Fattore",
+        "privateSafari": "Safari privato",
+        "sharedSafari": "Safari condiviso / di gruppo"
+      },
+      "rows": {
+        "0": {
+          "factor": "Veicolo",
+          "privateSafari": "Esclusivo Land Cruiser 4x4 — solo tuo",
+          "sharedSafari": "Furgone o jeep condivisi con altri gruppi"
+        },
+        "1": {
+          "factor": "Tempistiche del game drive",
+          "privateSafari": "Completamente flessibile — rimani tutto il tempo che vuoi",
+          "sharedSafari": "Programma fisso indipendentemente dagli avvistamenti"
+        },
+        "2": {
+          "factor": "Posizionamento per viste",
+          "privateSafari": "La guida posiziona il veicolo per un angolo e una luce ottimali",
+          "sharedSafari": "Arresto gruppo fisso, riposizionamento limitato"
+        },
+        "3": {
+          "factor": "Incontri con la fauna selvatica",
+          "privateSafari": "La guida può seguire i movimenti degli animali in tempo reale",
+          "sharedSafari": "Il percorso è predeterminato — potrebbero mancare i movimenti"
+        },
+        "4": {
+          "factor": "Prelievo",
+          "privateSafari": "Porta a porta dal tuo hotel o aeroporto",
+          "sharedSafari": "Punto d'incontro centrale"
+        },
+        "5": {
+          "factor": "Pace ",
+          "privateSafari": "Interamente determinato dal tuo gruppo e da ciò che vedi",
+          "sharedSafari": "Maggioranza-regola il ritmo su più gruppi"
+        },
+        "6": {
+          "factor": "Valore complessivo",
+          "privateSafari": "Maggiore qualità all'ora, massima probabilità di avvistamenti",
+          "sharedSafari": "Prezzo più basso, meno controllo sull'esperienza"
+        }
+      }
+    }
   }
 }

@@ -897,5 +897,77 @@
       "Luxury":          { "label": "Luxury",           "description": "Premium camps with exceptional amenities" },
       "Superior Luxury": { "label": "Superior Luxury",  "description": "Exclusive, world-class safari properties" }
     }
+  },
+  "pricingInfo": {
+    "title": "How Pricing Works",
+    "description": "Pricing for this safari is calculated per traveler based on age. Adults pay the full rate, while children receive discounts depending on their age bracket — younger children receive a larger discount, and infants travel free.",
+    "ageBrackets": {
+      "adults": {
+        "label": "Adults",
+        "age": "18+ years",
+        "rate": "Full price"
+      },
+      "olderChildren": {
+        "label": "Older Children",
+        "age": "12 – 17 years",
+        "rate": "17% discount"
+      },
+      "youngerChildren": {
+        "label": "Younger Children",
+        "age": "4 – 11 years",
+        "rate": "40% discount"
+      },
+      "infants": {
+        "label": "Infants",
+        "age": "0 – 3 years",
+        "rate": "Free"
+      }
+    },
+    "comparison": {
+      "title": "Private Safari vs Shared Safari",
+      "description": "Get a clear quote for your exact dates and group size from our team, or compare what a private versus shared safari experience generally looks like below.",
+      "tableHeaders": {
+        "factor": "Factor",
+        "privateSafari": "Private Safari",
+        "sharedSafari": "Shared / Group Safari"
+      },
+      "rows": [
+        {
+          "factor": "Vehicle",
+          "privateSafari": "Exclusive 4x4 Land Cruiser — yours alone",
+          "sharedSafari": "Shared van or jeep with other groups"
+        },
+        {
+          "factor": "Game drive timing",
+          "privateSafari": "Fully flexible — stay as long as you choose",
+          "sharedSafari": "Fixed schedule regardless of sightings"
+        },
+        {
+          "factor": "Positioning for views",
+          "privateSafari": "Guide positions vehicle for optimal angle and light",
+          "sharedSafari": "Fixed group stop, limited repositioning"
+        },
+        {
+          "factor": "Wildlife encounters",
+          "privateSafari": "Guide can follow animal movement in real time",
+          "sharedSafari": "Route is predetermined — may miss movements"
+        },
+        {
+          "factor": "Pickup",
+          "privateSafari": "Door-to-door from your hotel or airport",
+          "sharedSafari": "Central meeting point"
+        },
+        {
+          "factor": "Pace",
+          "privateSafari": "Entirely determined by your group and what you see",
+          "sharedSafari": "Majority-rule pace across multiple groups"
+        },
+        {
+          "factor": "Overall value",
+          "privateSafari": "Higher quality per hour, maximum sightings probability",
+          "sharedSafari": "Lower price, less control over experience"
+        }
+      ]
+    }
   }
 }

@@ -12,6 +12,7 @@ import TourFAQS from "./TourFAQS";
 import TourHighlights from "./TourHighlights";
 import Accommodations from "./Accommodations";
 import TourPricingTable from "./TourPricingTable";
+import PricingInfoFallback from "./PricingInfoFallback";
 import ContactCard from "../ContactCard";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -216,7 +217,11 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
 
         {/* PRICING */}
         <section className="mb-10 mt-22 max-w-4xl mx-auto px-6" id="pricing" data-section="pricing">
-          <TourPricingTable items={tour.tour_pricing} />
+          {tour.tour_pricing && tour.tour_pricing.length > 0 ? (
+            <TourPricingTable items={tour.tour_pricing} />
+          ) : (
+            <PricingInfoFallback />
+          )}
         </section>
 
         {/* Why choose this safari */}
