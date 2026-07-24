@@ -111,19 +111,19 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[70vh] w-full flex items-center justify-center text-center overflow-hidden">
+      <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] w-full flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 rounded-lg overflow-hidden">
           <Image src={mainImage} alt={tour.title} fill priority sizes="100vw" className="object-cover scale-105" />
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-black/5" />
         </div>
 
-        <div className="relative z-10 px-6 max-w-4xl">
+        <div className="relative z-10 px-4 sm:px-6 max-w-4xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-            className="text-sm uppercase tracking-[0.3em] text-[#d4a54b] font-medium mb-4"
+            className="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[#d4a54b] font-medium mb-2 sm:mb-4 line-clamp-1"
           >
             <Link href="/" className="hover:text-[#d4a54b] transition cursor-pointer">{t("home")}</Link>
             &nbsp;/&nbsp;
@@ -134,7 +134,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
             initial={{ opacity: 0, y: 40 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-3xl md:text-4xl lg:text-4xl font-bold text-white leading-tight drop-shadow-lg"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight drop-shadow-lg"
           >
             {tour.title}
           </motion.h1>
@@ -142,7 +142,7 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
             initial={{ opacity: 0, y: 20 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-            className="text-lg text-white/90 mt-2 drop-shadow-md"
+            className="text-xs sm:text-sm md:text-base lg:text-lg text-white/90 mt-1 sm:mt-2 drop-shadow-md px-2"
           >
             {tour.tagline}
           </motion.p>
@@ -150,10 +150,10 @@ export default function TourLayout({ tour, mainImage, relatedTours, accommodatio
             initial={{ opacity: 0, y: 20 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-            className="flex gap-2 flex-wrap text-lg text-white mt-4"
+            className="flex gap-1.5 sm:gap-2 flex-wrap justify-center text-white mt-3 sm:mt-4"
           >
             {tour.tour_holiday_types?.map((type: any) => (
-              <span key={type.holiday_types.id} className="px-3 py-1 bg-[#041f0e]/70 text-[#b77e24] rounded-full text-sm">
+              <span key={type.holiday_types.id} className="px-2 sm:px-3 py-0.5 sm:py-1 bg-[#041f0e]/70 text-[#b77e24] rounded-full text-[10px] sm:text-xs md:text-sm">
                 {type.holiday_types.name}
               </span>
             ))}
