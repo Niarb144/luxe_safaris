@@ -43,11 +43,14 @@ export default function Footer() {
             <FaEnvelope className="inline mr-2" />
             info@luxeplainsafricasafaris.com
           </p>
-          <p className="text-sm">
-            <FaClock className="inline mr-2" />
-            Mon–Fri: 08:00 – 17:00 <br />
-            Sat–Sun: 09:00 – 13:00
-          </p>
+          <div className="flex items-start gap-3 text-sm">
+          <FaClock className="mt-1 shrink-0 text-lg" />
+
+          <div className="flex flex-col">
+            <span>Mon–Fri: 08:00 AM– 5:00PM</span>
+            <span>Sat: 09:00 AM– 1:00PM</span>
+          </div>
+        </div>
         </div>
 
         {/* Column 2 */}

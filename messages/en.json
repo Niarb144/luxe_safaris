@@ -164,7 +164,7 @@
     "email": "Email",
     "officeHours": "Office Hours",
     "officeHoursValue": "Monday – Friday: 8:00 AM – 5:00 PM",
-    "weekendHoursValues": "Saturday – Sunday: 9:00 AM – 1:00 PM",
+    "weekendHoursValues": "Saturday: 9:00 AM – 1:00 PM",
     "contactTeam": "Contact Our Team"
   },
   "search": {
