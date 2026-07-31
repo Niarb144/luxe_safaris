@@ -23,7 +23,7 @@ export default function FooterBottomBar() {
           height={22}
           className="rounded-sm"
         />
-        <span>Powered by Nidari Inc</span>
+        <span>by Nidari</span>
       </Link>
       <p className="text-white/50 text-xs text-center">
         Protected by reCAPTCHA &mdash;{" "}
